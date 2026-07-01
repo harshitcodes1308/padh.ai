@@ -1,0 +1,200 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+// Define strict types for Razorpay
+interface RazorpayOptions {
+    key: string;
+    amount: number;
+    currency: string;
+    name: string;
+    description: string;
+    order_id: string; // Order ID created on backend
+    handler: (response: any) => void;
+    prefill: {
+        name?: string;
+        email?: string;
+        contact?: string;
+    };
+    theme: {
+        color: string;
+    };
+}
+
+interface RazorpayInstance {
+    open: () => void;
+}
+
+declare global {
+    interface Window {
+        Razorpay: new (options: RazorpayOptions) => RazorpayInstance;
+    }
+}
+
+interface RazorpayButtonProps {
+    amount?: number; // legacy prop
+    type?: "PRO" | "MONTHLY" | "LNB_CHEMISTRY";
+    email: string;
+    name: string;
+    onSuccess?: () => void;
+    buttonText?: string;
+}
+
+export function RazorpayButton({ amount = 99, type = "PRO", email, name, onSuccess, buttonText }: RazorpayButtonProps) {
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
+
+    const loadRazorpay = () => {
+        return new Promise((resolve) => {
+            const script = document.createElement('script');
+            script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+            script.onload = () => resolve(true);
+            script.onerror = () => resolve(false);
+            document.body.appendChild(script);
+        });
+    };
+
+    const handlePayment = async () => {
+        setLoading(true);
+
+        const res = await loadRazorpay();
+        if (!res) {
+            alert('Razorpay SDK failed to load. Are you online?');
+            setLoading(false);
+            return;
+        }
+
+        try {
+            const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "";
+            const prefill = { name, email };
+
+            if (type === "MONTHLY") {
+                // ── Recurring subscription flow (₹199/month) ──
+                const subRes = await fetch("/api/create-subscription", { method: "POST" });
+                const subData = await subRes.json();
+
+                if (!subData.success) {
+                    alert(`Subscription Error: ${subData.error || "Failed to create subscription"}`);
+                    setLoading(false);
+                    return;
+                }
+
+                const subOptions = {
+                    key,
+                    name: "Saviours AI",
+                    description: "Monthly Plan — ₹199/month",
+                    subscription_id: subData.subscription.id,
+                    handler: async (response: any) => {
+                        setLoading(true);
+                        try {
+                            const { verifyPaymentAction } = await import("@/actions/verify-payment");
+                            const result = await verifyPaymentAction(response);
+                            if (result.success) {
+                                if (onSuccess) onSuccess();
+                            } else {
+                                alert("Payment verification failed: " + result.error);
+                            }
+                        } catch {
+                            alert("Verification failed. Please contact support if money was deducted.");
+                        } finally {
+                            setLoading(false);
+                        }
+                    },
+                    prefill,
+                    theme: { color: "#00D4FF" },
+                };
+
+                const paymentObject = new (window as any).Razorpay(subOptions);
+                paymentObject.open();
+                setLoading(false);
+                return;
+            }
+
+            // ── One-time order flow (PRO_YEARLY or LNB_CHEMISTRY) ──
+            const orderRes = await fetch("/api/create-order", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ type }),
+            });
+            const orderData = await orderRes.json();
+
+            if (!orderData.success) {
+                console.error("Order creation failed", orderData);
+                alert(`Payment Error: ${orderData.error}`);
+                setLoading(false);
+                return;
+            }
+
+            const options: RazorpayOptions = {
+                key,
+                amount: orderData.order.amount,
+                currency: orderData.order.currency,
+                name: "ICSE Saviours",
+                description: type === "LNB_CHEMISTRY" ? "Unlock Chemistry Sets" : "Yearly Access",
+                order_id: orderData.order.id,
+                handler: async function (response: any) {
+                    setLoading(true); // Keep loading state
+                    
+                    try {
+                        // Call Server Action to Verify + Refresh Session
+                        const { verifyPaymentAction } = await import("@/actions/verify-payment");
+                        const result = await verifyPaymentAction(response);
+
+                        if (result.success) {
+                            if(onSuccess) onSuccess();
+                            router.push("/dashboard"); 
+                            router.refresh();
+                        } else {
+                            alert("Payment Verified Failed: " + result.error);
+                            setLoading(false);
+                        }
+                    } catch (err) {
+                        console.error("Verification Error", err);
+                        alert("Verification failed. Please contact support if money was deducted.");
+                        setLoading(false);
+                    }
+                },
+                prefill: {
+                    name,
+                    email,
+                },
+                theme: {
+                    color: "#00D4FF", // Violet
+                },
+            };
+
+            const paymentObject = new window.Razorpay(options);
+            paymentObject.open();
+        } catch (error) {
+            console.error("Payment Error:", error);
+            alert("Payment failed. Please try again.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <button
+            onClick={handlePayment}
+            disabled={loading}
+            style={{
+                width: "100%",
+                padding: "16px",
+                backgroundColor: "#FFF", // White button for high contrast on dark glassmorphism
+                color: "#000",
+                fontSize: "16px",
+                fontWeight: 700,
+                border: "none",
+                borderRadius: "12px",
+                cursor: loading ? "wait" : "pointer",
+                transition: "transform 0.2s",
+                boxShadow: "0 4px 14px 0 rgba(255, 255, 255, 0.39)"
+            }}
+            onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.02)"}
+            onMouseOut={(e) => e.currentTarget.style.transform = "scale(1)"}
+        >
+            {loading ? "Processing..." : buttonText || "Get Lifetime Access"}
+        </button>
+    );
+}
