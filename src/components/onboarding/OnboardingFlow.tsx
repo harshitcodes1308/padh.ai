@@ -48,8 +48,6 @@ export default function OnboardingFlow() {
   const [fadeOut, setFadeOut] = useState(false);
   const [logoVisible, setLogoVisible] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; size: number; delay: number }>>([]);
   const [showTagline, setShowTagline] = useState(false);
   const [nameInput, setNameInput] = useState('');
   const [phoneInput, setPhoneInput] = useState('');
@@ -64,27 +62,16 @@ export default function OnboardingFlow() {
   const video1Ref = useRef<HTMLVideoElement>(null);
   const video6Ref = useRef<HTMLVideoElement>(null);
 
-  // Generate floating particles for screen 1
+  // Particles removed for light theme — state kept for zero-diff on state structure
   useEffect(() => {
-    const pts = Array.from({ length: 20 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 3 + 1,
-      delay: Math.random() * 5,
-    }));
-    setParticles(pts);
+    // noop — floating particles removed in Phase 1 reskin
   }, []);
 
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    setMousePos({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight });
-  }, []);
+
 
   // ── Screen 1 setup
   useEffect(() => {
     if (step !== 1) return;
-    const v = video1Ref.current;
-    if (v) { v.playbackRate = 1.5; v.play().catch(() => {}); }
     const t1 = setTimeout(() => setLogoVisible(true), 600);
     const t2 = setTimeout(() => setShowTagline(true), 1400);
     const t3 = setTimeout(advanceFromS1, 4000);
@@ -119,21 +106,25 @@ export default function OnboardingFlow() {
     return () => timers.forEach(clearTimeout);
   }, [step]);
 
-  // ── Screen 6 — Loading
+  // ── Screen 7 — Loading
   useEffect(() => {
     if (step !== 7) return;
-    const v = video6Ref.current;
-    if (v) { v.playbackRate = 1.5; v.play().catch(() => {}); }
     setLoadingLine(0);
     const timers = LOADING_LINES.map((_, i) =>
       setTimeout(() => setLoadingLine(i + 1), 800 * (i + 1))
     );
-    // After loading, go to vapour text screen
+    // After loading, go to final welcome screen
     timers.push(setTimeout(() => setStep(8), 3600));
     return () => timers.forEach(clearTimeout);
   }, [step]);
 
-  // Screen 7 navigation is driven by VapourText onComplete callback
+  // Screen 8 — auto-navigate to dashboard after the welcome animation completes
+  useEffect(() => {
+    if (step !== 8) return;
+    // 3s: 0.3s logo + 0.7s text + 1.4s tagline + 0.6s buffer
+    const t = setTimeout(() => doComplete(), 3200);
+    return () => clearTimeout(t);
+  }, [step]);
 
   function advanceFromS1() {
     setFadeOut(true);
@@ -329,10 +320,9 @@ export default function OnboardingFlow() {
   if (step === 1) return (
     <div
       onClick={advanceFromS1}
-      onMouseMove={handleMouseMove}
       style={{
         position: 'fixed', inset: 0,
-        background: '#0A0A0F',
+        background: 'linear-gradient(160deg, #FFFFFF 0%, #F0F4F7 50%, #DFEAF5 100%)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         flexDirection: 'column',
         opacity: fadeOut ? 0 : 1,
@@ -341,39 +331,19 @@ export default function OnboardingFlow() {
         overflow: 'hidden',
       }}
     >
-      <video
-        ref={video1Ref}
-        src={VIDEO_URL}
-        autoPlay muted playsInline loop
-        style={{
-          position: 'absolute', inset: 0,
-          width: '100%', height: '100%',
-          objectFit: 'cover',
-          filter: 'grayscale(100%)',
-          transform: `scale(1.05) translate(${(mousePos.x - 0.5) * -8}px, ${(mousePos.y - 0.5) * -8}px)`,
-          transition: 'transform 0.3s ease-out',
-        }}
-      />
-
+      {/* Subtle accent blobs — no particles, no glow */}
       <div style={{
-        position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse at center, transparent 20%, rgba(10,10,15,0.6) 100%)',
+        position: 'absolute', top: '-15%', right: '-5%',
+        width: 360, height: 360, borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(45,129,247,0.06) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
-
-      {particles.map(p => (
-        <div key={p.id} style={{
-          position: 'absolute',
-          left: `${p.x}%`, top: `${p.y}%`,
-          width: p.size, height: p.size,
-          borderRadius: '50%',
-          background: 'var(--accent-gold)',
-          opacity: 0.15,
-          animation: `float ${3 + p.delay}s ease-in-out infinite`,
-          animationDelay: `${p.delay}s`,
-          pointerEvents: 'none',
-        }} />
-      ))}
+      <div style={{
+        position: 'absolute', bottom: '-10%', left: '-5%',
+        width: 280, height: 280, borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(8,189,128,0.05) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
 
       <div style={{
         position: 'relative', zIndex: 2,
@@ -382,35 +352,45 @@ export default function OnboardingFlow() {
         transform: logoVisible ? 'scale(1) translateY(0)' : 'scale(0.7) translateY(20px)',
         transition: 'all 1s cubic-bezier(0.16,1,0.3,1)',
       }}>
-        <svg width="64" height="64" viewBox="0 0 48 48" fill="none" style={{ margin: '0 auto 20px' }}>
-          <path d="M24 4L44 18L24 44L4 18L24 4Z" fill="none" stroke="var(--accent-gold)" strokeWidth="1.5" style={{ animation: 'goldGlow 3s ease-in-out infinite' }}/>
-          <path d="M24 4L44 18L24 32L4 18L24 4Z" fill="rgba(0,212,255,0.08)"/>
-          <path d="M4 18L24 32L44 18" stroke="var(--accent-gold)" strokeWidth="1" opacity="0.6"/>
-        </svg>
+        {/* PADH.AI logo mark */}
+        <div style={{
+          width: 64, height: 64,
+          borderRadius: 18,
+          background: 'var(--brand-blue)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          margin: '0 auto 20px',
+          boxShadow: '0 8px 24px rgba(45,129,247,0.18)',
+        }}>
+          <span style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 800, fontSize: 34,
+            color: '#FFFFFF', lineHeight: 1,
+          }}>P</span>
+        </div>
 
         <div style={{
           fontFamily: 'var(--font-display)',
           fontSize: isMobile ? 20 : 24,
-          letterSpacing: '0.25em',
+          letterSpacing: '0.18em',
           color: 'var(--text-primary)',
           textTransform: 'uppercase',
           marginBottom: 12,
+          fontWeight: 700,
         }}>
-          SAVIOURS AI
+          PADH.AI
         </div>
 
         <div style={{
-          fontFamily: 'var(--font-tagline)',
+          fontFamily: 'var(--font-body)',
           fontSize: isMobile ? 14 : 16,
           fontWeight: 400,
-          fontStyle: 'italic',
-          color: 'var(--text-muted)',
-          letterSpacing: '0.02em',
+          color: 'var(--text-secondary)',
+          letterSpacing: '0.01em',
           opacity: showTagline ? 1 : 0,
           transform: showTagline ? 'translateY(0)' : 'translateY(10px)',
           transition: 'all 0.8s ease-out',
         }}>
-          Where preparation meets precision.
+          CBSE Board Prep, Reimagined.
         </div>
       </div>
 
@@ -422,13 +402,13 @@ export default function OnboardingFlow() {
       }}>
         <div style={{
           width: 1, height: 32,
-          background: 'linear-gradient(to bottom, transparent, var(--accent-gold))',
+          background: 'linear-gradient(to bottom, transparent, var(--brand-blue))',
           animation: 'float 2s ease-in-out infinite',
         }} />
         <div style={{
           fontFamily: 'var(--font-body)',
           fontSize: 11,
-          color: 'rgba(245,240,232,0.3)',
+          color: 'var(--text-muted)',
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
         }}>
@@ -441,10 +421,9 @@ export default function OnboardingFlow() {
   // ── SCREEN 2 — Apple-style Greeting + Message Reveal ────────
   if (step === 2) return (
     <div
-      onMouseMove={handleMouseMove}
       style={{
         position: 'fixed', inset: 0,
-        background: 'var(--bg-base)',
+        background: '#FFFFFF',
         display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center',
         padding: isMobile ? '32px 24px' : '64px 80px',
@@ -452,30 +431,11 @@ export default function OnboardingFlow() {
         overflow: 'hidden',
       }}
     >
-      <video
-        src={VIDEO_URL}
-        autoPlay muted playsInline loop
-        style={{
-          position: 'absolute', inset: 0,
-          width: '100%', height: '100%',
-          objectFit: 'cover',
-          filter: 'grayscale(100%) brightness(0.3)',
-          opacity: 0.5,
-        }}
-      />
+      {/* Subtle blobs */}
       <div style={{
-        position: 'absolute', inset: 0,
-        background: 'linear-gradient(180deg, rgba(0,30,60,0.7) 0%, rgba(3,3,3,0.85) 50%, rgba(0,15,40,0.7) 100%)',
-        pointerEvents: 'none',
-      }} />
-
-      <div style={{
-        position: 'absolute',
-        left: '50%', top: '45%',
-        width: 600, height: 600,
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%)',
-        transform: 'translate(-50%, -50%)',
+        position: 'absolute', top: '-10%', right: '-5%',
+        width: 400, height: 400, borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(45,129,247,0.05) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -497,7 +457,7 @@ export default function OnboardingFlow() {
                 fontSize: isMobile ? 52 : 80,
                 letterSpacing: '-0.03em',
                 lineHeight: 1.05,
-                color: i === 0 ? 'var(--text-primary)' : 'var(--accent-gold)',
+                color: i === 0 ? 'var(--text-primary)' : 'var(--brand-blue)',
                 textAlign: 'center',
                 opacity: activeGreeting >= i ? 1 : 0,
                 transform: activeGreeting >= i
@@ -527,7 +487,7 @@ export default function OnboardingFlow() {
                   fontSize: isMobile ? 28 : 48,
                   letterSpacing: '-0.02em',
                   lineHeight: 1.15,
-                  color: msg.color,
+                  color: i === 2 ? 'var(--brand-blue)' : msg.color,
                   opacity: visibleMessages > i ? 1 : 0,
                   transform: visibleMessages > i
                     ? 'translateY(0)'
@@ -550,11 +510,10 @@ export default function OnboardingFlow() {
             }}>
               {userName && (
                 <div style={{
-                  fontFamily: 'var(--font-tagline)',
+                  fontFamily: 'var(--font-body)',
                   fontSize: isMobile ? 16 : 20,
                   fontWeight: 400,
-                  fontStyle: 'italic',
-                  color: 'var(--text-muted)',
+                  color: 'var(--text-secondary)',
                   animation: 'fadeIn 500ms ease-out 200ms both',
                 }}>
                   Ready when you are, {userName.split(' ')[0]}.
@@ -562,16 +521,14 @@ export default function OnboardingFlow() {
               )}
               <button
                 onClick={() => setStep(3)}
-                className="btn-gold"
+                className="btn-primary"
                 style={{
                   fontSize: 'var(--text-md)',
                   padding: '15px 40px',
                   width: 'fit-content',
-                  position: 'relative',
-                  overflow: 'hidden',
                 }}
               >
-                <span style={{ position: 'relative', zIndex: 1 }}>Begin &rarr;</span>
+                Begin &rarr;
               </button>
             </div>
           )}
@@ -581,16 +538,15 @@ export default function OnboardingFlow() {
       <div style={{
         position: 'absolute',
         bottom: isMobile ? 32 : 40,
-        fontFamily: 'var(--font-tagline)',
-        fontSize: 13,
+        fontFamily: 'var(--font-body)',
+        fontSize: 12,
         fontWeight: 400,
-        fontStyle: 'italic',
-        color: 'rgba(245,240,232,0.15)',
+        color: 'var(--text-muted)',
         letterSpacing: '0.03em',
-        opacity: showCta ? 1 : 0,
+        opacity: showCta ? 0.6 : 0,
         transition: 'opacity 0.6s ease',
       }}>
-        Class X ICSE 2027 Edition
+        CBSE Class 10 Edition
       </div>
     </div>
   );
@@ -749,7 +705,7 @@ export default function OnboardingFlow() {
         <button
           onClick={handleSaveProfile}
           disabled={savingProfile}
-          className="btn-gold"
+          className="btn-primary"
           style={{
             fontSize: 'var(--text-md)',
             padding: '14px 44px',
@@ -912,7 +868,7 @@ export default function OnboardingFlow() {
               handleSaveCreator(code);
             }}
             disabled={isInvalid}
-            className="btn-gold"
+            className="btn-primary"
             style={{
               fontSize: 'var(--text-md)', padding: '14px 44px', width: '100%',
               opacity: isInvalid ? 0.4 : 1,
@@ -970,46 +926,37 @@ export default function OnboardingFlow() {
   if (step === 7) return (
     <div style={{
       position: 'fixed', inset: 0,
-      background: '#000',
+      background: '#FFFFFF',
       display: 'flex', flexDirection: 'column',
       alignItems: 'center', justifyContent: 'center',
       zIndex: 1000,
       overflow: 'hidden',
     }}>
-      <video
-        ref={video6Ref}
-        src={VIDEO_URL}
-        autoPlay muted playsInline loop
-        style={{
-          position: 'absolute', inset: 0,
-          width: '100%', height: '100%',
-          objectFit: 'cover',
-          filter: 'grayscale(100%)',
-          opacity: 0.35,
-        }}
-      />
+      {/* Subtle accent blobs */}
       <div style={{
-        position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse at center, rgba(0,30,60,0.3) 0%, rgba(10,10,15,0.8) 100%)',
+        position: 'absolute', top: '-15%', right: '-5%',
+        width: 360, height: 360, borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(45,129,247,0.05) 0%, transparent 70%)',
+        pointerEvents: 'none',
       }} />
 
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+        {/* Blue ring spinner */}
         <div style={{
           margin: '0 auto 28px',
-          animation: 'spin360 4s linear infinite',
           width: 40, height: 40,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-        }}>
-          <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-            <path d="M24 4L44 18L24 44L4 18L24 4Z" fill="none" stroke="var(--accent-gold)" strokeWidth="1.5"/>
-          </svg>
-        </div>
+          borderRadius: '50%',
+          border: '2.5px solid var(--bg-elevated)',
+          borderTopColor: 'var(--brand-blue)',
+          animation: 'spin360 0.8s linear infinite',
+        }} />
 
         <div style={{
           fontFamily: 'var(--font-display)',
           fontSize: isMobile ? 22 : 28,
           color: 'var(--text-primary)',
-          letterSpacing: '-0.01em',
+          letterSpacing: '-0.02em',
+          fontWeight: 700,
           marginBottom: 24,
           animation: 'fadeIn 600ms ease-out both',
         }}>
@@ -1021,12 +968,12 @@ export default function OnboardingFlow() {
             key={i}
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: isMobile ? 14 : 16,
+              fontSize: isMobile ? 14 : 15,
               color: loadingLine > i
                 ? 'var(--text-primary)'
                 : loadingLine === i
                 ? 'var(--text-secondary)'
-                : 'rgba(245,240,232,0.1)',
+                : 'var(--text-disabled)',
               marginBottom: 10,
               transition: 'color 500ms ease',
               display: 'flex',
@@ -1037,17 +984,18 @@ export default function OnboardingFlow() {
           >
             {loadingLine > i && (
               <span style={{
-                color: 'var(--status-green)',
+                color: 'var(--brand-green)',
                 animation: 'checkBounce 0.4s ease both',
+                fontWeight: 700,
               }}>✓</span>
             )}
             {loadingLine === i && (
               <span style={{
                 display: 'inline-block',
-                width: 12, height: 12,
+                width: 10, height: 10,
                 borderRadius: '50%',
-                border: '1.5px solid var(--accent-gold)',
-                borderTopColor: 'transparent',
+                border: '1.5px solid var(--bg-elevated)',
+                borderTopColor: 'var(--brand-blue)',
                 animation: 'spin360 0.6s linear infinite',
               }} />
             )}
@@ -1056,32 +1004,29 @@ export default function OnboardingFlow() {
         ))}
       </div>
 
+      {/* Progress bar */}
       <div style={{
         position: 'absolute', bottom: 60,
-        width: 240,
-        height: 2,
-        background: 'rgba(255,255,255,0.06)',
-        borderRadius: 2,
-        overflow: 'hidden',
-        zIndex: 1,
+        width: 240, height: 2,
+        background: 'var(--bg-elevated)',
+        borderRadius: 2, overflow: 'hidden', zIndex: 1,
       }}>
         <div style={{
           height: '100%',
-          background: 'linear-gradient(90deg, var(--accent-gold), var(--accent-gold-dim))',
+          background: 'linear-gradient(90deg, var(--brand-blue), var(--brand-green))',
           animation: 'progressFill 3s cubic-bezier(0.4,0,0.2,1) forwards',
         }} />
       </div>
 
       <div style={{
-        position: 'absolute',
-        bottom: 28,
-        fontFamily: 'var(--font-tagline)',
-        fontSize: 12,
+        position: 'absolute', bottom: 28,
+        fontFamily: 'var(--font-body)',
+        fontSize: 11,
         fontWeight: 400,
-        fontStyle: 'italic',
-        color: 'rgba(245,240,232,0.15)',
-        letterSpacing: '0.03em',
+        color: 'var(--text-muted)',
+        letterSpacing: '0.04em',
         zIndex: 1,
+        opacity: 0.6,
       }}>
         Your academic edge, loading...
       </div>
@@ -1091,68 +1036,55 @@ export default function OnboardingFlow() {
   // ── SCREEN 8 — Vapour Text Welcome ─────────────────────────
   if (step === 8) return (
     <div style={{
-      position: 'fixed',
-      inset: 0,
-      background: '#0A0A0F',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '16px',
+      position: 'fixed', inset: 0,
+      background: '#FFFFFF',
+      display: 'flex', flexDirection: 'column',
+      alignItems: 'center', justifyContent: 'center',
+      gap: '20px',
       zIndex: 1000,
     }}>
-      {/* Diamond logo fades in */}
+      {/* PADH.AI logo mark */}
       <div style={{
-        width: '32px',
-        height: '32px',
+        width: 52, height: 52,
+        borderRadius: 14,
+        background: 'var(--brand-blue)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
         opacity: 0,
-        animation: 'fadeInLogo 0.6s ease-out 0.3s forwards',
+        animation: 'fadeIn 0.6s ease-out 0.3s forwards',
+        boxShadow: '0 8px 24px rgba(45,129,247,0.18)',
       }}>
-        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-          <path d="M24 4L44 18L24 44L4 18L24 4Z" fill="none" stroke="var(--accent-gold)" strokeWidth="1.5"/>
-          <path d="M24 4L44 18L24 32L4 18L24 4Z" fill="rgba(0,212,255,0.08)"/>
-        </svg>
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 28, color: '#FFFFFF', lineHeight: 1 }}>P</span>
       </div>
 
-      {/* Vapour text: fades in → holds → disintegrates → dashboard */}
-      <div style={{ width: '100%', maxWidth: '800px', height: '100px' }}>
-        <VapourText
-          text="Welcome to Saviours AI"
-          font={{
-            fontFamily: 'ScotchDisplay, serif',
-            fontSize: isMobile ? '32px' : '52px',
-            fontWeight: 700,
-          }}
-          color="rgb(245, 240, 232)"
-          fadeInDuration={1.0}
-          holdDuration={1.2}
-          disintegrateDuration={1.2}
-          spread={4}
-          density={6}
-          onComplete={doComplete}
-        />
+      {/* Welcome message — simple fade-in instead of VapourText */}
+      <div style={{
+        fontFamily: 'var(--font-display)',
+        fontWeight: 700,
+        fontSize: isMobile ? 30 : 48,
+        color: 'var(--text-primary)',
+        letterSpacing: '-0.03em',
+        lineHeight: 1.1,
+        textAlign: 'center',
+        opacity: 0,
+        animation: 'fadeIn 0.8s ease-out 0.7s forwards',
+        padding: '0 24px',
+      }}>
+        Welcome to PADH.AI.
       </div>
 
-      {/* Tagline fades in below */}
       <p style={{
-        fontFamily: 'Coolvetica, sans-serif',
+        fontFamily: 'var(--font-body)',
         fontSize: '13px',
-        letterSpacing: '0.12em',
+        letterSpacing: '0.10em',
         textTransform: 'uppercase',
         color: 'var(--text-muted)',
         opacity: 0,
-        animation: 'fadeInLogo 0.6s ease-out 1.8s forwards',
+        animation: 'fadeIn 0.6s ease-out 1.4s forwards',
         margin: 0,
+        fontWeight: 500,
       }}>
-        ICSE Class X &middot; 2027 Boards
+        CBSE Class 10 &middot; Board Prep
       </p>
-
-      <style>{`
-        @keyframes fadeInLogo {
-          from { opacity: 0; transform: translateY(8px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </div>
   );
 

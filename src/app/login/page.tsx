@@ -355,7 +355,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loginMutation.isPending}
-              className="btn-gold"
+              className="btn-primary"
               style={{
                 width: "100%",
                 marginTop: 6,

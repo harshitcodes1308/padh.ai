@@ -122,7 +122,7 @@ export default function CustomiseTestPage() {
                                     setSubject(sub);
                                     setStep('chapters');
                                 }}
-                                className="btn-gold"
+                                className="btn-primary"
                                 style={{
                                     ...typography.text,
                                     padding: '24px',
@@ -176,7 +176,7 @@ export default function CustomiseTestPage() {
                         <button
                             onClick={() => setStep('config')}
                             disabled={selectedChapters.length === 0}
-                            className="btn-gold"
+                            className="btn-primary"
                             style={{
                                 ...typography.text,
                                 padding: '12px 24px',
@@ -231,7 +231,7 @@ export default function CustomiseTestPage() {
                         </button>
                         <button
                             onClick={() => setStep('timer')}
-                            className="btn-gold"
+                            className="btn-primary"
                             style={{
                                 ...typography.text,
                                 padding: '12px 24px',
@@ -287,7 +287,7 @@ export default function CustomiseTestPage() {
                         </button>
                         <button
                             onClick={() => setStep('preview')}
-                            className="btn-gold"
+                            className="btn-primary"
                             style={{
                                 ...typography.text,
                                 padding: '12px 24px',
@@ -411,7 +411,7 @@ export default function CustomiseTestPage() {
                                 )}
                                 <button
                                     onClick={() => handleMarkReview(currentQ.id)}
-                                    className={markedReview.includes(currentQ.id) ? 'btn-gold' : 'btn-ghost'}
+                                    className={markedReview.includes(currentQ.id) ? 'btn-primary' : 'btn-ghost'}
                                     style={{
                                         ...typography.text,
                                         padding: '12px 24px',
@@ -444,7 +444,7 @@ export default function CustomiseTestPage() {
                                 {currentQuestion < questions.length - 1 ? (
                                     <button
                                         onClick={() => setCurrentQuestion(prev => prev + 1)}
-                                        className="btn-gold"
+                                        className="btn-primary"
                                         style={{
                                             ...typography.text,
                                             padding: '12px 24px',
@@ -542,7 +542,7 @@ export default function CustomiseTestPage() {
                     </div>
                     <button
                         onClick={() => setStep('analysis')}
-                        className="btn-gold"
+                        className="btn-primary"
                         style={{
                             ...typography.text,
                             marginTop: '32px',
@@ -604,7 +604,7 @@ export default function CustomiseTestPage() {
 
                     <button
                         onClick={() => setStep('solutions')}
-                        className="btn-gold"
+                        className="btn-primary"
                         style={{
                             ...typography.text,
                             padding: '12px 32px',
@@ -709,7 +709,7 @@ export default function CustomiseTestPage() {
                                 setMarkedReview([]);
                                 setResult(null);
                             }}
-                            className="btn-gold"
+                            className="btn-primary"
                             style={{
                                 ...typography.text,
                                 padding: '16px 32px',

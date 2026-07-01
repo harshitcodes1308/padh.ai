@@ -124,7 +124,7 @@ export default function AdminLogin() {
         </div>
 
         {/* Submit */}
-        <button type="submit" className="btn-gold" disabled={loading} style={{ width: "100%" }}>
+        <button type="submit" className="btn-primary" disabled={loading} style={{ width: "100%" }}>
           {loading ? "Authenticating..." : "Access Admin Panel"}
         </button>
 

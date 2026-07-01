@@ -15,7 +15,7 @@ async function main() {
         data: {
             name: "Mathematics",
             code: "MATH",
-            description: "ICSE Mathematics - Algebra, Geometry, Trigonometry, Statistics",
+            description: "CBSE Mathematics - Algebra, Geometry, Trigonometry, Statistics",
             icon: "📐",
             order: 1,
             chapters: {
@@ -46,7 +46,7 @@ async function main() {
         data: {
             name: "Physics",
             code: "PHYS",
-            description: "ICSE Physics - Mechanics, Heat, Light, Electricity, Magnetism",
+            description: "CBSE Physics - Mechanics, Heat, Light, Electricity, Magnetism",
             icon: "⚛️",
             order: 2,
             chapters: {
@@ -72,7 +72,7 @@ async function main() {
         data: {
             name: "Chemistry",
             code: "CHEM",
-            description: "ICSE Chemistry - Physical, Inorganic, and Organic Chemistry",
+            description: "CBSE Chemistry - Physical, Inorganic, and Organic Chemistry",
             icon: "🧪",
             order: 3,
             chapters: {
@@ -96,7 +96,7 @@ async function main() {
         data: {
             name: "Biology",
             code: "BIO",
-            description: "ICSE Biology - Botany, Zoology, Human Anatomy, Ecology",
+            description: "CBSE Biology - Botany, Zoology, Human Anatomy, Ecology",
             icon: "🧬",
             order: 4,
             chapters: {
@@ -124,7 +124,7 @@ async function main() {
         data: {
             name: "History & Civics",
             code: "HIST",
-            description: "ICSE History - Indian History, World History, Civics",
+            description: "CBSE History - Indian History, World History, Civics",
             icon: "🏛️",
             order: 5,
             chapters: {
@@ -147,7 +147,7 @@ async function main() {
         data: {
             name: "Geography",
             code: "GEO",
-            description: "ICSE Geography - Physical, Economic, and Resource Geography",
+            description: "CBSE Geography - Physical, Economic, and Resource Geography",
             icon: "🌍",
             order: 6,
             chapters: {
@@ -172,7 +172,7 @@ async function main() {
         data: {
             name: "Computer Applications",
             code: "COMP",
-            description: "ICSE Computer Applications - Java Programming",
+            description: "CBSE Computer Applications - Java Programming",
             icon: "💻",
             order: 7,
             chapters: {
@@ -198,7 +198,7 @@ async function main() {
         data: {
             name: "English Language & Literature",
             code: "ENG",
-            description: "ICSE English - Grammar, Composition, Literature",
+            description: "CBSE English - Grammar, Composition, Literature",
             icon: "📚",
             order: 8,
             chapters: {
@@ -227,6 +227,12 @@ async function main() {
     console.log(`Created ${await prisma.chapter.count()} chapters`);
 
     // Creators — upsert so re-runs are safe
+    // Primary creator: Gaurav Suthar (CBSE Topper)
+    await prisma.creator.upsert({
+        where: { creatorCode: "gaurav" },
+        update: { channelId: "UCYvW5DZt6UJP7LOSZouSUzw", creatorName: "Gaurav Suthar" },
+        create: { creatorName: "Gaurav Suthar", creatorCode: "gaurav", channelId: "UCYvW5DZt6UJP7LOSZouSUzw", discountPercentage: 0 },
+    });
     await prisma.creator.upsert({
         where: { creatorCode: "bl2047" },
         update: {},

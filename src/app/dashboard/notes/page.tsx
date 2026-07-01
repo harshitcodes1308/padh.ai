@@ -62,7 +62,7 @@ export default function NotesPage() {
                 {hasNotes && (
                     <button
                         onClick={() => setIsCreating(true)}
-                        className="btn-gold"
+                        className="btn-primary"
                         style={{
                             ...typography.text,
                             padding: '12px 24px',
@@ -245,7 +245,7 @@ export default function NotesPage() {
                                         setCurrentCardIndex(0);
                                         setIsFlipped(false);
                                     }}
-                                    className="btn-gold"
+                                    className="btn-primary"
                                     style={{
                                         ...typography.text,
                                         padding: '12px 24px',
@@ -339,7 +339,7 @@ export default function NotesPage() {
                                     setIsFlipped(false);
                                 }}
                                 disabled={currentCardIndex === 0}
-                                className="btn-gold"
+                                className="btn-primary"
                                 style={{
                                     ...typography.text,
                                     padding: '12px 24px',
@@ -365,7 +365,7 @@ export default function NotesPage() {
                                     setIsFlipped(false);
                                 }}
                                 disabled={currentCardIndex === selectedNote.flashCards.length - 1}
-                                className="btn-gold"
+                                className="btn-primary"
                                 style={{
                                     ...typography.text,
                                     padding: '12px 24px',
@@ -392,7 +392,7 @@ export default function NotesPage() {
                     </p>
                     <button
                         onClick={() => setIsCreating(true)}
-                        className="btn-gold"
+                        className="btn-primary"
                         style={{
                             ...typography.text,
                             padding: '16px 32px',

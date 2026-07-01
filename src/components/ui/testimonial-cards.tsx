@@ -264,9 +264,9 @@ export default function ShuffleCards({
         onClick={onContinue}
         style={{
           marginTop: isMobile ? 16 : 24,
-          background: 'var(--accent-gold)',
-          color: '#0A0A0F',
-          fontFamily: 'Coolvetica, sans-serif',
+          background: 'var(--brand-blue)',
+          color: '#FFFFFF',
+          fontFamily: 'var(--font-display)',
           fontSize: '16px',
           letterSpacing: '0.04em',
           padding: '13px 36px',

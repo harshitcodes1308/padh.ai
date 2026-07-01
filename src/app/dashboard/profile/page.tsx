@@ -153,7 +153,7 @@ export default function ProfilePage() {
                                         setEmail(user?.email || '');
                                         setIsEditing(true);
                                     }}
-                                    className="btn-gold"
+                                    className="btn-primary"
                                     style={{
                                         ...typography.text,
                                         padding: '8px 16px',
@@ -292,7 +292,7 @@ export default function ProfilePage() {
                     <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
                         <a
                             href="/dashboard/tests"
-                            className="btn-gold"
+                            className="btn-primary"
                             style={{
                                 ...typography.text,
                                 padding: '12px 24px',

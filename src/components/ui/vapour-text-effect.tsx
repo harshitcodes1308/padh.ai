@@ -45,8 +45,8 @@ interface Particle {
 
 export default function VapourText({
   text,
-  font = { fontFamily: 'ScotchDisplay, serif', fontSize: '52px', fontWeight: 700 },
-  color = 'rgb(245, 240, 232)',
+  font = { fontFamily: 'Work Sans, sans-serif', fontSize: '52px', fontWeight: 700 },
+  color = 'rgb(45, 129, 247)',
   fadeInDuration = 1.0,
   holdDuration = 1.0,
   disintegrateDuration = 1.2,
@@ -147,7 +147,7 @@ export default function VapourText({
     const elapsed = (performance.now() - startTimeRef.current) / 1000;
     const particles = particlesRef.current;
 
-    const [r, g, b] = color.match(/\d+/g)?.map(Number) || [245, 240, 232];
+    const [r, g, b] = color.match(/\d+/g)?.map(Number) || [45, 129, 247];
 
     // Phase boundaries
     const phaseHoldStart = fadeInDuration;

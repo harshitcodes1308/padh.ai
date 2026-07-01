@@ -131,7 +131,7 @@ export default function SmartPlannerPage() {
                                     clearPlans.mutate();
                                 }
                             }}
-                            className="btn-gold"
+                            className="btn-primary"
                             style={{ fontSize: 13, padding: "10px 20px", borderRadius: 10 }}
                         >
                             + New Timeline
@@ -369,7 +369,7 @@ export default function SmartPlannerPage() {
                     <button
                         onClick={handleGeneratePlan}
                         disabled={generatePlan.isPending}
-                        className="btn-gold"
+                        className="btn-primary"
                         style={{
                             width: "100%",
                             padding: "15px",

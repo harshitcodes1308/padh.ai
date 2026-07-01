@@ -105,7 +105,7 @@ export default function StrategyPage() {
                         </p>
                         <button
                             onClick={nextStep}
-                            className="btn-gold"
+                            className="btn-primary"
                             style={{
                                 ...typography.text,
                                 padding: '16px 32px',
@@ -166,7 +166,7 @@ export default function StrategyPage() {
                             <button
                                 onClick={nextStep}
                                 disabled={data.subjects.length === 0}
-                                className="btn-gold"
+                                className="btn-primary"
                                 style={{
                                     ...typography.text,
                                     padding: '12px 24px',
@@ -276,7 +276,7 @@ export default function StrategyPage() {
                             </button>
                             <button
                                 onClick={nextStep}
-                                className="btn-gold"
+                                className="btn-primary"
                                 style={{ ...typography.text, padding: '12px 24px' }}
                             >
                                 Next
@@ -349,7 +349,7 @@ export default function StrategyPage() {
                         </div>
                         <div style={{ marginTop: '32px', display: 'flex', gap: '12px' }}>
                             <button onClick={prevStep} className="btn-ghost" style={{ ...typography.text, padding: '12px 24px' }}>Back</button>
-                            <button onClick={nextStep} className="btn-gold" style={{ ...typography.text, padding: '12px 24px' }}>Next</button>
+                            <button onClick={nextStep} className="btn-primary" style={{ ...typography.text, padding: '12px 24px' }}>Next</button>
                         </div>
                     </div>
                 );
@@ -386,7 +386,7 @@ export default function StrategyPage() {
                         </div>
                         <div style={{ marginTop: '32px', display: 'flex', gap: '12px' }}>
                             <button onClick={prevStep} className="btn-ghost" style={{ ...typography.text, padding: '12px 24px' }}>Back</button>
-                            <button onClick={nextStep} className="btn-gold" style={{ ...typography.text, padding: '12px 24px' }}>Next</button>
+                            <button onClick={nextStep} className="btn-primary" style={{ ...typography.text, padding: '12px 24px' }}>Next</button>
                         </div>
                     </div>
                 );
@@ -459,7 +459,7 @@ export default function StrategyPage() {
                                 </button>
                                 <button
                                     onClick={() => navigator.clipboard.writeText(generatedStrategy || "")}
-                                    className="btn-gold"
+                                    className="btn-primary"
                                     style={{ ...typography.text, padding: '12px 24px', display: 'flex', alignItems: 'center', gap: '8px' }}
                                 >
                                     <Copy size={16} /> Copy

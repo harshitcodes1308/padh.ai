@@ -205,7 +205,7 @@ export default function AIAssistantPage() {
                                 setMode("chat");
                             }
                         }}
-                        className="btn-gold"
+                        className="btn-primary"
                         style={{ fontSize: 12, padding: "8px 16px", borderRadius: 8 }}
                     >
                         {mode === "chat" ? "⚡ Review" : "← Chat"}
@@ -440,7 +440,7 @@ export default function AIAssistantPage() {
                             <button
                                 onClick={handleSend}
                                 disabled={askMutation.isPending || !input.trim() || hitFreeLimit}
-                                className="btn-gold"
+                                className="btn-primary"
                                 style={{
                                     padding: "10px 18px",
                                     borderRadius: 8,
@@ -488,7 +488,7 @@ export default function AIAssistantPage() {
                         <button
                             onClick={() => generateFlashcards.mutate({ topics: flashcardInput, subject: subject || undefined })}
                             disabled={generateFlashcards.isPending || !flashcardInput.trim()}
-                            className="btn-gold"
+                            className="btn-primary"
                             style={{
                                 width: "100%",
                                 padding: "14px",
@@ -588,7 +588,7 @@ export default function AIAssistantPage() {
                                 {((feedbackState === "wrong" && attempts >= 1) || feedbackState === "correct") && (
                                     <button
                                         onClick={handleNextCard}
-                                        className="btn-gold"
+                                        className="btn-primary"
                                         style={{ float: "right", padding: "9px 20px", fontSize: 13, borderRadius: 8 }}
                                     >
                                         {currentCardIndex < flashcards.length - 1 ? "Next →" : "Finish"}
@@ -645,7 +645,7 @@ export default function AIAssistantPage() {
                         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                             <button
                                 onClick={() => { setMode("flashcards_setup"); setScore(0); setCurrentCardIndex(0); setFlashcards([]); }}
-                                className="btn-gold"
+                                className="btn-primary"
                                 style={{ padding: "13px", fontSize: 14 }}
                             >
                                 Start another review

@@ -5,117 +5,7 @@ import { trpc } from '@/lib/trpc/client';
 
 // ─── WebGL Shader Background ─────────────────────────────────
 
-const VERTEX_SHADER = `
-  attribute vec2 position;
-  void main() {
-    gl_Position = vec4(position, 0.0, 1.0);
-  }
-`;
-
-const FRAGMENT_SHADER = `
-  precision mediump float;
-  uniform float uTime;
-  uniform vec2 uResolution;
-
-  void main() {
-    vec2 uv = gl_FragCoord.xy / uResolution;
-    float t = uTime * 0.15;
-
-    // Subtle flowing gradient
-    float wave1 = sin(uv.x * 3.0 + t) * 0.5 + 0.5;
-    float wave2 = cos(uv.y * 2.5 + t * 0.7) * 0.5 + 0.5;
-    float wave3 = sin((uv.x + uv.y) * 2.0 + t * 0.5) * 0.5 + 0.5;
-
-    float blend = wave1 * 0.33 + wave2 * 0.33 + wave3 * 0.33;
-
-    // Dark base with very subtle cyan accents
-    vec3 base = vec3(0.039, 0.039, 0.059); // #0A0A0F
-    vec3 accent = vec3(0.0, 0.15, 0.2);    // Dark cyan tint
-    vec3 color = mix(base, base + accent * 0.15, blend * 0.4);
-
-    gl_FragColor = vec4(color, 1.0);
-  }
-`;
-
-function ShaderCanvas() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animRef = useRef<number>(0);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const gl = canvas.getContext('webgl');
-    if (!gl) return;
-
-    // Compile shaders
-    const vs = gl.createShader(gl.VERTEX_SHADER)!;
-    gl.shaderSource(vs, VERTEX_SHADER);
-    gl.compileShader(vs);
-
-    const fs = gl.createShader(gl.FRAGMENT_SHADER)!;
-    gl.shaderSource(fs, FRAGMENT_SHADER);
-    gl.compileShader(fs);
-
-    const program = gl.createProgram()!;
-    gl.attachShader(program, vs);
-    gl.attachShader(program, fs);
-    gl.linkProgram(program);
-    gl.useProgram(program);
-
-    // Full-screen quad
-    const buffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    gl.bufferData(
-      gl.ARRAY_BUFFER,
-      new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]),
-      gl.STATIC_DRAW
-    );
-
-    const posLoc = gl.getAttribLocation(program, 'position');
-    gl.enableVertexAttribArray(posLoc);
-    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
-
-    const timeLoc = gl.getUniformLocation(program, 'uTime');
-    const resLoc = gl.getUniformLocation(program, 'uResolution');
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      gl.viewport(0, 0, canvas.width, canvas.height);
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
-    const startTime = performance.now();
-    const render = () => {
-      const t = (performance.now() - startTime) / 1000;
-      gl.uniform1f(timeLoc, t);
-      gl.uniform2f(resLoc, canvas.width, canvas.height);
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      animRef.current = requestAnimationFrame(render);
-    };
-    render();
-
-    return () => {
-      cancelAnimationFrame(animRef.current);
-      window.removeEventListener('resize', resize);
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: 'absolute',
-        inset: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 0,
-      }}
-    />
-  );
-}
+// Shader removed for light theme
 
 // ─── Pricing Card ─────────────────────────────────────────────
 
@@ -160,21 +50,20 @@ function PricingCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: 'linear-gradient(135deg, rgba(26,26,36,0.85), rgba(17,17,24,0.7))',
+        background: '#FFFFFF',
         border: isPopular
-          ? '1.5px solid var(--accent-gold-border)'
-          : '1.5px solid var(--bg-border)',
+          ? '2px solid var(--brand-blue)'
+          : '1px solid var(--border)',
         borderRadius: '20px',
-        backdropFilter: 'blur(14px)',
         padding: '32px 28px',
         position: 'relative',
         overflow: 'hidden',
         transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
         boxShadow: isPopular
-          ? '0 0 32px rgba(0,212,255,0.15)'
+          ? '0 12px 32px rgba(45,129,247,0.12)'
           : hovered
-          ? '0 12px 40px rgba(0,0,0,0.4)'
-          : '0 4px 24px rgba(0,0,0,0.3)',
+          ? '0 12px 32px rgba(0,0,0,0.06)'
+          : '0 4px 12px rgba(0,0,0,0.03)',
         transition: 'all 350ms cubic-bezier(0.16,1,0.3,1)',
         display: 'flex',
         flexDirection: 'column',
@@ -186,9 +75,9 @@ function PricingCard({
             position: 'absolute',
             top: 0,
             right: 20,
-            background: 'var(--accent-gold)',
-            color: '#0A0A0F',
-            fontFamily: 'Coolvetica, sans-serif',
+            background: 'var(--brand-blue)',
+            color: '#FFFFFF',
+            fontFamily: 'var(--font-display)',
             letterSpacing: '0.08em',
             fontSize: '10px',
             fontWeight: 700,
@@ -204,12 +93,13 @@ function PricingCard({
       {/* Plan name */}
       <div
         style={{
-          fontFamily: 'Coolvetica, sans-serif',
+          fontFamily: 'var(--font-display)',
           fontSize: '13px',
           letterSpacing: '0.1em',
           textTransform: 'uppercase',
-          color: 'var(--text-muted)',
+          color: 'var(--text-secondary)',
           marginBottom: '16px',
+          fontWeight: 700,
         }}
       >
         {planName}
@@ -222,37 +112,37 @@ function PricingCard({
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 5,
             padding: '3px 10px', borderRadius: 100, marginBottom: 6,
-            background: 'rgba(34,197,94,0.08)',
-            border: '1px solid rgba(34,197,94,0.2)',
-            fontFamily: 'Helvetica Neue, sans-serif', fontSize: 11, fontWeight: 700,
-            color: '#22c55e', letterSpacing: '0.02em',
+            background: 'var(--green-light)',
+            border: '1px solid var(--green-border)',
+            fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600,
+            color: 'var(--brand-green)', letterSpacing: '0.02em',
           }}>
             🎉 {discountPct}% off via {creatorName}
           </div>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
             <span style={{
-              fontFamily: 'ScotchDisplay, serif', fontSize: 20,
+              fontFamily: 'var(--font-display)', fontSize: 20,
               color: 'var(--text-muted)', fontWeight: 700,
-              textDecoration: 'line-through', opacity: 0.5,
+              textDecoration: 'line-through', opacity: 0.6,
             }}>
               {priceSymbol}{price}
             </span>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 3 }}>
-              <span style={{ fontFamily: 'ScotchDisplay, serif', fontSize: 18, color: '#22c55e', fontWeight: 700 }}>{priceSymbol}</span>
-              <span style={{ fontFamily: 'ScotchDisplay, serif', fontSize: 48, color: '#22c55e', fontWeight: 700, lineHeight: 1 }}>{discountedPrice}</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 18, color: 'var(--brand-green)', fontWeight: 700 }}>{priceSymbol}</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 48, color: 'var(--brand-green)', fontWeight: 700, lineHeight: 1 }}>{discountedPrice}</span>
             </div>
           </div>
         </div>
       ) : (
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px', marginBottom: '4px' }}>
           <span style={{
-            fontFamily: 'ScotchDisplay, serif', fontSize: '20px',
+            fontFamily: 'var(--font-display)', fontSize: '20px',
             color: 'var(--text-primary)', fontWeight: 700,
           }}>
             {priceSymbol}
           </span>
           <span style={{
-            fontFamily: 'ScotchDisplay, serif', fontSize: '52px',
+            fontFamily: 'var(--font-display)', fontSize: '52px',
             color: 'var(--text-primary)', fontWeight: 700, lineHeight: 1,
           }}>
             {price}
@@ -263,7 +153,7 @@ function PricingCard({
       {/* Billing label */}
       <div
         style={{
-          fontFamily: 'Helvetica Neue, sans-serif',
+          fontFamily: 'var(--font-body)',
           fontSize: '13px',
           color: 'var(--text-muted)',
           marginBottom: savingsLabel ? '8px' : '12px',
@@ -276,17 +166,18 @@ function PricingCard({
       {savingsLabel && (
         <div
           style={{
-            fontFamily: 'Helvetica Neue, sans-serif',
+            fontFamily: 'var(--font-body)',
             fontSize: '12px',
-            color: 'var(--status-green)',
+            color: 'var(--brand-green)',
             marginBottom: '12px',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '4px',
-            background: 'rgba(62,207,142,0.08)',
+            background: 'var(--green-light)',
             padding: '3px 10px',
             borderRadius: '100px',
             width: 'fit-content',
+            fontWeight: 500,
           }}
         >
           {savingsLabel}
@@ -296,7 +187,7 @@ function PricingCard({
       {/* Description */}
       <p
         style={{
-          fontFamily: 'Helvetica Neue, sans-serif',
+          fontFamily: 'var(--font-body)',
           fontSize: '14px',
           color: 'var(--text-secondary)',
           lineHeight: 1.5,
@@ -310,7 +201,7 @@ function PricingCard({
       {/* Divider */}
       <div
         style={{
-          borderTop: '1px solid var(--bg-border)',
+          borderTop: '1px solid var(--border)',
           marginBottom: '16px',
         }}
       />
@@ -331,7 +222,7 @@ function PricingCard({
           <li
             key={f}
             style={{
-              fontFamily: 'Helvetica Neue, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '13px',
               color: 'var(--text-secondary)',
               display: 'flex',
@@ -339,8 +230,8 @@ function PricingCard({
               gap: '8px',
             }}
           >
-            <span style={{ color: 'var(--accent-gold)', flexShrink: 0, marginTop: '1px' }}>
-              ✦
+            <span style={{ color: 'var(--brand-blue)', flexShrink: 0, marginTop: '1px' }}>
+              ✓
             </span>
             {f}
           </li>
@@ -354,35 +245,38 @@ function PricingCard({
           width: '100%',
           padding: '13px 24px',
           borderRadius: '100px',
-          fontFamily: 'Coolvetica, sans-serif',
+          fontFamily: 'var(--font-display)',
           fontSize: '15px',
           letterSpacing: '0.03em',
           cursor: 'pointer',
           transition: 'all 200ms ease',
           ...(buttonVariant === 'primary'
             ? {
-                background: 'var(--accent-gold)',
-                color: '#0A0A0F',
+                background: 'var(--brand-blue)',
+                color: '#FFFFFF',
                 border: 'none',
                 fontWeight: 600,
               }
             : {
                 background: 'transparent',
-                border: '1.5px solid var(--bg-border)',
-                color: 'var(--text-secondary)',
+                border: '1px solid var(--border)',
+                color: 'var(--text-primary)',
+                fontWeight: 500,
               }),
         }}
         onMouseOver={(e) => {
           if (buttonVariant === 'primary') {
             e.currentTarget.style.filter = 'brightness(1.1)';
           } else {
-            e.currentTarget.style.borderColor = 'var(--accent-gold-border)';
+            e.currentTarget.style.borderColor = 'var(--brand-blue)';
+            e.currentTarget.style.color = 'var(--brand-blue)';
           }
         }}
         onMouseOut={(e) => {
           e.currentTarget.style.filter = 'none';
           if (buttonVariant !== 'primary') {
-            e.currentTarget.style.borderColor = 'var(--bg-border)';
+            e.currentTarget.style.borderColor = 'var(--border)';
+            e.currentTarget.style.color = 'var(--text-primary)';
           }
         }}
       >
@@ -495,9 +389,9 @@ export default function AnimatedGlassyPricing({
         justifyContent: 'center',
         overflow: 'auto',
         zIndex: 1000,
+        background: '#FFFFFF',
       }}
     >
-      <ShaderCanvas />
 
       <div
         style={{
@@ -512,7 +406,7 @@ export default function AnimatedGlassyPricing({
         {/* Title */}
         <h1
           style={{
-            fontFamily: 'ScotchDisplay, serif',
+            fontFamily: 'var(--font-display)',
             fontSize: isMobile ? '32px' : '48px',
             fontWeight: 700,
             color: 'var(--text-primary)',
@@ -521,16 +415,16 @@ export default function AnimatedGlassyPricing({
             lineHeight: 1.1,
           }}
         >
-          Choose your <span style={{ color: 'var(--accent-gold)' }}>plan</span>
+          Choose your <span style={{ color: 'var(--brand-blue)' }}>plan</span>
           {userName ? `, ${userName.split(' ')[0]}` : ''}
         </h1>
 
         {/* Subtitle */}
         <p
           style={{
-            fontFamily: 'Helvetica Neue, sans-serif',
+            fontFamily: 'var(--font-body)',
             fontSize: isMobile ? '14px' : '16px',
-            color: 'var(--text-muted)',
+            color: 'var(--text-secondary)',
             textAlign: 'center',
             marginBottom: isMobile ? '32px' : '48px',
           }}
@@ -574,11 +468,11 @@ export default function AnimatedGlassyPricing({
         {/* Footer */}
         <p
           style={{
-            fontFamily: 'Helvetica Neue, sans-serif',
+            fontFamily: 'var(--font-body)',
             fontSize: '11px',
             color: 'var(--text-muted)',
             textAlign: 'center',
-            opacity: 0.5,
+            opacity: 0.8,
           }}
         >
           Secure payment via Razorpay. Cancel anytime.
@@ -603,21 +497,20 @@ export default function AnimatedGlassyPricing({
         >
           <div
             style={{
-              background: 'linear-gradient(135deg, rgba(26,26,36,0.95), rgba(17,17,24,0.9))',
-              border: '1.5px solid var(--accent-gold-border)',
+              background: '#FFFFFF',
+              border: '1px solid var(--border)',
               borderRadius: '20px',
-              backdropFilter: 'blur(14px)',
               padding: isMobile ? '28px 22px' : '36px 32px',
               maxWidth: '420px',
               width: isMobile ? 'calc(100% - 32px)' : '100%',
-              boxShadow: '0 0 40px rgba(0,212,255,0.12)',
+              boxShadow: '0 12px 40px rgba(0,0,0,0.1)',
               animation: 'slideInUp 0.4s ease-out both',
             }}
           >
             {/* Header */}
             <div
               style={{
-                fontFamily: 'ScotchDisplay, serif',
+                fontFamily: 'var(--font-display)',
                 fontSize: '24px',
                 fontWeight: 700,
                 color: 'var(--text-primary)',
@@ -625,13 +518,13 @@ export default function AnimatedGlassyPricing({
                 marginBottom: '6px',
               }}
             >
-              Domin8 <span style={{ color: 'var(--accent-gold)' }}>Pro</span>
+              Domin8 <span style={{ color: 'var(--brand-blue)' }}>Pro</span>
             </div>
             <p
               style={{
-                fontFamily: 'Helvetica Neue, sans-serif',
+                fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: 'var(--text-muted)',
+                color: 'var(--text-secondary)',
                 textAlign: 'center',
                 marginBottom: '24px',
                 lineHeight: 1.5,
@@ -647,12 +540,12 @@ export default function AnimatedGlassyPricing({
               }}>
                 <div style={{
                   width: 36, height: 36, borderRadius: '50%',
-                  border: '3px solid rgba(255,255,255,0.08)',
-                  borderTopColor: 'var(--accent-gold)',
+                  border: '3px solid var(--border)',
+                  borderTopColor: 'var(--brand-blue)',
                   animation: 'spin360 0.7s linear infinite',
                 }} />
                 <div style={{
-                  fontFamily: 'Helvetica Neue, sans-serif',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '14px', color: 'var(--text-muted)',
                 }}>
                   Activating your access...
@@ -673,11 +566,11 @@ export default function AnimatedGlassyPricing({
                     padding: '14px 16px',
                     borderRadius: '12px',
                     border: domin8Error
-                      ? '1.5px solid rgba(239,68,68,0.5)'
-                      : '1.5px solid var(--bg-border)',
-                    background: 'rgba(255,255,255,0.04)',
+                      ? '1px solid #ef4444'
+                      : '1px solid var(--border)',
+                    background: '#F9FAFB',
                     color: 'var(--text-primary)',
-                    fontFamily: 'Coolvetica, sans-serif',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '16px',
                     letterSpacing: '0.08em',
                     outline: 'none',
@@ -686,10 +579,10 @@ export default function AnimatedGlassyPricing({
                     textAlign: 'center',
                   }}
                   onFocus={(e) => {
-                    if (!domin8Error) e.currentTarget.style.borderColor = 'var(--accent-gold-border)';
+                    if (!domin8Error) e.currentTarget.style.borderColor = 'var(--brand-blue)';
                   }}
                   onBlur={(e) => {
-                    if (!domin8Error) e.currentTarget.style.borderColor = 'var(--bg-border)';
+                    if (!domin8Error) e.currentTarget.style.borderColor = 'var(--border)';
                   }}
                 />
 
@@ -697,7 +590,7 @@ export default function AnimatedGlassyPricing({
                 {domin8Error && (
                   <div
                     style={{
-                      fontFamily: 'Helvetica Neue, sans-serif',
+                      fontFamily: 'var(--font-body)',
                       fontSize: '12px',
                       color: '#ef4444',
                       textAlign: 'center',
@@ -715,12 +608,12 @@ export default function AnimatedGlassyPricing({
                     width: '100%',
                     padding: '13px 24px',
                     borderRadius: '100px',
-                    fontFamily: 'Coolvetica, sans-serif',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '15px',
                     letterSpacing: '0.03em',
                     cursor: 'pointer',
-                    background: 'var(--accent-gold)',
-                    color: '#0A0A0F',
+                    background: 'var(--brand-blue)',
+                    color: '#FFFFFF',
                     border: 'none',
                     fontWeight: 600,
                     marginTop: '18px',
@@ -740,9 +633,9 @@ export default function AnimatedGlassyPricing({
                     padding: '10px',
                     background: 'transparent',
                     border: 'none',
-                    fontFamily: 'Helvetica Neue, sans-serif',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '12px',
-                    color: 'var(--text-muted)',
+                    color: 'var(--text-secondary)',
                     cursor: 'pointer',
                     marginTop: '10px',
                   }}

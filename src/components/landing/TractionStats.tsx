@@ -2,20 +2,19 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger, prefersReducedMotion } from "./useScrollReveal";
-import ElegantShapes from "./ElegantShapes";
 
 interface Stat {
   value: number;
   display: (n: number) => string;
   label: string;
-  suffix?: string;
 }
 
+// Updated for Gaurav Suthar / PADH.AI context
 const STATS: Stat[] = [
-  { value: 3064, display: (n) => Math.round(n).toLocaleString("en-IN"), label: "Total signups" },
-  { value: 572, display: (n) => Math.round(n).toLocaleString("en-IN"), label: "Paid users" },
-  { value: 56628, display: (n) => "₹" + Math.round(n).toLocaleString("en-IN"), label: "Revenue, under 2 months" },
-  { value: 18.7, display: (n) => n.toFixed(1) + "%", label: "Free-to-paid conversion" },
+  { value: 1000000, display: (n) => (n >= 1000000 ? "1M+" : Math.round(n / 1000) + "K+"), label: "YouTube subscribers" },
+  { value: 500, display: (n) => Math.round(n) + "+", label: "Videos published" },
+  { value: 100, display: (n) => Math.round(n) + "%", label: "Scored in 10th CBSE boards" },
+  { value: 10, display: (n) => Math.round(n) + "+", label: "Years teaching CBSE" },
 ];
 
 export default function TractionStats() {
@@ -45,89 +44,56 @@ export default function TractionStats() {
           onUpdate: () => { el.textContent = s.display(counter.v); },
         });
       });
-      // Whole card row fades in as one unit — no per-card stagger/opacity that
-      // could leave a card pale or misaligned mid-scroll.
       gsap.fromTo(
         ".sa-stat-grid",
-        { opacity: 0, y: 24 },
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.7,
+          duration: 0.6,
           ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 82%", once: true },
         }
       );
     }, sectionRef);
 
-    // Bento border glow follows cursor
-    const root = sectionRef.current;
-    let onMove: ((e: MouseEvent) => void) | null = null;
-    if (root && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-      onMove = (e: MouseEvent) => {
-        const card = (e.target as HTMLElement).closest<HTMLElement>(".sa-bento");
-        if (!card || !root.contains(card)) return;
-        const r = card.getBoundingClientRect();
-        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-        card.style.setProperty("--my", `${e.clientY - r.top}px`);
-      };
-      root.addEventListener("mousemove", onMove);
-    }
-
-    return () => {
-      ctx.revert();
-      if (root && onMove) root.removeEventListener("mousemove", onMove);
-    };
+    return () => { ctx.revert(); };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      style={{ position: "relative", zIndex: 1, padding: "clamp(80px, 12vw, 140px) 24px", overflow: "hidden" }}
+      style={{ position: "relative", zIndex: 1, padding: "clamp(80px, 12vw, 140px) 24px", background: "var(--bg-base)" }}
     >
-      {/* Ambient floating shapes backdrop */}
-      <ElegantShapes />
-      {/* soft fade so the shapes never compete with the stat cards */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          zIndex: 0,
-          pointerEvents: "none",
-          background: "linear-gradient(to bottom, var(--bg-base) 0%, transparent 18%, transparent 82%, var(--bg-base) 100%)",
-        }}
-      />
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div style={{ marginBottom: 56, maxWidth: 720 }}>
-          <div className="sa-eyebrow" style={{ marginBottom: 20 }}>The proof</div>
+          <div className="sa-eyebrow" style={{ marginBottom: 18 }}>The proof</div>
           <h2
-            className="sa-grad-text"
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(32px, 6vw, 64px)",
-              letterSpacing: "-0.035em",
+              fontSize: "clamp(28px, 5.5vw, 58px)",
+              letterSpacing: "-0.03em",
               margin: "0 0 14px",
-              lineHeight: 1.02,
+              lineHeight: 1.05,
               fontWeight: 800,
+              color: "var(--text-primary)",
             }}
           >
-            Real traction.
-            <br />
-            Zero paid ads.
+            Built by a real{" "}
+            <span style={{ color: "var(--brand-blue)" }}>CBSE topper.</span>
           </h2>
           <p
             style={{
-              fontFamily: "var(--font-tagline)",
-              fontStyle: "italic",
-              fontSize: "clamp(16px, 2.4vw, 21px)",
-              color: "var(--text-muted)",
-              maxWidth: 620,
+              fontFamily: "var(--font-body)",
+              fontSize: "clamp(15px, 2.2vw, 19px)",
+              color: "var(--text-secondary)",
+              maxWidth: 580,
               margin: 0,
-              lineHeight: 1.5,
+              lineHeight: 1.6,
+              fontWeight: 400,
             }}
           >
-            We launched with one YouTube audience. Here&apos;s what organic growth looked like in{" "}
-            <span style={{ color: "var(--accent-gold)", fontStyle: "normal", fontWeight: 600 }}>under 2 months</span>.
+            Gaurav Suthar scored 100% in his 10th CBSE boards and has spent years teaching what actually works — not theory, real board strategy.
           </p>
         </div>
 
@@ -137,29 +103,29 @@ export default function TractionStats() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 16,
-            marginBottom: 36,
+            gap: 14,
+            marginBottom: 28,
             alignItems: "stretch",
           }}
         >
           {STATS.map((s, i) => {
-            const featured = i === 2; // Revenue, under 2 months — the headline metric
+            const featured = i === 2; // 100% score — headline stat
             return (
               <div
                 key={i}
                 className={`sa-bento sa-stat-card${featured ? " sa-stat-featured" : ""}`}
-                style={{ padding: "34px 28px", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}
+                style={{ padding: "28px 24px", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}
               >
                 <div
                   ref={(el) => { numRefs.current[i] = el; }}
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "clamp(38px, 5vw, 56px)",
-                    color: "var(--accent-gold)",
-                    fontWeight: 700,
+                    fontSize: "clamp(34px, 4.5vw, 50px)",
+                    color: "var(--brand-blue)",
+                    fontWeight: 800,
                     letterSpacing: "-0.03em",
                     lineHeight: 1,
-                    marginBottom: 14,
+                    marginBottom: 12,
                   }}
                 >
                   0
@@ -169,8 +135,9 @@ export default function TractionStats() {
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: 13,
-                    color: "var(--text-muted)",
-                    letterSpacing: "0.02em",
+                    color: "var(--text-secondary)",
+                    letterSpacing: "0.01em",
+                    fontWeight: 500,
                   }}
                 >
                   {s.label}
@@ -180,27 +147,24 @@ export default function TractionStats() {
           })}
         </div>
 
-        {/* Comparison strip */}
+        {/* Trust strip */}
         <div
           className="sa-bento"
           style={{
-            padding: "22px 30px",
+            padding: "20px 28px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: 14,
+            gap: 12,
             flexWrap: "wrap",
             textAlign: "center",
           }}
         >
           <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6 }}>
-            Industry average free-to-paid sits at{" "}
-            <span style={{ color: "var(--text-muted)", textDecoration: "line-through", opacity: 0.7 }}>
-              2–5%
-            </span>
-            . We converted at{" "}
-            <span className="chip-green" style={{ fontSize: 13, fontWeight: 700 }}>18.7%</span>
-            {" "}— with <span style={{ color: "var(--accent-gold)", fontWeight: 600 }}>₹0</span> on ads.
+            Gaurav runs{" "}
+            <span style={{ color: "var(--text-primary)", fontWeight: 600 }}>youtube.com/@GauravSuthar</span>
+            {" "}— one of India's most trusted CBSE channels.{" "}
+            <span className="chip-green" style={{ fontSize: 12, fontWeight: 600 }}>100% in boards</span>
           </span>
         </div>
       </div>

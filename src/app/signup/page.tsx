@@ -377,7 +377,7 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={signupMutation.isPending}
-              className="btn-gold"
+              className="btn-primary"
               style={{
                 width: "100%",
                 marginTop: 8,

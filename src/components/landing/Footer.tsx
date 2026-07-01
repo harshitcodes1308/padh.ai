@@ -1,94 +1,83 @@
 "use client";
 
-const POLICY_LINKS = [
-  { label: "Privacy Policy", href: "/policies/privacy-policy" },
-  { label: "Terms & Conditions", href: "/policies/terms-and-conditions" },
-  { label: "Refund Policy", href: "/policies/refund-policy" },
-  { label: "Delivery Policy", href: "/policies/delivery-policy" },
-  { label: "Contact Us", href: "/policies/contact-us" },
-];
-
-const INSTAGRAM_URL =
-  "https://www.instagram.com/savioursai?igsh=MTRqcGRlZWc0MmJjeg%3D%3D&utm_source=qr";
-
-function linkStyle(): React.CSSProperties {
-  return {
-    fontFamily: "var(--font-body)",
-    fontSize: 13,
-    color: "var(--text-muted)",
-    textDecoration: "none",
-    transition: "color 0.2s ease",
-  };
-}
-
 export default function Footer() {
-  const hoverIn = (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = "var(--text-primary)");
-  const hoverOut = (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = "var(--text-muted)");
-
   return (
-    <footer
-      style={{
-        padding: "52px 24px 40px",
-        borderTop: "1px solid var(--bg-border)",
-        background: "var(--bg-base)",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1100,
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: "column",
-          gap: 28,
-        }}
-      >
-        {/* Top row: brand + account links */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <svg width="22" height="22" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M24 4L44 18L24 44L4 18L24 4Z" fill="none" stroke="var(--accent-gold)" strokeWidth="1.5" />
-              <path d="M24 4L44 18L24 32L4 18L24 4Z" fill="rgba(0,212,255,0.12)" />
-            </svg>
-            <span style={{ fontFamily: "var(--font-display)", fontSize: 13, letterSpacing: "0.18em", color: "var(--text-primary)", textTransform: "uppercase" }}>
-              Saviours AI
-            </span>
+    <footer style={{ background: "#FFFFFF", padding: "80px 24px 40px", borderTop: "1px solid var(--border)" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 64 }}>
+        
+        {/* Top: Multi-column layout */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 40 }}>
+          
+          {/* Column 1: Logo & Tagline */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, gridColumn: "1 / -1", '@media (min-width: 768px)': { gridColumn: "span 2" } } as any}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <div style={{
+                width: 28, height: 28, borderRadius: 7, background: "var(--brand-blue)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+              }}>
+                <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, color: "#FFFFFF", letterSpacing: "-0.02em", lineHeight: 1 }}>P</span>
+              </div>
+              <span style={{ fontFamily: "var(--font-display)", fontSize: 18, letterSpacing: "-0.01em", color: "var(--text-primary)", fontWeight: 700 }}>
+                PADH.AI
+              </span>
+            </div>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.5, margin: 0, maxWidth: 300 }}>
+              Your ultimate academic OS for CBSE success. Built by the topper, for the next toppers.
+            </p>
           </div>
 
-          <div style={{ display: "flex", gap: 22, flexWrap: "wrap", alignItems: "center" }}>
-            <a href="/login" style={linkStyle()} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>Sign In</a>
-            <a href="/signup" style={linkStyle()} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>Start Free</a>
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
+          {/* Column 2: Company */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <h4 style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>Company</h4>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>About Us</a>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Careers</a>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Privacy Policy</a>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Terms & Conditions</a>
+            </div>
+          </div>
+
+          {/* Column 3: Help & Support */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <h4 style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>Help & Support</h4>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Contact Us</a>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>FAQs</a>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Refund Policy</a>
+            </div>
+          </div>
+
+          {/* Column 4: Popular Categories */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <h4 style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>Popular Categories</h4>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>CBSE Class 10</a>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Math Notes</a>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Science Notes</a>
+              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Previous Year Papers</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom: Socials and Copyright */}
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: 24, paddingTop: 24, borderTop: "1px solid var(--border)" }}>
+          <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-muted)" }}>
+            © {new Date().getFullYear()} PADH.AI. All rights reserved.
+          </div>
+          <div style={{ display: "flex", gap: 16 }}>
+            <a 
+              href="https://youtube.com/@GauravSuthar" 
+              target="_blank" 
               rel="noopener noreferrer"
-              style={{ ...linkStyle(), display: "inline-flex", alignItems: "center", gap: 6 }}
-              onMouseEnter={hoverIn}
-              onMouseLeave={hoverOut}
+              aria-label="YouTube"
+              style={{ color: "var(--text-secondary)", transition: "color 0.2s ease" }}
+              onMouseEnter={(e) => e.currentTarget.style.color = "#FF0000"}
+              onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-secondary)"}
             >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" strokeWidth="1.6" />
-                <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.6" />
-                <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21.58 6.4c-.23-.86-.91-1.54-1.77-1.77C18.25 4.2 12 4.2 12 4.2s-6.25 0-7.81.43c-.86.23-1.54.91-1.77 1.77C2 7.97 2 12 2 12s0 4.03.42 5.6c.23.86.91 1.54 1.77 1.77 1.56.43 7.81.43 7.81.43s6.25 0 7.81-.43c.86-.23 1.54-.91 1.77-1.77.42-1.57.42-5.6.42-5.6s0-4.03-.42-5.6zM9.75 15.02v-7.62l6.75 3.81-6.75 3.81z"/>
               </svg>
-              Instagram
             </a>
           </div>
-        </div>
-
-        {/* Policy links row */}
-        <div style={{ display: "flex", gap: 20, flexWrap: "wrap", paddingTop: 22, borderTop: "1px solid var(--bg-border)" }}>
-          {POLICY_LINKS.map((p) => (
-            <a key={p.href} href={p.href} style={linkStyle()} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
-              {p.label}
-            </a>
-          ))}
-        </div>
-
-        {/* Bottom row */}
-        <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <span style={{ fontFamily: "var(--font-tagline)", fontStyle: "italic", fontSize: 12, color: "var(--text-muted)", opacity: 0.7 }}>
-            Saviours AI · 2026
-          </span>
         </div>
       </div>
     </footer>

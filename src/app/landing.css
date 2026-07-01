@@ -1,150 +1,91 @@
 /* ============================================================
-   SAVIOURS AI — LANDING PAGE
+   PADH.AI — LANDING PAGE
    Scoped keyframes + utilities for the public marketing surface.
    Reuses design tokens from globals.css. No parallel system.
    ============================================================ */
 
-/* ---- Static grid backdrop (subtle, fixed, replaces the grain) ---- */
-.sa-grid-bg {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.018) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.018) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 90%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 90%);
-}
-
-/* ---- Bento card ---- */
+/* ---- Flat bento card (was sa-glass-bento, now unified) ---- */
 .sa-bento {
   position: relative;
-  background: var(--bg-surface);
-  border: 1px solid var(--bg-border);
-  border-radius: 20px;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 14px;
   overflow: hidden;
-  transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1), background 0.35s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1);
 }
 .sa-bento:hover {
-  border-color: var(--bg-border-light);
-  transform: translateY(-3px);
+  border-color: #C0CDD8;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
-.sa-bento::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  padding: 1px;
-  background: radial-gradient(120px circle at var(--mx, 50%) var(--my, 0%), rgba(0,212,255,0.35), transparent 70%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-.sa-bento:hover::after { opacity: 1; }
 
-/* ---- Glass bento (transparent, lets a shader/bg show through) ---- */
+/* sa-glass-bento is now an alias of sa-bento — keeps existing className usage working */
 .sa-glass-bento {
   position: relative;
-  background: rgba(19, 19, 31, 0.55);
-  backdrop-filter: blur(12px) saturate(1.1);
-  -webkit-backdrop-filter: blur(12px) saturate(1.1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 14px;
   overflow: hidden;
-  transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1), background 0.35s ease, box-shadow 0.35s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1);
 }
 .sa-glass-bento:hover {
-  border-color: var(--accent-gold-border);
-  transform: translateY(-3px);
-  background: rgba(19, 19, 31, 0.62);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 28px rgba(0,212,255,0.08);
+  border-color: rgba(45, 129, 247, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
-/* dotted texture that fades in on hover */
-.sa-glass-bento .sa-bento-dots {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  background-image: radial-gradient(circle at center, rgba(0,212,255,0.10) 1px, transparent 1px);
-  background-size: 6px 6px;
-  pointer-events: none;
-}
-.sa-glass-bento:hover .sa-bento-dots { opacity: 1; }
+
+/* bento-dots: kept in markup but invisible (light bg = no effect) */
+.sa-glass-bento .sa-bento-dots { display: none; }
+
+/* bento-cta: always visible on light bg */
 .sa-glass-bento .sa-bento-cta {
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.sa-glass-bento:hover .sa-bento-cta {
-  opacity: 1;
+  opacity: 0.7;
   transform: translateX(0);
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
+.sa-glass-bento:hover .sa-bento-cta { opacity: 1; }
 
-/* ---- Gradient text (matches hero glass-text palette, no shimmer) ---- */
+/* ---- Gradient text — subtle blue accent ---- */
 .sa-grad-text {
-  background: linear-gradient(120deg, var(--text-primary) 0%, #BEE9FF 35%, var(--accent-gold) 55%, var(--text-primary) 100%);
-  background-size: 100% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* ---- Glass shimmer headline (re-themed from the pixel-hero effect) ---- */
-@keyframes saShimmer {
-  0%   { background-position: 200% center; }
-  100% { background-position: 0% center; }
-}
-.sa-glass-text {
-  color: transparent;
-  background: linear-gradient(
-    135deg,
-    var(--text-primary) 0%,
-    rgba(245, 240, 232, 0.42) 22%,
-    rgba(0, 212, 255, 0.6) 45%,
-    var(--text-primary) 55%,
-    rgba(0, 212, 255, 0.35) 74%,
-    var(--text-primary) 100%
-  );
+  background: linear-gradient(120deg, var(--text-primary) 0%, var(--brand-blue) 60%, var(--text-primary) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-stroke: 1px rgba(245, 240, 232, 0.12);
-  filter: drop-shadow(0 14px 32px rgba(0,0,0,0.5)) drop-shadow(0 4px 10px rgba(0,212,255,0.14));
-  animation: saShimmer 9s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .sa-glass-text { animation: none; background-position: 50% center; }
+  color: transparent;
 }
 
-/* ---- Pixel canvas masking ---- */
+/* ---- Plain heading text (replaces sa-glass-text) ---- */
+.sa-glass-text {
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+}
+
+/* ---- Pixel canvas wrapper (kept in markup but hidden) ---- */
 .sa-pixel-wrap {
-  mask-image: radial-gradient(ellipse 70% 70% at 50% 45%, #000 35%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 45%, #000 35%, transparent 80%);
+  display: none;
 }
 
-/* ---- Eyebrow label (editorial small caps) ---- */
+/* ---- Eyebrow label ---- */
 .sa-eyebrow {
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--brand-blue);
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 .sa-eyebrow::before {
   content: "";
-  width: 22px;
-  height: 1px;
-  background: var(--accent-gold);
-  opacity: 0.6;
+  width: 20px;
+  height: 2px;
+  background: var(--brand-blue);
+  border-radius: 1px;
+  opacity: 0.5;
 }
 
 /* ---- Marquee infinite scroll ---- */
@@ -161,83 +102,41 @@
 .sa-marquee-track.reverse { animation-direction: reverse; }
 .sa-marquee-wrap:hover .sa-marquee-track { animation-play-state: paused; }
 
-/* ---- Custom cursor ---- */
-.sa-cursor-dot,
-.sa-cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 10000;
-  border-radius: 50%;
-  mix-blend-mode: difference;
-  will-change: transform;
-}
-.sa-cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: #00D4FF;
-  transition: transform 0.08s linear, opacity 0.2s ease;
-}
-.sa-cursor-ring {
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid rgba(0, 212, 255, 0.6);
-  transition: width 0.25s cubic-bezier(0.16,1,0.3,1), height 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s ease, transform 0.12s ease-out;
-}
-.sa-cursor-ring.hovering {
-  width: 56px;
-  height: 56px;
-  border-color: rgba(0, 212, 255, 0.9);
-  background: rgba(0, 212, 255, 0.06);
-}
-@media (hover: none), (pointer: coarse) {
-  .sa-cursor-dot, .sa-cursor-ring { display: none !important; }
-}
-
-/* ---- Diamond stroke trace ---- */
-@keyframes saDrawStroke {
-  to { stroke-dashoffset: 0; }
-}
-
-/* ---- Reveal primitives (GSAP-driven, these are the reduced-motion fallback) ---- */
+/* ---- Reveal primitives (GSAP-driven) ---- */
 .sa-reveal { opacity: 0; transform: translateY(28px); }
-.sa-reveal-ready { opacity: 1 !important; transform: none !important; transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.sa-reveal-ready {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
 
-/* When the user prefers reduced motion, show everything immediately, kill heavy motion */
 @media (prefers-reduced-motion: reduce) {
   .sa-reveal { opacity: 1 !important; transform: none !important; }
   .sa-marquee-track { animation: none !important; }
-  .sa-cursor-dot, .sa-cursor-ring { display: none !important; }
 }
 
 /* ---- Browser frame chrome ---- */
 .sa-browser-frame {
-  border: 1px solid var(--bg-border-light);
-  border-radius: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
   overflow: hidden;
   background: var(--bg-surface);
-  box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 0 60px rgba(0,212,255,0.04);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
 /* ---- Nav scroll state ---- */
 .sa-nav {
-  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, padding 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
 }
 .sa-nav.scrolled {
-  background: rgba(19, 19, 31, 0.72);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--bg-border);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
 /* ---- Magnetic button reset ---- */
 .sa-magnetic { will-change: transform; display: inline-block; }
-
-/* ---- Hide native cursor on desktop when custom cursor active ---- */
-@media (hover: hover) and (pointer: fine) {
-  .sa-cursor-active, .sa-cursor-active * { cursor: none !important; }
-}
 
 /* ---- Horizontal video rail ---- */
 .sa-vrail {
@@ -280,31 +179,35 @@
   .sa-vmarquee-track { animation: none !important; }
 }
 
-/* ---- Traction stat cards: hover-focus (pop one, blur the rest) ---- */
+/* ---- Stat cards — flat hover focus ---- */
 .sa-stat-card {
-  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), filter 0.4s ease,
-              opacity 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
 }
-/* The featured (revenue) card — highlighted by default */
+
+/* Featured stat card (revenue / headline metric) */
 .sa-stat-featured {
-  border-color: var(--accent-gold-border);
-  box-shadow: 0 0 34px rgba(0,212,255,0.14);
-  background: rgba(0,212,255,0.04);
+  border-color: rgba(45, 129, 247, 0.25);
+  background: rgba(45, 129, 247, 0.03);
 }
-.sa-stat-featured .sa-stat-label { color: var(--accent-gold); font-weight: 600; }
+.sa-stat-featured .sa-stat-label { color: var(--brand-blue); font-weight: 600; }
 
 @media (hover: hover) and (pointer: fine) {
   .sa-stat-grid:hover .sa-stat-card {
-    filter: blur(3px) saturate(0.85);
-    opacity: 0.4;
-    transform: scale(0.97);
+    opacity: 0.65;
+    transform: scale(0.98);
   }
   .sa-stat-grid .sa-stat-card:hover {
-    filter: none;
     opacity: 1;
-    transform: translateY(-10px) scale(1.05);
-    border-color: var(--accent-gold-border);
-    box-shadow: 0 22px 56px rgba(0,0,0,0.5), 0 0 44px rgba(0,212,255,0.22);
+    transform: translateY(-6px) scale(1.03);
+    border-color: rgba(45, 129, 247, 0.30);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
     z-index: 3;
   }
+}
+
+/* ---- DrawStroke animation (preserved for diamond SVG) ---- */
+@keyframes saDrawStroke {
+  to { stroke-dashoffset: 0; }
 }

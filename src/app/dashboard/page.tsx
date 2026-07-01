@@ -92,7 +92,7 @@ function RingStatCard({
             display: "flex", alignItems: "center", gap: 14,
         }}>
             <svg width={size} height={size} style={{ flexShrink: 0, transform: "rotate(-90deg)" }}>
-                <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth={3.5} />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(0,0,0,0.07)" strokeWidth={3.5} />
                 <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke={color} strokeWidth={3.5}
                     strokeLinecap="round" strokeDasharray={`${dash} ${circ}`}
                     style={{ transition: "stroke-dasharray 1s cubic-bezier(0.4,0,0.2,1)" }} />
@@ -237,18 +237,7 @@ export default function DashboardPage() {
                 boxSizing: "border-box", position: "relative", overflow: "hidden",
             }}
         >
-            {/* Ambient gradient orb */}
-            {!isMobile && (
-                <div style={{
-                    position: "fixed",
-                    left: mousePos.x, top: mousePos.y,
-                    width: 500, height: 500, borderRadius: "50%",
-                    background: "radial-gradient(circle, rgba(0,212,255,0.03) 0%, transparent 70%)",
-                    transform: "translate(-50%, -50%)",
-                    transition: "left 1s ease-out, top 1s ease-out",
-                    pointerEvents: "none", zIndex: 0,
-                }} />
-            )}
+            {/* No ambient orb on light theme */}
 
             <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", zIndex: 1 }}>
 
@@ -307,8 +296,8 @@ export default function DashboardPage() {
                                 fontFamily: "var(--font-body)",
                                 fontSize: 12,
                                 fontWeight: 700,
-                                color: "#0A0A0F",
-                                background: "var(--accent-gold)",
+                                color: "#FFFFFF",
+                                background: "var(--brand-blue)",
                                 border: "none",
                                 borderRadius: 8,
                                 padding: "10px 18px",
@@ -358,15 +347,12 @@ export default function DashboardPage() {
                                 <span style={{ color: 'var(--accent-gold)' }}>{profile?.name}</span>
                             </ShimmerText>
                         </h1>
-                        {/* Premium tagline in ScotchDisplay */}
                         <div style={{
-                            fontFamily: "var(--font-tagline)",
+                            fontFamily: "var(--font-body)",
                             fontSize: isMobile ? 14 : 16,
                             fontWeight: 400,
-                            fontStyle: "italic",
-                            color: "rgba(180, 175, 200, 0.9)",
+                            color: "var(--text-secondary)",
                             marginBottom: 12,
-                            textShadow: "0 0 20px rgba(0, 212, 255, 0.15)",
                         }}>
                             {getMotivationalTagline()}
                         </div>
@@ -379,9 +365,9 @@ export default function DashboardPage() {
                             </span>
                             <span style={{
                                 fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
-                                color: "var(--accent-gold)",
-                                background: "rgba(0,212,255,0.08)",
-                                border: "1px solid rgba(0,212,255,0.18)",
+                                color: "var(--brand-blue)",
+                                background: "rgba(45,129,247,0.08)",
+                                border: "1px solid rgba(45,129,247,0.20)",
                                 borderRadius: 100, padding: "3px 10px",
                                 letterSpacing: "0.1em", textTransform: "uppercase",
                             }}>
@@ -392,9 +378,9 @@ export default function DashboardPage() {
                                     onClick={() => router.push("/pricing")}
                                     style={{
                                         fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
-                                        color: "#0A0A0F",
-                                        background: "var(--accent-gold)",
-                                        border: "1px solid var(--accent-gold)",
+                                        color: "#FFFFFF",
+                                        background: "var(--brand-blue)",
+                                        border: "1px solid var(--brand-blue)",
                                         borderRadius: 100, padding: "3px 12px",
                                         letterSpacing: "0.1em", textTransform: "uppercase",
                                         cursor: "pointer",
@@ -447,9 +433,9 @@ export default function DashboardPage() {
                                 onClick={() => setStatsMode(mode)}
                                 style={{
                                     padding: "4px 14px", borderRadius: 100,
-                                    border: active ? "1px solid var(--accent-gold)" : "1px solid var(--bg-border)",
-                                    background: active ? "var(--accent-gold-glow)" : "transparent",
-                                    color: active ? "var(--accent-gold)" : "var(--text-muted)",
+                                    border: active ? "1px solid var(--brand-blue)" : "1px solid var(--border)",
+                                    background: active ? "rgba(45,129,247,0.08)" : "transparent",
+                                    color: active ? "var(--brand-blue)" : "var(--text-muted)",
                                     fontFamily: "var(--font-body)", fontSize: 11,
                                     fontWeight: active ? 700 : 400,
                                     cursor: "pointer",
@@ -532,11 +518,11 @@ export default function DashboardPage() {
                                         : "none",
                                 }}
                             >
-                                {/* Hover shimmer */}
+                                {/* Hover shimmer — light version */}
                                 <div style={{
                                     position: "absolute", inset: 0,
                                     background: hoveredCard === card.path
-                                        ? "linear-gradient(135deg, rgba(0,212,255,0.05) 0%, transparent 50%)"
+                                        ? "rgba(45,129,247,0.03)"
                                         : "transparent",
                                     transition: "background 0.3s ease",
                                     pointerEvents: "none",
@@ -546,9 +532,9 @@ export default function DashboardPage() {
                                     {/* Icon */}
                                     <div style={{
                                         fontFamily: "var(--font-display)", fontSize: isMobile ? 22 : 26,
-                                        color: "var(--accent-gold)", marginBottom: 14, lineHeight: 1,
-                                        opacity: hoveredCard === card.path ? 0.9 : 0.5,
-                                        transition: "opacity 0.3s ease",
+                                        color: hoveredCard === card.path ? "var(--brand-blue)" : "var(--text-muted)",
+                                        marginBottom: 14, lineHeight: 1,
+                                        transition: "color 0.3s ease",
                                     }}>
                                         {card.icon}
                                     </div>
@@ -572,13 +558,12 @@ export default function DashboardPage() {
                                     </div>
 
                                     <div style={{
-                                        fontFamily: "var(--font-tagline)",
-                                        fontSize: 11, fontWeight: 400, fontStyle: "italic",
-                                        color: hoveredCard === card.path ? "var(--accent-gold)" : "rgba(180, 175, 200, 0.65)",
-                                        opacity: hoveredCard === card.path ? 0.9 : 1,
+                                        fontFamily: "var(--font-body)",
+                                        fontSize: 11, fontWeight: 400,
+                                        color: hoveredCard === card.path ? "var(--brand-blue)" : "var(--text-muted)",
+                                        opacity: 0.7,
                                         transition: "all 0.3s ease",
                                         marginBottom: 14,
-                                        textShadow: hoveredCard === card.path ? "0 0 12px rgba(0, 212, 255, 0.2)" : "none",
                                     }}>
                                         {card.tagline}
                                     </div>
@@ -586,11 +571,12 @@ export default function DashboardPage() {
                                     {/* Arrow */}
                                     <div style={{
                                         fontFamily: "var(--font-body)", fontSize: 12,
-                                        color: "var(--accent-gold)",
+                                        color: "var(--brand-blue)",
                                         letterSpacing: "0.02em",
-                                        opacity: hoveredCard === card.path ? 1 : 0.5,
+                                        opacity: hoveredCard === card.path ? 1 : 0.4,
                                         transform: hoveredCard === card.path ? "translateX(4px)" : "translateX(0)",
                                         transition: "all 0.3s ease",
+                                        fontWeight: 600,
                                     }}>
                                         Open →
                                     </div>
@@ -600,7 +586,7 @@ export default function DashboardPage() {
                                 <div style={{
                                     position: "absolute", bottom: 0, left: 0, right: 0,
                                     height: hoveredCard === card.path ? 2 : 0,
-                                    background: "linear-gradient(90deg, transparent, var(--accent-gold), transparent)",
+                                    background: "linear-gradient(90deg, transparent, var(--brand-blue), transparent)",
                                     transition: "height 0.3s ease",
                                 }} />
                             </div>
@@ -608,19 +594,18 @@ export default function DashboardPage() {
                     </div>
                 </div>
 
-                {/* ── Bottom Tagline ── */}
                 <div style={{
                     textAlign: "center",
                     marginTop: isMobile ? 40 : 56,
                     paddingBottom: 20,
                 }}>
                     <div style={{
-                        fontFamily: "var(--font-tagline)",
-                        fontSize: 13, fontWeight: 400, fontStyle: "italic",
-                        color: "rgba(180, 175, 200, 0.45)",
-                        textShadow: "0 0 16px rgba(0, 212, 255, 0.08)",
+                        fontFamily: "var(--font-body)",
+                        fontSize: 12,
+                        color: "var(--text-muted)",
+                        opacity: 0.5,
                     }}>
-                        Saviours AI — Where preparation meets precision.
+                        PADH.AI · CBSE Board Prep by Gaurav Suthar
                     </div>
                 </div>
             </div>

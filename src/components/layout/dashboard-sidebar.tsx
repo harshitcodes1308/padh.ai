@@ -31,12 +31,27 @@ function isVisible(href: string): boolean {
   return FEATURE_FLAGS[flag] === true;
 }
 
-const DiamondLogo = ({ size = 28 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
-    <path d="M24 4L44 18L24 44L4 18L24 4Z" fill="none" stroke="var(--accent-gold)" strokeWidth="1.5"/>
-    <path d="M24 4L44 18L24 32L4 18L24 4Z" fill="var(--accent-gold-glow)"/>
-    <path d="M4 18L24 32L44 18" stroke="var(--accent-gold)" strokeWidth="1" opacity="0.5"/>
-  </svg>
+// PADH.AI logo mark — clean blue square with P
+const PadhLogo = ({ size = 28 }: { size?: number }) => (
+  <div style={{
+    width: size,
+    height: size,
+    borderRadius: Math.round(size * 0.25),
+    background: "var(--brand-blue)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexShrink: 0,
+  }}>
+    <span style={{
+      fontFamily: "var(--font-display)",
+      fontWeight: 800,
+      fontSize: Math.round(size * 0.55),
+      color: "#FFFFFF",
+      lineHeight: 1,
+      letterSpacing: "-0.02em",
+    }}>P</span>
+  </div>
 );
 
 type NavItem = { icon: string; label: string; href: string };
@@ -50,7 +65,7 @@ const ACCOUNT_GROUP: NavGroup = {
   ],
 };
 
-// ── Free users: only accessible items, paid features shown with lock icon ──────
+// ── Free users ──────────────────────────────────────────────────────────────
 const FREE_NAV_GROUPS: NavGroup[] = [
   {
     label: "HOME",
@@ -87,7 +102,7 @@ const FREE_NAV_GROUPS: NavGroup[] = [
   ACCOUNT_GROUP,
 ];
 
-// ── Paid users: everything properly categorised, no "FREE" label ───────────────
+// ── Paid users ──────────────────────────────────────────────────────────────
 const PAID_NAV_GROUPS: NavGroup[] = [
   {
     label: "HOME",
@@ -172,87 +187,81 @@ export default function DashboardSidebar({
     router.push(href);
   };
 
-  // IMPORTANT: This is a JSX variable, NOT a component defined inside render.
-  // Defining it as `const SidebarContent = () => (...)` would cause React to
-  // unmount/remount the <aside> on every re-render (new component identity),
-  // which resets the nav scroll position — making it impossible to scroll
-  // down to Profile/Policies.
+  // IMPORTANT: JSX variable, not a component — prevents remount on re-render
   const sidebarJSX = (
     <aside style={{
       width: 240,
       height: "100vh",
-      background: "rgba(10,10,18,0.85)",
-      backdropFilter: "blur(20px)",
-      WebkitBackdropFilter: "blur(20px)",
-      borderRight: "1px solid rgba(255,255,255,0.06)",
+      background: "#FFFFFF",
+      borderRight: "1px solid var(--border)",
       display: "flex",
       flexDirection: "column",
       overflow: "hidden",
     }}>
-      {/* Scoped CSS for hover effects — avoids state-driven re-renders */}
+      {/* Scoped CSS for hover effects */}
       <style>{`
         .sb-nav-item { transition: all 0.15s ease; }
         .sb-nav-item:hover:not(.sb-nav-active) {
-          background: rgba(255,255,255,0.03) !important;
+          background: rgba(0,0,0,0.03) !important;
           color: var(--text-primary) !important;
         }
       `}</style>
 
       {/* Logo */}
       <div style={{
-        padding: "20px 20px 16px",
-        borderBottom: "1px solid var(--bg-border)",
+        padding: "18px 20px 14px",
+        borderBottom: "1px solid var(--border)",
         flexShrink: 0,
         display: "flex",
         alignItems: "center",
-        gap: 12,
+        gap: 10,
       }}>
-        <DiamondLogo size={28} />
+        <PadhLogo size={28} />
         <div>
           <div style={{
             fontFamily: "var(--font-display)",
             fontSize: 15,
+            fontWeight: 700,
             color: "var(--text-primary)",
-            letterSpacing: "0.08em",
+            letterSpacing: "-0.01em",
             lineHeight: 1.1,
-            textTransform: "uppercase",
           }}>
-            Saviours AI
+            PADH.AI
           </div>
           <div style={{
-            fontFamily: "var(--font-tagline)",
+            fontFamily: "var(--font-body)",
             fontSize: 9,
-            fontWeight: 400,
-            fontStyle: "italic",
-            color: "rgba(180, 175, 200, 0.6)",
-            marginTop: 3,
+            fontWeight: 500,
+            color: "var(--text-muted)",
+            marginTop: 2,
+            letterSpacing: "0.04em",
           }}>
-            Class X · 2027 Edition
+            CBSE Board Prep
           </div>
         </div>
       </div>
 
       {/* User section */}
       <div style={{
-        padding: "12px 14px",
+        padding: "10px 12px",
         margin: "10px 10px 0",
         borderRadius: 10,
-        background: "var(--bg-base)",
-        border: "1px solid var(--bg-border)",
+        background: "var(--bg-surface)",
+        border: "1px solid var(--border)",
         display: "flex",
         alignItems: "center",
         gap: 10,
         flexShrink: 0,
       }}>
         <div style={{
-          width: 36, height: 36, minWidth: 36,
+          width: 34, height: 34, minWidth: 34,
           borderRadius: 8,
-          background: "rgba(0,212,255,0.12)",
-          border: "1px solid rgba(0,212,255,0.2)",
+          background: "rgba(45, 129, 247, 0.10)",
+          border: "1px solid rgba(45, 129, 247, 0.20)",
           display: "flex", alignItems: "center", justifyContent: "center",
           fontFamily: "var(--font-body)",
           fontSize: 12, fontWeight: 700,
-          color: "var(--accent-gold)",
+          color: "var(--brand-blue)",
           flexShrink: 0,
         }}>
           {initials}
@@ -276,7 +285,7 @@ export default function DashboardSidebar({
             {userEmail || ""}
           </div>
         </div>
-        {/* Pulsing online dot */}
+        {/* Online dot */}
         <div style={{ position: "relative", flexShrink: 0 }}>
           <div style={{
             width: 8, height: 8, borderRadius: "50%",
@@ -285,14 +294,13 @@ export default function DashboardSidebar({
           <div style={{
             position: "absolute", inset: -3,
             borderRadius: "50%",
-            background: "rgba(34,197,94,0.25)",
+            background: "rgba(34,197,94,0.20)",
             animation: "pulse 2s ease-in-out infinite",
           }} />
         </div>
       </div>
 
-      {/* Nav — minHeight:0 lets the flex child shrink below content size so
-           overflowY:auto actually triggers instead of clipping items silently */}
+      {/* Nav */}
       <nav style={{ flex: 1, minHeight: 0, overflowY: "auto", padding: "8px 10px 12px" }}>
         {(isPaid ? PAID_NAV_GROUPS : FREE_NAV_GROUPS).map((group) => {
           const visibleItems = group.items.filter(item => isVisible(item.href));
@@ -306,7 +314,7 @@ export default function DashboardSidebar({
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
                 color: "var(--text-muted)",
-                opacity: 0.5,
+                opacity: 0.6,
               }}>
                 {group.label}
               </div>
@@ -319,15 +327,15 @@ export default function DashboardSidebar({
                     className={`sb-nav-item${isActive ? " sb-nav-active" : ""}`}
                     onClick={() => handleNavigation(item.href)}
                     style={{
-                      display: "flex", alignItems: "center", gap: 10,
+                      display: "flex", alignItems: "center", gap: 9,
                       width: "100%",
                       padding: "8px 10px",
                       marginBottom: 1,
                       borderRadius: 8,
-                      background: isActive ? "var(--accent-gold-glow)" : "transparent",
-                      color: isActive ? "var(--accent-gold)" : "var(--text-muted)",
+                      background: isActive ? "rgba(45, 129, 247, 0.08)" : "transparent",
+                      color: isActive ? "var(--brand-blue)" : "var(--text-secondary)",
                       border: "none",
-                      borderLeft: isActive ? "2px solid var(--accent-gold)" : "2px solid transparent",
+                      borderLeft: isActive ? "2px solid var(--brand-blue)" : "2px solid transparent",
                       cursor: "pointer",
                       textAlign: "left",
                       fontFamily: "var(--font-body)",
@@ -339,10 +347,10 @@ export default function DashboardSidebar({
                   >
                     <span style={{
                       fontSize: 13,
-                      color: isActive ? "var(--accent-gold)" : "var(--text-muted)",
+                      color: isActive ? "var(--brand-blue)" : "var(--text-muted)",
                       minWidth: 16,
                       textAlign: "center",
-                      opacity: isActive ? 1 : 0.5,
+                      opacity: isActive ? 1 : 0.55,
                       flexShrink: 0,
                     }}>
                       {item.icon}
@@ -364,7 +372,7 @@ export default function DashboardSidebar({
       {/* Bottom plan badge */}
       <div style={{
         padding: "12px 14px",
-        borderTop: "1px solid var(--bg-border)",
+        borderTop: "1px solid var(--border)",
         flexShrink: 0,
       }}>
         <div style={{
@@ -374,17 +382,17 @@ export default function DashboardSidebar({
           padding: "8px 12px",
           borderRadius: 8,
           background: isPaid
-            ? "rgba(0,212,255,0.06)"
-            : "var(--bg-base)",
+            ? "rgba(45, 129, 247, 0.06)"
+            : "var(--bg-surface)",
           border: isPaid
-            ? "1px solid rgba(0,212,255,0.15)"
-            : "1px solid var(--bg-border)",
+            ? "1px solid rgba(45, 129, 247, 0.18)"
+            : "1px solid var(--border)",
         }}>
           <div>
             <div style={{
               fontFamily: "var(--font-body)",
               fontSize: 11, fontWeight: 600,
-              color: isPaid ? "var(--accent-gold)" : "var(--text-muted)",
+              color: isPaid ? "var(--brand-blue)" : "var(--text-muted)",
               letterSpacing: "0.02em",
             }}>
               {planLabel}
@@ -401,38 +409,38 @@ export default function DashboardSidebar({
             )}
           </div>
           {isPaid ? (
-            <span style={{ fontSize: 14 }}>◈</span>
+            <span style={{ fontSize: 14, color: "var(--brand-blue)" }}>◈</span>
           ) : (
             <button
               onClick={() => router.push("/dashboard/profile")}
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: 10, fontWeight: 600,
-                color: "var(--accent-gold)",
-                background: "rgba(0,212,255,0.1)",
-                border: "1px solid rgba(0,212,255,0.2)",
+                color: "#FFFFFF",
+                background: "var(--brand-blue)",
+                border: "none",
                 borderRadius: 6,
-                padding: "4px 8px",
+                padding: "4px 10px",
                 cursor: "pointer",
-                letterSpacing: "0.04em",
+                letterSpacing: "0.02em",
               }}
             >
               Upgrade
             </button>
           )}
         </div>
-        {/* Premium tagline */}
+        {/* PADH.AI tagline */}
         <div style={{
-          fontFamily: "var(--font-tagline)",
+          fontFamily: "var(--font-body)",
           fontSize: 9,
           fontWeight: 400,
-          fontStyle: "italic",
-          color: "rgba(180, 175, 200, 0.45)",
+          color: "var(--text-muted)",
           textAlign: "center",
           marginTop: 10,
-          letterSpacing: "0.02em",
+          letterSpacing: "0.03em",
+          opacity: 0.6,
         }}>
-          Where preparation meets precision.
+          PADH.AI · CBSE Board Prep by Gaurav Suthar
         </div>
       </div>
     </aside>
@@ -461,16 +469,16 @@ export default function DashboardSidebar({
           position: "fixed",
           top: 14, left: 14, zIndex: 200,
           width: 42, height: 42,
-          background: isOpen ? "var(--accent-gold)" : "rgba(17,17,24,0.9)",
-          backdropFilter: "blur(16px)",
-          border: `1px solid ${isOpen ? "var(--accent-gold)" : "var(--bg-border)"}`,
+          background: isOpen ? "var(--brand-blue)" : "#FFFFFF",
+          border: `1px solid ${isOpen ? "var(--brand-blue)" : "var(--border)"}`,
           borderRadius: 10,
           display: "flex",
           alignItems: "center", justifyContent: "center",
           cursor: "pointer",
-          color: isOpen ? "var(--bg-base)" : "var(--text-primary)",
+          color: isOpen ? "#FFFFFF" : "var(--text-primary)",
           fontSize: 16,
           transition: "all 0.2s ease",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
         }}
       >
         {isOpen ? "✕" : "☰"}
@@ -483,8 +491,7 @@ export default function DashboardSidebar({
           onClick={() => setIsOpen(false)}
           style={{
             position: "fixed", inset: 0,
-            background: "rgba(0,0,0,0.65)",
-            backdropFilter: "blur(4px)",
+            background: "rgba(0,0,0,0.40)",
             zIndex: 140,
           }}
         />
@@ -512,10 +519,8 @@ export default function DashboardSidebar({
           position: "fixed",
           bottom: 0, left: 0, right: 0,
           height: 64,
-          background: "rgba(10,10,18,0.92)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          borderTop: "1px solid var(--bg-border)",
+          background: "rgba(255, 255, 255, 0.96)",
+          borderTop: "1px solid var(--border)",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-around",
@@ -540,7 +545,7 @@ export default function DashboardSidebar({
                 background: "transparent",
                 border: "none",
                 cursor: "pointer",
-                color: isActive ? "var(--accent-gold)" : "var(--text-muted)",
+                color: isActive ? "var(--brand-blue)" : "var(--text-muted)",
                 transition: "color 0.15s ease",
                 position: "relative",
               }}
@@ -562,7 +567,7 @@ export default function DashboardSidebar({
                   transform: "translateX(-50%)",
                   width: 4, height: 4,
                   borderRadius: "50%",
-                  background: "var(--accent-gold)",
+                  background: "var(--brand-blue)",
                 }} />
               )}
             </button>

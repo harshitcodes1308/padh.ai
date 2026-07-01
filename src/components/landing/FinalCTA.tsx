@@ -11,8 +11,8 @@ export default function FinalCTA() {
       ref={ref}
       style={{
         padding: "clamp(110px, 18vw, 200px) 24px",
-        background: "var(--bg-surface)",
-        borderTop: "1px solid var(--bg-border)",
+        background: "var(--bg-elevated)",
+        borderTop: "1px solid var(--border)",
         textAlign: "center",
         position: "relative",
         zIndex: 1,
@@ -22,21 +22,22 @@ export default function FinalCTA() {
         <p
           className="sa-reveal"
           style={{
-            fontFamily: "var(--font-tagline)",
-            fontStyle: "italic",
-            fontSize: "clamp(24px, 5vw, 44px)",
-            lineHeight: 1.25,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
+            fontSize: "clamp(24px, 5vw, 48px)",
+            lineHeight: 1.2,
             color: "var(--text-primary)",
             margin: "0 0 36px",
-            letterSpacing: "-0.01em",
+            letterSpacing: "-0.02em",
           }}
         >
-          Boards don&apos;t wait. Neither should your prep.
+          Boards don&apos;t wait.{" "}
+          <span style={{ color: "var(--brand-blue)" }}>Neither should your prep.</span>
         </p>
         <div className="sa-reveal">
           <MagneticButton
             href="/signup"
-            className="btn-gold"
+            className="btn-primary"
             style={{
               fontSize: 16,
               padding: "17px 40px",

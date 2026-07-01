@@ -54,8 +54,6 @@ function PriceCard({
   const isRight = index === 2;
   const isCenter = index === 1;
 
-  // Scroll-linked 3D fan: flat row at progress 0 → fanned at progress 1.
-  // Reverses automatically when scrolling back up because it's tied to scroll.
   const x = useTransform(progress, [0, 1], [0, isLeft ? 28 : isRight ? -28 : 0]);
   const y = useTransform(progress, [0, 1], [44, isCenter ? -24 : 0]);
   const scale = useTransform(progress, [0, 1], [0.95, isCenter ? 1.05 : 0.93]);
@@ -75,9 +73,11 @@ function PriceCard({
         flexDirection: "column",
         position: "relative",
         borderRadius: "var(--radius-lg)",
-        background: "var(--bg-surface)",
-        border: plan.popular ? "1.5px solid var(--accent-gold-border)" : "1px solid var(--bg-border)",
-        boxShadow: plan.popular ? "0 0 48px rgba(0,212,255,0.12)" : "0 12px 40px rgba(0,0,0,0.3)",
+        background: "#FFFFFF",
+        border: plan.popular ? "2px solid var(--brand-blue)" : "1px solid var(--border)",
+        boxShadow: plan.popular
+          ? "0 8px 32px rgba(45, 129, 247, 0.12)"
+          : "0 2px 8px rgba(0, 0, 0, 0.04)",
         willChange: "transform",
       }}
     >
@@ -90,30 +90,31 @@ function PriceCard({
             left: "50%",
             transform: "translateX(-50%)",
             fontSize: 10,
-            letterSpacing: "0.1em",
+            letterSpacing: "0.08em",
             textTransform: "uppercase",
+            fontWeight: 700,
           }}
         >
           Best value
         </span>
       )}
 
-      <div style={{ fontFamily: "var(--font-body)", fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: 14 }}>
+      <div style={{ fontFamily: "var(--font-body)", fontSize: 12, letterSpacing: "0.10em", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: 12, fontWeight: 600 }}>
         {plan.name}
       </div>
-      <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 22 }}>
-        <span style={{ fontFamily: "var(--font-display)", fontSize: 46, color: "var(--text-primary)", fontWeight: 700, lineHeight: 1 }}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 5, marginBottom: 22 }}>
+        <span style={{ fontFamily: "var(--font-display)", fontSize: 44, color: "var(--text-primary)", fontWeight: 800, lineHeight: 1, letterSpacing: "-0.03em" }}>
           {plan.price}
         </span>
-        <span style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-muted)" }}>{plan.period}</span>
+        <span style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-muted)", fontWeight: 500 }}>{plan.period}</span>
       </div>
 
-      <div style={{ borderTop: "1px solid var(--bg-border)", margin: "0 0 18px" }} />
+      <div style={{ borderTop: "1px solid var(--border)", margin: "0 0 18px" }} />
 
-      <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: 11, flex: 1 }}>
+      <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
         {plan.features.map((f) => (
-          <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: 9, fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-secondary)" }}>
-            <span style={{ color: "var(--accent-gold)", flexShrink: 0, marginTop: 1 }}>✦</span>
+          <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-secondary)", fontWeight: 400 }}>
+            <span style={{ color: "var(--brand-green)", flexShrink: 0, marginTop: 1, fontWeight: 700 }}>✓</span>
             {f}
           </li>
         ))}
@@ -121,12 +122,12 @@ function PriceCard({
 
       <MagneticButton
         href={plan.href}
-        className={plan.popular ? "btn-gold" : "btn-ghost"}
+        className={plan.popular ? "btn-primary" : "btn-ghost"}
         style={{
           width: "100%",
           textAlign: "center",
           fontSize: 14,
-          padding: "13px 24px",
+          padding: "12px 24px",
           textDecoration: "none",
           display: "inline-flex",
           alignItems: "center",
@@ -160,28 +161,46 @@ export default function Pricing() {
     target: gridRef,
     offset: ["start end", "center center"],
   });
-  // spring-smoothed so the fan glides instead of snapping with the scroll
   const progress = useSpring(scrollYProgress, { stiffness: 64, damping: 22, mass: 0.5 });
 
   return (
-    <section ref={ref} style={{ padding: "clamp(80px, 12vw, 140px) 24px", position: "relative", zIndex: 1 }}>
+    <section
+      ref={ref}
+      style={{
+        padding: "clamp(80px, 12vw, 140px) 24px",
+        position: "relative",
+        zIndex: 1,
+        background: "#FFFFFF",
+      }}
+    >
       <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div style={{ marginBottom: 56, maxWidth: 720 }}>
-          <div className="sa-eyebrow sa-reveal" style={{ marginBottom: 20 }}>The plans</div>
+          <div className="sa-eyebrow sa-reveal" style={{ marginBottom: 18 }}>The plans</div>
           <h2
-            className="sa-grad-text sa-reveal"
+            className="sa-reveal"
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(32px, 6vw, 64px)",
-              letterSpacing: "-0.035em",
+              fontSize: "clamp(28px, 5.5vw, 58px)",
+              letterSpacing: "-0.03em",
               margin: "0 0 14px",
-              lineHeight: 1.02,
+              lineHeight: 1.05,
               fontWeight: 800,
+              color: "var(--text-primary)",
             }}
           >
-            Proven. Affordable.
+            Proven.{" "}
+            <span style={{ color: "var(--brand-blue)" }}>Affordable.</span>
           </h2>
-          <p className="sa-reveal" style={{ fontFamily: "var(--font-tagline)", fontStyle: "italic", fontSize: "clamp(16px, 2.4vw, 21px)", color: "var(--text-muted)", margin: 0 }}>
+          <p
+            className="sa-reveal"
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "clamp(15px, 2.2vw, 19px)",
+              color: "var(--text-secondary)",
+              margin: 0,
+              fontWeight: 400,
+            }}
+          >
             Start free. Upgrade when you&apos;re ready to go all in.
           </p>
         </div>
@@ -201,7 +220,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p style={{ textAlign: "center", marginTop: 40, fontFamily: "var(--font-body)", fontSize: 11, color: "var(--text-muted)", opacity: 0.6 }}>
+        <p style={{ textAlign: "center", marginTop: 36, fontFamily: "var(--font-body)", fontSize: 12, color: "var(--text-muted)", opacity: 0.7, fontWeight: 400 }}>
           Secure payment via Razorpay. Cancel anytime.
         </p>
       </div>

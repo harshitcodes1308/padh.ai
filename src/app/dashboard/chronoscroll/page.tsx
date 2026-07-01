@@ -421,7 +421,7 @@ export default function ChronoScrollPage() {
                         }}>
                             {!showRecall ? (
                                 <button
-                                    className="btn-gold"
+                                    className="btn-primary"
                                     onClick={() => setShowRecall(true)}
                                     style={{
                                         padding: "12px 22px",

@@ -217,7 +217,7 @@ export default function FocusPage() {
                     <button
                         onClick={() => setState('SETUP_TIME')}
                         disabled={!subject}
-                        className="btn-gold"
+                        className="btn-primary"
                         style={{
                             width: '100%',
                             padding: '16px',
@@ -278,7 +278,7 @@ export default function FocusPage() {
                     
                     <div style={{ display: 'flex', gap: '12px' }}>
                         <button onClick={() => setState('SETUP_CONTEXT')} className="btn-ghost" style={{ flex: 1, padding: '16px' }}>Back</button>
-                        <button onClick={() => setState('SETUP_STYLE')} className="btn-gold" style={{ flex: 2, padding: '16px', fontWeight: 600 }}>Continue</button>
+                        <button onClick={() => setState('SETUP_STYLE')} className="btn-primary" style={{ flex: 2, padding: '16px', fontWeight: 600 }}>Continue</button>
                     </div>
                 </>
             )}
@@ -334,7 +334,7 @@ export default function FocusPage() {
                     
                     <div style={{ display: 'flex', gap: '12px' }}>
                         <button onClick={() => setState('SETUP_STYLE')} className="btn-ghost" style={{ flex: 1, padding: '16px' }}>Back</button>
-                        <button onClick={() => setState('PREVIEW_PLAN')} className="btn-gold" style={{ flex: 2, padding: '16px', fontWeight: 600 }}>Continue</button>
+                        <button onClick={() => setState('PREVIEW_PLAN')} className="btn-primary" style={{ flex: 2, padding: '16px', fontWeight: 600 }}>Continue</button>
                     </div>
                 </>
             )}
@@ -366,7 +366,7 @@ export default function FocusPage() {
                     
                     <div style={{ display: 'flex', gap: '12px' }}>
                         <button onClick={() => setState('SETUP_STYLE')} className="btn-ghost" style={{ flex: 1, padding: '16px' }}>Change Plan</button>
-                        <button onClick={handleStartSession} className="btn-gold" style={{ flex: 2, padding: '16px', fontWeight: 600, fontSize: '18px' }}>🚀 Start Session</button>
+                        <button onClick={handleStartSession} className="btn-primary" style={{ flex: 2, padding: '16px', fontWeight: 600, fontSize: '18px' }}>🚀 Start Session</button>
                     </div>
                 </>
             )}
@@ -443,7 +443,7 @@ export default function FocusPage() {
                         />
                     </div>
                     
-                    <button onClick={handleFinishSession} className="btn-gold" style={{ width: '100%', padding: '16px', fontWeight: 600, fontSize: '16px' }}>
+                    <button onClick={handleFinishSession} className="btn-primary" style={{ width: '100%', padding: '16px', fontWeight: 600, fontSize: '16px' }}>
                         Finish Session
                     </button>
                 </>
@@ -471,7 +471,7 @@ export default function FocusPage() {
                         </div>
                     </div>
                     
-                    <button onClick={() => router.push('/dashboard')} className="btn-gold" style={{ width: '100%', padding: '16px', fontWeight: 600, fontSize: '16px' }}>
+                    <button onClick={() => router.push('/dashboard')} className="btn-primary" style={{ width: '100%', padding: '16px', fontWeight: 600, fontSize: '16px' }}>
                         Back to Dashboard
                     </button>
                 </>

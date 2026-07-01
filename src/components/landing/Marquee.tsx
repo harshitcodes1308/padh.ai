@@ -24,7 +24,7 @@ export default function Marquee({ items, reverse = false }: MarqueeProps) {
           >
             {it.label}
           </span>
-          <span style={{ color: "var(--accent-gold)", fontSize: "clamp(14px, 2vw, 22px)", opacity: 0.7 }}>
+          <span style={{ color: "var(--brand-blue)", fontSize: "clamp(14px, 2vw, 22px)", opacity: 0.4 }}>
             ·
           </span>
         </span>
@@ -38,9 +38,9 @@ export default function Marquee({ items, reverse = false }: MarqueeProps) {
       style={{
         position: "relative",
         overflow: "hidden",
-        borderTop: "1px solid var(--bg-border)",
-        borderBottom: "1px solid var(--bg-border)",
-        padding: "26px 0",
+        borderTop: "1px solid var(--border)",
+        borderBottom: "1px solid var(--border)",
+        padding: "24px 0",
         background: "var(--bg-base)",
       }}
     >

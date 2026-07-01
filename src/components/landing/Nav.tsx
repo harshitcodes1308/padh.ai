@@ -3,15 +3,6 @@
 import { useEffect, useState } from "react";
 import MagneticButton from "./MagneticButton";
 
-function DiamondMark({ size = 24 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <path d="M24 4L44 18L24 44L4 18L24 4Z" fill="none" stroke="var(--accent-gold)" strokeWidth="1.5" />
-      <path d="M4 18L24 32L44 18" stroke="var(--accent-gold)" strokeWidth="1" opacity="0.55" />
-    </svg>
-  );
-}
-
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -40,61 +31,81 @@ export default function Nav() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: scrolled ? "12px 24px" : "22px 24px",
+          padding: scrolled ? "12px 24px" : "20px 24px",
           transition: "padding 0.3s ease",
         }}
       >
         {/* Wordmark */}
         <a
           href="#top"
-          style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none" }}
+          style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}
         >
-          <DiamondMark />
+          {/* Logo mark — blue square with P */}
+          <div style={{
+            width: 28,
+            height: 28,
+            borderRadius: 7,
+            background: "var(--brand-blue)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+          }}>
+            <span style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 800,
+              fontSize: 15,
+              color: "#FFFFFF",
+              letterSpacing: "-0.02em",
+              lineHeight: 1,
+            }}>P</span>
+          </div>
           <span
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: 13,
-              letterSpacing: "0.26em",
+              fontSize: 16,
+              letterSpacing: "-0.01em",
               color: "var(--text-primary)",
-              textTransform: "uppercase",
-              fontWeight: 600,
+              fontWeight: 700,
             }}
           >
-            Saviours
+            PADH.AI
           </span>
         </a>
 
         {/* Right side */}
-        <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <a
             href="/login"
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: 13,
+              fontSize: 14,
               color: "var(--text-secondary)",
               textDecoration: "none",
-              letterSpacing: "0.02em",
+              letterSpacing: "0.01em",
+              fontWeight: 500,
               transition: "color 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand-blue)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
           >
-            Sign In
+            Log in
           </a>
           <MagneticButton
             href="/signup"
-            className="btn-gold"
+            className="btn-primary"
             style={{
-              fontSize: 13,
-              padding: "9px 20px",
+              fontSize: 14,
+              padding: "10px 24px",
+              borderRadius: "100px", /* Pill shape */
               textDecoration: "none",
               display: "inline-flex",
               alignItems: "center",
             }}
             strength={0.25}
-            ariaLabel="Start free"
+            ariaLabel="Join for free"
           >
-            Start Free
+            Join for free
           </MagneticButton>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function TimelineViewPage() {
                 <h2 style={{ color: "#FFFFFF", marginBottom: "16px" }}>No Study Plan Yet</h2>
                 <button
                     onClick={() => router.push("/dashboard/planner")}
-                    className="btn-gold"
+                    className="btn-primary"
                     style={{
                         padding: "12px 24px",
                         fontWeight: "600",
