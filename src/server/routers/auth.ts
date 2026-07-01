@@ -93,10 +93,11 @@ export const authRouter = createTRPCRouter({
                         role: user.role,
                     },
                 };
-            } catch (error: any) {
+            } catch (error: unknown) {
                 // Catch Prisma unique constraint errors
-                if (error.code === 'P2002') {
-                    const field = error.meta?.target?.[0];
+                const prismaError = error as { code?: string; meta?: { target?: string[] } };
+                if (prismaError.code === 'P2002') {
+                    const field = prismaError.meta?.target?.[0];
                     if (field === 'phone') {
                         throw new TRPCError({
                             code: "CONFLICT",
@@ -236,6 +237,9 @@ export const authRouter = createTRPCRouter({
      */
     getSession: publicProcedure.query(async ({ ctx }) => {
         if (!ctx.session?.user) return ctx.session;
+        if (!process.env.DATABASE_URL && process.env.NODE_ENV !== "production") {
+            return ctx.session;
+        }
 
         // Re-read the user's current plan data from the database
         const freshUser = await ctx.prisma.user.findUnique({

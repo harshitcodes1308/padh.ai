@@ -9,6 +9,21 @@ export async function POST(_request: NextRequest) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
+        if (!process.env.DATABASE_URL && process.env.NODE_ENV !== 'production') {
+            const refreshedUser = {
+                ...session.user,
+                onboardingComplete: true,
+            };
+            const newToken = await createToken(refreshedUser);
+            const response = NextResponse.json({ success: true });
+
+            const headers = new Headers();
+            await setSessionCookie(newToken, false, headers);
+            headers.forEach((value, key) => response.headers.set(key, value));
+
+            return response;
+        }
+
         const updatedUser = await prisma.user.update({
             where: { id: session.user.id },
             data: { onboardingComplete: true },

@@ -181,7 +181,7 @@ export default function SignupPage() {
               fontWeight: 400,
               fontStyle: "italic",
             }}>
-              "The students who start early, finish strong."
+              &quot;The students who start early, finish strong.&quot;
             </div>
             <div style={{
               marginTop: 24,
@@ -233,7 +233,7 @@ export default function SignupPage() {
             color: "var(--text-primary)",
             marginBottom: 6,
           }}>
-            Let's get you started.
+            Let&apos;s get you started.
           </h1>
           <p style={{
             fontFamily: "var(--font-tagline)",

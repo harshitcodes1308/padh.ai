@@ -5,7 +5,6 @@ import SmoothScrollProvider from "@/components/landing/SmoothScrollProvider";
 import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
 import StatStrip from "@/components/landing/StatStrip";
-import SubjectsGrid from "@/components/landing/SubjectsGrid";
 import FeaturesGrid from "@/components/landing/FeaturesGrid";
 import WhyPadhAI from "@/components/landing/WhyPadhAI";
 import AppDownloadStrip from "@/components/landing/AppDownloadStrip";
@@ -18,7 +17,6 @@ export default function LandingPage() {
         <Nav />
         <Hero />
         <StatStrip />
-        <SubjectsGrid />
         <FeaturesGrid />
         <WhyPadhAI />
         <AppDownloadStrip />

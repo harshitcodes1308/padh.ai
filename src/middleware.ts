@@ -5,6 +5,9 @@ import type { SessionUser } from '@/lib/auth';
 
 const protectedRoutes = ['/dashboard', '/onboarding'];
 const authRoutes = ['/login', '/signup'];
+const JWT_SECRET_VALUE =
+    process.env.JWT_SECRET ??
+    (process.env.NODE_ENV !== "production" ? "padh-ai-local-dev-secret" : undefined);
 
 // Grandfathering cutoff — users created before this date keep full access
 const CUTOFF_DATE = new Date("2026-01-29T00:00:00+05:30");
@@ -55,7 +58,7 @@ export async function middleware(request: NextRequest) {
 
     if (token) {
         try {
-            const secret = new TextEncoder().encode(process.env.JWT_SECRET!);
+            const secret = new TextEncoder().encode(JWT_SECRET_VALUE);
             const { payload } = await jwtVerify(token, secret);
             isAuthenticated = true;
             user = payload.user as SessionUser;
@@ -117,22 +120,16 @@ export async function middleware(request: NextRequest) {
         }
     }
 
-    // 5. Root — serve the public landing page to logged-out visitors.
-    //    Authenticated users are redirected away server-side (no flash of landing).
+    // 5. Root — serve the public landing page. 
+    // Removed force-redirect to dashboard so users can see the landing page.
     if (pathname === '/') {
-        // Authenticated + onboarded → dashboard
-        if (isAuthenticated && onboardingComplete) {
-            const res = NextResponse.redirect(new URL('/dashboard', request.url));
-            res.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate');
-            return res;
-        }
         // Authenticated but onboarding incomplete → onboarding
         if (isAuthenticated && !onboardingComplete) {
             const res = NextResponse.redirect(new URL('/onboarding', request.url));
             res.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate');
             return res;
         }
-        // Logged-out → fall through and render the landing page at /
+        // Render the landing page at /
         return NextResponse.next();
     }
 

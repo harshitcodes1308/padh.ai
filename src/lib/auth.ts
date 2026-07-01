@@ -4,10 +4,14 @@ import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
 import { type UserRole, type PlanType, type SubscriptionStatus } from "@prisma/client";
 
-if (!process.env.JWT_SECRET) {
+const JWT_SECRET_VALUE =
+    process.env.JWT_SECRET ??
+    (process.env.NODE_ENV !== "production" ? "padh-ai-local-dev-secret" : undefined);
+
+if (!JWT_SECRET_VALUE) {
     throw new Error("FATAL: JWT_SECRET environment variable is not set");
 }
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
+const JWT_SECRET = new TextEncoder().encode(JWT_SECRET_VALUE);
 
 export interface SessionUser {
     id: string;

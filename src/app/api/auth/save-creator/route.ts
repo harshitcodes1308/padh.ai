@@ -19,6 +19,10 @@ export async function POST(request: NextRequest) {
 
         const { creatorCode } = await request.json();
 
+        if (!process.env.DATABASE_URL && process.env.NODE_ENV !== "production") {
+            return NextResponse.json({ success: true, creatorCode: creatorCode || null });
+        }
+
         // Validate — if code provided, it must exist
         if (creatorCode !== null && creatorCode !== undefined && creatorCode !== "") {
             const creator = await prisma.creator.findUnique({
@@ -47,6 +51,10 @@ export async function POST(request: NextRequest) {
  */
 export async function GET() {
     try {
+        if (!process.env.DATABASE_URL && process.env.NODE_ENV !== "production") {
+            return NextResponse.json({ creators: [] });
+        }
+
         const creators = await prisma.creator.findMany({
             select: { creatorName: true, creatorCode: true, discountPercentage: true },
             orderBy: { creatorName: "asc" },

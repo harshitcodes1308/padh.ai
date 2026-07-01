@@ -36,6 +36,19 @@ export async function POST(request: NextRequest) {
             );
         }
 
+        if (!process.env.DATABASE_URL && process.env.NODE_ENV !== 'production') {
+            const refreshedUser = {
+                ...session.user,
+                name: cleanedName,
+            };
+            const newToken = await createToken(refreshedUser);
+            const response = NextResponse.json({ success: true });
+            const headers = new Headers();
+            await setSessionCookie(newToken, false, headers);
+            headers.forEach((value, key) => response.headers.set(key, value));
+            return response;
+        }
+
         // Check if phone is already used by another user
         const existing = await prisma.user.findUnique({
             where: { phone: cleanedPhone },

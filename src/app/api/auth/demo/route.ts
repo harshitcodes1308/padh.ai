@@ -7,6 +7,7 @@ const DEMO_EMAIL = "demo@saviours.test";
 const DEMO_NAME = "Demo Student";
 const DEMO_PASSWORD = "demo123456";
 const DEMO_PHONE = "9999900000";
+const hasDatabase = Boolean(process.env.DATABASE_URL);
 
 /**
  * POST /api/auth/demo
@@ -25,6 +26,31 @@ export async function POST(req: NextRequest) {
 
   if (mode !== "signup" && mode !== "signin") {
     return NextResponse.json({ error: "Invalid mode" }, { status: 400 });
+  }
+
+  if (!hasDatabase) {
+    const sessionUser: SessionUser = {
+      id: "demo-local-user",
+      email: DEMO_EMAIL,
+      name: DEMO_NAME,
+      role: "STUDENT",
+      isPaid: true,
+      planType: "YEARLY",
+      subscriptionStatus: "ACTIVE",
+      subscriptionExpiry: null,
+      onboardingComplete: mode === "signin",
+      lnbChemistryUnlocked: false,
+    };
+
+    const token = await createToken(sessionUser);
+    const redirectTo = mode === "signup" ? "/onboarding" : "/dashboard";
+    const maxAge = 60 * 60 * 24 * 30;
+    const response = NextResponse.json({ success: true, redirectTo });
+    response.headers.append(
+      "Set-Cookie",
+      `auth-token=${token}; HttpOnly; Path=/; Max-Age=${maxAge}; SameSite=Lax`
+    );
+    return response;
   }
 
   // Find or create demo user

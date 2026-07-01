@@ -38,41 +38,11 @@ export function ThemedDashboardContent({
 
     return (
         <div style={{ minHeight: '100vh', position: 'relative' }}>
-            {/* ── FIXED SPACE WARP VIDEO BACKGROUND ── */}
-            <video
-                ref={videoRef}
-                src={VIDEO_URL}
-                autoPlay muted playsInline loop
-                style={{
-                    position: 'fixed',
-                    inset: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    filter: 'grayscale(100%) brightness(0.18)',
-                    opacity: 0.6,
-                    zIndex: 0,
-                    pointerEvents: 'none',
-                }}
-            />
-            {/* Blue tint + darkening overlay */}
+            {/* ── Dashboard Background ── */}
             <div style={{
                 position: 'fixed',
                 inset: 0,
-                background: 'linear-gradient(180deg, rgba(0,18,40,0.75) 0%, rgba(3,3,3,0.88) 40%, rgba(0,12,30,0.75) 100%)',
-                zIndex: 0,
-                pointerEvents: 'none',
-            }} />
-            {/* Subtle radial cyan glow */}
-            <div style={{
-                position: 'fixed',
-                left: '60%',
-                top: '30%',
-                width: 800,
-                height: 800,
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(0,212,255,0.04) 0%, transparent 70%)',
-                transform: 'translate(-50%, -50%)',
+                background: 'var(--bg-base)',
                 zIndex: 0,
                 pointerEvents: 'none',
             }} />

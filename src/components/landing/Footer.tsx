@@ -9,15 +9,13 @@ export default function Footer() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 40 }}>
           
           {/* Column 1: Logo & Tagline */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 16, gridColumn: "1 / -1", '@media (min-width: 768px)': { gridColumn: "span 2" } } as any}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <div style={{
-                width: 28, height: 28, borderRadius: 7, background: "var(--brand-blue)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-              }}>
-                <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, color: "#FFFFFF", letterSpacing: "-0.02em", lineHeight: 1 }}>P</span>
-              </div>
-              <span style={{ fontFamily: "var(--font-display)", fontSize: 18, letterSpacing: "-0.01em", color: "var(--text-primary)", fontWeight: 700 }}>
-                PADH.AI
+          <div className="sa-footer-brand" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div style={{ display: "inline-flex", alignItems: "baseline" }}>
+              <span style={{ fontFamily: "var(--font-display)", fontSize: 20, letterSpacing: "-0.03em", color: "var(--text-primary)", fontWeight: 800, lineHeight: 1 }}>
+                PADH
+              </span>
+              <span style={{ fontFamily: "var(--font-display)", fontSize: 20, letterSpacing: "-0.03em", color: "var(--brand-blue)", fontWeight: 800, lineHeight: 1 }}>
+                .AI
               </span>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.5, margin: 0, maxWidth: 300 }}>

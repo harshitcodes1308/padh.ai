@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { trpc } from "@/lib/trpc/client";
 import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { isLockedRoute, getFeatureInfo } from "@/lib/tier-config";
 import { UpgradePrompt } from "@/components/UpgradePrompt";
@@ -161,6 +163,11 @@ export default function DashboardSidebar({
 }) {
   const pathname = usePathname();
   const router = useRouter();
+  const logoutMutation = trpc.auth.logout.useMutation({
+    onSuccess: () => {
+      window.location.href = "/";
+    }
+  });
   const [isOpen, setIsOpen] = useState(false);
   const [upgradeFeature, setUpgradeFeature] = useState<{ name: string; description: string } | null>(null);
 
@@ -208,38 +215,40 @@ export default function DashboardSidebar({
       `}</style>
 
       {/* Logo */}
-      <div style={{
-        padding: "18px 20px 14px",
-        borderBottom: "1px solid var(--border)",
-        flexShrink: 0,
-        display: "flex",
-        alignItems: "center",
-        gap: 10,
-      }}>
-        <PadhLogo size={28} />
-        <div>
-          <div style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 15,
-            fontWeight: 700,
-            color: "var(--text-primary)",
-            letterSpacing: "-0.01em",
-            lineHeight: 1.1,
-          }}>
-            PADH.AI
-          </div>
-          <div style={{
-            fontFamily: "var(--font-body)",
-            fontSize: 9,
-            fontWeight: 500,
-            color: "var(--text-muted)",
-            marginTop: 2,
-            letterSpacing: "0.04em",
-          }}>
-            CBSE Board Prep
+      <Link href="/" style={{ textDecoration: 'none' }}>
+        <div style={{
+          padding: "18px 20px 14px",
+          borderBottom: "1px solid var(--border)",
+          flexShrink: 0,
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+        }}>
+          <PadhLogo size={28} />
+          <div>
+            <div style={{
+              fontFamily: "var(--font-display)",
+              fontSize: 15,
+              fontWeight: 700,
+              color: "var(--text-primary)",
+              letterSpacing: "-0.01em",
+              lineHeight: 1.1,
+            }}>
+              PADH.AI
+            </div>
+            <div style={{
+              fontFamily: "var(--font-body)",
+              fontSize: 9,
+              fontWeight: 500,
+              color: "var(--text-muted)",
+              marginTop: 2,
+              letterSpacing: "0.04em",
+            }}>
+              CBSE Board Prep
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
 
       {/* User section */}
       <div style={{
@@ -367,6 +376,40 @@ export default function DashboardSidebar({
             </div>
           );
         })}
+
+        {/* LOGOUT BUTTON */}
+        <div style={{ marginTop: 20 }}>
+          <button
+            className="sb-nav-item"
+            onClick={() => logoutMutation.mutate()}
+            disabled={logoutMutation.isPending}
+            style={{
+              display: "flex", alignItems: "center", gap: 9,
+              width: "100%",
+              padding: "8px 10px",
+              borderRadius: 8,
+              background: "transparent",
+              color: "var(--text-secondary)",
+              border: "none",
+              borderLeft: "2px solid transparent",
+              cursor: logoutMutation.isPending ? "not-allowed" : "pointer",
+              opacity: logoutMutation.isPending ? 0.5 : 1,
+              textAlign: "left",
+              fontFamily: "var(--font-body)",
+              fontSize: 13,
+              fontWeight: 400,
+              letterSpacing: "-0.01em",
+              paddingLeft: 10,
+            }}
+          >
+            <span style={{ fontSize: 13, color: "var(--text-muted)", minWidth: 16, textAlign: "center", opacity: 0.55, flexShrink: 0 }}>
+              ⎋
+            </span>
+            <span style={{ flex: 1, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+              {logoutMutation.isPending ? "Logging out..." : "Log out"}
+            </span>
+          </button>
+        </div>
       </nav>
 
       {/* Bottom plan badge */}

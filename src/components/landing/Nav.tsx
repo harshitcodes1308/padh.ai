@@ -38,38 +38,32 @@ export default function Nav() {
         {/* Wordmark */}
         <a
           href="#top"
-          style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}
+          aria-label="PADH.AI home"
+          style={{ display: "inline-flex", alignItems: "baseline", textDecoration: "none" }}
         >
-          {/* Logo mark — blue square with P */}
-          <div style={{
-            width: 28,
-            height: 28,
-            borderRadius: 7,
-            background: "var(--brand-blue)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
-          }}>
-            <span style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 800,
-              fontSize: 15,
-              color: "#FFFFFF",
-              letterSpacing: "-0.02em",
-              lineHeight: 1,
-            }}>P</span>
-          </div>
           <span
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: 16,
-              letterSpacing: "-0.01em",
+              fontSize: 18,
+              letterSpacing: "-0.03em",
               color: "var(--text-primary)",
-              fontWeight: 700,
+              fontWeight: 800,
+              lineHeight: 1,
             }}
           >
-            PADH.AI
+            PADH
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: 18,
+              letterSpacing: "-0.03em",
+              color: "var(--brand-blue)",
+              fontWeight: 800,
+              lineHeight: 1,
+            }}
+          >
+            .AI
           </span>
         </a>
 

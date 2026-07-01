@@ -15,6 +15,18 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Invalid plan type' }, { status: 400 });
         }
 
+        if (!process.env.DATABASE_URL && process.env.NODE_ENV !== 'production') {
+            const updatedUser = { ...session.user, planType };
+            const newToken = await createToken(updatedUser);
+
+            const response = NextResponse.json({ success: true });
+            const headers = new Headers();
+            await setSessionCookie(newToken, false, headers);
+            headers.forEach((value, key) => response.headers.set(key, value));
+
+            return response;
+        }
+
         await prisma.user.update({
             where: { id: session.user.id },
             data: { planType },

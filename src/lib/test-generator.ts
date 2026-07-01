@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY || "dummy" });
 
 export interface MCQ {
     id: string;
@@ -147,10 +147,10 @@ REMEMBER: NO easy, NO medium - ONLY HARD multi-step competency-based questions!`
             .replace(/```\n?/g, "")
             .trim();
 
-        const questions = JSON.parse(cleanedContent);
+        const questions = JSON.parse(cleanedContent) as Array<Omit<MCQ, "id">>;
 
         // Add unique IDs
-        return questions.map((q: any, i: number) => ({
+        return questions.map((q, i) => ({
             ...q,
             id: `q${i + 1}`,
         }));
