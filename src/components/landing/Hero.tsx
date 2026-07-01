@@ -104,6 +104,7 @@ export default function Hero() {
               padding: "16px 20px",
               borderRadius: "8px",
               border: "1px solid var(--border)",
+              background: "#FFFFFF",
               fontFamily: "var(--font-body)",
               fontSize: 16,
               outline: "none",

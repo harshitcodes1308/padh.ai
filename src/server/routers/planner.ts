@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { createTRPCRouter, protectedProcedure } from "@/server/trpc";
 import { predictMultipleChapterDifficulties, calculateStudyDistribution, checkTimelineFeasibility, decomposeChapterIntoTopics } from "@/lib/smart-planner";
+import { examCoreDb } from "@/lib/prisma";
 
 export const plannerRouter = createTRPCRouter({
     /**
@@ -21,7 +22,7 @@ export const plannerRouter = createTRPCRouter({
             const targetDate = new Date(input.targetDate);
 
             // Fetch subject and chapters
-            const subject = await ctx.prisma.subject.findUnique({
+            const subject = await examCoreDb.subject.findUnique({
                 where: { id: input.subjectId },
             });
 
@@ -29,9 +30,9 @@ export const plannerRouter = createTRPCRouter({
                 throw new Error("Subject not found");
             }
 
-            const chapters = await ctx.prisma.chapter.findMany({
+            const chapters = await examCoreDb.chapter.findMany({
                 where: { id: { in: input.chapterIds } },
-                orderBy: { order: "asc" },
+                orderBy: { orderIndex: "asc" },
             });
 
             if (chapters.length === 0) {
@@ -91,10 +92,6 @@ export const plannerRouter = createTRPCRouter({
                             difficulty: chapterInfo.difficulty,
                             estimatedHours: input.dailyHours,
                         },
-                        include: {
-                            chapter: true,
-                            subject: true,
-                        },
                     });
 
                     dailyPlans.push(plan);
@@ -134,16 +131,27 @@ export const plannerRouter = createTRPCRouter({
                 };
             }
 
-            const plans = await ctx.prisma.dailyPlan.findMany({
+            const rawPlans = await ctx.prisma.dailyPlan.findMany({
                 where,
                 orderBy: { planDate: "asc" },
-                include: {
-                    subject: true,
-                    chapter: true,
-                },
             });
 
-            return plans;
+            const subjectIds = [...new Set(rawPlans.map(p => p.subjectId))].filter(Boolean);
+            const chapterIds = [...new Set(rawPlans.map(p => p.chapterId))].filter(Boolean);
+
+            const [subjectsList, chaptersList] = await Promise.all([
+                examCoreDb.subject.findMany({ where: { id: { in: subjectIds } } }),
+                examCoreDb.chapter.findMany({ where: { id: { in: chapterIds } } })
+            ]);
+
+            const subjectMap = new Map(subjectsList.map(s => [s.id, s]));
+            const chapterMap = new Map(chaptersList.map(c => [c.id, c]));
+
+            return rawPlans.map(p => ({
+                ...p,
+                subject: subjectMap.get(p.subjectId) || null,
+                chapter: chapterMap.get(p.chapterId) || null,
+            }));
         }),
 
     /**
@@ -155,7 +163,7 @@ export const plannerRouter = createTRPCRouter({
         const tomorrow = new Date(today);
         tomorrow.setDate(tomorrow.getDate() + 1);
 
-        const plans = await ctx.prisma.dailyPlan.findMany({
+        const rawPlans = await ctx.prisma.dailyPlan.findMany({
             where: {
                 userId: ctx.user.id,
                 planDate: {
@@ -163,14 +171,25 @@ export const plannerRouter = createTRPCRouter({
                     lt: tomorrow,
                 },
             },
-            include: {
-                subject: true,
-                chapter: true,
-            },
             orderBy: { createdAt: "asc" },
         });
 
-        return plans;
+        const subjectIds = [...new Set(rawPlans.map(p => p.subjectId))].filter(Boolean);
+        const chapterIds = [...new Set(rawPlans.map(p => p.chapterId))].filter(Boolean);
+
+        const [subjectsList, chaptersList] = await Promise.all([
+            examCoreDb.subject.findMany({ where: { id: { in: subjectIds } } }),
+            examCoreDb.chapter.findMany({ where: { id: { in: chapterIds } } })
+        ]);
+
+        const subjectMap = new Map(subjectsList.map(s => [s.id, s]));
+        const chapterMap = new Map(chaptersList.map(c => [c.id, c]));
+
+        return rawPlans.map(p => ({
+            ...p,
+            subject: subjectMap.get(p.subjectId) || null,
+            chapter: chapterMap.get(p.chapterId) || null,
+        }));
     }),
 
     /**

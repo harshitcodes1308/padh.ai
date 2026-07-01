@@ -13,7 +13,7 @@ import Footer from "@/components/landing/Footer";
 export default function LandingPage() {
   return (
     <SmoothScrollProvider>
-      <main style={{ background: "#FFFFFF", position: "relative", overflowX: "hidden" }}>
+      <main className="landing-shell" style={{ background: "#FFFFFF", position: "relative", overflowX: "hidden" }}>
         <Nav />
         <Hero />
         <StatStrip />

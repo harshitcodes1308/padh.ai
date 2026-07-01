@@ -66,17 +66,9 @@ export default function SubjectChaptersPage() {
                                 color: "#FFFFFF",
                                 marginBottom: "8px"
                             }}>
-                                Chapter {chapter.order}: {chapter.name}
+                                Chapter {chapter.orderIndex}: {chapter.name}
                             </h3>
-                            {chapter.description && (
-                                <p style={{
-                                    fontSize: "13px",
-                                    color: "#9CA3AF",
-                                    marginBottom: "8px"
-                                }}>
-                                    {chapter.description}
-                                </p>
-                            )}
+
                             <div style={{
                                 display: "inline-block",
                                 backgroundColor: "#1F2937",

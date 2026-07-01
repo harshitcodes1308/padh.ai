@@ -132,7 +132,7 @@ export default function SubjectsPage() {
                                         fontSize: "13px", color: "#6B7280",
                                         lineHeight: "1.5", flex: 1,
                                     }}>
-                                        {subject.description || `Study ${subject.name} for ICSE exams`}
+                                        Study {subject.name} for CBSE exams
                                     </p>
 
                                     {/* Footer */}

@@ -2,9 +2,34 @@
 
 import { useState, useEffect, useRef } from 'react';
 import DashboardSidebar from '@/components/layout/dashboard-sidebar';
-import { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
-const VIDEO_URL = "https://res.cloudinary.com/dv0w2nfnw/video/upload/v1774898701/videoplayback_tgdakw.mp4";
+const dashboardThemeVars = {
+    '--brand-green': '#08BD80',
+    '--brand-blue': '#2D81F7',
+    '--bg-base': '#0D0D1A',
+    '--bg-surface': '#13131F',
+    '--bg-elevated': '#1A1A2E',
+    '--border': '#252538',
+    '--bg-border': '#252538',
+    '--bg-border-light': '#353552',
+    '--text-primary': '#F5F0E8',
+    '--text-secondary': '#B0AABA',
+    '--text-muted': '#6B6B80',
+    '--text-disabled': '#3D3D50',
+    '--text-dark-alt': '#FFFFFF',
+    '--accent-gold': '#08BD80',
+    '--accent-gold-dim': '#06A36D',
+    '--accent-gold-glow': 'rgba(8, 189, 128, 0.10)',
+    '--accent-gold-border': 'rgba(8, 189, 128, 0.30)',
+    '--status-green': '#3ECF8E',
+    '--status-red': '#F87171',
+    '--status-blue': '#60A5FA',
+    '--status-orange': '#FB923C',
+    '--shadow-card': '0 4px 24px rgba(0, 0, 0, 0.5)',
+    '--shadow-card-hover': '0 10px 34px rgba(0, 0, 0, 0.42)',
+    '--shadow-gold': '0 0 20px rgba(8, 189, 128, 0.18)',
+} as CSSProperties & Record<`--${string}`, string>;
 
 export function ThemedDashboardContent({
     children,
@@ -37,7 +62,16 @@ export function ThemedDashboardContent({
     }, []);
 
     return (
-        <div style={{ minHeight: '100vh', position: 'relative' }}>
+        <div
+            className="dashboard-theme"
+            style={{
+                ...dashboardThemeVars,
+                minHeight: '100vh',
+                position: 'relative',
+                color: 'var(--text-primary)',
+                colorScheme: 'dark',
+            }}
+        >
             {/* ── Dashboard Background ── */}
             <div style={{
                 position: 'fixed',

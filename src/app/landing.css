@@ -4,6 +4,34 @@
    Reuses design tokens from globals.css. No parallel system.
    ============================================================ */
 
+.landing-shell {
+  --brand-green: #08BD80;
+  --brand-blue: #2D81F7;
+  --bg-base: #FFFFFF;
+  --bg-surface: #F8F9FA;
+  --bg-elevated: #FFFFFF;
+  --border: #EAEAEA;
+  --bg-border: #EAEAEA;
+  --bg-border-light: #F1F3F5;
+  --text-primary: #2D3236;
+  --text-secondary: #70757A;
+  --text-muted: #8E959C;
+  --text-disabled: #C8D0D8;
+  --text-dark-alt: #212529;
+  --accent-gold: var(--brand-green);
+  --accent-gold-dim: #06A36D;
+  --accent-gold-glow: rgba(8, 189, 128, 0.10);
+  --accent-gold-border: rgba(8, 189, 128, 0.30);
+  --status-green: #08BD80;
+  --status-red: #EF4444;
+  --status-blue: #2D81F7;
+  --status-orange: #F59E0B;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.03);
+  color: var(--text-primary);
+  color-scheme: light;
+}
+
 /* ---- Flat bento card (was sa-glass-bento, now unified) ---- */
 .sa-bento {
   position: relative;
