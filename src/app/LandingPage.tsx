@@ -7,7 +7,7 @@ import Hero from "@/components/landing/Hero";
 import StatStrip from "@/components/landing/StatStrip";
 import FeaturesGrid from "@/components/landing/FeaturesGrid";
 import WhyPadhAI from "@/components/landing/WhyPadhAI";
-import AppDownloadStrip from "@/components/landing/AppDownloadStrip";
+
 import Footer from "@/components/landing/Footer";
 
 export default function LandingPage() {
@@ -19,7 +19,6 @@ export default function LandingPage() {
         <StatStrip />
         <FeaturesGrid />
         <WhyPadhAI />
-        <AppDownloadStrip />
         <Footer />
       </main>
     </SmoothScrollProvider>

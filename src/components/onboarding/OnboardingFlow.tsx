@@ -159,9 +159,8 @@ export default function OnboardingFlow() {
         return;
       }
       setSavingProfile(false);
-      // Fetch creators for next step while transitioning
-      fetch('/api/auth/save-creator').then(r => r.json()).then(d => setCreators(d.creators || [])).catch(() => {});
-      setStep(5);
+      // Skip creator code (step 5) and go straight to pricing (step 6)
+      setStep(6);
     } catch {
       setProfileError('Network error. Please try again.');
       setSavingProfile(false);

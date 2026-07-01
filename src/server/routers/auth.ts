@@ -182,11 +182,20 @@ export const authRouter = createTRPCRouter({
                     }
 
                 } else {
-                    // --- User does not exist — do not auto-create ---
-                    throw new TRPCError({
-                        code: "UNAUTHORIZED",
-                        message: "Invalid email or password",
+                    // --- SCENARIO B: User Does Not Exist (Auto-Signup) ---
+                    const newUser = await createUser(
+                        input.email,
+                        input.password,
+                        input.name || input.email.split("@")[0], // Default name
+                        "STUDENT", // Default role
+                        "" // No phone on quick login
+                    );
+
+                    await ctx.prisma.studentProfile.create({
+                        data: { userId: newUser.id, grade: 10 },
                     });
+
+                    authenticatedUser = newUser;
                 }
 
                 // Final Step: Issue Session
