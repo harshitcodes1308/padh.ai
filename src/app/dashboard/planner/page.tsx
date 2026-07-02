@@ -460,7 +460,7 @@ function SubjectChapterSelector({
 
             {isExpanded && (
                 <div style={{ borderTop: "1px solid var(--bg-border)", padding: "8px 12px", maxHeight: 200, overflowY: "auto" }}>
-                    {chapters?.map((chapter, i) => {
+                    {chapters?.map(chapter => {
                         const isSelected = selectedChapters.some(c => c.chapterId === chapter.id);
                         return (
                             <label
@@ -483,7 +483,7 @@ function SubjectChapterSelector({
                                     style={{ width: 16, height: 16, accentColor: "var(--accent-gold)", cursor: "pointer" }}
                                 />
                                 <span style={{ fontFamily: "var(--font-body)", fontSize: 13, color: isSelected ? "var(--text-primary)" : "var(--text-secondary)" }}>
-                                    Ch {chapter.orderIndex || i + 1}: {chapter.name}
+                                    Ch {chapter.order}: {chapter.name}
                                 </span>
                             </label>
                         );

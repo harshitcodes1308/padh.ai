@@ -199,7 +199,7 @@ export default function DashboardSidebar({
     <aside style={{
       width: 240,
       height: "100vh",
-      background: "rgba(10, 10, 18, 0.86)",
+      background: "#FFFFFF",
       borderRight: "1px solid var(--border)",
       display: "flex",
       flexDirection: "column",
@@ -209,7 +209,7 @@ export default function DashboardSidebar({
       <style>{`
         .sb-nav-item { transition: all 0.15s ease; }
         .sb-nav-item:hover:not(.sb-nav-active) {
-          background: rgba(255,255,255,0.04) !important;
+          background: rgba(0,0,0,0.03) !important;
           color: var(--text-primary) !important;
         }
       `}</style>
@@ -512,7 +512,7 @@ export default function DashboardSidebar({
           position: "fixed",
           top: 14, left: 14, zIndex: 200,
           width: 42, height: 42,
-          background: isOpen ? "var(--brand-blue)" : "var(--bg-surface)",
+          background: isOpen ? "var(--brand-blue)" : "#FFFFFF",
           border: `1px solid ${isOpen ? "var(--brand-blue)" : "var(--border)"}`,
           borderRadius: 10,
           display: "flex",
@@ -562,9 +562,7 @@ export default function DashboardSidebar({
           position: "fixed",
           bottom: 0, left: 0, right: 0,
           height: 64,
-          background: "rgba(10, 10, 18, 0.92)",
-          backdropFilter: "blur(18px)",
-          WebkitBackdropFilter: "blur(18px)",
+          background: "rgba(255, 255, 255, 0.96)",
           borderTop: "1px solid var(--border)",
           display: "flex",
           alignItems: "center",

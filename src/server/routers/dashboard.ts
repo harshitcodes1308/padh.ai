@@ -1,30 +1,11 @@
+import { z } from "zod";
 import { createTRPCRouter, protectedProcedure } from "@/server/trpc";
-import { examCoreDb } from "@/lib/prisma";
 
 export const dashboardRouter = createTRPCRouter({
     /**
      * Get user profile with student/teacher details
      */
     getProfile: protectedProcedure.query(async ({ ctx }) => {
-        if (!process.env.DATABASE_URL && process.env.NODE_ENV !== "production") {
-            return {
-                id: ctx.user.id,
-                name: ctx.user.name,
-                email: ctx.user.email,
-                phone: null,
-                role: ctx.user.role,
-                createdAt: new Date(),
-                studentProfile: null,
-                teacherProfile: null,
-                lnbChemistryUnlocked: ctx.user.lnbChemistryUnlocked ?? false,
-                isPaid: ctx.user.isPaid,
-                planType: ctx.user.planType,
-                subscriptionStatus: ctx.user.subscriptionStatus,
-                subscriptionExpiry: ctx.user.subscriptionExpiry ? new Date(ctx.user.subscriptionExpiry) : null,
-                paymentWarning: null,
-            };
-        }
-
         let user = await ctx.prisma.user.findUnique({
             where: { id: ctx.user.id },
             include: {
@@ -94,34 +75,14 @@ export const dashboardRouter = createTRPCRouter({
      * Get study statistics for dashboard - user-specific, fresh for new users
      */
     getStudyStats: protectedProcedure.query(async ({ ctx }) => {
-        if (!process.env.DATABASE_URL && process.env.NODE_ENV !== "production") {
-            return {
-                todayHours: 0,
-                todayGoal: 0,
-                weeklyProgress: 0,
-                examReadiness: 0,
-                currentStreak: 0,
-                avgHoursPerDay: 0,
-                subjects: [],
-            };
-        }
-
         // Get user's daily plans
-        const rawPlans = await ctx.prisma.dailyPlan.findMany({
+        const plans = await ctx.prisma.dailyPlan.findMany({
             where: { userId: ctx.user.id },
+            include: {
+                subject: true,
+                chapter: true,
+            },
         });
-
-        // Fetch subjects from exam core
-        const subjectIds = [...new Set(rawPlans.map(p => p.subjectId))].filter(Boolean);
-        const subjectsList = await examCoreDb.subject.findMany({
-            where: { id: { in: subjectIds } }
-        });
-        const subjectMapById = new Map(subjectsList.map(s => [s.id, s]));
-
-        const plans = rawPlans.map(p => ({
-            ...p,
-            subject: subjectMapById.get(p.subjectId) || null,
-        }));
 
         // Calculate today's stats
         const today = new Date();

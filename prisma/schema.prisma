@@ -108,6 +108,7 @@ model LearningPattern {
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
   profile      StudentProfile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  subject      Subject        @relation(fields: [subjectId], references: [id], onDelete: Cascade)
 
   @@unique([profileId, subjectId])
   @@index([profileId])
@@ -142,7 +143,85 @@ model TeacherProfile {
   @@map("teacher_profiles")
 }
 
+model Subject {
+  id               String            @id @default(cuid())
+  name             String
+  code             String            @unique
+  description      String?
+  icon             String?
+  order            Int               @default(0)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  chapters         Chapter[]
+  dailyPlans       DailyPlan[]
+  learningPatterns LearningPattern[]
 
+  @@map("subjects")
+}
+
+model Chapter {
+  id          String      @id @default(cuid())
+  subjectId   String
+  name        String
+  description String?
+  order       Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  subject     Subject     @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  dailyPlans  DailyPlan[]
+  topics      Topic[]
+
+  @@index([subjectId])
+  @@map("chapters")
+}
+
+model Topic {
+  id                 String              @id @default(cuid())
+  chapterId          String
+  name               String
+  description        String?
+  order              Int                 @default(0)
+  estimatedMinutes   Int                 @default(30)
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  contents           Content[]
+  doubtConversations DoubtConversation[]
+  notes              Note[]
+  questions          QuestionBank[]
+  revisionChecklist  RevisionChecklist?
+  revisionSchedules  RevisionSchedule[]
+  chapter            Chapter             @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@index([chapterId])
+  @@map("topics")
+}
+
+model Content {
+  id        String      @id @default(cuid())
+  topicId   String
+  type      ContentType
+  title     String?
+  content   String
+  metadata  Json?
+  order     Int         @default(0)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  topic     Topic       @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@index([topicId])
+  @@map("contents")
+}
+
+model RevisionChecklist {
+  id        String   @id @default(cuid())
+  topicId   String   @unique
+  items     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  topic     Topic    @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@map("revision_checklists")
+}
 
 model StudyPlan {
   id              String           @id @default(cuid())
@@ -174,6 +253,8 @@ model DailyPlan {
   subjectId      String
   topicName      String
   userId         String
+  chapter        Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  subject        Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
   user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
@@ -207,6 +288,7 @@ model Note {
   updatedAt      DateTime        @updatedAt
   flashCards     FlashCard[]
   student        User            @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  topic          Topic?          @relation(fields: [topicId], references: [id])
   revisionSheets RevisionSheet[]
 
   @@index([studentId])
@@ -242,7 +324,25 @@ model RevisionSheet {
   @@map("revision_sheets")
 }
 
+model QuestionBank {
+  id          String             @id @default(cuid())
+  topicId     String
+  question    String
+  options     Json?
+  answer      String
+  explanation String?
+  hint        String?
+  type        QuestionType       @default(MCQ)
+  difficulty  QuestionDifficulty @default(MEDIUM)
+  tags        Json?
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+  topic       Topic              @relation(fields: [topicId], references: [id], onDelete: Cascade)
 
+  @@index([topicId])
+  @@index([difficulty])
+  @@map("question_bank")
+}
 
 model Test {
   id               String            @id @default(cuid())
@@ -320,6 +420,7 @@ model RevisionSchedule {
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
   student       User         @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  topic         Topic        @relation(fields: [topicId], references: [id], onDelete: Cascade)
 
   @@index([studentId])
   @@index([topicId])
@@ -354,6 +455,7 @@ model DoubtConversation {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   student   User     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  topic     Topic?   @relation(fields: [topicId], references: [id])
 
   @@index([studentId])
   @@index([topicId])

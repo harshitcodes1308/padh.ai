@@ -1,15 +1,14 @@
 import { z } from "zod";
 import { createTRPCRouter, publicProcedure, paidProcedure as protectedProcedure } from "@/server/trpc";
 import { refineNotes, generateFlashcards } from '@/lib/notes-ai';
-import { examCoreDb } from '@/lib/prisma';
 
 export const contentRouter = createTRPCRouter({
     /**
      * Get all ICSE subjects
      */
-    getSubjects: publicProcedure.query(async () => {
-        const subjects = await examCoreDb.subject.findMany({
-            // orderBy: { orderIndex: "asc" },
+    getSubjects: publicProcedure.query(async ({ ctx }) => {
+        const subjects = await ctx.prisma.subject.findMany({
+            orderBy: { order: "asc" },
         });
         return subjects;
     }),
@@ -19,10 +18,10 @@ export const contentRouter = createTRPCRouter({
      */
     getChaptersBySubject: publicProcedure
         .input(z.object({ subjectId: z.string() }))
-        .query(async ({ input }) => {
-            const chapters = await examCoreDb.chapter.findMany({
+        .query(async ({ ctx, input }) => {
+            const chapters = await ctx.prisma.chapter.findMany({
                 where: { subjectId: input.subjectId },
-                orderBy: { orderIndex: "asc" },
+                orderBy: { order: "asc" },
                 include: {
                     subject: true,
                     _count: {
@@ -38,10 +37,10 @@ export const contentRouter = createTRPCRouter({
      */
     getTopicsByChapter: publicProcedure
         .input(z.object({ chapterId: z.string() }))
-        .query(async ({ input }) => {
-            const topics = await examCoreDb.topic.findMany({
+        .query(async ({ ctx, input }) => {
+            const topics = await ctx.prisma.topic.findMany({
                 where: { chapterId: input.chapterId },
-                orderBy: { orderIndex: "asc" },
+                orderBy: { order: "asc" },
             });
             return topics;
         }),
@@ -51,10 +50,13 @@ export const contentRouter = createTRPCRouter({
      */
     getTopicContent: publicProcedure
         .input(z.object({ topicId: z.string() }))
-        .query(async ({ input }) => {
-            const topic = await examCoreDb.topic.findUnique({
+        .query(async ({ ctx, input }) => {
+            const topic = await ctx.prisma.topic.findUnique({
                 where: { id: input.topicId },
                 include: {
+                    contents: {
+                        orderBy: { order: "asc" },
+                    },
                     chapter: {
                         include: {
                             subject: true,
@@ -62,8 +64,7 @@ export const contentRouter = createTRPCRouter({
                     },
                 },
             });
-            // We removed Contents from examCoreDb temporarily, returning just topic
-            return { ...topic, contents: [] };
+            return topic;
         }),
 
     /**
@@ -84,20 +85,19 @@ export const contentRouter = createTRPCRouter({
                 orderBy: { updatedAt: "desc" },
                 include: {
                     flashCards: true,
+                    topic: {
+                        include: {
+                            chapter: {
+                                include: {
+                                    subject: true,
+                                },
+                            },
+                        },
+                    },
                 },
             });
 
-            // Manually fetch topics
-            const topicIds = notes.map((n) => n.topicId).filter(Boolean) as string[];
-            const topics = await examCoreDb.topic.findMany({
-                where: { id: { in: topicIds } },
-                include: { chapter: { include: { subject: true } } },
-            });
-
-            return notes.map((note) => ({
-                ...note,
-                topic: note.topicId ? topics.find((t) => t.id === note.topicId) || null : null,
-            }));
+            return notes;
         }),
 
     /**
