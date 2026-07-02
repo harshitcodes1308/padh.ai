@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, prefersReducedMotion } from "./useScrollReveal";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 export default function WhyPadhAI() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -145,7 +146,10 @@ export default function WhyPadhAI() {
               margin: 0
             }}
           >
-            Why I built PADH.AI
+            Why I built{" "}
+            <PointerHighlight>
+              <span style={{ color: "var(--brand-green)" }}>PADH.AI</span>
+            </PointerHighlight>
           </h2>
           
           <div style={{
