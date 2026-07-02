@@ -77,7 +77,6 @@ export function PointerHighlight({
           />
           <motion.div
             className="pointer-events-none absolute"
-            style={{ position: "absolute", pointerEvents: "none" }}
             initial={{ opacity: 0 }}
             whileInView={{
               opacity: 1,
@@ -85,6 +84,8 @@ export function PointerHighlight({
               y: dimensions.height + 4,
             }}
             style={{
+              position: "absolute", 
+              pointerEvents: "none",
               rotate: -90,
             }}
             transition={{
