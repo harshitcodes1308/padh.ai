@@ -14,7 +14,7 @@ export function PointerHighlight({
   pointerClassName?: string;
   containerClassName?: string;
 }) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLSpanElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -42,14 +42,16 @@ export function PointerHighlight({
   }, []);
 
   return (
-    <div
-      className={cn("relative w-fit inline-block", containerClassName)}
+    <span
+      className={cn("relative inline-block", containerClassName)}
+      style={{ position: "relative", display: "inline-block", width: "max-content" }}
       ref={containerRef}
     >
       {children}
       {dimensions.width > 0 && dimensions.height > 0 && (
         <motion.div
           className="pointer-events-none absolute inset-0 z-0"
+          style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, pointerEvents: "none", zIndex: 0 }}
           initial={{ opacity: 0, scale: 0.95, originX: 0, originY: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -59,6 +61,7 @@ export function PointerHighlight({
               "absolute inset-0 border border-neutral-800 dark:border-neutral-200",
               rectangleClassName,
             )}
+            style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
             initial={{
               width: 0,
               height: 0,
@@ -74,6 +77,7 @@ export function PointerHighlight({
           />
           <motion.div
             className="pointer-events-none absolute"
+            style={{ position: "absolute", pointerEvents: "none" }}
             initial={{ opacity: 0 }}
             whileInView={{
               opacity: 1,
@@ -95,7 +99,7 @@ export function PointerHighlight({
           </motion.div>
         </motion.div>
       )}
-    </div>
+    </span>
   );
 }
 

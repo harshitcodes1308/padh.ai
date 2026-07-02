@@ -39,7 +39,7 @@
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease, filter 0.3s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1);
 }
 .sa-bento:hover {
   border-color: #C0CDD8;
@@ -50,16 +50,17 @@
 /* ---- Features grid — group hover focus ---- */
 @media (hover: hover) and (pointer: fine) {
   .sa-features-grid:hover .sa-bento {
-    opacity: 0.5;
+    transition: all 0.3s ease;
+    opacity: 0.5 !important;
     filter: blur(2px);
-    transform: scale(0.98);
+    transform: scale(0.98) !important;
   }
   .sa-features-grid .sa-bento:hover {
-    opacity: 1;
+    opacity: 1 !important;
     filter: blur(0px);
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-    border-color: rgba(8, 189, 128, 0.30); /* --accent-gold-border */
+    transform: translateY(-6px) scale(1.02) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1) !important;
+    border-color: rgba(8, 189, 128, 0.30) !important; /* --accent-gold-border */
     z-index: 3;
   }
 }
