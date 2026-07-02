@@ -89,6 +89,7 @@ export default function FeaturesTrio() {
         
         <div 
           ref={gridRef}
+          className="sa-features-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
