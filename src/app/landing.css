@@ -35,7 +35,7 @@
 /* ---- Flat bento card (was sa-glass-bento, now unified) ---- */
 .sa-bento {
   position: relative;
-  background: #FFFFFF;
+  background: var(--bg-base);
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
@@ -69,7 +69,7 @@
 /* sa-glass-bento is now an alias of sa-bento — keeps existing className usage working */
 .sa-glass-bento {
   position: relative;
-  background: #FFFFFF;
+  background: var(--bg-base);
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
@@ -176,7 +176,7 @@
   transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
 }
 .sa-nav.scrolled {
-  background: rgba(255, 255, 255, 0.92);
+  background: color-mix(in srgb, var(--bg-base) 92%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -231,8 +231,7 @@
   position: relative;
   overflow: hidden;
   padding: clamp(84px, 10vw, 132px) 24px;
-  background:
-    linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+  background: var(--bg-surface);
   border-top: 1px solid var(--border);
 }
 
@@ -259,7 +258,7 @@
   padding: 8px 12px;
   border: 1px solid rgba(45, 129, 247, 0.16);
   border-radius: 999px;
-  background: #FFFFFF;
+  background: var(--bg-base);
   color: var(--brand-blue);
   font-family: var(--font-body);
   font-size: 13px;
@@ -318,7 +317,7 @@
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 18px;
-  background: #FFFFFF;
+  background: var(--bg-base);
   box-shadow: 0 10px 28px rgba(45, 50, 54, 0.06);
 }
 
@@ -335,12 +334,12 @@
 
 .sa-creator-marquee-frame::before {
   top: 0;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, var(--bg-base) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .sa-creator-marquee-frame::after {
   bottom: 0;
-  background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(0deg, var(--bg-base) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .sa-creator-gallery-grid {
@@ -432,7 +431,7 @@
   position: relative;
   overflow: hidden;
   padding: clamp(86px, 10vw, 132px) 0;
-  background: #FFFFFF;
+  background: var(--bg-surface);
   border-top: 1px solid var(--border);
 }
 
@@ -484,12 +483,12 @@
 
 .sa-student-comments-shell::before {
   left: 0;
-  background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, var(--bg-surface) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .sa-student-comments-shell::after {
   right: 0;
-  background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(270deg, var(--bg-surface) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .sa-student-comment-row {
@@ -524,8 +523,8 @@
   gap: 18px;
   padding: 20px;
   border-radius: 14px;
-  background: #FFFFFF;
-  border: 1px solid rgba(45, 50, 54, 0.09);
+  background: var(--bg-base);
+  border: 1px solid var(--border);
   box-shadow: 0 8px 18px rgba(45, 50, 54, 0.07);
 }
 
@@ -775,7 +774,7 @@
   position: relative;
   overflow: hidden;
   padding: clamp(72px, 8vw, 104px) 24px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+  background: var(--bg-base);
   border-top: 1px solid var(--border);
 }
 
@@ -848,9 +847,9 @@
   justify-content: flex-start;
   gap: 16px;
   padding: clamp(18px, 2vw, 22px);
-  border: 1px solid rgba(45, 50, 54, 0.09);
+  border: 1px solid var(--border);
   border-radius: 16px;
-  background: #FFFFFF;
+  background: var(--bg-base);
   overflow: hidden;
   transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1),
               border-color 220ms ease,
@@ -1065,4 +1064,53 @@
   .sa-founder-grid > div:first-child {
     min-height: 340px !important;
   }
+}
+
+/* ============================================================
+   LANDING PAGE DARK MODE SUPPORT
+   Sets CSS variable overrides at the landing-shell scope so all
+   components using var(--bg-base), var(--bg-surface), etc. respond
+   to dark mode automatically. No more !important inline-style hacks.
+   ============================================================ */
+[data-theme="dark"] .landing-shell,
+[data-theme="dark"].landing-shell {
+  --bg-base:     #0D1117;
+  --bg-surface:  #161B22;
+  --bg-elevated: #1C2330;
+  --border:           #30363D;
+  --bg-border:        #30363D;
+  --bg-border-light:  #21262D;
+  --text-primary:   #E6EDF3;
+  --text-secondary: #8B949E;
+  --text-muted:     #6E7681;
+  --text-disabled:  #484F58;
+  --text-dark-alt:  #F0F6FC;
+  --accent-gold-glow:   rgba(45, 129, 247, 0.15);
+  --accent-gold-border: rgba(45, 129, 247, 0.38);
+}
+
+/* Nav: transparent → frosted dark glass when scrolled */
+[data-theme="dark"] .landing-shell .sa-nav.scrolled {
+  background: color-mix(in srgb, var(--bg-base) 88%, transparent);
+  border-bottom-color: var(--border);
+}
+
+/* Bento hover: adjust border glow for dark mode */
+[data-theme="dark"] .landing-shell .sa-bento:hover,
+[data-theme="dark"] .landing-shell .sa-glass-bento:hover {
+  border-color: rgba(45, 129, 247, 0.35);
+  box-shadow: 0 4px 24px rgba(45, 129, 247, 0.12);
+}
+
+/* Toolkit cards: keep border subtle */
+[data-theme="dark"] .landing-shell .sa-toolkit-card {
+  border-color: var(--border);
+}
+
+/* Marquee edge gradients follow the section background */
+[data-theme="dark"] .landing-shell .sa-marquee-wrap::before {
+  background: linear-gradient(90deg, var(--bg-base) 0%, transparent 100%);
+}
+[data-theme="dark"] .landing-shell .sa-marquee-wrap::after {
+  background: linear-gradient(270deg, var(--bg-base) 0%, transparent 100%);
 }

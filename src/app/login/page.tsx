@@ -91,25 +91,29 @@ export default function LoginPage() {
   };
 
   return (
-    <div style={{
-      minHeight: "100vh",
-      display: "flex",
-      flexDirection: isMobile ? "column" : "row",
-      background: "var(--bg-base)",
-    }}>
+    <div
+      data-theme="light"
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: isMobile ? "column" : "row",
+        background: "#FFFFFF",
+        colorScheme: "light",
+      }}
+    >
 
       {/* ── LEFT VIDEO PANEL ── */}
       {!isMobile && (
-        <div style={{
-          width: "55%",
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          overflow: "hidden",
-          background: "linear-gradient(160deg, #FFFFFF 0%, #F0F4F7 50%, #DFEAF5 100%)",
-          borderRight: "1px solid var(--border)",
-        }}>
+          <div style={{
+            width: "55%",
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+            background: "linear-gradient(160deg, #FFFFFF 0%, #F0F4F7 50%, #DFEAF5 100%)",
+            borderRight: "1px solid #DFE8F4",
+          }}>
           <div style={{ position: "relative", zIndex: 1, textAlign: "center", maxWidth: 420, padding: "0 48px" }}>
             <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
               <img
@@ -151,8 +155,8 @@ export default function LoginPage() {
       <div style={{
         width: isMobile ? "100%" : "45%",
         minHeight: "100vh",
-        background: "var(--bg-surface)",
-        borderLeft: isMobile ? "none" : "1px solid var(--bg-border)",
+        background: "#FFFFFF",
+        borderLeft: isMobile ? "none" : "1px solid #DFE8F4",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -400,17 +404,21 @@ export default function LoginPage() {
 
       {/* ── WARP TRANSITION OVERLAY ── */}
       {warpActive && (
-        <div style={{
-          position: 'fixed', inset: 0,
-          zIndex: 9999,
-          background: 'var(--bg-base)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          animation: 'fadeIn 500ms ease-out both',
-          overflow: 'hidden',
-        }}>
+        <div
+          data-theme="light"
+          style={{
+            position: 'fixed', inset: 0,
+            zIndex: 9999,
+            background: '#FFFFFF',
+            colorScheme: 'light',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            animation: 'fadeIn 500ms ease-out both',
+            overflow: 'hidden',
+          }}
+        >
           {/* Subtle overlay */}
           <div style={{
             position: 'absolute', inset: 0,

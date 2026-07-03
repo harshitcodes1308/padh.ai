@@ -7,6 +7,7 @@ import { trpc } from "@/lib/trpc/client";
 import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { isLockedRoute, getFeatureInfo } from "@/lib/tier-config";
 import { UpgradePrompt } from "@/components/UpgradePrompt";
+import { useTheme } from "@/components/providers/theme-provider";
 import {
   LayoutDashboard,
   Calendar,
@@ -24,7 +25,9 @@ import {
   Swords,
   User,
   FileText,
-  LogOut
+  LogOut,
+  Sun,
+  Moon
 } from "lucide-react";
 
 const ROUTE_FLAG_MAP: Partial<Record<string, keyof typeof FEATURE_FLAGS>> = {
@@ -174,6 +177,8 @@ export default function DashboardSidebar({
 }) {
   const pathname = usePathname();
   const router = useRouter();
+  const { theme, toggleTheme } = useTheme();
+  const [animKey, setAnimKey] = useState(0);
   const logoutMutation = trpc.auth.logout.useMutation({
     onSuccess: () => {
       window.location.href = "/";
@@ -210,11 +215,12 @@ export default function DashboardSidebar({
     <aside style={{
       width: 240,
       height: "100vh",
-      background: "#FFFFFF",
+      background: "var(--bg-base)",
       borderRight: "1px solid var(--border)",
       display: "flex",
       flexDirection: "column",
       overflow: "hidden",
+      transition: "background 0.3s ease, border-color 0.3s ease",
     }}>
       {/* Scoped CSS for hover effects */}
       <style>{`
@@ -305,6 +311,41 @@ export default function DashboardSidebar({
             {userEmail || ""}
           </div>
         </div>
+        <button
+          onClick={(e) => { setAnimKey((k) => k + 1); toggleTheme(e); }}
+          aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: 28,
+            height: 28,
+            borderRadius: 6,
+            border: "1px solid var(--border)",
+            background: "transparent",
+            color: "var(--text-secondary)",
+            cursor: "pointer",
+            transition: "all 0.2s ease",
+            flexShrink: 0,
+            overflow: "hidden",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = "var(--brand-blue)";
+            e.currentTarget.style.color = "var(--brand-blue)";
+            e.currentTarget.style.background = "var(--bg-elevated)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = "var(--border)";
+            e.currentTarget.style.color = "var(--text-secondary)";
+            e.currentTarget.style.background = "transparent";
+          }}
+        >
+          {theme === "dark" ? (
+            <Sun key={`sun-${animKey}`} size={14} strokeWidth={2.2} className="theme-toggle-icon" />
+          ) : (
+            <Moon key={`moon-${animKey}`} size={14} strokeWidth={2.2} className="theme-toggle-icon" />
+          )}
+        </button>
         {/* Online dot */}
         <div style={{ position: "relative", flexShrink: 0 }}>
           <div style={{

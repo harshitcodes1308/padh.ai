@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from "react";
 import MagneticButton from "./MagneticButton";
+import { useTheme } from "@/components/providers/theme-provider";
+import { Sun, Moon } from "lucide-react";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -12,6 +16,11 @@ export default function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleToggle = (e: React.MouseEvent) => {
+    setAnimKey((k) => k + 1); // bump key → forces icon re-mount → replays CSS animation
+    toggleTheme(e);
+  };
 
   return (
     <nav
@@ -69,6 +78,43 @@ export default function Nav() {
 
         {/* Right side */}
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          {/* Theme Toggle */}
+          <button
+            onClick={handleToggle}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 38,
+              height: 38,
+              borderRadius: "50%",
+              border: "1px solid var(--border)",
+              background: "var(--bg-surface)",
+              color: "var(--text-primary)",
+              cursor: "pointer",
+              transition: "background 0.2s ease, border-color 0.2s ease, transform 0.15s ease",
+              overflow: "hidden",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "var(--brand-blue)";
+              e.currentTarget.style.background = "var(--bg-elevated)";
+              e.currentTarget.style.transform = "scale(1.08)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "var(--border)";
+              e.currentTarget.style.background = "var(--bg-surface)";
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          >
+            {/* key forces re-mount → CSS spin animation replays on every toggle */}
+            {theme === "dark" ? (
+              <Sun key={`sun-${animKey}`} size={17} strokeWidth={2} className="theme-toggle-icon" />
+            ) : (
+              <Moon key={`moon-${animKey}`} size={17} strokeWidth={2} className="theme-toggle-icon" />
+            )}
+          </button>
+
           <a
             href="/login"
             style={{
@@ -91,7 +137,7 @@ export default function Nav() {
             style={{
               fontSize: 14,
               padding: "10px 24px",
-              borderRadius: "100px", /* Pill shape */
+              borderRadius: "100px",
               textDecoration: "none",
               display: "inline-flex",
               alignItems: "center",

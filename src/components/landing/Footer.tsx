@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#FFFFFF", padding: "80px 24px 40px", borderTop: "1px solid var(--border)" }}>
+    <footer style={{ background: "var(--bg-base)", padding: "80px 24px 40px", borderTop: "1px solid var(--border)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 64 }}>
         
         {/* Top: Multi-column layout */}

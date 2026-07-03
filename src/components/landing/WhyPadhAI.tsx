@@ -33,7 +33,7 @@ export default function WhyPadhAI() {
       ref={sectionRef} 
       style={{ 
         padding: "100px 24px", 
-        background: "#F8F9FA", // Light off-white surface for contrast
+        background: "var(--bg-surface)", // Alternating surface
         borderTop: "1px solid var(--border)",
         borderBottom: "1px solid var(--border)",
       }}
@@ -83,7 +83,7 @@ export default function WhyPadhAI() {
               width: 164,
               height: 164,
               borderRadius: "50%",
-              background: "#FFFFFF",
+              background: "var(--bg-base)",
               border: "1px solid var(--border)",
               boxShadow: "0 10px 28px rgba(45, 129, 247, 0.10)",
               display: "flex",

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import DashboardSidebar from '@/components/layout/dashboard-sidebar';
 import type { CSSProperties, ReactNode } from 'react';
+import { useTheme } from '@/components/providers/theme-provider';
 
 const dashboardThemeVars = {
     '--brand-green': '#08BD80',
@@ -31,6 +32,33 @@ const dashboardThemeVars = {
     '--shadow-gold': '0 8px 18px rgba(45, 129, 247, 0.16)',
 } as CSSProperties & Record<`--${string}`, string>;
 
+const dashboardDarkThemeVars = {
+    '--brand-green': '#08BD80',
+    '--brand-blue': '#2D81F7',
+    '--bg-base': '#080C10',
+    '--bg-surface': '#101720',
+    '--bg-elevated': '#172230',
+    '--border': '#1E293B',
+    '--bg-border': '#273549',
+    '--bg-border-light': '#1A2433',
+    '--text-primary': '#F8FAFC',
+    '--text-secondary': '#94A3B8',
+    '--text-muted': '#64748B',
+    '--text-disabled': '#475569',
+    '--text-dark-alt': '#FFFFFF',
+    '--accent-gold': '#2D81F7',
+    '--accent-gold-dim': '#1F6FE5',
+    '--accent-gold-glow': 'rgba(45, 129, 247, 0.15)',
+    '--accent-gold-border': 'rgba(45, 129, 247, 0.38)',
+    '--status-green': '#08BD80',
+    '--status-red': '#EF4444',
+    '--status-blue': '#2D81F7',
+    '--status-orange': '#F59E0B',
+    '--shadow-card': '0 4px 20px rgba(0, 0, 0, 0.35)',
+    '--shadow-card-hover': '0 8px 30px rgba(45, 129, 247, 0.15)',
+    '--shadow-gold': '0 8px 18px rgba(45, 129, 247, 0.20)',
+} as CSSProperties & Record<`--${string}`, string>;
+
 export function ThemedDashboardContent({
     children,
     userName,
@@ -46,6 +74,7 @@ export function ThemedDashboardContent({
 }) {
     const [isMobile, setIsMobile] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
+    const { theme } = useTheme();
 
     useEffect(() => {
         const check = () => setIsMobile(window.innerWidth < 1024);
@@ -61,15 +90,18 @@ export function ThemedDashboardContent({
         }
     }, []);
 
+    const currentThemeVars = theme === 'dark' ? dashboardDarkThemeVars : dashboardThemeVars;
+
     return (
         <div
             className="dashboard-theme"
             style={{
-                ...dashboardThemeVars,
+                ...currentThemeVars,
                 minHeight: '100vh',
                 position: 'relative',
                 color: 'var(--text-primary)',
-                colorScheme: 'light',
+                colorScheme: theme === 'dark' ? 'dark' : 'light',
+                transition: 'background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease',
             }}
         >
             {/* ── Dashboard Background ── */}

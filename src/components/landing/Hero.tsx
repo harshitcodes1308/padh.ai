@@ -98,7 +98,7 @@ export default function Hero() {
         textAlign: "center",
         padding: "140px 24px 76px",
         overflow: "hidden",
-        background: "#FFFFFF", // Unacademy restraint - pure white hero
+        background: "var(--bg-base)", // Pure base - adapts to dark mode
       }}
     >
       <div
@@ -107,7 +107,7 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(180deg, rgba(248,249,250,0.92) 0%, rgba(255,255,255,0.4) 42%, rgba(255,255,255,1) 100%)",
+            "linear-gradient(180deg, color-mix(in srgb, var(--bg-base) 92%, transparent) 0%, color-mix(in srgb, var(--bg-base) 40%, transparent) 42%, var(--bg-base) 100%)",
           pointerEvents: "none",
         }}
       />
@@ -163,7 +163,7 @@ export default function Hero() {
             gap: 8,
             padding: "8px 12px",
             borderRadius: 999,
-            background: "#FFFFFF",
+            background: "var(--bg-base)",
             border: "1px solid var(--border)",
             color: "var(--text-secondary)",
             fontFamily: "var(--font-body)",
@@ -250,7 +250,7 @@ export default function Hero() {
               padding: "16px 20px",
               borderRadius: "8px",
               border: "1px solid var(--border)",
-              background: "#FFFFFF",
+              background: "var(--bg-base)",
               fontFamily: "var(--font-body)",
               fontSize: 16,
               outline: "none",

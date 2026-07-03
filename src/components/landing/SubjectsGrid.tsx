@@ -37,7 +37,7 @@ export default function SubjectsGrid() {
   }, []);
 
   return (
-    <section ref={sectionRef} style={{ padding: "80px 24px", background: "#FFFFFF" }}>
+    <section ref={sectionRef} style={{ padding: "80px 24px", background: "var(--bg-base)" }}>
       <div style={{ maxWidth: 1000, margin: "0 auto" }}>
         <h2 
           style={{ 

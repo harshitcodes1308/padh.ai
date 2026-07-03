@@ -49,39 +49,40 @@ export function PointerHighlight({
     >
       {children}
       {dimensions.width > 0 && dimensions.height > 0 && (
-        <motion.div
+        <div
           className="pointer-events-none absolute inset-0 z-0"
           style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, pointerEvents: "none", zIndex: 0 }}
-          initial={{ opacity: 0, scale: 0.95, originX: 0, originY: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <motion.div
             className={cn(
-              "absolute border border-neutral-800 dark:border-neutral-200",
+              "absolute border border-blue-500/50 bg-blue-500/10 dark:border-blue-400/50 dark:bg-blue-400/10",
               rectangleClassName,
             )}
-            style={{ position: "absolute", top: 0, left: 0 }}
+            style={{ position: "absolute", top: 0, left: 0, borderRadius: "2px" }}
             initial={{
               width: 0,
               height: 0,
+              opacity: 0,
             }}
             animate={{
-              width: dimensions.width,
-              height: dimensions.height,
+              width: [0, 0, dimensions.width, dimensions.width, dimensions.width, 0],
+              height: [0, 0, dimensions.height, dimensions.height, dimensions.height, 0],
+              opacity: [0, 0, 1, 1, 0, 0],
             }}
             transition={{
-              duration: 1,
+              duration: 4,
+              repeat: Infinity,
+              times: [0, 0.15, 0.45, 0.75, 0.9, 1.0],
               ease: "easeInOut",
             }}
           />
           <motion.div
             className="pointer-events-none absolute"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, x: 0, y: 0 }}
             animate={{
-              opacity: 1,
-              x: dimensions.width + 4,
-              y: dimensions.height + 4,
+              opacity: [0, 1, 1, 1, 0, 0],
+              x: [0, 0, dimensions.width + 4, dimensions.width + 4, dimensions.width + 4, 0],
+              y: [0, 0, dimensions.height + 4, dimensions.height + 4, dimensions.height + 4, 0],
             }}
             style={{
               position: "absolute", 
@@ -91,16 +92,17 @@ export function PointerHighlight({
               rotate: -90,
             }}
             transition={{
-              opacity: { duration: 0.1, ease: "easeInOut" },
-              duration: 1,
+              duration: 4,
+              repeat: Infinity,
+              times: [0, 0.15, 0.45, 0.75, 0.9, 1.0],
               ease: "easeInOut",
             }}
           >
             <Pointer
-              className={cn("h-5 w-5 text-blue-500", pointerClassName)}
+              className={cn("h-5 w-5 text-blue-500 dark:text-blue-400", pointerClassName)}
             />
           </motion.div>
-        </motion.div>
+        </div>
       )}
     </span>
   );

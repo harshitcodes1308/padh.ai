@@ -73,7 +73,7 @@ function PriceCard({
         flexDirection: "column",
         position: "relative",
         borderRadius: "var(--radius-lg)",
-        background: "#FFFFFF",
+        background: "var(--bg-base)",
         border: plan.popular ? "2px solid var(--brand-blue)" : "1px solid var(--border)",
         boxShadow: plan.popular
           ? "0 8px 32px rgba(45, 129, 247, 0.12)"
@@ -170,7 +170,7 @@ export default function Pricing() {
         padding: "clamp(80px, 12vw, 140px) 24px",
         position: "relative",
         zIndex: 1,
-        background: "#FFFFFF",
+        background: "var(--bg-surface)",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>

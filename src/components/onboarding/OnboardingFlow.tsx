@@ -318,10 +318,12 @@ export default function OnboardingFlow() {
   // ── SCREEN 1 — Cinematic Splash ─────────────────────────────
   if (step === 1) return (
     <div
+      data-theme="light"
       onClick={advanceFromS1}
       style={{
         position: 'fixed', inset: 0,
         background: 'linear-gradient(160deg, #FFFFFF 0%, #F0F4F7 50%, #DFEAF5 100%)',
+        colorScheme: 'light',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         flexDirection: 'column',
         opacity: fadeOut ? 0 : 1,
@@ -417,9 +419,11 @@ export default function OnboardingFlow() {
   // ── SCREEN 2 — Apple-style Greeting + Message Reveal ────────
   if (step === 2) return (
     <div
+      data-theme="light"
       style={{
         position: 'fixed', inset: 0,
         background: '#FFFFFF',
+        colorScheme: 'light',
         display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center',
         padding: isMobile ? '32px 24px' : '64px 80px',
@@ -550,9 +554,11 @@ export default function OnboardingFlow() {
   // ── SCREEN 3 — Testimonial Cards (NEW) ─────────────────────
   if (step === 3) return (
     <div
+      data-theme="light"
       style={{
         position: 'fixed', inset: 0,
-        background: 'var(--bg-base)',
+        background: '#F0F4F8',
+        colorScheme: 'light',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         zIndex: 1000,
         overflow: 'hidden',
@@ -577,9 +583,11 @@ export default function OnboardingFlow() {
   // ── SCREEN 4 — Name Input ──────────────────────────────────
   if (step === 4) return (
     <div
+      data-theme="light"
       style={{
         position: 'fixed', inset: 0,
-        background: 'var(--bg-base)',
+        background: '#F0F4F8',
+        colorScheme: 'light',
         display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center',
         padding: isMobile ? '32px 24px' : '64px 80px',
@@ -728,14 +736,18 @@ export default function OnboardingFlow() {
     const isInvalid = enteredCode.length > 0 && !matchedCreator;
 
     return (
-      <div style={{
-        position: 'fixed', inset: 0,
-        background: 'var(--bg-base)',
-        display: 'flex', flexDirection: 'column',
-        alignItems: 'center', justifyContent: 'center',
-        padding: isMobile ? '32px 20px' : '64px 80px',
-        zIndex: 1000, overflow: 'hidden',
-      }}>
+      <div
+        data-theme="light"
+        style={{
+          position: 'fixed', inset: 0,
+          background: '#F0F4F8',
+          colorScheme: 'light',
+          display: 'flex', flexDirection: 'column',
+          alignItems: 'center', justifyContent: 'center',
+          padding: isMobile ? '32px 20px' : '64px 80px',
+          zIndex: 1000, overflow: 'hidden',
+        }}
+      >
         <video src={VIDEO_URL} autoPlay muted playsInline loop style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%',
           objectFit: 'cover', filter: 'grayscale(100%)', opacity: 0.05,
@@ -909,25 +921,31 @@ export default function OnboardingFlow() {
       ? { discountPercentage: selectedCreator.discountPercentage, creatorName: selectedCreator.creatorName }
       : null;
     return (
-      <AnimatedGlassyPricing
-        isMobile={isMobile}
-        onSelectPlan={handlePlanSelect}
-        userName={nameInput || userName}
-        creatorDiscount={creatorDiscount}
-      />
+      <div data-theme="light" style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column" }}>
+        <AnimatedGlassyPricing
+          isMobile={isMobile}
+          onSelectPlan={handlePlanSelect}
+          userName={nameInput || userName}
+          creatorDiscount={creatorDiscount}
+        />
+      </div>
     );
   }
 
   // ── SCREEN 7 — Loading / Setup ─────────────────────────────
   if (step === 7) return (
-    <div style={{
-      position: 'fixed', inset: 0,
-      background: '#FFFFFF',
-      display: 'flex', flexDirection: 'column',
-      alignItems: 'center', justifyContent: 'center',
-      zIndex: 1000,
-      overflow: 'hidden',
-    }}>
+    <div
+      data-theme="light"
+      style={{
+        position: 'fixed', inset: 0,
+        background: '#FFFFFF',
+        colorScheme: 'light',
+        display: 'flex', flexDirection: 'column',
+        alignItems: 'center', justifyContent: 'center',
+        zIndex: 1000,
+        overflow: 'hidden',
+      }}
+    >
       {/* Subtle accent blobs */}
       <div style={{
         position: 'absolute', top: '-15%', right: '-5%',
@@ -1031,14 +1049,18 @@ export default function OnboardingFlow() {
 
   // ── SCREEN 8 — Vapour Text Welcome ─────────────────────────
   if (step === 8) return (
-    <div style={{
-      position: 'fixed', inset: 0,
-      background: '#FFFFFF',
-      display: 'flex', flexDirection: 'column',
-      alignItems: 'center', justifyContent: 'center',
-      gap: '20px',
-      zIndex: 1000,
-    }}>
+    <div
+      data-theme="light"
+      style={{
+        position: 'fixed', inset: 0,
+        background: '#FFFFFF',
+        colorScheme: 'light',
+        display: 'flex', flexDirection: 'column',
+        alignItems: 'center', justifyContent: 'center',
+        gap: '20px',
+        zIndex: 1000,
+      }}
+    >
       {/* PADH.AI logo mark */}
       <img 
         src="/logo.png" 

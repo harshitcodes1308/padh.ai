@@ -2,7 +2,7 @@
 
 export default function AppDownloadStrip() {
   return (
-    <section style={{ padding: "48px 24px", background: "#FFFFFF", borderTop: "1px solid var(--border)" }}>
+    <section style={{ padding: "48px 24px", background: "var(--bg-surface)", borderTop: "1px solid var(--border)" }}>
       <div
         className="sa-app-download"
         style={{

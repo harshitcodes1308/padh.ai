@@ -121,12 +121,16 @@ export default function SignupPage() {
   };
 
   return (
-    <div style={{
-      minHeight: "100vh",
-      display: "flex",
-      flexDirection: isMobile ? "column" : "row",
-      background: "var(--bg-base)",
-    }}>
+    <div
+      data-theme="light"
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: isMobile ? "column" : "row",
+        background: "#FFFFFF",
+        colorScheme: "light",
+      }}
+    >
 
       {/* ── LEFT VIDEO PANEL ── */}
       {!isMobile && (
@@ -138,7 +142,7 @@ export default function SignupPage() {
           justifyContent: "center",
           overflow: "hidden",
           background: "linear-gradient(160deg, #FFFFFF 0%, #F0F4F7 50%, #DFEAF5 100%)",
-          borderRight: "1px solid var(--border)",
+          borderRight: "1px solid #DFE8F4",
         }}>
           <div style={{ position: "relative", zIndex: 1, textAlign: "center", maxWidth: 400, padding: "0 48px" }}>
             <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
@@ -192,8 +196,8 @@ export default function SignupPage() {
       <div style={{
         width: isMobile ? "100%" : "55%",
         minHeight: "100vh",
-        background: "var(--bg-surface)",
-        borderLeft: isMobile ? "none" : "1px solid var(--bg-border)",
+        background: "#FFFFFF",
+        borderLeft: isMobile ? "none" : "1px solid #DFE8F4",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
