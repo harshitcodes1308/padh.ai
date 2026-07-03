@@ -11,6 +11,7 @@ import { itQuestions } from "@/data/precision-it";
 import { englishQuestions } from "@/data/precision-english";
 import { aiQuestions } from "@/data/precision-ai";
 import { socialScienceQuestions } from "@/data/precision-social-science";
+import { normalizeChapterName } from "@/lib/chapter-normalizer";
 import {
   PrecisionQuestion,
   PrecisionSubject,
@@ -46,44 +47,44 @@ const SUBJECTS: PrecisionSubject[] = [
     color: "#10B981",
     chapters: [
       // Physics chapters
-      { id: "FORCE, WORK, POWER AND ENERGY", name: "Force, Work, Power & Energy" },
-      { id: "LIGHT - REFRACTION AND LENSES", name: "Light, Refraction & Lenses" },
-      { id: "SOUND", name: "Sound" },
-      { id: "ELECTRICITY AND MAGNETISM", name: "Electricity & Magnetism" },
-      { id: "HEAT AND CALORIMETRY", name: "Heat & Calorimetry" },
-      { id: "MODERN PHYSICS - RADIOACTIVITY", name: "Modern Physics & Radioactivity" },
-      { id: "MACHINES AND LEVERS", name: "Machines & Levers" },
-      { id: "ELECTROMAGNETISM", name: "Electromagnetism" },
-      { id: "HOUSEHOLD CIRCUITS", name: "Household Circuits" },
+      { id: "FORCE, WORK, POWER AND ENERGY", name: "Force, Work, Power & Energy", subSubject: "Physics" },
+      { id: "LIGHT - REFRACTION AND LENSES", name: "Light, Refraction & Lenses", subSubject: "Physics" },
+      { id: "SOUND", name: "Sound", subSubject: "Physics" },
+      { id: "ELECTRICITY AND MAGNETISM", name: "Electricity & Magnetism", subSubject: "Physics" },
+      { id: "HEAT AND CALORIMETRY", name: "Heat & Calorimetry", subSubject: "Physics" },
+      { id: "MODERN PHYSICS - RADIOACTIVITY", name: "Modern Physics & Radioactivity", subSubject: "Physics" },
+      { id: "MACHINES AND LEVERS", name: "Machines & Levers", subSubject: "Physics" },
+      { id: "ELECTROMAGNETISM", name: "Electromagnetism", subSubject: "Physics" },
+      { id: "HOUSEHOLD CIRCUITS", name: "Household Circuits", subSubject: "Physics" },
       // Chemistry chapters
-      { id: "PERIODIC TABLE - PERIODIC PROPERTIES", name: "Periodic Table" },
-      { id: "CHEMICAL BONDING", name: "Chemical Bonding" },
-      { id: "STUDY OF ACIDS, BASES AND SALTS", name: "Study Of Acids, Bases And Salts" },
-      { id: "ANALYTICAL CHEMISTRY", name: "Analytical Chemistry" },
-      { id: "MOLE CONCEPT AND STOICHIOMETRY", name: "Mole Concept And Stoichiometry" },
-      { id: "ELECTROLYSIS", name: "Electrolysis" },
-      { id: "METALLURGY", name: "Metallurgy" },
-      { id: "STUDY OF COMPOUNDS - HYDROGEN", name: "Study Of Compounds - Hydrogen Chloride" },
-      { id: "STUDY OF COMPOUNDS - AMMONIA", name: "Study Of Compounds - Ammonia" },
-      { id: "STUDY OF COMPOUNDS - NITRIC ACID", name: "Study Of Compounds - Nitric Acid" },
-      { id: "STUDY OF COMPOUNDS - SULPHURIC ACID", name: "Study Of Compounds - Sulphuric Acid" },
-      { id: "ORGANIC CHEMISTRY - HYDROCARBONS", name: "Organic Chemistry - Hydrocarbons" },
-      { id: "ORGANIC CHEMISTRY - ALCOHOLS AND CARBOXYLIC ACIDS", name: "Organic Chemistry - Alcohols And Carboxylic Acids" },
-      { id: "ALLOYS", name: "Alloys" },
-      { id: "PRACTICAL CHEMISTRY", name: "Practical Chemistry" },
-      { id: "MOLE CONCEPT - EMPIRICAL AND MOLECULAR FORMULA", name: "Mole Concept - Empirical And Molecular Formula" },
+      { id: "PERIODIC TABLE - PERIODIC PROPERTIES", name: "Periodic Table", subSubject: "Chemistry" },
+      { id: "CHEMICAL BONDING", name: "Chemical Bonding", subSubject: "Chemistry" },
+      { id: "STUDY OF ACIDS, BASES AND SALTS", name: "Study Of Acids, Bases And Salts", subSubject: "Chemistry" },
+      { id: "ANALYTICAL CHEMISTRY", name: "Analytical Chemistry", subSubject: "Chemistry" },
+      { id: "MOLE CONCEPT AND STOICHIOMETRY", name: "Mole Concept And Stoichiometry", subSubject: "Chemistry" },
+      { id: "ELECTROLYSIS", name: "Electrolysis", subSubject: "Chemistry" },
+      { id: "METALLURGY", name: "Metallurgy", subSubject: "Chemistry" },
+      { id: "STUDY OF COMPOUNDS - HYDROGEN", name: "Study Of Compounds - Hydrogen Chloride", subSubject: "Chemistry" },
+      { id: "STUDY OF COMPOUNDS - AMMONIA", name: "Study Of Compounds - Ammonia", subSubject: "Chemistry" },
+      { id: "STUDY OF COMPOUNDS - NITRIC ACID", name: "Study Of Compounds - Nitric Acid", subSubject: "Chemistry" },
+      { id: "STUDY OF COMPOUNDS - SULPHURIC ACID", name: "Study Of Compounds - Sulphuric Acid", subSubject: "Chemistry" },
+      { id: "ORGANIC CHEMISTRY - HYDROCARBONS", name: "Organic Chemistry - Hydrocarbons", subSubject: "Chemistry" },
+      { id: "ORGANIC CHEMISTRY - ALCOHOLS AND CARBOXYLIC ACIDS", name: "Organic Chemistry - Alcohols And Carboxylic Acids", subSubject: "Chemistry" },
+      { id: "ALLOYS", name: "Alloys", subSubject: "Chemistry" },
+      { id: "PRACTICAL CHEMISTRY", name: "Practical Chemistry", subSubject: "Chemistry" },
+      { id: "MOLE CONCEPT - EMPIRICAL AND MOLECULAR FORMULA", name: "Mole Concept - Empirical And Molecular Formula", subSubject: "Chemistry" },
       // Biology chapters
-      { id: "Cell Cycle, Cell Division and Structure of Chromosomes", name: "Cell Cycle & Chromosomes" },
-      { id: "Genetics - Mendel's Laws and Inheritance", name: "Genetics & Inheritance" },
-      { id: "Absorption by Roots and Osmosis", name: "Absorption by Roots" },
-      { id: "Transpiration and Photosynthesis", name: "Transpiration" },
-      { id: "Photosynthesis", name: "Photosynthesis" },
-      { id: "Plant Physiology", name: "Plant Physiology" },
-      { id: "The Endocrine System", name: "The Endocrine System" },
-      { id: "Reproductive System", name: "Reproductive System" },
-      { id: "Population and Health", name: "Population and Health" },
-      { id: "Pollution and Waste Management", name: "Pollution and Waste Management" },
-      { id: "Human Evolution", name: "Human Evolution" }
+      { id: "Cell Cycle, Cell Division and Structure of Chromosomes", name: "Cell Cycle & Chromosomes", subSubject: "Biology" },
+      { id: "Genetics - Mendel's Laws and Inheritance", name: "Genetics & Inheritance", subSubject: "Biology" },
+      { id: "Absorption by Roots and Osmosis", name: "Absorption by Roots", subSubject: "Biology" },
+      { id: "Transpiration and Photosynthesis", name: "Transpiration", subSubject: "Biology" },
+      { id: "Photosynthesis", name: "Photosynthesis", subSubject: "Biology" },
+      { id: "Plant Physiology", name: "Plant Physiology", subSubject: "Biology" },
+      { id: "The Endocrine System", name: "The Endocrine System", subSubject: "Biology" },
+      { id: "Reproductive System", name: "Reproductive System", subSubject: "Biology" },
+      { id: "Population and Health", name: "Population and Health", subSubject: "Biology" },
+      { id: "Pollution and Waste Management", name: "Pollution and Waste Management", subSubject: "Biology" },
+      { id: "Human Evolution", name: "Human Evolution", subSubject: "Biology" }
     ],
   },
   {
@@ -219,7 +220,9 @@ const SUBJECTS: PrecisionSubject[] = [
 ];
 
 function getChapterQuestions(subject: string, chapter: string): PrecisionQuestion[] {
-  return (ALL_QUESTIONS[subject] || []).filter((q) => q.chapter === chapter);
+  return (ALL_QUESTIONS[subject] || []).filter(
+    (q) => normalizeChapterName(q.chapter) === normalizeChapterName(chapter)
+  );
 }
 
 function getChapterStats(subject: string, chapter: string) {
@@ -241,6 +244,7 @@ export default function CompetencyTestPage() {
   const { isMobile } = useResponsive();
   const [phase, setPhase] = useState<Phase>("subject");
   const [selectedSubject, setSelectedSubject] = useState<PrecisionSubject | null>(null);
+  const [scienceSubSubject, setScienceSubSubject] = useState<"Physics" | "Chemistry" | "Biology" | null>(null);
   const [selectedChapter, setSelectedChapter] = useState("");
   const [questions, setQuestions] = useState<PrecisionQuestion[]>([]);
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -362,6 +366,7 @@ export default function CompetencyTestPage() {
   const resetAll = () => {
     setPhase("subject");
     setSelectedSubject(null);
+    setScienceSubSubject(null);
     setSelectedChapter("");
     setQuestions([]);
     setCurrentIdx(0);
@@ -553,13 +558,103 @@ export default function CompetencyTestPage() {
   // CHAPTER SELECTION
   // =============================================
   if (phase === "chapter" && selectedSubject) {
+    if (selectedSubject.id === "Science" && !scienceSubSubject) {
+      return (
+        <div style={{ padding: "32px 24px", maxWidth: 800, margin: "0 auto" }}>
+          <button onClick={() => { setPhase("subject"); setSelectedSubject(null); }} style={{
+            background: "none", border: "none", color: "var(--text-muted)", cursor: "pointer",
+            fontSize: 14, marginBottom: 28, display: "flex", alignItems: "center", gap: 6,
+            transition: "color 0.2s",
+          }}>← Back to Subjects</button>
+
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 36 }}>
+            <div style={{
+              width: 60, height: 60, borderRadius: 18,
+              background: `linear-gradient(135deg, ${selectedSubject.color}25, ${selectedSubject.color}10)`,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: 30, border: `1px solid ${selectedSubject.color}20`,
+              boxShadow: `0 8px 24px ${selectedSubject.color}15`,
+            }}>{selectedSubject.icon}</div>
+            <div>
+              <h1 style={{ fontSize: 26, fontWeight: 800, color: "var(--text-primary)", margin: 0 }}>
+                Science
+              </h1>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, margin: 0 }}>
+                Select a discipline to practice competency questions
+              </p>
+            </div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
+            {[
+              { id: "Physics", name: "Physics", icon: "⚡", color: "#F59E0B" },
+              { id: "Chemistry", name: "Chemistry", icon: "🧪", color: "#10B981" },
+              { id: "Biology", name: "Biology", icon: "🧬", color: "#3B82F6" },
+            ].map((sub) => {
+              const questions = ALL_QUESTIONS["Science"] || [];
+              const subChapters = selectedSubject.chapters.filter((ch: any) => ch.subSubject === sub.id);
+              const count = questions.filter(q => subChapters.some(ch => normalizeChapterName(q.chapter) === normalizeChapterName(ch.id))).length;
+              return (
+                <button
+                  key={sub.id}
+                  onClick={() => setScienceSubSubject(sub.id as any)}
+                  style={{
+                    position: "relative",
+                    background: "var(--bg-surface)",
+                    border: "1px solid var(--border)",
+                    borderRadius: 20,
+                    padding: "32px 24px",
+                    cursor: "pointer",
+                    textAlign: "center",
+                    transition: "all 0.3s ease",
+                    boxShadow: "var(--shadow-card)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-3px)";
+                    e.currentTarget.style.border = `1px solid ${sub.color}40`;
+                    e.currentTarget.style.boxShadow = `0 12px 32px ${sub.color}15`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "none";
+                    e.currentTarget.style.border = "1px solid var(--border)";
+                    e.currentTarget.style.boxShadow = "var(--shadow-card)";
+                  }}
+                >
+                  <div style={{
+                    width: 56, height: 56, borderRadius: 16,
+                    background: `linear-gradient(135deg, ${sub.color}25, ${sub.color}10)`,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: 28, border: `1px solid ${sub.color}20`,
+                    margin: "0 auto 16px auto",
+                  }}>{sub.icon}</div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: "var(--text-primary)", marginBottom: 6 }}>{sub.name}</div>
+                  <div style={{ fontSize: 12, color: "var(--text-muted)", fontWeight: 600 }}>{count} Practice Qs</div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+
+    const visibleChapters = selectedSubject.id === "Science"
+      ? selectedSubject.chapters.filter((ch: any) => ch.subSubject === scienceSubSubject)
+      : selectedSubject.chapters;
+
     return (
       <div style={{ padding: "32px 24px", maxWidth: 800, margin: "0 auto" }}>
-        <button onClick={() => setPhase("subject")} style={{
+        <button onClick={() => {
+          if (selectedSubject.id === "Science" && scienceSubSubject) {
+            setScienceSubSubject(null);
+          } else {
+            setPhase("subject");
+            setSelectedSubject(null);
+          }
+        }} style={{
           background: "none", border: "none", color: "var(--text-muted)", cursor: "pointer",
           fontSize: 14, marginBottom: 28, display: "flex", alignItems: "center", gap: 6,
           transition: "color 0.2s",
-        }}>← Back to Subjects</button>
+        }}>← Back to {selectedSubject.id === "Science" ? "Science Specialties" : "Subjects"}</button>
 
         <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 36 }}>
           <div style={{
@@ -571,7 +666,7 @@ export default function CompetencyTestPage() {
           }}>{selectedSubject.icon}</div>
           <div>
             <h1 style={{ fontSize: 26, fontWeight: 800, color: "var(--text-primary)", margin: 0 }}>
-              {selectedSubject.name}
+              {selectedSubject.id === "Science" ? `${scienceSubSubject}` : selectedSubject.name}
             </h1>
             <p style={{ color: "var(--text-muted)", fontSize: 14, margin: 0 }}>
               Select a chapter to begin your timed test
@@ -580,7 +675,7 @@ export default function CompetencyTestPage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          {selectedSubject.chapters.map((ch) => {
+          {visibleChapters.map((ch) => {
             const stats = getChapterStats(selectedSubject.id, ch.id);
             const hasQ = stats.count > 0;
             const isHovered = hoveredChapter === ch.id;

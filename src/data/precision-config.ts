@@ -103,6 +103,7 @@ export interface PrecisionSubject {
 export interface PrecisionChapter {
   id: string;
   name: string;
+  subSubject?: string;
 }
 
 // =============================================

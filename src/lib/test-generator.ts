@@ -8,6 +8,8 @@ import { englishQuestions } from "@/data/precision-english";
 import { aiQuestions } from "@/data/precision-ai";
 import { socialScienceQuestions } from "@/data/precision-social-science";
 
+import { normalizeChapterName } from "./chapter-normalizer";
+
 export interface MCQ {
   id: string;
   question: string;
@@ -72,7 +74,7 @@ export async function generateMCQs(params: {
 
   // Filter questions belonging to selected chapters
   let filtered = allQuestions.filter((q) =>
-    chapters.some((ch) => q.chapter.trim().toLowerCase() === ch.trim().toLowerCase())
+    chapters.some((ch) => normalizeChapterName(q.chapter) === normalizeChapterName(ch))
   );
 
   // Fallback to all subject questions if no chapter matched
