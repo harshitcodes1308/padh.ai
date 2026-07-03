@@ -7,7 +7,7 @@ import { mathsBasicQuestions } from "@/data/precision-maths-basic";
 import { mathsStandardQuestions } from "@/data/precision-maths-standard";
 import { chemistryQuestions } from "@/data/precision-chemistry";
 import { PRECISION_BIOLOGY } from "@/data/precision-biology";
-import { computerQuestions } from "@/data/precision-computers";
+import { itQuestions } from "@/data/precision-it";
 import {
   PrecisionQuestion,
   PrecisionSubject,
@@ -27,7 +27,7 @@ const ALL_QUESTIONS: Record<string, PrecisionQuestion[]> = {
   "Mathematics Standard": mathsStandardQuestions,
   Chemistry: chemistryQuestions,
   Biology: PRECISION_BIOLOGY,
-  "Computer Applications": computerQuestions,
+  "Information Technology": itQuestions,
 };
 
 const SUBJECTS: PrecisionSubject[] = [
@@ -136,30 +136,15 @@ const SUBJECTS: PrecisionSubject[] = [
     ],
   },
   {
-    id: "Computer Applications",
-    name: "Computer Applications",
+    id: "Information Technology",
+    name: "Information Technology",
     icon: "💻",
     color: "#6366F1",
     chapters: [
-      { id: "INTRODUCTION TO OBJECT ORIENTED PROGRAMMING CONCEPTS", name: "Intro to OOP" },
-      { id: "ELEMENTARY CONCEPT OF OBJECTS AND CLASSES", name: "Objects & Classes" },
-      { id: "VALUES AND DATA TYPES", name: "Values & Data Types" },
-      { id: "OPERATORS IN JAVA", name: "Operators in Java" },
-      { id: "INPUT IN JAVA", name: "Input in Java" },
-      { id: "MATHEMATICAL LIBRARY METHODS", name: "Math Library Methods" },
-      { id: "CONDITIONAL CONSTRUCTS IN JAVA", name: "Conditional Constructs" },
-      { id: "ITERATIVE CONSTRUCTS IN JAVA", name: "Iterative Constructs" },
-      { id: "NESTED FOR LOOPS", name: "Nested For Loops" },
-      { id: "CLASS AS THE BASIS OF ALL COMPUTATION", name: "Class as Computation Basis" },
-      { id: "USER-DEFINED METHODS", name: "User-Defined Methods" },
-      { id: "CONSTRUCTORS", name: "Constructors" },
-      { id: "LIBRARY CLASSES (WRAPPER CLASSES)", name: "Library & Wrapper Classes" },
-      { id: "ENCAPSULATION (ACCESS SPECIFIERS)", name: "Encapsulation" },
-      { id: "ARRAYS", name: "Arrays" },
-      { id: "STRING HANDLING", name: "String Handling" },
-      { id: "SORTING AND SEARCHING", name: "Sorting & Searching" },
-      { id: "Method Overloading", name: "Method Overloading" },
-      { id: "Exception Handling", name: "Exception Handling" },
+      { id: "Digital Documentation (Writer)", name: "Digital Documentation (Writer)" },
+      { id: "Electronic Spreadsheet (Calc)", name: "Electronic Spreadsheet (Calc)" },
+      { id: "Database Management System (Base)", name: "Database Management System (Base)" },
+      { id: "Internet and Workplace Safety", name: "Internet & Workplace Safety" },
     ],
   },
 ];
