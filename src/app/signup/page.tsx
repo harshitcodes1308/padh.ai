@@ -137,38 +137,28 @@ export default function SignupPage() {
           alignItems: "center",
           justifyContent: "center",
           overflow: "hidden",
+          background: "linear-gradient(160deg, #FFFFFF 0%, #F0F4F7 50%, #DFEAF5 100%)",
+          borderRight: "1px solid var(--border)",
         }}>
-          <video
-            ref={videoRef}
-            src={VIDEO_URL}
-            autoPlay muted playsInline loop
-            style={{
-              position: "absolute", inset: 0,
-              width: "100%", height: "100%",
-              objectFit: "cover",
-              filter: "grayscale(100%) brightness(0.35)",
-            }}
-          />
-          <div style={{
-            position: "absolute", inset: 0,
-            background: "radial-gradient(ellipse at 40% 50%, rgba(45,129,247,0.28) 0%, rgba(8,189,128,0.12) 38%, rgba(12,24,44,0.84) 76%)",
-          }} />
           <div style={{ position: "relative", zIndex: 1, textAlign: "center", maxWidth: 400, padding: "0 48px" }}>
-            <div style={{ marginBottom: 24 }}>
-              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                <circle cx="26" cy="26" r="25" stroke="rgba(45,129,247,0.72)" strokeWidth="1"/>
-                <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(8,189,128,0.85)" strokeWidth="1.5"/>
-                <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(45,129,247,0.18)"/>
-              </svg>
+            <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
+              <img
+                src="/logo.png"
+                alt="Padh.ai Logo"
+                style={{ width: 80, height: 80, objectFit: "contain" }}
+              />
             </div>
             <div style={{
               fontFamily: "var(--font-body)",
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "0.2em",
-              color: "rgba(255,255,255,0.82)",
+              fontSize: 16,
+              fontWeight: 900,
+              letterSpacing: "0.25em",
+              background: "linear-gradient(135deg, var(--brand-blue), var(--brand-green))",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
               textTransform: "uppercase",
               marginBottom: 32,
+              display: "inline-block",
             }}>
               PADH.AI
             </div>
@@ -177,8 +167,8 @@ export default function SignupPage() {
               fontSize: 26,
               letterSpacing: "-0.01em",
               lineHeight: 1.35,
-              color: "#FFFFFF",
-              fontWeight: 400,
+              color: "var(--text-primary)",
+              fontWeight: 600,
               fontStyle: "italic",
             }}>
               &quot;The students who start early, finish strong.&quot;
@@ -187,9 +177,10 @@ export default function SignupPage() {
               marginTop: 24,
               fontFamily: "var(--font-body)",
               fontSize: 12,
-              color: "rgba(255,255,255,0.70)",
+              color: "var(--text-muted)",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
+              fontWeight: 600,
             }}>
               Class X · CBSE · 2027 Boards
             </div>
@@ -215,11 +206,11 @@ export default function SignupPage() {
         {/* Mobile logo */}
         {isMobile && (
           <div style={{ textAlign: "center", marginBottom: 32 }}>
-            <svg width="36" height="36" viewBox="0 0 52 52" fill="none">
-              <circle cx="26" cy="26" r="25" stroke="rgba(45,129,247,0.7)" strokeWidth="1"/>
-              <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(8,189,128,0.9)" strokeWidth="1.5"/>
-              <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(45,129,247,0.15)"/>
-            </svg>
+            <img
+              src="/logo.png"
+              alt="Padh.ai Logo"
+              style={{ width: 44, height: 44, objectFit: "contain", margin: "0 auto" }}
+            />
           </div>
         )}
 

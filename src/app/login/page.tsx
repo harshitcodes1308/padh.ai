@@ -107,41 +107,28 @@ export default function LoginPage() {
           alignItems: "center",
           justifyContent: "center",
           overflow: "hidden",
+          background: "linear-gradient(160deg, #FFFFFF 0%, #F0F4F7 50%, #DFEAF5 100%)",
+          borderRight: "1px solid var(--border)",
         }}>
-          <video
-            ref={videoRef}
-            src={VIDEO_URL}
-            autoPlay muted playsInline loop
-            style={{
-              position: "absolute", inset: 0,
-              width: "100%", height: "100%",
-              objectFit: "cover",
-              filter: "grayscale(100%) brightness(0.35)",
-            }}
-          />
-          {/* PADH.AI blue/green tinted overlay */}
-          <div style={{
-            position: "absolute", inset: 0,
-            background: "radial-gradient(ellipse at 40% 50%, rgba(45,129,247,0.28) 0%, rgba(8,189,128,0.12) 38%, rgba(12,24,44,0.84) 76%)",
-          }} />
-
           <div style={{ position: "relative", zIndex: 1, textAlign: "center", maxWidth: 420, padding: "0 48px" }}>
-            {/* Logo mark */}
-            <div style={{ marginBottom: 24 }}>
-              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                <circle cx="26" cy="26" r="25" stroke="rgba(45,129,247,0.72)" strokeWidth="1"/>
-                <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(8,189,128,0.85)" strokeWidth="1.5"/>
-                <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(45,129,247,0.18)"/>
-              </svg>
+            <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
+              <img
+                src="/logo.png"
+                alt="Padh.ai Logo"
+                style={{ width: 80, height: 80, objectFit: "contain" }}
+              />
             </div>
             <div style={{
               fontFamily: "var(--font-body)",
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "0.2em",
-              color: "rgba(255,255,255,0.82)",
+              fontSize: 16,
+              fontWeight: 900,
+              letterSpacing: "0.25em",
+              background: "linear-gradient(135deg, var(--brand-blue), var(--brand-green))",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
               textTransform: "uppercase",
               marginBottom: 32,
+              display: "inline-block",
             }}>
               PADH.AI
             </div>
@@ -150,8 +137,8 @@ export default function LoginPage() {
               fontSize: 28,
               letterSpacing: "-0.01em",
               lineHeight: 1.35,
-              color: "#FFFFFF",
-              fontWeight: 400,
+              color: "var(--text-primary)",
+              fontWeight: 600,
               fontStyle: "italic",
             }}>
               "Every great board result starts with one decision."
@@ -178,11 +165,11 @@ export default function LoginPage() {
         {/* Mobile logo */}
         {isMobile && (
           <div style={{ textAlign: "center", marginBottom: 36 }}>
-            <svg width="36" height="36" viewBox="0 0 52 52" fill="none">
-              <circle cx="26" cy="26" r="25" stroke="rgba(45,129,247,0.7)" strokeWidth="1"/>
-              <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(8,189,128,0.9)" strokeWidth="1.5"/>
-              <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(45,129,247,0.15)"/>
-            </svg>
+            <img
+              src="/logo.png"
+              alt="Padh.ai Logo"
+              style={{ width: 44, height: 44, objectFit: "contain", margin: "0 auto" }}
+            />
           </div>
         )}
 
@@ -416,7 +403,7 @@ export default function LoginPage() {
         <div style={{
           position: 'fixed', inset: 0,
           zIndex: 9999,
-          background: '#030308',
+          background: 'var(--bg-base)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -424,22 +411,10 @@ export default function LoginPage() {
           animation: 'fadeIn 500ms ease-out both',
           overflow: 'hidden',
         }}>
-          {/* Space warp video background */}
-          <video
-            src={VIDEO_URL}
-            autoPlay muted playsInline loop
-            style={{
-              position: 'absolute', inset: 0,
-              width: '100%', height: '100%',
-              objectFit: 'cover',
-              filter: 'brightness(0.5)',
-              opacity: 0.7,
-            }}
-          />
-          {/* Blue tint overlay */}
+          {/* Subtle overlay */}
           <div style={{
             position: 'absolute', inset: 0,
-            background: 'radial-gradient(ellipse at 50% 50%, rgba(45,129,247,0.22) 0%, rgba(8,189,128,0.10) 38%, rgba(3,3,8,0.78) 76%)',
+            background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, var(--bg-base) 100%)',
             pointerEvents: 'none',
           }} />
 
@@ -451,7 +426,7 @@ export default function LoginPage() {
               fontSize: isMobile ? 32 : 52,
               letterSpacing: '-0.03em',
               lineHeight: 1.15,
-              color: '#FFFFFF',
+              color: 'var(--text-primary)',
               opacity: warpText >= 1 ? 1 : 0,
               transform: warpText >= 1 ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.97)',
               transition: 'all 800ms cubic-bezier(0.16,1,0.3,1)',
@@ -462,9 +437,9 @@ export default function LoginPage() {
             <div style={{
               fontFamily: 'var(--font-tagline)',
               fontSize: isMobile ? 14 : 18,
-              fontWeight: 400,
+              fontWeight: 600,
               fontStyle: 'italic',
-              color: 'var(--accent-gold)',
+              color: 'var(--brand-blue)',
               opacity: warpText >= 2 ? 1 : 0,
               transform: warpText >= 2 ? 'translateY(0)' : 'translateY(12px)',
               transition: 'all 600ms cubic-bezier(0.16,1,0.3,1)',
@@ -480,13 +455,13 @@ export default function LoginPage() {
             display: 'flex',
             alignItems: 'center',
             gap: 8,
-            opacity: warpText >= 1 ? 0.5 : 0,
+            opacity: warpText >= 1 ? 0.7 : 0,
             transition: 'opacity 0.6s ease 0.6s',
           }}>
             <div style={{
               width: 6, height: 6,
               borderRadius: '50%',
-              background: 'var(--accent-gold)',
+              background: 'var(--brand-blue)',
               animation: 'pulse 1.2s ease-in-out infinite',
             }} />
             <span style={{
