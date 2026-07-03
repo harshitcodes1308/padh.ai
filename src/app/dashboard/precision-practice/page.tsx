@@ -377,7 +377,7 @@ export default function CompetencyTestPage() {
           {[
             { marks: "1 Mark", time: "60s", color: "#10B981" },
             { marks: "2 Marks", time: "2m 30s", color: "#3B82F6" },
-            { marks: "3 Marks", time: "4m", color: "var(--brand-green)" },
+            { marks: "3 Marks", time: "4m", color: "#08BD80" },
             { marks: "4 Marks", time: "5m 30s", color: "#F59E0B" },
           ].map((r) => (
             <div key={r.marks} style={{
