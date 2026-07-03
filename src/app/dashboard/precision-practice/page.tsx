@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useResponsive } from "@/hooks/useResponsive";
 import { physicsQuestions } from "@/data/precision-physics";
-import { mathsQuestions } from "@/data/precision-maths";
+import { mathsBasicQuestions } from "@/data/precision-maths-basic";
+import { mathsStandardQuestions } from "@/data/precision-maths-standard";
 import { chemistryQuestions } from "@/data/precision-chemistry";
 import { PRECISION_BIOLOGY } from "@/data/precision-biology";
 import { computerQuestions } from "@/data/precision-computers";
@@ -22,7 +23,8 @@ import {
 // =============================================
 const ALL_QUESTIONS: Record<string, PrecisionQuestion[]> = {
   Physics: physicsQuestions,
-  Mathematics: mathsQuestions,
+  "Mathematics Basic": mathsBasicQuestions,
+  "Mathematics Standard": mathsStandardQuestions,
   Chemistry: chemistryQuestions,
   Biology: PRECISION_BIOLOGY,
   "Computer Applications": computerQuestions,
@@ -47,31 +49,47 @@ const SUBJECTS: PrecisionSubject[] = [
     ],
   },
   {
-    id: "Mathematics",
-    name: "Mathematics",
+    id: "Mathematics Basic",
+    name: "Mathematics Basic",
     icon: "🔢",
     color: "#3B82F6",
     chapters: [
-      { id: "GST", name: "GST" },
-      { id: "Banking", name: "Banking" },
-      { id: "Shares and Dividends", name: "Shares and Dividends" },
-      { id: "Linear Inequations", name: "Linear Inequations" },
+      { id: "Real Numbers", name: "Real Numbers" },
+      { id: "Polynomials", name: "Polynomials" },
+      { id: "Pair of Linear Equations in Two Variables", name: "Pair of Linear Equations in Two Variables" },
       { id: "Quadratic Equations", name: "Quadratic Equations" },
-      { id: "Factorisation", name: "Factorisation" },
-      { id: "Matrices", name: "Matrices" },
-      { id: "Arithmetic Progression", name: "Arithmetic Progression" },
-      { id: "Geometric Progression", name: "Geometric Progression" },
-      { id: "Ratio and Proportion", name: "Ratio and Proportion" },
+      { id: "Arithmetic Progressions", name: "Arithmetic Progressions" },
+      { id: "Triangles", name: "Triangles" },
       { id: "Coordinate Geometry", name: "Coordinate Geometry" },
-      { id: "Coordinate Geometry (Slope & Equation)", name: "Slope & Equation of Line" },
-      { id: "Similarity", name: "Similarity" },
+      { id: "Introduction to Trigonometry", name: "Introduction to Trigonometry" },
+      { id: "Some Applications of Trigonometry", name: "Some Applications of Trigonometry" },
       { id: "Circles", name: "Circles" },
-      { id: "Trigonometry", name: "Trigonometry" },
-      { id: "Heights and Distances", name: "Heights and Distances" },
-      { id: "Mensuration", name: "Mensuration" },
+      { id: "Areas Related to Circles", name: "Areas Related to Circles" },
+      { id: "Surface Areas and Volumes", name: "Surface Areas and Volumes" },
       { id: "Statistics", name: "Statistics" },
       { id: "Probability", name: "Probability" },
-      { id: "Direct and Inverse Variation", name: "Direct and Inverse Variation" },
+    ],
+  },
+  {
+    id: "Mathematics Standard",
+    name: "Mathematics Standard",
+    icon: "📐",
+    color: "#8B5CF6",
+    chapters: [
+      { id: "Real Numbers", name: "Real Numbers" },
+      { id: "Polynomials", name: "Polynomials" },
+      { id: "Pair of Linear Equations in Two Variables", name: "Pair of Linear Equations in Two Variables" },
+      { id: "Quadratic Equations", name: "Quadratic Equations" },
+      { id: "Arithmetic Progressions", name: "Arithmetic Progressions" },
+      { id: "Triangles", name: "Triangles" },
+      { id: "Coordinate Geometry", name: "Coordinate Geometry" },
+      { id: "Introduction to Trigonometry", name: "Introduction to Trigonometry" },
+      { id: "Some Applications of Trigonometry", name: "Some Applications of Trigonometry" },
+      { id: "Circles", name: "Circles" },
+      { id: "Areas Related to Circles", name: "Areas Related to Circles" },
+      { id: "Surface Areas and Volumes", name: "Surface Areas and Volumes" },
+      { id: "Statistics", name: "Statistics" },
+      { id: "Probability", name: "Probability" },
     ],
   },
   {
