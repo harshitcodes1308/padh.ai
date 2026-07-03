@@ -8,12 +8,12 @@
 export const FEATURE_FLAGS = {
   // ── LIVE on launch ──────────────────────────────────────────
   webinar: true,
-  videoLectures: true,
+  videoLectures: false,
   aiDoubtSolver: true,
   smartPlanner: true,
   customiseTest: true,
   competencyTest: true,
-  flipTheQuestion: true,
+  flipTheQuestion: false,
   focusMode: true,
   todoList: true,
 
