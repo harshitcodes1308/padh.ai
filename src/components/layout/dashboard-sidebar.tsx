@@ -7,6 +7,25 @@ import { trpc } from "@/lib/trpc/client";
 import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { isLockedRoute, getFeatureInfo } from "@/lib/tier-config";
 import { UpgradePrompt } from "@/components/UpgradePrompt";
+import {
+  LayoutDashboard,
+  Calendar,
+  Target,
+  BookOpen,
+  Video,
+  Presentation,
+  Brain,
+  Timer,
+  Calculator,
+  Compass,
+  Trophy,
+  FileQuestion,
+  RefreshCw,
+  Swords,
+  User,
+  FileText,
+  LogOut
+} from "lucide-react";
 
 const ROUTE_FLAG_MAP: Partial<Record<string, keyof typeof FEATURE_FLAGS>> = {
   "/dashboard/study-flow": "studyFlow",
@@ -48,14 +67,14 @@ const PadhLogo = ({ size = 28 }: { size?: number }) => (
   />
 );
 
-type NavItem = { icon: string; label: string; href: string };
+type NavItem = { icon: React.ComponentType<any>; label: string; href: string };
 type NavGroup = { label: string; items: NavItem[] };
 
 const ACCOUNT_GROUP: NavGroup = {
   label: "ACCOUNT",
   items: [
-    { icon: "○", label: "Profile",  href: "/dashboard/profile" },
-    { icon: "○", label: "Policies", href: "/dashboard/policies" },
+    { icon: User, label: "Profile",  href: "/dashboard/profile" },
+    { icon: FileText, label: "Policies", href: "/dashboard/policies" },
   ],
 };
 
@@ -63,34 +82,34 @@ const ACCOUNT_GROUP: NavGroup = {
 const FREE_NAV_GROUPS: NavGroup[] = [
   {
     label: "HOME",
-    items: [{ icon: "⊞", label: "Dashboard", href: "/dashboard" }],
+    items: [{ icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" }],
   },
   {
     label: "FREE",
     items: [
-      { icon: "◎", label: "Smart Planner",    href: "/dashboard/planner" },
-      { icon: "○", label: "Monthly Mission",  href: "/dashboard/todo" },
-      { icon: "▶", label: "Study Flow",       href: "/dashboard/study-flow" },
-      { icon: "▷", label: "Video Lectures",   href: "/dashboard/video-lectures" },
-      { icon: "◈", label: "Live Webinar",     href: "/dashboard/webinar" },
+      { icon: Calendar, label: "Smart Planner",    href: "/dashboard/planner" },
+      { icon: Target, label: "Monthly Mission",  href: "/dashboard/todo" },
+      { icon: BookOpen, label: "Study Flow",       href: "/dashboard/study-flow" },
+      { icon: Video, label: "Video Lectures",   href: "/dashboard/video-lectures" },
+      { icon: Presentation, label: "Live Webinar",     href: "/dashboard/webinar" },
     ],
   },
   {
     label: "STUDY",
     items: [
-      { icon: "◈", label: "AI Doubt Solver",   href: "/dashboard/ai-assistant" },
-      { icon: "◎", label: "ChronoScroll",      href: "/dashboard/chronoscroll" },
-      { icon: "◈", label: "Numerical Mastery", href: "/dashboard/numerical-mastery" },
-      { icon: "◉", label: "Focus Mode",        href: "/dashboard/focus" },
+      { icon: Brain, label: "AI Doubt Solver",   href: "/dashboard/ai-assistant" },
+      { icon: Timer, label: "ChronoScroll",      href: "/dashboard/chronoscroll" },
+      { icon: Calculator, label: "Numerical Mastery", href: "/dashboard/numerical-mastery" },
+      { icon: Compass, label: "Focus Mode",        href: "/dashboard/focus" },
     ],
   },
   {
     label: "PRACTICE",
     items: [
-      { icon: "◉", label: "Competency Test",   href: "/dashboard/precision-practice" },
-      { icon: "◈", label: "Customise Test",    href: "/dashboard/tests" },
-      { icon: "⇌", label: "Flip the Question", href: "/dashboard/flip-the-question" },
-      { icon: "◉", label: "Date Battle Arena", href: "/dashboard/date-battle" },
+      { icon: Trophy, label: "Competency Test",   href: "/dashboard/precision-practice" },
+      { icon: FileQuestion, label: "Customise Test",    href: "/dashboard/tests" },
+      { icon: RefreshCw, label: "Flip the Question", href: "/dashboard/flip-the-question" },
+      { icon: Swords, label: "Date Battle Arena", href: "/dashboard/date-battle" },
     ],
   },
   ACCOUNT_GROUP,
@@ -100,34 +119,34 @@ const FREE_NAV_GROUPS: NavGroup[] = [
 const PAID_NAV_GROUPS: NavGroup[] = [
   {
     label: "HOME",
-    items: [{ icon: "⊞", label: "Dashboard", href: "/dashboard" }],
+    items: [{ icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" }],
   },
   {
     label: "PLAN",
     items: [
-      { icon: "◎", label: "Smart Planner",   href: "/dashboard/planner" },
-      { icon: "○", label: "Monthly Mission", href: "/dashboard/todo" },
-      { icon: "◈", label: "Live Webinar",    href: "/dashboard/webinar" },
+      { icon: Calendar, label: "Smart Planner",   href: "/dashboard/planner" },
+      { icon: Target, label: "Monthly Mission", href: "/dashboard/todo" },
+      { icon: Presentation, label: "Live Webinar",    href: "/dashboard/webinar" },
     ],
   },
   {
     label: "STUDY",
     items: [
-      { icon: "▶", label: "Study Flow",        href: "/dashboard/study-flow" },
-      { icon: "▷", label: "Video Lectures",    href: "/dashboard/video-lectures" },
-      { icon: "◈", label: "AI Doubt Solver",   href: "/dashboard/ai-assistant" },
-      { icon: "◎", label: "ChronoScroll",      href: "/dashboard/chronoscroll" },
-      { icon: "◈", label: "Numerical Mastery", href: "/dashboard/numerical-mastery" },
-      { icon: "◉", label: "Focus Mode",        href: "/dashboard/focus" },
+      { icon: BookOpen, label: "Study Flow",        href: "/dashboard/study-flow" },
+      { icon: Video, label: "Video Lectures",    href: "/dashboard/video-lectures" },
+      { icon: Brain, label: "AI Doubt Solver",   href: "/dashboard/ai-assistant" },
+      { icon: Timer, label: "ChronoScroll",      href: "/dashboard/chronoscroll" },
+      { icon: Calculator, label: "Numerical Mastery", href: "/dashboard/numerical-mastery" },
+      { icon: Compass, label: "Focus Mode",        href: "/dashboard/focus" },
     ],
   },
   {
     label: "PRACTICE",
     items: [
-      { icon: "◉", label: "Competency Test",   href: "/dashboard/precision-practice" },
-      { icon: "◈", label: "Customise Test",    href: "/dashboard/tests" },
-      { icon: "⇌", label: "Flip the Question", href: "/dashboard/flip-the-question" },
-      { icon: "◉", label: "Date Battle Arena", href: "/dashboard/date-battle" },
+      { icon: Trophy, label: "Competency Test",   href: "/dashboard/precision-practice" },
+      { icon: FileQuestion, label: "Customise Test",    href: "/dashboard/tests" },
+      { icon: RefreshCw, label: "Flip the Question", href: "/dashboard/flip-the-question" },
+      { icon: Swords, label: "Date Battle Arena", href: "/dashboard/date-battle" },
     ],
   },
   ACCOUNT_GROUP,
@@ -135,11 +154,11 @@ const PAID_NAV_GROUPS: NavGroup[] = [
 
 // Mobile bottom tab bar items
 const MOBILE_TABS = [
-  { icon: "⊞", label: "Home", href: "/dashboard" },
-  { icon: "◈", label: "Study", href: "/dashboard/ai-assistant" },
-  { icon: "◉", label: "Practice", href: "/dashboard/precision-practice" },
-  { icon: "◎", label: "Focus", href: "/dashboard/focus" },
-  { icon: "○", label: "Account", href: "/dashboard/profile" },
+  { icon: LayoutDashboard, label: "Home", href: "/dashboard" },
+  { icon: Brain, label: "Study", href: "/dashboard/ai-assistant" },
+  { icon: Trophy, label: "Practice", href: "/dashboard/precision-practice" },
+  { icon: Compass, label: "Focus", href: "/dashboard/focus" },
+  { icon: User, label: "Account", href: "/dashboard/profile" },
 ];
 
 export default function DashboardSidebar({
@@ -346,14 +365,18 @@ export default function DashboardSidebar({
                     }}
                   >
                     <span style={{
-                      fontSize: 13,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                       color: isActive ? "var(--brand-blue)" : "var(--text-muted)",
                       minWidth: 16,
-                      textAlign: "center",
                       opacity: isActive ? 1 : 0.55,
                       flexShrink: 0,
                     }}>
-                      {item.icon}
+                      {(() => {
+                        const Icon = item.icon;
+                        return <Icon size={16} strokeWidth={isActive ? 2.3 : 1.8} />;
+                      })()}
                     </span>
                     <span style={{ flex: 1, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                       {item.label}
@@ -392,8 +415,16 @@ export default function DashboardSidebar({
               paddingLeft: 10,
             }}
           >
-            <span style={{ fontSize: 13, color: "var(--text-muted)", minWidth: 16, textAlign: "center", opacity: 0.55, flexShrink: 0 }}>
-              ⎋
+            <span style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "var(--text-muted)",
+              minWidth: 16,
+              opacity: 0.55,
+              flexShrink: 0,
+            }}>
+              <LogOut size={16} strokeWidth={1.8} />
             </span>
             <span style={{ flex: 1, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
               {logoutMutation.isPending ? "Logging out..." : "Log out"}
@@ -581,7 +612,10 @@ export default function DashboardSidebar({
                 position: "relative",
               }}
             >
-              <span style={{ fontSize: 18, lineHeight: 1 }}>{tab.icon}</span>
+              {(() => {
+                const Icon = tab.icon;
+                return <Icon size={18} strokeWidth={isActive ? 2.3 : 1.8} style={{ display: "block" }} />;
+              })()}
               <span style={{
                 fontFamily: "var(--font-body)",
                 fontSize: 9,
