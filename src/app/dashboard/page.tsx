@@ -6,6 +6,21 @@ import { useEffect, useMemo, useState } from "react";
 import { useResponsive } from "@/hooks/useResponsive";
 import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { MONTHLY_MISSION, getCurrentMonthIndex, getMonthTaskCounts } from "@/data/monthly-mission";
+import {
+  Calendar,
+  Target,
+  BookOpen,
+  Video,
+  Presentation,
+  Brain,
+  Timer,
+  Calculator,
+  Compass,
+  Trophy,
+  FileQuestion,
+  RefreshCw,
+  Swords
+} from "lucide-react";
 
 const MM_KEY = "saviours-monthly-mission-v2";
 const MODE_KEY = "saviours-stats-mode";
@@ -170,18 +185,18 @@ export default function DashboardPage() {
     }, []);
 
     const featureCards = [
-        { flag: "studyFlow" as const, label: "Study Flow", desc: "Watch → Revise → Practice", path: "/dashboard/study-flow", icon: "▶", tagline: "Your guided learning path" },
-        { flag: "aiDoubtSolver" as const, label: "AI Doubt Solver", desc: "Ask anything, get instant answers", path: "/dashboard/ai-assistant", icon: "◈", tagline: "Your 24/7 academic companion" },
-        { flag: "smartPlanner" as const, label: "Smart Planner", desc: "Your day, mapped intelligently", path: "/dashboard/planner", icon: "◎", tagline: "Because time waits for no one" },
-        { flag: "competencyTest" as const, label: "Competency Test", desc: "PYQ-based timed practice", path: "/dashboard/precision-practice", icon: "◉", tagline: "Practice like it's the real thing" },
-        { flag: "customiseTest" as const, label: "Customise Test", desc: "Build your own MCQ set", path: "/dashboard/tests", icon: "◈", tagline: "Your test, your rules" },
-        { flag: "flipTheQuestion" as const, label: "Flip the Question", desc: "Reverse-engineer from answers", path: "/dashboard/flip-the-question", icon: "⇌", tagline: "See questions from the other side" },
-        { flag: "focusMode" as const, label: "Focus Mode", desc: "Distraction-free deep work", path: "/dashboard/focus", icon: "◎", tagline: "Where deep work happens" },
-        { flag: "todoList" as const, label: "Monthly Mission", desc: "12-month CBSE board prep checklist", path: "/dashboard/todo", icon: "○", tagline: "One month at a time" },
-        { flag: "webinar" as const, label: "Live Webinar", desc: "Free sessions with Pranay Bhaiya", path: "/dashboard/webinar", icon: "◈", tagline: "Your questions, answered live." },
-        { flag: "chronoScroll" as const, label: "ChronoScroll", desc: "Scroll through history, snap dates", path: "/dashboard/chronoscroll", icon: "◎", tagline: "Scroll. Snap. Remember." },
-        { flag: "numericalMastery" as const, label: "Numerical Mastery", desc: "Physics formulas, solved examples & PYQs", path: "/dashboard/numerical-mastery", icon: "◈", tagline: "Every formula, every numerical, mastered." },
-        { flag: "dateBattleArena" as const, label: "Date Battle Arena", desc: "Gamified history dates, 60-second battles", path: "/dashboard/date-battle", icon: "◉", tagline: "Speed meets memory in the arena." },
+        { flag: "studyFlow" as const, label: "Study Flow", desc: "Watch → Revise → Practice", path: "/dashboard/study-flow", icon: BookOpen, tagline: "Your guided learning path" },
+        { flag: "aiDoubtSolver" as const, label: "AI Doubt Solver", desc: "Ask anything, get instant answers", path: "/dashboard/ai-assistant", icon: Brain, tagline: "Your 24/7 academic companion" },
+        { flag: "smartPlanner" as const, label: "Smart Planner", desc: "Your day, mapped intelligently", path: "/dashboard/planner", icon: Calendar, tagline: "Because time waits for no one" },
+        { flag: "competencyTest" as const, label: "Competency Test", desc: "PYQ-based timed practice", path: "/dashboard/precision-practice", icon: Trophy, tagline: "Practice like it's the real thing" },
+        { flag: "customiseTest" as const, label: "Customise Test", desc: "Build your own MCQ set", path: "/dashboard/tests", icon: FileQuestion, tagline: "Your test, your rules" },
+        { flag: "flipTheQuestion" as const, label: "Flip the Question", desc: "Reverse-engineer from answers", path: "/dashboard/flip-the-question", icon: RefreshCw, tagline: "See questions from the other side" },
+        { flag: "focusMode" as const, label: "Focus Mode", desc: "Distraction-free deep work", path: "/dashboard/focus", icon: Compass, tagline: "Where deep work happens" },
+        { flag: "todoList" as const, label: "Monthly Mission", desc: "12-month CBSE board prep checklist", path: "/dashboard/todo", icon: Target, tagline: "One month at a time" },
+        { flag: "webinar" as const, label: "Live Webinar", desc: "Free sessions with Pranay Bhaiya", path: "/dashboard/webinar", icon: Presentation, tagline: "Your questions, answered live." },
+        { flag: "chronoScroll" as const, label: "ChronoScroll", desc: "Scroll through history, snap dates", path: "/dashboard/chronoscroll", icon: Timer, tagline: "Scroll. Snap. Remember." },
+        { flag: "numericalMastery" as const, label: "Numerical Mastery", desc: "Physics formulas, solved examples & PYQs", path: "/dashboard/numerical-mastery", icon: Calculator, tagline: "Every formula, every numerical, mastered." },
+        { flag: "dateBattleArena" as const, label: "Date Battle Arena", desc: "Gamified history dates, 60-second battles", path: "/dashboard/date-battle", icon: Swords, tagline: "Speed meets memory in the arena." },
     ].filter(card => FEATURE_FLAGS[card.flag]);
 
     if (profileLoading || !stats) {
@@ -521,12 +536,14 @@ export default function DashboardPage() {
                                 <div style={{ position: "relative", zIndex: 1 }}>
                                     {/* Icon */}
                                     <div style={{
-                                        fontFamily: "var(--font-display)", fontSize: isMobile ? 22 : 26,
                                         color: hoveredCard === card.path ? "var(--brand-blue)" : "var(--text-muted)",
-                                        marginBottom: 14, lineHeight: 1,
+                                        marginBottom: 14, display: "flex", alignItems: "center",
                                         transition: "color 0.3s ease",
                                     }}>
-                                        {card.icon}
+                                        {(() => {
+                                            const Icon = card.icon;
+                                            return <Icon size={isMobile ? 22 : 26} strokeWidth={1.8} />;
+                                        })()}
                                     </div>
 
                                     {/* Title */}
