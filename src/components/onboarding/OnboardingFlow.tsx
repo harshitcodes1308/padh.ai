@@ -594,13 +594,13 @@ export default function OnboardingFlow() {
           position: 'absolute', inset: 0,
           width: '100%', height: '100%',
           objectFit: 'cover',
-          filter: 'grayscale(100%) brightness(0.2)',
-          opacity: 0.3,
+          filter: 'grayscale(100%)',
+          opacity: 0.05,
         }}
       />
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(180deg, rgba(3,3,3,0.85) 0%, rgba(0,15,40,0.5) 50%, rgba(3,3,3,0.9) 100%)',
+        background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, var(--bg-base) 100%)',
         pointerEvents: 'none',
       }} />
 
@@ -738,11 +738,11 @@ export default function OnboardingFlow() {
       }}>
         <video src={VIDEO_URL} autoPlay muted playsInline loop style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%',
-          objectFit: 'cover', filter: 'grayscale(100%) brightness(0.15)', opacity: 0.25,
+          objectFit: 'cover', filter: 'grayscale(100%)', opacity: 0.05,
         }} />
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(180deg, rgba(3,3,3,0.9) 0%, rgba(0,10,30,0.5) 50%, rgba(3,3,3,0.95) 100%)',
+          background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, var(--bg-base) 100%)',
           pointerEvents: 'none',
         }} />
 
