@@ -8,7 +8,7 @@ import { englishQuestions } from "@/data/precision-english";
 import { aiQuestions } from "@/data/precision-ai";
 import { socialScienceQuestions } from "@/data/precision-social-science";
 
-import { normalizeChapterName } from "./chapter-normalizer";
+import { normalizeChapterName, getChapterSubSubject } from "./chapter-normalizer";
 
 export interface MCQ {
   id: string;
@@ -28,7 +28,14 @@ const SUBJECT_QUESTIONS: Record<string, any[]> = {
     ...chemistryQuestions,
     ...PRECISION_BIOLOGY,
   ],
+  Physics: physicsQuestions,
+  Chemistry: chemistryQuestions,
+  Biology: PRECISION_BIOLOGY,
   "Social Science": socialScienceQuestions,
+  History: socialScienceQuestions,
+  Geography: socialScienceQuestions,
+  "Political Science": socialScienceQuestions,
+  Economics: socialScienceQuestions,
   English: englishQuestions,
   "Information Technology": itQuestions,
   "Artificial Intelligence": aiQuestions,
@@ -57,7 +64,12 @@ export async function generateMCQs(params: {
   console.log(`Generating test for ${subject} with chapters:`, chapters);
 
   // Get questions list for the subject
-  const allQuestions = SUBJECT_QUESTIONS[subject] || [];
+  let allQuestions = SUBJECT_QUESTIONS[subject] || [];
+
+  // Filter Social Science sub-subjects to their respective disciplines
+  if (["History", "Geography", "Political Science", "Economics"].includes(subject)) {
+    allQuestions = allQuestions.filter((q) => getChapterSubSubject(q.chapter) === subject);
+  }
 
   if (allQuestions.length === 0) {
     console.warn(`No questions found for subject: ${subject}. Returning mock questions.`);

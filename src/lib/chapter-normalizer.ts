@@ -99,6 +99,86 @@ export function normalizeChapterName(name: string): string {
     return "Pollution and Waste Management";
   }
 
+  // History
+  if (clean.includes("nationalismineurope") || clean.includes("riseofnationalism")) {
+    return "The Rise of Nationalism in Europe";
+  }
+  if (clean.includes("nationalisminindia")) {
+    return "Nationalism in India";
+  }
+  if (clean.includes("globalworld") || clean.includes("makingofaglobal")) {
+    return "The Making of a Global World";
+  }
+  if (clean.includes("printculture")) {
+    return "Print Culture and the Modern World";
+  }
+  if (clean.includes("mappointinghistory") || (clean.includes("mappointing") && clean.includes("history"))) {
+    return "Map Pointing - History";
+  }
+
+  // Geography
+  if (clean.includes("resourcesanddev") || clean.includes("resourcesdevelopment")) {
+    return "Resources and Development";
+  }
+  if (clean.includes("forestandwildlife") || clean.includes("forestwildlife")) {
+    return "Forest and Wildlife Resources";
+  }
+  if (clean.includes("waterresource")) {
+    return "Water Resources";
+  }
+  if (clean.includes("agriculture")) {
+    return "Agriculture";
+  }
+  if (clean.includes("mineral") && clean.includes("energy")) {
+    return "Minerals and Energy Resources";
+  }
+  if (clean.includes("manufacturingindustr")) {
+    return "Manufacturing Industries";
+  }
+  if (clean.includes("lifelines")) {
+    return "Lifelines of National Economy";
+  }
+  if (clean.includes("mappointinggeography") || (clean.includes("mappointing") && clean.includes("geography"))) {
+    return "Map Pointing - Geography";
+  }
+  if (clean.includes("mappoint") && !clean.includes("history")) {
+    return "Map Pointing - Geography";
+  }
+
+  // Political Science
+  if (clean.includes("powersharing")) {
+    return "Power-sharing";
+  }
+  if (clean.includes("federalism")) {
+    return "Federalism";
+  }
+  if (clean.includes("genderreligion") || clean.includes("genderreligioncaste")) {
+    return "Gender, Religion and Caste";
+  }
+  if (clean.includes("politicalpart")) {
+    return "Political Parties";
+  }
+  if (clean.includes("outcomesofdemoc")) {
+    return "Outcomes of Democracy";
+  }
+
+  // Economics
+  if (clean.includes("development") && !clean.includes("resource")) {
+    return "Development";
+  }
+  if (clean.includes("sectorsof")) {
+    return "Sectors of the Indian Economy";
+  }
+  if (clean.includes("money") && clean.includes("credit")) {
+    return "Money and Credit";
+  }
+  if (clean.includes("globalisation") || clean.includes("globalization")) {
+    return "Globalisation and the Indian Economy";
+  }
+  if (clean.includes("consumerrights")) {
+    return "Consumer Rights";
+  }
+
   // Mathematics Basic & Standard
   if (clean.includes("realnumber")) return "Real Numbers";
   if (clean.includes("polynomial")) return "Polynomials";
@@ -152,4 +232,39 @@ export function normalizeChapterName(name: string): string {
   if (clean.includes("savedtheearth") || clean.includes("bookthatsaved")) return "The Book that Saved the Earth";
 
   return name.trim();
+}
+
+/**
+ * Returns the sub-subject classification for Science and Social Science chapters
+ */
+export function getChapterSubSubject(name: string): string | undefined {
+  if (!name) return undefined;
+  const clean = name.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  // Science
+  if (clean.includes("force") || clean.includes("work") || clean.includes("power") || clean.includes("energy") || clean.includes("machine") || clean.includes("lever") || clean.includes("light") || clean.includes("lens") || clean.includes("refraction") || clean.includes("reflection") || clean.includes("spectrum") || clean.includes("sound") || clean.includes("echo") || clean.includes("vibration") || clean.includes("electricity") || clean.includes("magnet") || clean.includes("ohm") || clean.includes("circuit") || clean.includes("current") || clean.includes("electromagnet") || clean.includes("heat") || clean.includes("calorimetry") || clean.includes("radioactiv") || clean.includes("nuclear") || clean.includes("modernphysics")) {
+    return "Physics";
+  }
+  if (clean.includes("periodic") || clean.includes("chemicalbonding") || clean.includes("bonding") || clean.includes("acid") || clean.includes("base") || clean.includes("salt") || clean.includes("analytical") || clean.includes("moleconcept") || clean.includes("stoichiometry") || clean.includes("empirical") || clean.includes("electrolysis") || clean.includes("metallurgy") || clean.includes("alloy") || clean.includes("hydrogen") || clean.includes("ammonia") || clean.includes("nitric") || clean.includes("sulphuric") || clean.includes("organic") || clean.includes("hydrocarbon") || clean.includes("alcohol") || clean.includes("carboxylic") || clean.includes("practicalchem")) {
+    return "Chemistry";
+  }
+  if (clean.includes("cell") || clean.includes("genetic") || clean.includes("mendel") || clean.includes("inheritance") || clean.includes("evolution") || clean.includes("absorption") || clean.includes("root") || clean.includes("osmosis") || clean.includes("transpiration") || clean.includes("photosynthesis") || clean.includes("plantphys") || clean.includes("endocrine") || clean.includes("hormone") || clean.includes("reproduct") || clean.includes("population") || clean.includes("health") || clean.includes("pollution") || clean.includes("waste")) {
+    return "Biology";
+  }
+
+  // Social Science
+  if (clean.includes("nationalismineurope") || clean.includes("riseofnationalism") || clean.includes("nationalisminindia") || clean.includes("globalworld") || clean.includes("makingofaglobal") || clean.includes("printculture") || clean.includes("history")) {
+    return "History";
+  }
+  if (clean.includes("resourcesanddev") || clean.includes("resourcesdevelopment") || clean.includes("forestandwildlife") || clean.includes("forestwildlife") || clean.includes("waterresource") || clean.includes("agriculture") || (clean.includes("mineral") && clean.includes("energy")) || clean.includes("manufacturingindustr") || clean.includes("lifelines") || clean.includes("geography")) {
+    return "Geography";
+  }
+  if (clean.includes("powersharing") || clean.includes("federalism") || clean.includes("genderreligion") || clean.includes("genderreligioncaste") || clean.includes("politicalpart") || clean.includes("outcomesofdemoc") || clean.includes("polsci") || clean.includes("politicalscience")) {
+    return "Political Science";
+  }
+  if ((clean.includes("development") && !clean.includes("resource")) || clean.includes("sectorsof") || (clean.includes("money") && clean.includes("credit")) || clean.includes("globalisation") || clean.includes("globalization") || clean.includes("consumerrights") || clean.includes("economics")) {
+    return "Economics";
+  }
+
+  return undefined;
 }

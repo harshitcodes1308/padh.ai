@@ -26,17 +26,17 @@ import {
 // SUBJECT + QUESTION INDEX
 // =============================================
 const ALL_QUESTIONS: Record<string, PrecisionQuestion[]> = {
-  "Mathematics Basic": mathsBasicQuestions,
-  "Mathematics Standard": mathsStandardQuestions,
+  "Mathematics Basic": mathsBasicQuestions.map((q, idx) => ({ ...q, id: (q as any).id || `mb-${idx}`, subject: "Mathematics Basic", marks: q.marks as any })),
+  "Mathematics Standard": mathsStandardQuestions.map((q, idx) => ({ ...q, id: (q as any).id || `ms-${idx}`, subject: "Mathematics Standard", marks: q.marks as any })),
   Science: [
-    ...physicsQuestions.map((q) => ({ ...q, subject: "Science" })),
-    ...chemistryQuestions.map((q) => ({ ...q, subject: "Science" })),
-    ...PRECISION_BIOLOGY.map((q) => ({ ...q, subject: "Science" })),
+    ...physicsQuestions.map((q, idx) => ({ ...q, id: q.id || `phy-${idx}`, subject: "Science", marks: q.marks as any })),
+    ...chemistryQuestions.map((q, idx) => ({ ...q, id: q.id || `chem-${idx}`, subject: "Science", marks: q.marks as any })),
+    ...PRECISION_BIOLOGY.map((q, idx) => ({ ...q, id: q.id || `bio-${idx}`, subject: "Science", marks: q.marks as any })),
   ],
-  "Social Science": socialScienceQuestions,
-  English: englishQuestions,
-  "Information Technology": itQuestions,
-  "Artificial Intelligence": aiQuestions,
+  "Social Science": socialScienceQuestions.map((q, idx) => ({ ...q, id: `ss-${idx}`, subject: "Social Science", marks: q.marks as any })),
+  English: englishQuestions.map((q, idx) => ({ ...q, id: `eng-${idx}`, subject: "English", marks: q.marks as any })),
+  "Information Technology": itQuestions.map((q, idx) => ({ ...q, id: `it-${idx}`, subject: "Information Technology", marks: q.marks as any })),
+  "Artificial Intelligence": aiQuestions.map((q, idx) => ({ ...q, id: `ai-${idx}`, subject: "Artificial Intelligence", marks: q.marks as any })),
 };
 
 const SUBJECTS: PrecisionSubject[] = [
@@ -137,10 +137,33 @@ const SUBJECTS: PrecisionSubject[] = [
     icon: "🌍",
     color: "#EF4444",
     chapters: [
-      { id: "History", name: "History" },
-      { id: "Geography", name: "Geography" },
-      { id: "Political Science", name: "Political Science" },
-      { id: "Economics", name: "Economics" },
+      // History
+      { id: "The Rise of Nationalism in Europe", name: "The Rise of Nationalism in Europe", subSubject: "History" },
+      { id: "Nationalism in India", name: "Nationalism in India", subSubject: "History" },
+      { id: "The Making of a Global World", name: "The Making of a Global World", subSubject: "History" },
+      { id: "Print Culture and the Modern World", name: "Print Culture and the Modern World", subSubject: "History" },
+      { id: "Map Pointing - History", name: "Map Pointing - History", subSubject: "History" },
+      // Geography
+      { id: "Resources and Development", name: "Resources and Development", subSubject: "Geography" },
+      { id: "Forest and Wildlife Resources", name: "Forest and Wildlife Resources", subSubject: "Geography" },
+      { id: "Water Resources", name: "Water Resources", subSubject: "Geography" },
+      { id: "Agriculture", name: "Agriculture", subSubject: "Geography" },
+      { id: "Minerals and Energy Resources", name: "Minerals and Energy Resources", subSubject: "Geography" },
+      { id: "Manufacturing Industries", name: "Manufacturing Industries", subSubject: "Geography" },
+      { id: "Lifelines of National Economy", name: "Lifelines of National Economy", subSubject: "Geography" },
+      { id: "Map Pointing - Geography", name: "Map Pointing - Geography", subSubject: "Geography" },
+      // Political Science
+      { id: "Power-sharing", name: "Power-sharing", subSubject: "Political Science" },
+      { id: "Federalism", name: "Federalism", subSubject: "Political Science" },
+      { id: "Gender, Religion and Caste", name: "Gender, Religion and Caste", subSubject: "Political Science" },
+      { id: "Political Parties", name: "Political Parties", subSubject: "Political Science" },
+      { id: "Outcomes of Democracy", name: "Outcomes of Democracy", subSubject: "Political Science" },
+      // Economics
+      { id: "Development", name: "Development", subSubject: "Economics" },
+      { id: "Sectors of the Indian Economy", name: "Sectors of the Indian Economy", subSubject: "Economics" },
+      { id: "Money and Credit", name: "Money and Credit", subSubject: "Economics" },
+      { id: "Globalisation and the Indian Economy", name: "Globalisation and the Indian Economy", subSubject: "Economics" },
+      { id: "Consumer Rights", name: "Consumer Rights", subSubject: "Economics" },
     ],
   },
   {
@@ -245,6 +268,7 @@ export default function CompetencyTestPage() {
   const [phase, setPhase] = useState<Phase>("subject");
   const [selectedSubject, setSelectedSubject] = useState<PrecisionSubject | null>(null);
   const [scienceSubSubject, setScienceSubSubject] = useState<"Physics" | "Chemistry" | "Biology" | null>(null);
+  const [socialScienceSubSubject, setSocialScienceSubSubject] = useState<"History" | "Geography" | "Political Science" | "Economics" | null>(null);
   const [selectedChapter, setSelectedChapter] = useState("");
   const [questions, setQuestions] = useState<PrecisionQuestion[]>([]);
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -367,6 +391,7 @@ export default function CompetencyTestPage() {
     setPhase("subject");
     setSelectedSubject(null);
     setScienceSubSubject(null);
+    setSocialScienceSubSubject(null);
     setSelectedChapter("");
     setQuestions([]);
     setCurrentIdx(0);
@@ -637,8 +662,90 @@ export default function CompetencyTestPage() {
       );
     }
 
+    if (selectedSubject.id === "Social Science" && !socialScienceSubSubject) {
+      return (
+        <div style={{ padding: "32px 24px", maxWidth: 800, margin: "0 auto" }}>
+          <button onClick={() => { setPhase("subject"); setSelectedSubject(null); }} style={{
+            background: "none", border: "none", color: "var(--text-muted)", cursor: "pointer",
+            fontSize: 14, marginBottom: 28, display: "flex", alignItems: "center", gap: 6,
+            transition: "color 0.2s",
+          }}>← Back to Subjects</button>
+
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 36 }}>
+            <div style={{
+              width: 60, height: 60, borderRadius: 18,
+              background: `linear-gradient(135deg, ${selectedSubject.color}25, ${selectedSubject.color}10)`,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: 30, border: `1px solid ${selectedSubject.color}20`,
+              boxShadow: `0 8px 24px ${selectedSubject.color}15`,
+            }}>{selectedSubject.icon}</div>
+            <div>
+              <h1 style={{ fontSize: 26, fontWeight: 800, color: "var(--text-primary)", margin: 0 }}>
+                Social Science
+              </h1>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, margin: 0 }}>
+                Select a subject area to practice competency questions
+              </p>
+            </div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16 }}>
+            {[
+              { id: "History", name: "History", icon: "📜", color: "#EF4444" },
+              { id: "Geography", name: "Geography", icon: "🗺️", color: "#3B82F6" },
+              { id: "Political Science", name: "Political Science", icon: "🏛️", color: "#F59E0B" },
+              { id: "Economics", name: "Economics", icon: "📈", color: "#10B981" },
+            ].map((sub) => {
+              const questions = ALL_QUESTIONS["Social Science"] || [];
+              const subChapters = selectedSubject.chapters.filter((ch: any) => ch.subSubject === sub.id);
+              const count = questions.filter(q => subChapters.some(ch => normalizeChapterName(q.chapter) === normalizeChapterName(ch.id))).length;
+              return (
+                <button
+                  key={sub.id}
+                  onClick={() => setSocialScienceSubSubject(sub.id as any)}
+                  style={{
+                    position: "relative",
+                    background: "var(--bg-surface)",
+                    border: "1px solid var(--border)",
+                    borderRadius: 20,
+                    padding: "32px 20px",
+                    cursor: "pointer",
+                    textAlign: "center",
+                    transition: "all 0.3s ease",
+                    boxShadow: "var(--shadow-card)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-3px)";
+                    e.currentTarget.style.border = `1px solid ${sub.color}40`;
+                    e.currentTarget.style.boxShadow = `0 12px 32px ${sub.color}15`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "none";
+                    e.currentTarget.style.border = "1px solid var(--border)";
+                    e.currentTarget.style.boxShadow = "var(--shadow-card)";
+                  }}
+                >
+                  <div style={{
+                    width: 56, height: 56, borderRadius: 16,
+                    background: `linear-gradient(135deg, ${sub.color}25, ${sub.color}10)`,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: 28, border: `1px solid ${sub.color}20`,
+                    margin: "0 auto 16px auto",
+                  }}>{sub.icon}</div>
+                  <div style={{ fontSize: 16, fontWeight: 800, color: "var(--text-primary)", marginBottom: 6 }}>{sub.name}</div>
+                  <div style={{ fontSize: 12, color: "var(--text-muted)", fontWeight: 600 }}>{count} Practice Qs</div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+
     const visibleChapters = selectedSubject.id === "Science"
       ? selectedSubject.chapters.filter((ch: any) => ch.subSubject === scienceSubSubject)
+      : selectedSubject.id === "Social Science"
+      ? selectedSubject.chapters.filter((ch: any) => ch.subSubject === socialScienceSubSubject)
       : selectedSubject.chapters;
 
     return (
@@ -646,6 +753,8 @@ export default function CompetencyTestPage() {
         <button onClick={() => {
           if (selectedSubject.id === "Science" && scienceSubSubject) {
             setScienceSubSubject(null);
+          } else if (selectedSubject.id === "Social Science" && socialScienceSubSubject) {
+            setSocialScienceSubSubject(null);
           } else {
             setPhase("subject");
             setSelectedSubject(null);
@@ -654,7 +763,7 @@ export default function CompetencyTestPage() {
           background: "none", border: "none", color: "var(--text-muted)", cursor: "pointer",
           fontSize: 14, marginBottom: 28, display: "flex", alignItems: "center", gap: 6,
           transition: "color 0.2s",
-        }}>← Back to {selectedSubject.id === "Science" ? "Science Specialties" : "Subjects"}</button>
+        }}>← Back to {selectedSubject.id === "Science" ? "Science Specialties" : selectedSubject.id === "Social Science" ? "Social Science Specialties" : "Subjects"}</button>
 
         <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 36 }}>
           <div style={{
@@ -666,7 +775,11 @@ export default function CompetencyTestPage() {
           }}>{selectedSubject.icon}</div>
           <div>
             <h1 style={{ fontSize: 26, fontWeight: 800, color: "var(--text-primary)", margin: 0 }}>
-              {selectedSubject.id === "Science" ? `${scienceSubSubject}` : selectedSubject.name}
+              {selectedSubject.id === "Science"
+                ? `${scienceSubSubject}`
+                : selectedSubject.id === "Social Science"
+                ? `${socialScienceSubSubject}`
+                : selectedSubject.name}
             </h1>
             <p style={{ color: "var(--text-muted)", fontSize: 14, margin: 0 }}>
               Select a chapter to begin your timed test
