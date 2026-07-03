@@ -43,7 +43,7 @@ export default function FeaturesDashboard({ data }: Props) {
   const maxCalls = Math.max(...data.featureBreakdown.map(f => f.calls), 1);
 
   const miniCards = [
-    { label: "AI Calls", value: data.totalAiCalls.toLocaleString(), icon: "🤖", color: "#00D4FF" },
+    { label: "AI Calls", value: data.totalAiCalls.toLocaleString(), icon: "🤖", color: "#2D81F7" },
     { label: "Tokens", value: `${(data.totalTokens / 1000).toFixed(0)}K`, icon: "🔤", color: "#A78BFA" },
     { label: "Tests", value: data.totalTests, icon: "📝", color: "#3ECF8E" },
     { label: "Focus Hrs", value: data.focusHours, icon: "🧘", color: "#FB923C" },
@@ -135,15 +135,15 @@ export default function FeaturesDashboard({ data }: Props) {
               <AreaChart data={data.aiTrend}>
                 <defs>
                   <linearGradient id="aiGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#00D4FF" stopOpacity={0.3} />
-                    <stop offset="100%" stopColor="#00D4FF" stopOpacity={0} />
+                    <stop offset="0%" stopColor="#2D81F7" stopOpacity={0.3} />
+                    <stop offset="100%" stopColor="#2D81F7" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid stroke="#252538" strokeDasharray="3 3" />
                 <XAxis dataKey="date" stroke="#6B6B80" fontSize={mob ? 8 : 10} tickFormatter={(v) => v.slice(5)} />
                 <YAxis stroke="#6B6B80" fontSize={mob ? 8 : 10} allowDecimals={false} width={mob ? 25 : 35} />
                 <Tooltip contentStyle={TOOLTIP_STYLE} />
-                <Area type="monotone" dataKey="count" stroke="#00D4FF" fill="url(#aiGrad)" strokeWidth={2} />
+                <Area type="monotone" dataKey="count" stroke="#2D81F7" fill="url(#aiGrad)" strokeWidth={2} />
               </AreaChart>
             </ResponsiveContainer>
           </div>

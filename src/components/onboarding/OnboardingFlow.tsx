@@ -227,7 +227,7 @@ export default function OnboardingFlow() {
     };
 
     const prefill = { name: nameInput || userName, email: userEmail };
-    const themeColor = '#00D4FF';
+    const themeColor = '#2D81F7';
     const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || '';
 
     try {
@@ -243,7 +243,7 @@ export default function OnboardingFlow() {
 
         const options = {
           key,
-          name: 'Saviours AI',
+          name: 'PADH.AI',
           description: 'Monthly Access — ₹199/month',
           subscription_id: subData.subscription.id,
           handler: commonHandler,
@@ -271,7 +271,7 @@ export default function OnboardingFlow() {
           key,
           amount: orderData.order.amount,
           currency: orderData.order.currency,
-          name: 'Saviours AI',
+          name: 'PADH.AI',
           description: 'Yearly Access — ₹599 one-time',
           order_id: orderData.order.id,
           handler: commonHandler,
@@ -352,20 +352,17 @@ export default function OnboardingFlow() {
         transition: 'all 1s cubic-bezier(0.16,1,0.3,1)',
       }}>
         {/* PADH.AI logo mark */}
-        <div style={{
-          width: 64, height: 64,
-          borderRadius: 18,
-          background: 'var(--brand-blue)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          margin: '0 auto 20px',
-          boxShadow: '0 8px 24px rgba(45,129,247,0.18)',
-        }}>
-          <span style={{
-            fontFamily: 'var(--font-display)',
-            fontWeight: 800, fontSize: 34,
-            color: '#FFFFFF', lineHeight: 1,
-          }}>P</span>
-        </div>
+        <img 
+          src="/logo.png" 
+          alt="PADH.AI"
+          style={{
+            width: 64, height: 64,
+            borderRadius: 18,
+            margin: '0 auto 20px',
+            boxShadow: '0 8px 24px rgba(45,129,247,0.18)',
+            objectFit: "contain",
+          }}
+        />
 
         <div style={{
           fontFamily: 'var(--font-display)',
@@ -756,8 +753,8 @@ export default function OnboardingFlow() {
           {/* Icon */}
           <div style={{
             width: 56, height: 56, borderRadius: 16,
-            background: 'rgba(0,212,255,0.1)',
-            border: '1px solid rgba(0,212,255,0.2)',
+            background: 'rgba(45,129,247,0.1)',
+            border: '1px solid rgba(45,129,247,0.2)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             margin: '0 auto 20px', fontSize: 26,
           }}>🎟️</div>
@@ -776,8 +773,8 @@ export default function OnboardingFlow() {
             display: 'inline-block',
             padding: '10px 18px',
             marginBottom: 28,
-            background: 'linear-gradient(135deg, rgba(0,212,255,0.08), rgba(139,92,246,0.08))',
-            border: '1px solid rgba(0,212,255,0.2)',
+            background: 'linear-gradient(135deg, rgba(45,129,247,0.08), rgba(139,92,246,0.08))',
+            border: '1px solid rgba(45,129,247,0.2)',
             borderRadius: 12,
           }}>
             <p style={{
@@ -1043,17 +1040,18 @@ export default function OnboardingFlow() {
       zIndex: 1000,
     }}>
       {/* PADH.AI logo mark */}
-      <div style={{
-        width: 52, height: 52,
-        borderRadius: 14,
-        background: 'var(--brand-blue)',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        opacity: 0,
-        animation: 'fadeIn 0.6s ease-out 0.3s forwards',
-        boxShadow: '0 8px 24px rgba(45,129,247,0.18)',
-      }}>
-        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 28, color: '#FFFFFF', lineHeight: 1 }}>P</span>
-      </div>
+      <img 
+        src="/logo.png" 
+        alt="PADH.AI"
+        style={{
+          width: 52, height: 52,
+          borderRadius: 14,
+          opacity: 0,
+          animation: 'fadeIn 0.6s ease-out 0.3s forwards',
+          boxShadow: '0 8px 24px rgba(45,129,247,0.18)',
+          objectFit: "contain",
+        }}
+      />
 
       {/* Welcome message — simple fade-in instead of VapourText */}
       <div style={{

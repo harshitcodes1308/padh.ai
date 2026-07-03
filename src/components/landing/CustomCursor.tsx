@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Minimal custom cursor (desktop only): a small cyan dot that tracks the pointer
+ * Minimal custom cursor (desktop only): a small blue dot that tracks the pointer
  * tightly, and a larger ring that lags slightly and scales up over interactive
  * elements. Disabled on touch devices and under prefers-reduced-motion (via CSS).
  */

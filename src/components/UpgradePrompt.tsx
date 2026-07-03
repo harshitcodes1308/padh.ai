@@ -110,8 +110,8 @@ export function UpgradePrompt({ featureName, description, onClose, type = "PRO" 
                             alignItems: "center",
                             gap: 8,
                             padding: "5px 12px",
-                            background: "rgba(0,212,255,0.1)",
-                            border: "1px solid rgba(0,212,255,0.2)",
+                            background: "rgba(45,129,247,0.1)",
+                            border: "1px solid rgba(45,129,247,0.2)",
                             borderRadius: 100,
                             marginBottom: 14,
                         }}>
@@ -153,7 +153,7 @@ export function UpgradePrompt({ featureName, description, onClose, type = "PRO" 
                                 <div style={{ marginBottom: 12 }}>
                                     {LNB_FEATURES.map((f, i) => (
                                         <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "6px 0" }}>
-                                            <span style={{ width: 16, height: 16, borderRadius: 4, background: "rgba(0,212,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, color: "var(--accent-gold)", flexShrink: 0 }}>✓</span>
+                                            <span style={{ width: 16, height: 16, borderRadius: 4, background: "rgba(45,129,247,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, color: "var(--accent-gold)", flexShrink: 0 }}>✓</span>
                                             <span style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-secondary)" }}>{f}</span>
                                         </div>
                                     ))}
@@ -191,7 +191,7 @@ export function UpgradePrompt({ featureName, description, onClose, type = "PRO" 
                                             style={{
                                                 padding: "14px 16px",
                                                 borderRadius: 12,
-                                                background: isSelected ? "rgba(0,212,255,0.08)" : "var(--bg-base)",
+                                                background: isSelected ? "rgba(45,129,247,0.08)" : "var(--bg-base)",
                                                 border: `1px solid ${isSelected ? "var(--accent-gold-border)" : "var(--bg-border)"}`,
                                                 cursor: "pointer",
                                                 textAlign: "left",
@@ -252,7 +252,7 @@ export function UpgradePrompt({ featureName, description, onClose, type = "PRO" 
                             }}>
                                 {(selectedPlan === "YEARLY" ? YEARLY_FEATURES : MONTHLY_FEATURES).map((f, i) => (
                                     <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "5px 0" }}>
-                                        <span style={{ width: 14, height: 14, borderRadius: 3, background: "rgba(0,212,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 8, color: "var(--accent-gold)", flexShrink: 0 }}>✓</span>
+                                        <span style={{ width: 14, height: 14, borderRadius: 3, background: "rgba(45,129,247,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 8, color: "var(--accent-gold)", flexShrink: 0 }}>✓</span>
                                         <span style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-secondary)" }}>{f}</span>
                                     </div>
                                 ))}

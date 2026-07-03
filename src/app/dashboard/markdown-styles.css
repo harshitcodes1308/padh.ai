@@ -28,7 +28,7 @@
 
 .markdown-content strong {
     font-weight: 600;
-    color: #FFFFFF;
+    color: var(--text-primary);
 }
 
 .markdown-content p {
@@ -46,7 +46,8 @@
 }
 
 .markdown-content code {
-    background: #0D0D0F;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
     padding: 2px 6px;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
@@ -54,7 +55,8 @@
 }
 
 .markdown-content pre {
-    background: #0D0D0F;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
     padding: 12px;
     border-radius: 8px;
     overflow-x: auto;

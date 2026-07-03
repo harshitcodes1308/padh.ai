@@ -210,10 +210,10 @@ export default function CustomiseTestPage() {
                                 ...typography.text,
                                 width: '100%',
                                 padding: '12px',
-                                backgroundColor: '#1A1A1D',
-                                border: '1px solid #374151',
+                                backgroundColor: 'var(--bg-surface)',
+                                border: '1px solid var(--border)',
                                 borderRadius: '8px',
-                                color: '#FFF',
+                                color: 'var(--text-primary)',
                                 fontSize: '16px',
                             }}
                         />
@@ -263,14 +263,14 @@ export default function CustomiseTestPage() {
                                 ...typography.text,
                                 width: '100%',
                                 padding: '12px',
-                                backgroundColor: '#1A1A1D',
-                                border: '1px solid #374151',
+                                backgroundColor: 'var(--bg-surface)',
+                                border: '1px solid var(--border)',
                                 borderRadius: '8px',
-                                color: '#FFF',
+                                color: 'var(--text-primary)',
                                 fontSize: '16px',
                             }}
                         />
-                        <p style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF', marginTop: '8px' }}>
+                        <p style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)', marginTop: '8px' }}>
                             Recommended: {totalQuestions} minutes (~1 min per question)
                         </p>
                     </div>
@@ -311,7 +311,7 @@ export default function CustomiseTestPage() {
                         <p><strong>Total Questions:</strong> {totalQuestions}</p>
                         <p><strong>Duration:</strong> {duration} minutes</p>
                         <p><strong>Question Type:</strong> Multiple Choice (MCQ)</p>
-                        <p><strong>Difficulty:</strong> ICSE Board Standard</p>
+                        <p><strong>Difficulty:</strong> CBSE Board Standard</p>
                     </div>
                     <div style={{ marginTop: '32px', display: 'flex', gap: '12px' }}>
                         <button
@@ -330,8 +330,8 @@ export default function CustomiseTestPage() {
                             style={{
                                 ...typography.text,
                                 padding: '16px 32px',
-                                backgroundColor: createMutation.isPending ? '#4B5563' : '#10B981',
-                                color: '#FFF',
+                                backgroundColor: createMutation.isPending ? 'var(--text-secondary)' : '#10B981',
+                                color: 'var(--text-primary)',
                                 border: 'none',
                                 borderRadius: '8px',
                                 cursor: createMutation.isPending ? 'wait' : 'pointer',
@@ -432,7 +432,7 @@ export default function CustomiseTestPage() {
                                             ...typography.text,
                                             padding: '12px 24px',
                                             backgroundColor: '#EF4444',
-                                            color: '#FFF',
+                                            color: 'var(--text-primary)',
                                             border: 'none',
                                             borderRadius: '8px',
                                             cursor: 'pointer',
@@ -459,8 +459,8 @@ export default function CustomiseTestPage() {
                                         style={{
                                             ...typography.text,
                                             padding: '12px 32px',
-                                            backgroundColor: submitMutation.isPending ? '#4B5563' : '#10B981',
-                                            color: '#FFF',
+                                            backgroundColor: submitMutation.isPending ? 'var(--text-secondary)' : '#10B981',
+                                            color: 'var(--text-primary)',
                                             border: 'none',
                                             borderRadius: '8px',
                                             cursor: submitMutation.isPending ? 'wait' : 'pointer',
@@ -488,10 +488,10 @@ export default function CustomiseTestPage() {
                                         ...typography.text,
                                         padding: '8px',
                                         backgroundColor:
-                                            idx === currentQuestion ? '#00D4FF' :
+                                            idx === currentQuestion ? 'var(--brand-green)' :
                                                 answers[q.id] !== undefined ? '#10B981' :
-                                                    markedReview.includes(q.id) ? '#F59E0B' : '#374151',
-                                        color: '#FFF',
+                                                    markedReview.includes(q.id) ? '#F59E0B' : 'var(--border)',
+                                        color: 'var(--text-primary)',
                                         border: 'none',
                                         borderRadius: '4px',
                                         cursor: 'pointer',
@@ -502,10 +502,10 @@ export default function CustomiseTestPage() {
                                 </button>
                             ))}
                         </div>
-                        <div style={{ marginTop: '16px', ...typography.text, fontSize: '12px', color: '#9CA3AF' }}>
+                        <div style={{ marginTop: '16px', ...typography.text, fontSize: '12px', color: 'var(--text-muted)' }}>
                             <span style={{ color: '#10B981' }}>● Answered</span> |
                             <span style={{ color: '#F59E0B', marginLeft: '8px' }}>● Marked</span> |
-                            <span style={{ color: '#374151', marginLeft: '8px' }}>● Not Answered</span>
+                            <span style={{ color: 'var(--border)', marginLeft: '8px' }}>● Not Answered</span>
                         </div>
                     </div>
                 </div>
@@ -521,20 +521,20 @@ export default function CustomiseTestPage() {
                         Test Completed!
                     </h2>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginTop: '32px' }}>
-                        <div style={{ padding: '24px', backgroundColor: '#1A1A1D', borderRadius: '12px' }}>
-                            <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF', marginBottom: '8px' }}>Score</div>
+                        <div style={{ padding: '24px', backgroundColor: 'var(--bg-surface)', borderRadius: '12px' }}>
+                            <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)', marginBottom: '8px' }}>Score</div>
                             <div style={{ ...typography.display, fontSize: '32px', color: '#10B981' }}>
                                 {result.correct}/{result.totalQuestions}
                             </div>
                         </div>
-                        <div style={{ padding: '24px', backgroundColor: '#1A1A1D', borderRadius: '12px' }}>
-                            <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF', marginBottom: '8px' }}>Accuracy</div>
-                            <div style={{ ...typography.display, fontSize: '32px', color: '#00D4FF' }}>
+                        <div style={{ padding: '24px', backgroundColor: 'var(--bg-surface)', borderRadius: '12px' }}>
+                            <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)', marginBottom: '8px' }}>Accuracy</div>
+                            <div style={{ ...typography.display, fontSize: '32px', color: 'var(--brand-green)' }}>
                                 {result.accuracy.toFixed(1)}%
                             </div>
                         </div>
-                        <div style={{ padding: '24px', backgroundColor: '#1A1A1D', borderRadius: '12px' }}>
-                            <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF', marginBottom: '8px' }}>Time</div>
+                        <div style={{ padding: '24px', backgroundColor: 'var(--bg-surface)', borderRadius: '12px' }}>
+                            <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)', marginBottom: '8px' }}>Time</div>
                             <div style={{ ...typography.display, fontSize: '32px', color: '#F59E0B' }}>
                                 {result.timeTaken} min
                             </div>
@@ -624,7 +624,7 @@ export default function CustomiseTestPage() {
                         <h2 style={{ ...typography.display, fontSize: '24px', marginBottom: '8px' }}>
                             Solutions & Explanations
                         </h2>
-                        <p style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                        <p style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                             Review all questions with detailed explanations
                         </p>
                     </div>
@@ -638,11 +638,11 @@ export default function CustomiseTestPage() {
                                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '16px' }}>
                                     <div style={{
                                         padding: '8px 16px',
-                                        backgroundColor: isCorrect ? '#10B981' : userAnswer === undefined ? '#6B7280' : '#EF4444',
+                                        backgroundColor: isCorrect ? '#10B981' : userAnswer === undefined ? 'var(--text-secondary)' : '#EF4444',
                                         borderRadius: '8px',
                                         fontSize: '14px',
                                         fontWeight: 600,
-                                        color: '#FFF',
+                                        color: 'var(--text-primary)',
                                     }}>
                                         Q{idx + 1}
                                     </div>
@@ -658,11 +658,11 @@ export default function CustomiseTestPage() {
                                                 marginBottom: '8px',
                                                 backgroundColor:
                                                     optIdx === q.correctAnswer ? '#10B98120' :
-                                                        optIdx === userAnswer && userAnswer !== q.correctAnswer ? '#EF444420' : '#1A1A1D',
+                                                        optIdx === userAnswer && userAnswer !== q.correctAnswer ? '#EF444420' : 'var(--bg-surface)',
                                                 border: '2px solid',
                                                 borderColor:
                                                     optIdx === q.correctAnswer ? '#10B981' :
-                                                        optIdx === userAnswer && userAnswer !== q.correctAnswer ? '#EF4444' : '#374151',
+                                                        optIdx === userAnswer && userAnswer !== q.correctAnswer ? '#EF4444' : 'var(--border)',
                                                 borderRadius: '8px',
                                             }}
                                         >
@@ -678,14 +678,14 @@ export default function CustomiseTestPage() {
                                 <div style={{
                                     marginTop: '16px',
                                     padding: '16px',
-                                    backgroundColor: '#1A1A1D',
+                                    backgroundColor: 'var(--bg-surface)',
                                     borderRadius: '8px',
-                                    borderLeft: '4px solid #00D4FF',
+                                    borderLeft: '4px solid #08BD80',
                                 }}>
-                                    <div style={{ ...typography.text, fontSize: '14px', fontWeight: 600, marginBottom: '8px', color: '#00D4FF' }}>
+                                    <div style={{ ...typography.text, fontSize: '14px', fontWeight: 600, marginBottom: '8px', color: 'var(--brand-green)' }}>
                                         💡 Explanation:
                                     </div>
-                                    <p style={{ ...typography.text, fontSize: '14px', lineHeight: '1.6', color: '#D1D5DB' }}>
+                                    <p style={{ ...typography.text, fontSize: '14px', lineHeight: '1.6', color: 'var(--text-secondary)' }}>
                                         {q.explanation}
                                     </p>
                                 </div>

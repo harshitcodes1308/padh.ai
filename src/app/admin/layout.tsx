@@ -3,7 +3,7 @@ import { jwtVerify } from "jose";
 import AdminShell from "./AdminShell";
 import AdminLogin from "./AdminLogin";
 
-export const metadata = { title: "Admin Panel — Saviours AI" };
+export const metadata = { title: "Admin Panel - PADH.AI" };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies();

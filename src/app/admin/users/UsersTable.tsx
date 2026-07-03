@@ -15,7 +15,7 @@ const FILTERS = [
 
 const PLAN_OPTIONS = [
   { key: "FREE", label: "Free", color: "#6B6B80" },
-  { key: "MONTHLY", label: "Monthly", color: "#00D4FF" },
+  { key: "MONTHLY", label: "Monthly", color: "#2D81F7" },
   { key: "YEARLY", label: "Yearly", color: "#3ECF8E" },
 ] as const;
 
@@ -120,7 +120,7 @@ function PlanSwitcher({ user, onUpdated }: { user: UserRow; onUpdated: () => voi
 function planColor(plan: string) {
   const map: Record<string, { bg: string; fg: string }> = {
     FREE: { bg: "rgba(107,107,128,0.12)", fg: "#6B6B80" },
-    MONTHLY: { bg: "rgba(0,212,255,0.10)", fg: "#00D4FF" },
+    MONTHLY: { bg: "rgba(45,129,247,0.10)", fg: "#2D81F7" },
     YEARLY: { bg: "rgba(62,207,142,0.10)", fg: "#3ECF8E" },
   };
   return map[plan] ?? map.FREE;

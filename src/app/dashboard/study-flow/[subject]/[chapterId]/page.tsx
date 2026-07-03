@@ -54,7 +54,7 @@ function StepBar({ current, isMobile }: { current: number; isMobile: boolean }) 
               display: "flex", alignItems: "center", gap: 6,
               padding: isMobile ? "5px 10px" : "6px 16px",
               borderRadius: 100,
-              background: active ? "var(--accent-gold-glow)" : done ? "rgba(0,212,255,0.06)" : "transparent",
+              background: active ? "var(--accent-gold-glow)" : done ? "rgba(45,129,247,0.06)" : "transparent",
               border: `1.5px solid ${active ? "var(--accent-gold-border)" : done ? "var(--accent-gold-border)" : "var(--bg-border)"}`,
               transition: "all 0.3s ease",
             }}>
@@ -170,7 +170,7 @@ export default function ChapterFlowPage() {
   useEffect(() => {
     if (!FEATURE_FLAGS.youtubeDiscovery || !chapter || !mounted) return;
     if (step !== 0 || ytFetchedRef.current) return;
-    const q = `${chapter.title} Class 10 ICSE`;
+    const q = `${chapter.title} Class 10 CBSE`;
     setYtQuery(q);
     setYtLoading(true);
     fetch(`/api/youtube-search?q=${encodeURIComponent(q)}`)
@@ -266,12 +266,12 @@ export default function ChapterFlowPage() {
           @keyframes sfConfetti2 { 0% { transform: translateY(0) rotate(0); opacity: 1; } 100% { transform: translateY(-60px) translateX(40px) rotate(180deg); opacity: 0; } }
           @keyframes sfConfetti3 { 0% { transform: translateY(0) rotate(0); opacity: 1; } 100% { transform: translateY(-70px) translateX(-35px) rotate(270deg); opacity: 0; } }
           @keyframes sfSlideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-          @keyframes sfGoldPulse { 0%,100% { box-shadow: 0 0 0 rgba(0,212,255,0); } 50% { box-shadow: 0 0 40px rgba(0,212,255,0.2); } }
+          @keyframes sfGoldPulse { 0%,100% { box-shadow: 0 0 0 rgba(45,129,247,0); } 50% { box-shadow: 0 0 40px rgba(45,129,247,0.2); } }
         `}</style>
 
         <div style={{ textAlign: "center", maxWidth: 480, position: "relative" }}>
           {/* Confetti particles */}
-          {["#00D4FF", "#3ECF8E", "#FB923C", "#A78BFA", "#F87171", "#60A5FA"].map((c, i) => (
+          {["var(--brand-green)", "#3ECF8E", "#FB923C", "#A78BFA", "#F87171", "#60A5FA"].map((c, i) => (
             <div key={i} style={{
               position: "absolute",
               top: "40%", left: `${20 + i * 12}%`,
@@ -307,7 +307,7 @@ export default function ChapterFlowPage() {
             fontFamily: "var(--font-tagline)", fontSize: 14, fontStyle: "italic",
             color: "rgba(180,175,200,0.7)", marginBottom: 32,
             animation: "sfSlideUp 0.5s ease-out 0.5s both",
-            textShadow: "0 0 12px rgba(0,212,255,0.1)",
+            textShadow: "0 0 12px rgba(45,129,247,0.1)",
           }}>One more chapter conquered. Keep going.</div>
 
           <div style={{
@@ -407,7 +407,7 @@ export default function ChapterFlowPage() {
                       position: "relative", paddingBottom: "56.25%", height: 0,
                       borderRadius: 14, overflow: "hidden",
                       border: "1.5px solid var(--accent-gold-border)",
-                      boxShadow: "0 0 32px rgba(0,212,255,0.15)",
+                      boxShadow: "0 0 32px rgba(45,129,247,0.15)",
                     }}>
                       <iframe
                         key={activeVideoId}
@@ -503,7 +503,7 @@ export default function ChapterFlowPage() {
                           style={{
                             display: "flex", gap: 12, alignItems: "center",
                             padding: "12px 14px",
-                            background: isPlaying ? "rgba(0,212,255,0.06)" : "var(--bg-surface)",
+                            background: isPlaying ? "rgba(45,129,247,0.06)" : "var(--bg-surface)",
                             border: `1.5px solid ${isPlaying ? "var(--accent-gold-border)" : isBoosted ? "rgba(34,197,94,0.25)" : "var(--bg-border)"}`,
                             borderRadius: 12, cursor: "pointer", textAlign: "left",
                             transition: "all 0.15s ease", width: "100%",
@@ -519,7 +519,7 @@ export default function ChapterFlowPage() {
                             {isPlaying && (
                               <div style={{
                                 position: "absolute", inset: 0,
-                                background: "rgba(0,212,255,0.4)",
+                                background: "rgba(45,129,247,0.4)",
                                 display: "flex", alignItems: "center", justifyContent: "center",
                               }}>
                                 <span style={{ fontSize: 18, color: "#fff" }}>▶</span>

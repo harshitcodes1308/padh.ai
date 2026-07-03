@@ -31,17 +31,17 @@ export default function TYQPage() {
           <h1 style={{
             fontSize: 28,
             fontWeight: 800,
-            color: "#FFF",
+            color: "var(--text-primary)",
             margin: 0,
-            background: "linear-gradient(135deg, #00D4FF, #EC4899)",
+            background: "linear-gradient(135deg, #08BD80, #2D81F7)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}>
             Guess Papers
           </h1>
         </div>
-        <p style={{ color: "#9CA3AF", fontSize: 15, margin: 0, lineHeight: 1.6 }}>
-          Practice with ICSE 2026 specimen papers under real exam conditions.
+        <p style={{ color: "var(--text-muted)", fontSize: 15, margin: 0, lineHeight: 1.6 }}>
+          Practice with CBSE 2026 specimen papers under real exam conditions.
           Select a subject to begin your timed practice session.
         </p>
       </div>
@@ -58,7 +58,7 @@ export default function TYQPage() {
           alignItems: "center",
           gap: 12,
           fontSize: 13,
-          color: "#9CA3AF",
+          color: "var(--text-muted)",
         }}>
           <span style={{ fontSize: 18 }}>💡</span>
           <span>
@@ -77,18 +77,18 @@ export default function TYQPage() {
 
       {/* How It Works */}
       <div style={{
-        background: "linear-gradient(135deg, rgba(139,92,246,0.08), rgba(236,72,153,0.05))",
-        border: "1px solid rgba(139,92,246,0.2)",
+        background: "linear-gradient(135deg, rgba(8,189,128,0.08), rgba(45,129,247,0.05))",
+        border: "1px solid rgba(8,189,128,0.12)",
         borderRadius: 16,
         padding: "24px 28px",
         marginBottom: 36,
       }}>
-        <h3 style={{ color: "#00D4FF", fontSize: 14, fontWeight: 700, margin: "0 0 16px", letterSpacing: 1, textTransform: "uppercase" }}>
+        <h3 style={{ color: "var(--brand-green)", fontSize: 14, fontWeight: 700, margin: "0 0 16px", letterSpacing: 1, textTransform: "uppercase" }}>
           📋 How It Works
         </h3>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
           {[
-            { step: "1", icon: "📚", title: "Select Subject", desc: "Choose from 10 ICSE subjects" },
+            { step: "1", icon: "📚", title: "Select Subject", desc: "Choose from 10 CBSE subjects" },
             { step: "2", icon: "👀", title: "Reading Time", desc: `${READING_TIME_MINUTES} minutes to read questions` },
             { step: "3", icon: "✍️", title: "Exam Mode", desc: "Timed exam (2h 30m / 3h for Maths)" },
             { step: "4", icon: "✅", title: "Answer Key", desc: "Review answers after time ends" },
@@ -98,7 +98,7 @@ export default function TYQPage() {
             }}>
               <div style={{
                 width: 36, height: 36, borderRadius: 10,
-                background: "rgba(139,92,246,0.15)",
+                background: "rgba(8,189,128,0.10)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 fontSize: 18, flexShrink: 0,
               }}>
@@ -108,7 +108,7 @@ export default function TYQPage() {
                 <div style={{ fontSize: 13, fontWeight: 700, color: "#E5E7EB", marginBottom: 2 }}>
                   Step {item.step}: {item.title}
                 </div>
-                <div style={{ fontSize: 12, color: "#9CA3AF" }}>{item.desc}</div>
+                <div style={{ fontSize: 12, color: "var(--text-muted)" }}>{item.desc}</div>
               </div>
             </div>
           ))}
@@ -187,10 +187,10 @@ export default function TYQPage() {
                   {subject.icon}
                 </div>
                 <div>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: "#FFF" }}>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: "var(--text-primary)" }}>
                     {subject.name}
                   </div>
-                  <div style={{ fontSize: 12, color: "#9CA3AF" }}>
+                  <div style={{ fontSize: 12, color: "var(--text-muted)" }}>
                     {subject.papers} Specimen Papers
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function TYQPage() {
                 borderRadius: 10,
               }}>
                 <div>
-                  <div style={{ fontSize: 11, color: "#6B7280", marginBottom: 2 }}>Exam Duration</div>
+                  <div style={{ fontSize: 11, color: "var(--text-secondary)", marginBottom: 2 }}>Exam Duration</div>
                   <div style={{ fontSize: 14, fontWeight: 600, color: subject.color }}>
                     {subject.examDuration === 180 ? "3 Hours" : "2h 30m"}
                   </div>
@@ -227,7 +227,7 @@ export default function TYQPage() {
       {showUpgrade && (
         <UpgradePrompt
           featureName="All Guess Papers"
-          description="Access specimen papers for all 10 ICSE subjects — Physics, Chemistry, Biology, Maths, English, History, Geography, Computer, and more."
+          description="Access specimen papers for all 10 CBSE subjects — Physics, Chemistry, Biology, Maths, English, History, Geography, Computer, and more."
           onClose={() => setShowUpgrade(false)}
         />
       )}

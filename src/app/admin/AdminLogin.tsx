@@ -50,9 +50,9 @@ export default function AdminLogin() {
         width: "100%",
         maxWidth: 400,
         background: "var(--bg-surface)",
-        border: "1.5px solid rgba(0,212,255,0.15)",
+        border: "1.5px solid rgba(45,129,247,0.15)",
         borderRadius: "var(--radius-xl)",
-        boxShadow: "0 0 60px rgba(0,212,255,0.06), var(--shadow-card)",
+        boxShadow: "0 0 60px rgba(45,129,247,0.06), var(--shadow-card)",
         padding: "36px 32px",
         display: "flex",
         flexDirection: "column",
@@ -62,12 +62,12 @@ export default function AdminLogin() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
           <div style={{
             width: 56, height: 56, borderRadius: 16,
-            background: "linear-gradient(135deg, #00D4FF 0%, #00A3CC 100%)",
+            background: "linear-gradient(135deg, #2D81F7 0%, #1F6FE5 100%)",
             display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 24, fontWeight: 900, color: "#0D0D1A",
-            boxShadow: "0 0 30px rgba(0,212,255,0.3)",
+            fontSize: 24, fontWeight: 900, color: "#FFFFFF",
+            boxShadow: "0 0 30px rgba(45,129,247,0.3)",
           }}>
-            S
+            P
           </div>
           <div style={{ textAlign: "center" }}>
             <h1 style={{
@@ -84,7 +84,7 @@ export default function AdminLogin() {
               color: "rgba(180,175,200,0.6)",
               marginTop: 4,
             }}>
-              Saviours AI — Restricted Access
+              PADH.AI - Restricted Access
             </p>
           </div>
         </div>

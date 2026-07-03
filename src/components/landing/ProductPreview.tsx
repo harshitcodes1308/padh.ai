@@ -189,9 +189,9 @@ export default function ProductPreview() {
 
               {/* tool cards */}
               <div className="sa-pp-tools" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
-                {card("AI Doubt Solver", "◆", "#00D4FF")}
-                {card("Smart Planner", "◎", "#00D4FF")}
-                {card("Competency Test", "▣", "#00D4FF")}
+                {card("AI Doubt Solver", "◆", "#2D81F7")}
+                {card("Smart Planner", "◎", "#2D81F7")}
+                {card("Competency Test", "▣", "#2D81F7")}
               </div>
             </div>
           </div>

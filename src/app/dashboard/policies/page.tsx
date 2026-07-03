@@ -8,11 +8,11 @@ export default function PoliciesPage() {
     const router = useRouter();
 
     return (
-        <div style={{ padding: "32px", maxWidth: "1000px", margin: "0 auto", color: "#FFF" }}>
+        <div style={{ padding: "32px", maxWidth: "1000px", margin: "0 auto", color: "var(--text-primary)" }}>
             <h1 style={{ ...typography.display, fontSize: "32px", marginBottom: "16px" }}>
                 Legal & Policies
             </h1>
-            <p style={{ ...typography.text, color: "#9CA3AF", marginBottom: "32px" }}>
+            <p style={{ ...typography.text, color: "var(--text-muted)", marginBottom: "32px" }}>
                 Review our terms, policies, and guidelines below.
             </p>
 
@@ -33,7 +33,7 @@ export default function PoliciesPage() {
                         <h2 style={{ ...typography.display, fontSize: "18px", marginBottom: "8px", color: "#F3F4F6" }}>
                             {policy.title}
                         </h2>
-                        <span style={{ fontSize: "14px", color: "#00D4FF", fontWeight: "600" }}>Read Policy →</span>
+                        <span style={{ fontSize: "14px", color: "var(--brand-green)", fontWeight: "600" }}>Read Policy →</span>
                     </div>
                 ))}
             </div>

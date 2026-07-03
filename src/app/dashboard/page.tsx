@@ -5,7 +5,6 @@ import { trpc } from "@/lib/trpc/client";
 import { useEffect, useMemo, useState } from "react";
 import { useResponsive } from "@/hooks/useResponsive";
 import { FEATURE_FLAGS } from "@/lib/featureFlags";
-import ShimmerText from "@/components/ui/shimmer-text";
 import { MONTHLY_MISSION, getCurrentMonthIndex, getMonthTaskCounts } from "@/data/monthly-mission";
 
 const MM_KEY = "saviours-monthly-mission-v2";
@@ -92,7 +91,7 @@ function RingStatCard({
             display: "flex", alignItems: "center", gap: 14,
         }}>
             <svg width={size} height={size} style={{ flexShrink: 0, transform: "rotate(-90deg)" }}>
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(0,0,0,0.07)" strokeWidth={3.5} />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--bg-border-light)" strokeWidth={3.5} />
                 <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke={color} strokeWidth={3.5}
                     strokeLinecap="round" strokeDasharray={`${dash} ${circ}`}
                     style={{ transition: "stroke-dasharray 1s cubic-bezier(0.4,0,0.2,1)" }} />
@@ -101,12 +100,12 @@ function RingStatCard({
                 <div style={{
                     fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
                     letterSpacing: "0.12em", textTransform: "uppercase",
-                    color: "var(--text-muted)", marginBottom: 3, opacity: 0.6,
+                    color: "var(--text-muted)", marginBottom: 4,
                 }}>{label}</div>
                 <div style={{
-                    fontFamily: "var(--font-display)", fontSize: 26,
-                    color: "var(--text-primary)", letterSpacing: "-0.03em",
-                    lineHeight: 1,
+                    fontFamily: "var(--font-display)", fontSize: 27,
+                    color: "var(--text-primary)", letterSpacing: "-0.02em",
+                    lineHeight: 1, fontWeight: 700,
                 }}>{value}</div>
                 <div style={{
                     fontFamily: "var(--font-body)", fontSize: 10,
@@ -121,7 +120,6 @@ export default function DashboardPage() {
     const router = useRouter();
     const { isMobile, isTablet } = useResponsive();
     const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [statsMode, setStatsModeState] = useState<"planner" | "mission">("planner");
     const [mmChecked, setMmChecked] = useState<Record<string, boolean>>({});
 
@@ -179,7 +177,7 @@ export default function DashboardPage() {
         { flag: "customiseTest" as const, label: "Customise Test", desc: "Build your own MCQ set", path: "/dashboard/tests", icon: "◈", tagline: "Your test, your rules" },
         { flag: "flipTheQuestion" as const, label: "Flip the Question", desc: "Reverse-engineer from answers", path: "/dashboard/flip-the-question", icon: "⇌", tagline: "See questions from the other side" },
         { flag: "focusMode" as const, label: "Focus Mode", desc: "Distraction-free deep work", path: "/dashboard/focus", icon: "◎", tagline: "Where deep work happens" },
-        { flag: "todoList" as const, label: "Monthly Mission", desc: "12-month ICSE board prep checklist", path: "/dashboard/todo", icon: "○", tagline: "One month at a time" },
+        { flag: "todoList" as const, label: "Monthly Mission", desc: "12-month CBSE board prep checklist", path: "/dashboard/todo", icon: "○", tagline: "One month at a time" },
         { flag: "webinar" as const, label: "Live Webinar", desc: "Free sessions with Pranay Bhaiya", path: "/dashboard/webinar", icon: "◈", tagline: "Your questions, answered live." },
         { flag: "chronoScroll" as const, label: "ChronoScroll", desc: "Scroll through history, snap dates", path: "/dashboard/chronoscroll", icon: "◎", tagline: "Scroll. Snap. Remember." },
         { flag: "numericalMastery" as const, label: "Numerical Mastery", desc: "Physics formulas, solved examples & PYQs", path: "/dashboard/numerical-mastery", icon: "◈", tagline: "Every formula, every numerical, mastered." },
@@ -217,20 +215,19 @@ export default function DashboardPage() {
     const mmStats = calcMMStats(mmChecked);
 
     const ringStats = statsMode === "planner" ? [
-        { label: "Today",     value: `${todayProgress}%`,           sub: "of daily goal",    percent: todayProgress,                                color: "var(--accent-gold)" },
+        { label: "Today",     value: `${todayProgress}%`,           sub: "of daily goal",    percent: todayProgress,                                color: "var(--brand-blue)" },
         { label: "Streak",    value: `${stats?.currentStreak ?? 0}d`, sub: "days running",  percent: Math.min((stats?.currentStreak ?? 0) * 10, 100), color: "#22c55e" },
-        { label: "This week", value: `${stats?.weeklyProgress ?? 0}%`, sub: "completed",    percent: stats?.weeklyProgress ?? 0,                     color: "#60a5fa" },
-        { label: "Readiness", value: `${stats?.examReadiness ?? 0}%`,  sub: "syllabus covered", percent: stats?.examReadiness ?? 0,                  color: "#33DFFF" },
+        { label: "This week", value: `${stats?.weeklyProgress ?? 0}%`, sub: "completed",    percent: stats?.weeklyProgress ?? 0,                     color: "var(--status-blue)" },
+        { label: "Readiness", value: `${stats?.examReadiness ?? 0}%`,  sub: "syllabus covered", percent: stats?.examReadiness ?? 0,                  color: "var(--brand-green)" },
     ] : [
-        { label: "This Week",   value: `${mmStats.weekPct}%`,        sub: "week tasks done",  percent: mmStats.weekPct,                                                         color: "var(--accent-gold)" },
+        { label: "This Week",   value: `${mmStats.weekPct}%`,        sub: "week tasks done",  percent: mmStats.weekPct,                                                         color: "var(--brand-blue)" },
         { label: "Weeks Done",  value: `${mmStats.completedWeeks}`,   sub: `of ${mmStats.totalWeeks} weeks`, percent: mmStats.totalWeeks > 0 ? Math.round((mmStats.completedWeeks / mmStats.totalWeeks) * 100) : 0, color: "#22c55e" },
-        { label: "This Month",  value: `${mmStats.monthPct}%`,        sub: "month complete",   percent: mmStats.monthPct,                                                        color: "#60a5fa" },
-        { label: "Readiness",   value: `${mmStats.readiness}%`,       sub: "syllabus done",    percent: mmStats.readiness,                                                       color: "#33DFFF" },
+        { label: "This Month",  value: `${mmStats.monthPct}%`,        sub: "month complete",   percent: mmStats.monthPct,                                                        color: "var(--status-blue)" },
+        { label: "Readiness",   value: `${mmStats.readiness}%`,       sub: "syllabus done",    percent: mmStats.readiness,                                                       color: "var(--brand-green)" },
     ];
 
     return (
         <div
-            onMouseMove={e => setMousePos({ x: e.clientX, y: e.clientY })}
             style={{
                 minHeight: "100vh", background: "var(--bg-base)",
                 padding: isMobile ? "20px 16px 100px" : isTablet ? "32px 28px" : "44px 48px",
@@ -296,8 +293,8 @@ export default function DashboardPage() {
                                 fontFamily: "var(--font-body)",
                                 fontSize: 12,
                                 fontWeight: 700,
-                                color: "#FFFFFF",
-                                background: "var(--brand-blue)",
+                                color: "var(--text-primary)",
+                                background: "var(--brand-green)",
                                 border: "none",
                                 borderRadius: 8,
                                 padding: "10px 18px",
@@ -334,18 +331,13 @@ export default function DashboardPage() {
                         </div>
                         <h1 style={{
                             fontFamily: "var(--font-display)",
-                            fontSize: isMobile ? 36 : 54,
+                            fontSize: isMobile ? 34 : 50,
+                            fontWeight: 800,
                             color: "var(--text-primary)",
-                            letterSpacing: "-0.03em", lineHeight: 1,
+                            letterSpacing: 0, lineHeight: 1,
                             margin: "0 0 8px",
                         }}>
-                            <ShimmerText
-                                className=""
-                                duration={2.5}
-                                delay={2}
-                            >
-                                <span style={{ color: 'var(--accent-gold)' }}>{profile?.name}</span>
-                            </ShimmerText>
+                            {profile?.name}
                         </h1>
                         <div style={{
                             fontFamily: "var(--font-body)",
@@ -365,9 +357,9 @@ export default function DashboardPage() {
                             </span>
                             <span style={{
                                 fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
-                                color: "var(--brand-blue)",
-                                background: "rgba(45,129,247,0.08)",
-                                border: "1px solid rgba(45,129,247,0.20)",
+                                color: "var(--brand-green)",
+                                background: "rgba(8, 189, 128, 0.08)",
+                                border: "1px solid rgba(8, 189, 128, 0.22)",
                                 borderRadius: 100, padding: "3px 10px",
                                 letterSpacing: "0.1em", textTransform: "uppercase",
                             }}>
@@ -378,9 +370,9 @@ export default function DashboardPage() {
                                     onClick={() => router.push("/pricing")}
                                     style={{
                                         fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
-                                        color: "#FFFFFF",
-                                        background: "var(--brand-blue)",
-                                        border: "1px solid var(--brand-blue)",
+                                        color: "var(--text-primary)",
+                                        background: "var(--brand-green)",
+                                        border: "1px solid var(--brand-green)",
                                         borderRadius: 100, padding: "3px 12px",
                                         letterSpacing: "0.1em", textTransform: "uppercase",
                                         cursor: "pointer",
@@ -433,9 +425,9 @@ export default function DashboardPage() {
                                 onClick={() => setStatsMode(mode)}
                                 style={{
                                     padding: "4px 14px", borderRadius: 100,
-                                    border: active ? "1px solid var(--brand-blue)" : "1px solid var(--border)",
-                                    background: active ? "rgba(45,129,247,0.08)" : "transparent",
-                                    color: active ? "var(--brand-blue)" : "var(--text-muted)",
+                                    border: active ? "1px solid var(--accent-gold-border)" : "1px solid var(--border)",
+                                    background: active ? "var(--accent-gold-glow)" : "var(--bg-surface)",
+                                    color: active ? "var(--brand-blue)" : "var(--text-secondary)",
                                     fontFamily: "var(--font-body)", fontSize: 11,
                                     fontWeight: active ? 700 : 400,
                                     cursor: "pointer",
@@ -452,8 +444,9 @@ export default function DashboardPage() {
                 {/* ── Stats Strip ── */}
                 <div style={{
                     background: "var(--bg-surface)",
-                    border: "1px solid var(--bg-border)",
-                    borderRadius: 18,
+                    border: "1px solid var(--border)",
+                    borderRadius: 16,
+                    boxShadow: "var(--shadow-card)",
                     padding: isMobile ? "18px 16px" : "24px 32px",
                     marginBottom: isMobile ? 28 : 40,
                     display: "grid",
@@ -474,16 +467,15 @@ export default function DashboardPage() {
                     }}>
                         <div style={{
                             fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
-                            color: "var(--text-muted)", letterSpacing: "0.14em",
-                            textTransform: "uppercase", opacity: 0.5,
+                            color: "var(--text-muted)", letterSpacing: "0.12em",
+                            textTransform: "uppercase",
                         }}>
                             Your Tools
                         </div>
                         <div style={{
-                            fontFamily: "var(--font-tagline)",
-                            fontSize: 12, fontWeight: 400, fontStyle: "italic",
-                            color: "rgba(180, 175, 200, 0.7)",
-                            textShadow: "0 0 12px rgba(0, 212, 255, 0.1)",
+                            fontFamily: "var(--font-body)",
+                            fontSize: 12, fontWeight: 500,
+                            color: "var(--text-muted)",
                         }}>
                             Everything you need, nothing you don't.
                         </div>
@@ -502,7 +494,7 @@ export default function DashboardPage() {
                                 onMouseLeave={() => setHoveredCard(null)}
                                 style={{
                                     background: hoveredCard === card.path
-                                        ? "linear-gradient(145deg, var(--bg-elevated), var(--bg-surface))"
+                                        ? "var(--bg-surface)"
                                         : "var(--bg-surface)",
                                     border: `1px solid ${hoveredCard === card.path ? "var(--accent-gold-border)" : "var(--bg-border)"}`,
                                     borderRadius: 16,
@@ -513,16 +505,14 @@ export default function DashboardPage() {
                                     position: "relative",
                                     overflow: "hidden",
                                     transform: hoveredCard === card.path ? "translateY(-3px)" : "translateY(0)",
-                                    boxShadow: hoveredCard === card.path
-                                        ? "0 0 0 1px rgba(0,212,255,0.06), 0 20px 48px -8px rgba(0,0,0,0.45)"
-                                        : "none",
+                                    boxShadow: hoveredCard === card.path ? "var(--shadow-card-hover)" : "var(--shadow-card)",
                                 }}
                             >
                                 {/* Hover shimmer — light version */}
                                 <div style={{
                                     position: "absolute", inset: 0,
                                     background: hoveredCard === card.path
-                                        ? "rgba(45,129,247,0.03)"
+                                        ? "var(--accent-gold-glow)"
                                         : "transparent",
                                     transition: "background 0.3s ease",
                                     pointerEvents: "none",
@@ -586,7 +576,7 @@ export default function DashboardPage() {
                                 <div style={{
                                     position: "absolute", bottom: 0, left: 0, right: 0,
                                     height: hoveredCard === card.path ? 2 : 0,
-                                    background: "linear-gradient(90deg, transparent, var(--brand-blue), transparent)",
+                                    background: "var(--brand-blue)",
                                     transition: "height 0.3s ease",
                                 }} />
                             </div>

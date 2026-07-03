@@ -119,19 +119,19 @@ export default function LoginPage() {
               filter: "grayscale(100%) brightness(0.35)",
             }}
           />
-          {/* Cyan tinted overlay */}
+          {/* PADH.AI blue/green tinted overlay */}
           <div style={{
             position: "absolute", inset: 0,
-            background: "radial-gradient(ellipse at 40% 50%, rgba(0,212,255,0.15) 0%, rgba(13,13,26,0.85) 70%)",
+            background: "radial-gradient(ellipse at 40% 50%, rgba(45,129,247,0.28) 0%, rgba(8,189,128,0.12) 38%, rgba(12,24,44,0.84) 76%)",
           }} />
 
           <div style={{ position: "relative", zIndex: 1, textAlign: "center", maxWidth: 420, padding: "0 48px" }}>
             {/* Logo mark */}
             <div style={{ marginBottom: 24 }}>
               <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                <circle cx="26" cy="26" r="25" stroke="rgba(0,212,255,0.6)" strokeWidth="1"/>
-                <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(0,212,255,0.9)" strokeWidth="1.5"/>
-                <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(0,212,255,0.15)"/>
+                <circle cx="26" cy="26" r="25" stroke="rgba(45,129,247,0.72)" strokeWidth="1"/>
+                <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(8,189,128,0.85)" strokeWidth="1.5"/>
+                <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(45,129,247,0.18)"/>
               </svg>
             </div>
             <div style={{
@@ -139,18 +139,18 @@ export default function LoginPage() {
               fontSize: 11,
               fontWeight: 700,
               letterSpacing: "0.2em",
-              color: "rgba(0,212,255,0.8)",
+              color: "rgba(255,255,255,0.82)",
               textTransform: "uppercase",
               marginBottom: 32,
             }}>
-              Saviours AI
+              PADH.AI
             </div>
             <div style={{
               fontFamily: "var(--font-tagline)",
               fontSize: 28,
               letterSpacing: "-0.01em",
               lineHeight: 1.35,
-              color: "var(--text-primary)",
+              color: "#FFFFFF",
               fontWeight: 400,
               fontStyle: "italic",
             }}>
@@ -179,9 +179,9 @@ export default function LoginPage() {
         {isMobile && (
           <div style={{ textAlign: "center", marginBottom: 36 }}>
             <svg width="36" height="36" viewBox="0 0 52 52" fill="none">
-              <circle cx="26" cy="26" r="25" stroke="rgba(0,212,255,0.6)" strokeWidth="1"/>
-              <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(0,212,255,0.9)" strokeWidth="1.5"/>
-              <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(0,212,255,0.15)"/>
+              <circle cx="26" cy="26" r="25" stroke="rgba(45,129,247,0.7)" strokeWidth="1"/>
+              <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(8,189,128,0.9)" strokeWidth="1.5"/>
+              <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(45,129,247,0.15)"/>
             </svg>
           </div>
         )}
@@ -439,7 +439,7 @@ export default function LoginPage() {
           {/* Blue tint overlay */}
           <div style={{
             position: 'absolute', inset: 0,
-            background: 'radial-gradient(ellipse at 50% 50%, rgba(0,212,255,0.12) 0%, rgba(3,3,8,0.75) 70%)',
+            background: 'radial-gradient(ellipse at 50% 50%, rgba(45,129,247,0.22) 0%, rgba(8,189,128,0.10) 38%, rgba(3,3,8,0.78) 76%)',
             pointerEvents: 'none',
           }} />
 
@@ -451,13 +451,13 @@ export default function LoginPage() {
               fontSize: isMobile ? 32 : 52,
               letterSpacing: '-0.03em',
               lineHeight: 1.15,
-              color: 'var(--text-primary)',
+              color: '#FFFFFF',
               opacity: warpText >= 1 ? 1 : 0,
               transform: warpText >= 1 ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.97)',
               transition: 'all 800ms cubic-bezier(0.16,1,0.3,1)',
               marginBottom: 16,
             }}>
-              Taking you to the craziest ICSE tool.
+              Taking you to your PADH.AI workspace.
             </div>
             <div style={{
               fontFamily: 'var(--font-tagline)',
@@ -469,7 +469,7 @@ export default function LoginPage() {
               transform: warpText >= 2 ? 'translateY(0)' : 'translateY(12px)',
               transition: 'all 600ms cubic-bezier(0.16,1,0.3,1)',
             }}>
-              Hold tight. It's about to get crazy.
+              Your board-prep system is getting ready.
             </div>
           </div>
 

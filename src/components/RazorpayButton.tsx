@@ -82,7 +82,7 @@ export function RazorpayButton({ amount = 99, type = "PRO", email, name, onSucce
 
                 const subOptions = {
                     key,
-                    name: "Saviours AI",
+                    name: "PADH.AI",
                     description: "Monthly Plan — ₹199/month",
                     subscription_id: subData.subscription.id,
                     handler: async (response: any) => {
@@ -102,7 +102,7 @@ export function RazorpayButton({ amount = 99, type = "PRO", email, name, onSucce
                         }
                     },
                     prefill,
-                    theme: { color: "#00D4FF" },
+                    theme: { color: "#2D81F7" },
                 };
 
                 const paymentObject = new (window as any).Razorpay(subOptions);
@@ -130,7 +130,7 @@ export function RazorpayButton({ amount = 99, type = "PRO", email, name, onSucce
                 key,
                 amount: orderData.order.amount,
                 currency: orderData.order.currency,
-                name: "ICSE Saviours",
+                name: "PADH.AI",
                 description: type === "LNB_CHEMISTRY" ? "Unlock Chemistry Sets" : "Yearly Access",
                 order_id: orderData.order.id,
                 handler: async function (response: any) {
@@ -160,7 +160,7 @@ export function RazorpayButton({ amount = 99, type = "PRO", email, name, onSucce
                     email,
                 },
                 theme: {
-                    color: "#00D4FF", // Violet
+                    color: "#2D81F7",
                 },
             };
 

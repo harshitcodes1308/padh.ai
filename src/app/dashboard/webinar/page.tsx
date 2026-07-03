@@ -7,7 +7,7 @@ import { useResponsive } from "@/hooks/useResponsive";
 const CALENDLY_URL = "https://calendly.com/saviours-ai";
 
 const WEBINAR = {
-  title: "ICSE Board Exam Masterclass",
+  title: "CBSE Board Exam Masterclass",
   subtitle: "Strategy, shortcuts & last-minute secrets — straight from Pranay Bhaiya",
   date: "Every Saturday",
   time: "7:00 PM – 8:30 PM IST",
@@ -47,8 +47,8 @@ export default function WebinarPage() {
     }}>
       <style>{`
         @keyframes wbPulse {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(0,212,255,0.35); }
-          50%       { box-shadow: 0 0 0 10px rgba(0,212,255,0); }
+          0%, 100% { box-shadow: 0 0 0 0 rgba(45,129,247,0.35); }
+          50%       { box-shadow: 0 0 0 10px rgba(45,129,247,0); }
         }
         @keyframes wbFloat {
           0%, 100% { transform: translateY(0); }
@@ -94,7 +94,7 @@ export default function WebinarPage() {
             letterSpacing: "0.18em", textTransform: "uppercase",
             color: "var(--accent-gold)", opacity: 0.8, marginBottom: 12,
           }}>
-            Live Webinar · Saviours AI 2027
+            Live Webinar · PADH.AI 2027
           </div>
           <h1 style={{
             fontFamily: "var(--font-display)",
@@ -143,7 +143,7 @@ export default function WebinarPage() {
                   width: isMobile ? 64 : 76, height: isMobile ? 64 : 76,
                   minWidth: isMobile ? 64 : 76,
                   borderRadius: 20,
-                  background: "linear-gradient(135deg, var(--accent-gold-glow), rgba(0,212,255,0.05))",
+                  background: "linear-gradient(135deg, var(--accent-gold-glow), rgba(45,129,247,0.05))",
                   border: "1.5px solid var(--accent-gold-border)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   flexDirection: "column", gap: 2,
@@ -166,10 +166,10 @@ export default function WebinarPage() {
                     fontFamily: "var(--font-body)", fontSize: 13,
                     color: "var(--text-secondary)", lineHeight: 1.6,
                   }}>
-                    ICSE board mentor with years of experience helping students crack 90+ scores. Pranay Bhaiya breaks down complex topics into strategies that actually work — no fluff, only results.
+                    CBSE board mentor with years of experience helping students crack 90+ scores. Pranay Bhaiya breaks down complex topics into strategies that actually work — no fluff, only results.
                   </div>
                   <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
-                    {["ICSE Specialist", "Board Strategy Expert", "Doubt Solver"].map(tag => (
+                    {["CBSE Specialist", "Board Strategy Expert", "Doubt Solver"].map(tag => (
                       <span key={tag} style={{
                         fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 600,
                         letterSpacing: "0.06em",
@@ -265,7 +265,7 @@ export default function WebinarPage() {
               padding: "24px 22px",
               position: "relative", overflow: "hidden",
             }}>
-              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 0%, rgba(0,212,255,0.04), transparent 60%)", pointerEvents: "none" }} />
+              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 0%, rgba(45,129,247,0.04), transparent 60%)", pointerEvents: "none" }} />
 
               <div style={{
                 fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700,
@@ -306,14 +306,14 @@ export default function WebinarPage() {
                   padding: "16px 20px",
                   background: hovered
                     ? "var(--accent-gold)"
-                    : "linear-gradient(135deg, rgba(0,212,255,0.18), rgba(0,212,255,0.10))",
+                    : "linear-gradient(135deg, rgba(45,129,247,0.18), rgba(45,129,247,0.10))",
                   border: "1.5px solid var(--accent-gold)",
                   borderRadius: 14,
                   cursor: "pointer",
                   transition: "all 0.25s cubic-bezier(0.16,1,0.3,1)",
                   boxShadow: hovered
-                    ? "0 0 32px rgba(0,212,255,0.4), 0 8px 24px rgba(0,0,0,0.3)"
-                    : "0 0 16px rgba(0,212,255,0.2)",
+                    ? "0 0 32px rgba(45,129,247,0.4), 0 8px 24px rgba(0,0,0,0.3)"
+                    : "0 0 16px rgba(45,129,247,0.2)",
                   transform: hovered ? "translateY(-2px)" : "translateY(0)",
                 }}
               >
@@ -381,7 +381,7 @@ export default function WebinarPage() {
               }}>Why This Works</div>
               {[
                 "Real questions from real students — not scripted",
-                "Pranay has mentored 500+ ICSE students personally",
+                "Pranay has mentored 500+ CBSE students personally",
                 "You leave with actionable tasks, not just motivation",
               ].map((point, i) => (
                 <div key={i} style={{ display: "flex", gap: 8, alignItems: "flex-start", marginBottom: i < 2 ? 8 : 0 }}>
@@ -409,7 +409,7 @@ export default function WebinarPage() {
                 fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 800,
                 letterSpacing: "0.08em", textTransform: "uppercase",
                 color: "#0A0A0F",
-                boxShadow: "0 0 32px rgba(0,212,255,0.5), 0 8px 24px rgba(0,0,0,0.4)",
+                boxShadow: "0 0 32px rgba(45,129,247,0.5), 0 8px 24px rgba(0,0,0,0.4)",
               }}
             >
               Get Your Seat — It&apos;s Free →

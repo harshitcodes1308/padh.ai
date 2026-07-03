@@ -80,7 +80,7 @@ export default function MonthlyMissionPage() {
             <div style={{
               fontFamily: 'var(--font-tagline)', fontSize: 12, fontStyle: 'italic',
               color: 'var(--text-muted)',
-            }}>12-month ICSE board prep — one month at a time.</div>
+            }}>12-month CBSE board prep - one month at a time.</div>
           </div>
           <div style={{
             fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600,
@@ -308,7 +308,7 @@ export default function MonthlyMissionPage() {
                         <div style={{
                           borderTop: '1px solid var(--bg-border)',
                           padding: isMobile ? '10px 14px' : '10px 20px',
-                          background: 'rgba(0,212,255,0.02)',
+                          background: 'rgba(45,129,247,0.02)',
                         }}>
                           <div style={{
                             fontFamily: 'var(--font-body)', fontSize: 9, fontWeight: 700,

@@ -127,14 +127,14 @@ export default function LastNightBeforePage() {
   };
 
   if (sessionLoading) {
-    return <div style={{ minHeight: "100vh", background: "#0D1117", display: "flex", alignItems: "center", justifyContent: "center", color: "#6B7280" }}>Loading...</div>;
+    return <div style={{ minHeight: "100vh", background: "#0D1117", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-secondary)" }}>Loading...</div>;
   }
   
   if (phase === "select_subject") {
     return (
       <div style={{ minHeight: "100vh", background: "#0D1117", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 24 }}>
-        <h1 style={{ fontSize: 36, fontWeight: 900, color: "#FFF", marginBottom: 8, textAlign: "center" }}>Last Night Before</h1>
-        <p style={{ fontSize: 16, color: "#9CA3AF", marginBottom: 48, textAlign: "center" }}>Select a subject to begin your final revision sprint.</p>
+        <h1 style={{ fontSize: 36, fontWeight: 900, color: "var(--text-primary)", marginBottom: 8, textAlign: "center" }}>Last Night Before</h1>
+        <p style={{ fontSize: 16, color: "var(--text-muted)", marginBottom: 48, textAlign: "center" }}>Select a subject to begin your final revision sprint.</p>
         
         <div style={{ display: "flex", gap: 24, flexDirection: isMobile ? "column" : "row", width: "100%", maxWidth: 640 }}>
           <button onClick={() => handleSelectSubject("Physics")} style={{
@@ -165,7 +165,7 @@ export default function LastNightBeforePage() {
         <button onClick={() => router.push("/dashboard")} style={{
           marginTop: 48,
           background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)",
-          borderRadius: 10, padding: "10px 20px", color: "#9CA3AF", fontSize: 14,
+          borderRadius: 10, padding: "10px 20px", color: "var(--text-muted)", fontSize: 14,
           cursor: "pointer", fontWeight: 600,
         }}>
           ← Back to Dashboard
@@ -223,7 +223,7 @@ export default function LastNightBeforePage() {
 
         <h1 style={{
           fontSize: isMobile ? 32 : 48, fontWeight: 900, textAlign: "center",
-          background: "linear-gradient(135deg, #FFF 30%, #F59E0B)",
+          background: "linear-gradient(135deg, var(--text-primary) 30%, #F59E0B)",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           marginBottom: 8, lineHeight: 1.2,
         }}>
@@ -231,14 +231,14 @@ export default function LastNightBeforePage() {
         </h1>
 
         <p style={{
-          fontSize: isMobile ? 18 : 22, color: "#9CA3AF", marginBottom: 8,
+          fontSize: isMobile ? 18 : 22, color: "var(--text-muted)", marginBottom: 8,
           textAlign: "center",
         }}>
           You&apos;ve got this. 🔥
         </p>
 
         <p style={{
-          fontSize: 14, color: "#6B7280", marginBottom: 32, textAlign: "center",
+          fontSize: 14, color: "var(--text-secondary)", marginBottom: 32, textAlign: "center",
         }}>
           {currentSet.subject} · 60 items to revise
         </p>
@@ -259,7 +259,7 @@ export default function LastNightBeforePage() {
             }}>
               <div style={{ fontSize: 22, marginBottom: 4 }}>{s.icon}</div>
               <div style={{ fontSize: 20, fontWeight: 800, color: "#F5F5F5" }}>{s.count}</div>
-              <div style={{ fontSize: 11, color: "#6B7280", marginTop: 2 }}>{s.label}</div>
+              <div style={{ fontSize: 11, color: "var(--text-secondary)", marginTop: 2 }}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -277,7 +277,7 @@ export default function LastNightBeforePage() {
 
         {/* Reroll link */}
         <button onClick={attemptRerollLinkClick} style={{
-          background: "none", border: "none", color: "#6B7280", fontSize: 13,
+          background: "none", border: "none", color: "var(--text-secondary)", fontSize: 13,
           cursor: "pointer", textDecoration: "underline", padding: 8,
         }}>
           {(subject === "Chemistry" && !isPaid && !lnbChemistryUnlocked) ? "🔒 Unlock 4 more sets for ₹19" : (!isPaid && subject === "Physics") ? "🔒 Pro: Re-roll for a different set" : "Re-roll Set"}
@@ -298,14 +298,14 @@ export default function LastNightBeforePage() {
               <h3 style={{ fontSize: 18, fontWeight: 700, color: "#F5F5F5", marginBottom: 8 }}>
                 Get a different set?
               </h3>
-              <p style={{ fontSize: 13, color: "#9CA3AF", marginBottom: 24 }}>
+              <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 24 }}>
                 Your current progress will be reset.
               </p>
               <div style={{ display: "flex", gap: 12 }}>
                 <button onClick={() => setShowReroll(false)} style={{
                   flex: 1, padding: 12, background: "rgba(255,255,255,0.05)",
                   border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12,
-                  color: "#9CA3AF", fontSize: 14, fontWeight: 600, cursor: "pointer",
+                  color: "var(--text-muted)", fontSize: 14, fontWeight: 600, cursor: "pointer",
                 }}>Cancel</button>
                 <button onClick={handleReroll} style={{
                   flex: 1, padding: 12, background: "linear-gradient(135deg,#F59E0B,#D97706)",
@@ -343,7 +343,7 @@ export default function LastNightBeforePage() {
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <button onClick={() => setPhase("select_subject")} style={{
             background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 10, padding: "8px 12px", color: "#9CA3AF", fontSize: 13,
+            borderRadius: 10, padding: "8px 12px", color: "var(--text-muted)", fontSize: 13,
             cursor: "pointer", fontWeight: 600,
           }}>
             ← Back
@@ -352,7 +352,7 @@ export default function LastNightBeforePage() {
             <div style={{ fontSize: isMobile ? 15 : 17, fontWeight: 800, color: "#F5F5F5" }}>
               🌙 Last Night Before
             </div>
-            <div style={{ fontSize: 12, color: "#6B7280" }}>
+            <div style={{ fontSize: 12, color: "var(--text-secondary)" }}>
               Set #{currentSet.setId} · {currentSet.subject}
             </div>
           </div>
@@ -360,7 +360,7 @@ export default function LastNightBeforePage() {
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{
             fontSize: 13, fontWeight: 700,
-            color: pct >= 75 ? "#10B981" : pct >= 50 ? "#F59E0B" : "#6B7280",
+            color: pct >= 75 ? "#10B981" : pct >= 50 ? "#F59E0B" : "var(--text-secondary)",
           }}>
             {pct}% done
           </div>
@@ -392,7 +392,7 @@ export default function LastNightBeforePage() {
               borderRadius: 12, border: "none", cursor: "pointer",
               fontSize: isMobile ? 11 : 13, fontWeight: 700, whiteSpace: "nowrap",
               background: isActive ? "rgba(245,158,11,0.12)" : "rgba(255,255,255,0.03)",
-              color: isActive ? "#F59E0B" : "#6B7280",
+              color: isActive ? "#F59E0B" : "var(--text-secondary)",
               borderBottom: isActive ? "2px solid #F59E0B" : "2px solid transparent",
               transition: "all 0.2s ease",
             }}>
@@ -436,14 +436,14 @@ export default function LastNightBeforePage() {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8, flexWrap: "wrap" }}>
-                      <span style={{ fontSize: 12, fontWeight: 700, color: "#6B7280" }}>#{idx + 1}</span>
+                      <span style={{ fontSize: 12, fontWeight: 700, color: "var(--text-secondary)" }}>#{idx + 1}</span>
                       <span style={{
                         fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20,
                         background: "rgba(59,130,246,0.1)", color: "#60A5FA",
                       }}>{n.topic}</span>
                     </div>
                     <h4 style={{ fontSize: 15, fontWeight: 700, color: "#E5E7EB", marginBottom: 8 }}>{n.title}</h4>
-                    <p style={{ fontSize: 14, color: "#9CA3AF", lineHeight: 1.6, marginBottom: 12 }}>{n.question}</p>
+                    <p style={{ fontSize: 14, color: "var(--text-muted)", lineHeight: 1.6, marginBottom: 12 }}>{n.question}</p>
                     <button onClick={() => toggleRevealed(n.id)} style={{
                       background: revealed[n.id] ? "rgba(16,185,129,0.08)" : "rgba(245,158,11,0.08)",
                       border: `1px solid ${revealed[n.id] ? "rgba(16,185,129,0.2)" : "rgba(245,158,11,0.2)"}`,
@@ -464,7 +464,7 @@ export default function LastNightBeforePage() {
                   <button onClick={() => toggleDone(n.id)} style={{
                     width: 36, height: 36, borderRadius: 10, border: "none", cursor: "pointer",
                     background: done[n.id] ? "#10B981" : "rgba(255,255,255,0.05)",
-                    color: done[n.id] ? "#FFF" : "#6B7280", fontSize: 16,
+                    color: done[n.id] ? "var(--text-primary)" : "var(--text-secondary)", fontSize: 16,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     flexShrink: 0, transition: "all 0.2s ease",
                     boxShadow: done[n.id] ? "0 4px 12px rgba(16,185,129,0.3)" : "none",
@@ -490,7 +490,7 @@ export default function LastNightBeforePage() {
                 <div>
                   <span style={{
                     fontSize: 11, fontWeight: 600, padding: "3px 10px", borderRadius: 20,
-                    background: "rgba(139,92,246,0.1)", color: "#33DFFF",
+                    background: "rgba(8,189,128,0.10)", color: "#2D81F7",
                   }}>{f.topic}</span>
                   <div style={{
                     fontSize: isMobile ? 20 : 24, fontWeight: 900, color: "#F5F5F5",
@@ -498,13 +498,13 @@ export default function LastNightBeforePage() {
                   }}>
                     {f.formula}
                   </div>
-                  <p style={{ fontSize: 13, color: "#9CA3AF", margin: 0 }}>{f.name}</p>
+                  <p style={{ fontSize: 13, color: "var(--text-muted)", margin: 0 }}>{f.name}</p>
                 </div>
                 <div style={{ marginTop: 14, display: "flex", justifyContent: "flex-end" }}>
                   <button onClick={() => toggleDone(f.id)} style={{
                     padding: "6px 14px", borderRadius: 8, border: "none", cursor: "pointer",
                     background: done[f.id] ? "#10B981" : "rgba(255,255,255,0.05)",
-                    color: done[f.id] ? "#FFF" : "#6B7280", fontSize: 12, fontWeight: 600,
+                    color: done[f.id] ? "var(--text-primary)" : "var(--text-secondary)", fontSize: 12, fontWeight: 600,
                     transition: "all 0.2s ease",
                   }}>
                     {done[f.id] ? "✓ Done" : "Mark Done"}
@@ -528,22 +528,22 @@ export default function LastNightBeforePage() {
                   <div style={{ flex: 1 }}>
                     <h4 style={{ fontSize: 17, fontWeight: 800, color: "#F5F5F5", marginBottom: 8 }}>{d.term}</h4>
                     <button onClick={() => toggleRevealed(d.id)} style={{
-                      background: revealed[d.id] ? "rgba(139,92,246,0.08)" : "rgba(245,158,11,0.08)",
-                      border: `1px solid ${revealed[d.id] ? "rgba(139,92,246,0.2)" : "rgba(245,158,11,0.2)"}`,
+                      background: revealed[d.id] ? "rgba(8,189,128,0.08)" : "rgba(245,158,11,0.08)",
+                      border: `1px solid ${revealed[d.id] ? "rgba(8,189,128,0.12)" : "rgba(245,158,11,0.2)"}`,
                       borderRadius: 10, padding: "8px 14px", fontSize: 12, fontWeight: 600,
-                      color: revealed[d.id] ? "#33DFFF" : "#FBBF24", cursor: "pointer",
+                      color: revealed[d.id] ? "#2D81F7" : "#FBBF24", cursor: "pointer",
                       marginBottom: revealed[d.id] ? 12 : 0,
                     }}>
                       {revealed[d.id] ? "Hide Definition ▲" : "Reveal Definition ▼"}
                     </button>
                     {revealed[d.id] && (
-                      <p style={{ fontSize: 14, color: "#D1D5DB", lineHeight: 1.7, margin: 0 }}>{d.definition}</p>
+                      <p style={{ fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.7, margin: 0 }}>{d.definition}</p>
                     )}
                   </div>
                   <button onClick={() => toggleDone(d.id)} style={{
                     width: 36, height: 36, borderRadius: 10, border: "none", cursor: "pointer",
                     background: done[d.id] ? "#10B981" : "rgba(255,255,255,0.05)",
-                    color: done[d.id] ? "#FFF" : "#6B7280", fontSize: 16,
+                    color: done[d.id] ? "var(--text-primary)" : "var(--text-secondary)", fontSize: 16,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     flexShrink: 0, transition: "all 0.2s ease",
                   }}>
@@ -569,7 +569,7 @@ export default function LastNightBeforePage() {
         }}>
           <div style={{
             display: "flex", gap: isMobile ? 8 : 16, fontSize: isMobile ? 11 : 13,
-            color: "#9CA3AF", flexWrap: "wrap",
+            color: "var(--text-muted)", flexWrap: "wrap",
           }}>
             <span>✅ <strong style={{ color: numDone === 30 ? "#10B981" : "#E5E7EB" }}>{numDone}/30</strong> Num</span>
             <span>✅ <strong style={{ color: frmDone === 20 ? "#10B981" : "#E5E7EB" }}>{frmDone}/20</strong> Form</span>
@@ -577,7 +577,7 @@ export default function LastNightBeforePage() {
           </div>
           <div style={{
             fontSize: isMobile ? 12 : 13, fontWeight: 700,
-            color: pct >= 100 ? "#10B981" : pct >= 75 ? "#FBBF24" : pct >= 50 ? "#F59E0B" : "#6B7280",
+            color: pct >= 100 ? "#10B981" : pct >= 75 ? "#FBBF24" : pct >= 50 ? "#F59E0B" : "var(--text-secondary)",
           }}>
             {getMotivation(pct)}
           </div>

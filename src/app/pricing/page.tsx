@@ -90,12 +90,12 @@ export default function PricingPage() {
                 }}>
                     Upgrade to{" "}
                     <span style={{
-                        background: "linear-gradient(135deg, #3B82F6, #06B6D4, #00D4FF)",
+                        background: "linear-gradient(135deg, #3B82F6, #06B6D4, #2D81F7)",
                         WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-                    }}>Saviours AI Pro</span>
+                    }}>PADH.AI Pro</span>
                 </h1>
                 <p style={{ fontSize: 16, color: "#9CA3AF", margin: 0, lineHeight: 1.6 }}>
-                    Unlock every AI-powered feature to dominate your ICSE exams. No subscriptions, no hidden fees.
+                    Unlock every AI-powered feature for focused CBSE board prep. No subscriptions, no hidden fees.
                 </p>
             </div>
 
@@ -182,7 +182,7 @@ export default function PricingPage() {
                     {/* Popular badge */}
                     <div style={{
                         position: "absolute", top: 16, right: 16,
-                        background: "linear-gradient(135deg, #3B82F6, #00D4FF)",
+                        background: "linear-gradient(135deg, #3B82F6, #2D81F7)",
                         padding: "4px 12px", borderRadius: 100,
                         fontSize: 10, fontWeight: 700, color: "#FFF",
                         letterSpacing: 0.5, textTransform: "uppercase",
@@ -321,7 +321,7 @@ export default function PricingPage() {
                             style={{
                                 width: "100%", padding: "13px 24px", borderRadius: 100,
                                 fontSize: 15, fontWeight: 700, cursor: domin8Loading ? "not-allowed" : "pointer",
-                                background: "linear-gradient(135deg, #3B82F6, #00D4FF)",
+                                background: "linear-gradient(135deg, #3B82F6, #2D81F7)",
                                 color: "#FFF", border: "none", marginTop: 18,
                                 opacity: domin8Loading ? 0.6 : 1,
                             }}

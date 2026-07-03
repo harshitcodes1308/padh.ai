@@ -72,7 +72,7 @@ export default function StudyFlowChaptersPage() {
     }}>
       <style>{`
         @keyframes sfFadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes sfPulseGlow { 0%,100% { box-shadow: 0 0 0 rgba(0,212,255,0); } 50% { box-shadow: 0 0 12px rgba(0,212,255,0.15); } }
+        @keyframes sfPulseGlow { 0%,100% { box-shadow: 0 0 0 rgba(45,129,247,0); } 50% { box-shadow: 0 0 12px rgba(45,129,247,0.15); } }
       `}</style>
 
       <div style={{ maxWidth: 800, margin: "0 auto" }}>

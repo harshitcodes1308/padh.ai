@@ -14,31 +14,31 @@ const testimonials: Testimonial[] = [
     id: 1,
     testimonial:
       "Boards were coming near and I was not well prepared. But due to this AI I became very productive, didn't waste any time, got my tasks and focused to complete them. It really helped me.",
-    author: 'Sparsh — ICSE Class 10',
+    author: 'Sparsh - CBSE Class 10',
   },
   {
     id: 2,
     testimonial:
       "What they didn't help with? Ask that. They helped me in each and every way and also cleared all my doubts.",
-    author: 'Abhyang Salve — ICSE Class 10',
+    author: 'Abhyang Salve - CBSE Class 10',
   },
   {
     id: 3,
     testimonial:
       'It helped me specifically in History, Geography and Maths. The only teaching community who really thought about our needs. Great efforts by the team.',
-    author: 'Sarthak Mehta — ICSE Class 10',
+    author: 'Sarthak Mehta - CBSE Class 10',
   },
   {
     id: 4,
     testimonial:
       'It helped me really well with my boards — and my boards went really well.',
-    author: 'Ishika Sagar — ICSE Class 10',
+    author: 'Ishika Sagar - CBSE Class 10',
   },
   {
     id: 5,
     testimonial:
       'It gave me twisted questions which helped me do the same topics in a more difficult manner. That made all the difference.',
-    author: 'Manntrra Pawar — ICSE Class 10',
+    author: 'Manntrra Pawar - CBSE Class 10',
   },
 ];
 
@@ -189,7 +189,7 @@ export default function ShuffleCards({
                   padding: isMobile ? '24px 20px' : '32px 28px',
                   backdropFilter: 'blur(14px)',
                   boxShadow: isHovered
-                    ? '0 20px 60px rgba(0,0,0,0.7), 0 0 30px rgba(0,212,255,0.1)'
+                    ? '0 20px 60px rgba(0,0,0,0.7), 0 0 30px rgba(45,129,247,0.1)'
                     : '0 8px 32px rgba(0,0,0,0.5)',
                   display: 'flex',
                   flexDirection: 'column',

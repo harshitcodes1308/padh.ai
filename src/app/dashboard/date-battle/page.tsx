@@ -713,8 +713,8 @@ export default function DateBattleArenaPage() {
             <div style={{
                 position: "absolute", inset: 0,
                 backgroundImage: `radial-gradient(ellipse at 20% 50%, var(--accent-gold-glow) 0%, transparent 50%),
-                                  radial-gradient(ellipse at 80% 20%, rgba(0,212,255,0.04) 0%, transparent 50%),
-                                  radial-gradient(ellipse at 50% 80%, rgba(0,212,255,0.03) 0%, transparent 50%)`,
+                                  radial-gradient(ellipse at 80% 20%, rgba(45,129,247,0.04) 0%, transparent 50%),
+                                  radial-gradient(ellipse at 50% 80%, rgba(45,129,247,0.03) 0%, transparent 50%)`,
                 pointerEvents: "none", zIndex: 0,
             }} />
 

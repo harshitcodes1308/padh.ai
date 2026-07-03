@@ -77,7 +77,7 @@ export default function VideoLecturesPage() {
               Video Lectures
             </h1>
             <div style={{ fontFamily: "var(--font-tagline)", fontSize: 12, fontStyle: "italic", color: "var(--text-muted)" }}>
-              Subject-wise ICSE Class 10 · Free for all students
+              Subject-wise CBSE Class 10 · Free for all students
             </div>
           </div>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>

@@ -6,8 +6,8 @@ import { ConsoleWelcome } from "@/components/ConsoleWelcome";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "ICSE Saviours – AI Student OS",
-  description: "Your AI-powered academic OS for ICSE success",
+  title: "PADH.AI - AI Student Workspace",
+  description: "Your AI-powered workspace for CBSE board prep",
 };
 
 // CRITICAL: Viewport configuration for mobile responsiveness

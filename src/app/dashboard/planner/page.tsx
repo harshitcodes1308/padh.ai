@@ -16,7 +16,7 @@ interface SelectedChapter {
 const SUBJECT_COLORS: Record<string, string> = {
     Mathematics: "#C9A84C",
     Physics: "#60a5fa",
-    Chemistry: "#33DFFF",
+    Chemistry: "#2D81F7",
     Biology: "#22c55e",
     English: "#f472b6",
     "History & Civics": "#fb923c",
@@ -438,7 +438,7 @@ function SubjectChapterSelector({
                     {subject.name}
                     {selectedCount > 0 && (
                         <span style={{
-                            background: "rgba(0,212,255,0.12)",
+                            background: "rgba(45,129,247,0.12)",
                             color: "var(--accent-gold)",
                             padding: "2px 8px",
                             borderRadius: 6,
@@ -472,7 +472,7 @@ function SubjectChapterSelector({
                                     padding: "8px 10px",
                                     borderRadius: 8,
                                     cursor: "pointer",
-                                    background: isSelected ? "rgba(0,212,255,0.06)" : "transparent",
+                                    background: isSelected ? "rgba(45,129,247,0.06)" : "transparent",
                                     marginBottom: 2,
                                 }}
                             >

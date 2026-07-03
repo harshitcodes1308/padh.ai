@@ -12,17 +12,16 @@ export default function SubjectsPage() {
     if (isLoading) {
         return (
             <div style={{
-                minHeight: "100vh", background: "#030303",
+                minHeight: "100vh", background: "var(--bg-base)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 flexDirection: "column", gap: 16,
             }}>
                 <div className="animate-float" style={{ fontSize: 48 }}>📚</div>
                 <div style={{
                     fontSize: 15, fontWeight: 600,
-                    background: "linear-gradient(135deg, #33DFFF, #00D4FF)",
-                    WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                    color: "var(--brand-green)",
                 }}>Loading subjects...</div>
-                <div style={{ width: 160, height: 3, borderRadius: 2, background: "rgba(255,255,255,0.06)", overflow: "hidden" }}>
+                <div style={{ width: 160, height: 3, borderRadius: 2, background: "var(--bg-border-light)", overflow: "hidden" }}>
                     <div className="animate-shimmer" style={{ width: "100%", height: "100%" }} />
                 </div>
             </div>
@@ -33,8 +32,8 @@ export default function SubjectsPage() {
         "Mathematics": "#3B82F6",
         "Physics": "#F59E0B",
         "Chemistry": "#10B981",
-        "Biology": "#EC4899",
-        "English": "#00D4FF",
+        "Biology": "#2D81F7",
+        "English": "var(--brand-green)",
         "Hindi": "#EF4444",
         "History": "#F97316",
         "Geography": "#06B6D4",
@@ -44,7 +43,7 @@ export default function SubjectsPage() {
     return (
         <div style={{
             minHeight: "100vh", padding: isMobile ? "12px" : isTablet ? "20px" : "32px",
-            background: "radial-gradient(ellipse at 30% 0%, rgba(139,92,246,0.04) 0%, transparent 50%), #030303",
+            background: "radial-gradient(ellipse at 30% 0%, rgba(8,189,128,0.05) 0%, transparent 50%), var(--bg-base)",
             boxSizing: "border-box" as const, overflowX: "hidden" as const,
         }}>
             <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -52,23 +51,22 @@ export default function SubjectsPage() {
                 <div className="animate-fadeIn" style={{ marginBottom: "40px" }}>
                     <div style={{
                         display: "inline-flex", alignItems: "center", gap: 6,
-                        background: "rgba(139,92,246,0.08)", border: "1px solid rgba(139,92,246,0.15)",
+                        background: "rgba(8,189,128,0.08)", border: "1px solid rgba(8,189,128,0.10)",
                         borderRadius: 20, padding: "6px 14px", fontSize: 11,
-                        fontWeight: 600, color: "#33DFFF", letterSpacing: 1,
+                        fontWeight: 600, color: "var(--brand-green)", letterSpacing: 1,
                         textTransform: "uppercase", marginBottom: 16,
                     }}>
-                        📚 ICSE Class 10
+                        📚 CBSE Class 10
                     </div>
                     <h1 style={{
                         fontSize: isMobile ? "22px" : "32px", fontWeight: 800, marginBottom: "8px",
                         letterSpacing: -0.5,
-                        background: "linear-gradient(135deg, #FFFFFF 0%, #33DFFF 100%)",
-                        WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                        color: "var(--text-primary)",
                     }}>
                         Your Subjects
                     </h1>
-                    <p style={{ color: "#6B7280", fontSize: "14px" }}>
-                        Browse topics, take notes, and master your ICSE syllabus
+                    <p style={{ color: "var(--text-secondary)", fontSize: "14px" }}>
+                        Browse topics, take notes, and master your CBSE syllabus
                     </p>
                 </div>
 
@@ -79,7 +77,7 @@ export default function SubjectsPage() {
                     gap: isMobile ? "12px" : "20px",
                 }}>
                     {subjects?.map((subject, idx) => {
-                        const color = subjectColors[subject.name] || "#00D4FF";
+                        const color = subjectColors[subject.name] || "var(--brand-green)";
                         return (
                             <Link
                                 key={subject.id}
@@ -121,7 +119,7 @@ export default function SubjectsPage() {
                                     {/* Subject Name */}
                                     <h3 style={{
                                         fontSize: "17px", fontWeight: 700,
-                                        color: "#FFFFFF", marginBottom: "8px",
+                                        color: "var(--text-primary)", marginBottom: "8px",
                                         letterSpacing: -0.3,
                                     }}>
                                         {subject.name}
@@ -129,7 +127,7 @@ export default function SubjectsPage() {
 
                                     {/* Description */}
                                     <p style={{
-                                        fontSize: "13px", color: "#6B7280",
+                                        fontSize: "13px", color: "var(--text-secondary)",
                                         lineHeight: "1.5", flex: 1,
                                     }}>
                                         Study {subject.name} for CBSE exams
@@ -169,14 +167,14 @@ export default function SubjectsPage() {
                         <div className="animate-float" style={{ fontSize: "56px", marginBottom: "16px" }}>📚</div>
                         <h3 style={{
                             fontSize: "18px", fontWeight: 700,
-                            background: "linear-gradient(135deg, #FFF, #33DFFF)",
+                            background: "linear-gradient(135deg, var(--text-primary), #2D81F7)",
                             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                             marginBottom: "8px",
                         }}>
                             No Subjects Available
                         </h3>
-                        <p style={{ color: "#6B7280", fontSize: "14px" }}>
-                            Run the database seed script to add ICSE subjects
+                        <p style={{ color: "var(--text-secondary)", fontSize: "14px" }}>
+                            Run the database seed script to add CBSE subjects
                         </p>
                     </div>
                 )}

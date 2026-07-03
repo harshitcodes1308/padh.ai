@@ -22,12 +22,12 @@ export default function ActivityPage() {
     ).slice(0, 30); // Last 30 days
 
     return (
-        <div style={{ minHeight: "100vh", backgroundColor: "#030303", padding: isMobile ? "12px" : "24px", boxSizing: "border-box" as const, overflowX: "hidden" as const }}>
+        <div style={{ minHeight: "100vh", backgroundColor: "var(--bg-base)", padding: isMobile ? "12px" : "24px", boxSizing: "border-box" as const, overflowX: "hidden" as const }}>
             <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-                <h1 style={{ fontSize: "32px", fontWeight: "700", color: "#FFFFFF", marginBottom: "8px" }}>
+                <h1 style={{ fontSize: "32px", fontWeight: "700", color: "var(--text-primary)", marginBottom: "8px" }}>
                     📈 Study Activity
                 </h1>
-                <p style={{ color: "#9CA3AF", fontSize: "16px", marginBottom: "32px" }}>
+                <p style={{ color: "var(--text-muted)", fontSize: "16px", marginBottom: "32px" }}>
                     Track your daily study progress and completed topics
                 </p>
 
@@ -39,10 +39,10 @@ export default function ActivityPage() {
                         textAlign: "center"
                     }}>
                         <div style={{ fontSize: "48px", marginBottom: "16px" }}>📚</div>
-                        <h3 style={{ fontSize: "20px", fontWeight: "600", color: "#FFFFFF", marginBottom: "8px" }}>
+                        <h3 style={{ fontSize: "20px", fontWeight: "600", color: "var(--text-primary)", marginBottom: "8px" }}>
                             No Activity Yet
                         </h3>
-                        <p style={{ color: "#9CA3AF" }}>
+                        <p style={{ color: "var(--text-muted)" }}>
                             Create a study plan to start tracking your activity
                         </p>
                     </div>
@@ -62,21 +62,21 @@ export default function ActivityPage() {
                                 }}>
                                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
                                         <div>
-                                            <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#FFFFFF" }}>
+                                            <h3 style={{ fontSize: "18px", fontWeight: "700", color: "var(--text-primary)" }}>
                                                 {new Date(dateStr).toLocaleDateString("en-US", {
                                                     weekday: "long",
                                                     month: "long",
                                                     day: "numeric"
                                                 })}
                                             </h3>
-                                            <p style={{ fontSize: "14px", color: "#9CA3AF", marginTop: "4px" }}>
+                                            <p style={{ fontSize: "14px", color: "var(--text-muted)", marginTop: "4px" }}>
                                                 {completed} / {total} topics completed
                                             </p>
                                         </div>
                                         <div style={{
                                             fontSize: "24px",
                                             fontWeight: "700",
-                                            color: percentage === 100 ? "#10B981" : "#00D4FF"
+                                            color: percentage === 100 ? "#10B981" : "var(--brand-green)"
                                         }}>
                                             {percentage}%
                                         </div>
@@ -85,20 +85,20 @@ export default function ActivityPage() {
                                     <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fill, minmax(250px, 1fr))", gap: "12px" }}>
                                         {dayPlans.map((plan: any) => (
                                             <div key={plan.id} style={{
-                                                backgroundColor: "#1A1A1D",
+                                                backgroundColor: "var(--bg-surface)",
                                                 borderRadius: "8px",
                                                 padding: "12px",
-                                                borderLeft: plan.completed ? "4px solid #10B981" : "4px solid #6B7280"
+                                                borderLeft: plan.completed ? "4px solid #10B981" : "4px solid var(--text-secondary)"
                                             }}>
                                                 <div style={{
                                                     fontSize: "14px",
                                                     fontWeight: "600",
-                                                    color: plan.completed ? "#10B981" : "#9CA3AF",
+                                                    color: plan.completed ? "#10B981" : "var(--text-muted)",
                                                     marginBottom: "4px"
                                                 }}>
                                                     {plan.completed ? "✅" : "⏳"} {plan.topicName || plan.chapter?.name}
                                                 </div>
-                                                <div style={{ fontSize: "12px", color: "#6B7280" }}>
+                                                <div style={{ fontSize: "12px", color: "var(--text-secondary)" }}>
                                                     {plan.subject?.icon} {plan.subject?.name}
                                                 </div>
                                             </div>

@@ -151,14 +151,14 @@ export default function SignupPage() {
           />
           <div style={{
             position: "absolute", inset: 0,
-            background: "radial-gradient(ellipse at 40% 50%, rgba(0,212,255,0.15) 0%, rgba(13,13,26,0.85) 70%)",
+            background: "radial-gradient(ellipse at 40% 50%, rgba(45,129,247,0.28) 0%, rgba(8,189,128,0.12) 38%, rgba(12,24,44,0.84) 76%)",
           }} />
           <div style={{ position: "relative", zIndex: 1, textAlign: "center", maxWidth: 400, padding: "0 48px" }}>
             <div style={{ marginBottom: 24 }}>
               <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                <circle cx="26" cy="26" r="25" stroke="rgba(0,212,255,0.6)" strokeWidth="1"/>
-                <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(0,212,255,0.9)" strokeWidth="1.5"/>
-                <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(0,212,255,0.15)"/>
+                <circle cx="26" cy="26" r="25" stroke="rgba(45,129,247,0.72)" strokeWidth="1"/>
+                <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(8,189,128,0.85)" strokeWidth="1.5"/>
+                <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(45,129,247,0.18)"/>
               </svg>
             </div>
             <div style={{
@@ -166,18 +166,18 @@ export default function SignupPage() {
               fontSize: 11,
               fontWeight: 700,
               letterSpacing: "0.2em",
-              color: "rgba(0,212,255,0.8)",
+              color: "rgba(255,255,255,0.82)",
               textTransform: "uppercase",
               marginBottom: 32,
             }}>
-              Saviours AI
+              PADH.AI
             </div>
             <div style={{
               fontFamily: "var(--font-tagline)",
               fontSize: 26,
               letterSpacing: "-0.01em",
               lineHeight: 1.35,
-              color: "var(--text-primary)",
+              color: "#FFFFFF",
               fontWeight: 400,
               fontStyle: "italic",
             }}>
@@ -187,11 +187,11 @@ export default function SignupPage() {
               marginTop: 24,
               fontFamily: "var(--font-body)",
               fontSize: 12,
-              color: "rgba(0,212,255,0.7)",
+              color: "rgba(255,255,255,0.70)",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
             }}>
-              Class X · ICSE · 2027 Boards
+              Class X · CBSE · 2027 Boards
             </div>
           </div>
         </div>
@@ -216,9 +216,9 @@ export default function SignupPage() {
         {isMobile && (
           <div style={{ textAlign: "center", marginBottom: 32 }}>
             <svg width="36" height="36" viewBox="0 0 52 52" fill="none">
-              <circle cx="26" cy="26" r="25" stroke="rgba(0,212,255,0.6)" strokeWidth="1"/>
-              <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(0,212,255,0.9)" strokeWidth="1.5"/>
-              <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(0,212,255,0.15)"/>
+              <circle cx="26" cy="26" r="25" stroke="rgba(45,129,247,0.7)" strokeWidth="1"/>
+              <path d="M26 8L42 20L26 44L10 20L26 8Z" fill="none" stroke="rgba(8,189,128,0.9)" strokeWidth="1.5"/>
+              <path d="M26 8L42 20L26 32L10 20L26 8Z" fill="rgba(45,129,247,0.15)"/>
             </svg>
           </div>
         )}
@@ -424,7 +424,7 @@ export default function SignupPage() {
                 opacity: demoLoading ? 0.5 : 0.7,
                 transition: "all 0.15s ease",
               }}
-              onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.borderColor = "var(--status-orange)"; e.currentTarget.style.color = "var(--status-orange)"; }}
+              onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.borderColor = "var(--status-green)"; e.currentTarget.style.color = "var(--status-green)"; }}
               onMouseLeave={e => { e.currentTarget.style.opacity = "0.7"; e.currentTarget.style.borderColor = "var(--bg-border-light)"; e.currentTarget.style.color = "var(--text-muted)"; }}
             >
               {demoLoading ? "Loading..." : "Demo Sign Up → Test Onboarding"}

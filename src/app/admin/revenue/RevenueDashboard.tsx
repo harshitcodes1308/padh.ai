@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell } from "recharts";
 
-const PLAN_COLORS: Record<string, string> = { FREE: "#6B6B80", MONTHLY: "#00D4FF", YEARLY: "#3ECF8E" };
+const PLAN_COLORS: Record<string, string> = { FREE: "#6B6B80", MONTHLY: "#2D81F7", YEARLY: "#3ECF8E" };
 const TOOLTIP_STYLE = {
   background: "var(--bg-surface)", border: "1px solid var(--bg-border)",
   borderRadius: 10, color: "var(--text-primary)", fontSize: 12, fontFamily: "var(--font-body)",
@@ -67,7 +67,7 @@ export default function RevenueDashboard({ data }: Props) {
         gap: mob ? 8 : 14, marginBottom: mob ? 14 : 20,
       }}>
         <StatCard label="Total Revenue" value={`₹${data.estimatedRevenue.toLocaleString()}`} icon="💰" color="#3ECF8E" compact={mob} />
-        <StatCard label="Paid Users" value={data.paidUsers} icon="💎" color="#00D4FF" compact={mob} />
+        <StatCard label="Paid Users" value={data.paidUsers} icon="💎" color="#2D81F7" compact={mob} />
         <StatCard label="Conversion Rate" value={`${data.conversionRate}%`} icon="📈" color="#FB923C" compact={mob} />
         <StatCard label="ARPU" value={`₹${data.arpu}`} icon="👤" color="#60A5FA" compact={mob} />
       </div>

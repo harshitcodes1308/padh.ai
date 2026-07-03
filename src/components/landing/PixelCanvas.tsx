@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef } from "react";
 /* -----------------------------------------------------------------------------
  * Pixel ripple canvas — adapted from a 21st.dev hero effect, re-themed to the
  * Saviours design system. Pixels expand outward from centre in a staggered
- * ripple, then shimmer. Most pixels are muted; a fraction sparkle in accent cyan.
+ * ripple, then shimmer. Most pixels are muted; a fraction sparkle in brand blue.
  * Respects prefers-reduced-motion (renders a static field, no animation loop).
  * -------------------------------------------------------------------------- */
 
@@ -102,7 +102,7 @@ interface PixelCanvasProps {
 
 export default function PixelCanvas({
   baseColor = "rgba(120, 120, 145, 0.5)",
-  accentColor = "#00D4FF",
+  accentColor = "#2D81F7",
   accentRatio = 0.12,
   gap = 6,
   speed = 30,

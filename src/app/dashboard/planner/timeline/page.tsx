@@ -17,7 +17,7 @@ export default function TimelineViewPage() {
     if (!plans || plans.length === 0) {
         return (
             <div style={{ padding: "24px", textAlign: "center" }}>
-                <h2 style={{ color: "#FFFFFF", marginBottom: "16px" }}>No Study Plan Yet</h2>
+                <h2 style={{ color: "var(--text-primary)", marginBottom: "16px" }}>No Study Plan Yet</h2>
                 <button
                     onClick={() => router.push("/dashboard/planner")}
                     className="btn-primary"
@@ -46,11 +46,11 @@ export default function TimelineViewPage() {
     }, {} as Record<string, typeof plans>);
 
     return (
-        <div style={{ height: "100vh", display: "flex", flexDirection: "column", backgroundColor: "#030303" }}>
+        <div style={{ height: "100vh", display: "flex", flexDirection: "column", backgroundColor: "var(--bg-base)" }}>
             {/* Progress Header */}
             <div style={{ backgroundColor: "#0E0E10", padding: "20px 32px", borderBottom: "2px solid #1F1F22" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
-                    <h1 style={{ fontSize: "24px", fontWeight: "700", color: "#FFFFFF", margin: 0 }}>
+                    <h1 style={{ fontSize: "24px", fontWeight: "700", color: "var(--text-primary)", margin: 0 }}>
                         📅 Your Study Timeline
                     </h1>
                     <button
@@ -69,14 +69,14 @@ export default function TimelineViewPage() {
                 {/* Progress Meter */}
                 <div>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-                        <span style={{ fontSize: "13px", color: "#9CA3AF" }}>
+                        <span style={{ fontSize: "13px", color: "var(--text-muted)" }}>
                             {completedCount} / {plans.length} chapters completed
                         </span>
                         <span style={{ fontSize: "13px", fontWeight: "700", color: "#10B981" }}>
                             {progressPercent}%
                         </span>
                     </div>
-                    <div style={{ height: "8px", backgroundColor: "#374151", borderRadius: "4px", overflow: "hidden" }}>
+                    <div style={{ height: "8px", backgroundColor: "var(--border)", borderRadius: "4px", overflow: "hidden" }}>
                         <div
                             style={{
                                 width: `${progressPercent}%`,
@@ -94,7 +94,7 @@ export default function TimelineViewPage() {
                 <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
                     {Object.entries(plansByDate).map(([dateStr, dayPlans]) => (
                         <div key={dateStr} style={{ marginBottom: "32px" }}>
-                            <h3 style={{ fontSize: "16px", fontWeight: "600", color: "#9CA3AF", marginBottom: "16px" }}>
+                            <h3 style={{ fontSize: "16px", fontWeight: "600", color: "var(--text-muted)", marginBottom: "16px" }}>
                                 {new Date(dateStr).toLocaleDateString("en-US", {
                                     weekday: "long",
                                     month: "long",
@@ -129,13 +129,13 @@ export default function TimelineViewPage() {
                                     >
                                         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
                                             <div style={{ flex: 1 }}>
-                                                <div style={{ fontSize: "15px", fontWeight: "600", color: "#FFFFFF", marginBottom: "4px" }}>
+                                                <div style={{ fontSize: "15px", fontWeight: "600", color: "var(--text-primary)", marginBottom: "4px" }}>
                                                     {plan.chapter?.name || "Chapter"}
                                                 </div>
-                                                <div style={{ fontSize: "12px", color: "#9CA3AF", marginBottom: "6px" }}>
+                                                <div style={{ fontSize: "12px", color: "var(--text-muted)", marginBottom: "6px" }}>
                                                     {plan.subject?.icon} {plan.subject?.name || "Subject"}
                                                 </div>
-                                                <div style={{ fontSize: "12px", color: "#00D4FF" }}>
+                                                <div style={{ fontSize: "12px", color: "var(--brand-green)" }}>
                                                     {getDifficultyStars(plan.difficulty || 3)}
                                                 </div>
                                             </div>
@@ -171,10 +171,10 @@ export default function TimelineViewPage() {
                                             style={{
                                                 marginTop: "12px",
                                                 padding: "8px 12px",
-                                                backgroundColor: "#1A1A1D",
+                                                backgroundColor: "var(--bg-surface)",
                                                 borderRadius: "6px",
                                                 fontSize: "12px",
-                                                color: "#9CA3AF",
+                                                color: "var(--text-muted)",
                                                 textAlign: "center",
                                             }}
                                         >

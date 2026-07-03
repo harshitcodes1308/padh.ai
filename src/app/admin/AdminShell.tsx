@@ -57,12 +57,12 @@ export default function AdminShell({ children, adminEmail }: { children: React.R
         <div style={{
           width: 32, height: 32,
           borderRadius: 10,
-          background: "linear-gradient(135deg, #00D4FF, #00A3CC)",
+          background: "linear-gradient(135deg, #2D81F7, #1F6FE5)",
           display: "flex", alignItems: "center", justifyContent: "center",
-          fontSize: 14, fontWeight: 900, color: "#0D0D1A",
+          fontSize: 14, fontWeight: 900, color: "#FFFFFF",
           flexShrink: 0,
         }}>
-          S
+          P
         </div>
         <div>
           <div style={{
@@ -83,7 +83,7 @@ export default function AdminShell({ children, adminEmail }: { children: React.R
             color: "rgba(180, 175, 200, 0.6)",
             marginTop: 3,
           }}>
-            Saviours AI · Control Panel
+            PADH.AI · Control Panel
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function VerticalMarquee({
       style={{ ["--sa-vgap" as string]: `${gap}px`, ["--sa-vdur" as string]: `${durationSec}s` }}
     >
       {Array.from({ length: repeat }, (_, i) => (
-        <div key={i} className={`sa-vmarquee-track ${reverse ? "reverse" : ""}`}>
+        <div key={i} className={`sa-vmarquee-track ${reverse ? "reverse" : ""}`} aria-hidden={i > 0}>
           {children}
         </div>
       ))}

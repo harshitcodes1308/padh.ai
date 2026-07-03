@@ -43,18 +43,18 @@
 
 [data-theme="light"], :root {
   /* ── Brand ── */
-  --brand-green: #08BD80;   /* Learner Green — success, progress, primary CTA */
-  --brand-blue:  #2D81F7;   /* Secondary accent */
+  --brand-green: #08BD80;   /* Learner Green — success, progress, upgrade */
+  --brand-blue:  #2D81F7;   /* Focus Blue — navigation, active states, primary actions */
 
   /* ── Backgrounds ── */
   --bg-base:     #FFFFFF;
-  --bg-surface:  #F8F9FA;
+  --bg-surface:  #F6FAFF;
   --bg-elevated: #FFFFFF;
 
   /* ── Borders ── */
-  --border:           #EAEAEA;
-  --bg-border:        #EAEAEA;
-  --bg-border-light:  #F1F3F5;
+  --border:           #DFE8F4;
+  --bg-border:        #D7E3F2;
+  --bg-border-light:  #EEF5FF;
 
   /* ── Text ── */
   --text-primary:   #2D3236;
@@ -63,11 +63,11 @@
   --text-disabled:  #C8D0D8;
   --text-dark-alt:  #212529;
 
-  /* ── Accent aliases (mapped to brand-green for Unacademy vibe) ── */
-  --accent-gold:        var(--brand-green);
-  --accent-gold-dim:    #06A36D;
-  --accent-gold-glow:   rgba(8, 189, 128, 0.10);
-  --accent-gold-border: rgba(8, 189, 128, 0.30);
+  /* ── Legacy accent aliases (blue in the current palette) ── */
+  --accent-gold:        var(--brand-blue);
+  --accent-gold-dim:    #1F6FE5;
+  --accent-gold-glow:   rgba(45, 129, 247, 0.10);
+  --accent-gold-border: rgba(45, 129, 247, 0.30);
 
   /* ── Status ── */
   --status-green:  #08BD80;
@@ -78,7 +78,7 @@
   /* ── Shadows ── */
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
   --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.03);
-  --shadow-gold: 0 4px 12px rgba(8, 189, 128, 0.12);
+  --shadow-gold: 0 4px 12px rgba(45, 129, 247, 0.14);
 }
 
 [data-theme="dark"] {
@@ -99,10 +99,10 @@
   --text-disabled:  #495057;
   --text-dark-alt:  #FFFFFF;
 
-  --accent-gold:        var(--brand-green);
-  --accent-gold-dim:    #06A36D;
-  --accent-gold-glow:   rgba(8, 189, 128, 0.10);
-  --accent-gold-border: rgba(8, 189, 128, 0.30);
+  --accent-gold:        var(--brand-blue);
+  --accent-gold-dim:    #1F6FE5;
+  --accent-gold-glow:   rgba(45, 129, 247, 0.10);
+  --accent-gold-border: rgba(45, 129, 247, 0.30);
   
   --status-green:  #08BD80;
   --status-red:    #EF4444;
@@ -111,36 +111,36 @@
 
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-gold: 0 4px 12px rgba(8, 189, 128, 0.15);
+  --shadow-gold: 0 4px 12px rgba(45, 129, 247, 0.15);
 }
 
 .dashboard-theme {
   --brand-green: #08BD80;
   --brand-blue: #2D81F7;
-  --bg-base: #0D0D1A;
-  --bg-surface: #13131F;
-  --bg-elevated: #1A1A2E;
-  --border: #252538;
-  --bg-border: #252538;
-  --bg-border-light: #353552;
-  --text-primary: #F5F0E8;
-  --text-secondary: #B0AABA;
-  --text-muted: #6B6B80;
-  --text-disabled: #3D3D50;
-  --text-dark-alt: #FFFFFF;
-  --accent-gold: var(--brand-green);
-  --accent-gold-dim: #06A36D;
-  --accent-gold-glow: rgba(8, 189, 128, 0.10);
-  --accent-gold-border: rgba(8, 189, 128, 0.30);
-  --status-green: #3ECF8E;
-  --status-red: #F87171;
-  --status-blue: #60A5FA;
-  --status-orange: #FB923C;
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.5);
-  --shadow-card-hover: 0 10px 34px rgba(0, 0, 0, 0.42);
-  --shadow-gold: 0 0 20px rgba(8, 189, 128, 0.18);
+  --bg-base: #F6FAFF;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #EEF5FF;
+  --border: #DFE8F4;
+  --bg-border: #D7E3F2;
+  --bg-border-light: #EEF5FF;
+  --text-primary: #1F2A33;
+  --text-secondary: #53606B;
+  --text-muted: #7E8A96;
+  --text-disabled: #B7C0C9;
+  --text-dark-alt: #111827;
+  --accent-gold: var(--brand-blue);
+  --accent-gold-dim: #1F6FE5;
+  --accent-gold-glow: rgba(45, 129, 247, 0.09);
+  --accent-gold-border: rgba(45, 129, 247, 0.28);
+  --status-green: #08BD80;
+  --status-red: #EF4444;
+  --status-blue: #2D81F7;
+  --status-orange: #F59E0B;
+  --shadow-card: 0 1px 2px rgba(31, 42, 51, 0.05);
+  --shadow-card-hover: 0 8px 24px rgba(45, 129, 247, 0.10);
+  --shadow-gold: 0 8px 18px rgba(45, 129, 247, 0.16);
   color: var(--text-primary);
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 /* ============================================================
@@ -259,15 +259,17 @@ button:active { transform: scale(0.97); }
 
 /* dashboard-card — used by legacy pages */
 .dashboard-card {
-  background: var(--bg-base);
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
 }
 
 .dashboard-card:hover {
-  border-color: rgba(45, 129, 247, 0.30);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-color: rgba(45, 129, 247, 0.28);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-1px);
 }
 
 /* ============================================================
@@ -279,14 +281,14 @@ button:active { transform: scale(0.97); }
   justify-content: center;
   gap: 8px;
   position: relative;
-  background: var(--brand-green);
+  background: var(--brand-blue);
   color: #ffffff;
   font-family: var(--font-body);
   font-size: var(--text-base);
   font-weight: 600;
   padding: 13px 28px;
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--brand-green);
+  border: 1.5px solid var(--brand-blue);
   cursor: pointer;
   letter-spacing: 0.01em;
   transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
@@ -294,9 +296,9 @@ button:active { transform: scale(0.97); }
 }
 
 .btn-primary:hover {
-  background: #06A36D;
-  border-color: #06A36D;
-  box-shadow: 0 4px 14px rgba(8, 189, 128, 0.25);
+  background: #1F6FE5;
+  border-color: #1F6FE5;
+  box-shadow: 0 4px 14px rgba(45, 129, 247, 0.25);
   transform: translateY(-1px);
 }
 
@@ -568,6 +570,22 @@ input[type="number"] { -moz-appearance: textfield; }
    No video/transparent bg needed; explicit variables removed.
    ============================================================ */
 .dashboard-main {
-  --bg-base:    #FFFFFF;
-  --bg-surface: #F0F4F7;
+  --bg-base: #F6FAFF;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #EEF5FF;
+}
+
+.dashboard-theme .sa-card {
+  background: var(--bg-surface);
+}
+
+.dashboard-theme input,
+.dashboard-theme textarea,
+.dashboard-theme select {
+  color: var(--text-primary);
+}
+
+.dashboard-theme input::placeholder,
+.dashboard-theme textarea::placeholder {
+  color: var(--text-muted) !important;
 }

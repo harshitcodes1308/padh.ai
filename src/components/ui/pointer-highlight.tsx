@@ -58,15 +58,15 @@ export function PointerHighlight({
         >
           <motion.div
             className={cn(
-              "absolute inset-0 border border-neutral-800 dark:border-neutral-200",
+              "absolute border border-neutral-800 dark:border-neutral-200",
               rectangleClassName,
             )}
-            style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
+            style={{ position: "absolute", top: 0, left: 0 }}
             initial={{
               width: 0,
               height: 0,
             }}
-            whileInView={{
+            animate={{
               width: dimensions.width,
               height: dimensions.height,
             }}
@@ -78,13 +78,15 @@ export function PointerHighlight({
           <motion.div
             className="pointer-events-none absolute"
             initial={{ opacity: 0 }}
-            whileInView={{
+            animate={{
               opacity: 1,
               x: dimensions.width + 4,
               y: dimensions.height + 4,
             }}
             style={{
               position: "absolute", 
+              top: 0,
+              left: 0,
               pointerEvents: "none",
               rotate: -90,
             }}

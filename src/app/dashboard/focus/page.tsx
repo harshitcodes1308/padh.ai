@@ -184,7 +184,7 @@ export default function FocusPage() {
                                 borderRadius: '8px',
                                 border: '1px solid var(--bg-border)',
                                 backgroundColor: 'var(--bg-base)',
-                                color: '#FFF',
+                                color: 'var(--text-primary)',
                                 fontSize: '16px'
                             }}
                         />
@@ -200,9 +200,9 @@ export default function FocusPage() {
                                     style={{
                                         padding: '16px',
                                         borderRadius: '8px',
-                                        border: `2px solid ${taskType === t.id ? '#00D4FF' : '#333'}`,
-                                        backgroundColor: taskType === t.id ? 'rgba(139,92,246,0.2)' : '#1A1A1D',
-                                        color: '#FFF',
+                                        border: `2px solid ${taskType === t.id ? 'var(--brand-green)' : '#333'}`,
+                                        backgroundColor: taskType === t.id ? 'rgba(8,189,128,0.12)' : 'var(--bg-surface)',
+                                        color: 'var(--text-primary)',
                                         cursor: 'pointer',
                                         fontSize: '16px',
                                         fontWeight: 600
@@ -249,9 +249,9 @@ export default function FocusPage() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 borderRadius: '12px',
-                                border: '2px solid #00D4FF',
+                                border: '2px solid #08BD80',
                                 backgroundColor: 'var(--bg-base)',
-                                color: '#FFF'
+                                color: 'var(--text-primary)'
                             }}
                         />
                         <p style={{ fontSize: '20px', color: 'var(--text-muted)', marginTop: '16px' }}>minutes</p>
@@ -265,9 +265,9 @@ export default function FocusPage() {
                                 style={{
                                     padding: '12px',
                                     borderRadius: '8px',
-                                    border: `2px solid ${totalMinutes === preset ? '#00D4FF' : '#333'}`,
-                                    backgroundColor: totalMinutes === preset ? 'rgba(139,92,246,0.2)' : '#1A1A1D',
-                                    color: '#FFF',
+                                    border: `2px solid ${totalMinutes === preset ? 'var(--brand-green)' : '#333'}`,
+                                    backgroundColor: totalMinutes === preset ? 'rgba(8,189,128,0.12)' : 'var(--bg-surface)',
+                                    color: 'var(--text-primary)',
                                     cursor: 'pointer'
                                 }}
                             >
@@ -300,9 +300,9 @@ export default function FocusPage() {
                                 style={{
                                     padding: '24px',
                                     borderRadius: '12px',
-                                    border: `2px solid ${selectedStyle.id === style.id ? '#00D4FF' : '#333'}`,
-                                    backgroundColor: selectedStyle.id === style.id ? 'rgba(139,92,246,0.15)' : '#1A1A1D',
-                                    color: '#FFF',
+                                    border: `2px solid ${selectedStyle.id === style.id ? 'var(--brand-green)' : '#333'}`,
+                                    backgroundColor: selectedStyle.id === style.id ? 'rgba(8,189,128,0.10)' : 'var(--bg-surface)',
+                                    color: 'var(--text-primary)',
                                     cursor: 'pointer',
                                     textAlign: 'left'
                                 }}
@@ -324,12 +324,12 @@ export default function FocusPage() {
                     
                     <div className="dashboard-card" style={{ padding: '24px', marginBottom: '16px' }}>
                         <label style={{ fontSize: '14px', color: 'var(--text-muted)', display: 'block', marginBottom: '8px' }}>Focus Block (minutes)</label>
-                        <input type="text" inputMode="numeric" pattern="[0-9]*" value={customFocus || ""} onChange={(e) => { const v = parseInt(e.target.value.replace(/[^0-9]/g, '')); setCustomFocus(isNaN(v) ? 0 : v); }} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--bg-border)', backgroundColor: 'var(--bg-base)', color: '#FFF', fontSize: '16px' }} />
+                        <input type="text" inputMode="numeric" pattern="[0-9]*" value={customFocus || ""} onChange={(e) => { const v = parseInt(e.target.value.replace(/[^0-9]/g, '')); setCustomFocus(isNaN(v) ? 0 : v); }} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--bg-border)', backgroundColor: 'var(--bg-base)', color: 'var(--text-primary)', fontSize: '16px' }} />
                     </div>
                     
                     <div className="dashboard-card" style={{ padding: '24px', marginBottom: '24px' }}>
                         <label style={{ fontSize: '14px', color: 'var(--text-muted)', display: 'block', marginBottom: '8px' }}>Break (minutes)</label>
-                        <input type="text" inputMode="numeric" pattern="[0-9]*" value={customBreak || ""} onChange={(e) => { const v = parseInt(e.target.value.replace(/[^0-9]/g, '')); setCustomBreak(isNaN(v) ? 0 : v); }} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--bg-border)', backgroundColor: 'var(--bg-base)', color: '#FFF', fontSize: '16px' }} />
+                        <input type="text" inputMode="numeric" pattern="[0-9]*" value={customBreak || ""} onChange={(e) => { const v = parseInt(e.target.value.replace(/[^0-9]/g, '')); setCustomBreak(isNaN(v) ? 0 : v); }} style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--bg-border)', backgroundColor: 'var(--bg-base)', color: 'var(--text-primary)', fontSize: '16px' }} />
                     </div>
                     
                     <div style={{ display: 'flex', gap: '12px' }}>
@@ -350,10 +350,10 @@ export default function FocusPage() {
                             <strong>Style:</strong> {selectedStyle.name}
                         </div>
                         
-                        <h3 style={{ fontSize: '16px', marginBottom: '12px', color: '#00D4FF' }}>Structure:</h3>
+                        <h3 style={{ fontSize: '16px', marginBottom: '12px', color: 'var(--brand-green)' }}>Structure:</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                             {generatePlan(selectedStyle, totalMinutes).map((block, i) => (
-                                <div key={i} style={{ padding: '12px', backgroundColor: block.type === 'FOCUS' ? 'rgba(139,92,246,0.2)' : 'rgba(56,189,248,0.2)', borderRadius: '8px' }}>
+                                <div key={i} style={{ padding: '12px', backgroundColor: block.type === 'FOCUS' ? 'rgba(8,189,128,0.12)' : 'rgba(56,189,248,0.2)', borderRadius: '8px' }}>
                                     {block.type === 'FOCUS' ? '🎯' : '☕'} {block.type === 'FOCUS' ? 'Focus' : 'Break'}: {block.duration} min
                                 </div>
                             ))}
@@ -379,7 +379,7 @@ export default function FocusPage() {
                             {currentBlock.type === 'FOCUS' ? '🎯 Focus Block' : '☕ Break Time'}
                         </div>
                         
-                        <div style={{ fontSize: isMobile ? '48px' : '72px', fontWeight: 'bold', color: currentBlock.type === 'FOCUS' ? '#00D4FF' : '#38BDF8', marginBottom: '16px' }}>
+                        <div style={{ fontSize: isMobile ? '48px' : '72px', fontWeight: 'bold', color: currentBlock.type === 'FOCUS' ? 'var(--brand-green)' : '#38BDF8', marginBottom: '16px' }}>
                             {formatTime(timeRemaining)}
                         </div>
                         
@@ -388,7 +388,7 @@ export default function FocusPage() {
                         </div>
                         
                         <div style={{ height: '8px', backgroundColor: '#333', borderRadius: '4px', marginTop: '24px', overflow: 'hidden' }}>
-                            <div style={{ width: `${(currentBlockIndex / blocks.length) * 100}%`, height: '100%', backgroundColor: '#00D4FF', transition: 'width 0.3s' }} />
+                            <div style={{ width: `${(currentBlockIndex / blocks.length) * 100}%`, height: '100%', backgroundColor: 'var(--brand-green)', transition: 'width 0.3s' }} />
                         </div>
                     </div>
                     
@@ -421,7 +421,7 @@ export default function FocusPage() {
                                         borderRadius: '50%',
                                         border: `2px solid ${productivity === rating ? 'rgba(0, 212, 255, 0.6)' : '#333'}`,
                                         backgroundColor: productivity === rating ? 'rgba(0, 212, 255, 0.15)' : 'rgba(26, 26, 29, 0.6)',
-                                        color: productivity === rating ? '#00D4FF' : '#FFF',
+                                        color: productivity === rating ? 'var(--brand-green)' : 'var(--text-primary)',
                                         cursor: 'pointer',
                                         fontSize: '20px',
                                         backdropFilter: 'blur(12px)',
@@ -439,7 +439,7 @@ export default function FocusPage() {
                             value={notes}
                             onChange={(e) => setNotes(e.target.value)}
                             placeholder="What did you accomplish?"
-                            style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--bg-border)', backgroundColor: 'var(--bg-base)', color: '#FFF', fontSize: '16px', minHeight: '100px', fontFamily: 'inherit' }}
+                            style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--bg-border)', backgroundColor: 'var(--bg-base)', color: 'var(--text-primary)', fontSize: '16px', minHeight: '100px', fontFamily: 'inherit' }}
                         />
                     </div>
                     

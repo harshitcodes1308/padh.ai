@@ -15,7 +15,7 @@ export default function SubjectChaptersPage() {
     if (isLoading) {
         return (
             <div style={{ padding: "24px" }}>
-                <div style={{ color: "#9CA3AF" }}>Loading chapters...</div>
+                <div style={{ color: "var(--text-muted)" }}>Loading chapters...</div>
             </div>
         );
     }
@@ -27,19 +27,19 @@ export default function SubjectChaptersPage() {
         <div style={{ padding: "24px", maxWidth: "1200px", margin: "0 auto" }}>
             {/* Breadcrumb */}
             <div style={{ marginBottom: "24px", fontSize: "13px" }}>
-                <Link href="/dashboard/subjects" style={{ color: "#9CA3AF", textDecoration: "none" }}>
+                <Link href="/dashboard/subjects" style={{ color: "var(--text-muted)", textDecoration: "none" }}>
                     Subjects
                 </Link>
-                <span style={{ color: "#6B7280", margin: "0 8px" }}>/</span>
-                <span style={{ color: "#FFFFFF" }}>{subjectName}</span>
+                <span style={{ color: "var(--text-secondary)", margin: "0 8px" }}>/</span>
+                <span style={{ color: "var(--text-primary)" }}>{subjectName}</span>
             </div>
 
             {/* Header */}
             <div style={{ marginBottom: "32px" }}>
-                <h1 style={{ fontSize: "28px", fontWeight: "700", color: "#FFFFFF", marginBottom: "8px" }}>
+                <h1 style={{ fontSize: "28px", fontWeight: "700", color: "var(--text-primary)", marginBottom: "8px" }}>
                     {subjectName} - Chapters
                 </h1>
-                <p style={{ color: "#9CA3AF", fontSize: "14px" }}>
+                <p style={{ color: "var(--text-muted)", fontSize: "14px" }}>
                     Select a chapter to view topics and start learning
                 </p>
             </div>
@@ -53,7 +53,7 @@ export default function SubjectChaptersPage() {
                             backgroundColor: "#0E0E10",
                             borderRadius: "12px",
                             padding: "20px 24px",
-                            border: "2px solid #374151",
+                            border: "2px solid var(--border)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "space-between"
@@ -63,7 +63,7 @@ export default function SubjectChaptersPage() {
                             <h3 style={{
                                 fontSize: "16px",
                                 fontWeight: "600",
-                                color: "#FFFFFF",
+                                color: "var(--text-primary)",
                                 marginBottom: "8px"
                             }}>
                                 Chapter {chapter.order}: {chapter.name}
@@ -71,7 +71,7 @@ export default function SubjectChaptersPage() {
                             {chapter.description && (
                                 <p style={{
                                     fontSize: "13px",
-                                    color: "#9CA3AF",
+                                    color: "var(--text-muted)",
                                     marginBottom: "8px"
                                 }}>
                                     {chapter.description}
@@ -83,7 +83,7 @@ export default function SubjectChaptersPage() {
                                 padding: "4px 12px",
                                 borderRadius: "16px",
                                 fontSize: "12px",
-                                color: "#00D4FF",
+                                color: "var(--brand-green)",
                                 fontWeight: "600"
                             }}>
                                 📝 Notes coming soon
@@ -109,10 +109,10 @@ export default function SubjectChaptersPage() {
                     textAlign: "center"
                 }}>
                     <div style={{ fontSize: "64px", marginBottom: "16px" }}>📖</div>
-                    <h3 style={{ fontSize: "18px", fontWeight: "600", color: "#FFFFFF", marginBottom: "8px" }}>
+                    <h3 style={{ fontSize: "18px", fontWeight: "600", color: "var(--text-primary)", marginBottom: "8px" }}>
                         No Chapters Available
                     </h3>
-                    <p style={{ color: "#9CA3AF", fontSize: "14px" }}>
+                    <p style={{ color: "var(--text-muted)", fontSize: "14px" }}>
                         Chapters for this subject will be added soon
                     </p>
                 </div>

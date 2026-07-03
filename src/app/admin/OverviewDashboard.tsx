@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
-const CHART_COLORS = ["#00D4FF", "#3ECF8E", "#FB923C", "#F87171", "#60A5FA", "#A78BFA"];
+const CHART_COLORS = ["#2D81F7", "#3ECF8E", "#FB923C", "#F87171", "#60A5FA", "#A78BFA"];
 const TOOLTIP_STYLE = {
   background: "var(--bg-surface)", border: "1px solid var(--bg-border)",
   borderRadius: 10, color: "var(--text-primary)", fontSize: 12, fontFamily: "var(--font-body)",
@@ -77,7 +77,7 @@ export default function OverviewDashboard({ data }: Props) {
         gridTemplateColumns: mob ? "1fr 1fr" : tab ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
         gap: mob ? 8 : 14, marginBottom: mob ? 8 : 14,
       }}>
-        <StatCard label="Total Users" value={data.totalUsers} icon="👥" color="#00D4FF" compact={mob} />
+        <StatCard label="Total Users" value={data.totalUsers} icon="👥" color="#2D81F7" compact={mob} />
         <StatCard label="Paid Users" value={data.paidUsers} icon="💎" color="#3ECF8E" compact={mob} />
         <StatCard label="Revenue" value={`₹${data.estimatedRevenue.toLocaleString()}`} icon="💰" color="#FB923C" compact={mob} />
         <StatCard label="Active Sessions" value={data.activeSessions} icon="🟢" color="#60A5FA" compact={mob} />
@@ -90,7 +90,7 @@ export default function OverviewDashboard({ data }: Props) {
         gap: mob ? 6 : 8, marginBottom: mob ? 14 : 20,
       }}>
         {[
-          { label: "Today", value: data.usersToday, color: "#00D4FF" },
+          { label: "Today", value: data.usersToday, color: "#2D81F7" },
           { label: "This Week", value: data.usersWeek, color: "#3ECF8E" },
           { label: "This Month", value: data.usersMonth, color: "#FB923C" },
           { label: "Free Users", value: data.freeUsers, color: "#6B6B80" },
@@ -124,16 +124,16 @@ export default function OverviewDashboard({ data }: Props) {
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data.signupTrend}>
                 <defs>
-                  <linearGradient id="cyanGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#00D4FF" stopOpacity={0.3} />
-                    <stop offset="100%" stopColor="#00D4FF" stopOpacity={0} />
+                  <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#2D81F7" stopOpacity={0.3} />
+                    <stop offset="100%" stopColor="#2D81F7" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid stroke="#252538" strokeDasharray="3 3" />
                 <XAxis dataKey="date" stroke="#6B6B80" fontSize={mob ? 8 : 10} tickFormatter={(v) => v.slice(5)} />
                 <YAxis stroke="#6B6B80" fontSize={mob ? 8 : 10} allowDecimals={false} width={mob ? 25 : 35} />
                 <Tooltip contentStyle={TOOLTIP_STYLE} />
-                <Area type="monotone" dataKey="count" stroke="#00D4FF" fill="url(#cyanGrad)" strokeWidth={2} />
+                <Area type="monotone" dataKey="count" stroke="#2D81F7" fill="url(#blueGrad)" strokeWidth={2} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -190,7 +190,7 @@ export default function OverviewDashboard({ data }: Props) {
         }}>Plan Distribution</div>
         <div style={{ display: "flex", gap: mob ? 8 : 12, flexWrap: "wrap" }}>
           {data.planTypeBreakdown.map((p) => {
-            const colors: Record<string, string> = { FREE: "#6B6B80", MONTHLY: "#00D4FF", YEARLY: "#3ECF8E" };
+            const colors: Record<string, string> = { FREE: "#6B6B80", MONTHLY: "#2D81F7", YEARLY: "#3ECF8E" };
             const c = colors[p.plan] ?? "#60A5FA";
             return (
               <div key={p.plan} style={{

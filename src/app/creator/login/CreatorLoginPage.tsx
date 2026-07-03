@@ -46,7 +46,7 @@ export default function CreatorLoginPage() {
         alignItems: "center",
         justifyContent: "center",
         padding: 20,
-        background: "var(--bg-base, #0A0A0F)",
+        background: "var(--bg-base, #F6FAFF)",
       }}
     >
       <form
@@ -54,10 +54,10 @@ export default function CreatorLoginPage() {
         style={{
           width: "100%",
           maxWidth: 400,
-          background: "var(--bg-surface, #11111A)",
-          border: "1.5px solid rgba(212, 175, 55, 0.15)", // Gold tint border
+          background: "var(--bg-surface, #FFFFFF)",
+          border: "1.5px solid rgba(45, 129, 247, 0.16)",
           borderRadius: 20,
-          boxShadow: "0 0 60px rgba(212, 175, 55, 0.03), 0 20px 40px rgba(0,0,0,0.5)",
+          boxShadow: "0 18px 48px rgba(26, 43, 74, 0.10)",
           padding: "40px 32px",
           display: "flex",
           flexDirection: "column",
@@ -71,14 +71,14 @@ export default function CreatorLoginPage() {
               width: 56,
               height: 56,
               borderRadius: 16,
-              background: "linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%)", // Gold gradient
+              background: "linear-gradient(135deg, #2D81F7 0%, #1F6FE5 100%)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: 24,
               fontWeight: 900,
-              color: "#0A0A0F",
-              boxShadow: "0 0 30px rgba(212, 175, 55, 0.3)",
+              color: "#FFFFFF",
+              boxShadow: "0 14px 28px rgba(45, 129, 247, 0.22)",
             }}
           >
             C
@@ -89,7 +89,7 @@ export default function CreatorLoginPage() {
                 fontFamily: "var(--font-display, inherit)",
                 fontSize: 22,
                 fontWeight: 700,
-                color: "var(--text-primary, #F3F4F6)",
+                color: "var(--text-primary, #1F2933)",
                 letterSpacing: "-0.02em",
                 margin: 0,
               }}
@@ -102,12 +102,12 @@ export default function CreatorLoginPage() {
                 fontSize: 11,
                 fontWeight: 400,
                 fontStyle: "italic",
-                color: "rgba(180, 175, 200, 0.6)",
+                color: "var(--text-secondary, #637083)",
                 marginTop: 6,
                 lineHeight: 1.4,
               }}
             >
-              Saviours AI — Creator Dashboard login
+              PADH.AI - Creator Dashboard login
             </p>
           </div>
         </div>
@@ -115,13 +115,13 @@ export default function CreatorLoginPage() {
         {/* Credentials reminder banner */}
         <div
           style={{
-            background: "rgba(212, 175, 55, 0.05)",
-            border: "1px dashed rgba(212, 175, 55, 0.25)",
+            background: "rgba(45, 129, 247, 0.06)",
+            border: "1px dashed rgba(45, 129, 247, 0.24)",
             borderRadius: 10,
             padding: "10px 14px",
             fontFamily: "var(--font-body, sans-serif)",
             fontSize: 12,
-            color: "rgba(212, 175, 55, 0.9)",
+            color: "var(--brand-blue, #2D81F7)",
             lineHeight: 1.4,
           }}
         >

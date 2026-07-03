@@ -102,7 +102,7 @@ const SUBJECTS: PrecisionSubject[] = [
     id: "Biology",
     name: "Biology",
     icon: "🧬",
-    color: "#EC4899",
+    color: "#2D81F7",
     chapters: [
       { id: "Cell Cycle, Cell Division and Structure of Chromosomes", name: "Cell Cycle & Chromosomes" },
       { id: "Genetics - Mendel's Laws and Inheritance", name: "Genetics & Inheritance" },
@@ -310,7 +310,7 @@ export default function CompetencyTestPage() {
         <div
           style={{
             position: "relative",
-            background: "linear-gradient(135deg, rgba(245,158,11,0.06), rgba(239,68,68,0.04), rgba(139,92,246,0.06))",
+            background: "linear-gradient(135deg, rgba(245,158,11,0.06), rgba(239,68,68,0.04), rgba(8,189,128,0.06))",
             border: "1px solid rgba(245,158,11,0.15)",
             borderRadius: 24,
             padding: "48px 36px",
@@ -320,7 +320,7 @@ export default function CompetencyTestPage() {
         >
           {/* Glow orbs */}
           <div style={{ position: "absolute", top: -60, right: -60, width: 200, height: 200, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,158,11,0.12), transparent 70%)", pointerEvents: "none" }} />
-          <div style={{ position: "absolute", bottom: -40, left: -40, width: 160, height: 160, borderRadius: "50%", background: "radial-gradient(circle, rgba(139,92,246,0.1), transparent 70%)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", bottom: -40, left: -40, width: 160, height: 160, borderRadius: "50%", background: "radial-gradient(circle, rgba(8,189,128,0.10), transparent 70%)", pointerEvents: "none" }} />
 
           <div style={{ position: "relative", zIndex: 1 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
@@ -333,12 +333,12 @@ export default function CompetencyTestPage() {
               <div>
                 <h1 style={{
                   fontSize: 30, fontWeight: 900, margin: 0,
-                  background: "linear-gradient(135deg, #F59E0B, #EF4444, #00D4FF)",
+                  background: "linear-gradient(135deg, #F59E0B, #EF4444, #08BD80)",
                   WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                 }}>
                   Competency Based Test
                 </h1>
-                <p style={{ color: "#9CA3AF", fontSize: 13, margin: 0 }}>Train accuracy × speed under real exam pressure</p>
+                <p style={{ color: "var(--text-muted)", fontSize: 13, margin: 0 }}>Train accuracy × speed under real exam pressure</p>
               </div>
             </div>
 
@@ -353,11 +353,11 @@ export default function CompetencyTestPage() {
               <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
                 <span style={{ fontSize: 24, flexShrink: 0 }}>📚</span>
                 <div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: "#FFF", marginBottom: 6 }}>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: "var(--text-primary)", marginBottom: 6 }}>
                     20 Years of Past Papers — Handpicked & Curated
                   </div>
-                  <p style={{ fontSize: 13, color: "#9CA3AF", margin: 0, lineHeight: 1.7 }}>
-                    Every question is handpicked from <span style={{ color: "#F59E0B", fontWeight: 600 }}>20 years of ICSE board papers</span> and 
+                  <p style={{ fontSize: 13, color: "var(--text-muted)", margin: 0, lineHeight: 1.7 }}>
+                    Every question is handpicked from <span style={{ color: "var(--brand-blue)", fontWeight: 600 }}>20 years of CBSE board papers</span> and 
                     mapped to specific competencies. Each question is timed based on its mark weightage — training you to 
                     think fast and answer accurately, just like the real exam.
                   </p>
@@ -375,7 +375,7 @@ export default function CompetencyTestPage() {
           {[
             { marks: "1 Mark", time: "60s", color: "#10B981" },
             { marks: "2 Marks", time: "2m 30s", color: "#3B82F6" },
-            { marks: "3 Marks", time: "4m", color: "#00D4FF" },
+            { marks: "3 Marks", time: "4m", color: "var(--brand-green)" },
             { marks: "4 Marks", time: "5m 30s", color: "#F59E0B" },
           ].map((r) => (
             <div key={r.marks} style={{
@@ -383,14 +383,14 @@ export default function CompetencyTestPage() {
               borderRadius: 100, padding: "8px 18px",
               display: "flex", alignItems: "center", gap: 8,
             }}>
-              <span style={{ fontSize: 12, color: "#9CA3AF" }}>{r.marks}</span>
+              <span style={{ fontSize: 12, color: "var(--text-muted)" }}>{r.marks}</span>
               <span style={{ fontSize: 13, fontWeight: 700, color: r.color }}>→ {r.time}</span>
             </div>
           ))}
         </div>
 
         {/* Subject Grid — Premium Cards */}
-        <h3 style={{ fontSize: 16, fontWeight: 700, color: "#FFF", marginBottom: 16, letterSpacing: 0.5 }}>
+        <h3 style={{ fontSize: 16, fontWeight: 700, color: "var(--text-primary)", marginBottom: 16, letterSpacing: 0.5 }}>
           Choose Your Subject
         </h3>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 16 }}>
@@ -442,8 +442,8 @@ export default function CompetencyTestPage() {
                       fontSize: 26, border: `1px solid ${sub.color}20`,
                     }}>{sub.icon}</div>
                     <div>
-                      <div style={{ fontSize: 17, fontWeight: 700, color: "#FFF" }}>{sub.name}</div>
-                      <div style={{ fontSize: 12, color: "#6B7280" }}>
+                      <div style={{ fontSize: 17, fontWeight: 700, color: "var(--text-primary)" }}>{sub.name}</div>
+                      <div style={{ fontSize: 12, color: "var(--text-secondary)" }}>
                         {hasData ? `${totalQs} Questions • ${sub.chapters.length} Chapters` : "Coming Soon"}
                       </div>
                     </div>
@@ -459,7 +459,7 @@ export default function CompetencyTestPage() {
                   )}
                   {!hasData && (
                     <div style={{
-                      fontSize: 12, color: "#4B5563",
+                      fontSize: 12, color: "var(--text-secondary)",
                       padding: "10px 16px", background: "rgba(255,255,255,0.02)", borderRadius: 10,
                       textAlign: "center",
                     }}>
@@ -482,7 +482,7 @@ export default function CompetencyTestPage() {
     return (
       <div style={{ padding: "32px 24px", maxWidth: 800, margin: "0 auto" }}>
         <button onClick={() => setPhase("subject")} style={{
-          background: "none", border: "none", color: "#9CA3AF", cursor: "pointer",
+          background: "none", border: "none", color: "var(--text-muted)", cursor: "pointer",
           fontSize: 14, marginBottom: 28, display: "flex", alignItems: "center", gap: 6,
           transition: "color 0.2s",
         }}>← Back to Subjects</button>
@@ -496,10 +496,10 @@ export default function CompetencyTestPage() {
             boxShadow: `0 8px 24px ${selectedSubject.color}15`,
           }}>{selectedSubject.icon}</div>
           <div>
-            <h1 style={{ fontSize: 26, fontWeight: 800, color: "#FFF", margin: 0 }}>
+            <h1 style={{ fontSize: 26, fontWeight: 800, color: "var(--text-primary)", margin: 0 }}>
               {selectedSubject.name}
             </h1>
-            <p style={{ color: "#9CA3AF", fontSize: 14, margin: 0 }}>
+            <p style={{ color: "var(--text-muted)", fontSize: 14, margin: 0 }}>
               Select a chapter to begin your timed test
             </p>
           </div>
@@ -531,11 +531,11 @@ export default function CompetencyTestPage() {
                 }}
               >
                 <div>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: "#FFF", marginBottom: 8 }}>{ch.name}</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: "var(--text-primary)", marginBottom: 8 }}>{ch.name}</div>
                   <div style={{ display: "flex", gap: 20, fontSize: 13 }}>
                     <span style={{ color: selectedSubject.color, fontWeight: 600 }}>📝 {stats.count} Qs</span>
-                    <span style={{ color: "#9CA3AF" }}>⭐ {stats.totalMarks} Marks</span>
-                    <span style={{ color: "#9CA3AF" }}>⏱ {formatSec(stats.totalTime)}</span>
+                    <span style={{ color: "var(--text-muted)" }}>⭐ {stats.totalMarks} Marks</span>
+                    <span style={{ color: "var(--text-muted)" }}>⏱ {formatSec(stats.totalTime)}</span>
                   </div>
                 </div>
                 {hasQ && (
@@ -579,11 +579,11 @@ export default function CompetencyTestPage() {
           Focus — Exam Mode
         </div>
         <div key={countdown} style={{
-          fontSize: 180, fontWeight: 900, color: "#FFF", fontFamily: "monospace",
+          fontSize: 180, fontWeight: 900, color: "var(--text-primary)", fontFamily: "monospace",
           lineHeight: 1, textShadow: "0 0 80px rgba(245,158,11,0.3), 0 0 160px rgba(245,158,11,0.15)",
           animation: "countPulse 1s ease-out",
         }}>{countdown}</div>
-        <div style={{ fontSize: 13, color: "#4B5563", marginTop: 32, letterSpacing: 1 }}>
+        <div style={{ fontSize: 13, color: "var(--text-secondary)", marginTop: 32, letterSpacing: 1 }}>
           {selectedSubject?.name} — {selectedChapter}
         </div>
         <style jsx>{`
@@ -632,9 +632,9 @@ export default function CompetencyTestPage() {
               Q{currentIdx + 1} / {questions.length}
             </span>
             <span style={{
-              background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.2)",
+              background: "rgba(8,189,128,0.12)", border: "1px solid rgba(8,189,128,0.12)",
               padding: "5px 12px", borderRadius: 8,
-              fontSize: 12, fontWeight: 700, color: "#00D4FF",
+              fontSize: 12, fontWeight: 700, color: "var(--brand-green)",
             }}>
               {q.marks} {q.marks === 1 ? "Mark" : "Marks"}
             </span>
@@ -654,7 +654,7 @@ export default function CompetencyTestPage() {
           </div>
           <div style={{
             fontSize: 30, fontWeight: 900, fontFamily: "monospace",
-            color: isCritical ? "#EF4444" : isOvertime ? "#F59E0B" : "#FFF",
+            color: isCritical ? "#EF4444" : isOvertime ? "#F59E0B" : "var(--text-primary)",
             textShadow: isCritical ? "0 0 20px rgba(239,68,68,0.5)" : "none",
             ...(isCritical ? { animation: "blink 0.6s ease-in-out infinite alternate" } : {}),
           }}>
@@ -666,7 +666,7 @@ export default function CompetencyTestPage() {
         <div style={{ height: 3, background: "rgba(255,255,255,0.04)" }}>
           <div style={{
             height: "100%", width: `${progress}%`,
-            background: "linear-gradient(90deg, #F59E0B, #EF4444, #00D4FF)",
+            background: "linear-gradient(90deg, #F59E0B, #EF4444, #08BD80)",
             borderRadius: 2, transition: "width 0.5s ease",
           }} />
         </div>
@@ -705,7 +705,7 @@ export default function CompetencyTestPage() {
                     border: `2px solid ${isSelected ? "#F59E0B" : "rgba(255,255,255,0.06)"}`,
                     borderRadius: 14,
                     cursor: "pointer",
-                    color: isSelected ? "#FFF" : "#D1D5DB",
+                    color: isSelected ? "var(--text-primary)" : "var(--text-secondary)",
                     fontSize: 15, fontWeight: isSelected ? 600 : 400,
                     transition: "all 0.25s ease",
                     display: "flex", alignItems: "center", gap: 14,
@@ -718,7 +718,7 @@ export default function CompetencyTestPage() {
                       : "rgba(255,255,255,0.06)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontSize: 13, fontWeight: 700, flexShrink: 0,
-                    color: isSelected ? "#FFF" : "#9CA3AF",
+                    color: isSelected ? "var(--text-primary)" : "var(--text-muted)",
                     transition: "all 0.25s ease",
                     boxShadow: isSelected ? "0 4px 12px rgba(245,158,11,0.3)" : "none",
                   }}>
@@ -739,7 +739,7 @@ export default function CompetencyTestPage() {
                 padding: "12px 28px",
                 background: currentIdx > 0 ? "rgba(255,255,255,0.05)" : "transparent",
                 border: currentIdx > 0 ? "1px solid rgba(255,255,255,0.1)" : "1px solid transparent",
-                borderRadius: 12, color: currentIdx > 0 ? "#D1D5DB" : "#4B5563",
+                borderRadius: 12, color: currentIdx > 0 ? "var(--text-secondary)" : "var(--text-secondary)",
                 cursor: currentIdx > 0 ? "pointer" : "default",
                 fontSize: 14, fontWeight: 600, transition: "all 0.2s",
               }}
@@ -773,7 +773,7 @@ export default function CompetencyTestPage() {
                     : "linear-gradient(135deg, #F59E0B, #EF4444)"
                   : "rgba(255,255,255,0.04)",
                 border: "none", borderRadius: 12,
-                color: hasAnswered ? "#FFF" : "#4B5563",
+                color: hasAnswered ? "var(--text-primary)" : "var(--text-secondary)",
                 cursor: hasAnswered ? "pointer" : "not-allowed",
                 fontSize: 14, fontWeight: 700, transition: "all 0.3s",
                 boxShadow: hasAnswered ? "0 6px 20px rgba(245,158,11,0.2)" : "none",
@@ -820,17 +820,17 @@ export default function CompetencyTestPage() {
             <div style={{ fontSize: 52, marginBottom: 8 }}>{cls.emoji}</div>
             <div style={{
               display: "inline-block", padding: "6px 20px", borderRadius: 100,
-              background: cls.grad, fontSize: 13, fontWeight: 700, color: "#FFF",
+              background: cls.grad, fontSize: 13, fontWeight: 700, color: "var(--text-primary)",
               marginBottom: 12, letterSpacing: 0.5,
             }}>{result.classification}</div>
-            <div style={{ fontSize: 14, color: "#9CA3AF", marginBottom: 8 }}>
+            <div style={{ fontSize: 14, color: "var(--text-muted)", marginBottom: 8 }}>
               {result.subject} — {result.chapter}
             </div>
             <div style={{
-              fontSize: 64, fontWeight: 900, color: "#FFF", fontFamily: "monospace",
+              fontSize: 64, fontWeight: 900, color: "var(--text-primary)", fontFamily: "monospace",
               textShadow: `0 0 40px ${cls.color}30`,
             }}>{result.predictedScore}%</div>
-            <div style={{ fontSize: 12, color: "#6B7280", letterSpacing: 1, textTransform: "uppercase" }}>
+            <div style={{ fontSize: 12, color: "var(--text-secondary)", letterSpacing: 1, textTransform: "uppercase" }}>
               Predicted Chapter Score
             </div>
           </div>
@@ -841,7 +841,7 @@ export default function CompetencyTestPage() {
           display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 20,
         }}>
           {[
-            { label: "Raw Score", value: `${result.rawScore}%`, color: "#00D4FF", icon: "📊" },
+            { label: "Raw Score", value: `${result.rawScore}%`, color: "var(--brand-green)", icon: "📊" },
             { label: "Accuracy", value: `${result.accuracy}%`, color: "#10B981", icon: "🎯" },
             { label: "Time Efficiency", value: `${result.timeEfficiencyScore}%`, color: "#3B82F6", icon: "⏱" },
           ].map((card) => (
@@ -851,7 +851,7 @@ export default function CompetencyTestPage() {
             }}>
               <div style={{ fontSize: 20, marginBottom: 6 }}>{card.icon}</div>
               <div style={{ fontSize: 26, fontWeight: 800, color: card.color, marginBottom: 4 }}>{card.value}</div>
-              <div style={{ fontSize: 11, color: "#6B7280", textTransform: "uppercase", letterSpacing: 0.5 }}>{card.label}</div>
+              <div style={{ fontSize: 11, color: "var(--text-secondary)", textTransform: "uppercase", letterSpacing: 0.5 }}>{card.label}</div>
             </div>
           ))}
         </div>
@@ -869,7 +869,7 @@ export default function CompetencyTestPage() {
               borderRadius: 14, padding: "16px 14px", textAlign: "center",
             }}>
               <div style={{ fontSize: 20, fontWeight: 700, color: card.color, marginBottom: 4 }}>{card.value}</div>
-              <div style={{ fontSize: 11, color: "#6B7280" }}>{card.label}</div>
+              <div style={{ fontSize: 11, color: "var(--text-secondary)" }}>{card.label}</div>
             </div>
           ))}
         </div>
@@ -881,13 +881,13 @@ export default function CompetencyTestPage() {
             background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)",
             borderRadius: 18, padding: "22px",
           }}>
-            <h3 style={{ fontSize: 14, fontWeight: 700, color: "#FFF", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ fontSize: 16 }}>📊</span> Accuracy by Marks
             </h3>
             {result.markBreakdown.map((mb) => (
               <div key={mb.marks} style={{ marginBottom: 14 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5, fontSize: 13 }}>
-                  <span style={{ color: "#D1D5DB" }}>{mb.marks}M ({mb.correct}/{mb.total})</span>
+                  <span style={{ color: "var(--text-secondary)" }}>{mb.marks}M ({mb.correct}/{mb.total})</span>
                   <span style={{ fontWeight: 700, color: mb.accuracy >= 75 ? "#10B981" : mb.accuracy >= 50 ? "#F59E0B" : "#EF4444" }}>
                     {Math.round(mb.accuracy)}%
                   </span>
@@ -908,7 +908,7 @@ export default function CompetencyTestPage() {
             background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)",
             borderRadius: 18, padding: "22px",
           }}>
-            <h3 style={{ fontSize: 14, fontWeight: 700, color: "#FFF", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ fontSize: 16 }}>⏱</span> Time Behavior
             </h3>
             {Object.entries(result.timeBehavior.avgTimePerMarkType).map(([marks, avg]) => {
@@ -916,16 +916,16 @@ export default function CompetencyTestPage() {
               const isOver = avg > allotted;
               return (
                 <div key={marks} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, padding: "10px 14px", background: "rgba(0,0,0,0.2)", borderRadius: 10 }}>
-                  <span style={{ fontSize: 12, color: "#9CA3AF" }}>{marks}M avg</span>
+                  <span style={{ fontSize: 12, color: "var(--text-muted)" }}>{marks}M avg</span>
                   <div style={{ textAlign: "right" }}>
                     <span style={{ fontSize: 15, fontWeight: 700, color: isOver ? "#EF4444" : "#10B981" }}>{formatSec(avg)}</span>
-                    <span style={{ fontSize: 11, color: "#4B5563", marginLeft: 6 }}>/ {formatSec(allotted)}</span>
+                    <span style={{ fontSize: 11, color: "var(--text-secondary)", marginLeft: 6 }}>/ {formatSec(allotted)}</span>
                   </div>
                 </div>
               );
             })}
             <div style={{ marginTop: 12, padding: "10px 14px", background: "rgba(245,158,11,0.08)", borderRadius: 10, border: "1px solid rgba(245,158,11,0.15)" }}>
-              <div style={{ fontSize: 11, color: "#6B7280", marginBottom: 4 }}>Longest Question</div>
+              <div style={{ fontSize: 11, color: "var(--text-secondary)", marginBottom: 4 }}>Longest Question</div>
               <div style={{ fontSize: 16, fontWeight: 700, color: "#F59E0B" }}>{formatSec(result.timeBehavior.longestQuestionTime)}</div>
             </div>
           </div>
@@ -933,21 +933,21 @@ export default function CompetencyTestPage() {
 
         {/* AI Insights */}
         <div style={{
-          background: "linear-gradient(135deg, rgba(139,92,246,0.06), rgba(236,72,153,0.04))",
-          border: "1px solid rgba(139,92,246,0.15)",
+          background: "linear-gradient(135deg, rgba(8,189,128,0.06), rgba(45,129,247,0.04))",
+          border: "1px solid rgba(8,189,128,0.10)",
           borderRadius: 18, padding: "22px", marginBottom: 28,
         }}>
-          <h3 style={{ fontSize: 14, fontWeight: 700, color: "#00D4FF", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
+          <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--brand-green)", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ fontSize: 16 }}>🧠</span> AI Insights
           </h3>
           {result.insights.map((insight, idx) => (
             <div key={idx} style={{
               display: "flex", gap: 10, marginBottom: 10,
               padding: "14px 16px", background: "rgba(0,0,0,0.25)",
-              borderRadius: 12, borderLeft: "3px solid #00D4FF",
+              borderRadius: 12, borderLeft: "3px solid #08BD80",
             }}>
               <span style={{ fontSize: 14, flexShrink: 0 }}>💡</span>
-              <span style={{ fontSize: 13, color: "#D1D5DB", lineHeight: 1.6 }}>{insight}</span>
+              <span style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.6 }}>{insight}</span>
             </div>
           ))}
         </div>
@@ -957,7 +957,7 @@ export default function CompetencyTestPage() {
           background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)",
           borderRadius: 18, padding: "22px", marginBottom: 28,
         }}>
-          <h3 style={{ fontSize: 14, fontWeight: 700, color: "#FFF", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+          <h3 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ fontSize: 16 }}>📝</span> Question Review
           </h3>
           {result.questionResults.map((qr, idx) => {
@@ -975,14 +975,14 @@ export default function CompetencyTestPage() {
                     width: 28, height: 28, borderRadius: 8,
                     background: qr.isCorrect ? "#10B981" : "#EF4444",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 12, fontWeight: 700, color: "#FFF", flexShrink: 0,
+                    fontSize: 12, fontWeight: 700, color: "var(--text-primary)", flexShrink: 0,
                   }}>{qr.isCorrect ? "✓" : "✗"}</span>
-                  <span style={{ fontSize: 13, color: "#D1D5DB", lineHeight: 1.5 }}>
+                  <span style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.5 }}>
                     Q{idx + 1}. {q?.question?.substring(0, 60)}{q?.question && q.question.length > 60 ? "..." : ""}
                   </span>
                 </div>
                 <div style={{ display: "flex", gap: 8, flexShrink: 0, alignItems: "center" }}>
-                  <span style={{ fontSize: 11, color: "#6B7280", padding: "3px 8px", background: "rgba(255,255,255,0.05)", borderRadius: 6 }}>
+                  <span style={{ fontSize: 11, color: "var(--text-secondary)", padding: "3px 8px", background: "rgba(255,255,255,0.05)", borderRadius: 6 }}>
                     {formatSec(qr.actualTimeTaken)}
                   </span>
                   <span style={{
@@ -1003,15 +1003,15 @@ export default function CompetencyTestPage() {
           <button onClick={() => startTest(selectedSubject!, selectedChapter)} style={{
             padding: "16px 36px",
             background: "linear-gradient(135deg, #F59E0B, #EF4444)",
-            color: "#FFF", border: "none", borderRadius: 14,
+            color: "var(--text-primary)", border: "none", borderRadius: 14,
             fontSize: 15, fontWeight: 700, cursor: "pointer",
             boxShadow: "0 8px 28px rgba(245,158,11,0.25)",
             transition: "all 0.3s",
           }}>🔄 Retry Chapter</button>
           <button onClick={resetAll} style={{
             padding: "16px 36px",
-            background: "rgba(139,92,246,0.1)", color: "#00D4FF",
-            border: "1px solid rgba(139,92,246,0.2)", borderRadius: 14,
+            background: "rgba(8,189,128,0.10)", color: "var(--brand-green)",
+            border: "1px solid rgba(8,189,128,0.12)", borderRadius: 14,
             fontSize: 15, fontWeight: 700, cursor: "pointer",
             transition: "all 0.3s",
           }}>← Choose Another</button>

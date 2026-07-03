@@ -32,7 +32,7 @@ export default function ProfilePage() {
     if (isLoading) {
         return (
             <div style={{ padding: '32px', textAlign: 'center' }}>
-                <div style={{ ...typography.text, fontSize: '16px', color: '#9CA3AF' }}>
+                <div style={{ ...typography.text, fontSize: '16px', color: 'var(--text-muted)' }}>
                     Loading profile...
                 </div>
             </div>
@@ -48,7 +48,7 @@ export default function ProfilePage() {
                 <h1 style={{ ...typography.display, fontSize: '32px', marginBottom: '8px' }}>
                     My Profile
                 </h1>
-                <p style={{ ...typography.text, fontSize: '16px', color: '#9CA3AF' }}>
+                <p style={{ ...typography.text, fontSize: '16px', color: 'var(--text-muted)' }}>
                     Manage your account and track your progress
                 </p>
             </div>
@@ -61,8 +61,8 @@ export default function ProfilePage() {
                         width: '96px',
                         height: '96px',
                         borderRadius: '50%',
-                        background: 'linear-gradient(135deg, rgba(0,212,255,0.2), rgba(0,180,220,0.12))',
-                        border: '1.5px solid rgba(0,212,255,0.3)',
+                        background: 'linear-gradient(135deg, rgba(45,129,247,0.2), rgba(45,129,247,0.12))',
+                        border: '1.5px solid rgba(45,129,247,0.3)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -88,10 +88,10 @@ export default function ProfilePage() {
                                         width: '100%',
                                         padding: '12px',
                                         marginBottom: '12px',
-                                        backgroundColor: '#1A1A1D',
-                                        border: '1px solid #374151',
+                                        backgroundColor: 'var(--bg-surface)',
+                                        border: '1px solid var(--border)',
                                         borderRadius: '8px',
-                                        color: '#FFF',
+                                        color: 'var(--text-primary)',
                                         fontSize: '16px',
                                     }}
                                 />
@@ -104,10 +104,10 @@ export default function ProfilePage() {
                                         ...typography.text,
                                         width: '100%',
                                         padding: '12px',
-                                        backgroundColor: '#1A1A1D',
-                                        border: '1px solid #374151',
+                                        backgroundColor: 'var(--bg-surface)',
+                                        border: '1px solid var(--border)',
                                         borderRadius: '8px',
-                                        color: '#FFF',
+                                        color: 'var(--text-primary)',
                                         fontSize: '16px',
                                     }}
                                 />
@@ -119,7 +119,7 @@ export default function ProfilePage() {
                                             ...typography.text,
                                             padding: '8px 16px',
                                             backgroundColor: '#10B981',
-                                            color: '#FFF',
+                                            color: 'var(--text-primary)',
                                             border: 'none',
                                             borderRadius: '6px',
                                             cursor: 'pointer',
@@ -144,7 +144,7 @@ export default function ProfilePage() {
                                 <h2 style={{ ...typography.display, fontSize: '24px', marginBottom: '4px' }}>
                                     {user?.name || 'Student'}
                                 </h2>
-                                <p style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF', marginBottom: '16px' }}>
+                                <p style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)', marginBottom: '16px' }}>
                                     {user?.email || 'No email'}
                                 </p>
                                 <button
@@ -180,7 +180,7 @@ export default function ProfilePage() {
                             <div style={{ ...typography.display, fontSize: '32px', marginBottom: '4px' }}>
                                 {stats.totalTests}
                             </div>
-                            <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                            <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                 Tests Completed
                             </div>
                         </div>
@@ -190,17 +190,17 @@ export default function ProfilePage() {
                             <div style={{ ...typography.display, fontSize: '32px', marginBottom: '4px', color: '#10B981' }}>
                                 {stats.avgAccuracy}%
                             </div>
-                            <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                            <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                 Average Accuracy
                             </div>
                         </div>
 
                         <div className="dashboard-card" style={{ padding: '24px' }}>
                             <div style={{ fontSize: '32px', marginBottom: '8px' }}>📚</div>
-                            <div style={{ ...typography.display, fontSize: '32px', marginBottom: '4px', color: '#00D4FF' }}>
+                            <div style={{ ...typography.display, fontSize: '32px', marginBottom: '4px', color: 'var(--brand-green)' }}>
                                 {stats.subjectsStudied.length}
                             </div>
-                            <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                            <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                 Subjects Studied
                             </div>
                         </div>
@@ -210,7 +210,7 @@ export default function ProfilePage() {
                             <div style={{ ...typography.display, fontSize: '32px', marginBottom: '4px', color: '#F59E0B' }}>
                                 {stats.totalStudyTime}
                             </div>
-                            <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                            <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                 Minutes Studied
                             </div>
                         </div>
@@ -220,7 +220,7 @@ export default function ProfilePage() {
                             <div style={{ ...typography.display, fontSize: '32px', marginBottom: '4px' }}>
                                 {stats.notesCount}
                             </div>
-                            <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                            <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                 Notes Created
                             </div>
                         </div>
@@ -230,7 +230,7 @@ export default function ProfilePage() {
                             <div style={{ ...typography.display, fontSize: '32px', marginBottom: '4px' }}>
                                 {stats.aiUsage}
                             </div>
-                            <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                            <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                 AI Interactions
                             </div>
                         </div>
@@ -252,7 +252,7 @@ export default function ProfilePage() {
                                                 justifyContent: 'space-between',
                                                 alignItems: 'center',
                                                 padding: '16px',
-                                                backgroundColor: '#1A1A1D',
+                                                backgroundColor: 'var(--bg-surface)',
                                                 borderRadius: '8px',
                                             }}
                                         >
@@ -260,7 +260,7 @@ export default function ProfilePage() {
                                                 <div style={{ ...typography.text, fontSize: '16px', fontWeight: 600, marginBottom: '4px' }}>
                                                     {test.subject}
                                                 </div>
-                                                <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                                                <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                                     {new Date(test.date).toLocaleDateString()}
                                                 </div>
                                             </div>
@@ -268,7 +268,7 @@ export default function ProfilePage() {
                                                 <div style={{ ...typography.text, fontSize: '18px', fontWeight: 600, color: '#10B981' }}>
                                                     {test.score}/{test.total}
                                                 </div>
-                                                <div style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                                                <div style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                                     {test.accuracy.toFixed(1)}%
                                                 </div>
                                             </div>
@@ -286,7 +286,7 @@ export default function ProfilePage() {
                     <h3 style={{ ...typography.display, fontSize: '24px', marginBottom: '12px' }}>
                         Start Your Learning Journey
                     </h3>
-                    <p style={{ ...typography.text, fontSize: '16px', color: '#9CA3AF', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
+                    <p style={{ ...typography.text, fontSize: '16px', color: 'var(--text-muted)', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
                         You haven't taken any tests yet. Your progress stats will appear here as you study and take tests.
                     </p>
                     <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>

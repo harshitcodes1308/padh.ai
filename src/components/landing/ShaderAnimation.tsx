@@ -5,7 +5,7 @@ import * as THREE from "three";
 
 /* -----------------------------------------------------------------------------
  * Three.js line-interference shader — adapted from a 21st.dev effect, re-themed
- * to the Saviours palette (cyan-dominant instead of full RGB). Fills its parent
+ * to the PADH.AI palette (blue-dominant instead of full RGB). Fills its parent
  * container. Pauses under prefers-reduced-motion (renders a single frame).
  * -------------------------------------------------------------------------- */
 
@@ -33,8 +33,8 @@ export default function ShaderAnimation({ opacity = 0.55, speed = 0.04 }: { opac
       }
     `;
 
-    // Cyan-biased: the layered RGB line interference is remapped toward the
-    // brand accent so it reads as flowing cyan light, not a rainbow.
+    // Blue-biased: the layered RGB line interference is remapped toward the
+    // brand accent so it reads as flowing blue light, not a rainbow.
     const fragmentShader = `
       #define TWO_PI 6.2831853072
       #define PI 3.14159265359
@@ -55,7 +55,7 @@ export default function ShaderAnimation({ opacity = 0.55, speed = 0.04 }: { opac
           }
         }
 
-        // Remap to cyan: kill most red, keep green mid, blue full
+        // Remap to brand blue: keep a green hint, blue full.
         vec3 tint = vec3(0.08, 0.8, 1.0);
         vec3 finalColor = color * tint;
 

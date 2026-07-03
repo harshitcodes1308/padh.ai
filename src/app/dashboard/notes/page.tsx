@@ -55,7 +55,7 @@ export default function NotesPage() {
                     <h1 style={{ ...typography.display, fontSize: '32px', marginBottom: '8px' }}>
                         📖 My Notes
                     </h1>
-                    <p style={{ ...typography.text, fontSize: '16px', color: '#9CA3AF' }}>
+                    <p style={{ ...typography.text, fontSize: '16px', color: 'var(--text-muted)' }}>
                         AI-powered notes with auto-generated flashcards
                     </p>
                 </div>
@@ -107,10 +107,10 @@ export default function NotesPage() {
                                     ...typography.text,
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#1A1A1D',
-                                    border: '1px solid #374151',
+                                    backgroundColor: 'var(--bg-surface)',
+                                    border: '1px solid var(--border)',
                                     borderRadius: '8px',
-                                    color: '#FFF',
+                                    color: 'var(--text-primary)',
                                     fontSize: '16px',
                                 }}
                             />
@@ -129,10 +129,10 @@ export default function NotesPage() {
                                     ...typography.text,
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#1A1A1D',
-                                    border: '1px solid #374151',
+                                    backgroundColor: 'var(--bg-surface)',
+                                    border: '1px solid var(--border)',
                                     borderRadius: '8px',
-                                    color: '#FFF',
+                                    color: 'var(--text-primary)',
                                     fontSize: '16px',
                                 }}
                             />
@@ -151,10 +151,10 @@ export default function NotesPage() {
                                     ...typography.text,
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#1A1A1D',
-                                    border: '1px solid #374151',
+                                    backgroundColor: 'var(--bg-surface)',
+                                    border: '1px solid var(--border)',
                                     borderRadius: '8px',
-                                    color: '#FFF',
+                                    color: 'var(--text-primary)',
                                     fontSize: '14px',
                                     resize: 'vertical',
                                 }}
@@ -168,8 +168,8 @@ export default function NotesPage() {
                                 style={{
                                     ...typography.text,
                                     padding: '12px 24px',
-                                    backgroundColor: createMutation.isPending ? '#4B5563' : '#10B981',
-                                    color: '#FFF',
+                                    backgroundColor: createMutation.isPending ? 'var(--text-secondary)' : '#10B981',
+                                    color: 'var(--text-primary)',
                                     border: 'none',
                                     borderRadius: '8px',
                                     cursor: createMutation.isPending ? 'wait' : 'pointer',
@@ -217,7 +217,7 @@ export default function NotesPage() {
                                 <h2 style={{ ...typography.display, fontSize: '28px', marginBottom: '8px' }}>
                                     {selectedNote.title}
                                 </h2>
-                                <p style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                                <p style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                     {new Date(selectedNote.createdAt).toLocaleDateString()}
                                 </p>
                             </div>
@@ -266,7 +266,7 @@ export default function NotesPage() {
                                     ...typography.text,
                                     padding: '12px 24px',
                                     backgroundColor: '#EF4444',
-                                    color: '#FFF',
+                                    color: 'var(--text-primary)',
                                     border: 'none',
                                     borderRadius: '8px',
                                     cursor: 'pointer',
@@ -296,10 +296,10 @@ export default function NotesPage() {
                 }}>
                     <div style={{ maxWidth: '600px', width: '90%' }}>
                         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-                            <h3 style={{ ...typography.display, fontSize: '24px', color: '#FFF', marginBottom: '8px' }}>
+                            <h3 style={{ ...typography.display, fontSize: '24px', color: 'var(--text-primary)', marginBottom: '8px' }}>
                                 Flashcards: {selectedNote.title}
                             </h3>
-                            <p style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF' }}>
+                            <p style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)' }}>
                                 Card {currentCardIndex + 1} of {selectedNote.flashCards.length}
                             </p>
                         </div>
@@ -307,7 +307,7 @@ export default function NotesPage() {
                         <div
                             onClick={() => setIsFlipped(!isFlipped)}
                             style={{
-                                backgroundColor: '#1A1A1D',
+                                backgroundColor: 'var(--bg-surface)',
                                 borderRadius: '16px',
                                 padding: '48px 32px',
                                 minHeight: '300px',
@@ -315,12 +315,12 @@ export default function NotesPage() {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 cursor: 'pointer',
-                                border: '2px solid #00D4FF',
+                                border: '2px solid #08BD80',
                                 transition: 'transform 0.3s',
                             }}
                         >
                             <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontSize: '14px', fontWeight: 600, color: '#00D4FF', marginBottom: '16px' }}>
+                                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--brand-green)', marginBottom: '16px' }}>
                                     {isFlipped ? 'ANSWER' : 'QUESTION'}
                                 </div>
                                 <div style={{ ...typography.text, fontSize: '20px', lineHeight: '1.6' }}>
@@ -387,7 +387,7 @@ export default function NotesPage() {
                     <h3 style={{ ...typography.display, fontSize: '24px', marginBottom: '12px' }}>
                         Create Your First Smart Note
                     </h3>
-                    <p style={{ ...typography.text, fontSize: '16px', color: '#9CA3AF', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
+                    <p style={{ ...typography.text, fontSize: '16px', color: 'var(--text-muted)', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
                         Type your raw notes and AI will beautifully format them with headings, bullet points, and emojis. Plus, get auto-generated flashcards!
                     </p>
                     <button
@@ -417,7 +417,7 @@ export default function NotesPage() {
                                 border: '2px solid transparent',
                             }}
                             onMouseOver={(e) => {
-                                e.currentTarget.style.borderColor = '#00D4FF';
+                                e.currentTarget.style.borderColor = 'var(--brand-green)';
                                 e.currentTarget.style.transform = 'translateY(-4px)';
                             }}
                             onMouseOut={(e) => {
@@ -428,15 +428,15 @@ export default function NotesPage() {
                             <h3 style={{ ...typography.display, fontSize: '18px', marginBottom: '8px' }}>
                                 {note.title}
                             </h3>
-                            <p style={{ ...typography.text, fontSize: '14px', color: '#9CA3AF', marginBottom: '12px', lineHeight: '1.4', maxHeight: '60px', overflow: 'hidden' }}>
+                            <p style={{ ...typography.text, fontSize: '14px', color: 'var(--text-muted)', marginBottom: '12px', lineHeight: '1.4', maxHeight: '60px', overflow: 'hidden' }}>
                                 {note.content.substring(0, 100)}...
                             </p>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <span style={{ ...typography.text, fontSize: '12px', color: '#6B7280' }}>
+                                <span style={{ ...typography.text, fontSize: '12px', color: 'var(--text-secondary)' }}>
                                     {new Date(note.createdAt).toLocaleDateString()}
                                 </span>
                                 {note.flashCards && note.flashCards.length > 0 && (
-                                    <span style={{ ...typography.text, fontSize: '12px', color: '#00D4FF', fontWeight: 600 }}>
+                                    <span style={{ ...typography.text, fontSize: '12px', color: 'var(--brand-green)', fontWeight: 600 }}>
                                         🎴 {note.flashCards.length} cards
                                     </span>
                                 )}

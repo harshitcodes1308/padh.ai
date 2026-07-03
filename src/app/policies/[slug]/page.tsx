@@ -10,7 +10,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const policy = POLICIES.find((p) => p.slug === slug);
-  return { title: policy ? `${policy.title} — Saviours AI` : "Policy — Saviours AI" };
+  return { title: policy ? `${policy.title} - PADH.AI` : "Policy - PADH.AI" };
 }
 
 export default async function PublicPolicyPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -34,10 +34,10 @@ export default async function PublicPolicyPage({ params }: { params: Promise<{ s
         >
           <svg width="22" height="22" viewBox="0 0 48 48" fill="none" aria-hidden="true">
             <path d="M24 4L44 18L24 44L4 18L24 4Z" fill="none" stroke="var(--accent-gold)" strokeWidth="1.5" />
-            <path d="M24 4L44 18L24 32L4 18L24 4Z" fill="rgba(0,212,255,0.12)" />
+            <path d="M24 4L44 18L24 32L4 18L24 4Z" fill="rgba(45,129,247,0.12)" />
           </svg>
           <span style={{ fontFamily: "var(--font-display)", fontSize: 13, letterSpacing: "0.22em", color: "var(--text-secondary)", textTransform: "uppercase" }}>
-            ← Back to Saviours AI
+            ← Back to PADH.AI
           </span>
         </Link>
 

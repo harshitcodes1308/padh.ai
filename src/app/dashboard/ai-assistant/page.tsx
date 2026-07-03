@@ -31,7 +31,7 @@ export default function AIAssistantPage() {
     const [messages, setMessages] = useState<Message[]>([
         {
             role: "assistant",
-            content: "Hi! I'm your ICSE AI tutor. Ask me anything about your Class X subjects.",
+            content: "Hi! I'm your PADH.AI tutor. Ask me anything about your Class 10 subjects.",
         },
     ]);
     const [dailyCount, setDailyCount] = useState(0);
@@ -338,8 +338,8 @@ export default function AIAssistantPage() {
                     {hitFreeLimit && (
                         <div style={{
                             padding: "14px 18px",
-                            background: "rgba(0,212,255,0.06)",
-                            border: "1px solid rgba(0,212,255,0.2)",
+                            background: "rgba(45,129,247,0.06)",
+                            border: "1px solid rgba(45,129,247,0.2)",
                             borderRadius: 12,
                             marginBottom: 12,
                             fontFamily: "var(--font-body)",
@@ -417,7 +417,7 @@ export default function AIAssistantPage() {
                                         handleSend();
                                     }
                                 }}
-                                placeholder={hitFreeLimit ? "Upgrade to continue asking..." : "Ask about any ICSE topic..."}
+                                placeholder={hitFreeLimit ? "Upgrade to continue asking..." : "Ask about any CBSE topic..."}
                                 disabled={askMutation.isPending || hitFreeLimit}
                                 rows={1}
                                 style={{

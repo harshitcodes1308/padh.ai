@@ -100,7 +100,7 @@ export default function StrategyPage() {
                         <h1 style={{ ...typography.display, fontSize: '32px', marginBottom: '24px' }}>
                             AI Strategy Planner
                         </h1>
-                        <p style={{ ...typography.text, fontSize: '18px', color: '#9CA3AF', marginBottom: '32px' }}>
+                        <p style={{ ...typography.text, fontSize: '18px', color: 'var(--text-muted)', marginBottom: '32px' }}>
                             Stop guessing. Let our AI analyze your schedule, strengths, and goals to build the perfect exam battle plan.
                         </p>
                         <button
@@ -140,7 +140,7 @@ export default function StrategyPage() {
                                             ...typography.text,
                                             padding: '24px',
                                             backgroundColor: isSelected ? 'rgba(0, 212, 255, 0.15)' : 'rgba(26, 26, 29, 0.6)',
-                                            color: isSelected ? '#00D4FF' : '#FFF',
+                                            color: isSelected ? 'var(--brand-green)' : 'var(--text-primary)',
                                             border: isSelected ? '1px solid rgba(0, 212, 255, 0.5)' : '1px solid rgba(55, 65, 81, 0.5)',
                                             borderRadius: '12px',
                                             cursor: 'pointer',
@@ -186,7 +186,7 @@ export default function StrategyPage() {
                         <h2 style={{ ...typography.display, fontSize: '24px', marginBottom: '16px' }}>
                             Categorize your subjects:
                         </h2>
-                        <p style={{ ...typography.text, color: '#9CA3AF', marginBottom: '24px' }}>
+                        <p style={{ ...typography.text, color: 'var(--text-muted)', marginBottom: '24px' }}>
                             Select the relevant subjects for each category.
                         </p>
 
@@ -213,9 +213,9 @@ export default function StrategyPage() {
                                                 style={{
                                                     ...typography.text,
                                                     padding: '16px',
-                                                    backgroundColor: isSelected ? '#EF4444' : '#1A1A1D',
-                                                    border: isSelected ? 'none' : '1px solid #374151',
-                                                    color: 'white',
+                                                    backgroundColor: isSelected ? '#EF4444' : 'var(--bg-surface)',
+                                                    border: isSelected ? 'none' : '1px solid var(--border)',
+                                                    color: 'var(--text-primary)',
                                                     borderRadius: '8px',
                                                     cursor: 'pointer',
                                                     textAlign: 'left'
@@ -250,9 +250,9 @@ export default function StrategyPage() {
                                                 style={{
                                                     ...typography.text,
                                                     padding: '16px',
-                                                    backgroundColor: isSelected ? '#10B981' : '#1A1A1D',
-                                                    border: isSelected ? 'none' : '1px solid #374151',
-                                                    color: 'white',
+                                                    backgroundColor: isSelected ? '#10B981' : 'var(--bg-surface)',
+                                                    border: isSelected ? 'none' : '1px solid var(--border)',
+                                                    color: 'var(--text-primary)',
                                                     borderRadius: '8px',
                                                     cursor: 'pointer',
                                                     textAlign: 'left'
@@ -297,15 +297,15 @@ export default function StrategyPage() {
                                 <input
                                     value={data.goals.examName}
                                     onChange={(e) => updateData({ goals: { ...data.goals, examName: e.target.value } })}
-                                    placeholder="e.g. ICSE Boards 2024"
+                                    placeholder="e.g. CBSE Boards 2026"
                                     style={{
                                         ...typography.text,
                                         width: '100%',
                                         padding: '12px',
-                                        backgroundColor: '#1A1A1D',
-                                        border: '1px solid #374151',
+                                        backgroundColor: 'var(--bg-surface)',
+                                        border: '1px solid var(--border)',
                                         borderRadius: '8px',
-                                        color: '#FFF',
+                                        color: 'var(--text-primary)',
                                         fontSize: '16px',
                                     }}
                                 />
@@ -320,10 +320,10 @@ export default function StrategyPage() {
                                         ...typography.text,
                                         width: '100%',
                                         padding: '12px',
-                                        backgroundColor: '#1A1A1D',
-                                        border: '1px solid #374151',
+                                        backgroundColor: 'var(--bg-surface)',
+                                        border: '1px solid var(--border)',
                                         borderRadius: '8px',
-                                        color: '#FFF',
+                                        color: 'var(--text-primary)',
                                         fontSize: '16px',
                                     }}
                                 />
@@ -338,10 +338,10 @@ export default function StrategyPage() {
                                         ...typography.text,
                                         width: '100%',
                                         padding: '12px',
-                                        backgroundColor: '#1A1A1D',
-                                        border: '1px solid #374151',
+                                        backgroundColor: 'var(--bg-surface)',
+                                        border: '1px solid var(--border)',
                                         borderRadius: '8px',
-                                        color: '#FFF',
+                                        color: 'var(--text-primary)',
                                         fontSize: '16px',
                                     }}
                                 />
@@ -363,25 +363,25 @@ export default function StrategyPage() {
                         <div style={{ maxWidth: '600px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                             <div>
                                 <label style={{ ...typography.text, display: 'block', marginBottom: '8px' }}>Wake Up Time</label>
-                                <input type="time" value={data.schedule.wakeUpTime} onChange={e => updateData({ schedule: { ...data.schedule, wakeUpTime: e.target.value } })} style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: '#1A1A1D', border: '1px solid #374151', borderRadius: '8px', color: '#FFF', fontSize: '16px' }} />
+                                <input type="time" value={data.schedule.wakeUpTime} onChange={e => updateData({ schedule: { ...data.schedule, wakeUpTime: e.target.value } })} style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: '8px', color: 'var(--text-primary)', fontSize: '16px' }} />
                             </div>
                             <div>
                                 <label style={{ ...typography.text, display: 'block', marginBottom: '8px' }}>Sleep Time</label>
-                                <input type="time" value={data.schedule.sleepTime} onChange={e => updateData({ schedule: { ...data.schedule, sleepTime: e.target.value } })} style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: '#1A1A1D', border: '1px solid #374151', borderRadius: '8px', color: '#FFF', fontSize: '16px' }} />
+                                <input type="time" value={data.schedule.sleepTime} onChange={e => updateData({ schedule: { ...data.schedule, sleepTime: e.target.value } })} style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: '8px', color: 'var(--text-primary)', fontSize: '16px' }} />
                             </div>
                         </div>
                         <div style={{ maxWidth: '600px', marginTop: '16px' }}>
                             <div style={{ marginBottom: '16px' }}>
                                 <label style={{ ...typography.text, display: 'block', marginBottom: '8px' }}>School Hours</label>
-                                <input value={data.schedule.schoolHours} onChange={(e) => updateData({ schedule: { ...data.schedule, schoolHours: e.target.value } })} placeholder="e.g. 08:00 - 14:00" style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: '#1A1A1D', border: '1px solid #374151', borderRadius: '8px', color: '#FFF', fontSize: '16px' }} />
+                                <input value={data.schedule.schoolHours} onChange={(e) => updateData({ schedule: { ...data.schedule, schoolHours: e.target.value } })} placeholder="e.g. 08:00 - 14:00" style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: '8px', color: 'var(--text-primary)', fontSize: '16px' }} />
                             </div>
                             <div style={{ marginBottom: '16px' }}>
                                 <label style={{ ...typography.text, display: 'block', marginBottom: '8px' }}>Tuition Hours</label>
-                                <input value={data.schedule.tuitionHours} onChange={(e) => updateData({ schedule: { ...data.schedule, tuitionHours: e.target.value } })} placeholder="e.g. 17:00 - 19:00" style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: '#1A1A1D', border: '1px solid #374151', borderRadius: '8px', color: '#FFF', fontSize: '16px' }} />
+                                <input value={data.schedule.tuitionHours} onChange={(e) => updateData({ schedule: { ...data.schedule, tuitionHours: e.target.value } })} placeholder="e.g. 17:00 - 19:00" style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: '8px', color: 'var(--text-primary)', fontSize: '16px' }} />
                             </div>
                             <div style={{ marginBottom: '16px' }}>
                                 <label style={{ ...typography.text, display: 'block', marginBottom: '8px' }}>Self Study Goal</label>
-                                <input value={data.schedule.selfStudyHours} onChange={(e) => updateData({ schedule: { ...data.schedule, selfStudyHours: e.target.value } })} placeholder="e.g. 3 hours" style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: '#1A1A1D', border: '1px solid #374151', borderRadius: '8px', color: '#FFF', fontSize: '16px' }} />
+                                <input value={data.schedule.selfStudyHours} onChange={(e) => updateData({ schedule: { ...data.schedule, selfStudyHours: e.target.value } })} placeholder="e.g. 3 hours" style={{ ...typography.text, width: '100%', padding: '12px', backgroundColor: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: '8px', color: 'var(--text-primary)', fontSize: '16px' }} />
                             </div>
                         </div>
                         <div style={{ marginTop: '32px', display: 'flex', gap: '12px' }}>
@@ -406,7 +406,7 @@ export default function StrategyPage() {
                                         ...typography.text,
                                         padding: '24px',
                                         backgroundColor: data.mode === mode.id ? 'rgba(0, 212, 255, 0.15)' : 'rgba(26, 26, 29, 0.6)',
-                                        color: data.mode === mode.id ? '#00D4FF' : '#FFF',
+                                        color: data.mode === mode.id ? 'var(--brand-green)' : 'var(--text-primary)',
                                         border: data.mode === mode.id ? '1px solid rgba(0, 212, 255, 0.5)' : '1px solid rgba(55, 65, 81, 0.5)',
                                         borderRadius: '12px',
                                         cursor: 'pointer',
@@ -416,7 +416,7 @@ export default function StrategyPage() {
                                     }}
                                 >
                                     <div style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '8px' }}>{mode.title}</div>
-                                    <div style={{ fontSize: '14px', color: data.mode === mode.id ? '#E5E7EB' : '#9CA3AF' }}>{mode.desc}</div>
+                                    <div style={{ fontSize: '14px', color: data.mode === mode.id ? '#E5E7EB' : 'var(--text-muted)' }}>{mode.desc}</div>
                                 </button>
                             ))}
                         </div>
@@ -427,8 +427,8 @@ export default function StrategyPage() {
                                 ...typography.text,
                                 marginTop: '32px',
                                 padding: '16px 32px',
-                                backgroundColor: generateMutation.isPending ? '#4B5563' : '#10B981',
-                                color: '#FFF',
+                                backgroundColor: generateMutation.isPending ? 'var(--text-secondary)' : '#10B981',
+                                color: 'var(--text-primary)',
                                 border: 'none',
                                 borderRadius: '8px',
                                 cursor: generateMutation.isPending ? 'wait' : 'pointer',
@@ -447,7 +447,7 @@ export default function StrategyPage() {
                     <div className="dashboard-card" style={{ padding: isMobile ? '20px' : '48px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: isMobile ? 'flex-start' : 'center', marginBottom: '32px', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 12 : 0 }}>
                             <h2 style={{ ...typography.display, fontSize: '32px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <Brain style={{ color: '#00D4FF' }} /> Your Strategy
+                                <Brain style={{ color: 'var(--brand-green)' }} /> Your Strategy
                             </h2>
                             <div style={{ display: 'flex', gap: '12px' }}>
                                 <button
@@ -467,14 +467,14 @@ export default function StrategyPage() {
                             </div>
                         </div>
 
-                        <div style={{ ...typography.text, fontSize: '16px', lineHeight: '1.8', color: '#D1D5DB' }}>
+                        <div style={{ ...typography.text, fontSize: '16px', lineHeight: '1.8', color: 'var(--text-secondary)' }}>
                             <ReactMarkdown
                                 components={{
-                                    h1: ({ node, ...props }) => <h1 style={{ ...typography.display, fontSize: '28px', marginTop: '32px', marginBottom: '16px', color: '#FFF', borderBottom: '1px solid #374151', paddingBottom: '8px' }} {...props} />,
-                                    h2: ({ node, ...props }) => <h2 style={{ ...typography.display, fontSize: '22px', marginTop: '24px', marginBottom: '12px', color: '#33DFFF' }} {...props} />,
+                                    h1: ({ node, ...props }) => <h1 style={{ ...typography.display, fontSize: '28px', marginTop: '32px', marginBottom: '16px', color: 'var(--text-primary)', borderBottom: '1px solid var(--border)', paddingBottom: '8px' }} {...props} />,
+                                    h2: ({ node, ...props }) => <h2 style={{ ...typography.display, fontSize: '22px', marginTop: '24px', marginBottom: '12px', color: '#2D81F7' }} {...props} />,
                                     ul: ({ node, ...props }) => <ul style={{ listStyle: 'disc', paddingLeft: '24px', marginBottom: '16px' }} {...props} />,
                                     li: ({ node, ...props }) => <li style={{ marginBottom: '8px' }} {...props} />,
-                                    strong: ({ node, ...props }) => <strong style={{ color: '#FFF', fontWeight: 600 }} {...props} />,
+                                    strong: ({ node, ...props }) => <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }} {...props} />,
                                 }}
                             >
                                 {generatedStrategy || ""}
@@ -489,7 +489,7 @@ export default function StrategyPage() {
     };
 
     return (
-        <div style={{ padding: isMobile ? '16px' : '32px', maxWidth: '1200px', margin: '0 auto', minHeight: '100vh', backgroundColor: '#030303', boxSizing: 'border-box' as const, overflowX: 'hidden' as const }}>
+        <div style={{ padding: isMobile ? '16px' : '32px', maxWidth: '1200px', margin: '0 auto', minHeight: '100vh', backgroundColor: 'var(--bg-base)', boxSizing: 'border-box' as const, overflowX: 'hidden' as const }}>
             <GenerationLoader 
                 isVisible={generateMutation.isPending} 
                 label="Crafting Strategy..." 

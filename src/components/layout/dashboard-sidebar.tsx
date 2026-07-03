@@ -33,27 +33,19 @@ function isVisible(href: string): boolean {
   return FEATURE_FLAGS[flag] === true;
 }
 
-// PADH.AI logo mark — clean blue square with P
+// PADH.AI logo mark — blue product mark with green reserved for progress states.
 const PadhLogo = ({ size = 28 }: { size?: number }) => (
-  <div style={{
-    width: size,
-    height: size,
-    borderRadius: Math.round(size * 0.25),
-    background: "var(--brand-blue)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexShrink: 0,
-  }}>
-    <span style={{
-      fontFamily: "var(--font-display)",
-      fontWeight: 800,
-      fontSize: Math.round(size * 0.55),
-      color: "#FFFFFF",
-      lineHeight: 1,
-      letterSpacing: "-0.02em",
-    }}>P</span>
-  </div>
+  <img 
+    src="/logo.png" 
+    alt="PADH.AI" 
+    style={{
+      width: size,
+      height: size,
+      borderRadius: Math.round(size * 0.25),
+      objectFit: "contain",
+      flexShrink: 0,
+    }}
+  />
 );
 
 type NavItem = { icon: string; label: string; href: string };
@@ -209,7 +201,7 @@ export default function DashboardSidebar({
       <style>{`
         .sb-nav-item { transition: all 0.15s ease; }
         .sb-nav-item:hover:not(.sb-nav-active) {
-          background: rgba(0,0,0,0.03) !important;
+          background: var(--bg-elevated) !important;
           color: var(--text-primary) !important;
         }
       `}</style>
@@ -265,7 +257,7 @@ export default function DashboardSidebar({
         <div style={{
           width: 34, height: 34, minWidth: 34,
           borderRadius: 8,
-          background: "rgba(45, 129, 247, 0.10)",
+          background: "rgba(45, 129, 247, 0.09)",
           border: "1px solid rgba(45, 129, 247, 0.20)",
           display: "flex", alignItems: "center", justifyContent: "center",
           fontFamily: "var(--font-body)",
@@ -341,17 +333,16 @@ export default function DashboardSidebar({
                       padding: "8px 10px",
                       marginBottom: 1,
                       borderRadius: 8,
-                      background: isActive ? "rgba(45, 129, 247, 0.08)" : "transparent",
+                      background: isActive ? "var(--accent-gold-glow)" : "transparent",
                       color: isActive ? "var(--brand-blue)" : "var(--text-secondary)",
-                      border: "none",
-                      borderLeft: isActive ? "2px solid var(--brand-blue)" : "2px solid transparent",
+                      border: isActive ? "1px solid var(--accent-gold-border)" : "1px solid transparent",
                       cursor: "pointer",
                       textAlign: "left",
                       fontFamily: "var(--font-body)",
                       fontSize: 13,
                       fontWeight: isActive ? 600 : 400,
                       letterSpacing: "-0.01em",
-                      paddingLeft: isActive ? 8 : 10,
+                      paddingLeft: 10,
                     }}
                   >
                     <span style={{
@@ -390,8 +381,7 @@ export default function DashboardSidebar({
               borderRadius: 8,
               background: "transparent",
               color: "var(--text-secondary)",
-              border: "none",
-              borderLeft: "2px solid transparent",
+              border: "1px solid transparent",
               cursor: logoutMutation.isPending ? "not-allowed" : "pointer",
               opacity: logoutMutation.isPending ? 0.5 : 1,
               textAlign: "left",
@@ -424,11 +414,9 @@ export default function DashboardSidebar({
           justifyContent: "space-between",
           padding: "8px 12px",
           borderRadius: 8,
-          background: isPaid
-            ? "rgba(45, 129, 247, 0.06)"
-            : "var(--bg-surface)",
+          background: isPaid ? "var(--accent-gold-glow)" : "var(--bg-surface)",
           border: isPaid
-            ? "1px solid rgba(45, 129, 247, 0.18)"
+            ? "1px solid var(--accent-gold-border)"
             : "1px solid var(--border)",
         }}>
           <div>
@@ -460,7 +448,7 @@ export default function DashboardSidebar({
                 fontFamily: "var(--font-body)",
                 fontSize: 10, fontWeight: 600,
                 color: "#FFFFFF",
-                background: "var(--brand-blue)",
+                background: "var(--brand-green)",
                 border: "none",
                 borderRadius: 6,
                 padding: "4px 10px",

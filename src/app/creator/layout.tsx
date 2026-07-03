@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Creator Portal — Saviours AI",
-  description: "Affiliate creator portal for Saviours AI",
+  title: "Creator Portal - PADH.AI",
+  description: "Affiliate creator portal for PADH.AI",
 };
 
 export default function CreatorLayout({ children }: { children: React.ReactNode }) {

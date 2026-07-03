@@ -51,7 +51,7 @@ export default function StudyFlowSubjectsPage() {
       <style>{`
         @keyframes sfFadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes sfPulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
-        @keyframes sfGlow { 0%,100% { box-shadow: 0 0 0 rgba(0,212,255,0); } 50% { box-shadow: 0 0 20px rgba(0,212,255,0.1); } }
+        @keyframes sfGlow { 0%,100% { box-shadow: 0 0 0 rgba(45,129,247,0); } 50% { box-shadow: 0 0 20px rgba(45,129,247,0.1); } }
       `}</style>
 
       <div style={{ maxWidth: 1000, margin: "0 auto" }}>
@@ -69,7 +69,7 @@ export default function StudyFlowSubjectsPage() {
           <div style={{
             fontFamily: "var(--font-tagline)", fontSize: isMobile ? 13 : 15,
             fontStyle: "italic", color: "rgba(180,175,200,0.7)", marginTop: 10,
-            textShadow: "0 0 16px rgba(0,212,255,0.1)",
+            textShadow: "0 0 16px rgba(45,129,247,0.1)",
           }}>Watch. Revise. Practice. Repeat until mastery.</div>
         </div>
 

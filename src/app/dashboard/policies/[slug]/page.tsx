@@ -14,15 +14,15 @@ export default function PolicyViewerPage() {
 
     if (!policy) {
         return (
-            <div style={{ padding: "32px", textAlign: "center", color: "#FFF" }}>
+            <div style={{ padding: "32px", textAlign: "center", color: "var(--text-primary)" }}>
                 <h2>Policy not found</h2>
-                <button onClick={() => router.back()} style={{ color: "#00D4FF", marginTop: "16px", background: "none", border: "none", cursor: "pointer" }}>Go Back</button>
+                <button onClick={() => router.back()} style={{ color: "var(--brand-green)", marginTop: "16px", background: "none", border: "none", cursor: "pointer" }}>Go Back</button>
             </div>
         );
     }
 
     return (
-        <div style={{ padding: "32px", maxWidth: "800px", margin: "0 auto", color: "#FFF" }}>
+        <div style={{ padding: "32px", maxWidth: "800px", margin: "0 auto", color: "var(--text-primary)" }}>
             <button
                 onClick={() => router.back()}
                 style={{
@@ -31,7 +31,7 @@ export default function PolicyViewerPage() {
                     gap: "8px",
                     background: "none",
                     border: "none",
-                    color: "#9CA3AF",
+                    color: "var(--text-muted)",
                     cursor: "pointer",
                     marginBottom: "24px",
                     fontWeight: 500
@@ -46,11 +46,11 @@ export default function PolicyViewerPage() {
                     {policy.title}
                 </h1>
                 
-                <div style={{ 
-                    ...typography.text, 
-                    fontSize: "16px", 
-                    lineHeight: "1.8", 
-                    color: "#D1D5DB", 
+                <div style={{
+                    ...typography.text,
+                    fontSize: "16px",
+                    lineHeight: "1.8",
+                    color: "var(--text-secondary)",
                     whiteSpace: "pre-wrap" // Preserves formatting from the raw text
                 }}>
                     {policy.content}

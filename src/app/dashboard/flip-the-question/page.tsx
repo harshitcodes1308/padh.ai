@@ -69,8 +69,8 @@ const C = {
   card: "var(--bg-surface)",
   cardBorder: "var(--bg-border)",
   surface: "var(--bg-elevated, #1A1A24)",
-  accent: "#00D4FF",
-  accentGlow: "rgba(139,92,246,0.25)",
+  accent: "var(--brand-green)",
+  accentGlow: "rgba(8,189,128,0.18)",
   green: "#10b981",
   greenGlow: "rgba(16,185,129,0.2)",
   red: "#ef4444",
@@ -79,7 +79,7 @@ const C = {
   yellowGlow: "var(--accent-gold-glow)",
   blue: "#3b82f6",
   blueGlow: "rgba(59,130,246,0.15)",
-  pink: "#ec4899",
+  pink: "#2D81F7",
   text: "var(--text-primary)",
   textMid: "var(--text-secondary)",
   textDim: "var(--text-muted)",
@@ -275,7 +275,7 @@ function FlipMarkdown({ children }: { children: string }) {
             return (
               <code
                 style={{
-                  background: "rgba(139,92,246,0.12)",
+                  background: "rgba(8,189,128,0.12)",
                   color: "#c4b5fd",
                   padding: "2px 7px",
                   borderRadius: "5px",
@@ -550,9 +550,7 @@ export default function FlipTheQuestionPage() {
               style={{
                 fontSize: "26px",
                 fontWeight: 800,
-                background: "linear-gradient(135deg, #00D4FF, #ec4899)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                color: "var(--text-primary)",
                 margin: 0,
                 letterSpacing: "-0.5px",
               }}
@@ -975,11 +973,7 @@ export default function FlipTheQuestionPage() {
                   style={{
                     fontSize: "60px",
                     fontWeight: 900,
-                    background: lastPassed
-                      ? `linear-gradient(135deg, ${C.green}, #34d399)`
-                      : `linear-gradient(135deg, ${C.red}, #f87171)`,
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
+                    color: lastPassed ? C.green : C.red,
                     position: "relative",
                     lineHeight: 1,
                   }}
@@ -1056,7 +1050,7 @@ export default function FlipTheQuestionPage() {
                 />
                 <ScoreCard
                   icon="📐"
-                  label="ICSE Quality"
+                  label="Board Quality"
                   score={parsedScores.quality}
                   maxScore={parsedScores.qualityMax}
                   color={C.yellow}
@@ -1068,7 +1062,7 @@ export default function FlipTheQuestionPage() {
                   score={parsedScores.bonus}
                   maxScore={parsedScores.bonusMax}
                   color={C.pink}
-                  glow="rgba(236,72,153,0.2)"
+                  glow="rgba(45,129,247,0.14)"
                 />
                 {parsedScores.hintPenalty > 0 && (
                   <div
