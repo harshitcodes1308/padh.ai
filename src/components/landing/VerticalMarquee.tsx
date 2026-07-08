@@ -3,7 +3,7 @@
 import { type ReactNode } from "react";
 
 /* -----------------------------------------------------------------------------
- * Vertical marquee — adapted from the 21st.dev 3d-testimonials Marquee.
+ * Vertical marquee - adapted from the 21st.dev 3d-testimonials Marquee.
  * Re-themed to inline styles + our landing.css keyframes. Loops `children`
  * vertically; `reverse` flips direction, `pauseOnHover` halts on hover.
  * -------------------------------------------------------------------------- */

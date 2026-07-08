@@ -474,7 +474,7 @@ export default function AIAssistantPage() {
                             Quick Review
                         </h2>
                         <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-muted)", marginBottom: 28, lineHeight: 1.6 }}>
-                            Enter the topics you studied today — I'll generate 10 Class X questions to test you.
+                            Enter the topics you studied today - I'll generate 10 Class X questions to test you.
                         </p>
                         <input
                             ref={setupRef}

@@ -1,4 +1,4 @@
-# ICSE Saviours - Documentation
+# CBSE Saviours - Documentation
 
 This folder contains important project documentation that should be preserved and version-controlled.
 

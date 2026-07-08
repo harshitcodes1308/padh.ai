@@ -280,7 +280,7 @@ export default function SmartPlannerPage() {
                         Smart Planner
                     </h1>
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-muted)", lineHeight: 1.6 }}>
-                        Select chapters and dates — AI builds a day-by-day revision timeline.
+                        Select chapters and dates - AI builds a day-by-day revision timeline.
                     </p>
                 </div>
 
@@ -304,7 +304,7 @@ export default function SmartPlannerPage() {
                             Chapters{" "}
                             {selectedChapters.length > 0 && (
                                 <span style={{ color: "var(--accent-gold)", fontFamily: "var(--font-body)" }}>
-                                    — {selectedChapters.length} selected
+                                    - {selectedChapters.length} selected
                                 </span>
                             )}
                         </div>

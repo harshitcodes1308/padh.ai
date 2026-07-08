@@ -26,14 +26,14 @@ async function verifyAdmin(req?: NextRequest): Promise<boolean> {
     }
 }
 
-/** GET /api/admin/creators — list all */
+/** GET /api/admin/creators - list all */
 export async function GET(req: NextRequest) {
     if (!(await verifyAdmin(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     const creators = await prisma.creator.findMany({ orderBy: { createdAt: "asc" } });
     return NextResponse.json({ creators });
 }
 
-/** POST /api/admin/creators — create */
+/** POST /api/admin/creators - create */
 export async function POST(req: NextRequest) {
     if (!(await verifyAdmin(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
@@ -66,7 +66,7 @@ export async function POST(req: NextRequest) {
     }
 }
 
-/** PUT /api/admin/creators — update */
+/** PUT /api/admin/creators - update */
 export async function PUT(req: NextRequest) {
     if (!(await verifyAdmin(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
@@ -93,7 +93,7 @@ export async function PUT(req: NextRequest) {
     return NextResponse.json({ creator });
 }
 
-/** DELETE /api/admin/creators — delete */
+/** DELETE /api/admin/creators - delete */
 export async function DELETE(req: NextRequest) {
     if (!(await verifyAdmin(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 

@@ -62,9 +62,9 @@ export default function OnboardingFlow() {
   const video1Ref = useRef<HTMLVideoElement>(null);
   const video6Ref = useRef<HTMLVideoElement>(null);
 
-  // Particles removed for light theme — state kept for zero-diff on state structure
+  // Particles removed for light theme - state kept for zero-diff on state structure
   useEffect(() => {
-    // noop — floating particles removed in Phase 1 reskin
+    // noop - floating particles removed in Phase 1 reskin
   }, []);
 
 
@@ -78,7 +78,7 @@ export default function OnboardingFlow() {
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, [step]);
 
-  // ── Screen 2 — Apple-style two-phase reveal
+  // ── Screen 2 - Apple-style two-phase reveal
   useEffect(() => {
     if (step !== 2) return;
     setGreetingPhase('greetings');
@@ -106,7 +106,7 @@ export default function OnboardingFlow() {
     return () => timers.forEach(clearTimeout);
   }, [step]);
 
-  // ── Screen 7 — Loading
+  // ── Screen 7 - Loading
   useEffect(() => {
     if (step !== 7) return;
     setLoadingLine(0);
@@ -118,7 +118,7 @@ export default function OnboardingFlow() {
     return () => timers.forEach(clearTimeout);
   }, [step]);
 
-  // Screen 8 — auto-navigate to dashboard after the welcome animation completes
+  // Screen 8 - auto-navigate to dashboard after the welcome animation completes
   useEffect(() => {
     if (step !== 8) return;
     // 3s: 0.3s logo + 0.7s text + 1.4s tagline + 0.6s buffer
@@ -173,7 +173,7 @@ export default function OnboardingFlow() {
   }
 
   function handleSaveCreator(codeToSave: string | null) {
-    // Go to pricing immediately — no waiting for the API
+    // Go to pricing immediately - no waiting for the API
     setStep(6);
     // Save to DB in background
     fetch('/api/auth/save-creator', {
@@ -244,7 +244,7 @@ export default function OnboardingFlow() {
         const options = {
           key,
           name: 'PADH.AI',
-          description: 'Monthly Access — ₹199/month',
+          description: 'Monthly Access - ₹199/month',
           subscription_id: subData.subscription.id,
           handler: commonHandler,
           prefill,
@@ -272,7 +272,7 @@ export default function OnboardingFlow() {
           amount: orderData.order.amount,
           currency: orderData.order.currency,
           name: 'PADH.AI',
-          description: 'Yearly Access — ₹599 one-time',
+          description: 'Yearly Access - ₹599 one-time',
           order_id: orderData.order.id,
           handler: commonHandler,
           prefill,
@@ -315,7 +315,7 @@ export default function OnboardingFlow() {
     }
   }
 
-  // ── SCREEN 1 — Cinematic Splash ─────────────────────────────
+  // ── SCREEN 1 - Cinematic Splash ─────────────────────────────
   if (step === 1) return (
     <div
       data-theme="light"
@@ -332,7 +332,7 @@ export default function OnboardingFlow() {
         overflow: 'hidden',
       }}
     >
-      {/* Subtle accent blobs — no particles, no glow */}
+      {/* Subtle accent blobs - no particles, no glow */}
       <div style={{
         position: 'absolute', top: '-15%', right: '-5%',
         width: 360, height: 360, borderRadius: '50%',
@@ -416,7 +416,7 @@ export default function OnboardingFlow() {
     </div>
   );
 
-  // ── SCREEN 2 — Apple-style Greeting + Message Reveal ────────
+  // ── SCREEN 2 - Apple-style Greeting + Message Reveal ────────
   if (step === 2) return (
     <div
       data-theme="light"
@@ -551,7 +551,7 @@ export default function OnboardingFlow() {
     </div>
   );
 
-  // ── SCREEN 3 — Testimonial Cards (NEW) ─────────────────────
+  // ── SCREEN 3 - Testimonial Cards (NEW) ─────────────────────
   if (step === 3) return (
     <div
       data-theme="light"
@@ -580,7 +580,7 @@ export default function OnboardingFlow() {
     </div>
   );
 
-  // ── SCREEN 4 — Name Input ──────────────────────────────────
+  // ── SCREEN 4 - Name Input ──────────────────────────────────
   if (step === 4) return (
     <div
       data-theme="light"
@@ -727,7 +727,7 @@ export default function OnboardingFlow() {
     </div>
   );
 
-  // ── SCREEN 5 — Creator Code ────────────────────────────────────────────────
+  // ── SCREEN 5 - Creator Code ────────────────────────────────────────────────
   if (step === 5) {
     const enteredCode = creatorSearch.trim().toLowerCase();
     const matchedCreator = enteredCode
@@ -864,7 +864,7 @@ export default function OnboardingFlow() {
               fontFamily: 'var(--font-body)', fontSize: 12,
               color: '#f87171', textAlign: 'left',
             }}>
-              Invalid code — double-check the spelling or leave it blank.
+              Invalid code - double-check the spelling or leave it blank.
             </div>
           )}
 
@@ -903,7 +903,7 @@ export default function OnboardingFlow() {
                 letterSpacing: '0.02em',
               }}
             >
-              Skip — I don&apos;t have a code
+              Skip - I don&apos;t have a code
             </button>
           )}
         </div>
@@ -911,7 +911,7 @@ export default function OnboardingFlow() {
     );
   }
 
-  // ── SCREEN 6 — Animated Glassy Pricing ────────────────────────
+  // ── SCREEN 6 - Animated Glassy Pricing ────────────────────────
   if (step === 6) {
     // Build discount from the creator selected in step 5 (avoids DB round-trip lag)
     const selectedCreator = selectedCreatorCode
@@ -932,7 +932,7 @@ export default function OnboardingFlow() {
     );
   }
 
-  // ── SCREEN 7 — Loading / Setup ─────────────────────────────
+  // ── SCREEN 7 - Loading / Setup ─────────────────────────────
   if (step === 7) return (
     <div
       data-theme="light"
@@ -1047,7 +1047,7 @@ export default function OnboardingFlow() {
     </div>
   );
 
-  // ── SCREEN 8 — Vapour Text Welcome ─────────────────────────
+  // ── SCREEN 8 - Vapour Text Welcome ─────────────────────────
   if (step === 8) return (
     <div
       data-theme="light"
@@ -1075,7 +1075,7 @@ export default function OnboardingFlow() {
         }}
       />
 
-      {/* Welcome message — simple fade-in instead of VapourText */}
+      {/* Welcome message - simple fade-in instead of VapourText */}
       <div style={{
         fontFamily: 'var(--font-display)',
         fontWeight: 700,

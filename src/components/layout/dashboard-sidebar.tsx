@@ -55,7 +55,7 @@ function isVisible(href: string): boolean {
   return FEATURE_FLAGS[flag] === true;
 }
 
-// PADH.AI logo mark — blue product mark with green reserved for progress states.
+// PADH.AI logo mark - blue product mark with green reserved for progress states.
 const PadhLogo = ({ size = 28 }: { size?: number }) => (
   <img 
     src="/logo.png" 
@@ -210,7 +210,7 @@ export default function DashboardSidebar({
     router.push(href);
   };
 
-  // IMPORTANT: JSX variable, not a component — prevents remount on re-render
+  // IMPORTANT: JSX variable, not a component - prevents remount on re-render
   const sidebarJSX = (
     <aside style={{
       width: 240,

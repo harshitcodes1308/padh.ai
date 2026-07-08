@@ -4,7 +4,7 @@ import { useEffect, useRef, type CSSProperties } from "react";
 import { gsap, prefersReducedMotion } from "./useScrollReveal";
 
 /* -----------------------------------------------------------------------------
- * Gooey word reveal — words morph in one by one through a blur-threshold filter
+ * Gooey word reveal - words morph in one by one through a blur-threshold filter
  * (the 21st.dev gooey-text look), assemble into the full line, hold for
  * `holdSeconds`, then blur back out and the cycle loops forever.
  * Re-themed: our fonts/colours via props.
@@ -43,7 +43,7 @@ export default function GooeyWordReveal({
 
       const tl = gsap.timeline({ repeat: -1, delay: startDelay });
 
-      // Words morph in one by one — high blur start gives the gooey-merge look
+      // Words morph in one by one - high blur start gives the gooey-merge look
       tl.to(els, {
         opacity: 1,
         filter: "blur(0px)",

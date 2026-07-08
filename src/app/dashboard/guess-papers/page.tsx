@@ -227,7 +227,7 @@ export default function TYQPage() {
       {showUpgrade && (
         <UpgradePrompt
           featureName="All Guess Papers"
-          description="Access specimen papers for all 10 CBSE subjects — Physics, Chemistry, Biology, Maths, English, History, Geography, Computer, and more."
+          description="Access specimen papers for all 10 CBSE subjects - Physics, Chemistry, Biology, Maths, English, History, Geography, Computer, and more."
           onClose={() => setShowUpgrade(false)}
         />
       )}

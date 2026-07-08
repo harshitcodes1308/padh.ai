@@ -34,8 +34,9 @@ export default function ChronoScrollPage() {
         let closestIdx = 0;
         let minDiff = Infinity;
 
-        itemRefs.current.forEach((el, idx) => {
-            if (!el) return;
+        for (let idx = 0; idx < CHRONO_DATA.length; idx++) {
+            const el = itemRefs.current[idx];
+            if (!el) continue;
             const elCenter = isMobile
                 ? el.offsetLeft + el.clientWidth / 2
                 : el.offsetTop + el.clientHeight / 2;
@@ -45,7 +46,7 @@ export default function ChronoScrollPage() {
                 minDiff = diff;
                 closestIdx = idx;
             }
-        });
+        }
 
         if (closestIdx !== activeIndex) {
             setActiveIndex(closestIdx);
@@ -203,6 +204,7 @@ export default function ChronoScrollPage() {
                     onScroll={handleScroll}
                     className="chrono-slider"
                     style={{
+                        position: "relative",
                         width: isMobile ? "100%" : "28%",
                         height: isMobile ? "110px" : "100%",
                         borderRight: isMobile ? "none" : "1px solid var(--bg-border)",
@@ -212,10 +214,17 @@ export default function ChronoScrollPage() {
                         display: "flex",
                         flexDirection: isMobile ? "row" : "column",
                         alignItems: "center",
-                        padding: isMobile ? "0 50vw" : "40vh 0",
+                        padding: "0",
                         background: "var(--bg-surface)",
                     }}
                 >
+                    {/* Top/Left Spacer */}
+                    {isMobile ? (
+                        <div style={{ width: "50vw", flexShrink: 0 }} />
+                    ) : (
+                        <div style={{ height: "50vh", flexShrink: 0 }} />
+                    )}
+
                     {CHRONO_DATA.map((item, index) => {
                         const isActive = index === activeIndex;
                         const dist = Math.abs(index - activeIndex);
@@ -268,6 +277,13 @@ export default function ChronoScrollPage() {
                             </div>
                         );
                     })}
+
+                    {/* Bottom/Right Spacer */}
+                    {isMobile ? (
+                        <div style={{ width: "50vw", flexShrink: 0 }} />
+                    ) : (
+                        <div style={{ height: "50vh", flexShrink: 0 }} />
+                    )}
                 </div>
 
                 {/* Content */}
@@ -311,7 +327,7 @@ export default function ChronoScrollPage() {
                             {activeData.year}
                         </div>
 
-                        {/* Event content — blurs when recall is active */}
+                        {/* Event content - blurs when recall is active */}
                         <div style={{
                             position: "relative",
                             zIndex: 10,

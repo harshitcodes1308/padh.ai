@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma";
 /**
  * POST /api/razorpay/webhook
  *
- * Razorpay webhook handler — keeps the DB in sync with subscription state.
+ * Razorpay webhook handler - keeps the DB in sync with subscription state.
  * Configure in Razorpay Dashboard → Webhooks with URL:
  *   https://savioursai2027.vercel.app/api/razorpay/webhook
  * with secret = RAZORPAY_WEBHOOK_SECRET, and events:
@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
 
         // ── Handle subscription events ──
         if (!subscriptionId) {
-            // Not a subscription event we care about — ack and move on
+            // Not a subscription event we care about - ack and move on
             return NextResponse.json({ received: true });
         }
 
@@ -150,7 +150,7 @@ export async function POST(req: NextRequest) {
             }
 
             default:
-                // Other events (subscription.activated, .pending, etc.) — log only
+                // Other events (subscription.activated, .pending, etc.) - log only
                 break;
         }
 

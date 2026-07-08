@@ -1,4 +1,4 @@
-# 📚 Saviours AI — Complete Technical Documentation
+# 📚 Saviours AI - Complete Technical Documentation
 
 > **Version**: March 2026  
 > **Stack**: Next.js 14 · TypeScript · tRPC · Prisma · PostgreSQL (Neon) · OpenAI · Razorpay
@@ -7,9 +7,9 @@
 
 ## What is Saviours AI?
 
-**Saviours AI** is a full-stack AI-powered exam preparation platform built specifically for **ICSE Class 9–10 students**. It combines intelligent study planning, AI-assisted doubt solving, practice testing, and interactive content mastery tools into a single premium web application.
+**Saviours AI** is a full-stack AI-powered exam preparation platform built specifically for **CBSE Class 9–10 students**. It combines intelligent study planning, AI-assisted doubt solving, practice testing, and interactive content mastery tools into a single premium web application.
 
-The platform covers **10 ICSE subjects**: Physics, Chemistry, Biology, Mathematics, English Language, English Literature, History & Civics, Geography, Computer Applications, and more.
+The platform covers **10 CBSE subjects**: Physics, Chemistry, Biology, Mathematics, English Language, English Literature, History & Civics, Geography, Computer Applications, and more.
 
 ---
 
@@ -80,7 +80,7 @@ sequenceDiagram
 - **Password hashing**: bcrypt
 - **Rate limiting**: In-memory rate limiter (5 attempts per 60s per email)
 
-### Middleware ([middleware.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/middleware.ts))
+### Middleware ([middleware.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/middleware.ts))
 
 The middleware enforces a multi-step gate:
 
@@ -96,19 +96,19 @@ The middleware enforces a multi-step gate:
 
 | Route                                                                                                               | Purpose                               |
 | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| [/api/create-order](file:///Users/harshitsingh/Documents/icse%20saviours/src/app/api/create-order/route.ts)         | Creates a Razorpay order for the user |
-| [/api/razorpay-webhook](file:///Users/harshitsingh/Documents/icse%20saviours/src/app/api/razorpay-webhook/route.ts) | Handles payment confirmation webhooks |
+| [/api/create-order](file:///Users/harshitsingh/Documents/cbse%20saviours/src/app/api/create-order/route.ts)         | Creates a Razorpay order for the user |
+| [/api/razorpay-webhook](file:///Users/harshitsingh/Documents/cbse%20saviours/src/app/api/razorpay-webhook/route.ts) | Handles payment confirmation webhooks |
 
-- [RazorpayButton.tsx](file:///Users/harshitsingh/Documents/icse%20saviours/src/components/RazorpayButton.tsx) — Client component that renders the checkout modal
+- [RazorpayButton.tsx](file:///Users/harshitsingh/Documents/cbse%20saviours/src/components/RazorpayButton.tsx) - Client component that renders the checkout modal
 - On successful payment, `isPaid` is set to `true` in the DB and a fresh JWT is issued
 
 ---
 
 ## Backend: tRPC Routers
 
-All routers are merged in [\_app.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/_app.ts) and served via `/api/trpc/[trpc]`.
+All routers are merged in [\_app.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/_app.ts) and served via `/api/trpc/[trpc]`.
 
-### 1. `auth` Router ([auth.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/auth.ts))
+### 1. `auth` Router ([auth.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/auth.ts))
 
 | Procedure     | Type     | Description                                             |
 | ------------- | -------- | ------------------------------------------------------- |
@@ -120,7 +120,7 @@ All routers are merged in [\_app.ts](file:///Users/harshitsingh/Documents/icse%2
 
 ---
 
-### 2. `dashboard` Router ([dashboard.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/dashboard.ts))
+### 2. `dashboard` Router ([dashboard.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/dashboard.ts))
 
 | Procedure       | Type  | Description                                                               |
 | --------------- | ----- | ------------------------------------------------------------------------- |
@@ -129,13 +129,13 @@ All routers are merged in [\_app.ts](file:///Users/harshitsingh/Documents/icse%2
 
 ---
 
-### 3. `ai` Router ([ai.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/ai.ts))
+### 3. `ai` Router ([ai.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/ai.ts))
 
 | Procedure            | Type     | Description                                                                   |
 | -------------------- | -------- | ----------------------------------------------------------------------------- |
 | `askDoubt`           | mutation | AI doubt solver with image/PDF upload support + YouTube video recommendations |
 | `generatePlan`       | mutation | AI-powered study plan generation                                              |
-| `summarize`          | mutation | Content summarization for ICSE students                                       |
+| `summarize`          | mutation | Content summarization for CBSE students                                       |
 | `generateQuestions`  | mutation | Generate MCQ practice questions                                               |
 | `getUsageStats`      | query    | Token usage, feature counts, recent logs                                      |
 | `generateFlashcards` | mutation | Generate quiz-style flashcards                                                |
@@ -146,7 +146,7 @@ All routers are merged in [\_app.ts](file:///Users/harshitsingh/Documents/icse%2
 
 ---
 
-### 4. `planner` Router ([planner.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/planner.ts))
+### 4. `planner` Router ([planner.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/planner.ts))
 
 | Procedure            | Type     | Description                                                                                     |
 | -------------------- | -------- | ----------------------------------------------------------------------------------------------- |
@@ -158,15 +158,15 @@ All routers are merged in [\_app.ts](file:///Users/harshitsingh/Documents/icse%2
 | `deletePlan`         | mutation | Delete a single plan                                                                            |
 | `clearAllPlans`      | mutation | Wipe all plans                                                                                  |
 
-**Smart Features**: Uses `predictMultipleChapterDifficulties()`, `calculateStudyDistribution()`, `checkTimelineFeasibility()`, and `decomposeChapterIntoTopics()` from [smart-planner.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/smart-planner.ts).
+**Smart Features**: Uses `predictMultipleChapterDifficulties()`, `calculateStudyDistribution()`, `checkTimelineFeasibility()`, and `decomposeChapterIntoTopics()` from [smart-planner.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/smart-planner.ts).
 
 ---
 
-### 5. `content` Router ([content.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/content.ts))
+### 5. `content` Router ([content.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/content.ts))
 
 | Procedure              | Type     | Description                                          |
 | ---------------------- | -------- | ---------------------------------------------------- |
-| `getSubjects`          | query    | All ICSE subjects                                    |
+| `getSubjects`          | query    | All CBSE subjects                                    |
 | `getChaptersBySubject` | query    | Chapters for a subject                               |
 | `getTopicsByChapter`   | query    | Topics for a chapter                                 |
 | `getTopicContent`      | query    | Content for a specific topic                         |
@@ -180,7 +180,7 @@ All routers are merged in [\_app.ts](file:///Users/harshitsingh/Documents/icse%2
 
 ---
 
-### 6. `test` Router ([test.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/test.ts))
+### 6. `test` Router ([test.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/test.ts))
 
 | Procedure       | Type     | Description                                                                       |
 | --------------- | -------- | --------------------------------------------------------------------------------- |
@@ -193,7 +193,7 @@ All routers are merged in [\_app.ts](file:///Users/harshitsingh/Documents/icse%2
 
 ---
 
-### 7. `profile` Router ([profile.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/profile.ts))
+### 7. `profile` Router ([profile.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/profile.ts))
 
 | Procedure    | Type     | Description                               |
 | ------------ | -------- | ----------------------------------------- |
@@ -202,7 +202,7 @@ All routers are merged in [\_app.ts](file:///Users/harshitsingh/Documents/icse%2
 
 ---
 
-### 8. `strategy` Router ([strategy.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/strategy.ts))
+### 8. `strategy` Router ([strategy.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/strategy.ts))
 
 | Procedure  | Type     | Description                                              |
 | ---------- | -------- | -------------------------------------------------------- |
@@ -212,7 +212,7 @@ Inputs: subjects, strengths, weaknesses, goals (exam, score, date), schedule (sc
 
 ---
 
-### 9. `focus` Router ([focus.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/focus.ts))
+### 9. `focus` Router ([focus.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/focus.ts))
 
 | Procedure           | Type     | Description                                                    |
 | ------------------- | -------- | -------------------------------------------------------------- |
@@ -221,7 +221,7 @@ Inputs: subjects, strengths, weaknesses, goals (exam, score, date), schedule (sc
 
 ---
 
-### 10. `precision` Router ([precision.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/server/routers/precision.ts))
+### 10. `precision` Router ([precision.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/server/routers/precision.ts))
 
 | Procedure    | Type     | Description                                            |
 | ------------ | -------- | ------------------------------------------------------ |
@@ -253,13 +253,13 @@ All features live under `/dashboard/` and are client-side React components with 
 | #   | Feature                | Route                           | Description                                                           |
 | --- | ---------------------- | ------------------------------- | --------------------------------------------------------------------- |
 | 1   | **Dashboard Home**     | `/dashboard`                    | Study stats, today's plans, streak, exam readiness, subject breakdown |
-| 2   | **Subjects**           | `/dashboard/subjects`           | Browse ICSE subjects → chapters → topics                              |
+| 2   | **Subjects**           | `/dashboard/subjects`           | Browse CBSE subjects → chapters → topics                              |
 | 3   | **Planner**            | `/dashboard/planner`            | AI-powered smart study planner with daily tasks                       |
 | 4   | **AI Assistant**       | `/dashboard/ai-assistant`       | Chat with AI tutor, upload images/PDFs, get YouTube recommendations   |
 | 5   | **Customise Test**     | `/dashboard/tests`              | Create custom AI-generated MCQ tests                                  |
 | 6   | **Competency Test**    | `/dashboard/precision-practice` | Timed PYQ-based competency testing with detailed analytics            |
 | 7   | **Numerical Mastery**  | `/dashboard/numerical-mastery`  | Physics numericals: chapters → topics → formulas → PYQs               |
-| 8   | **Guess Papers**       | `/dashboard/guess-papers`       | ICSE specimen/guess papers for all subjects                           |
+| 8   | **Guess Papers**       | `/dashboard/guess-papers`       | CBSE specimen/guess papers for all subjects                           |
 | 9   | **Customise Strategy** | `/dashboard/strategy`           | AI study strategy (Survival/Balanced/Topper modes)                    |
 | 10  | **ChronoScroll**       | `/dashboard/chronoscroll`       | Interactive History & Civics timeline with key dates                  |
 | 11  | **Date Battle Arena**  | `/dashboard/date-battle`        | Gamified history date learning through battles                        |
@@ -269,7 +269,7 @@ All features live under `/dashboard/` and are client-side React components with 
 | 15  | **Policies**           | `/dashboard/policies`           | Terms, privacy, refund policies                                       |
 | 16  | **Activity**           | `/dashboard/activity`           | Study activity log                                                    |
 
-### Sidebar Navigation ([dashboard-sidebar.tsx](file:///Users/harshitsingh/Documents/icse%20saviours/src/components/layout/dashboard-sidebar.tsx))
+### Sidebar Navigation ([dashboard-sidebar.tsx](file:///Users/harshitsingh/Documents/cbse%20saviours/src/components/layout/dashboard-sidebar.tsx))
 
 Organized into 5 sections:
 
@@ -283,7 +283,7 @@ Organized into 5 sections:
 
 ## Data Layer
 
-### Static Data Files ([src/data/](file:///Users/harshitsingh/Documents/icse%20saviours/src/data))
+### Static Data Files ([src/data/](file:///Users/harshitsingh/Documents/cbse%20saviours/src/data))
 
 | File                        | Purpose                                             | Size  |
 | --------------------------- | --------------------------------------------------- | ----- |
@@ -305,14 +305,14 @@ Organized into 5 sections:
 | `tyq-geography.ts`          | Geography papers                                    | 32 KB |
 | `tyq-computer.ts`           | Computer Applications papers                        | 28 KB |
 
-**Total static data**: ~450 KB of structured ICSE content.
+**Total static data**: ~450 KB of structured CBSE content.
 
 ---
 
 ## Database Schema (Prisma)
 
 **Database**: PostgreSQL on Neon (serverless, connection pooling)  
-**Schema**: [prisma/schema.prisma](file:///Users/harshitsingh/Documents/icse%20saviours/prisma/schema.prisma)
+**Schema**: [prisma/schema.prisma](file:///Users/harshitsingh/Documents/cbse%20saviours/prisma/schema.prisma)
 
 ### Core Models
 
@@ -322,7 +322,7 @@ Organized into 5 sections:
 | `Session`           | `sessions`            | JWT session tokens                          |
 | `StudentProfile`    | `student_profiles`    | Grade, study preferences, learning patterns |
 | `TeacherProfile`    | `teacher_profiles`    | Teacher subjects                            |
-| `Subject`           | `subjects`            | ICSE subjects (Physics, Chemistry, etc.)    |
+| `Subject`           | `subjects`            | CBSE subjects (Physics, Chemistry, etc.)    |
 | `Chapter`           | `chapters`            | Chapters within subjects                    |
 | `Topic`             | `topics`              | Topics within chapters                      |
 | `StudyPlan`         | `study_plans`         | User study plans with metadata              |
@@ -347,7 +347,7 @@ Organized into 5 sections:
 
 ## AI / API Usage
 
-### OpenAI Integration ([src/lib/ai.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/ai.ts))
+### OpenAI Integration ([src/lib/ai.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/ai.ts))
 
 | Function               | Model       | Purpose                            | Max Tokens |
 | ---------------------- | ----------- | ---------------------------------- | ---------- |
@@ -361,20 +361,20 @@ Organized into 5 sections:
 
 | File                                                                                                | Function                               | Purpose                           |
 | --------------------------------------------------------------------------------------------------- | -------------------------------------- | --------------------------------- |
-| [notes-ai.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/notes-ai.ts)             | `refineNotes()`                        | Refine raw notes with AI          |
-| [notes-ai.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/notes-ai.ts)             | `generateFlashcards()`                 | Auto-create flashcards from notes |
-| [strategy-ai.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/strategy-ai.ts)       | `generateStrategy()`                   | Generate exam strategies          |
-| [smart-planner.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/smart-planner.ts)   | `predictMultipleChapterDifficulties()` | AI difficulty prediction          |
-| [smart-planner.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/smart-planner.ts)   | `decomposeChapterIntoTopics()`         | Break chapters into study topics  |
-| [test-generator.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/test-generator.ts) | `generateMCQs()`                       | Generate MCQ questions for tests  |
-| [youtube.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/youtube.ts)               | `searchRelevantVideos()`               | YouTube Data API video search     |
+| [notes-ai.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/notes-ai.ts)             | `refineNotes()`                        | Refine raw notes with AI          |
+| [notes-ai.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/notes-ai.ts)             | `generateFlashcards()`                 | Auto-create flashcards from notes |
+| [strategy-ai.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/strategy-ai.ts)       | `generateStrategy()`                   | Generate exam strategies          |
+| [smart-planner.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/smart-planner.ts)   | `predictMultipleChapterDifficulties()` | AI difficulty prediction          |
+| [smart-planner.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/smart-planner.ts)   | `decomposeChapterIntoTopics()`         | Break chapters into study topics  |
+| [test-generator.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/test-generator.ts) | `generateMCQs()`                       | Generate MCQ questions for tests  |
+| [youtube.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/youtube.ts)               | `searchRelevantVideos()`               | YouTube Data API video search     |
 
 ### Rate Limiting
 
 | Limiter         | Location                                                                                            | Limit                      |
 | --------------- | --------------------------------------------------------------------------------------------------- | -------------------------- |
-| Auth rate limit | [api-rate-limit.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/api-rate-limit.ts) | 5 attempts / 60s per email |
-| AI rate limit   | [rate-limit.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/rate-limit.ts)         | Per-user AI call limits    |
+| Auth rate limit | [api-rate-limit.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/api-rate-limit.ts) | 5 attempts / 60s per email |
+| AI rate limit   | [rate-limit.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/rate-limit.ts)         | Per-user AI call limits    |
 
 ---
 
@@ -398,16 +398,16 @@ Organized into 5 sections:
 
 | File                                                                                                        | Purpose                                                                                         |
 | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [auth.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/auth.ts)                             | `authenticate()`, `createUser()`, `createToken()`, `setSessionCookie()`, `clearSessionCookie()` |
-| [prisma.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/prisma.ts)                         | Prisma client singleton                                                                         |
-| [sanitize.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/sanitize.ts)                     | Input sanitization against XSS                                                                  |
-| [errors.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/errors.ts)                         | Error handling utilities                                                                        |
-| [icse-data.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/icse-data.ts)                   | ICSE subject/chapter data                                                                       |
-| [policies.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/policies.ts)                     | Terms, privacy, refund policy content                                                           |
-| [typography.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/typography.ts)                 | Typography utilities                                                                            |
-| [utils.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/utils.ts)                           | General utility functions                                                                       |
-| [question-templates.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/question-templates.ts) | MCQ question templates                                                                          |
-| [console-welcome.ts](file:///Users/harshitsingh/Documents/icse%20saviours/src/lib/console-welcome.ts)       | Browser console welcome message                                                                 |
+| [auth.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/auth.ts)                             | `authenticate()`, `createUser()`, `createToken()`, `setSessionCookie()`, `clearSessionCookie()` |
+| [prisma.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/prisma.ts)                         | Prisma client singleton                                                                         |
+| [sanitize.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/sanitize.ts)                     | Input sanitization against XSS                                                                  |
+| [errors.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/errors.ts)                         | Error handling utilities                                                                        |
+| [cbse-data.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/cbse-data.ts)                   | CBSE subject/chapter data                                                                       |
+| [policies.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/policies.ts)                     | Terms, privacy, refund policy content                                                           |
+| [typography.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/typography.ts)                 | Typography utilities                                                                            |
+| [utils.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/utils.ts)                           | General utility functions                                                                       |
+| [question-templates.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/question-templates.ts) | MCQ question templates                                                                          |
+| [console-welcome.ts](file:///Users/harshitsingh/Documents/cbse%20saviours/src/lib/console-welcome.ts)       | Browser console welcome message                                                                 |
 
 ---
 
@@ -415,9 +415,9 @@ Organized into 5 sections:
 
 | Component                                                                                                                 | Purpose                            |
 | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| [dashboard-sidebar.tsx](file:///Users/harshitsingh/Documents/icse%20saviours/src/components/layout/dashboard-sidebar.tsx) | Sidebar navigation with 5 sections |
-| [RazorpayButton.tsx](file:///Users/harshitsingh/Documents/icse%20saviours/src/components/RazorpayButton.tsx)              | Payment checkout button            |
-| [ConsoleWelcome.tsx](file:///Users/harshitsingh/Documents/icse%20saviours/src/components/ConsoleWelcome.tsx)              | Console welcome message component  |
+| [dashboard-sidebar.tsx](file:///Users/harshitsingh/Documents/cbse%20saviours/src/components/layout/dashboard-sidebar.tsx) | Sidebar navigation with 5 sections |
+| [RazorpayButton.tsx](file:///Users/harshitsingh/Documents/cbse%20saviours/src/components/RazorpayButton.tsx)              | Payment checkout button            |
+| [ConsoleWelcome.tsx](file:///Users/harshitsingh/Documents/cbse%20saviours/src/components/ConsoleWelcome.tsx)              | Console welcome message component  |
 | `providers/`                                                                                                              | Theme and tRPC providers           |
 | `ui/`                                                                                                                     | Shared UI components               |
 
@@ -425,10 +425,10 @@ Organized into 5 sections:
 
 ## Key Design Patterns
 
-1. **All pages are `"use client"`** — fully client-rendered React components
-2. **Inline CSS** — no Tailwind; all styles are written inline with React style objects
-3. **Single-page flows** — features use `useState` to manage multi-step flows within one page (e.g., chapters → topics → numericals)
-4. **Static data for content** — PYQs, specimen papers, and timeline data are stored as TypeScript files in `src/data/`, not fetched from DB
-5. **DB for user data** — Plans, notes, test results, focus sessions, and AI usage are stored in PostgreSQL
-6. **AI logging** — Every AI call creates an `AiUsageLog` entry for usage tracking
-7. **Protected procedures** — All tRPC mutations except login/signup require authentication via `protectedProcedure`
+1. **All pages are `"use client"`** - fully client-rendered React components
+2. **Inline CSS** - no Tailwind; all styles are written inline with React style objects
+3. **Single-page flows** - features use `useState` to manage multi-step flows within one page (e.g., chapters → topics → numericals)
+4. **Static data for content** - PYQs, specimen papers, and timeline data are stored as TypeScript files in `src/data/`, not fetched from DB
+5. **DB for user data** - Plans, notes, test results, focus sessions, and AI usage are stored in PostgreSQL
+6. **AI logging** - Every AI call creates an `AiUsageLog` entry for usage tracking
+7. **Protected procedures** - All tRPC mutations except login/signup require authentication via `protectedProcedure`

@@ -504,7 +504,7 @@ export default function CreatorDashboard() {
                               month: "short",
                               year: "numeric",
                             })
-                          : "—"}
+                          : "-"}
                       </td>
                       <td
                         style={{
@@ -514,7 +514,7 @@ export default function CreatorDashboard() {
                           color: student.revenueShare > 0 ? "#22c55e" : "var(--text-muted, #9CA3AF)",
                         }}
                       >
-                        {student.revenueShare > 0 ? `₹${student.revenueShare}` : "—"}
+                        {student.revenueShare > 0 ? `₹${student.revenueShare}` : "-"}
                       </td>
                     </tr>
                   ))}

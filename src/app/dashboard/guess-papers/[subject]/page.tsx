@@ -161,7 +161,7 @@ export default function TYQExamPage() {
               <li>After reading time, you have <strong style={{ color: "#2D81F7" }}>
                 {subject.examDuration === 180 ? "3 hours" : "2 hours 30 minutes"}
               </strong> to complete the exam.</li>
-              <li>Write your answers on <strong style={{ color: "#F59E0B" }}>paper</strong> — this is a display-only mode.</li>
+              <li>Write your answers on <strong style={{ color: "#F59E0B" }}>paper</strong> - this is a display-only mode.</li>
               <li>The answer key will be shown after the exam timer ends.</li>
             </ul>
           </div>
@@ -394,7 +394,7 @@ export default function TYQExamPage() {
         }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>✅</div>
           <h2 style={{ fontSize: 24, fontWeight: 800, color: "var(--text-primary)", marginBottom: 8 }}>
-            Exam Complete — Answer Key
+            Exam Complete - Answer Key
           </h2>
           <p style={{ color: "var(--text-muted)", fontSize: 14, marginBottom: 16 }}>
             {subject.name} • Specimen Paper {paper?.paperNumber}

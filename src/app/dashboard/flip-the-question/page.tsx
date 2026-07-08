@@ -129,7 +129,7 @@ function parseScoresFromText(text: string): ParsedScores | null {
   const outputMatch = text.match(/Output\s*(?:Correctness|Match)?\s*[|:]\s*(\d+)\s*\/\s*(\d+)/i);
   const structureMatch = text.match(/Class\s*Structure\s*[|:]\s*(\d+)\s*\/\s*(\d+)/i);
   const logicMatch = text.match(/Logic\s*(?:Correctness|Quality)?\s*[|:]\s*(\d+)\s*\/\s*(\d+)/i);
-  const qualityMatch = text.match(/(?:ICSE\s*)?Code\s*(?:Quality|Hygiene)\s*[|:]\s*(\d+)\s*\/\s*(\d+)/i);
+  const qualityMatch = text.match(/(?:CBSE\s*)?Code\s*(?:Quality|Hygiene)\s*[|:]\s*(\d+)\s*\/\s*(\d+)/i);
   const bonusMatch = text.match(/(?:Creativity\s*)?Bonus\s*[|:]\s*(\d+)\s*\/\s*(\d+)/i);
   const hintMatch = text.match(/Hint\s*Penalty\s*[|:]\s*-?(\d+)/i);
   const totalMatch = text.match(/TOTAL:\s*(\d+)\s*\/\s*100/i);
@@ -156,8 +156,8 @@ function stripScoreTable(text: string): string {
   cleaned = cleaned.replace(/🎯\s*\*?\*?TOTAL:\s*\d+\/100\*?\*?\s*/gi, "");
   // Remove verdict lines like [90-100]: 🔥 ...
   cleaned = cleaned.replace(/\[(?:\d+-\d+|<\d+)\]:\s*[^\n]+\n?/g, "");
-  // Remove FLIP THE QUESTION — RESULT header (we render our own)
-  cleaned = cleaned.replace(/━+\n?📊\s*\*?\*?FLIP THE QUESTION — RESULT\*?\*?\n?━+\n?/gi, "");
+  // Remove FLIP THE QUESTION - RESULT header (we render our own)
+  cleaned = cleaned.replace(/━+\n?📊\s*\*?\*?FLIP THE QUESTION - RESULT\*?\*?\n?━+\n?/gi, "");
   return cleaned.trim();
 }
 
@@ -639,7 +639,7 @@ export default function FlipTheQuestionPage() {
             >
               We show you the <strong style={{ color: "#c4b5fd" }}>output</strong> of a Java program.
               Your job? Write the complete class that produces it. AI evaluates your code on{" "}
-              <strong style={{ color: "#c4b5fd" }}>5 axes</strong> — output match, class structure,
+              <strong style={{ color: "#c4b5fd" }}>5 axes</strong> - output match, class structure,
               logic, code quality, and creativity.
             </p>
 
@@ -1010,7 +1010,7 @@ export default function FlipTheQuestionPage() {
                   Solution Revealed
                 </h2>
                 <p style={{ color: C.textDim, fontSize: "14px" }}>
-                  No shame — study this carefully, then try again!
+                  No shame - study this carefully, then try again!
                 </p>
               </div>
             )}

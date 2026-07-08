@@ -4,7 +4,7 @@ import { refineNotes, generateFlashcards } from '@/lib/notes-ai';
 
 export const contentRouter = createTRPCRouter({
     /**
-     * Get all ICSE subjects
+     * Get all CBSE subjects
      */
     getSubjects: publicProcedure.query(async ({ ctx }) => {
         const subjects = await ctx.prisma.subject.findMany({

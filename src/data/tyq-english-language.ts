@@ -1,8 +1,8 @@
-// English Language — Real Specimen Paper Data (extracted from PDFs)
+// English Language - Real Specimen Paper Data (extracted from PDFs)
 import { TYQPaper, TYQAnswerKey } from "./tyq-papers";
 
 // ==========================================
-// PAPER 1 — MOCK SPECIMEN PAPER 01 (2026)
+// PAPER 1 - MOCK SPECIMEN PAPER 01 (2026)
 // ==========================================
 
 export const englishLanguagePaper1: TYQPaper = {
@@ -13,7 +13,7 @@ export const englishLanguagePaper1: TYQPaper = {
   totalMarks: 80,
   sections: [
     {
-      name: "Section A — Composition",
+      name: "Section A - Composition",
       instructions: "Write a composition (300-350 words) on any one of the following.",
       questions: [
         {
@@ -24,7 +24,7 @@ export const englishLanguagePaper1: TYQPaper = {
       ]
     },
     {
-      name: "Section A — Letter Writing",
+      name: "Section A - Letter Writing",
       instructions: "Write a letter on any one of the following.",
       questions: [
         {
@@ -35,7 +35,7 @@ export const englishLanguagePaper1: TYQPaper = {
       ]
     },
     {
-      name: "Section A — Notice and Email",
+      name: "Section A - Notice and Email",
       instructions: "Read the situation and answer the questions.",
       questions: [
         {
@@ -46,7 +46,7 @@ export const englishLanguagePaper1: TYQPaper = {
       ]
     },
     {
-      name: "Section B — Comprehension",
+      name: "Section B - Comprehension",
       instructions: "Read the passage and answer the questions that follow.",
       questions: [
         {
@@ -57,7 +57,7 @@ export const englishLanguagePaper1: TYQPaper = {
       ]
     },
     {
-      name: "Section B — Grammar",
+      name: "Section B - Grammar",
       instructions: "Answer all questions.",
       questions: [
         {
@@ -75,9 +75,9 @@ export const englishLanguagePaper1Answers: TYQAnswerKey = {
   subjectId: "english-language",
   paperNumber: 1,
   answers: [
-    { questionNumber: "1", answer: "Composition — Marking Criteria:\n• Content (Relevance, ideas, originality): 6 marks\n• Organization (Structure, coherence, paragraphing): 4 marks\n• Expression (Vocabulary, sentence structure): 5 marks\n• Accuracy (Grammar, spelling, punctuation): 5 marks" },
-    { questionNumber: "2", answer: "Letter Writing — Marking Criteria:\n• Format (Address, date, salutation, subscription): 3 marks\n• Content (Relevance, coverage of points): 6 marks\n• Expression (Tone, vocabulary, accuracy): 6 marks" },
-    { questionNumber: "3(i)", answer: "Notice: ST. XAVIER'S HIGH SCHOOL — SCIENCE EXHIBITION\n15th November 2025, 9:00 AM to 4:00 PM, School Auditorium\nTheme: \"Innovations for a Sustainable Future\"\nStudents of Classes VI to XII are invited to participate. Register by 5th November 2025." },
+    { questionNumber: "1", answer: "Composition - Marking Criteria:\n• Content (Relevance, ideas, originality): 6 marks\n• Organization (Structure, coherence, paragraphing): 4 marks\n• Expression (Vocabulary, sentence structure): 5 marks\n• Accuracy (Grammar, spelling, punctuation): 5 marks" },
+    { questionNumber: "2", answer: "Letter Writing - Marking Criteria:\n• Format (Address, date, salutation, subscription): 3 marks\n• Content (Relevance, coverage of points): 6 marks\n• Expression (Tone, vocabulary, accuracy): 6 marks" },
+    { questionNumber: "3(i)", answer: "Notice: ST. XAVIER'S HIGH SCHOOL - SCIENCE EXHIBITION\n15th November 2025, 9:00 AM to 4:00 PM, School Auditorium\nTheme: \"Innovations for a Sustainable Future\"\nStudents of Classes VI to XII are invited to participate. Register by 5th November 2025." },
     { questionNumber: "3(ii)", answer: "Email to District Education Officer inviting them as Chief Guest at inauguration at 9:00 AM, with all event details." },
     { questionNumber: "4(i)", answer: "The old man came to the park every day because it was where he felt most alive. The laughter of the children reminded him of his own youth." },
     { questionNumber: "4(ii)", answer: "The little girl was holding a bright yellow flower that was slightly wilted. She thrust it towards the old man and said, \"This is for you.\"" },
@@ -94,7 +94,7 @@ export const englishLanguagePaper1Answers: TYQAnswerKey = {
 };
 
 // ==========================================
-// PAPER 2 — MOCK SPECIMEN PAPER 02 (2026)
+// PAPER 2 - MOCK SPECIMEN PAPER 02 (2026)
 // ==========================================
 
 export const englishLanguagePaper2: TYQPaper = {
@@ -105,7 +105,7 @@ export const englishLanguagePaper2: TYQPaper = {
   totalMarks: 80,
   sections: [
     {
-      name: "Section A — Composition",
+      name: "Section A - Composition",
       instructions: "Write a composition (300-350 words) on any one of the following.",
       questions: [
         {
@@ -116,7 +116,7 @@ export const englishLanguagePaper2: TYQPaper = {
       ]
     },
     {
-      name: "Section A — Letter Writing",
+      name: "Section A - Letter Writing",
       instructions: "Write a letter on any one of the following.",
       questions: [
         {
@@ -127,7 +127,7 @@ export const englishLanguagePaper2: TYQPaper = {
       ]
     },
     {
-      name: "Section A — Notice and Email",
+      name: "Section A - Notice and Email",
       instructions: "Read the situation and answer the questions.",
       questions: [
         {
@@ -138,7 +138,7 @@ export const englishLanguagePaper2: TYQPaper = {
       ]
     },
     {
-      name: "Section B — Comprehension",
+      name: "Section B - Comprehension",
       instructions: "Read the passage and answer the questions.",
       questions: [
         {
@@ -149,7 +149,7 @@ export const englishLanguagePaper2: TYQPaper = {
       ]
     },
     {
-      name: "Section B — Grammar",
+      name: "Section B - Grammar",
       instructions: "Answer all questions.",
       questions: [
         {
@@ -167,9 +167,9 @@ export const englishLanguagePaper2Answers: TYQAnswerKey = {
   subjectId: "english-language",
   paperNumber: 2,
   answers: [
-    { questionNumber: "1", answer: "Composition — Same marking criteria as Paper 1." },
-    { questionNumber: "2", answer: "Letter Writing — Same marking criteria as Paper 1." },
-    { questionNumber: "3(i)", answer: "Notice: DELHI PUBLIC SCHOOL — BLOOD DONATION CAMP\nIn collaboration with Red Cross Society\nDate: 20th December 2025, Time: 10:00 AM to 3:00 PM, Venue: School Gymnasium\n\"Donate Blood, Save Lives\" — Register by 15th December 2025." },
+    { questionNumber: "1", answer: "Composition - Same marking criteria as Paper 1." },
+    { questionNumber: "2", answer: "Letter Writing - Same marking criteria as Paper 1." },
+    { questionNumber: "3(i)", answer: "Notice: DELHI PUBLIC SCHOOL - BLOOD DONATION CAMP\nIn collaboration with Red Cross Society\nDate: 20th December 2025, Time: 10:00 AM to 3:00 PM, Venue: School Gymnasium\n\"Donate Blood, Save Lives\" - Register by 15th December 2025." },
     { questionNumber: "3(ii)", answer: "Email to Rotary Club Secretary requesting members to participate in the Blood Donation Camp and help spread the word." },
     { questionNumber: "4(i)", answer: "The usually calm and placid river turned into a raging torrent with muddy waters licking hungrily at the riverbanks." },
     { questionNumber: "4(ii)", answer: "Arjun noticed the rising water level and uprooted trees floating downstream as warning signs." },

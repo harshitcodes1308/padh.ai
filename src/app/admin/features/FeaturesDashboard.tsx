@@ -150,7 +150,7 @@ export default function FeaturesDashboard({ data }: Props) {
         </div>
       </div>
 
-      {/* Detail table — on mobile, show as a simple stacked card list instead */}
+      {/* Detail table - on mobile, show as a simple stacked card list instead */}
       {mob ? (
         <div style={{
           background: "var(--bg-surface)", border: "1.5px solid var(--bg-border)",

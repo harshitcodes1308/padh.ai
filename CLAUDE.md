@@ -1,26 +1,26 @@
 # Project: Saviours AI 2027
 
-ICSE Class 10 board exam preparation platform with AI-powered study tools.
+CBSE Class 10 board exam preparation platform with AI-powered study tools.
 
 ## Stack
 - Next.js 16 (App Router), React 19, tRPC 11, Prisma 5, PostgreSQL (Neon), gpt-4o-mini, Razorpay
-- Inline CSS only — no Tailwind, no CSS modules
+- Inline CSS only - no Tailwind, no CSS modules
 - Fonts: ScotchDisplay Bold (--font-display), Coolvetica (--font-body), Helvetica Neue, ScotchDisplay Italic (--font-tagline) via @font-face
 - CSS variables design system: --bg-base, --bg-surface, --bg-elevated, --bg-border, --accent-gold, --accent-gold-border, --text-primary, --text-secondary, --text-muted
-- Custom JWT auth (jose + bcryptjs) with HttpOnly cookies — NOT NextAuth
+- Custom JWT auth (jose + bcryptjs) with HttpOnly cookies - NOT NextAuth
 - Deployment: Vercel (savioursai2027.vercel.app) with two Neon databases (preview + production)
 
 ## Commands
-- `npm run dev` — start dev server
-- `npm run build` — runs `prisma generate && next build`
-- `npx prisma db push` — push schema to database
-- `npx prisma studio` — open database GUI
+- `npm run dev` - start dev server
+- `npm run build` - runs `prisma generate && next build`
+- `npx prisma db push` - push schema to database
+- `npx prisma studio` - open database GUI
 
 ## What's been built so far
 - Full dashboard with dynamic plan badge (Free/Monthly/Yearly) and upgrade button for free users
 - AI Doubt Solver (gpt-4o-mini with image/PDF support)
 - Smart Planner (daily study plan generator)
-- Monthly Mission (12-month ICSE prep checklist, localStorage persistence)
+- Monthly Mission (12-month CBSE prep checklist, localStorage persistence)
 - ChronoScroll (history timeline with Quick Recall)
 - Competency Test (PYQ-based timed practice)
 - Customise Test (custom MCQ generator)
@@ -30,7 +30,7 @@ ICSE Class 10 board exam preparation platform with AI-powered study tools.
 - Razorpay webhook handler for subscription lifecycle (charged, cancelled, halted, completed)
 - Lazy demotion: monthly users auto-demoted to FREE when subscription expires
 - Payment warning banner on dashboard (amber for cancelled autopay, red for expired)
-- Domin8 Pro bundle activation (code entry, codes start with capital W — secret)
+- Domin8 Pro bundle activation (code entry, codes start with capital W - secret)
 - Google OAuth + credentials auth with mandatory phone collection
 - Onboarding flow (6-step cinematic sequence with pricing selection)
 - Feature flags system (src/lib/featureFlags.ts + src/config/feature-flags.ts)
@@ -58,8 +58,8 @@ ICSE Class 10 board exam preparation platform with AI-powered study tools.
 - Profile type casting: `(profile as any)?.planType` pattern used in dashboard
 
 ## Don't touch
-- prisma/schema.prisma — only modify when explicitly adding new fields/models
-- src/app/api/razorpay/webhook/route.ts — production webhook, tested and working
-- src/actions/verify-payment.ts — handles both subscription and order signature verification
-- src/lib/auth.ts — core JWT session logic, changes here break all auth
-- .env — contains live Razorpay keys and production secrets
+- prisma/schema.prisma - only modify when explicitly adding new fields/models
+- src/app/api/razorpay/webhook/route.ts - production webhook, tested and working
+- src/actions/verify-payment.ts - handles both subscription and order signature verification
+- src/lib/auth.ts - core JWT session logic, changes here break all auth
+- .env - contains live Razorpay keys and production secrets

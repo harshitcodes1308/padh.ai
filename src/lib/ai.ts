@@ -21,10 +21,10 @@ export async function askAI(
         };
     }
 ) {
-    const systemPrompt = `You are an ICSE Class 9-10 AI tutor. Be exceptionally smart, helpful, and exam-focused.
+    const systemPrompt = `You are an CBSE Class 9-10 AI tutor. Be exceptionally smart, helpful, and exam-focused.
 
 **CORE RULES:**
-1. Provide detailed, ICSE-accurate explanations using proper terminology
+1. Provide detailed, CBSE-accurate explanations using proper terminology
 2. Analyze uploaded images/PDFs - restate questions, solve step-by-step
 3. NEVER suggest fake video titles - system handles video recommendations automatically
 4. NEVER give lazy responses like "explained above" without actual explanation
@@ -32,7 +32,7 @@ export async function askAI(
 **RESPONSE STRUCTURE:**
 
 For concept questions:
-- **Definition** (ICSE terminology)
+- **Definition** (CBSE terminology)
 - **Key Points** (4-6 bullets: formulas, rules, memory tricks)
 - **Common Mistakes** (what students get wrong)
 - End with: "Check recommended videos below! 📺"
@@ -60,7 +60,7 @@ Never write fake titles like "Periodic Table Song" or "Chemistry One Shot" - rea
 **FILE UPLOADS:**
 If image/PDF attached: analyze it first, restate the visible question, then solve completely.
 
-Be smart, thorough, and ICSE exam-ready. Think like a top tutor.`;
+Be smart, thorough, and CBSE exam-ready. Think like a top tutor.`;
 
     // Handle file uploads (images or PDFs)
     const useVisionModel = context?.file?.type === 'image';
@@ -120,7 +120,7 @@ export async function generateStudyPlan(params: {
     dailyHours: number;
     weakTopics?: string[];
 }) {
-    const prompt = `Create a detailed study plan for an ICSE student with the following:
+    const prompt = `Create a detailed study plan for an CBSE student with the following:
 - Subjects: ${params.subjects.join(', ')}
 - Start Date: ${params.startDate.toDateString()}
 - Target Date: ${params.targetDate.toDateString()}
@@ -149,7 +149,7 @@ Format as markdown with clear structure.`;
  * Summarize content
  */
 export async function summarizeContent(content: string, context?: string) {
-    const prompt = `Summarize this ${context || 'content'} for an ICSE Class 10 student in concise bullet points:\n\n${content}`;
+    const prompt = `Summarize this ${context || 'content'} for an CBSE Class 10 student in concise bullet points:\n\n${content}`;
 
     const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
@@ -171,7 +171,7 @@ export async function generateQuestions(params: {
 }) {
     const { subject, topic, count = 5, difficulty = "medium" } = params;
     
-    const prompt = `Generate ${count} ICSE-style multiple choice questions on "${topic}" for Subject: ${subject} (Class 10).
+    const prompt = `Generate ${count} CBSE-style multiple choice questions on "${topic}" for Subject: ${subject} (Class 10).
 Difficulty Level: ${difficulty}.
 
 For each question provide:
@@ -212,7 +212,7 @@ export async function generateFlashcards(params: {
 }) {
     const { topics, subject = "General", count = 5 } = params;
 
-    const prompt = `Generate ${count} concise flashcards for the topic(s): "${topics}" in Subject: ${subject} (ICSE Class 10).
+    const prompt = `Generate ${count} concise flashcards for the topic(s): "${topics}" in Subject: ${subject} (CBSE Class 10).
     
     For each flashcard provide:
     - Front (Question or Term)

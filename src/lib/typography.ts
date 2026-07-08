@@ -1,6 +1,6 @@
-// Typography constants — SF Pro Display system
+// Typography constants - SF Pro Display system
 export const typography = {
-    // Headings — SF Pro Display Bold
+    // Headings - SF Pro Display Bold
     display: {
         fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif",
         lineHeight: 1.2,
@@ -8,7 +8,7 @@ export const typography = {
         fontWeight: 700,
     },
 
-    // Body text — SF Pro Text / Inter fallback
+    // Body text - SF Pro Text / Inter fallback
     text: {
         fontFamily: "'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'DM Sans', 'Helvetica Neue', sans-serif",
         lineHeight: 1.6,

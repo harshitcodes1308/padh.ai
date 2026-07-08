@@ -8,7 +8,7 @@ const youtube = google.youtube({
 // Hardcoded channel IDs - guaranteed accurate
 const CHANNEL_IDS = {
     clarifyKnowledge: "UCTTQ9EBEG9LwQdgRKq_vBMw",
-    icseSaviours: "UCJdP8bdR35e0K0rJYnkNvFg",
+    cbseSaviours: "UCJdP8bdR35e0K0rJYnkNvFg",
 };
 
 // In-memory cache for YouTube search results
@@ -69,50 +69,50 @@ export async function searchRelevantVideos(
         let searchQuery = "";
 
         if (keywords.fullSyllabus) {
-            searchQuery = `full syllabus ICSE class 10 ${subject || ""}`.trim();
+            searchQuery = `full syllabus CBSE class 10 ${subject || ""}`.trim();
         } else if (keywords.oneshot && keywords.hours24) {
-            searchQuery = `oneshot 24 hours ${cleanTopic} ${subject || ""} ICSE class 10`.trim();
+            searchQuery = `oneshot 24 hours ${cleanTopic} ${subject || ""} CBSE class 10`.trim();
         } else if (keywords.oneshot) {
-            searchQuery = `oneshot ${cleanTopic} ${subject || ""} ICSE class 10`.trim();
+            searchQuery = `oneshot ${cleanTopic} ${subject || ""} CBSE class 10`.trim();
         } else if (keywords.revision) {
-            searchQuery = `revision ${cleanTopic} ${subject || ""} ICSE class 10`.trim();
+            searchQuery = `revision ${cleanTopic} ${subject || ""} CBSE class 10`.trim();
         } else {
-            searchQuery = `${cleanTopic} ${subject || ""} ICSE class 10`.trim();
+            searchQuery = `${cleanTopic} ${subject || ""} CBSE class 10`.trim();
         }
 
         console.log("📝 Smart search query:", searchQuery);
         console.log("🎯 Detected keywords:", keywords);
 
         // Search both channels with hardcoded channel IDs
-        const [clarifyVideos, icseSavioursVideos] = await Promise.all([
-            searchChannel(CHANNEL_IDS.clarifyKnowledge, searchQuery, "Clarify Knowledge"),
-            searchChannel(CHANNEL_IDS.icseSaviours, searchQuery, "ICSE Saviours"),
+        const [clarifyVideos, cbseSavioursVideos] = await Promise.all([
+            searchChannel(CHANNEL_IDS.clarifyKnowledge, searchQuery, "Toppers Clan"),
+            searchChannel(CHANNEL_IDS.cbseSaviours, searchQuery, "CBSE Saviours"),
         ]);
 
         console.log("📊 Videos found:", {
             clarifyKnowledge: clarifyVideos.length,
-            icseSaviours: icseSavioursVideos.length,
+            cbseSaviours: cbseSavioursVideos.length,
         });
 
-        // Prioritized selection: 1 from Clarify, 1 from ICSE Saviours, 1 from either
+        // Prioritized selection: 1 from Clarify, 1 from CBSE Saviours, 1 from either
         const selectedVideos: YouTubeVideo[] = [];
 
-        // 1. First video from Clarify Knowledge (if available)
+        // 1. First video from Toppers Clan (if available)
         if (clarifyVideos.length > 0) {
             selectedVideos.push(clarifyVideos[0]);
         }
 
-        // 2. First video from ICSE Saviours (if available)
-        if (icseSavioursVideos.length > 0) {
-            selectedVideos.push(icseSavioursVideos[0]);
+        // 2. First video from CBSE Saviours (if available)
+        if (cbseSavioursVideos.length > 0) {
+            selectedVideos.push(cbseSavioursVideos[0]);
         }
 
         // 3. One more from whichever has more videos (if we have less than 3)
         if (selectedVideos.length < 3) {
             if (clarifyVideos.length > 1) {
                 selectedVideos.push(clarifyVideos[1]);
-            } else if (icseSavioursVideos.length > 1) {
-                selectedVideos.push(icseSavioursVideos[1]);
+            } else if (cbseSavioursVideos.length > 1) {
+                selectedVideos.push(cbseSavioursVideos[1]);
             }
         }
 

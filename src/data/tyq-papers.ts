@@ -1,4 +1,4 @@
-// TYQ (This Year's Questions) — Specimen Paper Data
+// TYQ (This Year's Questions) - Specimen Paper Data
 // All subjects: Real data extracted from PDFs
 // This file contains interfaces, imports from all subject files, and utility functions.
 
@@ -57,7 +57,7 @@ export interface TYQAnswerKey {
 }
 
 // ==========================================
-// DATA ACCESS — All subjects aggregated
+// DATA ACCESS - All subjects aggregated
 // ==========================================
 
 const ALL_PAPERS: Record<string, TYQPaper[]> = {

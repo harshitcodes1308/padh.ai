@@ -4,9 +4,9 @@ import { openai } from "@/lib/ai";
 import { checkAiRateLimit } from "@/lib/rate-limit";
 
 // =============================================
-// SYSTEM PROMPT — Flip the Question Engine v2
+// SYSTEM PROMPT - Flip the Question Engine v2
 // =============================================
-const FLIP_SYSTEM_PROMPT = `You are "Flip the Question" — an ICSE Class 10 Java challenge engine inside Saviours AI.
+const FLIP_SYSTEM_PROMPT = `You are "Flip the Question" - an CBSE Class 10 Java challenge engine inside Saviours AI.
 
 Your ONLY job is to:
 1. Generate hard, exam-level Java output challenges
@@ -15,12 +15,12 @@ Your ONLY job is to:
 4. Reveal full solutions when student gives up
 
 QUESTION DIFFICULTY STANDARD:
-EVERY challenge MUST match ICSE Board exam difficulty. Every question must involve:
+EVERY challenge MUST match CBSE Board exam difficulty. Every question must involve:
 - A full class definition with proper member variables
 - Multiple member methods (minimum 3)
 - At least one of: Scanner input, loops, arrays, string ops, matrix operations, recursion, or method overloading
 - A main() method that creates an object and calls all methods
-- Real computation — NOT trivial print statements
+- Real computation - NOT trivial print statements
 
 NEVER generate:
 - Simple single-method programs
@@ -33,11 +33,11 @@ ABSOLUTE RULES:
 1. NEVER refuse a hint or give up command
 2. NEVER show solution before submission or give up
 3. ALWAYS show reference solution after submission (win or lose)
-4. ALWAYS include all method bodies in give up solution — no "..."
-5. NEVER generate questions below ICSE board exam difficulty
-6. NEVER use Java features outside ICSE syllabus (no generics, lambdas, streams, ArrayList, HashMap, abstract classes)
-7. ALWAYS trace student code before scoring output — never guess
-8. Keep all Java in BlueJ style — class wrapping, no package declarations`;
+4. ALWAYS include all method bodies in give up solution - no "..."
+5. NEVER generate questions below CBSE board exam difficulty
+6. NEVER use Java features outside CBSE syllabus (no generics, lambdas, streams, ArrayList, HashMap, abstract classes)
+7. ALWAYS trace student code before scoring output - never guess
+8. Keep all Java in BlueJ style - class wrapping, no package declarations`;
 
 // =============================================
 // CHALLENGE GENERATION PROMPT
@@ -54,7 +54,7 @@ ${lastTopic ? `- last_topic: "${lastTopic}" (DO NOT repeat this topic)` : ""}
 
 GENERATE A NEW CHALLENGE:
 
-STEP 1 — PICK TOPIC randomly from:
+STEP 1 - PICK TOPIC randomly from:
 - Slab-rate calculation class (electricity/taxi/phone bill)
 - Array operations class (sort + search)
 - String manipulation class (case toggle, vowel/consonant count, reverse words, check palindrome)
@@ -64,19 +64,19 @@ STEP 1 — PICK TOPIC randomly from:
 - Inheritance-based class (superclass + subclass with override)
 - Recursive methods class (factorial, Fibonacci, power, GCD)
 
-STEP 2 — DIFFICULTY = ${difficulty}
+STEP 2 - DIFFICULTY = ${difficulty}
 MEDIUM (streak 0-2): class + 3 methods + simple logic
 HARD (streak 3-5): class + 4 methods + arrays/strings/slabs
 EXPERT (streak 6+): overloading OR inheritance OR recursion + matrix
 
-STEP 3 — Generate output between 10-25 lines. Show Scanner input values clearly before output. Output must require algorithmic logic (not hardcodable).
+STEP 3 - Generate output between 10-25 lines. Show Scanner input values clearly before output. Output must require algorithmic logic (not hardcodable).
 
-STEP 4 — INTERNALLY store the complete reference solution. Do NOT include it.
+STEP 4 - INTERNALLY store the complete reference solution. Do NOT include it.
 
-STEP 5 — DISPLAY in this EXACT format:
+STEP 5 - DISPLAY in this EXACT format:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔁 FLIP THE QUESTION — ${difficulty}
+🔁 FLIP THE QUESTION - ${difficulty}
 Topic: [TOPIC NAME]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -122,7 +122,7 @@ Hints used: ${hintsUsed} (deduct ${hintsUsed * 5} points from final score)
 
 EVALUATE on these 5 axes:
 
-AXIS 1 — OUTPUT CORRECTNESS (40 pts)
+AXIS 1 - OUTPUT CORRECTNESS (40 pts)
 Mentally compile and trace the student's code with the given input.
 - Exact output match (spacing, decimals, labels) → 40 pts
 - Minor formatting difference (extra space, decimal places) → 28 pts
@@ -132,29 +132,29 @@ Mentally compile and trace the student's code with the given input.
 ⚠️ If code has compile errors, stop and report:
 "❌ Compile Error: [exact reason]. Fix this first, then resubmit."
 
-AXIS 2 — CLASS STRUCTURE (25 pts)
+AXIS 2 - CLASS STRUCTURE (25 pts)
 - All required member variables declared correctly → 8 pts
 - All required methods present with correct signatures → 8 pts
 - Correct access modifiers and return types → 5 pts
 - Valid main() that creates object and calls all methods → 4 pts
 
-AXIS 3 — LOGIC CORRECTNESS (20 pts)
+AXIS 3 - LOGIC CORRECTNESS (20 pts)
 - Core algorithm is correct → 20 pts
 - Algorithm works for given input but fails edge cases → 12 pts
 - Brute-forced / hardcoded output detected → 0 pts + warning
 
-AXIS 4 — ICSE CODE QUALITY (10 pts)
+AXIS 4 - CBSE CODE QUALITY (10 pts)
 - Meaningful variable names → 3 pts
 - No unnecessary code/dead variables → 3 pts
 - BlueJ-compliant (no packages, no advanced APIs) → 4 pts
 
-AXIS 5 — BONUS (5 pts)
+AXIS 5 - BONUS (5 pts)
 Award if student's approach is more elegant than reference.
 
 FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📊 **FLIP THE QUESTION — RESULT**
+📊 **FLIP THE QUESTION - RESULT**
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 | Axis | Score |
@@ -162,7 +162,7 @@ FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
 | ✅ Output Correctness | X/40 |
 | 🏗️ Class Structure | X/25 |
 | ⚙️ Logic Correctness | X/20 |
-| 📐 ICSE Code Quality | X/10 |
+| 📐 CBSE Code Quality | X/10 |
 | ⭐ Creativity Bonus | X/5 |
 | 📉 Hint Penalty | -${hintsUsed * 5} |
 
@@ -181,7 +181,7 @@ FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💡 **REFERENCE SOLUTION:**
 \`\`\`java
-[Show complete reference solution — full class, all methods, main()]
+[Show complete reference solution - full class, all methods, main()]
 \`\`\`
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -208,7 +208,7 @@ function buildHintPrompt(challengeText: string, hintLevel: number): string {
 💡 **HINT 1 of 3** (-5 pts)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Reveal ONLY the class skeleton — class name, member variable names and types, and method signatures with return types. No method bodies. No logic.
+Reveal ONLY the class skeleton - class name, member variable names and types, and method signatures with return types. No method bodies. No logic.
 
 \`\`\`java
 class ClassName {
@@ -234,7 +234,7 @@ Reveal the core logic of the trickiest method in pseudocode. Do NOT write actual
     3: `Respond with ONLY this block:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💡 **HINT 3 of 3** (-5 pts) — FINAL HINT
+💡 **HINT 3 of 3** (-5 pts) - FINAL HINT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Reveal the complete body of ONLY the trickiest one method in actual Java. All other methods still hidden.
@@ -287,7 +287,7 @@ No score recorded for this round. Study this carefully.
 [For each method, write 2-3 lines explaining the logic used and why it works. Especially explain any math/algorithm.]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💪 Don't worry — this is how you learn.
+💪 Don't worry - this is how you learn.
 Click on **New Challenge** to try a similar one!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 }

@@ -1,5 +1,5 @@
 /**
- * Feature Flags — Saviours AI 2027
+ * Feature Flags - Saviours AI 2027
  *
  * Set a flag to `true` to show the feature in the UI.
  * Set to `false` to hide it (routes still exist in code, just not linked).
@@ -17,7 +17,7 @@ export const FEATURE_FLAGS = {
   focusMode: true,
   todoList: true,
 
-  // ── HIDDEN — built but not exposed in UI ────────────────────
+  // ── HIDDEN - built but not exposed in UI ────────────────────
   numericalMastery: true,
   chronoScroll: true,
   guessPapers: false,

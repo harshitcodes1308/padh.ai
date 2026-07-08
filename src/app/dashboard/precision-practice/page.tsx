@@ -403,7 +403,7 @@ export default function CompetencyTestPage() {
   };
 
   // =============================================
-  // SUBJECT SELECTION — Premium Hero Screen
+  // SUBJECT SELECTION - Premium Hero Screen
   // =============================================
   if (phase === "subject") {
     return (
@@ -458,11 +458,11 @@ export default function CompetencyTestPage() {
                 <span style={{ fontSize: 24, flexShrink: 0 }}>📚</span>
                 <div>
                   <div style={{ fontSize: 15, fontWeight: 700, color: "var(--text-primary)", marginBottom: 6 }}>
-                    20 Years of Past Papers — Handpicked & Curated
+                    20 Years of Past Papers - Handpicked & Curated
                   </div>
                   <p style={{ fontSize: 13, color: "var(--text-secondary)", margin: 0, lineHeight: 1.7 }}>
                     Every question is handpicked from <span style={{ color: "var(--brand-blue)", fontWeight: 600 }}>20 years of CBSE board papers</span> and 
-                    mapped to specific competencies. Each question is timed based on its mark weightage — training you to 
+                    mapped to specific competencies. Each question is timed based on its mark weightage - training you to 
                     think fast and answer accurately, just like the real exam.
                   </p>
                 </div>
@@ -471,7 +471,7 @@ export default function CompetencyTestPage() {
           </div>
         </div>
 
-        {/* Time Rules — Compact Pill Bar */}
+        {/* Time Rules - Compact Pill Bar */}
         <div style={{
           display: "flex", gap: 8, marginBottom: 32, flexWrap: "wrap",
           justifyContent: "center",
@@ -493,7 +493,7 @@ export default function CompetencyTestPage() {
           ))}
         </div>
 
-        {/* Subject Grid — Premium Cards */}
+        {/* Subject Grid - Premium Cards */}
         <h3 style={{ fontSize: 16, fontWeight: 700, color: "var(--text-primary)", marginBottom: 16, letterSpacing: 0.5 }}>
           Choose Your Subject
         </h3>
@@ -859,7 +859,7 @@ export default function CompetencyTestPage() {
           fontSize: 16, fontWeight: 700, color: "#F59E0B", letterSpacing: 6,
           textTransform: "uppercase", marginBottom: 40, opacity: 0.8,
         }}>
-          Focus — Exam Mode
+          Focus - Exam Mode
         </div>
         <div key={countdown} style={{
           fontSize: 180, fontWeight: 900, color: "var(--text-primary)", fontFamily: "monospace",
@@ -867,7 +867,7 @@ export default function CompetencyTestPage() {
           animation: "countPulse 1s ease-out",
         }}>{countdown}</div>
         <div style={{ fontSize: 13, color: "var(--text-secondary)", marginTop: 32, letterSpacing: 1 }}>
-          {selectedSubject?.name} — {selectedChapter}
+          {selectedSubject?.name} - {selectedChapter}
         </div>
         <style jsx>{`
           @keyframes countPulse {
@@ -881,7 +881,7 @@ export default function CompetencyTestPage() {
   }
 
   // =============================================
-  // TIMED TEST — No answer reveal, Next/Back nav
+  // TIMED TEST - No answer reveal, Next/Back nav
   // =============================================
   if (phase === "test" && questions[currentIdx]) {
     const q = questions[currentIdx];
@@ -1078,7 +1078,7 @@ export default function CompetencyTestPage() {
   }
 
   // =============================================
-  // ANALYTICS DASHBOARD — Refined
+  // ANALYTICS DASHBOARD - Refined
   // =============================================
   if (phase === "analytics" && result) {
     const classStyles: Record<string, { color: string; emoji: string; grad: string }> = {
@@ -1111,7 +1111,7 @@ export default function CompetencyTestPage() {
               marginBottom: 12, letterSpacing: 0.5,
             }}>{result.classification}</div>
             <div style={{ fontSize: 14, color: "var(--text-muted)", marginBottom: 8 }}>
-              {result.subject} — {result.chapter}
+              {result.subject} - {result.chapter}
             </div>
             <div style={{
               fontSize: 64, fontWeight: 900, color: "var(--text-primary)", fontFamily: "monospace",

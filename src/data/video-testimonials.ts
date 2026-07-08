@@ -1,7 +1,7 @@
 /**
  * Video testimonials for the landing page.
  *
- * PLACEHOLDER DATA — the team will drop real video files into /public/testimonials/
+ * PLACEHOLDER DATA - the team will drop real video files into /public/testimonials/
  * and update the `videoSrc` / `posterSrc` paths below. Until then, cards render with
  * a poster placeholder and a tap-to-play state. The landing page reads from this
  * array, so adding/removing entries here is all that's needed.
@@ -21,9 +21,9 @@ export interface VideoTestimonial {
 }
 
 export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
-  { id: "vt1", videoSrc: null, posterSrc: null, name: "Aarav S.", subject: "ICSE Class X · 92%" },
-  { id: "vt2", videoSrc: null, posterSrc: null, name: "Diya M.", subject: "ICSE Class X · 88%" },
-  { id: "vt3", videoSrc: null, posterSrc: null, name: "Kabir R.", subject: "ICSE Class X · 90%" },
-  { id: "vt4", videoSrc: null, posterSrc: null, name: "Ananya P.", subject: "ICSE Class X · 95%" },
-  { id: "vt5", videoSrc: null, posterSrc: null, name: "Vivaan T.", subject: "ICSE Class X · 87%" },
+  { id: "vt1", videoSrc: null, posterSrc: null, name: "Aarav S.", subject: "CBSE Class X · 92%" },
+  { id: "vt2", videoSrc: null, posterSrc: null, name: "Diya M.", subject: "CBSE Class X · 88%" },
+  { id: "vt3", videoSrc: null, posterSrc: null, name: "Kabir R.", subject: "CBSE Class X · 90%" },
+  { id: "vt4", videoSrc: null, posterSrc: null, name: "Ananya P.", subject: "CBSE Class X · 95%" },
+  { id: "vt5", videoSrc: null, posterSrc: null, name: "Vivaan T.", subject: "CBSE Class X · 87%" },
 ];

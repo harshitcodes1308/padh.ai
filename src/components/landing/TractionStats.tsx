@@ -93,7 +93,7 @@ export default function TractionStats() {
               fontWeight: 400,
             }}
           >
-            Gaurav Suthar scored 100% in his 10th CBSE boards and has spent years teaching what actually works — not theory, real board strategy.
+            Gaurav Suthar scored 100% in his 10th CBSE boards and has spent years teaching what actually works - not theory, real board strategy.
           </p>
         </div>
 
@@ -109,7 +109,7 @@ export default function TractionStats() {
           }}
         >
           {STATS.map((s, i) => {
-            const featured = i === 2; // 100% score — headline stat
+            const featured = i === 2; // 100% score - headline stat
             return (
               <div
                 key={i}
@@ -163,7 +163,7 @@ export default function TractionStats() {
           <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6 }}>
             Gaurav runs{" "}
             <span style={{ color: "var(--text-primary)", fontWeight: 600 }}>youtube.com/@GauravSuthar</span>
-            {" "}— one of India's most trusted CBSE channels.{" "}
+            {" "}- one of India's most trusted CBSE channels.{" "}
             <span className="chip-green" style={{ fontSize: 12, fontWeight: 600 }}>100% in boards</span>
           </span>
         </div>

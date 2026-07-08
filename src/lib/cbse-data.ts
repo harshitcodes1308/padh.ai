@@ -3,7 +3,7 @@
  * Complete syllabus mapping for all subjects separated for Customise Test.
  */
 
-export const ICSE_SUBJECTS = [
+export const CBSE_SUBJECTS = [
   "Mathematics Basic",
   "Mathematics Standard",
   "Physics",
@@ -18,7 +18,7 @@ export const ICSE_SUBJECTS = [
   "Artificial Intelligence",
 ];
 
-export const ICSE_CHAPTERS: Record<string, string[]> = {
+export const CBSE_CHAPTERS: Record<string, string[]> = {
   Physics: [
     "Force, Work, Power & Energy",
     "Light, Refraction & Lenses",

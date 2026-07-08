@@ -1,5 +1,5 @@
 /**
- * Monthly Mission — 12-Month ICSE Class 10 Board Prep Plan
+ * Monthly Mission - 12-Month CBSE Class 10 Board Prep Plan
  * Weekly format: each month → weeks → per-subject tasks + add-ons
  */
 
@@ -239,7 +239,7 @@ export const MONTHLY_MISSION: MonthPlan[] = [
   {
     month: 'August',
     tagline: 'Build to ~65%',
-    brief: 'By end of August, 65% of your syllabus should be complete. If you\'re behind, this is your correction month — no panic, but no excuses either.',
+    brief: 'By end of August, 65% of your syllabus should be complete. If you\'re behind, this is your correction month - no panic, but no excuses either.',
     weeks: [
       week('w1', 'Week 1', tasks('w1', [
         ['Maths',            'Mensuration (Cylinder/Cone basics)'],
@@ -295,7 +295,7 @@ export const MONTHLY_MISSION: MonthPlan[] = [
   {
     month: 'September',
     tagline: 'Half-Yearly Mode (60–65% syllabus)',
-    brief: 'Half-yearly exams are here — your first full dress rehearsal before boards. Your performance this month tells you exactly where you stand.',
+    brief: 'Half-yearly exams are here - your first full dress rehearsal before boards. Your performance this month tells you exactly where you stand.',
     weeks: [
       week('w1', 'Week 1', tasks('w1', [
         ['Maths',            'Revise GST, Banking, Quadratic (20 PYQs)'],
@@ -324,9 +324,9 @@ export const MONTHLY_MISSION: MonthPlan[] = [
       week('w3', 'Week 3', tasks('w3', [
         ['', 'All subjects: Target weak chapters (from test results)'],
         ['', '1 full paper each: Maths, Science, English'],
-      ]), ['Deep error analysis — write every mistake']),
+      ]), ['Deep error analysis - write every mistake']),
 
-      week('w4', 'Week 4 — Exam Week', tasks('w4', [
+      week('w4', 'Week 4 - Exam Week', tasks('w4', [
         ['', 'Light revision only (formulas + diagrams)'],
         ['', '1–2 practice sections per subject per day'],
         ['', 'Maintain sleep schedule + routine'],
@@ -338,7 +338,7 @@ export const MONTHLY_MISSION: MonthPlan[] = [
   {
     month: 'October',
     tagline: 'Recovery + Continue (~80% target)',
-    brief: 'Half-yearlies are done. You know your weaknesses now — those dropped marks aren\'t bad luck, they\'re information. Attack those gaps while pushing into the remaining syllabus.',
+    brief: 'Half-yearlies are done. You know your weaknesses now - those dropped marks aren\'t bad luck, they\'re information. Attack those gaps while pushing into the remaining syllabus.',
     weeks: [
       week('w1', 'Week 1', tasks('w1', [
         ['Maths',            'Similarity (intro)'],
@@ -398,8 +398,8 @@ export const MONTHLY_MISSION: MonthPlan[] = [
     weeks: [
       week('w12', 'Weeks 1–2', tasks('w12', [
         ['Maths',            'Remaining topics (Loci + Coordinate Geometry)'],
-        ['Physics',          'Electricity — complete'],
-        ['Chemistry',        'Organic Chemistry — complete'],
+        ['Physics',          'Electricity - complete'],
+        ['Chemistry',        'Organic Chemistry - complete'],
         ['Biology',          'Full revision of all chapters'],
         ['History & Civics', 'Remaining History + Civics portions'],
         ['Geography',        'Remaining Geography portions'],
@@ -409,7 +409,7 @@ export const MONTHLY_MISSION: MonthPlan[] = [
       ]), []),
 
       week('w34', 'Weeks 3–4', tasks('w34', [
-        ['', 'Full syllabus revision — ALL subjects'],
+        ['', 'Full syllabus revision - ALL subjects'],
         ['', '1 full paper per subject'],
         ['', 'Error notebook review'],
         ['', 'PYQ sets (all subjects)'],
@@ -425,7 +425,7 @@ export const MONTHLY_MISSION: MonthPlan[] = [
     weeks: [
       week('every', 'Every Week', tasks('every', [
         ['', '3 full papers (alternate subjects)'],
-        ['', 'Analyze each paper — write every mistake'],
+        ['', 'Analyze each paper - write every mistake'],
         ['', 'Redo all wrong questions'],
         ['', 'Revise weak chapters (formulas + diagrams)'],
       ]), []),
@@ -435,11 +435,11 @@ export const MONTHLY_MISSION: MonthPlan[] = [
   // ── JANUARY ──────────────────────────────────────────────────────────────
   {
     month: 'January',
-    tagline: 'The Final Push — Pre-Boards',
+    tagline: 'The Final Push - Pre-Boards',
     brief: 'Preliminary exams are here. This is your last structured feedback before boards. Every prelim mark tells you something important. Listen to it.',
     weeks: [
       week('weekly', 'Weekly Plan', tasks('weekly', [
-        ['', 'Give school pre-boards seriously — full exam conditions'],
+        ['', 'Give school pre-boards seriously - full exam conditions'],
         ['', 'After each exam: list 5 mistakes immediately'],
         ['', 'Re-practice that chapter on the same day'],
         ['', '2 extra practice papers/week (beyond school schedule)'],
@@ -450,13 +450,13 @@ export const MONTHLY_MISSION: MonthPlan[] = [
   // ── FEBRUARY ─────────────────────────────────────────────────────────────
   {
     month: 'February',
-    tagline: 'Board Ready — Light + Sharp',
+    tagline: 'Board Ready - Light + Sharp',
     brief: 'You\'re ready. This month is not about covering anything new. Entering each exam calm, sharp, and prepared. Routine and rest are as important as revision now.',
     weeks: [
       week('every', 'Every Week', tasks('every', [
         ['Maths',    'Revise formulas daily (20 min morning drill)'],
         ['Physics',  'Formula sheet scan daily (5 min) + 5 numericals'],
-        ['Biology',  'Diagrams — 1 system per day from memory'],
+        ['Biology',  'Diagrams - 1 system per day from memory'],
         ['Chemistry','Key reactions revision'],
         ['',         '2 papers per subject per week'],
         ['',         'Light English practice (grammar + composition)'],
@@ -467,19 +467,19 @@ export const MONTHLY_MISSION: MonthPlan[] = [
   // ── MARCH ────────────────────────────────────────────────────────────────
   {
     month: 'March',
-    tagline: 'Your Moment — Execution',
+    tagline: 'Your Moment - Execution',
     brief: 'Exams have begun. Everything you needed to learn, you\'ve learned. Show up fully for each paper, one at a time.',
     weeks: [
       week('night', 'Night Before Every Exam', tasks('night', [
         ['', 'Revise formulas + key PYQs only'],
-        ['', 'Read chapter summaries — no new topics'],
+        ['', 'Read chapter summaries - no new topics'],
         ['', 'Prepare exam kit (pens, ID, admit card)'],
-        ['', 'Sleep by 10 PM — rest is preparation'],
+        ['', 'Sleep by 10 PM - rest is preparation'],
       ]), []),
 
       week('morning', 'Morning of Every Exam', tasks('morning', [
         ['', 'Light breakfast + hydrate'],
-        ['', 'Skim formula sheet — 10 minutes max'],
+        ['', 'Skim formula sheet - 10 minutes max'],
         ['', 'Reach exam centre 30 minutes early'],
         ['', 'No discussion with classmates before the exam'],
       ]), []),
@@ -487,13 +487,13 @@ export const MONTHLY_MISSION: MonthPlan[] = [
       week('during', 'During Every Exam', tasks('during', [
         ['', 'Read all questions first (5 min)'],
         ['', 'Attempt known questions first'],
-        ['', 'Write structured answers — intro, body, conclusion'],
+        ['', 'Write structured answers - intro, body, conclusion'],
         ['', 'Draw diagrams neatly with labels and arrows'],
         ['', 'Double-check all calculations'],
       ]), []),
 
       week('after', 'After Every Exam', tasks('after', [
-        ['', 'Close the book — don\'t discuss answers'],
+        ['', 'Close the book - don\'t discuss answers'],
         ['', 'Move focus entirely to the next subject'],
         ['', 'Rest for 1 hour before starting next revision'],
       ]), []),

@@ -1,8 +1,8 @@
-// Mathematics — Real Specimen Paper Data (extracted from PDFs)
+// Mathematics - Real Specimen Paper Data (extracted from PDFs)
 import { TYQPaper, TYQAnswerKey } from "./tyq-papers";
 
 // ==========================================
-// PAPER 1 — MOCK SPECIMEN PAPER 01 (2026)
+// PAPER 1 - MOCK SPECIMEN PAPER 01 (2026)
 // ==========================================
 
 export const mathematicsPaper1: TYQPaper = {
@@ -124,7 +124,7 @@ export const mathematicsPaper1Answers: TYQAnswerKey = {
 };
 
 // ==========================================
-// PAPER 2 — MOCK SPECIMEN PAPER 02 (2026)
+// PAPER 2 - MOCK SPECIMEN PAPER 02 (2026)
 // ==========================================
 
 export const mathematicsPaper2: TYQPaper = {

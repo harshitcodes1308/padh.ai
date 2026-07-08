@@ -164,7 +164,7 @@ export async function authenticate(
     const isValid = await verifyPassword(password, user.password);
     if (!isValid) return null;
 
-    // GRANDFATHERING LOGIC — users before cutoff date treated as paid
+    // GRANDFATHERING LOGIC - users before cutoff date treated as paid
     const isLegacyUser = user.createdAt < CUTOFF_DATE;
     const effectivePlanType: PlanType = (isLegacyUser && user.planType === "FREE")
         ? "YEARLY"

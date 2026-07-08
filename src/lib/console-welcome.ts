@@ -1,5 +1,5 @@
 /**
- * Custom Console Logger - ICSE Saviours
+ * Custom Console Logger - CBSE Saviours
  * 
  * Displays a styled welcome message and security warning
  * when developers open the browser console
@@ -40,8 +40,8 @@ export function initConsoleWelcome() {
     console.log(''); // Empty line
 
     // Welcome Message
-    console.log('%c🎓 Welcome to ICSE Saviours!', styles.title);
-    console.log('%cAI-Powered Learning for ICSE Class 10', styles.subtitle);
+    console.log('%c🎓 Welcome to CBSE Saviours!', styles.title);
+    console.log('%cAI-Powered Learning for CBSE Class 10', styles.subtitle);
 
     console.log(''); // Empty line
 
@@ -61,7 +61,7 @@ export function initConsoleWelcome() {
     // Developer Info
     console.log('%c👨‍💻 Are you a developer?', styles.info);
     console.log(
-        '%cCheck out our GitHub: https://github.com/harshitcodes1308/icse-saviours',
+        '%cCheck out our GitHub: https://github.com/harshitcodes1308/cbse-saviours',
         styles.link
     );
     console.log('%cWe\'re always looking for contributors!', styles.info);
@@ -108,7 +108,7 @@ export function initConsoleWelcome() {
 
     // Footer
     console.log(
-        '%c Made with 💙 by the ICSE Saviours Team | © 2026',
+        '%c Made with 💙 by the CBSE Saviours Team | © 2026',
         'color: #6B7280; font-size: 11px;'
     );
 
@@ -139,7 +139,7 @@ export function initConsoleWelcome() {
 
 // Helper function for testing optimizations (only in dev)
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
-    (window as any).icseSaviours = {
+    (window as any).cbseSaviours = {
         version: '1.0.0',
         logPerformance: () => {
             console.log('%c📊 Performance Metrics:', 'color: #00D4FF; font-weight: bold; font-size: 14px;');
@@ -156,7 +156,7 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
     };
 
     console.log(
-        '%c🎯 Try typing: icseSaviours.logPerformance()',
+        '%c🎯 Try typing: cbseSaviours.logPerformance()',
         'color: #60A5FA; font-size: 12px; font-style: italic;'
     );
 }

@@ -1,4 +1,4 @@
-// Precision Practice — Chemistry Questions (ICSE Competency-Based MCQs)
+// Precision Practice - Chemistry Questions (CBSE Competency-Based MCQs)
 import type { PrecisionQuestion } from "./precision-config";
 
 export const chemistryQuestions: PrecisionQuestion[] = [

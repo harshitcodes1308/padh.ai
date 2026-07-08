@@ -9,7 +9,7 @@
 
 # Saviours AI
 
-**ICSE Class 10 board exam preparation, rebuilt from the ground up**
+**CBSE Class 10 board exam preparation, rebuilt from the ground up**
 
 [Live Platform](https://saviours.pro) &nbsp;|&nbsp; [Admin Panel](https://saviours.pro/admin)
 
@@ -29,7 +29,7 @@
 
 ## What this is
 
-Saviours AI is a full-stack education platform built specifically for students preparing for the ICSE Class 10 board exams. It covers nine subjects with a mix of AI-powered tools, structured study plans, gamified learning, and a full video lecture library. Everything runs under a single authentication layer with a tiered access model: free users get planning and community resources, paid users unlock the AI and practice engine.
+Saviours AI is a full-stack education platform built specifically for students preparing for the CBSE Class 10 board exams. It covers nine subjects with a mix of AI-powered tools, structured study plans, gamified learning, and a full video lecture library. Everything runs under a single authentication layer with a tiered access model: free users get planning and community resources, paid users unlock the AI and practice engine.
 
 The platform serves students, but it is also designed to be operated by the team behind it, through a custom admin panel that handles creators, user management, revenue tracking, and feature flags without touching the database directly.
 
@@ -87,7 +87,7 @@ An AI-powered daily study schedule generator. The user specifies subjects, diffi
 <details>
 <summary>Monthly Mission</summary>
 
-A structured 11-month preparation roadmap from May through March, aligned with the ICSE exam cycle. Each month contains weekly plans. Each week breaks down into subject-specific tasks and add-on activities. Progress persists in localStorage under the key `saviours-monthly-mission-v2`. Week cards are collapsible, with Week 1 open by default. Each subject gets a colour-coded pill badge.
+A structured 11-month preparation roadmap from May through March, aligned with the CBSE exam cycle. Each month contains weekly plans. Each week breaks down into subject-specific tasks and add-on activities. Progress persists in localStorage under the key `saviours-monthly-mission-v2`. Week cards are collapsible, with Week 1 open by default. Each subject gets a colour-coded pill badge.
 
 </details>
 
@@ -111,7 +111,7 @@ The library covers 9 subjects with dedicated content for Mathematics, Physics, C
 
 A structured chapter walkthrough with three steps per chapter: Watch, Revise, and Practice.
 
-The Watch step uses the YouTube Data API to search for relevant videos for the chapter (query: `{chapter name} Class 10 ICSE`). Results appear as clickable thumbnail cards. The search query is editable so students can refine it. When a student's creator has a configured YouTube channel ID, that creator's videos are pinned to the top of results with a "Recommended by {creator}" badge.
+The Watch step uses the YouTube Data API to search for relevant videos for the chapter (query: `{chapter name} Class 10 CBSE`). Results appear as clickable thumbnail cards. The search query is editable so students can refine it. When a student's creator has a configured YouTube channel ID, that creator's videos are pinned to the top of results with a "Recommended by {creator}" badge.
 
 The Revise step shows a chapter summary and key concepts. The Practice step presents 5 to 10 questions with a reveal-answer interaction. Progress is saved to localStorage per chapter and subject.
 
@@ -129,7 +129,7 @@ A Calendly-integrated page promoting free webinar sessions hosted by the Saviour
 <details>
 <summary>Subjects Browser</summary>
 
-A subject selection page listing all nine ICSE subjects. Each subject links to a chapter list, which links to the chapter detail page used by the Study Flow.
+A subject selection page listing all nine CBSE subjects. Each subject links to a chapter list, which links to the chapter detail page used by the Study Flow.
 
 </details>
 
@@ -145,14 +145,14 @@ Subject-wise guess papers available as PDF downloads.
 <details>
 <summary>AI Doubt Solver</summary>
 
-A chat interface powered by GPT-4o-mini with ICSE-specific system prompting. Supports image uploads (for handwritten problems) and PDF uploads. Maintains conversation history per session. Responses are streamed. Free users see a daily query limit of 3.
+A chat interface powered by GPT-4o-mini with CBSE-specific system prompting. Supports image uploads (for handwritten problems) and PDF uploads. Maintains conversation history per session. Responses are streamed. Free users see a daily query limit of 3.
 
 </details>
 
 <details>
 <summary>Competency Test</summary>
 
-A timed MCQ test system built on previous year question banks covering Physics, Chemistry, Biology, Mathematics, and Computer Applications. Each subject has curated questions from 20 years of ICSE papers. Tests run with a countdown timer. Results show accuracy, time efficiency, strong and weak chapters, and mistake patterns.
+A timed MCQ test system built on previous year question banks covering Physics, Chemistry, Biology, Mathematics, and Computer Applications. Each subject has curated questions from 20 years of CBSE papers. Tests run with a countdown timer. Results show accuracy, time efficiency, strong and weak chapters, and mistake patterns.
 
 </details>
 
@@ -180,14 +180,14 @@ A distraction-free study timer with three modes: Pomodoro (configurable work and
 <details>
 <summary>ChronoScroll</summary>
 
-An interactive History and Civics timeline. Students scroll through historical events in chronological order. Each event has a Quick Recall card that tests recognition with a flip interaction. Designed for ICSE History chapters that require date and event memorisation.
+An interactive History and Civics timeline. Students scroll through historical events in chronological order. Each event has a Quick Recall card that tests recognition with a flip interaction. Designed for CBSE History chapters that require date and event memorisation.
 
 </details>
 
 <details>
 <summary>Numerical Mastery</summary>
 
-A Physics numericals practice tool with a three-level navigation: chapters, topics, and individual problems. Each problem card shows the formula, a worked example, and a reveal-able PYQ from ICSE papers. Students can mark topics as mastered. A floating recap button summarises mastered topics for the session.
+A Physics numericals practice tool with a three-level navigation: chapters, topics, and individual problems. Each problem card shows the formula, a worked example, and a reveal-able PYQ from CBSE papers. Students can mark topics as mastered. A floating recap button summarises mastered topics for the session.
 
 </details>
 
@@ -598,7 +598,7 @@ The `src/data/` directory contains all static content used across the platform. 
 | `studyFlowData.ts` | Chapter structure for study flow: watch video URL, revision summary, and practice questions per chapter |
 | `numerical-mastery-data.ts` | Physics numericals with formula, worked example, and PYQ source per problem |
 | `battle-config.ts` | Date Battle Arena game configuration: historical events, dates, difficulty tiers |
-| `chrono-config.ts` | ChronoScroll timeline events with dates, context, and ICSE chapter mapping |
+| `chrono-config.ts` | ChronoScroll timeline events with dates, context, and CBSE chapter mapping |
 | `precision-*.ts` | PYQ-based MCQ banks for Physics, Chemistry, Biology, Mathematics, and Computer Applications |
 | `tyq-*.ts` | Question banks for all 9 subjects used in the Competency Test and TYQ features |
 | `lnb-mock-data.ts` | Last Night Before: numericals, formulas, and definitions for panic revision |
@@ -699,7 +699,7 @@ RAZORPAY_WEBHOOK_SECRET         Webhook signature verification secret
 
 # Creator discounts (optional, for discounted monthly plans)
 RAZORPAY_MONTHLY_PLAN_ID_BL2047    Discounted plan for Beast Learners
-RAZORPAY_MONTHLY_PLAN_ID_CK2047    Discounted plan for Clarify Knowledge
+RAZORPAY_MONTHLY_PLAN_ID_CK2047    Discounted plan for Toppers Clan
 ```
 
 ---

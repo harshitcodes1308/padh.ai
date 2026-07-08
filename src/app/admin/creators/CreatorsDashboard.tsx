@@ -273,7 +273,7 @@ export default function CreatorsDashboard({ creators }: { creators: Creator[] })
         <StatCard label="Total Creators" value={creators.length} sub="active affiliate partners" />
         <StatCard label="Students via Creators" value={totalUsers} sub="used a creator code" />
         <StatCard label="Avg Discount" value={`${creators.length ? Math.round(creators.reduce((s, c) => s + c.discountPercentage, 0) / creators.length) : 0}%`} sub="across all creators" />
-        <StatCard label="Top Creator" value={creators.sort((a, b) => b.userCount - a.userCount)[0]?.creatorName?.split(" ")[0] ?? "—"} sub={`${Math.max(...creators.map(c => c.userCount), 0)} students`} />
+        <StatCard label="Top Creator" value={creators.sort((a, b) => b.userCount - a.userCount)[0]?.creatorName?.split(" ")[0] ?? "-"} sub={`${Math.max(...creators.map(c => c.userCount), 0)} students`} />
       </div>
 
       {/* Creator cards */}
@@ -469,7 +469,7 @@ export default function CreatorsDashboard({ creators }: { creators: Creator[] })
               {/* Creator Code */}
               <div>
                 <label style={{ fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, color: "var(--text-muted)", letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
-                  Creator Code * <span style={{ fontWeight: 400, textTransform: "none", letterSpacing: 0 }}>(lowercase, no spaces — shared with students)</span>
+                  Creator Code * <span style={{ fontWeight: 400, textTransform: "none", letterSpacing: 0 }}>(lowercase, no spaces - shared with students)</span>
                 </label>
                 <input
                   style={{ ...inp, letterSpacing: "0.08em" }}
@@ -714,10 +714,10 @@ export default function CreatorsDashboard({ creators }: { creators: Creator[] })
                                   }}>{s.planType}</span>
                                 </td>
                                 <td style={{ padding: "12px 16px", color: "var(--text-muted)" }}>
-                                  {s.purchaseDate ? new Date(s.purchaseDate).toLocaleDateString("en-IN", { day: "numeric", month: "short" }) : "—"}
+                                  {s.purchaseDate ? new Date(s.purchaseDate).toLocaleDateString("en-IN", { day: "numeric", month: "short" }) : "-"}
                                 </td>
                                 <td style={{ padding: "12px 16px", textAlign: "right", fontWeight: 700, color: s.revenueShare > 0 ? "#22c55e" : "var(--text-muted)" }}>
-                                  {s.revenueShare > 0 ? `₹${s.revenueShare}` : "—"}
+                                  {s.revenueShare > 0 ? `₹${s.revenueShare}` : "-"}
                                 </td>
                               </tr>
                             ))}

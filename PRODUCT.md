@@ -1,13 +1,13 @@
-# Saviours AI — Complete Product Description
+# Saviours AI - Complete Product Description
 ## Internal Reference Document · April 2026
 
 ---
 
 ## 1. WHAT IT IS
 
-Saviours AI is a premium AI-powered study platform built exclusively for **ICSE Class 10 students preparing for the 2027 Board Examinations**. It combines AI doubt solving, adaptive testing, smart planning, and deep content tools into a single dark, cinematic product experience.
+Saviours AI is a premium AI-powered study platform built exclusively for **CBSE Class 10 students preparing for the 2027 Board Examinations**. It combines AI doubt solving, adaptive testing, smart planning, and deep content tools into a single dark, cinematic product experience.
 
-The product is opinionated: it is not a general study app. Every feature, every copy line, every design decision is scoped to one student archetype — the ICSE Class 10 student who has 10 months to boards and wants an edge.
+The product is opinionated: it is not a general study app. Every feature, every copy line, every design decision is scoped to one student archetype - the CBSE Class 10 student who has 10 months to boards and wants an edge.
 
 ---
 
@@ -36,7 +36,7 @@ The product is opinionated: it is not a general study app. Every feature, every 
 
 ## 3. COLOUR SYSTEM
 
-The entire product uses a single CSS variable system defined in `src/app/globals.css`. No hardcoded hex values appear anywhere in components — all colours reference these tokens.
+The entire product uses a single CSS variable system defined in `src/app/globals.css`. No hardcoded hex values appear anywhere in components - all colours reference these tokens.
 
 ### 3.1 Background Layers
 
@@ -48,7 +48,7 @@ The entire product uses a single CSS variable system defined in `src/app/globals
 | `--bg-border` | `#252538` | Standard border on all cards/inputs |
 | `--bg-border-light` | `#353552` | Lighter border for dashed/demo elements |
 
-The background stack reads darkest → lightest: Base → Surface → Elevated. Nothing is pure black (#000) in normal use — `#0D0D1A` is the true base. The dashboard main area overrides `--bg-base` to `transparent` and `--bg-surface` to `rgba(10, 10, 18, 0.65)` so the stars video shows through all page backgrounds.
+The background stack reads darkest → lightest: Base → Surface → Elevated. Nothing is pure black (#000) in normal use - `#0D0D1A` is the true base. The dashboard main area overrides `--bg-base` to `transparent` and `--bg-surface` to `rgba(10, 10, 18, 0.65)` so the stars video shows through all page backgrounds.
 
 ### 3.2 Text Hierarchy
 
@@ -61,9 +61,9 @@ The background stack reads darkest → lightest: Base → Surface → Elevated. 
 
 Text primary is warm white (`#F5F0E8`), not pure white. This prevents harshness against the dark blue-grey backgrounds and gives a premium, editorial feel.
 
-### 3.3 Accent — Electric Cyan
+### 3.3 Accent - Electric Cyan
 
-The main accent colour is **Electric Cyan**, named `--accent-gold` for historical reasons (it was gold in earlier iterations). Do not rename the token — it is deeply referenced throughout the codebase.
+The main accent colour is **Electric Cyan**, named `--accent-gold` for historical reasons (it was gold in earlier iterations). Do not rename the token - it is deeply referenced throughout the codebase.
 
 | Token | Value | Usage |
 |---|---|---|
@@ -89,7 +89,7 @@ Razorpay checkout theme colour is also set to `#00D4FF` to match.
 
 ### 4.1 Font Families
 
-#### ScotchDisplay — Premium Display Font
+#### ScotchDisplay - Premium Display Font
 - **File**: `public/fonts/ScotchDisplay-Regular.woff2` + `.woff`
 - **Weight**: 400 (regular), used at large sizes with bold visual weight
 - **Token**: `--font-tagline`
@@ -97,28 +97,28 @@ Razorpay checkout theme colour is also set to `#00D4FF` to match.
 - **Fallback**: Georgia, Times New Roman, serif
 - This is the personality font. It gives the product a premium, editorial quality.
 
-#### SF Pro Display — System UI Display
+#### SF Pro Display - System UI Display
 - **Token**: `--font-display`
 - **Usage**: Main headings, hero text, large UI labels
 - **Fallback**: `-apple-system, BlinkMacSystemFont, Inter, Helvetica Neue, sans-serif`
 - On Apple devices this renders as SF Pro Display natively. On non-Apple, falls back to Inter.
 
-#### SF Pro Text — System UI Body
+#### SF Pro Text - System UI Body
 - **Token**: `--font-body`
 - **Usage**: All body copy, nav items, form labels, buttons, captions, meta text
 - **Fallback**: `SF Pro Display, -apple-system, BlinkMacSystemFont, Inter, DM Sans, Helvetica Neue, sans-serif`
 
-#### Coolvetica — Onboarding / Card Labels
+#### Coolvetica - Onboarding / Card Labels
 - **Usage**: Testimonial card author names, pricing card plan labels, "What students are saying" uppercase labels, the continue button in testimonial screen
-- **Not loaded via CSS** — expected to be installed on the system or loaded separately
+- **Not loaded via CSS** - expected to be installed on the system or loaded separately
 - **Fallback**: sans-serif
 - Used only in the new onboarding components (testimonial cards, pricing cards)
 
-#### Helvetica Neue — Testimonial Body
+#### Helvetica Neue - Testimonial Body
 - **Usage**: Testimonial card quote text, pricing card descriptions and feature lists, savings labels
 - System font on macOS/iOS, no loading required
 
-#### SF Mono — Code
+#### SF Mono - Code
 - **Token**: `--font-mono`
 - **Usage**: Code blocks, the Java code editor in AI tools
 - **Fallback**: Courier New, Courier, monospace
@@ -176,7 +176,7 @@ New onboarding components use `20px` borderRadius directly (between `--radius-lg
 | `--transition-normal` | `250ms ease-out` | Border/shadow transitions |
 | `--transition-slow` | `400ms cubic-bezier(0.16, 1, 0.3, 1)` | Page transitions, card scale |
 
-The easing `cubic-bezier(0.16, 1, 0.3, 1)` is the signature spring curve used throughout — fast start, overshoots slightly, settles cleanly. It appears in onboarding reveals, card hovers, and motion animations.
+The easing `cubic-bezier(0.16, 1, 0.3, 1)` is the signature spring curve used throughout - fast start, overshoots slightly, settles cleanly. It appears in onboarding reveals, card hovers, and motion animations.
 
 ---
 
@@ -184,7 +184,7 @@ The easing `cubic-bezier(0.16, 1, 0.3, 1)` is the signature spring curve used th
 
 The onboarding is a single-file component at `src/components/onboarding/OnboardingFlow.tsx` with step state managed locally. All 7 screens are full-screen fixed overlays.
 
-### Screen 1 — Cinematic Splash
+### Screen 1 - Cinematic Splash
 - Stars video background at 1.5× playback speed, greyscale filter
 - Diamond SVG logo fades + scales in at 600ms
 - "SAVIOURS AI" in SF Pro Display, 0.25em letter-spacing, uppercase
@@ -195,21 +195,21 @@ The onboarding is a single-file component at `src/components/onboarding/Onboardi
 - Auto-advances at 4s. Tap anywhere to skip.
 - Fade-out transition (600ms) before Screen 2.
 
-### Screen 2 — Sequential Text Reveal
-**Phase 1 — Greetings (one at a time, huge):**
-- "Hello." — SF Pro Display, 80px desktop / 52px mobile, warm white
-- "नमस्कार।" — same scale, Electric Cyan (`#00D4FF`)
+### Screen 2 - Sequential Text Reveal
+**Phase 1 - Greetings (one at a time, huge):**
+- "Hello." - SF Pro Display, 80px desktop / 52px mobile, warm white
+- "नमस्कार।" - same scale, Electric Cyan (`#00D4FF`)
 - Each fades+slides in with `translateY(30px) scale(0.96)` → `translateY(0) scale(1)`
 
-**Phase 2 — Contextual Messages:**
-- "You just moved to Class 10." — warm white
-- "Boards are 10 months away." — text-secondary
-- "We have crazy things for you." — Electric Cyan
+**Phase 2 - Contextual Messages:**
+- "You just moved to Class 10." - warm white
+- "Boards are 10 months away." - text-secondary
+- "We have crazy things for you." - Electric Cyan
 - Reveal at 48px desktop / 28px mobile, staggered by 900ms gaps
 
 **CTA:** Liquid glass "Begin →" button. Advances to Screen 3.
 
-### Screen 3 — Testimonial Cards (semi-circle fan)
+### Screen 3 - Testimonial Cards (semi-circle fan)
 - 5 cards spread on a -70° to +70° arc (radius 280px desktop, 160px mobile)
 - Cards overlap, each tilts ~30% of its angle along the arc
 - **Hover interaction**: hovered card straightens + scales 1.1×, gets gold border glow (`rgba(0,212,255,0.1)` box-shadow). All others blur (3px), dim (60% brightness), shrink (0.92×)
@@ -217,25 +217,25 @@ The onboarding is a single-file component at `src/components/onboarding/Onboardi
 - Card background: `--bg-surface`, 20px radius, `backdropFilter: blur(14px)`
 - Quote text: Helvetica Neue, 15px, italic, `--text-secondary`
 - Author: Coolvetica, 13px, `--accent-gold`
-- Hint text below: ScotchDisplay italic — *"Hover over the reviews to read them"* fades out when hovering
-- CTA: Gold pill button — "Looks good, let's go →"
+- Hint text below: ScotchDisplay italic - *"Hover over the reviews to read them"* fades out when hovering
+- CTA: Gold pill button - "Looks good, let's go →"
 
 **Real testimonials** (5 actual students):
-1. Sparsh — productivity + task management
-2. Abhyang Salve — doubt clearing
-3. Sarthak Mehta — History, Geography, Maths
-4. Ishika Sagar — boards went well
-5. Manntrra Pawar — twisted questions, difficulty
+1. Sparsh - productivity + task management
+2. Abhyang Salve - doubt clearing
+3. Sarthak Mehta - History, Geography, Maths
+4. Ishika Sagar - boards went well
+5. Manntrra Pawar - twisted questions, difficulty
 
-### Screen 4 — Name Input
+### Screen 4 - Name Input
 - "What should we call you?" at 40px
 - Single `sa-input` field, centred, 18px text
 - Pre-filled with name from Google session if available
 - Enter key advances. "Continue →" CTA.
 
-### Screen 5 — Animated Glassy Pricing
-- WebGL fragment shader background (always dark — `#0A0A0F` base with subtle flowing cyan tint)
-- No Tailwind — all inline styles, Saviours AI variables
+### Screen 5 - Animated Glassy Pricing
+- WebGL fragment shader background (always dark - `#0A0A0F` base with subtle flowing cyan tint)
+- No Tailwind - all inline styles, Saviours AI variables
 - **Free** (₹0 forever): Secondary ghost button
 - **Monthly** (₹199/month): Primary gold pill button
 - **Yearly** (₹499/year): "Most Popular" badge, gold border glow (`rgba(0,212,255,0.15)` shadow), "Save ₹1,889 vs monthly" in `--status-green`
@@ -245,7 +245,7 @@ The onboarding is a single-file component at `src/components/onboarding/Onboardi
 - Free → calls `/api/auth/set-plan` then advances to Screen 6
 - Monthly/Yearly → opens Razorpay checkout → on success advances to Screen 6
 
-### Screen 6 — Loading / Setup
+### Screen 6 - Loading / Setup
 - Stars video, 1.5× speed, greyscale, 0.35 opacity
 - Spinning diamond SVG (spin360, 4s linear)
 - "Hold tight, [Name]" personalised headline
@@ -254,7 +254,7 @@ The onboarding is a single-file component at `src/components/onboarding/Onboardi
 - ScotchDisplay italic footnote: *"Your academic edge, loading..."*
 - Auto-advances to Screen 7 at 3.6s
 
-### Screen 7 — Vapour Text Welcome
+### Screen 7 - Vapour Text Welcome
 - Full black background (`#0A0A0F`)
 - Diamond logo fades in (0.3s delay, `fadeInLogo` animation)
 - **VapourText animation (3 phases)**:
@@ -262,7 +262,7 @@ The onboarding is a single-file component at `src/components/onboarding/Onboardi
   2. **Hold** (1.2s): Solid text, fully visible
   3. **Disintegrate** (1.2s): Particles drift away with upward bias (ash effect), fade to zero
 - Font: ScotchDisplay, 52px desktop / 32px mobile, warm white `rgb(245, 240, 232)`
-- "ICSE Class X · 2027 Boards" tagline fades in at 1.8s delay in Coolvetica uppercase
+- "CBSE Class X · 2027 Boards" tagline fades in at 1.8s delay in Coolvetica uppercase
 - `onComplete` callback fires → `doComplete()` → `/api/auth/complete-onboarding` → `window.location.href = '/dashboard'`
 
 ---
@@ -361,7 +361,7 @@ Users created before `2026-01-29T00:00:00+05:30` with a `FREE` plan are treated 
 
 ## 11. AUTH SYSTEM
 
-- **JWT-based** — tokens stored in `auth-token` HttpOnly cookie
+- **JWT-based** - tokens stored in `auth-token` HttpOnly cookie
 - **HS256** signing with `JWT_SECRET` env variable
 - **Session shape**: `id, email, name, role, isPaid, planType, subscriptionStatus, onboardingComplete`
 - **Cookie lifetime**: 1 day default, 30 days with `rememberMe: true`
@@ -389,7 +389,7 @@ Users created before `2026-01-29T00:00:00+05:30` with a `FREE` plan are treated 
 
 ### Button Classes (Global CSS)
 
-**`.btn-gold`** — Liquid glass CTA button
+**`.btn-gold`** - Liquid glass CTA button
 - Gradient background: `rgba(0,212,255,0.18) → rgba(0,180,220,0.12) → rgba(0,212,255,0.20)`
 - `backdropFilter: blur(16px) saturate(1.4)`
 - Shimmer sweep on hover via `::before` pseudo-element
@@ -397,20 +397,20 @@ Users created before `2026-01-29T00:00:00+05:30` with a `FREE` plan are treated 
 - Lifts `translateY(-1px)` on hover
 - Color: white text on glassmorphic cyan tint
 
-**`.btn-ghost`** — Subtle secondary
+**`.btn-ghost`** - Subtle secondary
 - Near-transparent background: `rgba(255,255,255,0.03)`
 - Becomes cyan-tinted on hover
 
-**`.sa-input`** — Form input
+**`.sa-input`** - Form input
 - Full autofill override (kills browser white flash)
 - Cyan border + glow ring on focus
 - Background forced to `--bg-base` with `!important`
 
-**`.sa-card`** — Standard card
+**`.sa-card`** - Standard card
 - `--bg-surface` background, `--radius-lg` border radius
 - Cyan border glow on hover
 
-**`.skeleton`** — Loading shimmer
+**`.skeleton`** - Loading shimmer
 - Gradient sweep animation 1.6s infinite
 
 ---
@@ -460,12 +460,12 @@ Usage contexts:
 
 A dev-only demo route at `/api/auth/demo` (only visible in development) adds two buttons to the login and signup pages:
 
-**Signup page** — "Demo Sign Up → Test Onboarding"
+**Signup page** - "Demo Sign Up → Test Onboarding"
 - Resets `onboardingComplete: false` on the demo account
 - Redirects to `/onboarding`
 - Use this to replay the entire onboarding flow without creating a new account each time
 
-**Login page** — "Demo Sign In → Straight to Dashboard"
+**Login page** - "Demo Sign In → Straight to Dashboard"
 - Sets `onboardingComplete: true` on the demo account
 - Redirects to `/dashboard` via the warp transition
 - Use this to test dashboard features without going through onboarding
@@ -542,14 +542,14 @@ src/
 **Tagline**: *"Where preparation meets precision."* (ScotchDisplay italic)
 
 **Logo**: Diamond / rhombus SVG
-- Outer path: `M24 4L44 18L24 44L4 18L24 4Z` — full diamond, `stroke: --accent-gold`, `strokeWidth: 1.5`
-- Inner path: `M24 4L44 18L24 32L4 18L24 4Z` — upper half, `fill: rgba(0,212,255,0.08)`
-- Middle line: `M4 18L24 32L44 18` — horizontal crease, `stroke: --accent-gold`, `opacity: 0.6`
+- Outer path: `M24 4L44 18L24 44L4 18L24 4Z` - full diamond, `stroke: --accent-gold`, `strokeWidth: 1.5`
+- Inner path: `M24 4L44 18L24 32L4 18L24 4Z` - upper half, `fill: rgba(0,212,255,0.08)`
+- Middle line: `M4 18L24 32L44 18` - horizontal crease, `stroke: --accent-gold`, `opacity: 0.6`
 - Animated with `goldGlow` keyframe on splash
 
-**Voice**: Direct, slightly competitive, warm. Not corporate. Copy like "10 months. Every day counts." or "We have crazy things for you." — confident, student-peer energy.
+**Voice**: Direct, slightly competitive, warm. Not corporate. Copy like "10 months. Every day counts." or "We have crazy things for you." - confident, student-peer energy.
 
-**Edition label**: "Class X · ICSE · 2027 Boards" — appears in sidebars, onboarding, emails. ScotchDisplay italic or small caps uppercase.
+**Edition label**: "Class X · CBSE · 2027 Boards" - appears in sidebars, onboarding, emails. ScotchDisplay italic or small caps uppercase.
 
 ---
 
@@ -562,10 +562,10 @@ src/
 ### 18.1 Dashboard Home (`/dashboard`)
 
 The landing page after login. Shows:
-- **Time-based greeting** — "Good morning / afternoon / evening" with the user's first name
-- **Rotating motivational taglines** — randomised on each load from a set of board-exam-themed lines
-- **Ring stat cards** — circular SVG progress rings showing study stats fetched from `trpc.dashboard.getStudyStats`
-- **Feature cards grid** — only shows cards for features with their feature flag enabled. Each card has: icon, label, one-line description, tagline in ScotchDisplay italic, and a "→" arrow that animates right on hover. Hover lifts the card 3px and applies cyan border glow.
+- **Time-based greeting** - "Good morning / afternoon / evening" with the user's first name
+- **Rotating motivational taglines** - randomised on each load from a set of board-exam-themed lines
+- **Ring stat cards** - circular SVG progress rings showing study stats fetched from `trpc.dashboard.getStudyStats`
+- **Feature cards grid** - only shows cards for features with their feature flag enabled. Each card has: icon, label, one-line description, tagline in ScotchDisplay italic, and a "→" arrow that animates right on hover. Hover lifts the card 3px and applies cyan border glow.
 - **Logout** via `trpc.auth.logout` mutation
 
 The video background is fixed-position behind all content. Pages use `transparent` backgrounds so the video shows through consistently.
@@ -576,16 +576,16 @@ The video background is fixed-position behind all content. Pages use `transparen
 
 **Plan**: Free (3/day) · Monthly · Yearly
 
-A full AI tutor chat interface for ICSE subjects.
+A full AI tutor chat interface for CBSE subjects.
 
 **Two modes:**
 
 **Chat mode** (default)
 - Conversational multi-turn chat with OpenAI
 - Subject selector dropdown to scope answers
-- File upload: supports images (base64) and PDFs — file content is sent to the AI as context
+- File upload: supports images (base64) and PDFs - file content is sent to the AI as context
 - Responses rendered in Markdown via `react-markdown` with custom styled components (tables, code blocks, headings)
-- YouTube video suggestions embedded inline when relevant — shows thumbnail, title, channel, and link
+- YouTube video suggestions embedded inline when relevant - shows thumbnail, title, channel, and link
 - Free users hit a 3/day limit (`AI_DOUBT_FREE_LIMIT = 3`), tracked via daily counter; prompt to upgrade shown when limit reached
 - Full-screen `GenerationLoader` overlay while AI is thinking (0–95% progress animation, cycling status text)
 
@@ -614,7 +614,7 @@ AI-generated study schedule based on user inputs.
 - On submit, calls `trpc.planner.generateSmartPlan` once per subject with the selected chapters, date range, and hours
 - AI returns a structured day-by-day plan with topic breakdowns
 - Plans stored in DB, fetched on load via `trpc.planner.getMyPlans`
-- Each plan item has a checkbox — `trpc.planner.togglePlanComplete` marks it done
+- Each plan item has a checkbox - `trpc.planner.togglePlanComplete` marks it done
 - Plans can be fully cleared via `trpc.planner.clearAllPlans`
 - Each plan item has a shortcut button linking to AI Doubt Solver pre-loaded with that topic
 
@@ -631,11 +631,11 @@ Chapter-level MCQ test with timed exam conditions and detailed post-test analyti
 **5 phases: subject → chapter → countdown → test → analytics**
 
 **Subjects covered:**
-- **Physics** — 9 chapters (Force/Work/Power/Energy, Light, Sound, Electricity & Magnetism, Heat & Calorimetry, Modern Physics, Machines & Levers, Electromagnetism, Household Circuits)
-- **Mathematics** — 18+ chapters (GST, Banking, Shares, Quadratics, Matrices, AP/GP, Coordinate Geometry, Similarity, Circles, Trigonometry, Mensuration, and more)
-- **Chemistry** — 15 chapters (Periodic Table, Chemical Bonding, Acids/Bases/Salts, Analytical Chemistry, Mole Concept, Electrolysis, Metallurgy, Study of Compounds × 4, Organic Chemistry × 2, Alloys, Practical Chemistry)
-- **Biology** — 11 chapters (Cell Division, Genetics, Absorption, Transpiration, Photosynthesis, Endocrine System, Reproductive System, Population, Pollution, Human Evolution)
-- **Computer Applications** — 18 chapters (OOP Concepts, Objects & Classes, Data Types, Operators, Input in Java, Math Methods, Conditionals, Loops, Nested For Loops, Classes, Methods, Constructors, Wrapper Classes, Encapsulation, Arrays, String Handling, Sorting & Searching, Method Overloading, Exception Handling)
+- **Physics** - 9 chapters (Force/Work/Power/Energy, Light, Sound, Electricity & Magnetism, Heat & Calorimetry, Modern Physics, Machines & Levers, Electromagnetism, Household Circuits)
+- **Mathematics** - 18+ chapters (GST, Banking, Shares, Quadratics, Matrices, AP/GP, Coordinate Geometry, Similarity, Circles, Trigonometry, Mensuration, and more)
+- **Chemistry** - 15 chapters (Periodic Table, Chemical Bonding, Acids/Bases/Salts, Analytical Chemistry, Mole Concept, Electrolysis, Metallurgy, Study of Compounds × 4, Organic Chemistry × 2, Alloys, Practical Chemistry)
+- **Biology** - 11 chapters (Cell Division, Genetics, Absorption, Transpiration, Photosynthesis, Endocrine System, Reproductive System, Population, Pollution, Human Evolution)
+- **Computer Applications** - 18 chapters (OOP Concepts, Objects & Classes, Data Types, Operators, Input in Java, Math Methods, Conditionals, Loops, Nested For Loops, Classes, Methods, Constructors, Wrapper Classes, Encapsulation, Arrays, String Handling, Sorting & Searching, Method Overloading, Exception Handling)
 
 **Test experience:**
 - 5-second animated countdown before test starts
@@ -656,13 +656,13 @@ Chapter-level MCQ test with timed exam conditions and detailed post-test analyti
 
 **Plan**: Monthly · Yearly
 
-User-configured MCQ test from the full ICSE question bank.
+User-configured MCQ test from the full CBSE question bank.
 
 **3-step flow: subject → chapters → configure → test → results**
 
 **Inputs:**
-- Subject (from `ICSE_SUBJECTS` list)
-- One or more chapters (from `ICSE_CHAPTERS[subject]`)
+- Subject (from `CBSE_SUBJECTS` list)
+- One or more chapters (from `CBSE_CHAPTERS[subject]`)
 - Number of questions (configurable)
 - Duration (minutes, configurable)
 
@@ -687,7 +687,7 @@ A Java programming challenge tool where the AI generates a question and the stud
 3. Student writes Java code in a **CodeMirror 6** editor (One Dark theme, Java syntax highlighting)
 4. Hint system: `trpc.flip.getHint` provides hints with a score penalty
 5. Give up option: `trpc.flip.giveUp` reveals the solution
-6. Submit: `trpc.flip.evaluateSubmission` — AI evaluates the code against 4 rubric dimensions:
+6. Submit: `trpc.flip.evaluateSubmission` - AI evaluates the code against 4 rubric dimensions:
    - **Output Correctness** (40 marks)
    - **Code Structure** (20 marks)
    - **Logic** (20 marks)
@@ -716,10 +716,10 @@ Structured study session timer with Pomodoro and deep focus options.
 - Task type: Learn New Topic · Revision · Practice Problems
 - Total duration in minutes
 - Focus style:
-  - **Pomodoro Mode** — 25 min focus + 5 min break
-  - **Deep Focus 45** — 45 min focus + 10 min break
-  - **Deep Focus 60** — 60 min focus + 15 min break
-  - **Custom** — user-defined focus/break minutes
+  - **Pomodoro Mode** - 25 min focus + 5 min break
+  - **Deep Focus 45** - 45 min focus + 10 min break
+  - **Deep Focus 60** - 60 min focus + 15 min break
+  - **Custom** - user-defined focus/break minutes
 
 **Session flow:**
 - `generatePlan()` splits the total duration into alternating focus/break blocks
@@ -730,7 +730,7 @@ Structured study session timer with Pomodoro and deep focus options.
 
 ---
 
-### 18.8 Last Night Before (`/dashboard/last-night-before`) — HIDDEN
+### 18.8 Last Night Before (`/dashboard/last-night-before`) - HIDDEN
 
 **Plan**: Paid (Yearly/Monthly) for Physics; separate `lnbChemistryUnlocked` flag for Chemistry
 
@@ -739,29 +739,29 @@ Emergency revision tool for the night before an exam. Presents the highest-yield
 **Subjects**: Physics · Chemistry
 
 **Three tabs per session set:**
-- **Numericals** — key solved numericals with steps
-- **Formulas** — formula sheet with derivation hints
-- **Definitions** — important definitions in concise form
+- **Numericals** - key solved numericals with steps
+- **Formulas** - formula sheet with derivation hints
+- **Definitions** - important definitions in concise form
 
 **Flow:**
 1. Select subject (Physics or Chemistry)
 2. A random `LNBSet` is picked from the data (`LNB_SETS` for Physics, `LNB_CHEMISTRY_SETS` for Chemistry)
 3. Items revealed one at a time with a "reveal answer" toggle
-4. Check off items as done — progress tracked in `sessionStorage`
+4. Check off items as done - progress tracked in `sessionStorage`
 5. "Reroll" button picks a different random set
 6. Progress bar shows % of set completed with motivational text at milestones
 
 **Access logic:**
 - Free users → Physics locked (upgrade prompt)
-- Chemistry locked separately — requires `lnbChemistryUnlocked: true` on the user record (separate one-time purchase via Razorpay `type: "LNB_CHEMISTRY"`)
+- Chemistry locked separately - requires `lnbChemistryUnlocked: true` on the user record (separate one-time purchase via Razorpay `type: "LNB_CHEMISTRY"`)
 
 ---
 
-### 18.9 Guess Papers (`/dashboard/guess-papers`) — HIDDEN
+### 18.9 Guess Papers (`/dashboard/guess-papers`) - HIDDEN
 
 **Plan**: Free for Physics only; paid for all others
 
-ICSE 2026 specimen paper practice in real exam conditions.
+CBSE 2026 specimen paper practice in real exam conditions.
 
 **9 subjects:**
 
@@ -779,15 +779,15 @@ ICSE 2026 specimen paper practice in real exam conditions.
 
 **Exam flow:**
 1. Select subject
-2. **Reading time**: 15 minutes (configured via `READING_TIME_MINUTES`) — read questions, no writing
-3. **Exam mode**: Full timed session matching real ICSE duration
+2. **Reading time**: 15 minutes (configured via `READING_TIME_MINUTES`) - read questions, no writing
+3. **Exam mode**: Full timed session matching real CBSE duration
 4. On completion: Answer key revealed for self-marking
 
 Physics is available to free users as a preview. All other subjects are paid-only. Free users see a lock overlay with upgrade prompt on non-Physics subjects.
 
 ---
 
-### 18.10 Strategy AI (`/dashboard/strategy`) — HIDDEN
+### 18.10 Strategy AI (`/dashboard/strategy`) - HIDDEN
 
 **Plan**: Paid
 
@@ -795,23 +795,23 @@ AI-generated personalised board exam strategy based on the student's self-assess
 
 **3-step wizard:**
 
-1. **Subjects** — select which subjects you're appearing for
-2. **Categorise** — for each subject, mark it as:
+1. **Subjects** - select which subjects you're appearing for
+2. **Categorise** - for each subject, mark it as:
    - Strong (confident)
    - Average (needs work)
    - Weak (struggling)
-3. **Mode** — choose strategy intensity:
-   - **Survival Mode** — focus only on passing, minimum viable effort
-   - **Balanced Mode** — realistic improvement across all subjects
-   - **Topper Mode** — maximise marks, high effort, high reward
+3. **Mode** - choose strategy intensity:
+   - **Survival Mode** - focus only on passing, minimum viable effort
+   - **Balanced Mode** - realistic improvement across all subjects
+   - **Topper Mode** - maximise marks, high effort, high reward
 
 `trpc.strategy.generate` sends all inputs to OpenAI and returns a structured strategy plan rendered as Markdown.
 
 ---
 
-### 18.11 Numerical Mastery (`/dashboard/numerical-mastery`) — HIDDEN
+### 18.11 Numerical Mastery (`/dashboard/numerical-mastery`) - HIDDEN
 
-**Plan**: Unknown (no plan gate in current code — likely all users)
+**Plan**: Unknown (no plan gate in current code - likely all users)
 
 A structured numerical problem practice tool for Physics, covering chapter-by-chapter solved problems with PYQ (previous year question) integration.
 
@@ -826,35 +826,35 @@ A structured numerical problem practice tool for Physics, covering chapter-by-ch
 **Per numerical:**
 - Formula recap panel (toggleable)
 - Solved steps with working shown
-- PYQ toggle — reveals whether/when this numerical appeared in past papers
-- "Mastered" checkbox — tracks which topics the student has completed (stored in `localStorage`)
+- PYQ toggle - reveals whether/when this numerical appeared in past papers
+- "Mastered" checkbox - tracks which topics the student has completed (stored in `localStorage`)
 - Chapter progress bar showing % of topics mastered
 - Navigate topic-by-topic within a chapter with Previous/Next
 
 ---
 
-### 18.12 ChronoScroll (`/dashboard/chronoscroll`) — HIDDEN
+### 18.12 ChronoScroll (`/dashboard/chronoscroll`) - HIDDEN
 
-A vertically-scrolling timeline of ICSE History content designed for passive revision while scrolling (social-media-style consumption).
+A vertically-scrolling timeline of CBSE History content designed for passive revision while scrolling (social-media-style consumption).
 
 **Format:**
 - Vertical feed of historical events/entries
 - Each card has: title, content, era/period
-- "Recall" quiz — tapping triggers a quick MCQ question on the current entry
+- "Recall" quiz - tapping triggers a quick MCQ question on the current entry
 - Correct/wrong feedback with shake animation on wrong answer
 - Active card tracked by scroll position via `UIEvent` on the scroll container
 
 ---
 
-### 18.13 Notes & Flashcards (`/dashboard/notes`) — HIDDEN
+### 18.13 Notes & Flashcards (`/dashboard/notes`) - HIDDEN
 
-**Plan**: Unknown (no plan gate — likely all users)
+**Plan**: Unknown (no plan gate - likely all users)
 
 AI-powered note creation with automatic flashcard generation.
 
 **Note creation:**
 - Title, subject, raw content (paste or type)
-- On save: `trpc.content.createNote` — AI formats and refines the raw notes, then auto-generates flashcards from the content
+- On save: `trpc.content.createNote` - AI formats and refines the raw notes, then auto-generates flashcards from the content
 - Notes stored in DB, listed in a grid
 
 **Flashcard study mode:**
@@ -920,10 +920,10 @@ Stores flip the question attempts, scores, streak data.
 | `/api/auth/demo` | POST | No | Dev-only demo login (signup or signin mode) |
 | `/api/auth/complete-onboarding` | POST | Yes | Mark onboarding done, refresh JWT |
 | `/api/auth/set-plan` | POST | Yes | Update planType on user record, refresh JWT |
-| `/api/auth/google/callback` | GET | No | Google OAuth callback — find/create user, set JWT |
+| `/api/auth/google/callback` | GET | No | Google OAuth callback - find/create user, set JWT |
 | `/api/create-order` | POST | Yes | Create Razorpay order |
 | `/api/verify-payment` | Server Action | Yes | Verify Razorpay payment signature, update user isPaid |
-| `/api/trpc/[trpc]` | GET/POST | Mixed | tRPC handler — all app data operations |
+| `/api/trpc/[trpc]` | GET/POST | Mixed | tRPC handler - all app data operations |
 
 ### Key tRPC Routers
 
@@ -977,8 +977,8 @@ Three breakpoints managed via `useResponsive` hook (`src/hooks/useResponsive.ts`
 
 | Device | Breakpoint | Default |
 |---|---|---|
-| Mobile | ≤ 768px | — |
-| Tablet | 769px – 1024px | — |
+| Mobile | ≤ 768px | - |
+| Tablet | 769px – 1024px | - |
 | Desktop | ≥ 1025px | ✓ (SSR default) |
 
 **Key mobile differences:**

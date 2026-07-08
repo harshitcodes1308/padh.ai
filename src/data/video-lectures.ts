@@ -1,9 +1,9 @@
 /**
- * Video Lectures — ICSE Class 10
+ * Video Lectures - CBSE Class 10
  * Subject-wise content organized into three categories:
- *   1. One-Shot   — Chapter-wise detailed lectures
- *   2. Marathon   — Full subject revision / sprint sessions
- *   3. Competency — MCQ-focused competency question practice
+ *   1. One-Shot   - Chapter-wise detailed lectures
+ *   2. Marathon   - Full subject revision / sprint sessions
+ *   3. Competency - MCQ-focused competency question practice
  *
  * Data sourced from the official YouTube lecture links PDF.
  */
@@ -102,7 +102,7 @@ export const VIDEO_LECTURES: SubjectVideos[] = [
     competency: {
       videos: [
         ch('Competency 9 Hour',           'https://www.youtube.com/live/1laUDgRvF34'),
-        ch('ICSE Saviours Competency',    'https://www.youtube.com/live/__1gFTkqDFk'),
+        ch('CBSE Saviours Competency',    'https://www.youtube.com/live/__1gFTkqDFk'),
       ],
     },
   },

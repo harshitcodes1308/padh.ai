@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-const ICSE_SUBJECTS = [
+const CBSE_SUBJECTS = [
     { name: 'Mathematics', code: 'MATH', order: 1 },
     { name: 'Physics', code: 'PHY', order: 2 },
     { name: 'Chemistry', code: 'CHEM', order: 3 },
@@ -17,7 +17,7 @@ const ICSE_SUBJECTS = [
 async function main() {
     console.log('🌱 Seeding subjects...');
 
-    for (const subject of ICSE_SUBJECTS) {
+    for (const subject of CBSE_SUBJECTS) {
         await prisma.subject.upsert({
             where: { code: subject.code },
             update: subject,

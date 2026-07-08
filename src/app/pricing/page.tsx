@@ -191,7 +191,7 @@ export default function PricingPage() {
                     <div style={{
                         fontSize: 12, fontWeight: 700, color: "#3B82F6",
                         textTransform: "uppercase", letterSpacing: 1, marginBottom: 10,
-                    }}>Pro — Lifetime</div>
+                    }}>Pro - Lifetime</div>
                     <div style={{ marginBottom: 6 }}>
                         <span style={{ fontSize: 40, fontWeight: 800, color: "#FFF" }}>₹99</span>
                         <span style={{ fontSize: 14, color: "#6B7280", marginLeft: 6 }}>one-time</span>

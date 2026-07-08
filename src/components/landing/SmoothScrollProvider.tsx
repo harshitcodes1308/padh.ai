@@ -10,7 +10,7 @@ import { gsap, ScrollTrigger } from "./useScrollReveal";
  * smoothed scroll position (this is the key to no jank). framer-motion's
  * useScroll reads the same scroll position, so it rides the smoothing too.
  *
- * Scoped to the landing route ONLY — never mount this around /dashboard.
+ * Scoped to the landing route ONLY - never mount this around /dashboard.
  * Respects prefers-reduced-motion: native scroll, no Lenis.
  */
 export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {

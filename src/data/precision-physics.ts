@@ -1,4 +1,4 @@
-// Precision Practice — Physics Questions (ICSE Competency-Based MCQs)
+// Precision Practice - Physics Questions (CBSE Competency-Based MCQs)
 import type { PrecisionQuestion } from "./precision-config";
 
 export const physicsQuestions: PrecisionQuestion[] = [

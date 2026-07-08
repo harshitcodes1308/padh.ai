@@ -1,8 +1,8 @@
-// English Literature — Real Specimen Paper Data (extracted from PDFs)
+// English Literature - Real Specimen Paper Data (extracted from PDFs)
 import { TYQPaper, TYQAnswerKey } from "./tyq-papers";
 
 // ==========================================
-// PAPER 1 — MOCK SPECIMEN PAPER 01 (2026)
+// PAPER 1 - MOCK SPECIMEN PAPER 01 (2026)
 // ==========================================
 
 export const englishLiteraturePaper1: TYQPaper = {
@@ -42,7 +42,7 @@ export const englishLiteraturePaper1: TYQPaper = {
       ]
     },
     {
-      name: "Section B — Drama",
+      name: "Section B - Drama",
       instructions: "Answer one or more questions from this Section.",
       questions: [
         {
@@ -58,7 +58,7 @@ export const englishLiteraturePaper1: TYQPaper = {
       ]
     },
     {
-      name: "Section C — Prose (Short Stories)",
+      name: "Section C - Prose (Short Stories)",
       instructions: "Answer one or more questions from this Section.",
       questions: [
         {
@@ -79,7 +79,7 @@ export const englishLiteraturePaper1: TYQPaper = {
       ]
     },
     {
-      name: "Section D — Poetry",
+      name: "Section D - Poetry",
       instructions: "Answer one or more questions from this Section.",
       questions: [
         {
@@ -126,7 +126,7 @@ export const englishLiteraturePaper1Answers: TYQAnswerKey = {
     { questionNumber: "2(i)", answer: "Caesar is speaking to the conspirators (Metellus Cimber, Brutus, Cassius) who are petitioning him to repeal the banishment of Publius Cimber. Caesar refuses because he believes his decisions should be firm and unchanging." },
     { questionNumber: "2(ii)", answer: "\"Constant as the northern star\" means Caesar is fixed, unmovable, and unchanging in his decisions. This reveals his pride, arrogance, and belief in his own infallibility." },
     { questionNumber: "2(iii)", answer: "\"No fellow in the firmament\" means no star equals the northern star. Caesar compares himself to this unique star, showing he believes he is supreme and above all." },
-    { questionNumber: "2(iv)", answer: "The conspirators surround Caesar and stab him. Casca strikes first. Caesar's final words are: \"Et tu, Brute? — Then fall, Caesar!\"" },
+    { questionNumber: "2(iv)", answer: "The conspirators surround Caesar and stab him. Casca strikes first. Caesar's final words are: \"Et tu, Brute? - Then fall, Caesar!\"" },
     { questionNumber: "2(v)", answer: "Personal response. Strength: standing by principles. Weakness: stubbornness and pride made him blind to danger." },
     { questionNumber: "3(i)", answer: "Brutus is speaking to Cassius. They are in Brutus' tent at Sardis having a heated argument about money and corruption." },
     { questionNumber: "3(ii)", answer: "Brutus reminds about the ides of March to emphasize they killed Caesar for justice. He accuses Cassius of now acting unjustly by taking bribes." },
@@ -139,7 +139,7 @@ export const englishLiteraturePaper1Answers: TYQAnswerKey = {
     { questionNumber: "4(iv)", answer: "The narrator cannot recognize himself because the photographer altered every feature. He is shocked, disappointed, and finally angry." },
     { questionNumber: "4(v)", answer: "Central theme: conflict between artistic vision and personal identity; body shaming; importance of accepting oneself." },
     { questionNumber: "5(i)", answer: "Leonard Mead is walking alone through the city streets at night." },
-    { questionNumber: "5(ii)", answer: "He compares himself to a hawk to emphasize isolation and solitude — he is the only moving thing in a deserted landscape." },
+    { questionNumber: "5(ii)", answer: "He compares himself to a hawk to emphasize isolation and solitude - he is the only moving thing in a deserted landscape." },
     { questionNumber: "5(iii)", answer: "It is November, at night. The setting creates loneliness, emptiness, and eerie silence, reflecting a dystopian society." },
     { questionNumber: "5(iv)", answer: "He is stopped by an automated police car and arrested for walking without purpose, taken to the Psychiatric Center." },
     { questionNumber: "5(v)", answer: "Bradbury criticizes the loss of individuality, dominance of technology, and suppression of human connection. The story warns against isolation and control by technology." },
@@ -149,7 +149,7 @@ export const englishLiteraturePaper1Answers: TYQAnswerKey = {
     { questionNumber: "6(iv)", answer: "The classroom is unusually quiet and solemn. Village elders including old Hauser are seated at the back." },
     { questionNumber: "6(v)", answer: "The title signifies loss of language and cultural identity under occupation. Language is integral to identity." },
     { questionNumber: "7(i)", answer: "Houses become haunted because people lived and died in them. His phantoms are \"harmless\" and glide peacefully." },
-    { questionNumber: "7(ii)", answer: "Phantoms glide with \"feet that make no sound\" — peaceful, gentle, and non-threatening." },
+    { questionNumber: "7(ii)", answer: "Phantoms glide with \"feet that make no sound\" - peaceful, gentle, and non-threatening." },
     { questionNumber: "7(iii)", answer: "The stranger lacks emotional connection to the house. The poet sees memories because he is connected to the house's history." },
     { questionNumber: "7(iv)", answer: "The living don't truly own property; the dead hold the title through memory. The past always inhabits the present." },
     { questionNumber: "7(v)", answer: "Mood: peaceful, contemplative, nostalgic. Imagery: open doors, gliding phantoms, silent floors, fireside." },
@@ -158,16 +158,16 @@ export const englishLiteraturePaper1Answers: TYQAnswerKey = {
     { questionNumber: "8(iii)", answer: "The lady throws her glove into the lion's den to test the Count's love and courage." },
     { questionNumber: "8(iv)", answer: "The Count retrieves the glove calmly but instead of giving it romantically, throws it in her face." },
     { questionNumber: "8(v)", answer: "The king judges the lady's action as cruel. True love doesn't require reckless tests; cruelty disguised as love is unacceptable." },
-    { questionNumber: "9(i)", answer: "\"Great tree\" = great soul or loved one who died. Its fall causes widespread disturbance — even rocks shudder and powerful animals seek safety." },
+    { questionNumber: "9(i)", answer: "\"Great tree\" = great soul or loved one who died. Its fall causes widespread disturbance - even rocks shudder and powerful animals seek safety." },
     { questionNumber: "9(ii)", answer: "Lions and elephants symbolize the strongest beings. Their reaction shows death affects everyone regardless of strength." },
-    { questionNumber: "9(iii)", answer: "Humans experience shock, numbness, feeling small and lost. Their senses are \"eroded\" — they cannot process what happened." },
+    { questionNumber: "9(iii)", answer: "Humans experience shock, numbness, feeling small and lost. Their senses are \"eroded\" - they cannot process what happened." },
     { questionNumber: "9(iv)", answer: "Grief goes beyond normal fear. People are so stunned that even their ability to feel fear is altered." },
     { questionNumber: "9(v)", answer: "Loss of great souls is devastating but their memory continues to guide us. We can become better because they existed." }
   ]
 };
 
 // ==========================================
-// PAPER 2 — MOCK SPECIMEN PAPER 02 (2026)
+// PAPER 2 - MOCK SPECIMEN PAPER 02 (2026)
 // ==========================================
 
 export const englishLiteraturePaper2: TYQPaper = {
@@ -207,7 +207,7 @@ export const englishLiteraturePaper2: TYQPaper = {
       ]
     },
     {
-      name: "Section B — Drama",
+      name: "Section B - Drama",
       instructions: "Answer one or more questions from this Section.",
       questions: [
         {
@@ -223,7 +223,7 @@ export const englishLiteraturePaper2: TYQPaper = {
       ]
     },
     {
-      name: "Section C — Prose (Short Stories)",
+      name: "Section C - Prose (Short Stories)",
       instructions: "Answer one or more questions from this Section.",
       questions: [
         {
@@ -244,7 +244,7 @@ export const englishLiteraturePaper2: TYQPaper = {
       ]
     },
     {
-      name: "Section D — Poetry",
+      name: "Section D - Poetry",
       instructions: "Answer one or more questions from this Section.",
       questions: [
         {
@@ -300,8 +300,8 @@ export const englishLiteraturePaper2Answers: TYQAnswerKey = {
     { questionNumber: "3(v)", answer: "Personal response. For nobility: idealistic, motivated by principle. Against: idealism made him impractical and easily manipulated." },
     { questionNumber: "4(i)", answer: "\"He\" is Martin, a thin, weak eleven-year-old. He fears the old, creaky elevator and a strange, fat lady who appears when he's alone." },
     { questionNumber: "4(ii)", answer: "The woman is old, fat, wears a dirty raincoat, has small pale eyes, and always appears when Martin is alone." },
-    { questionNumber: "4(iii)", answer: "The elevator stops between floors and lights go out. Martin hears her breathing in darkness — trapped with his fear." },
-    { questionNumber: "4(iv)", answer: "Martin's father dismisses his fears as foolish. This reveals their strained relationship — the father lacks empathy." },
+    { questionNumber: "4(iii)", answer: "The elevator stops between floors and lights go out. Martin hears her breathing in darkness - trapped with his fear." },
+    { questionNumber: "4(iv)", answer: "Martin's father dismisses his fears as foolish. This reveals their strained relationship - the father lacks empathy." },
     { questionNumber: "4(v)", answer: "The ending is ambiguous, letting horror linger in the reader's imagination. This is effective because it allows personal interpretation." },
     { questionNumber: "5(i)", answer: "The speaker is Adjoa, a young girl. Nana is her grandmother." },
     { questionNumber: "5(ii)", answer: "Nana thinks Adjoa's legs are too thin and slender, not good for childbearing. She measures a woman's worth by her ability to have children." },
@@ -316,7 +316,7 @@ export const englishLiteraturePaper2Answers: TYQAnswerKey = {
     { questionNumber: "7(i)", answer: "The poet notices a tiny speck (mite) on his white paper because the paper is so white any speck stands out." },
     { questionNumber: "7(ii)", answer: "The speck suddenly moves, seeming to have legs. The poet muses it is a tiny mite." },
     { questionNumber: "7(iii)", answer: "The poet spares the mite because it has a will to live, a mind of its own, and shows intelligence by trying to escape." },
-    { questionNumber: "7(iv)", answer: "The mite showed purposeful behavior, not random movement — even tiny creatures have consciousness and desire to survive." },
+    { questionNumber: "7(iv)", answer: "The mite showed purposeful behavior, not random movement - even tiny creatures have consciousness and desire to survive." },
     { questionNumber: "7(v)", answer: "The value and dignity of all living things, no matter how small. Even the smallest creature deserves respect." },
     { questionNumber: "8(i)", answer: "Bhishma Lochan Sharma is a singer performing a raga (Bhairav) with great enthusiasm." },
     { questionNumber: "8(ii)", answer: "His wife faints at the very first note, suggesting his singing is terrible and overwhelming." },

@@ -338,7 +338,7 @@ export default function UsersTable({ users, search, filter }: { users: UserRow[]
               >
                 <td style={{ ...tdStyle, fontWeight: 600, color: "var(--text-primary)" }}>{u.name}</td>
                 <td style={{ ...tdStyle, color: "var(--text-secondary)" }}>{u.email}</td>
-                <td style={{ ...tdStyle, color: "var(--text-muted)" }}>{u.phone || "—"}</td>
+                <td style={{ ...tdStyle, color: "var(--text-muted)" }}>{u.phone || "-"}</td>
                 <td style={tdStyle}>
                   <PlanSwitcher user={u} onUpdated={handleRefresh} />
                 </td>

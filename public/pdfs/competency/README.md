@@ -1,4 +1,4 @@
-# Competency Based Test — PDF Upload Directory
+# Competency Based Test - PDF Upload Directory
 
 Upload your chapterwise MCQ PDFs here, organized by subject.
 

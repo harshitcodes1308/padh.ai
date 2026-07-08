@@ -1,5 +1,5 @@
 /* ============================================================
-   PADH.AI — LANDING PAGE
+   PADH.AI - LANDING PAGE
    Scoped keyframes + utilities for the public marketing surface.
    Reuses design tokens from globals.css. No parallel system.
    ============================================================ */
@@ -47,7 +47,7 @@
   transform: translateY(-2px);
 }
 
-/* ---- Features grid — group hover focus ---- */
+/* ---- Features grid - group hover focus ---- */
 @media (hover: hover) and (pointer: fine) {
   .sa-features-grid:has(.sa-bento:hover) .sa-bento:not(:hover) {
     transition: all 0.3s ease;
@@ -66,7 +66,7 @@
   }
 }
 
-/* sa-glass-bento is now an alias of sa-bento — keeps existing className usage working */
+/* sa-glass-bento is now an alias of sa-bento - keeps existing className usage working */
 .sa-glass-bento {
   position: relative;
   background: var(--bg-base);
@@ -92,7 +92,7 @@
 }
 .sa-glass-bento:hover .sa-bento-cta { opacity: 1; }
 
-/* ---- Gradient text — subtle blue accent ---- */
+/* ---- Gradient text - subtle blue accent ---- */
 .sa-grad-text {
   background: linear-gradient(120deg, var(--text-primary) 0%, var(--brand-blue) 60%, var(--text-primary) 100%);
   background-size: 200% auto;
@@ -1006,7 +1006,7 @@
   }
 }
 
-/* ---- Stat cards — flat hover focus ---- */
+/* ---- Stat cards - flat hover focus ---- */
 .sa-stat-card {
   transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
               box-shadow 0.3s ease,

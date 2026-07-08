@@ -35,7 +35,7 @@ export const FREE_ROUTES = [
     "/dashboard/last-night-before",
 ] as const;
 
-/** Feature info for UpgradePrompt — maps route to display name + description */
+/** Feature info for UpgradePrompt - maps route to display name + description */
 export const FEATURE_INFO: Record<string, { name: string; description: string }> = {
     "/dashboard/ai-assistant": {
         name: "AI Assistant",
@@ -63,7 +63,7 @@ export const FEATURE_INFO: Record<string, { name: string; description: string }>
     },
     "/dashboard/chronoscroll": {
         name: "ChronoScroll",
-        description: "Interactive History & Civics timeline with key dates, events, and context — scroll through time to master your syllabus.",
+        description: "Interactive History & Civics timeline with key dates, events, and context - scroll through time to master your syllabus.",
     },
     "/dashboard/date-battle": {
         name: "Date Battle Arena",
@@ -75,7 +75,7 @@ export const FEATURE_INFO: Record<string, { name: string; description: string }>
     },
     "/dashboard/last-night-before": {
         name: "Last Night Before",
-        description: "Panic-mode revision: 30 numericals, 20 formulas, 10 definitions — randomly assigned for focused last-minute cramming.",
+        description: "Panic-mode revision: 30 numericals, 20 formulas, 10 definitions - randomly assigned for focused last-minute cramming.",
     },
 };
 

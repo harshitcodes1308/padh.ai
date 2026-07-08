@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
   {
     id: 4,
     testimonial:
-      'It helped me really well with my boards — and my boards went really well.',
+      'It helped me really well with my boards - and my boards went really well.',
     author: 'Ishika Sagar - CBSE Class 10',
   },
   {
@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-// Instagram-style default avatar — white silhouette on light grey
+// Instagram-style default avatar - white silhouette on light grey
 function DefaultAvatar({ size = 72 }: { size?: number }) {
   return (
     <svg
@@ -68,7 +68,7 @@ function getArcPosition(index: number, total: number, isMobile: boolean) {
   const angle = startAngle + (endAngle - startAngle) * (index / (total - 1));
   const rad = (angle * Math.PI) / 180;
 
-  // Radius of the arc — cards fan out from a center point
+  // Radius of the arc - cards fan out from a center point
   const radius = isMobile ? 160 : 280;
 
   // Center of arc is above the card cluster

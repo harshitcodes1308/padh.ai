@@ -12,7 +12,7 @@ const PDF_PATH = path.join(
   "pdfs",
   "competency",
   "Computer Applications",
-  "ICSE Computer Applications (Class 10) - Complete Chapter-wise MCQ Bank.pdf"
+  "CBSE Computer Applications (Class 10) - Complete Chapter-wise MCQ Bank.pdf"
 );
 
 const OUTPUT_PATH = path.join(__dirname, "..", "src", "data", "precision-computers.ts");
@@ -44,12 +44,12 @@ function chunkText(text, maxLen = 12000) {
 }
 
 async function extractQuestionsFromChunk(chunk, chunkIdx, totalChunks, existingIds) {
-  const prompt = `You are a precise ICSE data extraction engine.
+  const prompt = `You are a precise CBSE data extraction engine.
 
-TASK: Extract ALL MCQ questions from this text chunk (chunk ${chunkIdx + 1}/${totalChunks}) of an ICSE Class 10 Computer Applications competency question bank.
+TASK: Extract ALL MCQ questions from this text chunk (chunk ${chunkIdx + 1}/${totalChunks}) of an CBSE Class 10 Computer Applications competency question bank.
 
 RULES:
-1. Extract EVERY question — do not skip any
+1. Extract EVERY question - do not skip any
 2. Each question must have exactly 4 options
 3. correctAnswer is the 0-based index of the correct option
 4. The "chapter" field must be the chapter/topic heading the question falls under (e.g., "Introduction to Object Oriented Programming", "Elementary Concept of Objects and Classes", "Values and Data Types", etc.)
@@ -59,7 +59,7 @@ RULES:
 8. Use id format "comp-p-N" starting from ${existingIds + 1}
 9. Return ONLY a valid JSON array, no extra text
 
-OUTPUT FORMAT — JSON array of objects:
+OUTPUT FORMAT - JSON array of objects:
 [
   {
     "id": "comp-p-1",

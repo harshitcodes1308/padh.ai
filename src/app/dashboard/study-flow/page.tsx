@@ -186,7 +186,7 @@ export default function StudyFlowSubjectsPage() {
                   <div style={{
                     fontFamily: "var(--font-body)", fontSize: isMobile ? 11 : 12,
                     color: "var(--text-muted)", marginBottom: 14,
-                  }}>— chapters</div>
+                  }}>- chapters</div>
                 </div>
                 <div style={{
                   position: "absolute", top: isMobile ? 12 : 16, right: isMobile ? 12 : 16,

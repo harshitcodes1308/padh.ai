@@ -5,7 +5,7 @@ export const POLICIES = [
         content: `📄 Privacy Policy – Saviours AI
 Last Updated: 29th January 2026
 
-Saviours AI ("we", "our", "us") operates a digital education and AI-powered learning platform built specially for ICSE students ("Service").
+Saviours AI ("we", "our", "us") operates a digital education and AI-powered learning platform built specially for CBSE students ("Service").
 
 Your privacy matters to us. This Privacy Policy explains what information we collect, how we use it, and how we keep it safe when you use our website, app, or services.
 
@@ -136,7 +136,7 @@ By accessing or using Saviours AI, you agree to follow these Terms. If you do no
 
 1. About the Service
 
-Saviours AI is a digital learning platform created for ICSE students. Our services include:
+Saviours AI is a digital learning platform created for CBSE students. Our services include:
 - AI-powered doubt solving
 - Notes and revision tools
 - Custom tests
@@ -405,7 +405,7 @@ Sunday: Closed
 
 🌐 About Saviours AI
 
-Saviours AI is an AI-powered educational platform built especially for ICSE students. We help learners with:
+Saviours AI is an AI-powered educational platform built especially for CBSE students. We help learners with:
 - Instant doubt solving using AI
 - Clear and concise revision notes
 - Custom tests and assessments

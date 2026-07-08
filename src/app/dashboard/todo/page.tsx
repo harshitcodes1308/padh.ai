@@ -86,7 +86,7 @@ export default function MonthlyMissionPage() {
             fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600,
             color: mPct === 100 ? 'var(--status-green)' : 'var(--accent-gold)',
           }}>
-            {mounted ? `${mDone}/${mTotal} done` : '—'}
+            {mounted ? `${mDone}/${mTotal} done` : '-'}
           </div>
         </div>
 
@@ -236,7 +236,7 @@ export default function MonthlyMissionPage() {
                           }} />
                         </div>
                         <span style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 600, color: wkDone100 ? 'var(--status-green)' : 'var(--text-muted)', minWidth: 28, textAlign: 'right' }}>
-                          {mounted ? `${wkDone}/${wkTotal}` : '—'}
+                          {mounted ? `${wkDone}/${wkTotal}` : '-'}
                         </span>
                       </div>
                       <span style={{ fontSize: 9, color: 'var(--text-muted)', transform: isCollapsed ? 'none' : 'rotate(90deg)', transition: 'transform 0.2s ease' }}>▶</span>

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef } from "react";
 
 /* -----------------------------------------------------------------------------
- * Pixel ripple canvas — adapted from a 21st.dev hero effect, re-themed to the
+ * Pixel ripple canvas - adapted from a 21st.dev hero effect, re-themed to the
  * Saviours design system. Pixels expand outward from centre in a staggered
  * ripple, then shimmer. Most pixels are muted; a fraction sparkle in brand blue.
  * Respects prefers-reduced-motion (renders a static field, no animation loop).
@@ -182,7 +182,7 @@ export default function PixelCanvas({
     const ro = new ResizeObserver(() => { init(); });
     if (wrapRef.current) ro.observe(wrapRef.current);
 
-    // Pause the per-pixel loop when the hero scrolls out of view — keeps the
+    // Pause the per-pixel loop when the hero scrolls out of view - keeps the
     // rest of the page smooth instead of redrawing thousands of pixels off-screen.
     let visible = true;
     const io = new IntersectionObserver(

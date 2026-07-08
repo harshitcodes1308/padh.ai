@@ -47,7 +47,7 @@ export const dashboardRouter = createTRPCRouter({
             user.planType === "MONTHLY" &&
             (user.subscriptionStatus === "CANCELLED" || user.subscriptionStatus === "EXPIRED")
         ) {
-            // Still in grace period — autopay was halted/cancelled but
+            // Still in grace period - autopay was halted/cancelled but
             // the current cycle hasn't ended yet
             paymentWarning = "CANCELLED";
         }

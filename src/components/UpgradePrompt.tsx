@@ -263,7 +263,7 @@ export function UpgradePrompt({ featureName, description, onClose, type = "PRO" 
                                 type={selectedPlan === "MONTHLY" ? "MONTHLY" : "PRO"}
                                 email={(user as any)?.email || ""}
                                 name={(user as any)?.name || ""}
-                                buttonText={`Get ${selectedPlan === "MONTHLY" ? "Monthly" : "Yearly"} Plan — ₹${selectedPlan === "MONTHLY" ? monthlyFinal : yearlyFinal} →`}
+                                buttonText={`Get ${selectedPlan === "MONTHLY" ? "Monthly" : "Yearly"} Plan - ₹${selectedPlan === "MONTHLY" ? monthlyFinal : yearlyFinal} →`}
                                 onSuccess={() => { if (onClose) onClose(); router.refresh(); }}
                             />
                         </>

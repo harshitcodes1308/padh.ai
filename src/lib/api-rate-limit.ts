@@ -111,7 +111,7 @@ export function checkRateLimit(key: string, config: RateLimitConfig): RateLimitR
     // conservative sync guard that still works across cold starts via Redis.
     const memResult = checkMemoryRateLimit(key, config);
 
-    // Fire async Redis check (best-effort enforcement — blocks repeat offenders
+    // Fire async Redis check (best-effort enforcement - blocks repeat offenders
     // when the memory store resets on cold start, because Redis still has state)
     getRedisLimiter(config).limit(key).then((result) => {
         if (!result.success) {
@@ -123,14 +123,14 @@ export function checkRateLimit(key: string, config: RateLimitConfig): RateLimitR
             });
         }
     }).catch(() => {
-        // Redis down — memory fallback still active
+        // Redis down - memory fallback still active
     });
 
     return memResult;
 }
 
 /**
- * Async rate limit check — preferred for new code.
+ * Async rate limit check - preferred for new code.
  * Uses Redis when available, memory otherwise.
  */
 export async function checkRateLimitAsync(
@@ -153,7 +153,7 @@ export async function checkRateLimitAsync(
             retryAfterSeconds: Math.max(retryAfter, 0),
         };
     } catch {
-        // Redis down — fall back to memory
+        // Redis down - fall back to memory
         return checkMemoryRateLimit(key, config);
     }
 }

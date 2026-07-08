@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
 
         const { name, phone } = await request.json();
 
-        // Validate phone — strip non-digits, must be at least 10 digits
+        // Validate phone - strip non-digits, must be at least 10 digits
         const cleanedPhone = String(phone || '').replace(/\D/g, '');
         if (cleanedPhone.length < 10) {
             return NextResponse.json(

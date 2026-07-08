@@ -1,8 +1,8 @@
-// Geography — Real Specimen Paper Data (extracted from PDFs)
+// Geography - Real Specimen Paper Data (extracted from PDFs)
 import { TYQPaper, TYQAnswerKey } from "./tyq-papers";
 
 // ==========================================
-// PAPER 1 — MOCK SPECIMEN PAPER 01 (2026)
+// PAPER 1 - MOCK SPECIMEN PAPER 01 (2026)
 // ==========================================
 
 export const geographyPaper1: TYQPaper = {
@@ -109,7 +109,7 @@ export const geographyPaper1Answers: TYQAnswerKey = {
     { questionNumber: "1(iii)", answer: "(a) Contour lines join places of equal height; numbers indicate height above mean sea level.\n(b) Dendritic / Trellis / Radial drainage pattern." },
     { questionNumber: "1(iv)", answer: "(a) Grid 6540: Scattered/Dispersed; Grid 7280: Nucleated/Compact.\n(b) Causeways allow crossing seasonal rivers during dry months; they are low-cost bridges." },
     { questionNumber: "1(v)", answer: "(a) Compass direction (e.g., North-East).\n(b) Any two: Metalled road, Unmetalled road, Railway line, Cart track, Footpath." },
-    { questionNumber: "2", answer: "Map marking — to be checked visually by the student/teacher." },
+    { questionNumber: "2", answer: "Map marking - to be checked visually by the student/teacher." },
     { questionNumber: "3(i)", answer: "(b) 180° longitude" },
     { questionNumber: "3(ii)", answer: "(c) Loo" },
     { questionNumber: "3(iii)", answer: "(a) Leaching" },
@@ -159,7 +159,7 @@ export const geographyPaper1Answers: TYQAnswerKey = {
 };
 
 // ==========================================
-// PAPER 2 — MOCK SPECIMEN PAPER 02 (2026)
+// PAPER 2 - MOCK SPECIMEN PAPER 02 (2026)
 // ==========================================
 
 export const geographyPaper2: TYQPaper = {
@@ -266,7 +266,7 @@ export const geographyPaper2Answers: TYQAnswerKey = {
     { questionNumber: "1(iii)", answer: "(a) Black dotted lines represent footpaths or cart tracks.\n(b) Steep slope / Gentle slope based on contour spacing." },
     { questionNumber: "1(iv)", answer: "(a) Grid 6585: Dendritic; Grid 6875: Trellis/Radial.\n(b) Fire lines prevent forest fires from spreading and help firefighting." },
     { questionNumber: "1(v)", answer: "(a) Direction: South-West.\n(b) Natural features: River, Forest, Hills, Contours. (Any two)" },
-    { questionNumber: "2", answer: "Map marking — to be checked visually by the student/teacher." },
+    { questionNumber: "2", answer: "Map marking - to be checked visually by the student/teacher." },
     { questionNumber: "3(i)", answer: "(b) Day and night" },
     { questionNumber: "3(ii)", answer: "(a) Hot local wind" },
     { questionNumber: "3(iii)", answer: "(b) Iron oxide" },
@@ -298,7 +298,7 @@ export const geographyPaper2Answers: TYQAnswerKey = {
     { questionNumber: "8(iv)", answer: "Renewable, Eco-friendly, Low operating cost, Suitable for coastal areas. (Any two)" },
     { questionNumber: "9(i)", answer: "Green Revolution, Subsidies, Minimum Support Price, Irrigation facilities, Rural credit. (Any two)" },
     { questionNumber: "9(ii)", answer: "(a) Climate: Cool growing season, 20-25°C, 50-75 cm rainfall.\n(b) Soil: Well-drained loamy soil / Alluvial soil.\n(c) Leading state: Uttar Pradesh / Punjab / Haryana." },
-    { questionNumber: "9(iii)", answer: "(a) Cotton requires black soil for high moisture retention.\n(b) Jute is 'golden fibre' — valuable for foreign exchange and golden in colour.\n(c) Sloping land ensures drainage; tea plants need well-drained conditions." },
+    { questionNumber: "9(iii)", answer: "(a) Cotton requires black soil for high moisture retention.\n(b) Jute is 'golden fibre' - valuable for foreign exchange and golden in colour.\n(c) Sloping land ensures drainage; tea plants need well-drained conditions." },
     { questionNumber: "9(iv)", answer: "Subsistence: Self-consumption, small holdings, traditional methods.\nCommercial: For sale, large holdings, modern inputs." },
     { questionNumber: "10(i)", answer: "High cost of power, Old technology, Limited capital, Competition. (Any two)" },
     { questionNumber: "10(ii)", answer: "(a) Uses sugarcane (agricultural product) as raw material.\n(b) States: UP, Maharashtra, Karnataka, Tamil Nadu.\n(c) Seasonal nature, Low yield, Competition with gur/khandsari." },

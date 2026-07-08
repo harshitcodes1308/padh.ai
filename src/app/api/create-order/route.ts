@@ -4,7 +4,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { checkRateLimit, PAYMENT_RATE_LIMIT } from "@/lib/api-rate-limit";
 
-// HARDCODED: Server-side base pricing — NEVER trust frontend amount
+// HARDCODED: Server-side base pricing - NEVER trust frontend amount
 const BASE_PRICING = {
     PRO_YEARLY: 59900,    // ₹599 in paise
     LNB_CHEMISTRY: 1900,  // ₹19 in paise
@@ -51,7 +51,7 @@ export async function POST(req: Request) {
             }
         }
 
-        // Creator discount — only applies to PRO_YEARLY (not LNB add-on)
+        // Creator discount - only applies to PRO_YEARLY (not LNB add-on)
         let amountPaise: number = BASE_PRICING[purchaseType];
         let discountPct = 0;
         let creatorName: string | null = null;

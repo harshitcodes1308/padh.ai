@@ -525,13 +525,13 @@ function ComingSoonState({ subject, category, isMobile }: {
         fontFamily: "var(--font-display)", fontSize: isMobile ? 22 : 28,
         color: "var(--text-primary)", letterSpacing: "-0.02em", marginBottom: 8,
       }}>
-        {subject.subject} — {meta.label}
+        {subject.subject} - {meta.label}
       </div>
       <div style={{
         fontFamily: "var(--font-tagline)", fontSize: 15, fontStyle: "italic",
         color: "var(--text-muted)", marginBottom: 22, maxWidth: 340,
       }}>
-        {meta.description} videos are being prepared — stay tuned
+        {meta.description} videos are being prepared - stay tuned
       </div>
       <div style={{
         display: "inline-flex", alignItems: "center", gap: 7,

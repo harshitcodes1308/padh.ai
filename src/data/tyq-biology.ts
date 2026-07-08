@@ -1,8 +1,8 @@
-// Biology — Real Specimen Paper Data (extracted from PDFs)
+// Biology - Real Specimen Paper Data (extracted from PDFs)
 import { TYQPaper, TYQAnswerKey } from "./tyq-papers";
 
 // ==========================================
-// PAPER 1 — MOCK SPECIMEN PAPER 01 (2026)
+// PAPER 1 - MOCK SPECIMEN PAPER 01 (2026)
 // ==========================================
 
 export const biologyPaper1: TYQPaper = {
@@ -112,7 +112,7 @@ export const biologyPaper1Answers: TYQAnswerKey = {
     { questionNumber: "1(xiv)", answer: "(a) Ovary" },
     { questionNumber: "1(xv)", answer: "(a) All tall" },
     { questionNumber: "2(i)", answer: "(a) Transpiration\n(b) Insulin\n(c) Umbilical cord\n(d) Demography\n(e) Cytosine" },
-    { questionNumber: "2(ii)", answer: "(a) Cerebrum — Controls voluntary actions, intelligence, memory\n(b) Cerebellum — Maintains balance and coordination\n(c) Medulla oblongata — Controls involuntary actions\n(d) Pons — Connects brain parts, regulates breathing\n(e) Hypothalamus — Regulates body temperature, hunger, thirst" },
+    { questionNumber: "2(ii)", answer: "(a) Cerebrum - Controls voluntary actions, intelligence, memory\n(b) Cerebellum - Maintains balance and coordination\n(c) Medulla oblongata - Controls involuntary actions\n(d) Pons - Connects brain parts, regulates breathing\n(e) Hypothalamus - Regulates body temperature, hunger, thirst" },
     { questionNumber: "2(iii)", answer: "(a) Pollen grain → Pollination → Fertilization → Zygote formation\n(b) Kidney → Ureter → Urinary bladder → Urethra\n(c) Soil water → Root hair → Xylem → Phloem\n(d) Right ventricle → Pulmonary artery → Lungs → Left atrium\n(e) Nucleus → Chromosome → DNA → Gene" },
     { questionNumber: "2(iv)", answer: "(a) Myopia → Concave lens\n(b) Insulin → Diabetes mellitus\n(c) Leydig cells → Testosterone\n(d) Thyroxine → Thyroid gland\n(e) Eardrum → Tympanic membrane" },
     { questionNumber: "2(v)", answer: "(a) A-Bowman's capsule, B-Glomerulus, C-PCT, D-Loop of Henle, E-Collecting duct\n(b) Ultrafiltration\n(c) Reabsorption of water, concentration of urine\n(d) Afferent arteriole\n(e) ADH (Antidiuretic Hormone) / Vasopressin" },
@@ -145,7 +145,7 @@ export const biologyPaper1Answers: TYQAnswerKey = {
 };
 
 // ==========================================
-// PAPER 2 — MOCK SPECIMEN PAPER 02 (2026)
+// PAPER 2 - MOCK SPECIMEN PAPER 02 (2026)
 // ==========================================
 
 export const biologyPaper2: TYQPaper = {
@@ -255,10 +255,10 @@ export const biologyPaper2Answers: TYQAnswerKey = {
     { questionNumber: "1(xiv)", answer: "(c) Ovary" },
     { questionNumber: "1(xv)", answer: "(b) 9:3:3:1" },
     { questionNumber: "2(i)", answer: "(a) Osmosis\n(b) Adrenaline\n(c) Corpus callosum\n(d) Population density\n(e) Thymine" },
-    { questionNumber: "2(ii)", answer: "(a) Nasal cavity — Warms, moistens, filters air\n(b) Pharynx — Common passage for air and food\n(c) Larynx — Produces sound (voice box)\n(d) Trachea — Windpipe, carries air to lungs\n(e) Diaphragm — Muscular sheet for breathing" },
+    { questionNumber: "2(ii)", answer: "(a) Nasal cavity - Warms, moistens, filters air\n(b) Pharynx - Common passage for air and food\n(c) Larynx - Produces sound (voice box)\n(d) Trachea - Windpipe, carries air to lungs\n(e) Diaphragm - Muscular sheet for breathing" },
     { questionNumber: "2(iii)", answer: "(a) Gamete formation → Fertilization → Zygote → Embryo development\n(b) Left ventricle → Aorta → Body tissues → Left atrium\n(c) Bowman's capsule → Collecting duct → Ureter → Urinary bladder\n(d) Soil water → Root hair → Xylem → Stomata\n(e) Nucleus → Chromosome → DNA → Gene" },
     { questionNumber: "2(iv)", answer: "(a) Insulin → Diabetes mellitus\n(b) Iodine deficiency → Goitre\n(c) Iron deficiency → Anaemia\n(d) Vitamin A deficiency → Night blindness\n(e) Oxytocin → Milk ejection" },
-    { questionNumber: "2(v)", answer: "(a) A-Cornea, B-Iris, C-Lens, D-Retina, E-Optic nerve\n(b) Iris regulates pupil size, controls light entering eye\n(c) Lens becomes thicker (more convex) — ciliary muscles contract\n(d) Image formed on the retina\n(e) Optic nerve" },
+    { questionNumber: "2(v)", answer: "(a) A-Cornea, B-Iris, C-Lens, D-Retina, E-Optic nerve\n(b) Iris regulates pupil size, controls light entering eye\n(c) Lens becomes thicker (more convex) - ciliary muscles contract\n(d) Image formed on the retina\n(e) Optic nerve" },
     { questionNumber: "3(i)", answer: "Aerobic: Oxygen present, CO₂+H₂O, 38 ATP.\nAnaerobic: No oxygen, Lactic acid/Ethanol+CO₂, 2 ATP." },
     { questionNumber: "3(ii)", answer: "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Energy (38 ATP)" },
     { questionNumber: "3(iii)", answer: "Mitochondrion: Outer membrane, inner membrane with cristae, matrix." },

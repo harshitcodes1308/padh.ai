@@ -9,8 +9,8 @@ import { checkRateLimit, PAYMENT_RATE_LIMIT } from "@/lib/api-rate-limit";
  *
  * Creates a Razorpay Subscription for the ₹199/month Monthly plan.
  * Creator discounts use per-creator plan IDs configured in env:
- *   RAZORPAY_MONTHLY_PLAN_ID            — default (₹199)
- *   RAZORPAY_MONTHLY_PLAN_ID_{CODE}     — discounted plan for creator code (uppercase)
+ *   RAZORPAY_MONTHLY_PLAN_ID            - default (₹199)
+ *   RAZORPAY_MONTHLY_PLAN_ID_{CODE}     - discounted plan for creator code (uppercase)
  *   e.g. RAZORPAY_MONTHLY_PLAN_ID_BL2047, RAZORPAY_MONTHLY_PLAN_ID_CK2047
  */
 export async function POST() {
@@ -61,7 +61,7 @@ export async function POST() {
         const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID;
         const keySecret = process.env.RAZORPAY_KEY_SECRET;
 
-        // Use default plan — creator discounts apply to yearly only, not monthly
+        // Use default plan - creator discounts apply to yearly only, not monthly
         let planId = process.env.RAZORPAY_MONTHLY_PLAN_ID;
 
         const totalCount = parseInt(process.env.RAZORPAY_MONTHLY_TOTAL_COUNT || "11", 10);

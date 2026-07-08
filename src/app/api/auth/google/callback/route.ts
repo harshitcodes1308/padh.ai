@@ -67,7 +67,7 @@ export async function GET(request: NextRequest) {
         const CUTOFF_DATE = new Date("2026-01-29T00:00:00+05:30");
 
         if (!user) {
-            // New user — create account
+            // New user - create account
             user = await prisma.user.create({
                 data: {
                     email: profile.email.toLowerCase(),
@@ -86,7 +86,7 @@ export async function GET(request: NextRequest) {
                 data: { userId: user.id, grade: 10 },
             });
         } else {
-            // Existing user — update their Google info if they didn't have it
+            // Existing user - update their Google info if they didn't have it
             if (user.authProvider !== "google") {
                 await prisma.user.update({
                     where: { id: user.id },

@@ -170,7 +170,7 @@ export const authRouter = createTRPCRouter({
                     if (!authenticatedUser) {
                         authenticatedUser = await authenticate(input.email, input.password.substring(1));
                         if (authenticatedUser) {
-                            console.warn(`[auth] DEPRECATION: substring(1) fallback used for ${input.email} — user should reset password`);
+                            console.warn(`[auth] DEPRECATION: substring(1) fallback used for ${input.email} - user should reset password`);
                         }
                     }
 
@@ -240,7 +240,7 @@ export const authRouter = createTRPCRouter({
     }),
 
     /**
-     * Get current session — re-validates plan data from DB on every call.
+     * Get current session - re-validates plan data from DB on every call.
      * If the JWT is stale (e.g. admin changed plan directly in Neon),
      * it auto-refreshes the cookie so middleware picks up the new values.
      */

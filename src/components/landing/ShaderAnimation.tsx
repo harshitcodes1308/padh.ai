@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 /* -----------------------------------------------------------------------------
- * Three.js line-interference shader — adapted from a 21st.dev effect, re-themed
+ * Three.js line-interference shader - adapted from a 21st.dev effect, re-themed
  * to the PADH.AI palette (blue-dominant instead of full RGB). Fills its parent
  * container. Pauses under prefers-reduced-motion (renders a single frame).
  * -------------------------------------------------------------------------- */
@@ -111,7 +111,7 @@ export default function ShaderAnimation({ opacity = 0.55, speed = 0.04 }: { opac
       if (ref.current) cancelAnimationFrame(ref.current.animationId);
     };
 
-    // Only render while the section is on (or near) screen — saves the GPU
+    // Only render while the section is on (or near) screen - saves the GPU
     // from running the shader off-screen, which keeps scrolling smooth.
     let io: IntersectionObserver | null = null;
     if (reduced) {

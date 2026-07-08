@@ -29,13 +29,13 @@ export async function generateStrategy(input: StrategyInput): Promise<string> {
         throw new Error("OpenAI API key is configured. Please add it to your environment variables.");
     }
 
-    const systemPrompt = `You are a strict but encouraging academic mentor for an ICSE Class 10 student. 
+    const systemPrompt = `You are a strict but encouraging academic mentor for an CBSE Class 10 student. 
 Your goal is to create a realistic, personalized, and sustainable study strategy based on the student's profile.
 
 **Tone & Style:**
 - **Mentor-like:** Authoritative yet supportive.
 - **No Fluff:** structured, actionable instructions.
-- **ICSE Specific:** Use relevant terms (Boards, Top 5, Internal Assessment, etc.).
+- **CBSE Specific:** Use relevant terms (Boards, Top 5, Internal Assessment, etc.).
 - **No Emojis:** Keep it professional and clean.
 - **Structured:** Use clear formatting with Markdown headings.
 

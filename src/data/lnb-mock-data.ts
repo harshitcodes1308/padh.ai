@@ -1,6 +1,6 @@
-// Last Night Before — Physics PYQ Data (5 Sets from PDF)
+// Last Night Before - Physics PYQ Data (5 Sets from PDF)
 // Each set: 30 numericals, 20 formulas, 10 definitions
-// Source: ICSE Class 10 Physics Previous Year Questions
+// Source: CBSE Class 10 Physics Previous Year Questions
 
 export interface LNBNumerical { id: string; title: string; question: string; answer: string; topic: string; }
 export interface LNBFormula { id: string; formula: string; name: string; topic: string; }

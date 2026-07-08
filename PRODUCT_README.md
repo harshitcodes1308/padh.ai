@@ -1,7 +1,7 @@
-# 🎓 ICSE Saviours - Complete Product Documentation
+# 🎓 CBSE Saviours - Complete Product Documentation
 
-> **AI-Powered ICSE Exam Preparation Platform**  
-> Intelligent study planning, adaptive testing, and personalized learning for ICSE students
+> **AI-Powered CBSE Exam Preparation Platform**  
+> Intelligent study planning, adaptive testing, and personalized learning for CBSE students
 
 ---
 
@@ -19,12 +19,12 @@
 
 ## 🎯 Product Overview
 
-**ICSE Saviours** is an AI-powered study companion designed specifically for ICSE (Indian Certificate of Secondary Education) students. The platform combines intelligent study planning, adaptive testing, and personalized content generation to help students prepare effectively for their board exams.
+**CBSE Saviours** is an AI-powered study companion designed specifically for CBSE (Indian Certificate of Secondary Education) students. The platform combines intelligent study planning, adaptive testing, and personalized content generation to help students prepare effectively for their board exams.
 
 ### Key Value Propositions
 
 1. **AI-Driven Personalization** - Every study plan, test, and recommendation is tailored to the individual student
-2. **ICSE-Specific Content** - All questions, notes, and materials follow ICSE board patterns and syllabus
+2. **CBSE-Specific Content** - All questions, notes, and materials follow CBSE board patterns and syllabus
 3. **Adaptive Learning** - System learns from student performance and adjusts difficulty and focus areas
 4. **Comprehensive Toolset** - 10+ integrated features covering all aspects of exam preparation
 5. **Parent Visibility** - Detailed progress reports for parent oversight
@@ -59,11 +59,11 @@
 
 ### 2. **📚 Subject Management**
 
-**Purpose**: Organize and access ICSE subjects and chapters
+**Purpose**: Organize and access CBSE subjects and chapters
 
 **Features**:
 
-- Complete ICSE syllabus coverage for all subjects
+- Complete CBSE syllabus coverage for all subjects
 - Chapter-wise content organization
 - Subject-specific study materials
 - Progress tracking per subject
@@ -86,7 +86,7 @@
 
 **How It Works**:
 
-- Students select their ICSE subjects during onboarding
+- Students select their CBSE subjects during onboarding
 - System loads relevant chapters from syllabus database
 - Each chapter has associated tests, notes, and videos
 - Progress tracked at chapter level
@@ -133,7 +133,7 @@
 
 **Features**:
 
-- ICSE-specific doubt clearing
+- CBSE-specific doubt clearing
 - Concept explanations with examples
 - Step-by-step problem solving
 - Study tips and exam strategies
@@ -143,9 +143,9 @@
 **How It Works**:
 
 - Powered by OpenAI GPT-4o-mini
-- Trained on ICSE syllabus context
+- Trained on CBSE syllabus context
 - Maintains conversation history
-- Provides ICSE board exam-style answers
+- Provides CBSE board exam-style answers
 - Can explain concepts at different difficulty levels
 
 **Sample Use Cases**:
@@ -176,7 +176,7 @@
 **How It Works**:
 
 1. Student selects: subject, chapters, difficulty, question count
-2. AI generates ICSE-pattern questions
+2. AI generates CBSE-pattern questions
 3. Test presented in exam-like interface
 4. Auto-grading with correct answers
 5. Detailed performance report generated
@@ -184,7 +184,7 @@
 **Question Generation**:
 
 - Uses OpenAI GPT-4o-mini
-- ICSE board exam pattern matching
+- CBSE board exam pattern matching
 - Includes diagrams and formulas where needed
 - Proper marking scheme
 
@@ -320,12 +320,12 @@
 
 ### 9. **📖 Smart Notes**
 
-**Purpose**: AI-generated ICSE-style study notes
+**Purpose**: AI-generated CBSE-style study notes
 
 **Features**:
 
 - Chapter-wise concise notes
-- ICSE exam pattern alignment
+- CBSE exam pattern alignment
 - Key formulas and definitions
 - Important diagrams and charts
 - Exam tips and tricks
@@ -360,7 +360,7 @@
 **Features**:
 
 - Chapter-specific video suggestions
-- "Clarify Knowledge" channel integration
+- "Toppers Clan" channel integration
 - Topic-based search
 - Video quality filtering
 - Embedded player
@@ -369,7 +369,7 @@
 **How It Works**:
 
 - Uses YouTube Data API v3
-- Searches: "[Topic] Clarify Knowledge ICSE"
+- Searches: "[Topic] Toppers Clan CBSE"
 - Filters for educational content
 - Ranks by relevance and views
 - Embeds directly in platform
@@ -395,7 +395,7 @@
 **Data Stored**:
 
 - Name, email, phone
-- ICSE grade level
+- CBSE grade level
 - Target exam date
 - Daily study hours
 - Subject selection
@@ -626,7 +626,7 @@
 **Usage**:
 
 - Video search by topic
-- "Clarify Knowledge" channel filtering
+- "Toppers Clan" channel filtering
 - Video metadata retrieval
 
 **Quota**: 10,000 units/day (free)
@@ -747,18 +747,18 @@
 **For Students**:
 
 - In-app AI Assistant
-- Email: support@icsesaviours.com
+- Email: support@cbsesaviours.com
 - FAQ section
 
 **For Parents**:
 
-- Email: parents@icsesaviours.com
+- Email: parents@cbsesaviours.com
 - Progress reports
 - Consultation booking
 
 **For Schools**:
 
-- Email: schools@icsesaviours.com
+- Email: schools@cbsesaviours.com
 - Bulk licensing inquiries
 - Custom integrations
 
@@ -766,7 +766,7 @@
 
 ## 📄 License & Credits
 
-**Platform**: ICSE Saviours  
+**Platform**: CBSE Saviours  
 **Version**: 1.0.0  
 **Last Updated**: February 2026  
 **Developed by**: Harshit Singh
@@ -797,6 +797,6 @@
 
 ---
 
-**Built with ❤️ for ICSE Students**
+**Built with ❤️ for CBSE Students**
 
 _Empowering students to achieve their best through AI-powered personalized learning_

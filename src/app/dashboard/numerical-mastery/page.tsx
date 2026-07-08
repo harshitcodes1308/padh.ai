@@ -618,7 +618,7 @@ export default function NumericalMasteryPage() {
           {!isMastered
             ? "MASTER THIS TOPIC TO CONTINUE"
             : isLastTopic
-            ? "CHAPTER COMPLETE — BACK TO TOPICS"
+            ? "CHAPTER COMPLETE - BACK TO TOPICS"
             : `NEXT TOPIC → ${selectedChapter.topics[topicIndex + 1]?.name}`}
         </button>
 

@@ -12,7 +12,7 @@ export async function refineNotes(params: {
 }): Promise<string> {
     const { rawContent, subject, topic } = params;
 
-    const prompt = `You are an ICSE Class 10 study notes expert.
+    const prompt = `You are an CBSE Class 10 study notes expert.
 
 Refine these student notes into well-formatted, exam-ready notes:
 
@@ -56,7 +56,7 @@ Return ONLY the refined markdown notes. No extra commentary.`;
             messages: [
                 {
                     role: "system",
-                    content: "You are an expert ICSE Class 10 notes formatter. Return only formatted markdown."
+                    content: "You are an expert CBSE Class 10 notes formatter. Return only formatted markdown."
                 },
                 { role: "user", content: prompt }
             ],
@@ -115,7 +115,7 @@ Return ONLY valid JSON array. No markdown, no extra text.`;
             messages: [
                 {
                     role: "system",
-                    content: "You are an ICSE flashcard expert. Return only valid JSON arrays."
+                    content: "You are an CBSE flashcard expert. Return only valid JSON arrays."
                 },
                 { role: "user", content: prompt }
             ],

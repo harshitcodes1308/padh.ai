@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { trpc } from '@/lib/trpc/client';
 import { typography } from '@/lib/typography';
-import { ICSE_SUBJECTS, ICSE_CHAPTERS } from '@/lib/icse-data';
+import { CBSE_SUBJECTS, CBSE_CHAPTERS } from '@/lib/cbse-data';
 import type { MCQ } from '@/lib/test-generator';
 import { useResponsive } from '@/hooks/useResponsive';
 
@@ -115,7 +115,7 @@ export default function CustomiseTestPage() {
                         Select  the subject you want to create a test for:
                     </h2>
                     <div style={{ display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', gap: isMobile ? '10px' : '16px', marginTop: '24px' }}>
-                        {ICSE_SUBJECTS.map((sub) => (
+                        {CBSE_SUBJECTS.map((sub) => (
                             <button
                                 key={sub}
                                 onClick={() => {
@@ -144,7 +144,7 @@ export default function CustomiseTestPage() {
                         Select chapter(s) for {subject}:
                     </h2>
                     <div style={{ marginTop: '24px' }}>
-                        {ICSE_CHAPTERS[subject]?.map((ch) => (
+                        {CBSE_CHAPTERS[subject]?.map((ch) => (
                             <label key={ch} style={{ display: 'flex', alignItems: 'center', marginBottom: '12px', cursor: 'pointer' }}>
                                 <input
                                     type="checkbox"

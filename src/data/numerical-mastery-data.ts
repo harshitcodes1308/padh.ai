@@ -1,6 +1,6 @@
-// ⚡ Physics Numerical Mastery — Real Data from PDF
+// ⚡ Physics Numerical Mastery - Real Data from PDF
 // Structure: Chapter → Topic → Formula → Solved Example → PYQ
-// Source: "physics numericals -2.pdf" — ICSE PYQs 2007–2025
+// Source: "physics numericals -2.pdf" - CBSE PYQs 2007–2025
 
 export interface SolvedExample {
   question: string;
@@ -121,7 +121,7 @@ export const numericalMasteryData: NumericalChapter[] = [
             finalAnswer: "W = F × s × cos θ",
           },
         ],
-        aiTip: "When force is perpendicular to displacement, work done is ZERO. This is a classic trick question — look for 90° angles!",
+        aiTip: "When force is perpendicular to displacement, work done is ZERO. This is a classic trick question - look for 90° angles!",
       },
       {
         id: "potential-energy",
@@ -192,7 +192,7 @@ export const numericalMasteryData: NumericalChapter[] = [
             finalAnswer: "2:1",
           },
         ],
-        aiTip: "KE depends on v² — doubling speed quadruples energy! Always mention this relationship for full marks.",
+        aiTip: "KE depends on v² - doubling speed quadruples energy! Always mention this relationship for full marks.",
       },
       {
         id: "power",
@@ -233,7 +233,7 @@ export const numericalMasteryData: NumericalChapter[] = [
             finalAnswer: "1500 W",
           },
         ],
-        aiTip: "Always convert minutes to seconds when calculating power. Use P = F × v when velocity is given directly — it's faster!",
+        aiTip: "Always convert minutes to seconds when calculating power. Use P = F × v when velocity is given directly - it's faster!",
       },
       {
         id: "mechanical-advantage",
@@ -696,7 +696,7 @@ export const numericalMasteryData: NumericalChapter[] = [
             finalAnswer: "(i) 2000 kWh  (ii) 7.2 × 10⁹ J",
           },
         ],
-        aiTip: "1 kWh = 3.6 × 10⁶ J — memorize this conversion. Also remember to use kW (not W) with hours for kWh!",
+        aiTip: "1 kWh = 3.6 × 10⁶ J - memorize this conversion. Also remember to use kW (not W) with hours for kWh!",
       },
       {
         id: "charge-current",

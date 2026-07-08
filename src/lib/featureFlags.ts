@@ -12,7 +12,7 @@ export const FEATURE_FLAGS = {
   todoList:          true,
   youtubeDiscovery:  true,   // YouTube-powered Watch step in study flow
 
-  // Hidden — activate later by flipping to true
+  // Hidden - activate later by flipping to true
   numericalMastery:  true,
   chronoScroll:      true,
   guessPapers:       false,

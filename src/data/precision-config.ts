@@ -1,4 +1,4 @@
-// Precision Practice Mode — Configuration & Types
+// Precision Practice Mode - Configuration & Types
 
 // =============================================
 // QUESTION DATA TYPE
@@ -243,7 +243,7 @@ function generateInsights(
     const allotted = TIME_PER_MARK[mb.marks] || 60;
     const avg = timeBehavior.avgTimePerMarkType[mb.marks] || 0;
     if (avg > allotted * 1.3 && mb.total >= 2) {
-      insights.push(`You tend to overthink ${mb.marks}-mark questions — averaging ${Math.round(avg)}s vs ${allotted}s allotted.`);
+      insights.push(`You tend to overthink ${mb.marks}-mark questions - averaging ${Math.round(avg)}s vs ${allotted}s allotted.`);
     }
   }
 
@@ -253,14 +253,14 @@ function generateInsights(
     const firstHalfCorrect = results.slice(0, half).filter(q => q.isCorrect).length / half;
     const secondHalfCorrect = results.slice(half).filter(q => q.isCorrect).length / (results.length - half);
     if (firstHalfCorrect - secondHalfCorrect > 0.2) {
-      insights.push(`Your accuracy drops significantly after question ${half} — consider pacing yourself better.`);
+      insights.push(`Your accuracy drops significantly after question ${half} - consider pacing yourself better.`);
     }
   }
 
   // Check weak mark category
   const weakest = markBreakdown.filter(m => m.total >= 2).sort((a, b) => a.accuracy - b.accuracy)[0];
   if (weakest && weakest.accuracy < 50) {
-    insights.push(`${weakest.marks}-mark questions are your weakest area (${Math.round(weakest.accuracy)}% accuracy) — focus on these.`);
+    insights.push(`${weakest.marks}-mark questions are your weakest area (${Math.round(weakest.accuracy)}% accuracy) - focus on these.`);
   }
 
   // Time management on higher-weightage questions
@@ -275,7 +275,7 @@ function generateInsights(
   // Speed insight
   const totalOvertime = results.reduce((s, q) => s + Math.max(0, q.timeDeviation), 0);
   if (totalOvertime === 0 && accuracy > 70) {
-    insights.push('Excellent time management — you completed within allotted time with solid accuracy!');
+    insights.push('Excellent time management - you completed within allotted time with solid accuracy!');
   }
 
   // Ensure at least 3 insights
@@ -283,7 +283,7 @@ function generateInsights(
     insights.push('Consistent performance across all question types. Keep it up!');
   }
   if (insights.length < 2) {
-    insights.push(`Overall accuracy: ${Math.round(accuracy)}% — ${accuracy >= 75 ? 'strong foundation' : 'room for improvement'}.`);
+    insights.push(`Overall accuracy: ${Math.round(accuracy)}% - ${accuracy >= 75 ? 'strong foundation' : 'room for improvement'}.`);
   }
   if (insights.length < 3) {
     insights.push(`You averaged ${Math.round(results.reduce((s, q) => s + q.actualTimeTaken, 0) / results.length)}s per question.`);

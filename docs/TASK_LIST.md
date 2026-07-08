@@ -1,4 +1,4 @@
-# ICSE Saviours — Development Task List
+# CBSE Saviours - Development Task List
 
 ## ✅ ALL PHASES COMPLETED
 
@@ -48,7 +48,7 @@
 
 ### Phase 8: AI Flashcards Feature ✅
 
-- [x] `generateFlashcards()` with ICSE Class 10 prompt engineering
+- [x] `generateFlashcards()` with CBSE Class 10 prompt engineering
 - [x] Interactive quiz UI with 4-option MCQs, progress bar, 2-try system
 - [x] Score tracking and celebration screens
 
@@ -60,7 +60,7 @@
 ### Phase 10: Verification & Testing ✅
 
 - [x] Theme applied consistently, no lingering yellow
-- [x] AI Flashcards generate ICSE-specific questions
+- [x] AI Flashcards generate CBSE-specific questions
 - [x] Typography renders correctly (Manrope/DM Sans)
 
 ### Phase 11: Custom Test Generator ✅
@@ -89,7 +89,7 @@
 
 ### Phase 14: TYQ (Test Your Knowledge) ✅
 
-- [x] Question bank data for 9 ICSE subjects
+- [x] Question bank data for 9 CBSE subjects
 - [x] Physics, Chemistry, Biology, Mathematics
 - [x] English Language, English Literature
 - [x] History & Civics, Geography, Computer Applications
@@ -98,7 +98,7 @@
 ### Phase 15: Smart Notes ✅
 
 - [x] AI-generated chapter-wise notes
-- [x] ICSE exam pattern aligned content
+- [x] CBSE exam pattern aligned content
 - [x] Notes AI prompt engineering
 
 ### Phase 16: Study Strategy ✅
@@ -160,7 +160,7 @@
 ✅ 12 dashboard features fully functional  
 ✅ AI Chat, Flashcards, Notes, Strategy, Test Generation  
 ✅ 10-Day Sprint with adaptive difficulty  
-✅ TYQ with 9 ICSE subjects  
+✅ TYQ with 9 CBSE subjects  
 ✅ Focus Mode (Pomodoro/Deep/Light)  
 ✅ Study Planner with daily plans  
 ✅ Razorpay payment integration  

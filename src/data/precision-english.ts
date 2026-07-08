@@ -336,7 +336,7 @@ export const englishQuestions: PrecisionQuestion[] = [
     "year": 2022,
     "chapter": "The Ball Poem",
     "marks": 1,
-    "question": "[Extract]\n\"What is the boy now, who has lost his ball, What, what is he to do? I saw it\ngo Merrily bouncing, down the street and then Merrily over — there it is in the water! No\nuse to say 'O there are other balls'...\"\n\nQuestion:\nWhat does the expression 'what, what is he to do' denote?",
+    "question": "[Extract]\n\"What is the boy now, who has lost his ball, What, what is he to do? I saw it\ngo Merrily bouncing, down the street and then Merrily over - there it is in the water! No\nuse to say 'O there are other balls'...\"\n\nQuestion:\nWhat does the expression 'what, what is he to do' denote?",
     "options": [
       "Loss of the ball.",
       "Asking the poet for another ball.",
@@ -1221,7 +1221,7 @@ export const englishQuestions: PrecisionQuestion[] = [
     "year": 2023,
     "chapter": "16 – On Killing a Tree",
     "marks": 1,
-    "question": "[Extract]\n\"** “What is the boy now, who has lost his ball, What, what is he to do? I saw it go\nMerrily bouncing, down the street and then Merrily over — there it is in the water! No use to say\n‘O there are other balls’…”\n**\"\n\nQuestion:\n** What does the expression ‘what, what is he to do’ denote?\n**",
+    "question": "[Extract]\n\"** “What is the boy now, who has lost his ball, What, what is he to do? I saw it go\nMerrily bouncing, down the street and then Merrily over - there it is in the water! No use to say\n‘O there are other balls’…”\n**\"\n\nQuestion:\n** What does the expression ‘what, what is he to do’ denote?\n**",
     "options": [
       "Loss of the ball.",
       "Asking the poet for another ball.",
@@ -3546,7 +3546,7 @@ export const englishQuestions: PrecisionQuestion[] = [
     "year": 2025,
     "chapter": "FOOTPRINTS - 3 - The Midnight Visitor",
     "marks": 1,
-    "question": "[Extract]\n\"It's not my balcony,\" Ausable said with extreme irritation. \"It belongs to the next\napartment.\" He glanced explanatorily at Fowler. \"You see,\" he said, \"this room used to be part of\na large unit, and the next room — through that door there — used to be the living room. It had\nthe balcony, which extends under my window now. You can get onto it from the empty room two\ndoors down — and somebody did, last month. The management promised to block it off. But\nthey haven't.\"\n\nQuestion:\nWhat was the management supposed to do regarding the balcony?",
+    "question": "[Extract]\n\"It's not my balcony,\" Ausable said with extreme irritation. \"It belongs to the next\napartment.\" He glanced explanatorily at Fowler. \"You see,\" he said, \"this room used to be part of\na large unit, and the next room - through that door there - used to be the living room. It had\nthe balcony, which extends under my window now. You can get onto it from the empty room two\ndoors down - and somebody did, last month. The management promised to block it off. But\nthey haven't.\"\n\nQuestion:\nWhat was the management supposed to do regarding the balcony?",
     "options": [
       "To clean it.",
       "To block it off.",
@@ -3966,7 +3966,7 @@ export const englishQuestions: PrecisionQuestion[] = [
     "year": 2025,
     "chapter": "A Letter to God",
     "marks": 1,
-    "question": "[Extract]\n\"The postmaster — a fat, amiable fellow — also broke out laughing, but almost\nimmediately he turned serious and, tapping the letter to his desk, commented, \"What faith! I\nwish I had the faith of the man who wrote this letter. Starting up a correspondence with God!\"\nSo, in order not to shake the writer's faith in God, the postmaster came up with an idea: answer\nthe letter.\"\n\nQuestion:\nJustify the following statement: What faith! I wish I had the faith of the man who\nwrote this letter.",
+    "question": "[Extract]\n\"The postmaster - a fat, amiable fellow - also broke out laughing, but almost\nimmediately he turned serious and, tapping the letter to his desk, commented, \"What faith! I\nwish I had the faith of the man who wrote this letter. Starting up a correspondence with God!\"\nSo, in order not to shake the writer's faith in God, the postmaster came up with an idea: answer\nthe letter.\"\n\nQuestion:\nJustify the following statement: What faith! I wish I had the faith of the man who\nwrote this letter.",
     "options": [
       "The postmaster was amazed by the address on the letter",
       "The postmaster\nexpressed admiration for Lencho's unwavering faith in God",
@@ -3981,7 +3981,7 @@ export const englishQuestions: PrecisionQuestion[] = [
     "year": 2025,
     "chapter": "A Letter to God",
     "marks": 1,
-    "question": "[Extract]\n\"The postmaster — a fat, amiable fellow — also broke out laughing, but almost\nimmediately he turned serious and, tapping the letter to his desk, commented, \"What faith! I\nwish I had the faith of the man who wrote this letter. Starting up a correspondence with God!\"\nSo, in order not to shake the writer's faith in God, the postmaster came up with an idea: answer\nthe letter.\"\n\nQuestion:\nFill in the blank with a correct word from the brackets. The postmaster turned\nserious on seeing the letter addressed to God because he realized that the writer had\n(immense/limited) faith in God.",
+    "question": "[Extract]\n\"The postmaster - a fat, amiable fellow - also broke out laughing, but almost\nimmediately he turned serious and, tapping the letter to his desk, commented, \"What faith! I\nwish I had the faith of the man who wrote this letter. Starting up a correspondence with God!\"\nSo, in order not to shake the writer's faith in God, the postmaster came up with an idea: answer\nthe letter.\"\n\nQuestion:\nFill in the blank with a correct word from the brackets. The postmaster turned\nserious on seeing the letter addressed to God because he realized that the writer had\n(immense/limited) faith in God.",
     "options": [
       "limited",
       "immense",
@@ -3996,7 +3996,7 @@ export const englishQuestions: PrecisionQuestion[] = [
     "year": 2025,
     "chapter": "A Letter to God",
     "marks": 2,
-    "question": "[Extract]\n\"The postmaster — a fat, amiable fellow — also broke out laughing, but almost\nimmediately he turned serious and, tapping the letter to his desk, commented, \"What faith! I\nwish I had the faith of the man who wrote this letter. Starting up a correspondence with God!\"\nSo, in order not to shake the writer's faith in God, the postmaster came up with an idea: answer\nthe letter.\"\n\nQuestion:\nExamine the portrayal of the postmaster in the given extract.",
+    "question": "[Extract]\n\"The postmaster - a fat, amiable fellow - also broke out laughing, but almost\nimmediately he turned serious and, tapping the letter to his desk, commented, \"What faith! I\nwish I had the faith of the man who wrote this letter. Starting up a correspondence with God!\"\nSo, in order not to shake the writer's faith in God, the postmaster came up with an idea: answer\nthe letter.\"\n\nQuestion:\nExamine the portrayal of the postmaster in the given extract.",
     "options": [
       "The postmaster is portrayed as a strict and unsympathetic person",
       "The\npostmaster is jovial, kind, and deeply touched by Lencho's faith",
@@ -4011,7 +4011,7 @@ export const englishQuestions: PrecisionQuestion[] = [
     "year": 2025,
     "chapter": "A Letter to God",
     "marks": 1,
-    "question": "[Extract]\n\"The postmaster — a fat, amiable fellow — also broke out laughing, but almost\nimmediately he turned serious and, tapping the letter to his desk, commented, \"What faith! I\nwish I had the faith of the man who wrote this letter. Starting up a correspondence with God!\"\nSo, in order not to shake the writer's faith in God, the postmaster came up with an idea: answer\nthe letter.\"\n\nQuestion:\nWhy did the postmaster initially laugh on seeing the letter?",
+    "question": "[Extract]\n\"The postmaster - a fat, amiable fellow - also broke out laughing, but almost\nimmediately he turned serious and, tapping the letter to his desk, commented, \"What faith! I\nwish I had the faith of the man who wrote this letter. Starting up a correspondence with God!\"\nSo, in order not to shake the writer's faith in God, the postmaster came up with an idea: answer\nthe letter.\"\n\nQuestion:\nWhy did the postmaster initially laugh on seeing the letter?",
     "options": [
       "It was a blank sheet of paper",
       "He lacked faith in God",
@@ -4898,7 +4898,7 @@ export const englishQuestions: PrecisionQuestion[] = [
     "marks": 4,
     "question": "[Extract]\n\"(Not applicable)\"\n\nQuestion:\n\"The Sermon at Benaras\" and \"For Anne Gregory\", deal with the themes of 'love'\nand 'life'. Discuss.",
     "options": [
-      "The Sermon at Benares deals with accepting the reality of death and the\nuniversality of suffering, while For Anne Gregory explores the dual nature of love—physical love\nis short-lived, but spiritual love transcends material world",
+      "The Sermon at Benares deals with accepting the reality of death and the\nuniversality of suffering, while For Anne Gregory explores the dual nature of love-physical love\nis short-lived, but spiritual love transcends material world",
       "Both deal only with romantic love",
       "Both deal only with the theme of death",
       "The Sermon at Benares talks about money while\nFor Anne Gregory talks about friendship\n\n-- 28 of 61 --"

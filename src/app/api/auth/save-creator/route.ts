@@ -8,7 +8,7 @@ import { prisma } from "@/lib/prisma";
  *
  * Saves (or clears) creator_code on the current user's record.
  * Called from onboarding "Who referred you?" step.
- * A null value is valid — means "None" was selected.
+ * A null value is valid - means "None" was selected.
  */
 export async function POST(request: NextRequest) {
     try {
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ success: true, creatorCode: creatorCode || null });
         }
 
-        // Validate — if code provided, it must exist
+        // Validate - if code provided, it must exist
         if (creatorCode !== null && creatorCode !== undefined && creatorCode !== "") {
             const creator = await prisma.creator.findUnique({
                 where: { creatorCode: String(creatorCode) },

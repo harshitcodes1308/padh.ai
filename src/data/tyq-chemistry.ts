@@ -1,8 +1,8 @@
-// Chemistry — Real Specimen Paper Data (extracted from PDFs)
+// Chemistry - Real Specimen Paper Data (extracted from PDFs)
 import { TYQPaper, TYQAnswerKey } from "./tyq-papers";
 
 // ==========================================
-// PAPER 1 — MOCK SPECIMEN PAPER 01 (2026)
+// PAPER 1 - MOCK SPECIMEN PAPER 01 (2026)
 // ==========================================
 
 export const chemistryPaper1: TYQPaper = {
@@ -142,7 +142,7 @@ export const chemistryPaper1Answers: TYQAnswerKey = {
 };
 
 // ==========================================
-// PAPER 2 — MOCK SPECIMEN PAPER 02 (2026)
+// PAPER 2 - MOCK SPECIMEN PAPER 02 (2026)
 // ==========================================
 
 export const chemistryPaper2: TYQPaper = {

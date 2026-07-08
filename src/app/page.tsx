@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import LandingPage from "./LandingPage";
 
 export const metadata: Metadata = {
-  title: "PADH.AI — Your AI-powered board prep workspace",
+  title: "PADH.AI - Your AI-powered board prep workspace",
   description:
     "AI-powered tools built end to end for CBSE Class 10 board prep. Doubt solver, smart planner, PYQ tests, focus mode and more. Start free.",
   openGraph: {
-    title: "PADH.AI — Your AI-powered board prep workspace",
+    title: "PADH.AI - Your AI-powered board prep workspace",
     description:
       "AI-powered tools built end to end for CBSE Class 10 board prep. Start free.",
     url: "https://padh.ai",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PADH.AI — Your AI-powered board prep workspace",
+    title: "PADH.AI - Your AI-powered board prep workspace",
     description:
       "AI-powered tools built end to end for CBSE Class 10 board prep. Start free.",
   },

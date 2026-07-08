@@ -1,4 +1,4 @@
-ICSE Class 10 – Complete Theory Syllabus (For Question Generation)
+CBSE Class 10 – Complete Theory Syllabus (For Question Generation)
 
 > Note: This document contains ONLY the theory syllabus.  
 > Practical work and Internal Assessments are intentionally excluded.  
@@ -199,4 +199,4 @@ The Power of Music
 
 ---
 
-This file is optimized for AI-based question generation across all ICSE Class 10 subjects.
+This file is optimized for AI-based question generation across all CBSE Class 10 subjects.

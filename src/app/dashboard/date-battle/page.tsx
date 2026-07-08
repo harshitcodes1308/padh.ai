@@ -36,17 +36,17 @@ function generateOptions(correctYearStr: string): string[] {
 function getDetailedTitle(event: typeof CHRONO_DATA[0]): string {
     const firstBullet = event.bullets?.[0];
     if (firstBullet && firstBullet.length > 15) {
-        return `${event.title} — ${firstBullet}`;
+        return `${event.title} - ${firstBullet}`;
     }
     return event.title;
 }
 
 const INITIAL_LEADERBOARD = [
-    { rank: 1, name: "—", score: 0, badge: "◆" },
-    { rank: 2, name: "—", score: 0, badge: "◇" },
-    { rank: 3, name: "—", score: 0, badge: "◈" },
-    { rank: 4, name: "—", score: 0, badge: "○" },
-    { rank: 5, name: "—", score: 0, badge: "·" },
+    { rank: 1, name: "-", score: 0, badge: "◆" },
+    { rank: 2, name: "-", score: 0, badge: "◇" },
+    { rank: 3, name: "-", score: 0, badge: "◈" },
+    { rank: 4, name: "-", score: 0, badge: "○" },
+    { rank: 5, name: "-", score: 0, badge: "·" },
 ];
 
 function getLeaderboardWithPlayer(playerScore: number) {
@@ -295,7 +295,7 @@ export default function DateBattleArenaPage() {
                         color: "var(--text-primary)", marginBottom: 3,
                         letterSpacing: "-0.005em",
                     }}>
-                        Score {PERFECT_SCORE.toLocaleString()} = FREE Clarify Knowledge Merch
+                        Score {PERFECT_SCORE.toLocaleString()} = FREE Toppers Clan Merch
                     </div>
                     <div style={{
                         fontFamily: "var(--font-body)", fontSize: 11,
@@ -635,7 +635,7 @@ export default function DateBattleArenaPage() {
                     maxWidth: 480, margin: "16px auto 0",
                 }}>
                     <span style={{ fontFamily: "var(--font-body)", color: "var(--text-muted)", fontSize: 12, lineHeight: 1.5 }}>
-                        Perfect Score: <span style={{ color: "var(--accent-gold)", fontWeight: 600 }}>{PERFECT_SCORE.toLocaleString()}</span> — hit it to become <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>Chrono King</span> and win free merch.
+                        Perfect Score: <span style={{ color: "var(--accent-gold)", fontWeight: 600 }}>{PERFECT_SCORE.toLocaleString()}</span> - hit it to become <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>Chrono King</span> and win free merch.
                     </span>
                 </div>
             )}
@@ -650,7 +650,7 @@ export default function DateBattleArenaPage() {
                 }}>
                     <div style={{ fontFamily: "var(--font-display)", fontSize: 22, marginBottom: 4, color: "var(--accent-gold)", letterSpacing: "-0.02em" }}>◆</div>
                     <span style={{ fontFamily: "var(--font-body)", color: "var(--accent-gold)", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                        Chrono King Achieved — Free Merch Unlocked
+                        Chrono King Achieved - Free Merch Unlocked
                     </span>
                 </div>
             )}

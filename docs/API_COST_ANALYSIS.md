@@ -1,4 +1,4 @@
-# API Cost Analysis - ICSE Saviours
+# API Cost Analysis - CBSE Saviours
 
 ## OpenAI API Usage & Costs
 
@@ -166,7 +166,7 @@ TOTAL: $0.0005070 (~$0.00051 per question batch)
 
 **Per Search Request:**
 - `youtube.search.list()` = **100 quota units**
-- Your app calls it **2 times per user query** (Clarify Knowledge + ICSE Saviours)
+- Your app calls it **2 times per user query** (Toppers Clan + CBSE Saviours)
 - **Total**: 200 quota units per user query
 
 ### Daily Quota Analysis

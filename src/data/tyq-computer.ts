@@ -1,8 +1,8 @@
-// Computer Applications — Real Specimen Paper Data (extracted from PDFs)
+// Computer Applications - Real Specimen Paper Data (extracted from PDFs)
 import { TYQPaper, TYQAnswerKey } from "./tyq-papers";
 
 // ==========================================
-// PAPER 1 — MOCK SPECIMEN PAPER 01 (2026)
+// PAPER 1 - MOCK SPECIMEN PAPER 01 (2026)
 // ==========================================
 
 export const computerPaper1: TYQPaper = {
@@ -128,7 +128,7 @@ export const computerPaper1Answers: TYQAnswerKey = {
     { questionNumber: "1(xx)", answer: "(b) int" },
     { questionNumber: "2(i)", answer: "if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')\n  System.out.println(\"Vowel\");\nelse\n  System.out.println(\"Not a vowel\");" },
     { questionNumber: "2(ii)", answer: "a = 5, b = 4, result = 4\nStep-by-step: a++(5) + ++b(3) - a--(6) + b++(3) = 5+3-6+3 = 5" },
-    { questionNumber: "2(iii)", answer: "Error: 'else' without 'if' — the two print statements after if need braces.\nCorrected:\nif (marks >= 75) {\n  System.out.println(\"PASS\");\n  System.out.println(\"Congratulations!\");\n} else {\n  System.out.println(\"FAIL\");\n}" },
+    { questionNumber: "2(iii)", answer: "Error: 'else' without 'if' - the two print statements after if need braces.\nCorrected:\nif (marks >= 75) {\n  System.out.println(\"PASS\");\n  System.out.println(\"Congratulations!\");\n} else {\n  System.out.println(\"FAIL\");\n}" },
     { questionNumber: "2(iv)", answer: "Math.sqrt(a*a + b*b) / (a + b)" },
     { questionNumber: "2(v)", answer: "Loop executes 3 times. Output: 5 7 9" },
     { questionNumber: "2(vi)", answer: "G\n-3" },
@@ -146,7 +146,7 @@ export const computerPaper1Answers: TYQAnswerKey = {
 };
 
 // ==========================================
-// PAPER 2 — MOCK SPECIMEN PAPER 02 (2026)
+// PAPER 2 - MOCK SPECIMEN PAPER 02 (2026)
 // ==========================================
 
 export const computerPaper2: TYQPaper = {

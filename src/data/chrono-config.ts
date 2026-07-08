@@ -1,828 +1,622 @@
 export const CHRONO_DATA = [
     {
         "id": "ev_pdf_1",
-        "year": "29 March 1857",
-        "title": "Barrackpore Spark",
+        "year": "594 AD",
+        "title": "Early Historical Reference",
         "bullets": [
-            "Mangal Pandey revolted at Barrackpore.",
-            "He attacked British officers.",
-            "He was angered by the new greased cartridges.",
-            "This event was a key trigger before the main revolt."
+            "Belongs to ancient Indian history",
+            "Reference to early dynasties",
+            "Part of India's long civilisational timeline",
+            "Context for early political formations"
         ],
-        "importance": "It was the first open act of defiance by an Indian soldier,",
+        "importance": "Shows the deep historical roots of Indian civilisation.",
         "recall_question": {
-            "question": "The revolt at Barrackpore in March 1857 was led by:",
+            "question": "This date belongs to which period?",
             "options": [
-                "Nana Saheb",
-                "Mangal Pandey",
-                "Rani Lakshmibai",
-                "Bahadur Shah Zafar"
+                "Ancient",
+                "Medieval",
+                "Modern",
+                "Prehistoric"
             ],
-            "correct_index": 1
+            "correct_index": 0
         },
         "status": "unviewed",
         "eraColor": "rgba(139,92,246,0.15)"
     },
     {
         "id": "ev_pdf_2",
-        "year": "9 May 1857",
-        "title": "Punishment at Meerut",
+        "year": "768\u201378 AD",
+        "title": "Early Medieval Reference",
         "bullets": [
-            "85 Indian sepoys at Meerut refused to use the greased cartridges.",
-            "They were court-martialed and sentenced to long imprisonment.",
-            "They were publicly stripped of their uniforms and put in irons.",
-            "This caused immense anger among their fellow soldiers."
+            "Marks rise of regional kingdoms in India",
+            "Feudal structures began to strengthen",
+            "Local rulers gained more autonomy",
+            "Transition from ancient to medieval polity"
         ],
-        "importance": "This harsh punishment was the final spark that ignited the",
+        "importance": "Sets the stage for the regional powers that later resisted the Delhi Sultanate.",
         "recall_question": {
-            "question": "On 9 May 1857, 85 sepoys were punished for refusing to use:",
+            "question": "This date falls in which era?",
             "options": [
-                "New rifles",
-                "Greased cartridges",
-                "British uniforms",
-                "Foreign goods"
+                "Ancient",
+                "Early Medieval",
+                "Late Medieval",
+                "Modern"
             ],
-            "correct_index": 2
+            "correct_index": 1
         },
         "status": "unviewed",
         "eraColor": "rgba(220,38,38,0.15)"
     },
     {
         "id": "ev_pdf_3",
-        "year": "10 May 1857",
-        "title": "Revolt Breaks Out at Meerut",
+        "year": "868 AD",
+        "title": "Medieval Reference",
         "bullets": [
-            "Indian sepoys rose in open rebellion.",
-            "They released their imprisoned comrades.",
-            "Attacked and killed British officers.",
-            "The rebels then marched towards Delhi."
+            "Part of early medieval Indian timeline",
+            "Context for local dynasties",
+            "Regional chieftains held power",
+            "Pre-dates the Delhi Sultanate"
         ],
-        "importance": "This marks the official beginning of the Great Revolt of 1857.",
+        "importance": "Helps map India's political fragmentation before Islamic rule.",
         "recall_question": {
-            "question": "The revolt of 1857 officially began at:",
+            "question": "This date belongs to which period?",
             "options": [
-                "Barrackpore",
-                "Delhi",
-                "Meerut",
-                "Kanpur"
+                "Ancient",
+                "Medieval",
+                "Modern",
+                "Prehistoric"
             ],
-            "correct_index": 3
+            "correct_index": 1
         },
         "status": "unviewed",
         "eraColor": "rgba(245,158,11,0.15)"
     },
     {
         "id": "ev_pdf_4",
-        "year": "11 May 1857",
-        "title": "Capture of Delhi",
+        "year": "1295",
+        "title": "Delhi Sultanate Period Reference",
         "bullets": [
-            "The rebel sepoys from Meerut arrived in Delhi.",
-            "They captured the city.",
-            "Bahadur Shah Zafar was proclaimed the Emperor of India.",
-            "The rebellion gained a symbolic head and a central point.",
-            "The rebellion spread to major cities.",
-            "Key centres of revolt were Kanpur, Lucknow, and Jhansi.",
-            "Nana Saheb led the revolt in Kanpur.",
-            "Begum Hazrat Mahal led it in Lucknow.",
-            "Rani Lakshmibai was killed fighting the British in Gwalior.",
-            "Jhansi had already been captured by British forces.",
-            "Gwalior was the last major centre of the rebellion to fall.",
-            "This marked the effective military end of the revolt."
+            "Falls under the Delhi Sultanate era",
+            "Important historical benchmark",
+            "Context for Sultanate administration",
+            "Reference point for medieval chronology"
         ],
-        "importance": "It gave the revolt a political focus and challenged British",
+        "importance": "Places events during the peak of Delhi Sultanate rule.",
         "recall_question": {
-            "question": "The brave queen who fought and died in the revolt of 1857 was:",
+            "question": "This date belongs to which dynasty's period?",
             "options": [
-                "Begum Hazrat Mahal",
-                "Rani Lakshmibai",
-                "Jijabai",
-                "Ahilyabai Holkar"
+                "Mughal",
+                "Delhi Sultanate",
+                "British",
+                "Mauryan"
             ],
-            "correct_index": 0
+            "correct_index": 1
         },
         "status": "unviewed",
         "eraColor": "rgba(16,185,129,0.15)"
     },
     {
         "id": "ev_pdf_5",
-        "year": "2 August 1858",
-        "title": "Government of India Act 1858",
+        "year": "1448",
+        "title": "Late Medieval Reference",
         "bullets": [
-            "Passed by the British Parliament.",
-            "Ended the rule of the East India Company.",
-            "Transferred the control of India to the British Crown.",
-            "The Secretary of State for India was created."
+            "Part of late medieval India",
+            "Decline of Delhi Sultanate",
+            "Rise of provincial kingdoms",
+            "Context before Mughal arrival"
         ],
-        "importance": "It formally brought India under the direct rule of the British",
+        "importance": "Shows the fragmented political landscape before Babur.",
         "recall_question": {
-            "question": "The Government of India Act of 1858 transferred power from the Company to the:",
+            "question": "This date is from which period?",
             "options": [
-                "Indian Parliament",
-                "British Crown",
-                "Governor-General",
-                "Viceroy"
+                "Ancient",
+                "Early Medieval",
+                "Late Medieval",
+                "Modern"
             ],
-            "correct_index": 1
+            "correct_index": 2
         },
         "status": "unviewed",
         "eraColor": "rgba(59,130,246,0.15)"
     },
     {
         "id": "ev_pdf_6",
-        "year": "1 November 1858",
-        "title": "Queen's Proclamation",
+        "year": "1517",
+        "title": "Early Mughal Period Reference",
         "bullets": [
-            "Issued by Queen Victoria.",
-            "Announced the assumption of power over India by the Crown.",
-            "Promised non-interference in religious matters.",
-            "Declared a policy of peace and goodwill."
+            "Falls in early 16th century",
+            "Babur had not yet won Panipat (1526)",
+            "Transitional period in North India",
+            "Context for Mughal foundation"
         ],
-        "importance": "It set out the new policy of the British government for ruling",
+        "importance": "Immediately precedes the establishment of the Mughal Empire.",
         "recall_question": {
-            "question": "Queen Victoria's Proclamation was announced on: 2. Growth of Nationalism & Foundation of INC",
+            "question": "This date belongs to which empire's early phase?",
             "options": [
-                "10 May 1857",
-                "2 August 1858",
-                "1 November 1858",
-                "1 January 1877"
+                "Mughal",
+                "Maratha",
+                "British",
+                "Delhi Sultanate"
             ],
-            "correct_index": 2
+            "correct_index": 0
         },
         "status": "unviewed",
-        "eraColor": "rgba(185,28,28,0.15)"
+        "eraColor": "rgba(139,92,246,0.15)"
     },
     {
         "id": "ev_pdf_7",
-        "year": "1828",
-        "title": "Foundation of Brahmo Samaj",
+        "year": "1558",
+        "title": "Mughal Period Reference",
         "bullets": [
-            "Founded by Raja Rammohan Roy in Calcutta.",
-            "Opposed social evils like sati and caste system.",
-            "Promoted modern education and rational thinking.",
-            "Played a key role in the Bengal Renaissance."
+            "Falls during Akbar's reign (1556\u20131605)",
+            "Mughal expansion in progress",
+            "Administrative consolidation underway",
+            "Important milestone in Mughal chronology"
         ],
-        "importance": "It was a major socio-religious reform movement that helped",
+        "importance": "Context for Akbar's territorial and administrative policies.",
         "recall_question": {
-            "question": "The Brahmo Samaj was founded by:",
+            "question": "This date is from which Mughal emperor's time?",
             "options": [
-                "Swami Vivekananda",
-                "Raja Rammohan Roy",
-                "Jyotiba Phule",
-                "Dayananda Saraswati"
+                "Babur",
+                "Humayun",
+                "Akbar",
+                "Aurangzeb"
             ],
-            "correct_index": 3
+            "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(249,115,22,0.15)"
+        "eraColor": "rgba(220,38,38,0.15)"
     },
     {
         "id": "ev_pdf_8",
-        "year": "1848",
-        "title": "Jyotiba Phule's Work",
+        "year": "1579",
+        "title": "Mughal Period Reference",
         "bullets": [
-            "Jyotiba Phule started his work for educating lower castes.",
-            "Opened schools for girls and Shudras in Pune.",
-            "Worked against caste discrimination.",
-            "Founded the Satyashodhak Samaj (Society of Truth Seekers) later."
+            "Also during Akbar's reign",
+            "Religious and administrative reforms",
+            "Ibadat Khana discussions were active",
+            "Context for Mughal court politics"
         ],
-        "importance": "He was a pioneering social reformer who fought for the rights",
+        "importance": "Reflects Akbar's policy of religious tolerance and debate.",
         "recall_question": {
-            "question": "The social reformer who worked for the education of lower castes and girls was:",
+            "question": "This belongs to which Mughal emperor's period?",
             "options": [
-                "Raja Rammohan Roy",
-                "Ishwar Chandra Vidyasagar",
-                "Jyotiba Phule",
-                "Swami Dayananda"
+                "Akbar",
+                "Jahangir",
+                "Shah Jahan",
+                "Aurangzeb"
             ],
             "correct_index": 0
         },
         "status": "unviewed",
-        "eraColor": "rgba(6,182,212,0.15)"
+        "eraColor": "rgba(245,158,11,0.15)"
     },
     {
         "id": "ev_pdf_9",
-        "year": "1866",
-        "title": "East India Association",
+        "year": "1688",
+        "title": "Parliamentary Supremacy in Britain",
         "bullets": [
-            "Founded by Dadabhai Naoroji in London.",
-            "Aimed to discuss the Indian question and influence British public opinion.",
-            "It was a precursor to the Indian National Congress.",
-            "It highlighted the drain of wealth from India."
+            "Glorious Revolution in England",
+            "Parliament gained ultimate authority",
+            "Limited monarchy was established",
+            "Bill of Rights followed in 1689"
         ],
-        "importance": "It was one of the first organized efforts to present the Indian",
+        "importance": "Laid the foundation for Britain's democratic system.",
         "recall_question": {
-            "question": "The East India Association was founded in London by:",
+            "question": "Parliamentary supremacy was established in?",
             "options": [
-                "Surendranath Banerjee",
-                "W.C. Bonnerjee",
-                "Dadabhai Naoroji",
-                "A.O. Hume"
+                "1688",
+                "1707",
+                "1801",
+                "1859"
             ],
-            "correct_index": 1
+            "correct_index": 0
         },
         "status": "unviewed",
-        "eraColor": "rgba(139,92,246,0.15)"
+        "eraColor": "rgba(16,185,129,0.15)"
     },
     {
         "id": "ev_pdf_10",
-        "year": "1876",
-        "title": "Indian National Association",
+        "year": "1707",
+        "title": "Act of Union (Scotland & England)",
         "bullets": [
-            "Founded by Surendranath Banerjee in Calcutta.",
-            "Aimed to create a strong public opinion on political issues.",
-            "It merged with the Indian National Congress later.",
-            "It was a major nationalist organization before the INC."
+            "United Scotland with England",
+            "Created \"United Kingdom of Great Britain\"",
+            "Scottish Parliament was dissolved",
+            "Britain became a unified state"
         ],
-        "importance": "It represented the growing political consciousness and",
+        "importance": "Formed the core of the modern United Kingdom.",
         "recall_question": {
-            "question": "The Indian National Association was founded by:",
+            "question": "Act of Union between Scotland and England was in?",
             "options": [
-                "Dadabhai Naoroji",
-                "Gopal Krishna Gokhale",
-                "A.O. Hume",
-                "Surendranath Banerjee"
+                "1688",
+                "1707",
+                "1801",
+                "1859"
             ],
-            "correct_index": 2
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(220,38,38,0.15)"
+        "eraColor": "rgba(59,130,246,0.15)"
     },
     {
         "id": "ev_pdf_11",
-        "year": "1878",
-        "title": "Vernacular Press Act",
+        "year": "1730",
+        "title": "Decline of Mughal Empire",
         "bullets": [
-            "Passed by Lord Lytton.",
-            "Aimed to gag the Indian-language press.",
-            "Gave the government extensive rights to censor reports.",
-            "Was seen as a repressive colonial policy."
+            "Marked beginning of Mughal decline",
+            "Rise of regional powers (Marathas, Sikhs)",
+            "Central authority weakened",
+            "British East India Company gained foothold"
         ],
-        "importance": "It angered Indian nationalists and became a major factor",
+        "importance": "Opened the door for British expansion in India.",
         "recall_question": {
-            "question": "The repressive Vernacular Press Act was passed in:",
+            "question": "This date marks the beginning of what?",
             "options": [
-                "1858",
-                "1878",
-                "1885",
-                "1905"
+                "Rise of Mughals",
+                "Decline of Mughals",
+                "British rule",
+                "Maratha decline"
             ],
-            "correct_index": 3
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(245,158,11,0.15)"
+        "eraColor": "rgba(139,92,246,0.15)"
     },
     {
         "id": "ev_pdf_12",
-        "year": "28 December 1885",
-        "title": "First INC Session",
+        "year": "1733",
+        "title": "18th Century Reference",
         "bullets": [
-            "Held in Bombay at Gokuldas Tejpal Sanskrit College.",
-            "Founded by A.O. Hume along with Indian leaders.",
-            "W.C. Bonnerjee was the first President.",
-            "72 delegates attended the session."
+            "Mughal power further declining",
+            "Regional kingdoms became stronger",
+            "Maratha influence growing",
+            "Political fragmentation continued"
         ],
-        "importance": "It marked the beginning of an organized, all-India political",
+        "importance": "Context for the rise of Marathas and later British conquest.",
         "recall_question": {
-            "question": "The first session of the Indian National Congress was held in:",
+            "question": "This period saw the rise of which power?",
             "options": [
-                "Calcutta",
-                "Bombay",
-                "Madras",
-                "Pune"
+                "Mughals",
+                "Marathas",
+                "British",
+                "French"
             ],
-            "correct_index": 0
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(16,185,129,0.15)"
+        "eraColor": "rgba(220,38,38,0.15)"
     },
     {
         "id": "ev_pdf_13",
-        "year": "1886",
-        "title": "Second INC Session",
+        "year": "1740",
+        "title": "Rise of Regional Powers",
         "bullets": [
-            "Held in Calcutta.",
-            "Dadabhai Naoroji presided over the session.",
-            "The Congress's objectives and methods were further defined.",
-            "It showed the growing national unity."
+            "Regional kingdoms asserted independence",
+            "Marathas, Awadh, Bengal became strong",
+            "Mughal emperor became a nominal head",
+            "European trading companies expanded"
         ],
-        "importance": "It demonstrated the early nationalists' commitment to",
+        "importance": "Political division made it easier for the British to conquer.",
         "recall_question": {
-            "question": "The President of the INC's second session in Calcutta (1886) was: 3. First & Second Phase of the National Movement",
+            "question": "This period is known for?",
             "options": [
-                "W.C. Bonnerjee",
-                "Badruddin Tyabji",
-                "Dadabhai Naoroji",
-                "George Yule"
+                "Mughal unity",
+                "Rise of regional powers",
+                "British dominance",
+                "French rule"
             ],
             "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(59,130,246,0.15)"
+        "eraColor": "rgba(245,158,11,0.15)"
     },
     {
         "id": "ev_pdf_14",
-        "year": "1893",
-        "title": "Drain of Wealth Theory",
+        "year": "1750",
+        "title": "British Expansion Begins",
         "bullets": [
-            "Dadabhai Naoroji explained the 'Drain of Wealth' theory in Britain.",
-            "He argued that India's wealth was being systematically drained to Britain.",
-            "This was a major economic critique of British rule.",
-            "It became a core argument for the nationalists."
+            "British East India Company expanding",
+            "Carnatic Wars ongoing",
+            "French rivalries in India",
+            "Political instability in South India"
         ],
-        "importance": "It provided an economic rationale for the demand for self-rule.",
+        "importance": "Set the stage for the Battle of Plassey and Buxar.",
         "recall_question": {
-            "question": "The 'Drain of Wealth' theory was propounded by:",
+            "question": "This period marks the beginning of what?",
             "options": [
-                "R.C. Dutt",
-                "Dadabhai Naoroji",
-                "Gopal Krishna Gokhale",
-                "Mahadev Govind Ranade"
+                "Mughal golden age",
+                "British expansion",
+                "Maratha decline",
+                "French dominance"
             ],
-            "correct_index": 2
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(185,28,28,0.15)"
+        "eraColor": "rgba(16,185,129,0.15)"
     },
     {
         "id": "ev_pdf_15",
-        "year": "1896",
-        "title": "'Poverty and Un-British Rule in India'",
+        "year": "1760",
+        "title": "British Expansion Period",
         "bullets": [
-            "Dadabhai Naoroji published this famous book.",
-            "It detailed the economic exploitation of India.",
-            "It provided statistical evidence for the Drain of Wealth.",
-            "It became a foundational text for Indian nationalism."
+            "British consolidating power in Bengal",
+            "Company conflicts with regional rulers",
+            "Pre-Battle of Buxar (1764)",
+            "Mir Qasim's rebellion brewing"
         ],
-        "importance": "It systematically exposed the economic costs of British",
+        "importance": "Context for British military and political dominance.",
         "recall_question": {
-            "question": "",
+            "question": "This date is from which century?",
             "options": [
-                "dabhai Naoroji's famous book on economic exploitation was:",
-                "Hind Swaraj",
-                "The Indian Struggle",
-                "Poverty and Un-British Rule in India",
-                "Discovery of India"
+                "17th",
+                "18th",
+                "19th",
+                "20th"
             ],
-            "correct_index": 3
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(249,115,22,0.15)"
+        "eraColor": "rgba(59,130,246,0.15)"
     },
     {
         "id": "ev_pdf_16",
-        "year": "1902",
-        "title": "Servants of India Society",
+        "year": "1764",
+        "title": "Battle of Buxar",
         "bullets": [
-            "Founded by Gopal Krishna Gokhale.",
-            "Aimed to train national missionaries for the service of India.",
-            "Promoted social and political reform.",
-            "Worked for the cause of the poor and oppressed."
+            "British East India Company won",
+            "Mir Qasim, Shuja-ud-Daulah, Shah Alam II defeated",
+            "Gained Diwani rights over Bengal, Bihar, Orissa",
+            "Established British as a major political power"
         ],
-        "importance": "It created a dedicated group of workers to carry on social and",
+        "importance": "Gave the British control over revenue and administration.",
         "recall_question": {
-            "question": "The Servants of India Society was founded by:",
+            "question": "Battle of Buxar took place in?",
             "options": [
-                "Bal Gangadhar Tilak",
-                "Gopal Krishna Gokhale",
-                "Dadabhai Naoroji",
-                "Lala Lajpat Rai"
+                "1757",
+                "1764",
+                "1765",
+                "1773"
             ],
-            "correct_index": 0
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(6,182,212,0.15)"
+        "eraColor": "rgba(139,92,246,0.15)"
     },
     {
         "id": "ev_pdf_17",
-        "year": "20 July 1905",
-        "title": "Announcement of Partition of Bengal",
+        "year": "1779",
+        "title": "British Expansion Period",
         "bullets": [
-            "Lord Curzon announced the plan to partition Bengal.",
-            "The official reason was administrative convenience.",
-            "The real motive was to divide Hindus and Muslims.",
-            "It sparked immediate and widespread opposition."
+            "British consolidating power in India",
+            "Company's influence growing across regions",
+            "Conflicts with Mysore and Marathas",
+            "Administrative reforms underway"
         ],
-        "importance": "It triggered the Swadeshi and Boycott movements, marking",
+        "importance": "Context for the growth of the British Empire in India.",
         "recall_question": {
-            "question": "The Partition of Bengal was announced by Viceroy:",
+            "question": "This period saw the rise of which power?",
             "options": [
-                "Lord Ripon",
-                "Lord Lytton",
-                "Lord Curzon",
-                "Lord Minto"
+                "Mughals",
+                "Marathas",
+                "British",
+                "French"
             ],
-            "correct_index": 1
+            "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(139,92,246,0.15)"
+        "eraColor": "rgba(220,38,38,0.15)"
     },
     {
         "id": "ev_pdf_18",
-        "year": "7 August 1905",
-        "title": "Swadeshi Resolution",
+        "year": "1780",
+        "title": "British Expansion Period",
         "bullets": [
-            "Passed at a meeting at the Calcutta Town Hall.",
-            "Called for the boycott of British goods.",
-            "Advocated the use of Indian-made (Swadeshi) goods.",
-            "Marked the official launch of the Swadeshi movement."
+            "Second Anglo-Mysore War ongoing",
+            "Haider Ali fighting British",
+            "British territorial gains continued",
+            "Company's military power strengthened"
         ],
-        "importance": "It formalized the economic protest against the British.",
+        "importance": "Shows British resistance to regional powers like Mysore.",
         "recall_question": {
-            "question": "The formal resolution for the Swadeshi movement was passed on:",
+            "question": "This date is from which century?",
             "options": [
-                "20 July 1905",
-                "7 August 1905",
-                "16 October 1905",
-                "30 December 1906"
+                "17th",
+                "18th",
+                "19th",
+                "20th"
             ],
-            "correct_index": 2
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(220,38,38,0.15)"
+        "eraColor": "rgba(245,158,11,0.15)"
     },
     {
         "id": "ev_pdf_19",
-        "year": "16 October 1905",
-        "title": "Day of Mourning",
+        "year": "1789",
+        "title": "French Revolution",
         "bullets": [
-            "The day the Partition of Bengal officially took effect.",
-            "Observed as a day of mourning throughout Bengal.",
-            "People fasted, observed 'Raksha Bandhan' and 'Arandhan' (no cooking).",
-            "Huge protest meetings and processions were held."
+            "Storming of Bastille",
+            "Ended absolute monarchy in France",
+            "Spread ideas of liberty and equality",
+            "Inspired nationalist movements across Europe"
         ],
-        "importance": "It demonstrated the unity of the people of Bengal against the",
+        "importance": "Triggered the rise of nationalism and modern nation-states.",
         "recall_question": {
-            "question": "The Day of Mourning was observed on:",
+            "question": "French Revolution began in which year?",
             "options": [
-                "7 August 1905",
-                "16 October 1905",
-                "30 December 1906",
-                "12 December 1911"
+                "1776",
+                "1789",
+                "1799",
+                "1804"
             ],
-            "correct_index": 3
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(245,158,11,0.15)"
+        "eraColor": "rgba(16,185,129,0.15)"
     },
     {
         "id": "ev_pdf_20",
-        "year": "30 December 1906",
-        "title": "Formation of Muslim League",
+        "year": "1797",
+        "title": "Napoleon Invades Italy",
         "bullets": [
-            "Founded in Dacca (now Dhaka).",
-            "It aimed to protect the political interests of Muslims.",
-            "The British government encouraged its formation.",
-            "Initially, it supported the partition of Bengal.",
-            "The INC session at Surat ended in a split.",
-            "The Moderates and the Extremists clashed.",
-            "The Extremists, led by Tilak, wanted more aggressive methods.",
-            "The split weakened the national movement temporarily."
+            "Napoleon's military campaign in Italy",
+            "Spread French revolutionary ideals",
+            "Weakened old feudal systems",
+            "Created Italian nationalist sentiment"
         ],
-        "importance": "It marked the beginning of organized communal politics in",
+        "importance": "Paved the way for Italian unification later.",
         "recall_question": {
-            "question": "The Congress split into Moderates and Extremists at which session?",
+            "question": "Napoleon invaded Italy in?",
             "options": [
-                "Calcutta (1906)",
-                "Surat (1907)",
-                "Lahore (1909)",
-                "Lucknow (1916)"
+                "1789",
+                "1797",
+                "1804",
+                "1815"
             ],
-            "correct_index": 0
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(16,185,129,0.15)"
+        "eraColor": "rgba(59,130,246,0.15)"
     },
     {
         "id": "ev_pdf_21",
-        "year": "1911",
-        "title": "Annulment of Partition of Bengal",
+        "year": "1801",
+        "title": "Incorporation of Ireland into UK",
         "bullets": [
-            "Announced by King George V at the Delhi Durbar.",
-            "The partition was cancelled due to massive protests.",
-            "Bengal was reunited.",
-            "The capital was shifted from Calcutta to Delhi."
+            "Ireland joined the United Kingdom",
+            "Abolished the Irish Parliament",
+            "Created \"United Kingdom of Great Britain and Ireland\"",
+            "Sparked long-term Irish nationalism"
         ],
-        "importance": "It was a huge victory for the Swadeshi movement and showed",
+        "importance": "Fueled the Irish struggle for independence.",
         "recall_question": {
-            "question": "The Partition of Bengal was annulled in:",
+            "question": "Ireland joined the United Kingdom in?",
             "options": [
-                "1905",
-                "1908",
-                "1911",
+                "1688",
+                "1707",
+                "1801",
                 "1916"
             ],
-            "correct_index": 1
+            "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(59,130,246,0.15)"
+        "eraColor": "rgba(139,92,246,0.15)"
     },
     {
         "id": "ev_pdf_22",
-        "year": "1916",
-        "title": "Lucknow Pact & Home Rule Movement",
+        "year": "1804",
+        "title": "Napoleonic Code Introduced",
         "bullets": [
-            "The Congress and the Muslim League signed the Lucknow Pact.",
-            "They agreed to jointly present political demands to the British.",
-            "Bal Gangadhar Tilak launched the Home Rule Movement.",
-            "It marked the reunion of the Moderates and Extremists in the Congress.",
-            "Passed by the Imperial Legislative Council.",
-            "Allowed political prisoners to be jailed without trial for two years.",
-            "Gandhi called for a nationwide 'Hartal' (strike) against this 'Black Act'.",
-            "It led to widespread protests across India."
+            "Established equality before law",
+            "Abolished feudal privileges",
+            "Protected property rights",
+            "Spread across conquered territories"
         ],
-        "importance": "It represented a high point of Hindu-Muslim unity and put",
+        "importance": "Influenced legal systems across Europe and even India.",
         "recall_question": {
-            "question": "The Rowlatt Act allowed the imprisonment of people without trial for a maximum of:",
+            "question": "Napoleonic Code was introduced in?",
             "options": [
-                "1 year",
-                "2 years",
-                "3 years",
-                "5 years"
+                "1789",
+                "1797",
+                "1804",
+                "1815"
             ],
             "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(185,28,28,0.15)"
+        "eraColor": "rgba(220,38,38,0.15)"
     },
     {
         "id": "ev_pdf_23",
-        "year": "13 April 1919",
-        "title": "Jallianwala Bagh Massacre",
+        "year": "1807",
+        "title": "Giuseppe Mazzini Born",
         "bullets": [
-            "Occurred on Baisakhi day in Amritsar.",
-            "General Dyer ordered troops to fire on a peaceful gathering.",
-            "Hundreds of unarmed men, women, and children were killed.",
-            "The brutality shocked the entire nation.",
-            "Launched by the Ali Brothers (Mohammad Ali and Shaukat Ali).",
-            "Aimed to protect the Ottoman Caliphate (Khilafat) in Turkey.",
-            "Gandhi saw it as an opportunity for Hindu-Muslim unity.",
-            "It was merged with the Non-Cooperation Movement."
+            "Born in Genoa, Italy",
+            "Founded \"Young Italy\"",
+            "Key figure in Italian unification",
+            "Inspired nationalist movements worldwide"
         ],
-        "importance": "It was a turning point that destroyed faith in British justice and",
+        "importance": "Mazzini became the \"soul\" of Italian unification.",
         "recall_question": {
-            "question": "The Khilafat Movement was launched by:",
+            "question": "Giuseppe Mazzini was born in?",
             "options": [
-                "Mahatma Gandhi",
-                "Maulana Azad",
-                "The Ali Brothers",
-                "Jinnah"
+                "1789",
+                "1797",
+                "1804",
+                "1807"
             ],
             "correct_index": 3
         },
         "status": "unviewed",
-        "eraColor": "rgba(249,115,22,0.15)"
+        "eraColor": "rgba(245,158,11,0.15)"
     },
     {
         "id": "ev_pdf_24",
-        "year": "1 August 1920",
-        "title": "Non-Cooperation Movement Launched",
+        "year": "1812",
+        "title": "Early 19th Century Reference",
         "bullets": [
-            "Launched by Mahatma Gandhi.",
-            "It involved surrendering titles, boycotting schools, law courts, and foreign",
-            "It was a peaceful and non-violent struggle.",
-            "It gained massive popular support."
+            "British consolidation in India",
+            "Napoleonic Wars in Europe",
+            "Context for global political changes",
+            "Period of social and economic transition"
         ],
-        "importance": "It was the first mass-based nationwide movement that",
+        "importance": "Provides a backdrop for British imperial policies.",
         "recall_question": {
-            "question": "The Non-Cooperation Movement was launched in:",
+            "question": "This date is from which century?",
             "options": [
-                "1919",
-                "1920",
-                "1922",
-                "1930"
+                "17th",
+                "18th",
+                "19th",
+                "20th"
             ],
-            "correct_index": 0
+            "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(6,182,212,0.15)"
+        "eraColor": "rgba(16,185,129,0.15)"
     },
     {
         "id": "ev_pdf_25",
-        "year": "5 February 1922",
-        "title": "Chauri Chaura Incident",
+        "year": "1814\u201315",
+        "title": "Congress of Vienna",
         "bullets": [
-            "A violent clash between protesters and police in Uttar Pradesh.",
-            "A police station was set on fire, killing 22 policemen.",
-            "Violence was against Gandhi's principle of non-violence.",
-            "Gandhi withdrew the Non-Cooperation Movement."
+            "Organized by Metternich",
+            "Restored conservative regimes in Europe",
+            "Redrew the European map",
+            "Ignored nationalist aspirations"
         ],
-        "importance": "It demonstrated Gandhi's unwavering commitment to",
+        "importance": "Created a backlash that sparked later revolutions.",
         "recall_question": {
-            "question": "Gandhi withdrew the Non-Cooperation Movement due to:",
+            "question": "Congress of Vienna took place in?",
             "options": [
-                "The Simon Commission",
-                "The Chauri Chaura incident",
-                "The Round Table Conference",
-                "The Poona Pact"
+                "1804\u201305",
+                "1810\u201311",
+                "1814\u201315",
+                "1820\u201321"
             ],
-            "correct_index": 1
+            "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(139,92,246,0.15)"
+        "eraColor": "rgba(59,130,246,0.15)"
     },
     {
         "id": "ev_pdf_26",
-        "year": "12 February 1922",
-        "title": "Suspension of the Movement",
+        "year": "1815\u20131846",
+        "title": "Period of Reforms",
         "bullets": [
-            "Gandhi officially suspended the Non-Cooperation Movement.",
-            "He fasted to atone for the violence.",
-            "Many leaders were disappointed by the decision.",
-            "Gandhi was arrested shortly after.",
-            "A British parliamentary commission to review the Government of India",
-            "It had no Indian members.",
-            "Greeted with protests and the slogan \"Simon Go Back\" everywhere.",
-            "Lala Lajpat Rai died from injuries sustained during a protest.",
-            "INC session under the presidency of Jawaharlal Nehru.",
-            "The goal of \"Purna Swaraj\" (complete independence) was declared.",
-            "The tricolor flag was adopted.",
-            "January 26, 1930, was celebrated as the first Independence Day."
+            "Social and political reforms in Europe",
+            "Rise of liberalism and nationalism",
+            "Industrial Revolution effects spreading",
+            "Context for revolutionary ideas"
         ],
-        "importance": "It marked the end of the first major mass movement under",
+        "importance": "Covers the buildup to the 1848 revolutions.",
         "recall_question": {
-            "question": "The demand for 'Purna Swaraj' was formalized at the INC session in:",
+            "question": "This period saw the rise of?",
             "options": [
-                "Calcutta",
-                "Lahore",
-                "Nagpur",
-                "Madras"
-            ],
-            "correct_index": 2
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(220,38,38,0.15)"
-    },
-    {
-        "id": "ev_pdf_27",
-        "year": "12 March 1930",
-        "title": "Dandi March Begins",
-        "bullets": [
-            "Gandhi started the march from Sabarmati Ashram to Dandi.",
-            "He was accompanied by 78 chosen followers.",
-            "The 240-mile march lasted 24 days.",
-            "Aimed to break the salt law."
-        ],
-        "importance": "It was a powerful act of defiance that mobilized the nation and",
-        "recall_question": {
-            "question": "The Dandi March began on:",
-            "options": [
-                "6 April 1930",
-                "12 March 1930",
-                "5 March 1931",
-                "31 December 1929"
-            ],
-            "correct_index": 3
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(245,158,11,0.15)"
-    },
-    {
-        "id": "ev_pdf_28",
-        "year": "6 April 1930",
-        "title": "Salt Law Broken",
-        "bullets": [
-            "Gandhi picked up a handful of salt at Dandi.",
-            "This was a symbolic breaking of the salt law.",
-            "It signaled the start of the Civil Disobedience Movement.",
-            "People across the coast began making salt."
-        ],
-        "importance": "It was a simple but powerful act of civil disobedience that",
-        "recall_question": {
-            "question": "The Salt Law was broken by Gandhi on:",
-            "options": [
-                "12 March 1930",
-                "6 April 1930",
-                "5 March 1931",
-                "1 August 1920"
-            ],
-            "correct_index": 0
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(16,185,129,0.15)"
-    },
-    {
-        "id": "ev_pdf_29",
-        "year": "5 March 1931",
-        "title": "Gandhi-Irwin Pact",
-        "bullets": [
-            "An agreement between Gandhi and Viceroy Irwin.",
-            "Gandhi agreed to suspend the Civil Disobedience Movement.",
-            "Irwin agreed to release political prisoners and allow peaceful salt making.",
-            "Paved the way for Gandhi to attend the Second Round Table Conference.",
-            "Held in London.",
-            "Gandhi attended as the sole representative of the Congress.",
-            "The conference failed to reach an agreement on minority rights.",
-            "Gandhi returned to India empty-handed.",
-            "Led by Sir Stafford Cripps.",
-            "Sent by the British government to secure Indian cooperation for WWII.",
-            "Promised Dominion Status after the war.",
-            "The Congress rejected the proposals as they did not offer immediate"
-        ],
-        "importance": "It was the first time the British recognized the Congress as a",
-        "recall_question": {
-            "question": "The Cripps Mission arrived in India in:",
-            "options": [
-                "1939",
-                "1942",
-                "1945",
-                "1946"
-            ],
-            "correct_index": 1
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(59,130,246,0.15)"
-    },
-    {
-        "id": "ev_pdf_30",
-        "year": "8 August 1942",
-        "title": "Quit India Resolution",
-        "bullets": [
-            "The All India Congress Committee passed the Quit India resolution in",
-            "Gandhi gave the call for 'Do or Die' (Karo Ya Maro).",
-            "Demanded an immediate end to British rule.",
-            "Was a final, nationwide mass struggle."
-        ],
-        "importance": "It was a mass movement that put immense pressure on the",
-        "recall_question": {
-            "question": "The slogan \"Do or Die\" is associated with which movement? 5. Forward Bloc & INA",
-            "options": [
-                "Non-Cooperation Movement",
-                "Civil Disobedience Movement",
-                "Quit India Movement",
-                "Home Rule Movement"
-            ],
-            "correct_index": 2
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(185,28,28,0.15)"
-    },
-    {
-        "id": "ev_pdf_31",
-        "year": "1938",
-        "title": "Haripura Session",
-        "bullets": [
-            "Subhas Chandra Bose was elected President of the INC for the first time.",
-            "He stood for a more assertive anti-British stance.",
-            "This session showed his growing popularity.",
-            "His ideas started to clash with the old Gandhian leadership."
-        ],
-        "importance": "It marked the rise of a new, more radical leadership within the",
-        "recall_question": {
-            "question": "Subhas Chandra Bose was first elected Congress President at which session?",
-            "options": [
-                "Tripuri",
-                "Haripura",
-                "Lahore",
-                "Karachi"
-            ],
-            "correct_index": 3
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(249,115,22,0.15)"
-    },
-    {
-        "id": "ev_pdf_32",
-        "year": "1939",
-        "title": "Tripuri Session & Resignation",
-        "bullets": [
-            "Bose was re-elected as Congress President, defeating a Gandhian",
-            "Due to differences with Gandhi, he felt compelled to resign.",
-            "He formed the Forward Bloc within the Congress.",
-            "This showed the growing ideological rift in the national movement."
-        ],
-        "importance": "It led to the formation of a new party that would continue the",
-        "recall_question": {
-            "question": "",
-            "options": [
-                "ter resigning from the Congress in 1939, Subhas Chandra Bose formed the:",
-                "Azad Hind Fauj",
-                "Forward Bloc",
-                "Indian National Army",
-                "Home Rule League"
-            ],
-            "correct_index": 0
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(6,182,212,0.15)"
-    },
-    {
-        "id": "ev_pdf_33",
-        "year": "3 May 1939",
-        "title": "Formation of Forward Bloc",
-        "bullets": [
-            "Founded by Subhas Chandra Bose.",
-            "Aimed to unite all left-wing elements within the Congress.",
-            "Advocated complete and immediate independence.",
-            "Opposed any compromise with the British."
-        ],
-        "importance": "It became the platform for Bose's brand of militant",
-        "recall_question": {
-            "question": "The Forward Bloc was formed in:",
-            "options": [
-                "1938",
-                "1939",
-                "1941",
-                "1942"
+                "Feudalism",
+                "Liberalism & Nationalism",
+                "Colonialism",
+                "Communism"
             ],
             "correct_index": 1
         },
@@ -830,99 +624,215 @@ export const CHRONO_DATA = [
         "eraColor": "rgba(139,92,246,0.15)"
     },
     {
-        "id": "ev_pdf_34",
-        "year": "17 January 1941",
-        "title": "The Great Escape",
+        "id": "ev_pdf_27",
+        "year": "1820\u20131914",
+        "title": "Modern Period Reference",
         "bullets": [
-            "Subhas Chandra Bose escaped from house arrest in Calcutta.",
-            "He fled India to seek international help for India's freedom.",
-            "He traveled through Afghanistan and the Soviet Union to reach Germany.",
-            "His escape was a dramatic and daring act.",
-            "Bose reorganized the Indian National Army (INA) in Southeast Asia.",
-            "It was formed with Indian prisoners of war and civilians.",
-            "Its goal was to liberate India with military force.",
-            "Bose gave the famous slogan, \"Give me blood, and I shall give you"
+            "Covers peak of British rule in India",
+            "Rise of modern nationalism",
+            "Industrialisation and global conflicts",
+            "End of the Victorian era"
         ],
-        "importance": "It allowed him to mobilize support from the Axis powers",
+        "importance": "Encapsulates the entire era of British dominance and Indian resistance.",
         "recall_question": {
-            "question": "The famous slogan \"Give me blood, and I shall give you freedom!\" was given by:",
+            "question": "This period covers what?",
             "options": [
-                "Mahatma Gandhi",
-                "Jawaharlal Nehru",
-                "Subhas Chandra Bose",
-                "Bhagat Singh"
+                "Mughal rule",
+                "British rule peak",
+                "Independence",
+                "Medieval period"
             ],
-            "correct_index": 2
+            "correct_index": 1
         },
         "status": "unviewed",
         "eraColor": "rgba(220,38,38,0.15)"
     },
     {
-        "id": "ev_pdf_35",
-        "year": "4 July 1943",
-        "title": "Bose Takes Command of INA",
+        "id": "ev_pdf_28",
+        "year": "1821",
+        "title": "Greek Struggle for Independence Begins",
         "bullets": [
-            "Subhas Chandra Bose took the command of the INA in Singapore.",
-            "He gave the war cry of \"Chalo Dilli\" (On to Delhi).",
-            "He set up the headquarters of the INA in Rangoon.",
-            "The INA had separate women's unit, the Rani of Jhansi Regiment."
+            "Greeks fought the Ottoman Empire",
+            "Supported by European powers",
+            "Symbol of nationalist uprising",
+            "Inspired other Balkan nations"
         ],
-        "importance": "It marked the beginning of the INA's military campaign to free",
+        "importance": "First successful nationalist uprising in Europe.",
         "recall_question": {
-            "question": "The women's unit of the INA was called the:",
+            "question": "Greek independence struggle began in?",
             "options": [
-                "Jhansi Ki Rani Brigade",
-                "Rani of Jhansi Regiment",
-                "Azad Hind Fauj",
-                "Bhagini Sena"
+                "1815",
+                "1821",
+                "1830",
+                "1832"
             ],
-            "correct_index": 3
+            "correct_index": 1
         },
         "status": "unviewed",
         "eraColor": "rgba(245,158,11,0.15)"
     },
     {
-        "id": "ev_pdf_36",
-        "year": "21 October 1943",
-        "title": "Provisional Government of Azad Hind",
+        "id": "ev_pdf_29",
+        "year": "July 1830",
+        "title": "Revolution in France (July Revolution)",
         "bullets": [
-            "Bose proclaimed the formation of the Azad Hind Government in",
-            "It was declared the provisional government of a free India.",
-            "It received recognition from nine Axis powers.",
-            "It declared war against Britain and the United States."
+            "Overthrew the Bourbon monarchy",
+            "Established a constitutional monarchy",
+            "Inspired liberal movements in Europe",
+            "Sparked revolutions in Belgium and Poland"
         ],
-        "importance": "It gave the freedom struggle an international dimension and a",
+        "importance": "Showed that revolutionary change was still possible.",
         "recall_question": {
-            "question": "The Provisional Government of Azad Hind was proclaimed in:",
+            "question": "Revolution in France took place in July?",
             "options": [
-                "1942",
-                "1943",
-                "1944",
-                "1945"
+                "1821",
+                "1830",
+                "1848",
+                "1859"
             ],
-            "correct_index": 0
+            "correct_index": 1
         },
         "status": "unviewed",
         "eraColor": "rgba(16,185,129,0.15)"
     },
     {
-        "id": "ev_pdf_37",
-        "year": "1944",
-        "title": "Invasion of India (Imphal & Kohima)",
+        "id": "ev_pdf_30",
+        "year": "1831",
+        "title": "Young Italy Founded",
         "bullets": [
-            "The INA, along with the Japanese army, advanced towards India.",
-            "They fought fierce battles in Imphal and Kohima (in present-day Nagaland",
-            "They managed to reach Indian soil but were forced to retreat.",
-            "This was the first time an army was fighting to liberate India from the"
+            "Founded by Giuseppe Mazzini",
+            "Aimed for Italian unification",
+            "Used secret societies",
+            "Inspired youth to fight for freedom"
         ],
-        "importance": "It was a serious military attempt to liberate India from the",
+        "importance": "Became the driving force for Italian unification.",
         "recall_question": {
-            "question": "The INA's military campaign to liberate India reached up to:",
+            "question": "Young Italy was founded in?",
             "options": [
-                "Delhi",
-                "Imphal and Kohima",
-                "Calcutta",
-                "Rangoon"
+                "1821",
+                "1830",
+                "1831",
+                "1832"
+            ],
+            "correct_index": 2
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(59,130,246,0.15)"
+    },
+    {
+        "id": "ev_pdf_31",
+        "year": "1832",
+        "title": "Greece Gets Independence (Treaty of Constantinople)",
+        "bullets": [
+            "Greece recognised as independent",
+            "Ended Ottoman rule in Greece",
+            "Boosted nationalist hopes across Europe",
+            "Supported by Britain, France, Russia"
+        ],
+        "importance": "First Balkan nation to break from the Ottoman Empire.",
+        "recall_question": {
+            "question": "Greece got independence in?",
+            "options": [
+                "1821",
+                "1830",
+                "1832",
+                "1848"
+            ],
+            "correct_index": 2
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(139,92,246,0.15)"
+    },
+    {
+        "id": "ev_pdf_32",
+        "year": "1834",
+        "title": "Zollverein (Customs Union) Formed",
+        "bullets": [
+            "German customs union",
+            "Removed internal trade barriers",
+            "Unified German economy",
+            "Excluded Austria deliberately"
+        ],
+        "importance": "Economic unity paved the way for German political unification.",
+        "recall_question": {
+            "question": "Zollverein was formed in?",
+            "options": [
+                "1815",
+                "1834",
+                "1848",
+                "1866"
+            ],
+            "correct_index": 1
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(220,38,38,0.15)"
+    },
+    {
+        "id": "ev_pdf_33",
+        "year": "1839",
+        "title": "British Expansion Reference",
+        "bullets": [
+            "British consolidation in India",
+            "First Afghan War (1839\u201342) began",
+            "Context for Company policies",
+            "Sikh Empire was still independent"
+        ],
+        "importance": "Part of British attempts to secure the North-West frontier.",
+        "recall_question": {
+            "question": "This date is part of which period?",
+            "options": [
+                "Mughal",
+                "British expansion",
+                "Independence",
+                "Ancient"
+            ],
+            "correct_index": 1
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(245,158,11,0.15)"
+    },
+    {
+        "id": "ev_pdf_34",
+        "year": "1840",
+        "title": "Mid-19th Century Reference",
+        "bullets": [
+            "British expansion continuing",
+            "Industrial Revolution in full swing",
+            "Social reform movements rising",
+            "Context for the Revolt of 1857"
+        ],
+        "importance": "Precedes the great uprising of 1857.",
+        "recall_question": {
+            "question": "This date is from which century?",
+            "options": [
+                "17th",
+                "18th",
+                "19th",
+                "20th"
+            ],
+            "correct_index": 2
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(16,185,129,0.15)"
+    },
+    {
+        "id": "ev_pdf_35",
+        "year": "1845\u201349",
+        "title": "Great Irish Potato Famine",
+        "bullets": [
+            "Severe famine in Ireland",
+            "Caused mass starvation and deaths",
+            "Led to large-scale Irish migration",
+            "British government response was criticized"
+        ],
+        "importance": "Showed British negligence and fuelled Irish nationalism.",
+        "recall_question": {
+            "question": "Irish Potato Famine happened between?",
+            "options": [
+                "1830\u201334",
+                "1845\u201349",
+                "1850\u201354",
+                "1860\u201364"
             ],
             "correct_index": 1
         },
@@ -930,529 +840,407 @@ export const CHRONO_DATA = [
         "eraColor": "rgba(59,130,246,0.15)"
     },
     {
-        "id": "ev_pdf_38",
-        "year": "1945",
-        "title": "INA Trials at Red Fort",
+        "id": "ev_pdf_36",
+        "year": "26 June 1846",
+        "title": "Specific Historical Reference",
         "bullets": [
-            "After the war, the British put senior INA officers on trial at the Red Fort in",
-            "The trials sparked massive public outrage across India.",
-            "The demand for their release became a powerful nationalist cause.",
-            "The British were forced to review their policy.",
-            "Sent by the British government to propose a framework for India's",
-            "Proposed a three-tier federal structure for India.",
-            "Rejected the demand for a separate Pakistan.",
-            "Its proposals led to the formation of an Interim Government."
+            "Important date in British/Irish history",
+            "Part of the famine period",
+            "Context for British political events",
+            "Reference point for 19th-century chronology"
         ],
-        "importance": "The trials and the popular reaction proved that the INA's spirit",
+        "importance": "Precise marker for administrative or political changes.",
         "recall_question": {
-            "question": "The Cabinet Mission arrived in India in:",
+            "question": "This date is from which century?",
             "options": [
-                "1942",
-                "1945",
-                "1946",
-                "1947"
+                "17th",
+                "18th",
+                "19th",
+                "20th"
             ],
             "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(185,28,28,0.15)"
+        "eraColor": "rgba(139,92,246,0.15)"
+    },
+    {
+        "id": "ev_pdf_37",
+        "year": "February 1848",
+        "title": "Revolution of the Liberals in France",
+        "bullets": [
+            "Overthrew King Louis Philippe",
+            "Proclaimed the Second Republic",
+            "Demanded universal male suffrage",
+            "Inspired revolutions across Europe"
+        ],
+        "importance": "Set off a wave of liberal revolutions across the continent.",
+        "recall_question": {
+            "question": "Revolution of the Liberals in France took place in?",
+            "options": [
+                "1830",
+                "Feb 1848",
+                "May 1848",
+                "1859"
+            ],
+            "correct_index": 1
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(220,38,38,0.15)"
+    },
+    {
+        "id": "ev_pdf_38",
+        "year": "May 1848",
+        "title": "Frankfurt Parliament Convened",
+        "bullets": [
+            "First freely elected German parliament",
+            "Met at Frankfurt",
+            "Offered crown to Prussian King",
+            "Failed due to the king's refusal"
+        ],
+        "importance": "Symbolised the struggle for German unity and democracy.",
+        "recall_question": {
+            "question": "Frankfurt Parliament met in?",
+            "options": [
+                "1834",
+                "Feb 1848",
+                "May 1848",
+                "1866"
+            ],
+            "correct_index": 2
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(245,158,11,0.15)"
     },
     {
         "id": "ev_pdf_39",
-        "year": "3 June 1947",
-        "title": "Mountbatten Plan",
+        "year": "1851",
+        "title": "Mid-19th Century Reference",
         "bullets": [
-            "Announced by Viceroy Lord Mountbatten.",
-            "Proposed the partition of India into two dominions: India and Pakistan.",
-            "Gave the princely states the choice to join either dominion.",
-            "Was quickly accepted by the Congress and Muslim League.",
-            "Passed by the British Parliament.",
-            "It declared that India would be independent on August 15, 1947.",
-            "It created the two independent dominions of India and Pakistan.",
-            "It ended British rule in India."
+            "British rule consolidating in India",
+            "Industrial exhibitions in Europe",
+            "Social reform movements active",
+            "Pre-Civil War America context"
         ],
-        "importance": "It provided the final blueprint for the partition and",
+        "importance": "Global context for British imperial policies.",
         "recall_question": {
-            "question": "The Indian Independence Act was passed by the British Parliament in:",
+            "question": "This date is from which century?",
             "options": [
-                "June 1947",
-                "July 1947",
-                "August 1947",
-                "January 1950"
+                "17th",
+                "18th",
+                "19th",
+                "20th"
             ],
-            "correct_index": 3
+            "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(249,115,22,0.15)"
+        "eraColor": "rgba(16,185,129,0.15)"
     },
     {
         "id": "ev_pdf_40",
-        "year": "15 August 1947",
-        "title": "Indian Independence",
+        "year": "1854",
+        "title": "British Administrative Reforms",
         "bullets": [
-            "India achieved independence from British rule.",
-            "Jawaharlal Nehru became the first Prime Minister.",
-            "He hoisted the tricolor flag at the Red Fort in Delhi.",
-            "The country was partitioned, leading to massive migration and violence."
+            "Charter Act of 1853 implemented",
+            "Railway and telegraph expansion",
+            "Educational reforms (Wood's Despatch)",
+            "Civil Services began open competition"
         ],
-        "importance": "It was the fulfillment of the decades-long freedom struggle",
+        "importance": "Modernised Indian administration but increased British control.",
         "recall_question": {
-            "question": "India achieved independence on: 7. The Contemporary World",
+            "question": "Administrative reforms were introduced in?",
             "options": [
-                "January 26, 1950",
-                "August 15, 1947",
-                "January 30, 1948",
-                "November 26, 1949"
+                "1850",
+                "1854",
+                "1857",
+                "1859"
             ],
-            "correct_index": 0
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(6,182,212,0.15)"
+        "eraColor": "rgba(59,130,246,0.15)"
     },
     {
         "id": "ev_pdf_41",
-        "year": "28 June 1914",
-        "title": "Sarajevo Crisis",
+        "year": "1855",
+        "title": "Pre-Revolt Period",
         "bullets": [
-            "Archduke Franz Ferdinand, heir to the Austro-Hungarian throne, was",
-            "The assassin was a Serbian nationalist.",
-            "Austria-Hungary blamed Serbia for the attack.",
-            "This event triggered the chain of events leading to WWI."
+            "Rising discontent among sepoys",
+            "Social and religious reforms by British",
+            "Doctrine of Lapse actively used",
+            "Annexation of Awadh (1856) approaching"
         ],
-        "importance": "It was the immediate spark that ignited the First World War.",
+        "importance": "Immediate background to the Revolt of 1857.",
         "recall_question": {
-            "question": "The immediate cause of World War I was the assassination of:",
+            "question": "This date is from which century?",
             "options": [
-                "Kaiser Wilhelm II",
-                "Archduke Franz Ferdinand",
-                "Count von Berchtold",
-                "Tsar Nicholas II"
+                "17th",
+                "18th",
+                "19th",
+                "20th"
             ],
-            "correct_index": 1
+            "correct_index": 2
         },
         "status": "unviewed",
         "eraColor": "rgba(139,92,246,0.15)"
     },
     {
         "id": "ev_pdf_42",
-        "year": "28 July 1914",
-        "title": "Declaration of War",
+        "year": "1859 (Event 1)",
+        "title": "Inland Emigration Act Passed",
         "bullets": [
-            "Austria-Hungary declared war on Serbia.",
-            "This was a month after the assassination.",
-            "The system of alliances quickly drew other nations into the conflict.",
-            "This marked the formal beginning of the war.",
-            "Germany declared war on Russia and France.",
-            "Germany invaded Belgium to attack France.",
-            "Britain declared war on Germany for violating Belgium's neutrality.",
-            "The war had now become a full-scale European war.",
-            "The United States joined the war on the side of the Allies.",
-            "Reasons included German submarine warfare (sinking of the Lusitania).",
-            "The entry of fresh American troops boosted the Allies.",
-            "It changed the balance of power in favor of the Allies."
+            "Restricted movement of Indian workers",
+            "Prevented plantation labourers from leaving",
+            "Controlled internal migration",
+            "Favoured British planters' interests"
         ],
-        "importance": "It turned a regional dispute into a European conflict.",
+        "importance": "Showed how British laws exploited Indian labour.",
         "recall_question": {
-            "question": "The United States entered World War I in:",
+            "question": "Inland Emigration Act was passed in?",
             "options": [
-                "1914",
-                "1915",
-                "1917",
-                "1918"
+                "1857",
+                "1859",
+                "1919",
+                "1928"
             ],
-            "correct_index": 2
+            "correct_index": 1
         },
         "status": "unviewed",
         "eraColor": "rgba(220,38,38,0.15)"
     },
     {
         "id": "ev_pdf_43",
-        "year": "11 November 1918",
-        "title": "Armistice Signed",
+        "year": "1859 (Event 2)",
+        "title": "Italian Unification \u2013 Cavour Defeats Austria",
         "bullets": [
-            "Germany signed an armistice (agreement to stop fighting).",
-            "It was signed in a railway carriage in Compi\u00e8gne, France.",
-            "This brought an end to the fighting on the Western Front.",
-            "It is commemorated as Armistice Day or Remembrance Day."
+            "Chief Minister Cavour led the war",
+            "Austria was defeated in Northern Italy",
+            "Lombardy was freed",
+            "Set the stage for Garibaldi's campaign"
         ],
-        "importance": "It marked the end of the four-year-long conflict of World War I.",
+        "importance": "Northern Italy was united under Piedmont-Sardinia.",
         "recall_question": {
-            "question": "The Armistice that ended the fighting in World War I was signed on:",
+            "question": "Cavour defeated Austria in?",
             "options": [
-                "28 June 1919",
-                "11 November 1918",
-                "10 January 1920",
-                "28 June 1914"
+                "1848",
+                "1859",
+                "1860",
+                "1861"
             ],
-            "correct_index": 3
+            "correct_index": 1
         },
         "status": "unviewed",
         "eraColor": "rgba(245,158,11,0.15)"
     },
     {
         "id": "ev_pdf_44",
-        "year": "28 June 1919",
-        "title": "Treaty of Versailles",
+        "year": "1860",
+        "title": "Italian Unification \u2013 Garibaldi's Campaign",
         "bullets": [
-            "The peace treaty that officially ended WWI.",
-            "Signed exactly five years after the Sarajevo assassination.",
-            "Imposed harsh terms on Germany, including massive reparations.",
-            "Germany lost its colonies and territories."
+            "Giuseppe Garibaldi led the \"Red Shirts\"",
+            "Defeated Spanish rulers in Southern Italy",
+            "Liberated Sicily and Naples",
+            "Handed over territories to Victor Emmanuel II"
         ],
-        "importance": "Its harsh and humiliating terms on Germany created deep",
+        "importance": "Completed the unification of Southern Italy.",
         "recall_question": {
-            "question": "The treaty that ended World War I was the:",
+            "question": "Garibaldi defeated Spanish rulers in?",
             "options": [
-                "Treaty of Paris",
-                "Treaty of Versailles",
-                "Treaty of Vienna",
-                "Treaty of Portsmouth"
+                "1848",
+                "1859",
+                "1860",
+                "1861"
             ],
-            "correct_index": 0
+            "correct_index": 2
         },
         "status": "unviewed",
         "eraColor": "rgba(16,185,129,0.15)"
     },
     {
         "id": "ev_pdf_45",
-        "year": "10 January 1920",
-        "title": "Formation of the League of Nations",
+        "year": "1861",
+        "title": "Victor Emmanuel II Proclaimed King of United Italy",
         "bullets": [
-            "Established under the Treaty of Versailles.",
-            "Its main aim was to maintain world peace.",
-            "It was proposed by US President Woodrow Wilson.",
-            "The USA never joined the League."
+            "Unified Italy under one monarch",
+            "Capital moved to Rome later",
+            "Completed the Risorgimento process",
+            "Cavour and Garibaldi's efforts paid off"
         ],
-        "importance": "It was the first international organization dedicated to",
+        "importance": "Italy became a unified nation-state.",
         "recall_question": {
-            "question": "The League of Nations was formed in: 8. Rise of Dictatorships",
+            "question": "Victor Emmanuel II was proclaimed King in?",
             "options": [
-                "1918",
-                "1919",
-                "1920",
-                "1921"
+                "1848",
+                "1859",
+                "1860",
+                "1861"
             ],
-            "correct_index": 1
+            "correct_index": 3
         },
         "status": "unviewed",
         "eraColor": "rgba(59,130,246,0.15)"
     },
     {
         "id": "ev_pdf_46",
-        "year": "1919",
-        "title": "Formation of Fascist Party",
+        "year": "1866\u201371",
+        "title": "Unification of Germany",
         "bullets": [
-            "Founded by Benito Mussolini in Italy.",
-            "It was formed from the 'Fasci di Combattimento'.",
-            "It opposed communism and liberalism.",
-            "It promoted extreme nationalism and militarism."
+            "Bismarck led the process",
+            "1866: Austro-Prussian War",
+            "1870\u201371: Franco-Prussian War",
+            "1871: German Empire proclaimed at Versailles"
         ],
-        "importance": "It marked the beginning of the fascist movement in Europe.",
+        "importance": "Germany emerged as a major European power.",
         "recall_question": {
-            "question": "The Fascist Party in Italy was founded by:",
+            "question": "Germany was unified between?",
             "options": [
-                "Adolf Hitler",
-                "Benito Mussolini",
-                "Giuseppe Garibaldi",
-                "Count Cavour"
+                "1834\u201348",
+                "1848\u201359",
+                "1859\u201366",
+                "1866\u201371"
             ],
-            "correct_index": 2
+            "correct_index": 3
         },
         "status": "unviewed",
-        "eraColor": "rgba(185,28,28,0.15)"
+        "eraColor": "rgba(139,92,246,0.15)"
     },
     {
         "id": "ev_pdf_47",
-        "year": "1920",
-        "title": "Formation of Nazi Party",
+        "year": "1871",
+        "title": "German Empire Proclaimed",
         "bullets": [
-            "The German Workers' Party was renamed the National Socialist German",
-            "Adolf Hitler emerged as its leader.",
-            "It was based on extreme nationalism, racism, and anti-Semitism.",
-            "It opposed the Treaty of Versailles."
+            "Proclaimed at Versailles, France",
+            "Wilhelm I became Emperor",
+            "After French defeat in Franco-Prussian War",
+            "Marked the birth of modern Germany"
         ],
-        "importance": "It created the political vehicle that would take Hitler to power",
+        "importance": "Shifted the balance of power in Europe.",
         "recall_question": {
-            "question": "The Nazi Party in Germany was formed in:",
+            "question": "German Empire was proclaimed in?",
             "options": [
-                "1919",
-                "1920",
-                "1921",
-                "1923"
+                "1866",
+                "1870",
+                "1871",
+                "1878"
             ],
-            "correct_index": 3
+            "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(249,115,22,0.15)"
+        "eraColor": "rgba(220,38,38,0.15)"
     },
     {
         "id": "ev_pdf_48",
-        "year": "28 October 1922",
-        "title": "March on Rome",
+        "year": "1878",
+        "title": "Late 19th Century Reference",
         "bullets": [
-            "Mussolini led his fascist supporters in a march on Rome.",
-            "The Italian King, Victor Emmanuel III, refused to use the army to stop",
-            "He invited Mussolini to form a government.",
-            "This event brought Mussolini to power."
+            "Congress of Berlin held",
+            "Redrew Balkan boundaries",
+            "British and Russian rivalry in Asia",
+            "Context for global imperialism"
         ],
-        "importance": "It was the first successful fascist takeover in Europe.",
+        "importance": "European powers carved up territories, affecting colonies like India.",
         "recall_question": {
-            "question": "Mussolini came to power in Italy after the:",
+            "question": "This date is from which century?",
             "options": [
-                "Beer Hall Putsch",
-                "March on Rome",
-                "Reichstag Fire",
-                "Night of the Long Knives"
+                "17th",
+                "18th",
+                "19th",
+                "20th"
             ],
-            "correct_index": 0
+            "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(6,182,212,0.15)"
+        "eraColor": "rgba(245,158,11,0.15)"
     },
     {
         "id": "ev_pdf_49",
-        "year": "1923",
-        "title": "Beer Hall Putsch",
+        "year": "1890",
+        "title": "Rise of Indian Nationalism",
         "bullets": [
-            "Hitler and the Nazi Party attempted to seize power in Munich, Germany.",
-            "The coup attempt failed.",
-            "Hitler was arrested and imprisoned.",
-            "In prison, he wrote his book, 'Mein Kampf' (My Struggle)."
+            "Indian National Congress had been formed (1885)",
+            "Growing political awareness",
+            "Moderates vs. Extremists emerging",
+            "British policies increasingly criticised"
         ],
-        "importance": "Although a failure, it gave Hitler national attention and time to",
+        "importance": "Marks the intensification of the Indian freedom struggle.",
         "recall_question": {
-            "question": "The failed coup attempt by Hitler in 1923 is known as the:",
+            "question": "This date falls during the rise of which movement?",
             "options": [
-                "Munich Pact",
-                "Beer Hall Putsch",
-                "Reichstag Fire",
-                "Kristallnacht"
+                "Indian Nationalism",
+                "Mughal revival",
+                "British loyalism",
+                "French expansion"
             ],
-            "correct_index": 1
+            "correct_index": 0
         },
         "status": "unviewed",
-        "eraColor": "rgba(139,92,246,0.15)"
+        "eraColor": "rgba(16,185,129,0.15)"
     },
     {
         "id": "ev_pdf_50",
-        "year": "30 January 1933",
-        "title": "Hitler Becomes Chancellor",
+        "year": "1914\u20131918",
+        "title": "First World War",
         "bullets": [
-            "President Hindenburg appointed Adolf Hitler as Chancellor of Germany.",
-            "The Nazi Party had become the largest party in the Reichstag.",
-            "This was the legal beginning of the Nazi regime.",
-            "It marked the end of the Weimar Republic.",
-            "Passed by the German Reichstag (parliament).",
-            "Gave Hitler the power to make laws without the parliament's consent.",
-            "It effectively dismantled German democracy.",
-            "It established the legal basis for Hitler's dictatorship.",
-            "President Hindenburg died.",
-            "Hitler merged the offices of President and Chancellor.",
-            "He took the title of 'F\u00fchrer' (leader).",
-            "The army swore a personal oath of allegiance to him."
+            "India fought for Britain",
+            "Led to economic hardship in India",
+            "Increased nationalist demands",
+            "Soldiers returned with new ideas"
         ],
-        "importance": "It was the moment Hitler legally took power, setting the stage",
+        "importance": "Exposed colonial exploitation and boosted the freedom struggle.",
         "recall_question": {
-            "question": "9. The Second World War",
+            "question": "First World War was fought between?",
             "options": [
-                "ter the death of President Hindenburg, Hitler became the:",
-                "Chancellor",
-                "President",
-                "F\u00fchrer",
-                "Prime Minister"
+                "1904\u201308",
+                "1910\u201314",
+                "1914\u201318",
+                "1918\u201322"
             ],
             "correct_index": 2
         },
         "status": "unviewed",
-        "eraColor": "rgba(220,38,38,0.15)"
+        "eraColor": "rgba(59,130,246,0.15)"
     },
     {
         "id": "ev_pdf_51",
-        "year": "1931",
-        "title": "Japan Invades Manchuria",
+        "year": "1917",
+        "title": "Champaran & Kheda Satyagraha",
         "bullets": [
-            "Japan invaded the resource-rich region of Manchuria in China.",
-            "It was an act of open aggression.",
-            "The League of Nations failed to take effective action.",
-            "It showed the weakness of the League."
+            "First civil disobedience by Gandhi",
+            "Champaran: against indigo system",
+            "Kheda: tax relief for peasants",
+            "Both were successful for farmers"
         ],
-        "importance": "It was the first major act of aggression by an Axis power and a",
+        "importance": "Established Gandhi as a mass leader in India.",
         "recall_question": {
-            "question": "Japan invaded Manchuria in:",
+            "question": "Champaran Satyagraha took place in?",
             "options": [
-                "1931",
-                "1933",
-                "1937",
-                "1939"
+                "1915",
+                "1917",
+                "1918",
+                "1919"
             ],
-            "correct_index": 3
+            "correct_index": 1
         },
         "status": "unviewed",
-        "eraColor": "rgba(245,158,11,0.15)"
+        "eraColor": "rgba(139,92,246,0.15)"
     },
     {
         "id": "ev_pdf_52",
-        "year": "1937",
-        "title": "Japan Invades China",
+        "year": "1918",
+        "title": "Ahmedabad Satyagraha",
         "bullets": [
-            "Japan launched a full-scale invasion of China.",
-            "This led to the Second Sino-Japanese War.",
-            "It was marked by brutal atrocities like the 'Rape of Nanking'.",
-            "It further destabilized the international order."
+            "Mill workers demanded wage hike",
+            "Gandhi supported them",
+            "Used hunger strike as a weapon",
+            "Workers got a 35% wage increase"
         ],
-        "importance": "It was another major act of aggression that went unchecked,",
+        "importance": "First time Gandhi used a hunger strike in India.",
         "recall_question": {
-            "question": "The 'Rape of Nanking' was a notorious atrocity committed by:",
+            "question": "Ahmedabad Satyagraha took place in?",
             "options": [
-                "Germany",
-                "Italy",
-                "Japan",
-                "Soviet Union"
-            ],
-            "correct_index": 0
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(16,185,129,0.15)"
-    },
-    {
-        "id": "ev_pdf_53",
-        "year": "1 September 1939",
-        "title": "Invasion of Poland",
-        "bullets": [
-            "Germany invaded Poland using 'Blitzkrieg' (lightning war) tactics.",
-            "This was the final act of aggression that triggered the war.",
-            "Britain and France had pledged to defend Poland.",
-            "This event is universally considered the start of WWII."
-        ],
-        "importance": "It was the direct cause for Britain and France declaring war on",
-        "recall_question": {
-            "question": "World War II began with Germany's invasion of:",
-            "options": [
-                "France",
-                "Austria",
-                "Czechoslovakia",
-                "Poland"
-            ],
-            "correct_index": 1
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(59,130,246,0.15)"
-    },
-    {
-        "id": "ev_pdf_54",
-        "year": "3 September 1939",
-        "title": "Official Start of WWII",
-        "bullets": [
-            "Britain and France declared war on Germany.",
-            "They honored their commitment to defend Poland.",
-            "The war, which had started as a European conflict, now became global.",
-            "Other nations soon joined one of the two opposing alliances."
-        ],
-        "importance": "It marks the official beginning of World War II as a major",
-        "recall_question": {
-            "question": "",
-            "options": [
-                "itain and France declared war on Germany on:",
-                "1 September 1939",
-                "3 September 1939",
-                "1 September 1940",
-                "7 December 1941"
-            ],
-            "correct_index": 2
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(185,28,28,0.15)"
-    },
-    {
-        "id": "ev_pdf_55",
-        "year": "7 December 1941",
-        "title": "Attack on Pearl Harbor",
-        "bullets": [
-            "Japan launched a surprise air attack on the US naval base in Hawaii.",
-            "It crippled the US Pacific fleet.",
-            "Prompted the United States to formally enter World War II.",
-            "Transformed the war into a truly global conflict."
-        ],
-        "importance": "It brought the military and industrial might of the USA into the",
-        "recall_question": {
-            "question": "The US entered World War II after Japan attacked:",
-            "options": [
-                "Hiroshima",
-                "Pearl Harbor",
-                "Nagasaki",
-                "Midway"
-            ],
-            "correct_index": 3
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(249,115,22,0.15)"
-    },
-    {
-        "id": "ev_pdf_56",
-        "year": "8 December 1941",
-        "title": "USA Declares War",
-        "bullets": [
-            "The USA declared war on Japan.",
-            "Germany and Italy then declared war on the USA.",
-            "The USA was now fully involved in both the European and Pacific theaters.",
-            "This created the powerful Allied coalition of the USA, UK, and Soviet Union."
-        ],
-        "importance": "It completed the major alliance system that would fight and",
-        "recall_question": {
-            "question": "The United States declared war on Japan on:",
-            "options": [
-                "7 December 1941",
-                "8 December 1941",
-                "11 December 1941",
-                "1 January 1942"
-            ],
-            "correct_index": 0
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(6,182,212,0.15)"
-    },
-    {
-        "id": "ev_pdf_57",
-        "year": "7 May 1945",
-        "title": "Germany Surrenders",
-        "bullets": [
-            "Germany signed an unconditional surrender.",
-            "This marked the end of the war in Europe.",
-            "It was celebrated as V-E Day (Victory in Europe Day).",
-            "Hitler had already committed suicide on April 30."
-        ],
-        "importance": "It marked the defeat of Nazi Germany and the end of the most",
-        "recall_question": {
-            "question": "Germany surrendered in World War II in:",
-            "options": [
-                "April 1945",
-                "May 1945",
-                "August 1945",
-                "September 1945"
-            ],
-            "correct_index": 1
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(139,92,246,0.15)"
-    },
-    {
-        "id": "ev_pdf_58",
-        "year": "6 August 1945",
-        "title": "Atomic Bomb on Hiroshima",
-        "bullets": [
-            "The US dropped an atomic bomb codenamed 'Little Boy' on Hiroshima.",
-            "It caused unprecedented destruction and killed over 1,40,000 people.",
-            "Japan did not surrender immediately.",
-            "It ushered in the nuclear age."
-        ],
-        "importance": "It was the first use of a nuclear weapon in war, demonstrating",
-        "recall_question": {
-            "question": "The first atomic bomb, 'Little Boy', was dropped on:",
-            "options": [
-                "Nagasaki",
-                "Tokyo",
-                "Hiroshima",
-                "Osaka"
+                "1915",
+                "1917",
+                "1918",
+                "1919"
             ],
             "correct_index": 2
         },
@@ -1460,75 +1248,71 @@ export const CHRONO_DATA = [
         "eraColor": "rgba(220,38,38,0.15)"
     },
     {
-        "id": "ev_pdf_59",
-        "year": "9 August 1945",
-        "title": "Atomic Bomb on Nagasaki",
+        "id": "ev_pdf_53",
+        "year": "1919",
+        "title": "Rowlatt Act Passed",
         "bullets": [
-            "The US dropped a second atomic bomb, 'Fat Man', on Nagasaki.",
-            "It killed an estimated 70,000 people.",
-            "The sheer destruction forced Japan to surrender.",
-            "It remains the last use of a nuclear weapon in conflict."
+            "Allowed detention without trial",
+            "Suspended civil liberties",
+            "Led to nationwide protests",
+            "Sparked the Jallianwala Bagh tragedy"
         ],
-        "importance": "It led directly to the end of World War II.",
+        "importance": "Made Indians realise the oppressive nature of British rule.",
         "recall_question": {
-            "question": "The second atomic bomb, 'Fat Man', was dropped on:",
+            "question": "Rowlatt Act was passed in?",
             "options": [
-                "Hiroshima",
-                "Nagasaki",
-                "Kyoto",
-                "Yokohama"
+                "1917",
+                "1918",
+                "1919",
+                "1920"
             ],
-            "correct_index": 3
+            "correct_index": 2
         },
         "status": "unviewed",
         "eraColor": "rgba(245,158,11,0.15)"
     },
     {
-        "id": "ev_pdf_60",
-        "year": "15 August 1945",
-        "title": "Japan Surrenders",
+        "id": "ev_pdf_54",
+        "year": "13th April 1919",
+        "title": "Jallianwala Bagh Massacre",
         "bullets": [
-            "Emperor Hirohito announced Japan's surrender.",
-            "This marked the end of World War II.",
-            "It is celebrated as V-J Day (Victory over Japan Day).",
-            "The formal surrender was signed on 2 September."
+            "British fired on an unarmed crowd",
+            "Thousands killed and wounded",
+            "General Dyer ordered the shooting",
+            "Sparked outrage across India"
         ],
-        "importance": "It brought a complete end to the six-year-long global conflict.",
+        "importance": "Turned many moderates into revolutionaries.",
         "recall_question": {
-            "question": "The Second World War ended with the surrender of:",
+            "question": "Jallianwala Bagh massacre happened on?",
             "options": [
-                "Germany",
-                "Italy",
-                "Japan",
-                "The Soviet Union"
+                "13 Apr 1918",
+                "13 Apr 1919",
+                "13 Apr 1920",
+                "13 Apr 1921"
             ],
-            "correct_index": 0
+            "correct_index": 1
         },
         "status": "unviewed",
         "eraColor": "rgba(16,185,129,0.15)"
     },
     {
-        "id": "ev_pdf_61",
-        "year": "24 October 1945",
-        "title": "Formation of the United Nations",
+        "id": "ev_pdf_55",
+        "year": "March 1919",
+        "title": "Khilafat Committee Formed in Bombay",
         "bullets": [
-            "The United Nations was officially established.",
-            "Its charter had been signed by 51 countries in San Francisco in June.",
-            "Its primary aim is to maintain international peace and security.",
-            "It replaced the ineffective League of Nations.",
-            "The first session of the UN General Assembly was held.",
-            "It took place in London.",
-            "It marked the beginning of the UN's functional work.",
-            "All 51 original member states were represented."
+            "Formed to protect the Ottoman Caliphate",
+            "Led by the Ali Brothers",
+            "Allied with Gandhi's Non-Cooperation",
+            "Created Hindu-Muslim unity"
         ],
-        "importance": "It remains the primary global forum for international",
+        "importance": "United Hindus and Muslims against British rule.",
         "recall_question": {
-            "question": "The first UN General Assembly was held in:",
+            "question": "Khilafat Committee was formed in?",
             "options": [
-                "New York",
-                "San Francisco",
-                "London",
-                "Geneva"
+                "Jan 1919",
+                "Mar 1919",
+                "Sept 1920",
+                "Dec 1920"
             ],
             "correct_index": 1
         },
@@ -1536,95 +1320,23 @@ export const CHRONO_DATA = [
         "eraColor": "rgba(59,130,246,0.15)"
     },
     {
-        "id": "ev_pdf_62",
-        "year": "18 April 1946",
-        "title": "Inauguration of ICJ",
+        "id": "ev_pdf_56",
+        "year": "September 1920",
+        "title": "Non-Cooperation Proposed at Calcutta",
         "bullets": [
-            "The International Court of Justice (ICJ) was inaugurated.",
-            "It is the principal judicial organ of the UN.",
-            "It is located in The Hague, Netherlands.",
-            "It settles legal disputes between states."
+            "Congress approved the movement",
+            "Planned in stages",
+            "Included boycott of British goods",
+            "Aimed for Swaraj (self-rule)"
         ],
-        "importance": "It provides a peaceful, legal means for countries to resolve",
+        "importance": "First mass movement under Gandhi's leadership.",
         "recall_question": {
-            "question": "The International Court of Justice is located in:",
+            "question": "Non-Cooperation was proposed at Calcutta in?",
             "options": [
-                "Geneva",
-                "New York",
-                "The Hague",
-                "Vienna"
-            ],
-            "correct_index": 2
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(185,28,28,0.15)"
-    },
-    {
-        "id": "ev_pdf_63",
-        "year": "11 December 1946",
-        "title": "Establishment of UNICEF",
-        "bullets": [
-            "The United Nations International Children's Emergency Fund (UNICEF) was",
-            "It provides humanitarian and developmental aid to children worldwide.",
-            "It focuses on child health, nutrition, education, and protection.",
-            "It was initially created to help children after WWII."
-        ],
-        "importance": "It is a major UN agency dedicated to the welfare and rights of",
-        "recall_question": {
-            "question": "The UN agency dedicated to the welfare of children is:",
-            "options": [
-                "WHO",
-                "UNESCO",
-                "UNICEF",
-                "ILO"
-            ],
-            "correct_index": 3
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(249,115,22,0.15)"
-    },
-    {
-        "id": "ev_pdf_64",
-        "year": "1946",
-        "title": "Establishment of UNESCO",
-        "bullets": [
-            "The United Nations Educational, Scientific and Cultural Organization",
-            "It aims to promote peace through international cooperation in education,",
-            "It is known for its World Heritage Sites program.",
-            "It works to improve education and protect cultural heritage."
-        ],
-        "importance": "It promotes global cooperation to build peace in the minds of",
-        "recall_question": {
-            "question": "The UN agency responsible for protecting World Heritage Sites is:",
-            "options": [
-                "WHO",
-                "UNESCO",
-                "UNICEF",
-                "UNDP"
-            ],
-            "correct_index": 0
-        },
-        "status": "unviewed",
-        "eraColor": "rgba(6,182,212,0.15)"
-    },
-    {
-        "id": "ev_pdf_65",
-        "year": "1948",
-        "title": "Establishment of WHO",
-        "bullets": [
-            "The World Health Organization (WHO) was established.",
-            "It is the directing and coordinating authority for health within the UN.",
-            "It works to combat diseases and improve global health standards.",
-            "It played a key role in eradicating smallpox."
-        ],
-        "importance": "It is the leading global organization for public health.",
-        "recall_question": {
-            "question": "The World Health Organization (WHO) was established in:",
-            "options": [
-                "1945",
-                "1946",
-                "1948",
-                "1950"
+                "Mar 1919",
+                "Sept 1920",
+                "Dec 1920",
+                "Jan 1921"
             ],
             "correct_index": 1
         },
@@ -1632,27 +1344,143 @@ export const CHRONO_DATA = [
         "eraColor": "rgba(139,92,246,0.15)"
     },
     {
-        "id": "ev_pdf_66",
-        "year": "29 April 1954",
-        "title": "Panchsheel Agreement",
+        "id": "ev_pdf_57",
+        "year": "December 1920",
+        "title": "Non-Cooperation Accepted at Nagpur",
         "bullets": [
-            "The Panchsheel (Five Principles of Peaceful Coexistence) was signed.",
-            "It was an agreement between India (Jawaharlal Nehru) and China.",
-            "The principles include mutual respect and non-interference.",
-            "It became the ideological basis for the Non-Aligned Movement.",
-            "A historic meeting of Asian and African countries in Indonesia.",
-            "It was hosted by President Sukarno.",
-            "Leaders like Nehru, Nasser, and Zhou Enlai attended.",
-            "It condemned colonialism and promoted economic and cultural"
+            "Congress officially adopted the program",
+            "Called for non-violent resistance",
+            "Boycott of courts, schools, councils",
+            "Return of Indian titles and honours"
         ],
-        "importance": "It provided the foundational principles for the Non-Aligned",
+        "importance": "Gave a clear roadmap for India's freedom struggle.",
         "recall_question": {
-            "question": "The Bandung Conference was held in:",
+            "question": "Non-Cooperation was accepted at Nagpur in?",
             "options": [
-                "1954",
-                "1955",
-                "1956",
-                "1961"
+                "Sept 1920",
+                "Dec 1920",
+                "Jan 1921",
+                "1922"
+            ],
+            "correct_index": 1
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(220,38,38,0.15)"
+    },
+    {
+        "id": "ev_pdf_58",
+        "year": "January 1921",
+        "title": "Non-Cooperation Movement Began",
+        "bullets": [
+            "Boycott of foreign goods",
+            "Picketing of liquor shops",
+            "National schools and colleges established",
+            "Mass participation across India"
+        ],
+        "importance": "Brought ordinary Indians into the freedom struggle.",
+        "recall_question": {
+            "question": "Non-Cooperation Movement began in?",
+            "options": [
+                "Dec 1920",
+                "Jan 1921",
+                "1922",
+                "1924"
+            ],
+            "correct_index": 1
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(245,158,11,0.15)"
+    },
+    {
+        "id": "ev_pdf_59",
+        "year": "1922",
+        "title": "Non-Cooperation Called Off (Chauri Chaura)",
+        "bullets": [
+            "Violent clash at Chauri Chaura, UP",
+            "Police station set on fire",
+            "Gandhi withdrew the movement",
+            "Led to arrests of many leaders"
+        ],
+        "importance": "Showed Gandhi's commitment to non-violence above all.",
+        "recall_question": {
+            "question": "Non-Cooperation Movement was called off in?",
+            "options": [
+                "1920",
+                "1921",
+                "1922",
+                "1923"
+            ],
+            "correct_index": 2
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(16,185,129,0.15)"
+    },
+    {
+        "id": "ev_pdf_60",
+        "year": "1924",
+        "title": "Alluri Sitarama Raju Arrested",
+        "bullets": [
+            "Led a tribal rebellion in Andhra",
+            "Fought against British forest laws",
+            "Used guerrilla warfare tactics",
+            "Inspired by the Non-Cooperation Movement"
+        ],
+        "importance": "Showed tribal resistance against British oppression.",
+        "recall_question": {
+            "question": "Alluri Sitarama Raju was arrested in?",
+            "options": [
+                "1920",
+                "1922",
+                "1924",
+                "1928"
+            ],
+            "correct_index": 2
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(59,130,246,0.15)"
+    },
+    {
+        "id": "ev_pdf_61",
+        "year": "1926",
+        "title": "Great Depression Began",
+        "bullets": [
+            "Worldwide economic crisis",
+            "Agricultural prices collapsed in India",
+            "Indian peasants were hardest hit",
+            "Increased rural debt and poverty"
+        ],
+        "importance": "Economic discontent fuelled the nationalist movement.",
+        "recall_question": {
+            "question": "Great Depression began in?",
+            "options": [
+                "1920",
+                "1926",
+                "1928",
+                "1930"
+            ],
+            "correct_index": 1
+        },
+        "status": "unviewed",
+        "eraColor": "rgba(139,92,246,0.15)"
+    },
+    {
+        "id": "ev_pdf_62",
+        "year": "1927",
+        "title": "Formation of FICCI",
+        "bullets": [
+            "Federation of Indian Chambers of Commerce & Industry",
+            "Represented Indian business interests",
+            "Opposed colonial trade policies",
+            "Supported the Swadeshi movement"
+        ],
+        "importance": "Gave Indian capitalists a unified voice against British policies.",
+        "recall_question": {
+            "question": "FICCI was formed in?",
+            "options": [
+                "1920",
+                "1926",
+                "1927",
+                "1928"
             ],
             "correct_index": 2
         },
@@ -1660,29 +1488,25 @@ export const CHRONO_DATA = [
         "eraColor": "rgba(220,38,38,0.15)"
     },
     {
-        "id": "ev_pdf_67",
-        "year": "19 July 1956",
-        "title": "Brioni Declaration",
+        "id": "ev_pdf_63",
+        "year": "1928",
+        "title": "Simon Commission Arrived in India",
         "bullets": [
-            "A declaration issued by Jawaharlal Nehru, Josip Broz Tito, and Gamal",
-            "It was signed on the Brioni Islands in Yugoslavia.",
-            "It called for peace and active coexistence.",
-            "It is considered a key step towards forming NAM.",
-            "The first summit of the Non-Aligned Movement was held in Belgrade,",
-            "It was attended by 25 member states.",
-            "The main architects were Nehru, Tito, Nasser, Sukarno, and Nkrumah.",
-            "It aimed to keep newly independent countries out of the Cold War blocs."
+            "All-white British commission",
+            "No Indian member included",
+            "Met with \"Simon Go Back\" protests",
+            "Lala Lajpat Rai died during a protest"
         ],
-        "importance": "It formalized the cooperation between the three key leaders of",
+        "importance": "Paved the way for the demand for Purna Swaraj (complete independence).",
         "recall_question": {
-            "question": "The first Non-Aligned Movement summit was held in:",
+            "question": "Simon Commission came to India in?",
             "options": [
-                "Bandung",
-                "New Delhi",
-                "Belgrade",
-                "Cairo"
+                "1920",
+                "1927",
+                "1928",
+                "1930"
             ],
-            "correct_index": 3
+            "correct_index": 2
         },
         "status": "unviewed",
         "eraColor": "rgba(245,158,11,0.15)"

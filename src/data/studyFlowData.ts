@@ -1,7 +1,7 @@
 /**
- * Study Flow — Data Structure
+ * Study Flow - Data Structure
  * 
- * Auto-generated from ICSE Study Flow PDFs.
+ * Auto-generated from CBSE Study Flow PDFs.
  * Each subject contains chapters with 3 steps: Watch → Revise → Practice.
  */
 
@@ -50,7 +50,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch1",
         title: "FORCE",
-        watch: { videoUrl: "https://youtu.be/ONS_qjuKrq8?si=1bqyc_k2nqnRvu_-", title: "FORCE — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/ONS_qjuKrq8?si=1bqyc_k2nqnRvu_-", title: "FORCE - One Shot Lecture" },
         revise: {
           summary: "A force can produce two types of motion: translational motion (body moves as a whole) and rotational motion (body turns about a fixed point). Moment of Force (Torque): The turning effect produced by a",
           bullets: [
@@ -90,7 +90,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch2",
         title: "WORK, ENERGY and POWER",
-        watch: { videoUrl: "https://youtu.be/uhUTO6ilpZ4?si=NDKtDkkfXV6TlF-a", title: "WORK, ENERGY and POWER — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/uhUTO6ilpZ4?si=NDKtDkkfXV6TlF-a", title: "WORK, ENERGY and POWER - One Shot Lecture" },
         revise: {
           summary: "Work is said to be done when a force acting on a body produces a displacement in the direction of the force. Mathematical Expression: \\( W = FS \\cos \\theta \\) Where F is the force, S is the displaceme",
           bullets: [
@@ -130,7 +130,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch3",
         title: "MACHINES",
-        watch: { videoUrl: "https://youtu.be/4bghi4g6UhA?si=oE6xkgvsqrAqzcRc", title: "MACHINES — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/4bghi4g6UhA?si=oE6xkgvsqrAqzcRc", title: "MACHINES - One Shot Lecture" },
         revise: {
           summary: "Load (L): The resistance overcome by the machine. Effort (E): The force applied to the machine. Mechanical Advantage (MA): Ratio of load to effort. \\( MA = L / E \\) Velocity Ratio (VR): Ratio of veloc",
           bullets: [
@@ -170,7 +170,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch4",
         title: "REFRACTION of LIGHT at PLANE SURFACES",
-        watch: { videoUrl: "https://youtu.be/5AVlCIOOJDs?si=TzcOySn-CcXk7CxH", title: "REFRACTION of LIGHT at PLANE SURFACES — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/5AVlCIOOJDs?si=TzcOySn-CcXk7CxH", title: "REFRACTION of LIGHT at PLANE SURFACES - One Shot Lecture" },
         revise: {
           summary: "Refraction is the change in the direction of light when it passes from one transparent medium to another opically different medium. Cause: Change in the speed of light in different media. Effect on Wa",
           bullets: [
@@ -210,7 +210,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch5",
         title: "REFRACTION THROUGH a LENS",
-        watch: { videoUrl: "https://youtu.be/-A0yLShb85k?si=F_NF3Efyw94yCKqS", title: "REFRACTION THROUGH a LENS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/-A0yLShb85k?si=F_NF3Efyw94yCKqS", title: "REFRACTION THROUGH a LENS - One Shot Lecture" },
         revise: {
           summary: "A lens is a transparent refracting medium bounded by two spherical surfaces. Convex (Converging) Lens: Thicker in the centre, thinner at the edges. It converges parallel rays to a point. Concave (Dive",
           bullets: [
@@ -250,7 +250,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch6",
         title: "SPECTRUM",
-        watch: { videoUrl: "https://youtu.be/Vk1BaG_lbj0?si=Dj6t5smqA4R9AZMo", title: "SPECTRUM — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/Vk1BaG_lbj0?si=Dj6t5smqA4R9AZMo", title: "SPECTRUM - One Shot Lecture" },
         revise: {
           summary: "Dispersion is the splitting of white light into its constituent colours when passed through a triangular prism. The band of seven colours obtained is called a spectrum. Order of colours: Violet, Indig",
           bullets: [
@@ -290,7 +290,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch7",
         title: "SOUND",
-        watch: { videoUrl: "https://youtu.be/tme78Q0lTkY?si=9BBftoMLvAlDwWAX", title: "SOUND — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/tme78Q0lTkY?si=9BBftoMLvAlDwWAX", title: "SOUND - One Shot Lecture" },
         revise: {
           summary: "Sound is a form of energy that produces a sensation of hearing. It travels in the form of longitudinal waves. Sound requires a material medium (solid, liquid, or gas) to travel. It cannot travel throu",
           bullets: [
@@ -330,7 +330,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch8",
         title: "CALORIMETRY",
-        watch: { videoUrl: "https://youtu.be/ZHG30f6aH5U?si=t_ff5hoSNDr2p1oT", title: "CALORIMETRY — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/ZHG30f6aH5U?si=t_ff5hoSNDr2p1oT", title: "CALORIMETRY - One Shot Lecture" },
         revise: {
           summary: "Heat is a form of energy that flows from a body at a higher temperature to a body at a lower temperature. SI unit: Joule (J). Temperature is the degree of hotness or coldness of a body. It determines",
           bullets: [
@@ -370,7 +370,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch9",
         title: "CURRENT ELECTRICITY",
-        watch: { videoUrl: "https://youtu.be/mvZKUWQBuOc?si=Q7c51423lAFSB-kQ", title: "CURRENT ELECTRICITY — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/mvZKUWQBuOc?si=Q7c51423lAFSB-kQ", title: "CURRENT ELECTRICITY - One Shot Lecture" },
         revise: {
           summary: "Electric Current (I): The rate of flow of electric charge (Q) through a cross section of a conductor. \\( I = Q / t \\) SI unit: Ampere (A). 1 A = 1 C/s. In metals, current is due to the flow of electro",
           bullets: [
@@ -410,7 +410,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch10",
         title: "ELECTRICAL POWER and HOUSEHOLD CIRCUITS",
-        watch: { videoUrl: "https://youtu.be/C4ZWFlXvwnk?si=JksS0PG-Pqe9Iama", title: "ELECTRICAL POWER and HOUSEHOLD CIRCUITS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/C4ZWFlXvwnk?si=JksS0PG-Pqe9Iama", title: "ELECTRICAL POWER and HOUSEHOLD CIRCUITS - One Shot Lecture" },
         revise: {
           summary: "Electrical Energy (W): The work done by a source in driving current through a conductor. \\( W = QV = VIt = I^2Rt = (V^2 / R) t \\) Electrical Power (P): The rate of doing electrical work. \\( P = W / t",
           bullets: [
@@ -450,7 +450,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch11",
         title: "ELECTROMAGNETISM",
-        watch: { videoUrl: "https://youtu.be/277lWoUr36E?si=jNRMSRJ-d15woj3i", title: "ELECTROMAGNETISM — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/277lWoUr36E?si=jNRMSRJ-d15woj3i", title: "ELECTROMAGNETISM - One Shot Lecture" },
         revise: {
           summary: "When an electric current passes through a straight conductor, a magnetic field is produced around it. The direction of the magnetic field is given by the Right Hand Thumb Rule: If the thumb points in",
           bullets: [
@@ -490,7 +490,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ph-ch12",
         title: "RADIOACTIVITY",
-        watch: { videoUrl: "https://youtu.be/V6hYbriPhqk?si=E3L6Ql82Mxeu2ce8", title: "RADIOACTIVITY — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/V6hYbriPhqk?si=E3L6Ql82Mxeu2ce8", title: "RADIOACTIVITY - One Shot Lecture" },
         revise: {
           summary: "An atom consists of a tiny, dense, positively charged nucleus containing protons and neutrons. Electrons revolve around the nucleus. Atomic Number (Z): Number of protons in the nucleus. Determines the",
           bullets: [
@@ -534,7 +534,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch1",
         title: "PERIODIC TABLE",
-        watch: { videoUrl: "https://youtu.be/IePO2EmTQkQ?si=smF2po7LIKQuIs71", title: "PERIODIC TABLE — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/IePO2EmTQkQ?si=smF2po7LIKQuIs71", title: "PERIODIC TABLE - One Shot Lecture" },
         revise: {
           summary: "A. Dobereiner\'s Triads Dobereiner arranged elements into groups of three called triads. In each triad, the atomic mass of the middle element was approximately the average of the atomic masses of the o",
           bullets: [
@@ -574,7 +574,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch2",
         title: "CHEMICAL BONDING",
-        watch: { videoUrl: "https://youtu.be/oFPPJstX7N0?si=BhF9E205BSDdhPgg", title: "CHEMICAL BONDING — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/oFPPJstX7N0?si=BhF9E205BSDdhPgg", title: "CHEMICAL BONDING - One Shot Lecture" },
         revise: {
           summary: "Chemical bonding is the force of attraction that holds atoms together in a molecule or compound. Atoms combine to achieve a stable electronic configuration, usually an octet (8 electrons) or duplet (2",
           bullets: [
@@ -614,7 +614,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch3",
         title: "ACIDS, BASES and SALTS",
-        watch: { videoUrl: "https://youtu.be/6gZsd4SG6hU?si=Hc_Bs2Dq3SHKlKMy", title: "ACIDS, BASES and SALTS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/6gZsd4SG6hU?si=Hc_Bs2Dq3SHKlKMy", title: "ACIDS, BASES and SALTS - One Shot Lecture" },
         revise: {
           summary: "A. Acids Acids are substances that dissociate in aqueous solution to produce hydrogen ions (H⁺) or hydronium ions (H₃O⁺). H⁺ + H₂O → H₃O⁺ Properties: Sour taste. Turn blue litmus red. Conduct electric",
           bullets: [
@@ -654,7 +654,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch4",
         title: "ANALYTICAL CHEMISTRY",
-        watch: { videoUrl: "https://youtu.be/GNKb__9uwcM?si=NS980--9fyOViRtn", title: "ANALYTICAL CHEMISTRY — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/GNKb__9uwcM?si=NS980--9fyOViRtn", title: "ANALYTICAL CHEMISTRY - One Shot Lecture" },
         revise: {
           summary: "Sodium hydroxide reacts with salt solutions to form insoluble metal hydroxides (precipitates). The colour and solubility of the precipitate helps to identify the metal ion present. Salts of Fe²⁺ (Ferr",
           bullets: [
@@ -694,7 +694,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch5",
         title: "MOLE CONCEPT and STOICHIOMETRY",
-        watch: { videoUrl: "https://youtu.be/R9I0boD4taY?si=Q8xSitu4QRQbtgs9", title: "MOLE CONCEPT and STOICHIOMETRY — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/R9I0boD4taY?si=Q8xSitu4QRQbtgs9", title: "MOLE CONCEPT and STOICHIOMETRY - One Shot Lecture" },
         revise: {
           summary: "When gases react together under the same conditions of temperature and pressure, they do so in simple whole number ratios by their volumes, and the volumes of the products (if gases) also bear a simpl",
           bullets: [
@@ -734,7 +734,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch6",
         title: "ELECTROLYSIS",
-        watch: { videoUrl: "https://youtu.be/17_ukKwYE9U?si=qXT4sBi91bMOKu3t", title: "ELECTROLYSIS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/17_ukKwYE9U?si=qXT4sBi91bMOKu3t", title: "ELECTROLYSIS - One Shot Lecture" },
         revise: {
           summary: "Electrolysis: The process of decomposition of an electrolyte in its molten state or aqueous solution by the passage of direct electric current. Electrolyte: A compound that conducts electricity in mol",
           bullets: [
@@ -774,7 +774,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch7",
         title: "METALLURGY",
-        watch: { videoUrl: "https://youtu.be/9DaA95KHpoA?si=vQO7Mn94QAnzncnC", title: "METALLURGY — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/9DaA95KHpoA?si=vQO7Mn94QAnzncnC", title: "METALLURGY - One Shot Lecture" },
         revise: {
           summary: "Mineral: A naturally occurring substance containing one or more metals in the earth\'s crust. Ore: A mineral from which a metal can be extracted profitably and conveniently. All ores are minerals, but",
           bullets: [
@@ -814,7 +814,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch8",
         title: "STUDY of COMPOUNDS – HYDROGEN CHLORIDE (hcl)",
-        watch: { videoUrl: "", title: "STUDY of COMPOUNDS – HYDROGEN CHLORIDE (hcl) — One Shot Lecture" },
+        watch: { videoUrl: "", title: "STUDY of COMPOUNDS – HYDROGEN CHLORIDE (hcl) - One Shot Lecture" },
         revise: {
           summary: "Reactants: Sodium chloride (NaCl) and concentrated Sulphuric acid (H₂SO₄). Reaction: NaCl + H₂SO₄ → NaHSO₄ + HCl↑ (at low temperature below 200°C) Conditions: Temperature kept below 200°C. Procedure:",
           bullets: [
@@ -854,7 +854,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch9",
         title: "STUDY of COMPOUNDS – AMMONIA (NH₃)",
-        watch: { videoUrl: "https://youtu.be/9DAdgTkVTdg?si=ogLPp6oxMUqAZRXR", title: "STUDY of COMPOUNDS – AMMONIA (NH₃) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/9DAdgTkVTdg?si=ogLPp6oxMUqAZRXR", title: "STUDY of COMPOUNDS – AMMONIA (NH₃) - One Shot Lecture" },
         revise: {
           summary: "Reactants: Ammonium chloride (NH₄Cl) and Calcium hydroxide [Ca(OH)₂ / slaked lime]. Reaction: 2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2H₂O + 2NH₃↑ Conditions: Gentle heating. Drying Agent: Quicklime (CaO). Conc. H",
           bullets: [
@@ -894,7 +894,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch10",
         title: "STUDY of COMPOUNDS – NITRIC ACID (HNO₃)",
-        watch: { videoUrl: "https://youtu.be/zvirKZpDytg?si=f6WLlxIa65K982De", title: "STUDY of COMPOUNDS – NITRIC ACID (HNO₃) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/zvirKZpDytg?si=f6WLlxIa65K982De", title: "STUDY of COMPOUNDS – NITRIC ACID (HNO₃) - One Shot Lecture" },
         revise: {
           summary: "Reactants: Potassium nitrate (KNO₃) or Sodium nitrate (NaNO₃) and concentrated Sulphuric acid. Reaction: KNO₃ + H₂SO₄ → KHSO₄ + HNO₃ (vapours) Temperature: Should not exceed 200°C. At higher temperatu",
           bullets: [
@@ -934,7 +934,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch11",
         title: "STUDY of COMPOUNDS – SULPHURIC ACID (H₂SO₄)",
-        watch: { videoUrl: "", title: "STUDY of COMPOUNDS – SULPHURIC ACID (H₂SO₄) — One Shot Lecture" },
+        watch: { videoUrl: "", title: "STUDY of COMPOUNDS – SULPHURIC ACID (H₂SO₄) - One Shot Lecture" },
         revise: {
           summary: "Step 1: Production of SO₂. Burning of sulphur or roasting of iron pyrites. S + O₂ → SO₂ 4FeS₂ + 11O₂ → 2Fe₂O₃ + 8SO₂ Step 2: Catalytic oxidation of SO₂ to SO₃. 2SO₂ + O₂ ⇌ 2SO₃ + Heat Catalyst: Vanadi",
           bullets: [
@@ -974,7 +974,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ch-ch12",
         title: "ORGANIC CHEMISTRY",
-        watch: { videoUrl: "https://youtu.be/_YYL7OBE11k?si=OnSKYj3ssM6L5P2w", title: "ORGANIC CHEMISTRY — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/_YYL7OBE11k?si=OnSKYj3ssM6L5P2w", title: "ORGANIC CHEMISTRY - One Shot Lecture" },
         revise: {
           summary: "Organic compounds are compounds of carbon (except CO, CO₂, carbonates and bicarbonates). Unique Nature of Carbon: Catenation: Carbon atoms can link together to form long chains or rings. Tetravalency:",
           bullets: [
@@ -1018,7 +1018,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch1",
         title: "CELL DIVISION and CELL CYCLE",
-        watch: { videoUrl: "", title: "CELL DIVISION and CELL CYCLE — One Shot Lecture" },
+        watch: { videoUrl: "", title: "CELL DIVISION and CELL CYCLE - One Shot Lecture" },
         revise: {
           summary: "The cell cycle is the sequence of events from one cell division to the next. It consists of two main phases. A. Interphase (Preparatory Phase) The cell grows in size and prepares for division. It is d",
           bullets: [
@@ -1058,7 +1058,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch2",
         title: "GENETICS",
-        watch: { videoUrl: "", title: "GENETICS — One Shot Lecture" },
+        watch: { videoUrl: "", title: "GENETICS - One Shot Lecture" },
         revise: {
           summary: "Gregor Mendel conducted experiments on garden pea plants and proposed three fundamental laws of inheritance. A. Law of Dominance When two contrasting alleles are present together (heterozygous conditi",
           bullets: [
@@ -1098,7 +1098,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch3",
         title: "ABSORPTION by ROOTS",
-        watch: { videoUrl: "", title: "ABSORPTION by ROOTS — One Shot Lecture" },
+        watch: { videoUrl: "", title: "ABSORPTION by ROOTS - One Shot Lecture" },
         revise: {
           summary: "Imbibition: The absorption of water by solid particles of a substance (hydrophilic colloids), causing them to swell enormously. Example: dry seeds swelling when soaked in water. Diffusion: The net mov",
           bullets: [
@@ -1138,7 +1138,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch4",
         title: "TRANSPIRATION",
-        watch: { videoUrl: "https://youtu.be/LFmIkLQwhGg?si=bicqIB1PP2-_GPH8", title: "TRANSPIRATION — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/LFmIkLQwhGg?si=bicqIB1PP2-_GPH8", title: "TRANSPIRATION - One Shot Lecture" },
         revise: {
           summary: "Transpiration is the loss of water in the form of water vapour from the aerial parts of a living plant, mainly through the stomata of leaves.",
           bullets: [
@@ -1178,7 +1178,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch5",
         title: "PHOTOSYNTHESIS",
-        watch: { videoUrl: "https://youtu.be/5c61BkkrnEU?si=Jvh17cLV5dMKWnzc", title: "PHOTOSYNTHESIS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/5c61BkkrnEU?si=Jvh17cLV5dMKWnzc", title: "PHOTOSYNTHESIS - One Shot Lecture" },
         revise: {
           summary: "Photosynthesis is the process by which green plants synthesise food (glucose) from carbon dioxide and water using sunlight energy trapped by chlorophyll. Significance: It is the primary source of food",
           bullets: [
@@ -1218,7 +1218,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch6",
         title: "CHEMICAL COORDINATION in PLANTS",
-        watch: { videoUrl: "https://youtu.be/XHthfFM_9Hs?si=lRfEe5MMRYksCCUO", title: "CHEMICAL COORDINATION in PLANTS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/XHthfFM_9Hs?si=lRfEe5MMRYksCCUO", title: "CHEMICAL COORDINATION in PLANTS - One Shot Lecture" },
         revise: {
           summary: "Plant growth regulators are small, organic molecules that control growth, development and responses in plants. Auxins: Promote cell elongation and growth of shoots. Promote apical dominance (growth of",
           bullets: [
@@ -1258,7 +1258,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch7",
         title: "THE CIRCULATORY SYSTEM",
-        watch: { videoUrl: "https://youtu.be/bqCah5NvfTM?si=BMCocGZ4XylHcdsb", title: "THE CIRCULATORY SYSTEM — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/bqCah5NvfTM?si=BMCocGZ4XylHcdsb", title: "THE CIRCULATORY SYSTEM - One Shot Lecture" },
         revise: {
           summary: "Blood is a fluid connective tissue composed of: Plasma (about 55%): The liquid matrix, consisting of about 90% water with dissolved proteins, glucose, minerals, hormones, and waste products. Red Blood",
           bullets: [
@@ -1298,7 +1298,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch8",
         title: "THE EXCRETORY SYSTEM",
-        watch: { videoUrl: "https://youtu.be/Wj8IfXfMUy0?si=mx1HL_ukJgGBibQ4", title: "THE EXCRETORY SYSTEM — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/Wj8IfXfMUy0?si=mx1HL_ukJgGBibQ4", title: "THE EXCRETORY SYSTEM - One Shot Lecture" },
         revise: {
           summary: "Excretion is the removal of metabolic waste products from the body. Kidneys: Primary excretory organs that filter blood and produce urine. Lungs: Remove carbon dioxide and water vapour. Skin: Removes",
           bullets: [
@@ -1338,7 +1338,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch9",
         title: "THE NERVOUS SYSTEM",
-        watch: { videoUrl: "https://youtu.be/ILWpicDQqQo?si=zoNoItokB4HHuv83", title: "THE NERVOUS SYSTEM — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/ILWpicDQqQo?si=zoNoItokB4HHuv83", title: "THE NERVOUS SYSTEM - One Shot Lecture" },
         revise: {
           summary: "A neuron is the structural and functional unit of the nervous system. Dendrites: Short, branched projections that receive nerve impulses from other neurons and conduct them towards the cell body. Cell",
           bullets: [
@@ -1378,7 +1378,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch10",
         title: "THE ENDOCRINE SYSTEM",
-        watch: { videoUrl: "https://youtu.be/dQJg4lSbnPo?si=CybSpVeNMfZx4Iri", title: "THE ENDOCRINE SYSTEM — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/dQJg4lSbnPo?si=CybSpVeNMfZx4Iri", title: "THE ENDOCRINE SYSTEM - One Shot Lecture" },
         revise: {
           summary: "Endocrine Glands: Ductless glands that secrete their products (hormones) directly into the bloodstream. Hormones act on target organs at a distance. Exocrine Glands: Glands that have ducts. They secre",
           bullets: [
@@ -1418,7 +1418,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch11",
         title: "THE REPRODUCTIVE SYSTEM",
-        watch: { videoUrl: "https://youtu.be/lfU-C0pDRlo?si=-qEYnNQr6QGTONkb", title: "THE REPRODUCTIVE SYSTEM — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/lfU-C0pDRlo?si=-qEYnNQr6QGTONkb", title: "THE REPRODUCTIVE SYSTEM - One Shot Lecture" },
         revise: {
           summary: "Testes (paired): Produce the male gametes (sperms) and the male hormone Testosterone. Epididymis: A coiled tube on top of each testis where sperms mature and are temporarily stored. Vas Deferens (Sper",
           bullets: [
@@ -1458,7 +1458,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch12",
         title: "POPULATION",
-        watch: { videoUrl: "https://youtu.be/2QKio4tL1GY?si=IwGyKZNtKLXc09q3", title: "POPULATION — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/2QKio4tL1GY?si=IwGyKZNtKLXc09q3", title: "POPULATION - One Shot Lecture" },
         revise: {
           summary: "Demography: The statistical study of human populations, including their size, structure, and distribution. Population Density: The number of individuals living per unit area (e.g., per square kilometr",
           bullets: [
@@ -1498,7 +1498,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "bi-ch13",
         title: "POLLUTION",
-        watch: { videoUrl: "https://youtu.be/lfU-C0pDRlo?si=kB7rSHVFhlzL3vjY", title: "POLLUTION — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/lfU-C0pDRlo?si=kB7rSHVFhlzL3vjY", title: "POLLUTION - One Shot Lecture" },
         revise: {
           summary: "Air Pollution Sources: Vehicular emissions, industrial smoke, burning of garbage, brick kilns. Major Pollutants: Carbon monoxide (CO), Sulphur dioxide (SO₂), Nitrogen oxides (NOx), suspended particula",
           bullets: [
@@ -1542,7 +1542,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch1",
         title: "GOODS and SERVICES TAX (GST)",
-        watch: { videoUrl: "https://youtu.be/iWcGaP_eWeA?si=63nqi4wBCkyehr-X", title: "GOODS and SERVICES TAX (GST) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/iWcGaP_eWeA?si=63nqi4wBCkyehr-X", title: "GOODS and SERVICES TAX (GST) - One Shot Lecture" },
         revise: {
           summary: "Goods and Services Tax (GST) is a comprehensive, multi-stage, destination-based tax that is levied on every value addition. It is a single indirect tax for the whole country.",
           bullets: [
@@ -1582,7 +1582,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch2",
         title: "BANKING",
-        watch: { videoUrl: "https://youtu.be/gZCrI573Yy8?si=9y3mhkgisFuYM7g2", title: "BANKING — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/gZCrI573Yy8?si=9y3mhkgisFuYM7g2", title: "BANKING - One Shot Lecture" },
         revise: {
           summary: "A Recurring Deposit (RD) account is an account in which a fixed sum of money is deposited every month for a specified period. After the maturity period, the total accumulated amount, including interes",
           bullets: [
@@ -1621,7 +1621,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch3",
         title: "SHARES and DIVIDENDS",
-        watch: { videoUrl: "https://youtu.be/cxuL191S6VY?si=Y-sxqIO85YTTIXZk", title: "SHARES and DIVIDENDS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/cxuL191S6VY?si=Y-sxqIO85YTTIXZk", title: "SHARES and DIVIDENDS - One Shot Lecture" },
         revise: {
           summary: "A company raises capital by issuing shares to the public. A person who buys these shares is a shareholder and becomes a part owner of the company.",
           bullets: [
@@ -1661,7 +1661,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch4",
         title: "LINEAR INEQUATIONS",
-        watch: { videoUrl: "https://youtu.be/gzwo0IRLkM4?si=was8nYqWJFh_tHCr", title: "LINEAR INEQUATIONS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/gzwo0IRLkM4?si=was8nYqWJFh_tHCr", title: "LINEAR INEQUATIONS - One Shot Lecture" },
         revise: {
           summary: "A linear inequation is a mathematical statement expressing inequality between two algebraic expressions. It uses signs like: < (less than) > (greater than) <= (less than or equal to) >= (greater than",
           bullets: [
@@ -1701,7 +1701,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch5",
         title: "QUADRATIC EQUATIONS",
-        watch: { videoUrl: "https://youtu.be/q7TmhgBbEJ8?si=JFJLWbjTDX7XXL4b", title: "QUADRATIC EQUATIONS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/q7TmhgBbEJ8?si=JFJLWbjTDX7XXL4b", title: "QUADRATIC EQUATIONS - One Shot Lecture" },
         revise: {
           summary: "A quadratic equation in variable x is an equation of the form: ax² + bx + c = 0 where a, b, c are real numbers and a is not equal to 0.",
           bullets: [
@@ -1741,7 +1741,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch6",
         title: "RATIO and PROPORTION",
-        watch: { videoUrl: "https://youtu.be/9yFiifEYiPI?si=WPxEG3iset6_Lbw1", title: "RATIO and PROPORTION — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/9yFiifEYiPI?si=WPxEG3iset6_Lbw1", title: "RATIO and PROPORTION - One Shot Lecture" },
         revise: {
           summary: "Ratio: Comparison of two quantities of the same kind. Written as a:b or a/b. Proportion: Equality of two ratios. If a:b = c:d, then a, b, c, d are in proportion. Continued Proportion: Three quantities",
           bullets: [
@@ -1780,7 +1780,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch7",
         title: "REMAINDER and FACTOR THEOREM",
-        watch: { videoUrl: "https://youtu.be/KUmUXT0TlY8?si=2YkVvAzzVbbbxYeA", title: "REMAINDER and FACTOR THEOREM — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/KUmUXT0TlY8?si=2YkVvAzzVbbbxYeA", title: "REMAINDER and FACTOR THEOREM - One Shot Lecture" },
         revise: {
           summary: "If a polynomial f(x) is divided by (x - a), the remainder R is equal to f(a). For example, if f(x) is divided by (x + 2), put x = -2 in f(x) to find the remainder.",
           bullets: [
@@ -1820,7 +1820,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch8",
         title: "MATRICES",
-        watch: { videoUrl: "https://youtu.be/JwLBFvw5owU?si=7Ig7pznnk1Ua6Y5S", title: "MATRICES — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/JwLBFvw5owU?si=7Ig7pznnk1Ua6Y5S", title: "MATRICES - One Shot Lecture" },
         revise: {
           summary: "A matrix is a rectangular arrangement of numbers (entries) in rows and columns. The order of a matrix is m x n, where m is the number of rows and n is the number of columns.",
           bullets: [
@@ -1860,7 +1860,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch9",
         title: "ARITHMETIC PROGRESSION (AP)",
-        watch: { videoUrl: "https://youtu.be/_1HxhsNvpzc?si=i0s8zBgJWkjYvrMu", title: "ARITHMETIC PROGRESSION (AP) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/_1HxhsNvpzc?si=i0s8zBgJWkjYvrMu", title: "ARITHMETIC PROGRESSION (AP) - One Shot Lecture" },
         revise: {
           summary: "An Arithmetic Progression (AP) is a sequence of numbers in which the difference between any two consecutive terms is constant. This constant difference is called the common difference (d).",
           bullets: [
@@ -1899,7 +1899,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch10",
         title: "GEOMETRIC PROGRESSION (GP)",
-        watch: { videoUrl: "https://youtu.be/QR9B3qMXDDY?si=HBsz7GT3k1Q_iwHG", title: "GEOMETRIC PROGRESSION (GP) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/QR9B3qMXDDY?si=HBsz7GT3k1Q_iwHG", title: "GEOMETRIC PROGRESSION (GP) - One Shot Lecture" },
         revise: {
           summary: "A Geometric Progression (GP) is a sequence of numbers in which the ratio of any term to its preceding term is constant. This constant ratio is called the common ratio (r). Condition: r = T2/T1 = T3/T2",
           bullets: [
@@ -1935,7 +1935,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch11",
         title: "REFLECTION",
-        watch: { videoUrl: "https://youtu.be/N51MhaYu18I?si=_WFF-1ucMySzs-pL", title: "REFLECTION — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/N51MhaYu18I?si=_WFF-1ucMySzs-pL", title: "REFLECTION - One Shot Lecture" },
         revise: {
           summary: "Reflection is the mirror image of a point or a shape across a given line. The size and shape of the object remain unchanged after reflection.",
           bullets: [
@@ -1975,7 +1975,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch12",
         title: "SECTION and MID-POINT FORMULA",
-        watch: { videoUrl: "https://youtu.be/f5IVhHnfyCk?si=MJYZUIAv0DH8-J7U", title: "SECTION and MID-POINT FORMULA — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/f5IVhHnfyCk?si=MJYZUIAv0DH8-J7U", title: "SECTION and MID-POINT FORMULA - One Shot Lecture" },
         revise: {
           summary: "The distance between two points P(x1, y1) and Q(x2, y2) is: PQ = sqrt[(x2 - x1)² + (y2 - y1)²]",
           bullets: [
@@ -2011,7 +2011,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch13",
         title: "EQUATION of a STRAIGHT LINE",
-        watch: { videoUrl: "https://youtu.be/UXYgRZWDglI?si=KRYQQnwxQDueX4y8", title: "EQUATION of a STRAIGHT LINE — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/UXYgRZWDglI?si=KRYQQnwxQDueX4y8", title: "EQUATION of a STRAIGHT LINE - One Shot Lecture" },
         revise: {
           summary: "The slope \'m\' of a line is the tangent of the angle it makes with the positive direction of the x-axis, measured anticlockwise. m = tan 0 For two points (x1, y1) and (x2, y2): m = (y2 - y1) / (x2 - x1",
           bullets: [
@@ -2049,7 +2049,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch14",
         title: "SIMILARITY",
-        watch: { videoUrl: "https://youtu.be/kfxibvVquHw?si=kGmBZFvJPtYEqRGe", title: "SIMILARITY — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/kfxibvVquHw?si=kGmBZFvJPtYEqRGe", title: "SIMILARITY - One Shot Lecture" },
         revise: {
           summary: "Two triangles are similar if their corresponding sides are proportional (same shape, not necessarily the same size).",
           bullets: [
@@ -2089,7 +2089,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch15",
         title: "CIRCLES – CYCLIC PROPERTIES",
-        watch: { videoUrl: "https://youtu.be/No8okxqy0vA?si=8mJXeQY9Q94EcR4v", title: "CIRCLES – CYCLIC PROPERTIES — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/No8okxqy0vA?si=8mJXeQY9Q94EcR4v", title: "CIRCLES – CYCLIC PROPERTIES - One Shot Lecture" },
         revise: {
           summary: "A quadrilateral with all its four vertices lying on a circle is called a cyclic quadrilateral.",
           bullets: [
@@ -2126,7 +2126,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch16",
         title: "CIRCLES – ANGLE PROPERTIES",
-        watch: { videoUrl: "https://youtu.be/nSuSvnCEGZg?si=qDMhnkHeBpoXNqk0", title: "CIRCLES – ANGLE PROPERTIES — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/nSuSvnCEGZg?si=qDMhnkHeBpoXNqk0", title: "CIRCLES – ANGLE PROPERTIES - One Shot Lecture" },
         revise: {
           summary: "The angle which an arc of a circle subtends at the centre is double the angle it subtends at any point on the remaining part of the circle. For arc AB: Angle AOB (at centre) = 2 x Angle ACB (at any po",
           bullets: [
@@ -2164,7 +2164,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch17",
         title: "TANGENTS and SECANTS",
-        watch: { videoUrl: "https://youtu.be/6_iEGczwfO8?si=JEFgL9UENGR8WJiu", title: "TANGENTS and SECANTS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/6_iEGczwfO8?si=JEFgL9UENGR8WJiu", title: "TANGENTS and SECANTS - One Shot Lecture" },
         revise: {
           summary: "A tangent is a line that touches the circle at exactly one point. The point of contact is the point where the tangent meets the circle.",
           bullets: [
@@ -2201,7 +2201,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch18",
         title: "CYLINDER, CONE and SPHERE (MENSURATION)",
-        watch: { videoUrl: "https://youtu.be/GlcnVhwJA5Y?si=Z7zgiBza32MRuOuw", title: "CYLINDER, CONE and SPHERE (MENSURATION) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/GlcnVhwJA5Y?si=Z7zgiBza32MRuOuw", title: "CYLINDER, CONE and SPHERE (MENSURATION) - One Shot Lecture" },
         revise: {
           summary: "Curved Surface Area (CSA) = 2 x pi x r x h Total Surface Area (TSA) = 2 x pi x r x (r + h) Volume = pi x r² x h",
           bullets: [
@@ -2238,7 +2238,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "ma-ch19",
         title: "TRIGONOMETRIC IDENTITIES",
-        watch: { videoUrl: "https://youtu.be/sKVWQK2Zn34?si=Kc4aMnbeAi_o21n0", title: "TRIGONOMETRIC IDENTITIES — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/sKVWQK2Zn34?si=Kc4aMnbeAi_o21n0", title: "TRIGONOMETRIC IDENTITIES - One Shot Lecture" },
         revise: {
           summary: "sin A = Perpendicular / Hypotenuse cos A = Base / Hypotenuse tan A = Perpendicular / Base cosec A = 1 / sin A sec A = 1 / cos A cot A = 1 / tan A",
           bullets: [
@@ -2279,7 +2279,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch1",
         title: "THE FIRST WAR of INDEPENDENCE, 1857",
-        watch: { videoUrl: "https://youtu.be/e8AZQ7mla84?si=rU6OUtyZ9E9EKZo_", title: "THE FIRST WAR of INDEPENDENCE, 1857 — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/e8AZQ7mla84?si=rU6OUtyZ9E9EKZo_", title: "THE FIRST WAR of INDEPENDENCE, 1857 - One Shot Lecture" },
         revise: {
           summary: "A. Political Causes The British policy of expansion through the Doctrine of Lapse (Lord Dalhousie) annexed many Indian states like Satara, Jhansi, and Nagpur. When a ruler died without a natural male",
           bullets: [
@@ -2319,7 +2319,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch2",
         title: "GROWTH of NATIONALISM",
-        watch: { videoUrl: "https://youtu.be/gTjfRlcc8AQ?si=2qjti7KdiKG4oQm8", title: "GROWTH of NATIONALISM — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/gTjfRlcc8AQ?si=2qjti7KdiKG4oQm8", title: "GROWTH of NATIONALISM - One Shot Lecture" },
         revise: {
           summary: "A. Economic Exploitation The British systematically drained India\'s wealth. Raw materials were taken to Britain, and finished goods were sold back at high prices. Indian handicrafts and cottage indust",
           bullets: [
@@ -2359,7 +2359,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch3",
         title: "INDIAN NATIONAL CONGRESS – OBJECTIVES and EARLY PHASE",
-        watch: { videoUrl: "https://youtu.be/f1-vxNd36Rg?si=WgmwEKMbAKFao07N", title: "INDIAN NATIONAL CONGRESS – OBJECTIVES and EARLY PHASE — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/f1-vxNd36Rg?si=WgmwEKMbAKFao07N", title: "INDIAN NATIONAL CONGRESS – OBJECTIVES and EARLY PHASE - One Shot Lecture" },
         revise: {
           summary: "A. Objectives and Methods of Struggle The Early Nationalists had faith in the British sense of justice and fairness. They believed that the British would grant necessary reforms if the just demands of",
           bullets: [
@@ -2399,7 +2399,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch5",
         title: "CIVIL DISOBEDIENCE MOVEMENT",
-        watch: { videoUrl: "https://youtu.be/rHQkh80MZFk?si=aOi1WFXd71DQsPw1", title: "CIVIL DISOBEDIENCE MOVEMENT — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/rHQkh80MZFk?si=aOi1WFXd71DQsPw1", title: "CIVIL DISOBEDIENCE MOVEMENT - One Shot Lecture" },
         revise: {
           summary: "A. The Simon Commission (1927) The British government appointed the Simon Commission in 1927 to review the working of the Government of India Act 1919. The Commission consisted entirely of British mem",
           bullets: [
@@ -2439,7 +2439,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch6",
         title: "FORWARD BLOC and INDIAN NATIONAL ARMY (INA)",
-        watch: { videoUrl: "https://youtu.be/Drw6s-hqFgM?si=5rIH5jBn4-i6eRLL", title: "FORWARD BLOC and INDIAN NATIONAL ARMY (INA) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/Drw6s-hqFgM?si=5rIH5jBn4-i6eRLL", title: "FORWARD BLOC and INDIAN NATIONAL ARMY (INA) - One Shot Lecture" },
         revise: {
           summary: "The Forward Bloc was founded by Subhas Chandra Bose on 3 May 1939, shortly after he resigned from the Presidentship of the Indian National Congress due to differences with the Gandhian leadership. Obj",
           bullets: [
@@ -2479,7 +2479,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch7",
         title: "INDEPENDENCE and PARTITION of INDIA",
-        watch: { videoUrl: "https://youtu.be/u6sUQwQtqsg?si=XaMSgt0Io3NvVAfM", title: "INDEPENDENCE and PARTITION of INDIA — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/u6sUQwQtqsg?si=XaMSgt0Io3NvVAfM", title: "INDEPENDENCE and PARTITION of INDIA - One Shot Lecture" },
         revise: {
           summary: "The Cabinet Mission was sent by the British Government in March 1946, consisting of three Cabinet ministers: Lord Pethick-Lawrence, Sir Stafford Cripps, and A.V. Alexander. Main Clauses (Proposals): I",
           bullets: [
@@ -2519,7 +2519,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch8",
         title: "THE FIRST WORLD WAR",
-        watch: { videoUrl: "https://youtu.be/ltc4-ABipWY?si=MdDrG2IHkJYLyNaO", title: "THE FIRST WORLD WAR — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/ltc4-ABipWY?si=MdDrG2IHkJYLyNaO", title: "THE FIRST WORLD WAR - One Shot Lecture" },
         revise: {
           summary: "A. Nationalism and Imperialism Nationalism in Europe was intense and aggressive. Each nation considered itself superior and wanted to dominate others. Imperialist rivalry among European powers for col",
           bullets: [
@@ -2558,8 +2558,8 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       },
       {
         id: "hi-ch9",
-        title: "RISE of DICTATORSHIPS — FASCISM and NAZISM",
-        watch: { videoUrl: "https://youtu.be/4WCRGTjCYl0?si=8vKU4M_F1wWs_lVb", title: "RISE of DICTATORSHIPS — FASCISM and NAZISM — One Shot Lecture" },
+        title: "RISE of DICTATORSHIPS - FASCISM and NAZISM",
+        watch: { videoUrl: "https://youtu.be/4WCRGTjCYl0?si=8vKU4M_F1wWs_lVb", title: "RISE of DICTATORSHIPS - FASCISM and NAZISM - One Shot Lecture" },
         revise: {
           summary: "Fascism was a political ideology that believed in the absolute supremacy of the state and the unquestioning obedience of the people to its leader. Benito Mussolini founded the Fascist Party in Italy i",
           bullets: [
@@ -2599,7 +2599,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch10",
         title: "THE SECOND WORLD WAR",
-        watch: { videoUrl: "https://youtu.be/zLDgH9cU0ak?si=vAyF83KfDryAjwF5", title: "THE SECOND WORLD WAR — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/zLDgH9cU0ak?si=vAyF83KfDryAjwF5", title: "THE SECOND WORLD WAR - One Shot Lecture" },
         revise: {
           summary: "A. Dissatisfaction with the Treaty of Versailles Germany was humiliated by the harsh and unjust terms of the Treaty of Versailles. It lost its territory, its army was reduced, and it was forced to pay",
           bullets: [
@@ -2639,7 +2639,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch11",
         title: "THE UNION LEGISLATURE (PARLIAMENT)",
-        watch: { videoUrl: "https://youtu.be/Hv74pZUXxn0?si=f_XmjHWGKsydcPat", title: "THE UNION LEGISLATURE (PARLIAMENT) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/Hv74pZUXxn0?si=f_XmjHWGKsydcPat", title: "THE UNION LEGISLATURE (PARLIAMENT) - One Shot Lecture" },
         revise: {
           summary: "India has a federal system of government. This means that power is divided between the central government and the state governments by the Constitution. Both levels of government have their own separa",
           bullets: [
@@ -2679,7 +2679,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch12",
         title: "THE UNION EXECUTIVE – PRESIDENT and VICE PRESIDENT",
-        watch: { videoUrl: "https://youtu.be/pfTlqBJg5IM?si=Ze3IUyFgWT0Uvkf0", title: "THE UNION EXECUTIVE – PRESIDENT and VICE PRESIDENT — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/pfTlqBJg5IM?si=Ze3IUyFgWT0Uvkf0", title: "THE UNION EXECUTIVE – PRESIDENT and VICE PRESIDENT - One Shot Lecture" },
         revise: {
           summary: "A. Qualifications for Election Must be a citizen of India. Must have completed 35 years of age. Must be qualified to be elected as a member of the Lok Sabha. Must not hold any office of profit under t",
           bullets: [
@@ -2719,7 +2719,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch13",
         title: "PRIME MINISTER and COUNCIL of MINISTERS",
-        watch: { videoUrl: "https://youtu.be/CcQYZKoblsM?si=yoVP5_X7Q5E-R2T-", title: "PRIME MINISTER and COUNCIL of MINISTERS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/CcQYZKoblsM?si=yoVP5_X7Q5E-R2T-", title: "PRIME MINISTER and COUNCIL of MINISTERS - One Shot Lecture" },
         revise: {
           summary: "The President appoints the Prime Minister. The leader of the majority party or coalition in the Lok Sabha is called by the President to form the government. The Prime Minister selects other ministers.",
           bullets: [
@@ -2759,7 +2759,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "hi-ch14",
         title: "THE UNION JUDICIARY",
-        watch: { videoUrl: "https://youtu.be/CcQYZKoblsM?si=ea200KYTs42Sv8is", title: "THE UNION JUDICIARY — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/CcQYZKoblsM?si=ea200KYTs42Sv8is", title: "THE UNION JUDICIARY - One Shot Lecture" },
         revise: {
           summary: "A. Composition The Supreme Court of India consists of the Chief Justice of India and other judges. At present, the maximum number of judges is 34 (including the Chief Justice). The Chief Justice is ap",
           bullets: [
@@ -2803,7 +2803,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch1",
         title: "REVISION of CLASS Ix SYLLABUS – JAVA PROGRAMMING BASICS",
-        watch: { videoUrl: "https://youtu.be/nQz-FcmwGH8?si=dEEAOe8snX0v19F9", title: "REVISION of CLASS Ix SYLLABUS – JAVA PROGRAMMING BASICS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/nQz-FcmwGH8?si=dEEAOe8snX0v19F9", title: "REVISION of CLASS Ix SYLLABUS – JAVA PROGRAMMING BASICS - One Shot Lecture" },
         revise: {
           summary: "Object Oriented Programming is a programming paradigm based on the concept of \"objects\" which contain data and code. The four main principles of OOP are: Encapsulation: The wrapping up of data (variab",
           bullets: [
@@ -2843,7 +2843,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch2",
         title: "INPUT MECHANISM in JAVA",
-        watch: { videoUrl: "https://youtu.be/06LT7JYS7Bo?si=xbJmHlfj9R3JQ_td", title: "INPUT MECHANISM in JAVA — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/06LT7JYS7Bo?si=xbJmHlfj9R3JQ_td", title: "INPUT MECHANISM in JAVA - One Shot Lecture" },
         revise: {
           summary: "Initialisation: Data is given to the variable before the program runs (hardcoded). Example: int a = 10; Parameters (Arguments): Data is passed to the method at the time of calling. Example: void displ",
           bullets: [
@@ -2883,7 +2883,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch3",
         title: "MATHEMATICAL LIBRARY METHODS",
-        watch: { videoUrl: "https://youtu.be/DWbooACEAqM?si=pv0IuiTXiGNAQPC3", title: "MATHEMATICAL LIBRARY METHODS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/DWbooACEAqM?si=pv0IuiTXiGNAQPC3", title: "MATHEMATICAL LIBRARY METHODS - One Shot Lecture" },
         revise: {
           summary: "The Math class is present in the java.lang package, which is the default package. It provides ready-made methods for performing basic mathematical operations. All methods of the Math class are static,",
           bullets: [
@@ -2923,7 +2923,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch4",
         title: "If ELSE and NESTED If ELSE (CONDITIONAL CONSTRUCTS)",
-        watch: { videoUrl: "https://youtu.be/M8JYBz-R19o?si=eelnBHMSQkMoBi_Z", title: "If ELSE and NESTED If ELSE (CONDITIONAL CONSTRUCTS) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/M8JYBz-R19o?si=eelnBHMSQkMoBi_Z", title: "If ELSE and NESTED If ELSE (CONDITIONAL CONSTRUCTS) - One Shot Lecture" },
         revise: {
           summary: "Conditional constructs (selection statements) are used to make decisions in a program. The program executes a set of instructions only if a certain condition is true. Java provides the following condi",
           bullets: [
@@ -2963,7 +2963,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch5",
         title: "LOOPS (ITERATIVE CONSTRUCTS)",
-        watch: { videoUrl: "https://youtu.be/ZGa33g5ii3k?si=QxJ9iDT94nyekAPd", title: "LOOPS (ITERATIVE CONSTRUCTS) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/ZGa33g5ii3k?si=QxJ9iDT94nyekAPd", title: "LOOPS (ITERATIVE CONSTRUCTS) - One Shot Lecture" },
         revise: {
           summary: "Loops (iteration statements) are used to repeat a block of statements multiple times until a condition is met. Java provides three types of loops.",
           bullets: [
@@ -3003,7 +3003,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch6",
         title: "PATTERNS (NESTED for LOOPS)",
-        watch: { videoUrl: "https://youtu.be/s33-gj4VHSM?si=JC8Q32JicT_xRGgJ", title: "PATTERNS (NESTED for LOOPS) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/s33-gj4VHSM?si=JC8Q32JicT_xRGgJ", title: "PATTERNS (NESTED for LOOPS) - One Shot Lecture" },
         revise: {
           summary: "A nested loop means a loop inside another loop. For each iteration of the outer loop, the inner loop runs completely. Nested for loops are used to generate number and character patterns. The outer loo",
           bullets: [
@@ -3043,7 +3043,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch7",
         title: "SERIES PROGRAMMING",
-        watch: { videoUrl: "https://youtu.be/vA1Vx5Qw5OE?si=eKa9gN5rkxsdSv6O", title: "SERIES PROGRAMMING — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/vA1Vx5Qw5OE?si=eKa9gN5rkxsdSv6O", title: "SERIES PROGRAMMING - One Shot Lecture" },
         revise: {
           summary: "A series is the summation or product of a sequence of terms following a specific rule. Programs on series require using loops to generate each term and accumulate a sum or product.",
           bullets: [
@@ -3083,7 +3083,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch8",
         title: "USER-DEFINED METHODS (FUNCTIONS)",
-        watch: { videoUrl: "https://youtu.be/DWbooACEAqM?si=JYX1e1J13bM-Q8BW", title: "USER-DEFINED METHODS (FUNCTIONS) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/DWbooACEAqM?si=JYX1e1J13bM-Q8BW", title: "USER-DEFINED METHODS (FUNCTIONS) - One Shot Lecture" },
         revise: {
           summary: "A method is a block of code that performs a specific task and can be called (invoked) whenever needed. Methods promote reusability, modularity, and readability in a program. A complex problem can be b",
           bullets: [
@@ -3123,7 +3123,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch9",
         title: "CONSTRUCTORS",
-        watch: { videoUrl: "https://youtu.be/5pm61kW5hYs?si=8PQj4VBWgxzUwVdl", title: "CONSTRUCTORS — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/5pm61kW5hYs?si=8PQj4VBWgxzUwVdl", title: "CONSTRUCTORS - One Shot Lecture" },
         revise: {
           summary: "A constructor is a special type of method that is automatically called when an object of a class is created. It has the same name as the class. Its main purpose is to initialise the instance variables",
           bullets: [
@@ -3163,7 +3163,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch10",
         title: "LIBRARY CLASSES (WRAPPER CLASSES)",
-        watch: { videoUrl: "https://youtu.be/DWbooACEAqM?si=JYX1e1J13bM-Q8BW", title: "LIBRARY CLASSES (WRAPPER CLASSES) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/DWbooACEAqM?si=JYX1e1J13bM-Q8BW", title: "LIBRARY CLASSES (WRAPPER CLASSES) - One Shot Lecture" },
         revise: {
           summary: "A wrapper class wraps (encloses) a primitive data type into an object. All primitive data types in Java have a corresponding wrapper class. byte -> Byte short -> Short int -> Integer long -> Long floa",
           bullets: [
@@ -3203,7 +3203,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch11",
         title: "STRING HANDLING",
-        watch: { videoUrl: "https://youtu.be/oR81oaKdrhk?si=SW_BpaPN3Jxn84Pw", title: "STRING HANDLING — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/oR81oaKdrhk?si=SW_BpaPN3Jxn84Pw", title: "STRING HANDLING - One Shot Lecture" },
         revise: {
           summary: "String is a built-in class in Java present in the java.lang package. A string is a sequence of characters. Strings in Java are immutable, meaning once created, their value cannot be changed. Any opera",
           bullets: [
@@ -3243,7 +3243,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch12",
         title: "ARRAYS (SINGLE DIMENSIONAL)",
-        watch: { videoUrl: "https://youtu.be/N5FK6JtkAkA?si=W4Wy_R4SOw_svvk5", title: "ARRAYS (SINGLE DIMENSIONAL) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/N5FK6JtkAkA?si=W4Wy_R4SOw_svvk5", title: "ARRAYS (SINGLE DIMENSIONAL) - One Shot Lecture" },
         revise: {
           summary: "An array is a collection of variables of the same data type, stored in contiguous memory locations, and accessed using a common name with an index. It is a composite (reference) data type. The length",
           bullets: [
@@ -3283,7 +3283,7 @@ export const STUDY_FLOW_DATA: StudyFlowData = {
       {
         id: "cs-ch13",
         title: "2-D ARRAY (DOUBLE DIMENSIONAL ARRAY)",
-        watch: { videoUrl: "https://youtu.be/ZJ-Cb_zRxuI?si=j1-CXFZMsFDc9SQ3", title: "2-D ARRAY (DOUBLE DIMENSIONAL ARRAY) — One Shot Lecture" },
+        watch: { videoUrl: "https://youtu.be/ZJ-Cb_zRxuI?si=j1-CXFZMsFDc9SQ3", title: "2-D ARRAY (DOUBLE DIMENSIONAL ARRAY) - One Shot Lecture" },
         revise: {
           summary: "A double dimensional (2-D) array is an array of arrays. It has rows and columns, forming a matrix or table. It is a composite data type.",
           bullets: [

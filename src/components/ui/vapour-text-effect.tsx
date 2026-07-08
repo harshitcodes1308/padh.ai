@@ -177,7 +177,7 @@ export default function VapourText({
       else {
         const t = elapsed - phaseDisintegrateStart - p.disintegrateDelay;
         if (t < 0) {
-          // Still waiting to break off — stay solid
+          // Still waiting to break off - stay solid
           p.alpha = p.targetAlpha;
           p.x = p.homeX;
           p.y = p.homeY;
@@ -185,7 +185,7 @@ export default function VapourText({
         } else {
           const dur = disintegrateDuration * 0.6;
           const progress = Math.min(1, t / dur);
-          const ease = progress * progress; // easeInQuad — accelerate away
+          const ease = progress * progress; // easeInQuad - accelerate away
 
           p.x = p.homeX + p.driftX * ease;
           p.y = p.homeY + p.driftY * ease;

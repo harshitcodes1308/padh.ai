@@ -1,8 +1,8 @@
-// History & Civics — Real Specimen Paper Data (extracted from PDFs)
+// History & Civics - Real Specimen Paper Data (extracted from PDFs)
 import { TYQPaper, TYQAnswerKey } from "./tyq-papers";
 
 // ==========================================
-// PAPER 1 — MOCK SPECIMEN PAPER 01 (2026)
+// PAPER 1 - MOCK SPECIMEN PAPER 01 (2026)
 // ==========================================
 export const historyCivicsPaper1: TYQPaper = {
   subject: "History & Civics",
@@ -12,7 +12,7 @@ export const historyCivicsPaper1: TYQPaper = {
   totalMarks: 80,
   sections: [
     {
-      name: "Part I — Compulsory (30 Marks)",
+      name: "Part I - Compulsory (30 Marks)",
       instructions: "Attempt all questions from this Part.",
       questions: [
         {
@@ -228,7 +228,7 @@ export const historyCivicsPaper1: TYQPaper = {
       ]
     },
     {
-      name: "Part II — Section A: Civics (Attempt any TWO)",
+      name: "Part II - Section A: Civics (Attempt any TWO)",
       instructions: "Attempt any two questions from this Section.",
       questions: [
         {
@@ -300,7 +300,7 @@ export const historyCivicsPaper1: TYQPaper = {
       ]
     },
     {
-      name: "Part II — Section B: History (Attempt any THREE)",
+      name: "Part II - Section B: History (Attempt any THREE)",
       instructions: "Attempt any three questions from this Section.",
       questions: [
         {
@@ -419,7 +419,7 @@ export const historyCivicsPaper1: TYQPaper = {
 };
 
 // ==========================================
-// PAPER 1 — ANSWER KEY
+// PAPER 1 - ANSWER KEY
 // ==========================================
 export const historyCivicsPaper1Answers: TYQAnswerKey = {
   subject: "History & Civics",
@@ -449,7 +449,7 @@ export const historyCivicsPaper1Answers: TYQAnswerKey = {
     { questionNumber: "2(ii)", answer: "Original Jurisdiction: Disputes between Centre and States, or between States themselves. Writ: Habeas Corpus / Mandamus / Prohibition / Certiorari / Quo Warranto.", explanation: "Under Article 131, the SC has original jurisdiction in federal disputes. Under Article 32, it can issue writs for enforcement of Fundamental Rights." },
     { questionNumber: "2(iii)", answer: "1. Destruction of Indian cottage industries due to British free-trade policy. 2. Drain of wealth from India to Britain through trade and taxation.", explanation: "British economic policies impoverished India by destroying local industries and extracting wealth through heavy taxation, land revenue, and one-sided trade." },
     { questionNumber: "2(iv)", answer: "Subhas Chandra Bose. He founded the Forward Bloc (1939) and reorganised the Indian National Army (INA/Azad Hind Fauj).", explanation: "Bose escaped from India in 1941, went to Germany and then Japan, and led the INA with the war cry 'Delhi Chalo'." },
-    { questionNumber: "2(v)", answer: "The Simon Commission was boycotted because it had no Indian member — all members were British. Indians saw it as an insult.", explanation: "The Commission was appointed in 1927 under Sir John Simon to review constitutional reforms but had no Indian representation." },
+    { questionNumber: "2(v)", answer: "The Simon Commission was boycotted because it had no Indian member - all members were British. Indians saw it as an insult.", explanation: "The Commission was appointed in 1927 under Sir John Simon to review constitutional reforms but had no Indian representation." },
     { questionNumber: "2(vi)", answer: "1. To maintain international peace and security. 2. To develop friendly relations among nations based on equality and self-determination.", explanation: "Other objectives include international cooperation and serving as a centre for harmonising actions of nations." },
     { questionNumber: "2(vii)", answer: "Appeasement was the policy of giving in to the demands of an aggressive nation to maintain peace. Britain and France followed this policy.", explanation: "Britain (under Chamberlain) and France appeased Hitler by allowing the annexation of Austria and Sudetenland, which only emboldened Nazi aggression." },
 
@@ -460,19 +460,19 @@ export const historyCivicsPaper1Answers: TYQAnswerKey = {
     { questionNumber: "4(i)", answer: "Qualifications: 1. Citizen of India. 2. Completed 35 years of age. 3. Qualified to be a member of Lok Sabha. 4. Must not hold any office of profit under Government.", explanation: "The President is elected by an electoral college consisting of elected members of both Houses of Parliament and State Assemblies." },
     { questionNumber: "4(ii)", answer: "1. Appoints PM and Council of Ministers. 2. Appoints Governors of States. 3. Appoints judges of Supreme Court and High Courts. Also Commander-in-Chief of armed forces.", explanation: "All executive actions of the Government are taken in the President's name." },
     { questionNumber: "4(iii)", answer: "Council of Ministers: Larger body with all three tiers (Cabinet, Ministers of State, Deputy Ministers). Cabinet: Inner core of senior ministers who make key policy decisions.", explanation: "The Cabinet meets regularly and decides major policy matters. The full Council of Ministers rarely meets as a whole." },
-    { questionNumber: "5(i)", answer: "Appointed by the President in consultation with the Chief Justice of India and the Governor of the State. Independence: Fixed tenure — can only be removed by impeachment.", explanation: "Judges hold office until the age of 62. Their salaries and conditions are fixed and cannot be varied to their disadvantage during their term." },
+    { questionNumber: "5(i)", answer: "Appointed by the President in consultation with the Chief Justice of India and the Governor of the State. Independence: Fixed tenure - can only be removed by impeachment.", explanation: "Judges hold office until the age of 62. Their salaries and conditions are fixed and cannot be varied to their disadvantage during their term." },
     { questionNumber: "5(ii)", answer: "Judicial Review is the power of courts to review and declare laws/executive orders unconstitutional if they violate the Constitution. Importance: Protects fundamental rights and acts as guardian of the Constitution.", explanation: "It prevents legislative and executive overreach and ensures supremacy of the Constitution." },
     { questionNumber: "5(iii)", answer: "1. Speedy justice as cases are disposed of quickly. 2. No court fees involved, making justice affordable. 3. Decisions are binding with no appeal, ensuring finality. 4. Works on compromise and conciliation.", explanation: "Lok Adalats handle a wide range of cases and help reduce the burden on regular courts." },
 
     // Section B: History
     { questionNumber: "6(i)", answer: "Political causes: 1. Doctrine of Lapse (annexation of Satara, Jhansi, Nagpur). 2. Policy of annexation on pretext of misgovernment (e.g., Awadh). 3. Refusal to grant pensions to adopted sons (Nana Saheb). 4. Disrespect to Mughal Emperor.", explanation: "Lord Dalhousie's aggressive annexation policies alienated Indian rulers and created widespread political discontent." },
-    { questionNumber: "6(ii)", answer: "The Enfield rifle cartridges were allegedly greased with cow and pig fat — offensive to both Hindu and Muslim soldiers who had to bite them open. This unified accumulated grievances into a massive uprising.", explanation: "The greased cartridges issue was the immediate trigger that turned existing political, economic, and social resentment into a full-scale rebellion." },
+    { questionNumber: "6(ii)", answer: "The Enfield rifle cartridges were allegedly greased with cow and pig fat - offensive to both Hindu and Muslim soldiers who had to bite them open. This unified accumulated grievances into a massive uprising.", explanation: "The greased cartridges issue was the immediate trigger that turned existing political, economic, and social resentment into a full-scale rebellion." },
     { questionNumber: "6(iii)", answer: "The press spread ideas of liberty and democracy; created a platform to criticize British policies; formed public opinion and created national unity; helped Indians exchange views and become aware of common problems.", explanation: "Newspapers like 'Kesari', 'Amrit Bazar Patrika', 'The Hindu' played a crucial role in awakening national consciousness." },
     { questionNumber: "7(i)", answer: "Civil Disobedience Movement, 1930.", explanation: "Gandhi's Dandi March and breaking of the salt law on April 6, 1930, launched the Civil Disobedience Movement." },
     { questionNumber: "7(ii)", answer: "1. Rejection of the Simon Commission. 2. Declaration of Poorna Swaraj at the Lahore Session (1929). Also: economic hardship from the Great Depression.", explanation: "The failure of the British to grant dominion status and the economic crisis fueled the demand for complete independence." },
     { questionNumber: "7(iii)", answer: "1. Widespread participation from women, students, and peasants widened the freedom struggle. 2. Successful boycott of foreign goods and liquor hurt British economic interests. 3. Shook British administration's moral authority and led to the Gandhi-Irwin Pact.", explanation: "The movement also drew international attention to India's freedom struggle and demonstrated the power of non-violent resistance." },
     { questionNumber: "8(i)", answer: "1. To liberate India from British rule through armed force. 2. To form a national army based on equality and secularism, irrespective of religion, caste, or community.", explanation: "The INA was first formed by Mohan Singh in 1942 and later reorganised by Bose in 1943." },
-    { questionNumber: "8(ii)", answer: "The Muslim League called Direct Action Day on August 16, 1946, to press its demand for Pakistan. It led to the 'Great Calcutta Killing' — widespread communal violence and thousands of deaths.", explanation: "Direct Action Day deepened the Hindu-Muslim divide and demonstrated the impossibility of a united India under the existing tensions." },
+    { questionNumber: "8(ii)", answer: "The Muslim League called Direct Action Day on August 16, 1946, to press its demand for Pakistan. It led to the 'Great Calcutta Killing' - widespread communal violence and thousands of deaths.", explanation: "Direct Action Day deepened the Hindu-Muslim divide and demonstrated the impossibility of a united India under the existing tensions." },
     { questionNumber: "8(iii)", answer: "1. Only solution to the escalating communal violence and threat of civil war. 2. Working with Muslim League in Interim Government proved impossible. 3. Smaller India with strong central authority was preferable. 4. Further delay could lead to greater chaos.", explanation: "The Congress leadership agreed to Partition as a pragmatic solution, even though it went against their original ideals." },
     { questionNumber: "9(i)", answer: "1. Treaty of Versailles created desire for revenge in Germany. 2. Rise of Fascism and Nazism with expansionist policies. 3. Failure of League of Nations. Also: Policy of Appeasement and Hitler's invasion of Poland.", explanation: "The combination of unresolved WWI grievances, aggressive dictatorships, and weak international institutions made WWII inevitable." },
     { questionNumber: "9(ii)", answer: "Both were totalitarian, anti-democratic, and believed in supreme authority of a single leader. Difference: Fascism focused on state supremacy; Nazism was based on racial ideology (Aryan supremacy) and anti-Semitism.", explanation: "While both promoted aggressive nationalism and militarism, Nazism's racial ideology made it uniquely destructive." },
@@ -484,7 +484,7 @@ export const historyCivicsPaper1Answers: TYQAnswerKey = {
 };
 
 // ==========================================
-// PAPER 2 — MOCK SPECIMEN PAPER 02 (2026)
+// PAPER 2 - MOCK SPECIMEN PAPER 02 (2026)
 // ==========================================
 export const historyCivicsPaper2: TYQPaper = {
   subject: "History & Civics",
@@ -494,7 +494,7 @@ export const historyCivicsPaper2: TYQPaper = {
   totalMarks: 80,
   sections: [
     {
-      name: "Part I — Compulsory (30 Marks)",
+      name: "Part I - Compulsory (30 Marks)",
       instructions: "Attempt all questions from this Part.",
       questions: [
         {
@@ -685,7 +685,7 @@ export const historyCivicsPaper2: TYQPaper = {
       ]
     },
     {
-      name: "Part II — Section A: Civics (Attempt any TWO)",
+      name: "Part II - Section A: Civics (Attempt any TWO)",
       instructions: "Attempt any two questions from this Section.",
       questions: [
         {
@@ -757,7 +757,7 @@ export const historyCivicsPaper2: TYQPaper = {
       ]
     },
     {
-      name: "Part II — Section B: History (Attempt any THREE)",
+      name: "Part II - Section B: History (Attempt any THREE)",
       instructions: "Attempt any three questions from this Section.",
       questions: [
         {
@@ -876,7 +876,7 @@ export const historyCivicsPaper2: TYQPaper = {
 };
 
 // ==========================================
-// PAPER 2 — ANSWER KEY
+// PAPER 2 - ANSWER KEY
 // ==========================================
 export const historyCivicsPaper2Answers: TYQAnswerKey = {
   subject: "History & Civics",
@@ -885,7 +885,7 @@ export const historyCivicsPaper2Answers: TYQAnswerKey = {
   answers: [
     // Question 1 MCQs
     { questionNumber: "1(i)", answer: "(b) To protect the sovereignty, unity and integrity of India", explanation: "This is one of the Fundamental Duties listed under Article 51A of the Indian Constitution." },
-    { questionNumber: "1(ii)", answer: "(c) Impeachment by Parliament similar to a judge of the Supreme Court", explanation: "The CEC can only be removed through a process similar to the removal of a Supreme Court judge — by an order of the President after an address by Parliament." },
+    { questionNumber: "1(ii)", answer: "(c) Impeachment by Parliament similar to a judge of the Supreme Court", explanation: "The CEC can only be removed through a process similar to the removal of a Supreme Court judge - by an order of the President after an address by Parliament." },
     { questionNumber: "1(iii)", answer: "(c) To create new All India Services by passing a resolution", explanation: "Under Article 312, only the Rajya Sabha can pass a resolution to create new All India Services in the national interest." },
     { questionNumber: "1(iv)", answer: "(b) 552", explanation: "Max 530 from States + 20 from UTs + 2 nominated Anglo-Indians (provision now lapsed) = 552." },
     { questionNumber: "1(v)", answer: "(b) Both (A) and (R) are true, but (R) is not the correct explanation of (A).", explanation: "The VP being Chairman of Rajya Sabha is a constitutional provision (Art. 64), not because of how the VP is elected." },
@@ -916,7 +916,7 @@ export const historyCivicsPaper2Answers: TYQAnswerKey = {
     { questionNumber: "3(iii)", answer: "No-Confidence Motion: Moved only in Lok Sabha to test the government's majority. If passed, the government must resign. Significance: Ensures executive accountability to the legislature.", explanation: "It is a powerful tool of parliamentary democracy to hold the government accountable." },
     { questionNumber: "4(i)", answer: "Judicial powers: 1. Appoints judges of SC and HCs. 2. Can grant pardons, reprieves, respites or remissions of punishment. 3. Not answerable to any court for exercise of powers.", explanation: "The President's judicial powers ensure the independence of the judiciary and provide a check on the judicial system." },
     { questionNumber: "4(ii)", answer: "Discretionary powers: 1. Appoints PM when no party has clear majority. 2. Can withhold assent to bills. 3. Can dismiss a government that loses majority but refuses to resign. 4. Can dissolve Lok Sabha.", explanation: "These are situations where the President can act without the advice of the Council of Ministers." },
-    { questionNumber: "4(iii)", answer: "Collective responsibility: Council of Ministers is collectively responsible to Lok Sabha — they sink or swim together. Individual responsibility: Ministers hold office during the President's pleasure and are individually responsible for their department.", explanation: "Article 75 establishes both collective and individual responsibility." },
+    { questionNumber: "4(iii)", answer: "Collective responsibility: Council of Ministers is collectively responsible to Lok Sabha - they sink or swim together. Individual responsibility: Ministers hold office during the President's pleasure and are individually responsible for their department.", explanation: "Article 75 establishes both collective and individual responsibility." },
     { questionNumber: "5(i)", answer: "Supreme Court: 1 Chief Justice + 33 other judges (total 34). Appointed by the President.", explanation: "The number of judges has been increased over time; originally it was 1 CJI + 7 judges." },
     { questionNumber: "5(ii)", answer: "Judicial Review: Power to declare a law unconstitutional if it violates the Constitution. Importance: Guardian of the Constitution, protects Fundamental Rights from legislative and executive overreach.", explanation: "Judicial review ensures the supremacy of the Constitution." },
     { questionNumber: "5(iii)", answer: "District Judge: Deals with civil cases at district level. Sessions Judge: Deals with criminal cases at district level. Both are at the same level but handle different types of cases.", explanation: "The same person can serve as both District Judge and Sessions Judge in some jurisdictions." },

@@ -46,7 +46,7 @@ const t = initTRPC.context<Context>().create({
 });
 
 /**
- * Input sanitization middleware — blocks SQL injection & XSS patterns
+ * Input sanitization middleware - blocks SQL injection & XSS patterns
  */
 const sanitizationMiddleware = t.middleware(async ({ next, getRawInput }) => {
     const rawInput = await getRawInput();
@@ -70,12 +70,12 @@ export const createTRPCRouter = t.router;
 export const createCallerFactory = t.createCallerFactory;
 
 /**
- * Public procedure (no auth required) — with input sanitization
+ * Public procedure (no auth required) - with input sanitization
  */
 export const publicProcedure = t.procedure.use(sanitizationMiddleware);
 
 /**
- * Protected procedure (auth required) — with input sanitization
+ * Protected procedure (auth required) - with input sanitization
  */
 export const protectedProcedure = t.procedure
     .use(sanitizationMiddleware)
@@ -93,7 +93,7 @@ export const protectedProcedure = t.procedure
     });
 
 /**
- * Paid procedure — requires active subscription (checks DB, not stale JWT)
+ * Paid procedure - requires active subscription (checks DB, not stale JWT)
  */
 const CUTOFF_DATE = new Date("2026-01-29T00:00:00+05:30");
 

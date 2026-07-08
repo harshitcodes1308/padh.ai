@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 /* ============================================================
-   PADH.AI — DESIGN SYSTEM v1.0
+   PADH.AI - DESIGN SYSTEM v1.0
    Unacademy-inspired: clean, light, professional, trustworthy.
    ============================================================ */
 
@@ -43,8 +43,8 @@
 
 [data-theme="light"], :root {
   /* ── Brand ── */
-  --brand-green: #08BD80;   /* Learner Green — success, progress, upgrade */
-  --brand-blue:  #2D81F7;   /* Focus Blue — navigation, active states, primary actions */
+  --brand-green: #08BD80;   /* Learner Green - success, progress, upgrade */
+  --brand-blue:  #2D81F7;   /* Focus Blue - navigation, active states, primary actions */
 
   /* ── Backgrounds ── */
   --bg-base:     #FFFFFF;
@@ -257,7 +257,7 @@ button:active { transform: scale(0.97); }
   box-shadow: var(--shadow-card-hover);
 }
 
-/* dashboard-card — used by legacy pages */
+/* dashboard-card - used by legacy pages */
 .dashboard-card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
@@ -273,7 +273,7 @@ button:active { transform: scale(0.97); }
 }
 
 /* ============================================================
-   BUTTON SYSTEM — Flat, Professional
+   BUTTON SYSTEM - Flat, Professional
    ============================================================ */
 .btn-primary {
   display: inline-flex;
@@ -566,7 +566,7 @@ input[type="number"] { -moz-appearance: textfield; }
 }
 
 /* ============================================================
-   DASHBOARD MAIN — light version
+   DASHBOARD MAIN - light version
    No video/transparent bg needed; explicit variables removed.
    ============================================================ */
 .dashboard-main {
@@ -597,9 +597,9 @@ input[type="number"] { -moz-appearance: textfield; }
 }
 
 /* ============================================================
-   VIEW TRANSITION FOR DARK MODE — circular ripple from click point
+   VIEW TRANSITION FOR DARK MODE - circular ripple from click point
    The JS in theme-provider.tsx animates clipPath on these pseudo-elements.
-   DO NOT set animation:none here — it kills the JS-driven clip-path animation.
+   DO NOT set animation:none here - it kills the JS-driven clip-path animation.
    ============================================================ */
 ::view-transition-old(root),
 ::view-transition-new(root) {

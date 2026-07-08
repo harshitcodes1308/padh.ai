@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 
 /* -----------------------------------------------------------------------------
- * Elegant floating shapes — adapted from the 21st.dev shape-landing-hero.
+ * Elegant floating shapes - adapted from the 21st.dev shape-landing-hero.
  * Re-themed to the PADH.AI palette (blue / green gradients on the light
  * base) and used as an ambient backdrop for the proof section. Pointer-events
  * none. framer-motion is available as `motion/react` (project convention).

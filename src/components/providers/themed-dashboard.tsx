@@ -113,7 +113,7 @@ export function ThemedDashboardContent({
                 pointerEvents: 'none',
             }} />
 
-            {/* Sidebar — above video */}
+            {/* Sidebar - above video */}
             <DashboardSidebar
                 userName={userName}
                 userEmail={userEmail}
@@ -121,7 +121,7 @@ export function ThemedDashboardContent({
                 planType={planType}
             />
 
-            {/* Main content — above video, with transparent bg override */}
+            {/* Main content - above video, with transparent bg override */}
             <main
                 className="dashboard-main"
                 style={{

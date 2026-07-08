@@ -18,7 +18,7 @@ export interface DailyTopic {
 }
 
 /**
- * Decompose a chapter into daily topics following ICSE Class 10 syllabus
+ * Decompose a chapter into daily topics following CBSE Class 10 syllabus
  */
 export async function decomposeChapterIntoTopics(
     chapterName: string,
@@ -26,12 +26,12 @@ export async function decomposeChapterIntoTopics(
     targetDays: number
 ): Promise<DailyTopic[]> {
     try {
-        const prompt = `You are an ICSE Class 10 curriculum expert for ${subjectName}.
+        const prompt = `You are an CBSE Class 10 curriculum expert for ${subjectName}.
 
 Decompose the chapter "${chapterName}" into ${targetDays} specific, actionable daily topics.
 
 STRICT RULES:
-1. Follow ICSE Class 10 syllabus ONLY - no extra content
+1. Follow CBSE Class 10 syllabus ONLY - no extra content
 2. Each topic must be completable in 1 day (${targetDays > 5 ? '2-3' : '3-4'} hours study)
 3. Topic names must be SPECIFIC and ACTIONABLE (e.g., "Input Tax Credit & Set-offs", NOT "GST Basics")
 4. Order topics by conceptual progression (foundation → advanced)
@@ -105,7 +105,7 @@ export async function predictChapterDifficulty(
     subjectName: string
 ): Promise<number> {
     try {
-        const prompt = `You are an ICSE Class 10 education expert. Rate the difficulty of this chapter on a scale of 1-5:
+        const prompt = `You are an CBSE Class 10 education expert. Rate the difficulty of this chapter on a scale of 1-5:
 
 Chapter: ${chapterName}
 Subject: ${subjectName}
@@ -149,7 +149,7 @@ export async function predictMultipleChapterDifficulties(
     try {
         const chapterList = chapters.map((c, i) => `${i + 1}. ${c.name}`).join("\n");
 
-        const prompt = `You are an ICSE Class 10 education expert. Rate the difficulty of each chapter on a scale of 1-5:
+        const prompt = `You are an CBSE Class 10 education expert. Rate the difficulty of each chapter on a scale of 1-5:
 
 Subject: ${subjectName}
 Chapters:

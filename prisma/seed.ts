@@ -226,7 +226,7 @@ async function main() {
     console.log(`Created ${await prisma.subject.count()} subjects`);
     console.log(`Created ${await prisma.chapter.count()} chapters`);
 
-    // Creators — upsert so re-runs are safe
+    // Creators - upsert so re-runs are safe
     // Primary creator: Gaurav Suthar (CBSE Topper)
     await prisma.creator.upsert({
         where: { creatorCode: "gaurav" },
@@ -241,7 +241,7 @@ async function main() {
     await prisma.creator.upsert({
         where: { creatorCode: "ck2047" },
         update: {},
-        create: { creatorName: "Clarify Knowledge", creatorCode: "ck2047", channelId: null, discountPercentage: 20 },
+        create: { creatorName: "Toppers Clan", creatorCode: "ck2047", channelId: null, discountPercentage: 20 },
     });
     console.log(`✅ Seeded ${await prisma.creator.count()} creators`);
 }
