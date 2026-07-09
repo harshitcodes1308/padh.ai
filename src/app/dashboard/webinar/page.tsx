@@ -3,19 +3,19 @@
 import { useState } from "react";
 import { useResponsive } from "@/hooks/useResponsive";
 
-// ── Update this URL when Gaurav Bhaiya sets up the Calendly link ─────────────
+// ── Update this URL when Gaurav Sir sets up the Calendly link ─────────────
 const CALENDLY_URL = "https://calendly.com/saviours-ai";
 
 const WEBINAR = {
   title: "CBSE Board Exam Masterclass",
-  subtitle: "Strategy, shortcuts & last-minute secrets - straight from Gaurav Bhaiya",
+  subtitle: "Strategy, shortcuts & last-minute secrets - straight from Gaurav Sir",
   date: "Every Saturday",
   time: "7:00 PM – 8:30 PM IST",
   duration: "90 minutes",
   seats: "Limited to 30 students",
   topics: [
     "Exam strategy for all 10 subjects - what to attempt first",
-    "How to score 95+ in Maths: PYQ patterns Gaurav has cracked",
+    "How to score 95+ in Maths: PYQ patterns Gaurav Sir has cracked",
     "Physics numericals - the 3-step method that saves time in exams",
     "Last-night revision plan that actually works",
     "Live doubt-solving - bring your hardest questions",
@@ -161,12 +161,12 @@ export default function WebinarPage() {
                   <div style={{
                     fontFamily: "var(--font-display)", fontSize: isMobile ? 20 : 24,
                     color: "var(--text-primary)", letterSpacing: "-0.02em", marginBottom: 6,
-                  }}>Gaurav Bhaiya</div>
+                  }}>Gaurav Sir</div>
                   <div style={{
                     fontFamily: "var(--font-body)", fontSize: 13,
                     color: "var(--text-secondary)", lineHeight: 1.6,
                   }}>
-                    CBSE board mentor with years of experience helping students crack 90+ scores. Gaurav Bhaiya breaks down complex topics into strategies that actually work - no fluff, only results.
+                    CBSE board mentor with years of experience helping students crack 90+ scores. Gaurav Sir breaks down complex topics into strategies that actually work - no fluff, only results.
                   </div>
                   <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
                     {["CBSE Specialist", "Board Strategy Expert", "Doubt Solver"].map(tag => (
@@ -381,7 +381,7 @@ export default function WebinarPage() {
               }}>Why This Works</div>
               {[
                 "Real questions from real students - not scripted",
-                "Gaurav has mentored 500+ CBSE students personally",
+                "Gaurav Sir has mentored 500+ CBSE students personally",
                 "You leave with actionable tasks, not just motivation",
               ].map((point, i) => (
                 <div key={i} style={{ display: "flex", gap: 8, alignItems: "flex-start", marginBottom: i < 2 ? 8 : 0 }}>

@@ -543,7 +543,7 @@ export default function DashboardSidebar({
           letterSpacing: "0.03em",
           opacity: 0.6,
         }}>
-          PADH.AI · CBSE Board Prep by Gaurav Suthar
+          PADH.AI · CBSE Board Prep by Gaurav Sir
         </div>
       </div>
     </aside>

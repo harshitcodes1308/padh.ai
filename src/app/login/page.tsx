@@ -452,7 +452,7 @@ export default function LoginPage() {
               transform: warpText >= 2 ? 'translateY(0)' : 'translateY(12px)',
               transition: 'all 600ms cubic-bezier(0.16,1,0.3,1)',
             }}>
-              Your board-prep system is getting ready.
+              Your Board-Prep system is getting ready.
             </div>
           </div>
 

@@ -193,7 +193,7 @@ export default function WhyPadhAI() {
               GS
             </div>
             <div>
-              <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, color: "var(--text-primary)" }}>Gaurav Suthar</div>
+              <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, color: "var(--text-primary)" }}>Gaurav Sir</div>
               <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-muted)" }}>100% in 10th CBSE Boards</div>
             </div>
           </div>

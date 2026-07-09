@@ -193,7 +193,7 @@ export default function DashboardPage() {
         { flag: "flipTheQuestion" as const, label: "Flip the Question", desc: "Reverse-engineer from answers", path: "/dashboard/flip-the-question", icon: RefreshCw, tagline: "See questions from the other side" },
         { flag: "focusMode" as const, label: "Focus Mode", desc: "Distraction-free deep work", path: "/dashboard/focus", icon: Compass, tagline: "Where deep work happens" },
         { flag: "todoList" as const, label: "Monthly Mission", desc: "12-month CBSE board prep checklist", path: "/dashboard/todo", icon: Target, tagline: "One month at a time" },
-        { flag: "webinar" as const, label: "Live Webinar", desc: "Free sessions with Gaurav Bhaiya", path: "/dashboard/webinar", icon: Presentation, tagline: "Your questions, answered live." },
+        { flag: "webinar" as const, label: "Live Webinar", desc: "Free sessions with Gaurav Sir", path: "/dashboard/webinar", icon: Presentation, tagline: "Your questions, answered live." },
         { flag: "chronoScroll" as const, label: "ChronoScroll", desc: "Scroll through history, snap dates", path: "/dashboard/chronoscroll", icon: Timer, tagline: "Scroll. Snap. Remember." },
         { flag: "numericalMastery" as const, label: "Numerical Mastery", desc: "Physics formulas, solved examples & PYQs", path: "/dashboard/numerical-mastery", icon: Calculator, tagline: "Every formula, every numerical, mastered." },
         { flag: "dateBattleArena" as const, label: "Date Battle Arena", desc: "Gamified history dates, 60-second battles", path: "/dashboard/date-battle", icon: Swords, tagline: "Speed meets memory in the arena." },
@@ -612,7 +612,7 @@ export default function DashboardPage() {
                         color: "var(--text-muted)",
                         opacity: 0.5,
                     }}>
-                        PADH.AI · CBSE Board Prep by Gaurav Suthar
+                        PADH.AI · CBSE Board Prep by Gaurav Sir
                     </div>
                 </div>
             </div>

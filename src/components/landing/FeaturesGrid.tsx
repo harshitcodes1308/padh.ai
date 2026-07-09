@@ -198,7 +198,7 @@ export default function FeaturesTrio() {
         <div className="sa-toolkit-header">
           <div>
             <span className="sa-toolkit-kicker">Toolkit</span>
-            <h2>The board-prep system inside PADH.AI</h2>
+            <h2>The Board-Prep system inside PADH.AI</h2>
           </div>
           <p>
             Everything from planning and lectures to doubt solving, tests, focus sessions, and

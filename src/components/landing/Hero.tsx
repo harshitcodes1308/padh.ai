@@ -221,7 +221,7 @@ export default function Hero() {
             textWrap: "pretty",
           }}
         >
-          Board prep built around Gaurav Suthar&apos;s topper playbook, focused AI tools, and the strategy behind {brandStats.boardScore10th} in 10th and {brandStats.boardScore12th} in 12th.
+          Board prep built around Gaurav Sir&apos;s topper playbook, focused AI tools, and the strategy behind {brandStats.boardScore10th} in 10th and {brandStats.boardScore12th} in 12th.
         </motion.p>
 
         {/* Inline Action */}
@@ -310,7 +310,7 @@ export default function Hero() {
             onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-primary)"}
             onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-secondary)"}
           >
-            Watch Gaurav teach on YouTube
+            Watch Gaurav Sir teach on YouTube
           </a>
         </motion.div>
       </div>

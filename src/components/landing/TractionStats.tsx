@@ -9,7 +9,7 @@ interface Stat {
   label: string;
 }
 
-// Updated for Gaurav Suthar / PADH.AI context
+// Updated for Gaurav Sir / PADH.AI context
 const STATS: Stat[] = [
   { value: 1000000, display: (n) => (n >= 1000000 ? "1M+" : Math.round(n / 1000) + "K+"), label: "YouTube subscribers" },
   { value: 500, display: (n) => Math.round(n) + "+", label: "Videos published" },
@@ -93,7 +93,7 @@ export default function TractionStats() {
               fontWeight: 400,
             }}
           >
-            Gaurav Suthar scored 100% in his 10th CBSE boards and has spent years teaching what actually works - not theory, real board strategy.
+            Gaurav Sir scored 100% in his 10th CBSE boards and has spent years teaching what actually works - not theory, real board strategy.
           </p>
         </div>
 
@@ -161,7 +161,7 @@ export default function TractionStats() {
           }}
         >
           <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6 }}>
-            Gaurav runs{" "}
+            Gaurav Sir runs{" "}
             <span style={{ color: "var(--text-primary)", fontWeight: 600 }}>youtube.com/@GauravSuthar</span>
             {" "}- one of India's most trusted CBSE channels.{" "}
             <span className="chip-green" style={{ fontSize: 12, fontWeight: 600 }}>100% in boards</span>

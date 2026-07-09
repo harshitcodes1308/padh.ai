@@ -10,13 +10,8 @@ export default function Footer() {
           
           {/* Column 1: Logo & Tagline */}
           <div className="sa-footer-brand" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <div style={{ display: "inline-flex", alignItems: "baseline" }}>
-              <span style={{ fontFamily: "var(--font-display)", fontSize: 20, letterSpacing: "-0.03em", color: "var(--text-primary)", fontWeight: 800, lineHeight: 1 }}>
-                PADH
-              </span>
-              <span style={{ fontFamily: "var(--font-display)", fontSize: 20, letterSpacing: "-0.03em", color: "var(--brand-blue)", fontWeight: 800, lineHeight: 1 }}>
-                .AI
-              </span>
+            <div style={{ display: "inline-flex", alignItems: "center" }}>
+              <img src="/logo.png" alt="PADH.AI Logo" style={{ height: 80, width: 'auto' }} />
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.5, margin: 0, maxWidth: 300 }}>
               Your ultimate academic OS for CBSE success. Built by the topper, for the next toppers.

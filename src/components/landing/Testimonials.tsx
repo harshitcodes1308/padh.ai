@@ -12,7 +12,7 @@ interface Review {
 }
 
 const REVIEWS: Review[] = [
-  { name: "Aarav S.", handle: "Class X · 92%", body: "Gaurav bhaiya explains in the exact way the question will be asked in boards. Nothing extra, nothing missing.", subject: "All subjects", color: "#2D81F7" },
+  { name: "Aarav S.", handle: "Class X · 92%", body: "Gaurav Sir explains in the exact way the question will be asked in boards. Nothing extra, nothing missing.", subject: "All subjects", color: "#2D81F7" },
   { name: "Diya M.", handle: "Class X · 88%", body: "I wasn't prepared and boards were coming. The AI Doubt Solver made me productive and I didn't waste a single day.", subject: "Smart Planner", color: "#2D81F7" },
   { name: "Kabir R.", handle: "Class X · 90%", body: "The Flip the Question tool gave me twisted questions which helped me tackle the same topics in a much harder way. That's what prepared me.", subject: "Flip the Question", color: "#F97316" },
   { name: "Ananya P.", handle: "Class X · 95%", body: "Helped me ace all my competency-based questions and MCQs. That section used to scare me.", subject: "Competency Test", color: "#08BD80" },

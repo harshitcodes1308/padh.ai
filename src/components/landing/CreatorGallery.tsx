@@ -12,57 +12,57 @@ type CreatorPhoto = {
 const creatorPhotos: CreatorPhoto[] = [
   {
     src: "/landing/creators/creator-01.jpg",
-    alt: "Gaurav Suthar with a popular creator at an education event",
+    alt: "Gaurav Sir with a popular creator at an education event",
     ratio: "4 / 5",
   },
   {
     src: "/landing/creators/creator-02.jpg",
-    alt: "Gaurav Suthar with a leading education creator",
+    alt: "Gaurav Sir with a leading education creator",
     ratio: "3 / 4",
   },
   {
     src: "/landing/creators/creator-03.jpg",
-    alt: "Gaurav Suthar with a creator in a conference venue",
+    alt: "Gaurav Sir with a creator in a conference venue",
     ratio: "4 / 5",
   },
   {
     src: "/landing/creators/creator-04.jpg",
-    alt: "Gaurav Suthar seated with a creator at a cafe",
+    alt: "Gaurav Sir seated with a creator at a cafe",
     ratio: "4 / 5",
   },
   {
     src: "/landing/creators/creator-05.jpg",
-    alt: "Gaurav Suthar with a creator in a studio space",
+    alt: "Gaurav Sir with a creator in a studio space",
     ratio: "9 / 14",
   },
   {
     src: "/landing/creators/creator-06.jpg",
-    alt: "Gaurav Suthar with a creator in a bright event lobby",
+    alt: "Gaurav Sir with a creator in a bright event lobby",
     ratio: "4 / 5",
   },
   {
     src: "/landing/creators/creator-07.jpg",
-    alt: "Gaurav Suthar taking a selfie with creators",
+    alt: "Gaurav Sir taking a selfie with creators",
     ratio: "16 / 11",
   },
   {
     src: "/landing/creators/creator-08.jpg",
-    alt: "Gaurav Suthar seated with a creator in a lounge",
+    alt: "Gaurav Sir seated with a creator in a lounge",
     ratio: "16 / 10",
   },
   {
     src: "/landing/creators/creator-09.jpg",
-    alt: "Gaurav Suthar with a creator on a red carpet",
+    alt: "Gaurav Sir with a creator on a red carpet",
     ratio: "4 / 5",
   },
   {
     src: "/landing/creators/creator-10.jpg",
-    alt: "Gaurav Suthar with a creator at a live event",
+    alt: "Gaurav Sir with a creator at a live event",
     ratio: "16 / 10",
   },
   {
     src: "/landing/creators/creator-11.jpg",
-    alt: "Gaurav Suthar with a creator in an office studio",
+    alt: "Gaurav Sir with a creator in an office studio",
     ratio: "4 / 5",
   },
 ];
@@ -109,7 +109,7 @@ export default function CreatorGallery() {
           <div className="sa-creator-kicker">Creator circle</div>
           <h2 id="creator-gallery-title">Seen With India&apos;s Leading Creators</h2>
           <p>
-            Gaurav sir brings the same world students already follow into a sharper board-prep
+            Gaurav Sir brings the same world students already follow into a sharper Board-Prep
             environment: credible mentors, real conversations, and focused execution.
           </p>
           <div className="sa-creator-note">
@@ -118,7 +118,7 @@ export default function CreatorGallery() {
           </div>
         </div>
 
-        <div className="sa-creator-marquee-frame" aria-label="Photo gallery of Gaurav Suthar with creators">
+        <div className="sa-creator-marquee-frame" aria-label="Photo gallery of Gaurav Sir with creators">
           <div className="sa-creator-gallery-grid">
             {columns.map((column, columnIndex) => (
               <VerticalMarquee
