@@ -81,13 +81,24 @@ interface FormatMathTextProps {
 
 export function FormatMathText({ text, className, useLatex = false }: FormatMathTextProps) {
   if (useLatex) {
+    let latexText = text;
+    // If the text does not contain any latex delimiters, we assume it's raw latex text
+    if (!latexText.includes('$')) {
+      // 1. Convert markdown bold **...** to \textbf{...}
+      latexText = latexText.replace(/\*\*(.*?)\*\*/g, '\\textbf{$1}');
+      // 2. Convert spaces to latex spaces (\ ) so they aren't squished in math mode
+      latexText = latexText.replace(/ /g, '\\ ');
+      // 3. Wrap in block math delimiters
+      latexText = `$$${latexText}$$`;
+    }
+
     return (
       <div className={className}>
         <ReactMarkdown
           remarkPlugins={[remarkMath]}
           rehypePlugins={[rehypeKatex]}
         >
-          {text}
+          {latexText}
         </ReactMarkdown>
       </div>
     );

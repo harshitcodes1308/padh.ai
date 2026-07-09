@@ -1035,7 +1035,7 @@ export default function CompetencyTestPage() {
             </button>
 
             {/* Question dots */}
-            <div style={{ display: "flex", gap: 5 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 5, justifyContent: "center", flex: 1, padding: "0 16px" }}>
               {questions.map((_, i) => (
                 <div key={i} style={{
                   width: 8, height: 8, borderRadius: "50%",
