@@ -7,6 +7,8 @@ import "../markdown-styles.css";
 import { GenerationLoader } from "@/components/ui/GenerationLoader";
 import { useResponsive } from "@/hooks/useResponsive";
 import { canAccess, getUserPlan, AI_DOUBT_FREE_LIMIT } from "@/lib/planAccess";
+import { ALL_QUESTIONS, SUBJECTS } from "@/data/all-subjects";
+import { FormatMathText } from "@/components/ui/FormatMathText";
 
 interface Message {
     role: "user" | "assistant";
@@ -37,7 +39,8 @@ export default function AIAssistantPage() {
     const [dailyCount, setDailyCount] = useState(0);
     const [uploadedFile, setUploadedFile] = useState<{ type: "image" | "pdf"; data: string; name: string } | null>(null);
     const [input, setInput] = useState("");
-    const [subject, setSubject] = useState("");
+    const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
+    const [selectedChapters, setSelectedChapters] = useState<string[]>([]);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     // Flashcard state
@@ -51,19 +54,49 @@ export default function AIAssistantPage() {
     const [feedbackState, setFeedbackState] = useState<"idle" | "correct" | "wrong">("idle");
     const setupRef = useRef<HTMLInputElement>(null);
 
-    const generateFlashcards = trpc.ai.generateFlashcards.useMutation({
-        onSuccess: (data) => {
-            if (data.flashcards && data.flashcards.length > 0) {
-                setFlashcards(data.flashcards);
-                setMode("flashcards_active");
-                setCurrentCardIndex(0);
-                setScore(0);
-                setAttempts(0);
-                setFeedbackState("idle");
+    const [isGeneratingFlashcards, setIsGeneratingFlashcards] = useState(false);
+
+    const generateFlashcards = () => {
+        setIsGeneratingFlashcards(true);
+        setTimeout(() => {
+            const allAvailable: any[] = [];
+            for (const sub of selectedSubjects) {
+                const subData = (SUBJECTS as any[]).find((s: any) => s.id === sub);
+                if (subData) {
+                    let subQ = (ALL_QUESTIONS as any)[subData.name] || [];
+                    if (selectedChapters.length > 0) {
+                        subQ = subQ.filter((q: any) => selectedChapters.includes(q.chapter));
+                    }
+                    allAvailable.push(...subQ);
+                }
             }
-        },
-        onError: (err) => alert(`Error: ${err.message}`),
-    });
+            
+            const shuffled = allAvailable.sort(() => 0.5 - Math.random());
+            const selected = shuffled.slice(0, 10);
+            
+            if (selected.length === 0) {
+                setIsGeneratingFlashcards(false);
+                alert("No questions found for the selected subjects/chapters.");
+                return;
+            }
+            
+            const cards = selected.map(q => ({
+                question: q.question,
+                options: q.options,
+                correctAnswer: q.options[q.correctAnswer],
+                explanation: q.explanation || "No further explanation available for this question."
+            }));
+            
+            setFlashcards(cards);
+            setMode("flashcards_active");
+            setCurrentCardIndex(0);
+            setScore(0);
+            setAttempts(0);
+            setFeedbackState("idle");
+            setSelectedOption(null);
+            setIsGeneratingFlashcards(false);
+        }, 800);
+    };
 
     const handleOptionClick = (option: string) => {
         if (feedbackState !== "idle") return;
@@ -123,11 +156,11 @@ export default function AIAssistantPage() {
     const handleSend = () => {
         if (!input.trim() || hitFreeLimit) return;
         setMessages(prev => [...prev, { role: "user", content: input }]);
-        askMutation.mutate({ question: input, subject: subject || undefined, conversation: messages });
+        askMutation.mutate({ question: input, subject: undefined, conversation: messages });
         setInput("");
     };
 
-    const SUBJECTS = ["Mathematics", "Physics", "Chemistry", "Biology", "English", "History & Civics", "Geography"];
+
 
     return (
         <div style={{
@@ -177,25 +210,7 @@ export default function AIAssistantPage() {
                 </div>
 
                 <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                    {mode === "chat" && (
-                        <select
-                            value={subject}
-                            onChange={e => setSubject(e.target.value)}
-                            style={{
-                                padding: "7px 12px",
-                                borderRadius: 8,
-                                background: "var(--bg-base)",
-                                border: "1px solid var(--bg-border)",
-                                color: "var(--text-secondary)",
-                                fontSize: 12,
-                                fontFamily: "var(--font-body)",
-                                outline: "none",
-                            }}
-                        >
-                            <option value="">All Subjects</option>
-                            {SUBJECTS.map(s => <option key={s} value={s}>{s}</option>)}
-                        </select>
-                    )}
+                    
                     <button
                         onClick={() => {
                             if (mode === "chat") {
@@ -459,45 +474,107 @@ export default function AIAssistantPage() {
 
             {/* ── Flashcard Setup ── */}
             {mode === "flashcards_setup" && (
-                <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ flex: 1, display: "flex", alignItems: "center", justifyItems: "center", justifyContent: "center" }}>
                     <div style={{
                         background: "var(--bg-surface)",
                         border: "1px solid var(--bg-border)",
                         borderRadius: 20,
-                        padding: "48px 40px",
-                        maxWidth: 540,
+                        padding: "32px",
+                        maxWidth: 440,
                         width: "100%",
-                        textAlign: "center",
                     }}>
-                        <div style={{ fontFamily: "var(--font-sub)", fontSize: 36, color: "var(--accent-gold)", marginBottom: 20, opacity: 0.7 }}>⚡</div>
-                        <h2 style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 700, color: "var(--text-primary)", letterSpacing: "-0.02em", marginBottom: 10 }}>
+                        <div style={{
+                            width: 48, height: 48, borderRadius: 14,
+                            background: "rgba(37,99,235,0.1)", color: "#3B82F6",
+                            display: "flex", alignItems: "center", justifyContent: "center",
+                            fontSize: 24, marginBottom: 20
+                        }}>
+                            ⚡
+                        </div>
+                        <h2 style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 700, color: "var(--text-primary)", letterSpacing: "-0.02em", marginBottom: 8 }}>
                             Quick Review
                         </h2>
-                        <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-muted)", marginBottom: 28, lineHeight: 1.6 }}>
-                            Enter the topics you studied today - I'll generate 10 Class X questions to test you.
+                        <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-muted)", marginBottom: 24, lineHeight: 1.5 }}>
+                            Select subjects and chapters to generate a quick practice session.
                         </p>
-                        <input
-                            ref={setupRef}
-                            type="text"
-                            value={flashcardInput}
-                            onChange={e => setFlashcardInput(e.target.value)}
-                            placeholder="e.g. Newton's Laws, Ionic Bonding, Quadratic Equations"
-                            className="sa-input"
-                            style={{ marginBottom: 16, width: "100%", boxSizing: "border-box" }}
-                        />
+                        
+                        <div style={{ marginBottom: 16 }}>
+                            <label style={{ display: "block", marginBottom: 8, fontSize: 13, fontWeight: 600 }}>Subjects</label>
+                            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                                {(SUBJECTS as any[]).map((s: any) => (
+                                    <button
+                                        key={s.id}
+                                        onClick={() => {
+                                            if (selectedSubjects.includes(s.id)) {
+                                                setSelectedSubjects(selectedSubjects.filter(id => id !== s.id));
+                                                // Remove chapters of this subject
+                                                const subChapters = (s as any).chapters.map((c: any) => c.name);
+                                                setSelectedChapters(selectedChapters.filter((c: any) => !subChapters.includes(c)));
+                                            } else {
+                                                setSelectedSubjects([...selectedSubjects, s.id]);
+                                            }
+                                        }}
+                                        style={{
+                                            padding: "6px 12px",
+                                            borderRadius: "20px",
+                                            border: `1px solid ${selectedSubjects.includes(s.id) ? s.color : "var(--bg-border)"}`,
+                                            background: selectedSubjects.includes(s.id) ? `${s.color}22` : "var(--bg-base)",
+                                            color: selectedSubjects.includes(s.id) ? s.color : "var(--text-secondary)",
+                                            fontSize: 12,
+                                            fontWeight: 600,
+                                            cursor: "pointer"
+                                        }}
+                                    >
+                                        {s.icon} {s.name}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {selectedSubjects.length > 0 && (
+                            <div style={{ marginBottom: 24 }}>
+                                <label style={{ display: "block", marginBottom: 8, fontSize: 13, fontWeight: 600 }}>Chapters (Optional)</label>
+                                <div style={{ display: "flex", flexWrap: "wrap", gap: 6, maxHeight: 150, overflowY: "auto", padding: "4px" }}>
+                                    {SUBJECTS.filter((s: any) => selectedSubjects.includes(s.id)).flatMap((s: any) => s.chapters).map((c: any, i: number) => (
+                                        <button
+                                            key={c.id + i}
+                                            onClick={() => {
+                                                if (selectedChapters.includes(c.name)) {
+                                                    setSelectedChapters(selectedChapters.filter(name => name !== c.name));
+                                                } else {
+                                                    setSelectedChapters([...selectedChapters, c.name]);
+                                                }
+                                            }}
+                                            style={{
+                                                padding: "4px 10px",
+                                                borderRadius: "16px",
+                                                border: `1px solid ${selectedChapters.includes(c.name) ? "var(--brand-blue)" : "var(--bg-border)"}`,
+                                                background: selectedChapters.includes(c.name) ? "rgba(37,99,235,0.1)" : "var(--bg-base)",
+                                                color: selectedChapters.includes(c.name) ? "var(--brand-blue)" : "var(--text-secondary)",
+                                                fontSize: 11,
+                                                cursor: "pointer"
+                                            }}
+                                        >
+                                            {c.name}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
                         <button
-                            onClick={() => generateFlashcards.mutate({ topics: flashcardInput, subject: subject || undefined })}
-                            disabled={generateFlashcards.isPending || !flashcardInput.trim()}
+                            onClick={generateFlashcards}
+                            disabled={isGeneratingFlashcards || selectedSubjects.length === 0}
                             className="btn-primary"
                             style={{
                                 width: "100%",
                                 padding: "14px",
                                 fontSize: 14,
-                                opacity: (generateFlashcards.isPending || !flashcardInput.trim()) ? 0.5 : 1,
-                                cursor: (generateFlashcards.isPending || !flashcardInput.trim()) ? "not-allowed" : "pointer",
+                                opacity: (isGeneratingFlashcards || selectedSubjects.length === 0) ? 0.5 : 1,
+                                cursor: (isGeneratingFlashcards || selectedSubjects.length === 0) ? "not-allowed" : "pointer",
                             }}
                         >
-                            {generateFlashcards.isPending ? "Generating..." : "Generate Questions →"}
+                            {isGeneratingFlashcards ? "Generating..." : "Generate Questions →"}
                         </button>
                     </div>
                 </div>
@@ -530,7 +607,7 @@ export default function AIAssistantPage() {
                         width: "100%",
                     }}>
                         <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 700, color: "var(--text-primary)", letterSpacing: "-0.02em", marginBottom: 28, lineHeight: 1.4 }}>
-                            {flashcards[currentCardIndex].question}
+                            <FormatMathText text={flashcards[currentCardIndex].question} />
                         </h3>
 
                         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 12 }}>
@@ -566,7 +643,7 @@ export default function AIAssistantPage() {
                                         <span style={{ fontWeight: 700, opacity: 0.4, marginRight: 10 }}>
                                             {String.fromCharCode(65 + idx)}.
                                         </span>
-                                        {option}
+                                        <FormatMathText text={option} />
                                     </button>
                                 );
                             })}
@@ -583,7 +660,7 @@ export default function AIAssistantPage() {
                                     {feedbackState === "correct" ? "Correct!" : attempts >= 1 ? "The correct answer is highlighted." : "Not quite. Try once more!"}
                                 </p>
                                 <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-muted)", marginBottom: 16, lineHeight: 1.6 }}>
-                                    {flashcards[currentCardIndex].explanation}
+                                    <FormatMathText text={flashcards[currentCardIndex].explanation} />
                                 </p>
                                 {((feedbackState === "wrong" && attempts >= 1) || feedbackState === "correct") && (
                                     <button
@@ -663,7 +740,7 @@ export default function AIAssistantPage() {
             )}
 
             <GenerationLoader
-                isVisible={generateFlashcards.isPending}
+                isVisible={isGeneratingFlashcards}
                 label="Generating Questions..."
                 subLabel="Extracting key concepts from your topics..."
             />

@@ -7,8 +7,12 @@ import 'katex/dist/katex.min.css';
 export function formatMathString(text: string): React.ReactNode {
   if (!text) return text;
 
+  // Replace single newlines with spaces, but keep double newlines (or more) intact.
+  // We use a regex that matches a newline not preceded or followed by another newline.
+  const normalizedText = text.replace(/(?<!\n)\n(?!\n)/g, ' ');
+
   // Split text by lines to preserve them
-  const lines = text.split('\n');
+  const lines = normalizedText.split('\n');
 
   return (
     <>
