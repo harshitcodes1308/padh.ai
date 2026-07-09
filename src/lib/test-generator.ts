@@ -34,7 +34,7 @@ const SUBJECT_QUESTIONS: Record<string, any[]> = {
   "Social Science": socialScienceQuestions,
   History: socialScienceQuestions,
   Geography: socialScienceQuestions,
-  "Political Science": socialScienceQuestions,
+  "Civics": socialScienceQuestions,
   Economics: socialScienceQuestions,
   English: englishQuestions,
   "Information Technology": itQuestions,
@@ -67,7 +67,7 @@ export async function generateMCQs(params: {
   let allQuestions = SUBJECT_QUESTIONS[subject] || [];
 
   // Filter Social Science sub-subjects to their respective disciplines
-  if (["History", "Geography", "Political Science", "Economics"].includes(subject)) {
+  if (["History", "Geography", "Civics", "Economics"].includes(subject)) {
     allQuestions = allQuestions.filter((q) => getChapterSubSubject(q.chapter) === subject);
   }
 

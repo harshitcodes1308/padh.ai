@@ -1,8 +1,9 @@
 // ⚡ Physics Numerical Mastery - Real Data from PDF
 // Structure: Chapter → Topic → Formula → Solved Example → PYQ
-// Source: "physics numericals -2.pdf" - CBSE PYQs 2007–2025
+// Source: "Physics_Guide_GoogleDocs_Ready.md" - CBSE PYQs
 
 export interface SolvedExample {
+  year?: number;
   question: string;
   steps: string[];
   finalAnswer: string;
@@ -22,7 +23,7 @@ export interface NumericalTopic {
   formulaDescription: string;
   solvedExample: SolvedExample;
   pyqs: PYQQuestion[];
-  aiTip: string;
+  aiTip?: string;
 }
 
 export interface NumericalChapter {
@@ -34,866 +35,742 @@ export interface NumericalChapter {
 }
 
 export const numericalMasteryData: NumericalChapter[] = [
-  // ═══════════════════════════════════════════
-  // Chapter 1: Force, Work, Power & Energy
-  // ═══════════════════════════════════════════
   {
-    id: "force-work-power-energy",
-    name: "Force, Work, Power & Energy",
-    icon: "🚀",
-    color: "#F59E0B",
-    topics: [
+    "id": "light-reflection-and-refraction",
+    "name": "LIGHT – REFLECTION AND REFRACTION",
+    "icon": "☀️",
+    "color": "#F59E0B",
+    "topics": [
       {
-        id: "moment-of-force",
-        name: "Moment of Force / Torque",
-        formula: "τ = F × d",
-        formulaDescription: "Torque equals force times perpendicular distance from the pivot",
-        solvedExample: {
-          question: "A door lock is opened by turning the lever (handle) of length 0.2 m. If the moment of force produced is 1 Nm, find the minimum force required.",
-          steps: [
-            "Given: τ = 1 Nm, d = 0.2 m",
-            "Using τ = F × d",
-            "1 = F × 0.2",
-            "F = 1/0.2 = 5 N",
+        "id": "mirror-formula",
+        "name": "MIRROR FORMULA",
+        "formula": "\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u}",
+        "formulaDescription": "Relates focal length (f), image distance (v), and object distance (u) for spherical mirrors. **New Cartesian Sign Convention:** - Distances measured from the pole - Direction of incident light is positive - For concave mirrors: f and v are negative (real images) - For convex mirrors: f and v are positive ---",
+        "solvedExample": {
+          "year": 2024,
+          "question": "An object is placed at 30 cm from the pole of a concave mirror. Its real and inverted image is formed at 60 cm in front of the mirror. Find the focal length.",
+          "steps": [
+            "u = –30 cm, v = –60 cm",
+            "\\frac{1}{f} = \\frac{1}{-60} + \\frac{1}{-30} = -\\frac{1}{60} - \\frac{2}{60} = -\\frac{3}{60}",
+            "f = -20 \\text{ cm}"
           ],
-          finalAnswer: "5 N",
+          "finalAnswer": "f = –20 cm"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2024,
-            question: "A non-uniform beam of weight 120 N pivoted at one end. Calculate the value of F to keep the beam in equilibrium. (d₁ = 0.2 m, d₂ = 0.8 m)",
-            steps: [
-              "Applying principle of moments (clockwise = anticlockwise)",
-              "120 × 0.2 = F × 0.8",
-              "F = (120 × 0.2)/0.8",
-              "F = 24/0.8 = 30 N",
+            "year": 2025,
+            "question": "An object is placed at a distance of 30 cm from the optical centre of a concave lens of focal length 20 cm. Use Lens formula to determine the position of the image formed.",
+            "steps": [
+              "u = –30 cm, f = –20 cm",
+              "\\frac{1}{-20} = \\frac{1}{v} - \\frac{1}{-30}",
+              "\\frac{1}{v} = -\\frac{1}{20} - \\frac{1}{30} = -\\frac{3}{60} - \\frac{2}{60} = -\\frac{5}{60}",
+              "v = -12 \\text{ cm}"
             ],
-            finalAnswer: "30 N",
+            "finalAnswer": "v = –12 cm (virtual, same side as object)"
           },
           {
-            year: 2012,
-            question: "A boy of mass 30 kg is sitting at a distance of 2 m from the middle of a see-saw. Where should a boy of mass 40 kg sit to balance the see-saw?",
-            steps: [
-              "Using principle of moments: 30 × 2 = 40 × x",
-              "60 = 40x",
-              "x = 60/40 = 1.5 m",
-              "The boy should sit at 1.5 m from the centre on the other side.",
+            "year": 2023,
+            "question": "To obtain a magnification of +2 with a concave mirror of radius of curvature 60 cm, what should be the object distance?",
+            "steps": [
+              "R = 60 cm ⇒ f = –30 cm, m = +2 (virtual, erect)",
+              "m = –v/u ⇒ 2 = –v/u ⇒ v = –2u",
+              "\\frac{1}{-30} = \\frac{1}{-2u} + \\frac{1}{u} = -\\frac{1}{2u} + \\frac{1}{u} = \\frac{1}{2u}",
+              "⇒ u = –15 cm"
             ],
-            finalAnswer: "1.5 m from the centre",
+            "finalAnswer": "u = –15 cm"
           },
+          {
+            "year": 2024,
+            "question": "An object of height 5 cm is placed at a distance of 20 cm from the optical centre of a converging lens of focal length 15 cm. Find the position and size of the image.",
+            "steps": [
+              "u = –20 cm, f = +15 cm",
+              "\\frac{1}{15} = \\frac{1}{v} - \\frac{1}{-20} = \\frac{1}{v} + \\frac{1}{20}",
+              "\\frac{1}{v} = \\frac{1}{15} - \\frac{1}{20} = \\frac{4}{60} - \\frac{3}{60} = \\frac{1}{60}",
+              "v = +60 \\text{ cm}",
+              "Magnification: m = v/u = 60/(-20) = –3",
+              "h' = m × h = –3 × 5 = –15 cm"
+            ],
+            "finalAnswer": "v = +60 cm (real), image height = 15 cm (inverted)"
+          },
+          {
+            "year": 2023,
+            "question": "A convex mirror used for rear-view on an automobile has a focal length of 3.0 m. If a bus is located at 6.0 m from this mirror, find the position of the image.",
+            "steps": [
+              "f = +3.0 m, u = –6.0 m",
+              "\\frac{1}{3} = \\frac{1}{v} + \\frac{1}{-6}",
+              "\\frac{1}{v} = \\frac{1}{3} + \\frac{1}{6} = \\frac{2}{6} + \\frac{1}{6} = \\frac{3}{6} = \\frac{1}{2}",
+              "v = +2.0 \\text{ m}"
+            ],
+            "finalAnswer": "v = +2.0 m (virtual, behind the mirror)"
+          }
         ],
-        aiTip: "Always draw a clear diagram showing the pivot, forces and distances. Examiners award marks for labelled diagrams in moment questions.",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
       {
-        id: "work-done",
-        name: "Work Done",
-        formula: "W = F × s × cos θ",
-        formulaDescription: "Work equals force times displacement times cosine of the angle between them",
-        solvedExample: {
-          question: "A satellite revolves around a planet in a circular orbit. What is the work done by the satellite at any instant?",
-          steps: [
-            "The centripetal force acts towards the centre",
-            "Displacement is tangential to the orbit",
-            "θ = 90° between force and displacement",
-            "W = Fs cos 90° = 0 J",
+        "id": "magnification-for-mirrors",
+        "name": "MAGNIFICATION FOR MIRRORS",
+        "formula": "m = -\\frac{v}{u} = \\frac{h'}{h}",
+        "formulaDescription": "- Negative m → real, inverted image - Positive m → virtual, erect image - |m| > 1 → magnified; |m| < 1 → diminished ---",
+        "solvedExample": {
+          "year": 2025,
+          "question": "A convex lens forms an 8.0 cm image of a 2.0 cm object. Object and image are on the same side. Find the magnification and nature of the image.",
+          "steps": [
+            "m = h'/h = 8/2 = +4 (positive → virtual, erect)"
           ],
-          finalAnswer: "0 Joules",
+          "finalAnswer": "m = +4, virtual and erect"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2011,
-            question: "A coolie carrying a load on his head and moving on a frictionless horizontal platform does no work. Explain the reason why.",
-            steps: [
-              "W = Fs cos θ",
-              "θ = 90° (force is vertical, displacement is horizontal)",
-              "W = Fs cos 90° = 0",
+            "year": 2024,
+            "question": "A convex mirror used for rear view on an automobile has a focal length of 1.5 m. If a 3 m high bus is located at 6.0 m from the mirror, determine the position and size of the image.",
+            "steps": [
+              "f = +1.5 m, u = –6.0 m, h = 3 m",
+              "\\frac{1}{1.5} = \\frac{1}{v} + \\frac{1}{-6}",
+              "\\frac{1}{v} = \\frac{1}{1.5} + \\frac{1}{6} = \\frac{2}{3} + \\frac{1}{6} = \\frac{4}{6} + \\frac{1}{6} = \\frac{5}{6}",
+              "v = 1.2 \\text{ m}",
+              "m = –v/u = –1.2/(-6) = +0.2",
+              "h' = m × h = 0.2 × 3 = 0.6 m"
             ],
-            finalAnswer: "Work done = 0 (force ⊥ displacement)",
+            "finalAnswer": "v = +1.2 m (virtual), image height = 0.6 m"
           },
           {
-            year: 2007,
-            question: "How can the work done be measured when force is applied at an angle to the direction of displacement?",
-            steps: [
-              "Work done = force × component of displacement in the direction of force",
-              "W = F × s × cos θ",
-              "where θ is the angle between force and displacement",
+            "year": 2023,
+            "question": "A concave mirror forms a real, inverted and same size image. If the image distance is 30 cm, find the object distance.",
+            "steps": [
+              "For same size image with concave mirror: m = –1",
+              "m = –v/u = –1 ⇒ v = u",
+              "Also, when object is at 2F: v = u = 30 cm"
             ],
-            finalAnswer: "W = F × s × cos θ",
-          },
+            "finalAnswer": "u = –30 cm"
+          }
         ],
-        aiTip: "When force is perpendicular to displacement, work done is ZERO. This is a classic trick question - look for 90° angles!",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
       {
-        id: "potential-energy",
-        name: "Potential Energy",
-        formula: "PE = mgh",
-        formulaDescription: "Gravitational potential energy equals mass × acceleration due to gravity × height",
-        solvedExample: {
-          question: "A body of mass 200 g falls freely from a height of 15 m. When the body reaches 10 m above the ground, its potential energy will be? (g = 10 m/s²)",
-          steps: [
-            "Given: m = 200 g = 0.2 kg, h = 10 m, g = 10 m/s²",
-            "PE = mgh",
-            "PE = 0.2 × 10 × 10",
-            "PE = 20 J",
+        "id": "lens-formula",
+        "name": "LENS FORMULA",
+        "formula": "\\frac{1}{f} = \\frac{1}{v} - \\frac{1}{u}",
+        "formulaDescription": "- Object distance (u) is always negative - Convex lens: f is positive - Concave lens: f is negative - Real image: v positive; virtual image: v negative ---",
+        "solvedExample": {
+          "year": 2024,
+          "question": "The focal length of a lens is –10 cm. Find its power and nature. If an object is placed at a distance of 20 cm from the optical centre, find the sign of magnification.",
+          "steps": [
+            "P = 1/f = 1/(-0.1) = –10 D → Concave lens",
+            "For concave lens: u = –20 cm, f = –10 cm",
+            "\\frac{1}{v} = \\frac{1}{f} + \\frac{1}{u} = -\\frac{1}{10} - \\frac{1}{20} = -\\frac{3}{20}",
+            "v = -\\frac{20}{3} \\text{ cm}",
+            "m = v/u = (-20/3)/(-20) = +1/3"
           ],
-          finalAnswer: "20 J",
+          "finalAnswer": "P = –10 D (concave), m = +1/3"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2013,
-            question: "A girl of mass 35 kg climbs up from the first floor at height 4 m to the third floor at height 12 m. Find the increase in her gravitational PE. (g = 10 m/s²)",
-            steps: [
-              "PE₁ = mgh₁ = 35 × 10 × 4 = 1400 J",
-              "PE₂ = mgh₂ = 35 × 10 × 12 = 4200 J",
-              "Increase in PE = 4200 - 1400",
-              "= 2800 J",
+            "year": 2025,
+            "question": "The focal length of a lens is –10 cm. Write the nature of the lens and find its power. If an object is placed at 20 cm from the optical centre, what will be the sign of magnification?",
+            "steps": [
+              "f = –10 cm = –0.1 m → Concave lens",
+              "P = 1/f = 1/(-0.1) = –10 D",
+              "u = –20 cm, f = –10 cm",
+              "\\frac{1}{v} = \\frac{1}{f} + \\frac{1}{u} = -\\frac{1}{10} - \\frac{1}{20} = -\\frac{3}{20}",
+              "v = -\\frac{20}{3} \\text{ cm}",
+              "m = v/u = (-20/3)/(-20) = +1/3"
             ],
-            finalAnswer: "2800 J",
+            "finalAnswer": "Concave lens, P = –10 D, m = +1/3"
           },
+          {
+            "year": 2023,
+            "question": "An object is placed at a distance of 60 cm from a concave lens of focal length 30 cm. Use lens formula to find the position of the image formed.",
+            "steps": [
+              "u = –60 cm, f = –30 cm",
+              "\\frac{1}{-30} = \\frac{1}{v} - \\frac{1}{-60} = \\frac{1}{v} + \\frac{1}{60}",
+              "\\frac{1}{v} = -\\frac{1}{30} - \\frac{1}{60} = -\\frac{2}{60} - \\frac{1}{60} = -\\frac{3}{60} = -\\frac{1}{20}",
+              "v = -20 \\text{ cm}"
+            ],
+            "finalAnswer": "v = –20 cm (virtual, same side)"
+          },
+          {
+            "year": 2024,
+            "question": "From the observation table, find the focal length of the convex lens without calculation (where u = v).",
+            "steps": [
+              "When object is at 2F, u = v = 50 cm ⇒ 2f = 50 ⇒ f = 25 cm"
+            ],
+            "finalAnswer": "f = 25 cm"
+          },
+          {
+            "year": 2023,
+            "question": "An object is placed at a distance of 30 cm in front of a concave mirror of focal length 20 cm. Use mirror formula to determine the position of the image.",
+            "steps": [
+              "u = –30 cm, f = –20 cm",
+              "\\frac{1}{-20} = \\frac{1}{v} + \\frac{1}{-30}",
+              "\\frac{1}{v} = -\\frac{1}{20} + \\frac{1}{30} = -\\frac{3}{60} + \\frac{2}{60} = -\\frac{1}{60}",
+              "v = -60 \\text{ cm}"
+            ],
+            "finalAnswer": "v = –60 cm (real, inverted)"
+          }
         ],
-        aiTip: "Always convert grams to kilograms (÷1000) before substituting. Unit errors are the #1 mark-loss in energy problems.",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
       {
-        id: "kinetic-energy",
-        name: "Kinetic Energy",
-        formula: "KE = ½mv²",
-        formulaDescription: "Kinetic energy equals half the product of mass and velocity squared",
-        solvedExample: {
-          question: "When the speed of a moving object is doubled, what happens to its kinetic energy?",
-          steps: [
-            "KE = ½mv²",
-            "If v becomes 2v, then KE = ½m(2v)²",
-            "KE = ½m × 4v² = 4 × (½mv²)",
-            "KE becomes 4 times the original",
+        "id": "magnification-for-lenses",
+        "name": "MAGNIFICATION FOR LENSES",
+        "formula": "m = \\frac{v}{u} = \\frac{h'}{h}",
+        "formulaDescription": "- Positive m → virtual, erect image - Negative m → real, inverted image ---",
+        "solvedExample": {
+          "year": 2024,
+          "question": "For u = –30 cm, v = +150 cm, find the magnification.",
+          "steps": [
+            "m = v/u = 150/(-30) = –5"
           ],
-          finalAnswer: "KE becomes 4 times",
+          "finalAnswer": "m = –5 (real, inverted, magnified 5×)"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2012,
-            question: "A moving body weighing 400 N possesses 500 J of kinetic energy. Calculate the velocity. (g = 10 m/s²)",
-            steps: [
-              "m = Weight/g = 400/10 = 40 kg",
-              "KE = ½mv² → 500 = ½ × 40 × v²",
-              "500 = 20v² → v² = 25",
-              "v = 5 m/s",
+            "year": 2023,
+            "question": "A 4 cm tall object is placed perpendicular to the principal axis of a convex lens of focal length 24 cm. The distance of the object from the lens is 16 cm. Find the position and size of the image.",
+            "steps": [
+              "u = –16 cm, f = +24 cm, h = 4 cm",
+              "\\frac{1}{24} = \\frac{1}{v} - \\frac{1}{-16} = \\frac{1}{v} + \\frac{1}{16}",
+              "\\frac{1}{v} = \\frac{1}{24} - \\frac{1}{16} = \\frac{2}{48} - \\frac{3}{48} = -\\frac{1}{48}",
+              "v = -48 \\text{ cm}",
+              "m = v/u = (-48)/(-16) = +3",
+              "h' = m × h = 3 × 4 = 12 cm"
             ],
-            finalAnswer: "5 m/s",
+            "finalAnswer": "v = –48 cm (virtual), image height = 12 cm (erect)"
           },
           {
-            year: 2009,
-            question: "A body of mass 5 kg moves at 10 m/s. Find the ratio of initial KE to final KE if mass is doubled and velocity is halved.",
-            steps: [
-              "Initial KE = ½ × 5 × 10² = 250 J",
-              "Final KE = ½ × 10 × 5² = 125 J",
-              "Ratio = 250:125",
-              "= 2:1",
+            "year": 2025,
+            "question": "A convex lens of focal length 20 cm forms a real image of an object placed at 30 cm. Find the magnification.",
+            "steps": [
+              "u = –30 cm, f = +20 cm",
+              "\\frac{1}{20} = \\frac{1}{v} - \\frac{1}{-30} = \\frac{1}{v} + \\frac{1}{30}",
+              "\\frac{1}{v} = \\frac{1}{20} - \\frac{1}{30} = \\frac{3}{60} - \\frac{2}{60} = \\frac{1}{60}",
+              "v = +60 \\text{ cm}",
+              "m = v/u = 60/(-30) = –2"
             ],
-            finalAnswer: "2:1",
-          },
+            "finalAnswer": "m = –2 (real, inverted, magnified 2×)"
+          }
         ],
-        aiTip: "KE depends on v² - doubling speed quadruples energy! Always mention this relationship for full marks.",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
       {
-        id: "power",
-        name: "Power",
-        formula: "P = W/t  |  P = F × v",
-        formulaDescription: "Power is the rate of doing work, or force times velocity",
-        solvedExample: {
-          question: "Calculate the power spent by a crane while lifting a load of mass 2000 kg at velocity of 1.5 m/s. (g = 10 m/s²)",
-          steps: [
-            "Force = mg = 2000 × 10 = 20000 N",
-            "Using P = F × v",
-            "P = 20000 × 1.5",
-            "P = 30000 W = 30 kW",
+        "id": "power-of-a-lens",
+        "name": "POWER OF A LENS",
+        "formula": "P = \\frac{1}{f} \\quad \\text{(f in metres)} **Unit:** Dioptre (D)",
+        "formulaDescription": "- Convex lens: positive power (converging) - Concave lens: negative power (diverging) ---",
+        "solvedExample": {
+          "year": 2025,
+          "question": "Power of a lens is –2.5 D. (a) Identify the lens. (b) Find its focal length. (c) Which eye defect does it correct?",
+          "steps": [
+            "(a) Negative → Concave lens",
+            "(b) f = 1/P = 1/(–2.5) = –0.4 m = –40 cm",
+            "(c) Corrects myopia (nearsightedness)"
           ],
-          finalAnswer: "30000 W (30 kW)",
+          "finalAnswer": "(a) Concave, (b) –40 cm, (c) Myopia"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2024,
-            question: "Sumit does 600 J of work in 10 min and Amit does 300 J of work in 20 min. Calculate the ratio of powers delivered by them.",
-            steps: [
-              "P₁ = W/t = 600/(10 × 60) = 600/600 = 1 W",
-              "P₂ = W/t = 300/(20 × 60) = 300/1200 = 0.25 W",
-              "Ratio P₁:P₂ = 1:0.25",
-              "= 4:1",
+            "year": 2024,
+            "question": "A lens of power +4.0 D is used. What is its focal length and nature?",
+            "steps": [
+              "f = 1/P = 1/4 = 0.25 m = 25 cm",
+              "Positive power → Convex lens"
             ],
-            finalAnswer: "4:1",
+            "finalAnswer": "f = 25 cm, Convex lens"
           },
           {
-            year: 2015,
-            question: "Rajan exerts a force of 150 N in pulling a cart at a constant speed of 10 m/s. Calculate the power exerted.",
-            steps: [
-              "Given: F = 150 N, v = 10 m/s",
-              "P = F × v",
-              "P = 150 × 10",
-              "P = 1500 W",
+            "year": 2023,
+            "question": "A lens has power –0.25 D. (a) What type of lens is it? (b) Find its focal length. (c) Which eye defect does it correct?",
+            "steps": [
+              "(a) Negative → Concave lens",
+              "(b) f = 1/P = 1/(–0.25) = –4 m = –400 cm",
+              "(c) Corrects myopia (nearsightedness)"
             ],
-            finalAnswer: "1500 W",
+            "finalAnswer": "Concave lens, f = –400 cm, Myopia"
           },
+          {
+            "year": 2024,
+            "question": "The power of a lens is +4D. Find its focal length. An object is placed at 50 cm from the optical centre of this lens. State the nature and magnification of the image formed.",
+            "steps": [
+              "f = 1/4 = 0.25 m = 25 cm",
+              "u = –50 cm, f = +25 cm",
+              "\\frac{1}{25} = \\frac{1}{v} - \\frac{1}{-50} = \\frac{1}{v} + \\frac{1}{50}",
+              "\\frac{1}{v} = \\frac{1}{25} - \\frac{1}{50} = \\frac{2}{50} - \\frac{1}{50} = \\frac{1}{50}",
+              "v = +50 \\text{ cm}",
+              "m = v/u = 50/(-50) = –1"
+            ],
+            "finalAnswer": "f = 25 cm, m = –1 (real, inverted, same size)"
+          }
         ],
-        aiTip: "Always convert minutes to seconds when calculating power. Use P = F × v when velocity is given directly - it's faster!",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
       {
-        id: "mechanical-advantage",
-        name: "Mechanical Advantage",
-        formula: "MA = Load / Effort",
-        formulaDescription: "Mechanical advantage is the ratio of load to effort in a machine",
-        solvedExample: {
-          question: "A woman draws water from a well using a fixed pulley. Mass of bucket + water = 10 kg, force applied = 200 N. Find MA. (g = 10 m/s²)",
-          steps: [
-            "Load = mg = 10 × 10 = 100 N",
-            "Effort = 200 N",
-            "MA = Load/Effort = 100/200",
-            "MA = 0.5",
+        "id": "combination-of-lenses",
+        "name": "COMBINATION OF LENSES",
+        "formula": "P = P_1 + P_2 \\frac{1}{f} = \\frac{1}{f_1} + \\frac{1}{f_2}",
+        "formulaDescription": "When thin lenses are placed in contact, their powers add algebraically. ---",
+        "solvedExample": {
+          "year": 2024,
+          "question": "A concave lens (f = –2 m) and a convex lens (f = +1.5 m) are placed in contact. What type of lens does the combination behave as?",
+          "steps": [
+            "P₁ = 1/(–2) = –0.5 D, P₂ = 1/1.5 = +0.667 D",
+            "P = –0.5 + 0.667 = +0.167 D (positive) ⇒ behaves as a convex lens"
           ],
-          finalAnswer: "0.5",
+          "finalAnswer": "Convex lens"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2008,
-            question: "With reference to mechanical advantage, velocity ratio and efficiency of a machine, name the term that will not change for a machine of a given design.",
-            steps: [
-              "Mechanical Advantage changes with load",
-              "Efficiency changes with friction",
-              "Velocity Ratio depends only on the design/geometry",
-              "VR will not change for a machine of a given design",
+            "year": 2023,
+            "question": "A lens combination consists of a convex lens of focal length 30 cm and a concave lens of focal length 15 cm placed together. Find the equivalent focal length and power.",
+            "steps": [
+              "P₁ = 1/0.3 = +3.33 D, P₂ = 1/(–0.15) = –6.67 D",
+              "P = 3.33 – 6.67 = –3.34 D",
+              "f = 1/P = –0.3 m = –30 cm"
             ],
-            finalAnswer: "Velocity Ratio (VR)",
+            "finalAnswer": "P = –3.34 D, f = –30 cm (concave combination)"
           },
+          {
+            "year": 2024,
+            "question": "Two lenses are placed in contact. One is a concave lens with focal length 2 m and the other is a convex lens with focal length 1.5 m. What type of lens will the combination behave as?",
+            "steps": [
+              "P₁ = 1/(–2) = –0.5 D, P₂ = 1/1.5 = +0.667 D",
+              "P = –0.5 + 0.667 = +0.167 D",
+              "Positive → Convex lens"
+            ],
+            "finalAnswer": "Convex lens"
+          }
         ],
-        aiTip: "For a single fixed pulley, MA = 1 (ideal) and VR = 1. The effort equals the load but direction changes.",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
       {
-        id: "efficiency",
-        name: "Efficiency of Machines",
-        formula: "η = (MA/VR) × 100%",
-        formulaDescription: "Efficiency equals mechanical advantage divided by velocity ratio, times 100",
-        solvedExample: {
-          question: "A block and tackle system has VR = 5. Rohan exerts a pull of 150 kgf. Find the maximum load if efficiency = 75%.",
-          steps: [
-            "Efficiency = MA/VR → 75/100 = MA/5",
-            "MA = 3.75",
-            "MA = Load/Effort → 3.75 = Load/150",
-            "Load = 3.75 × 150 = 562.5 kgf",
+        "id": "refractive-index-snell-s-law",
+        "name": "REFRACTIVE INDEX & SNELL'S LAW",
+        "formula": "Refer to description",
+        "formulaDescription": "Snell's law relates angles of incidence and refraction. Refractive index also equals the ratio of speed of light in vacuum to speed in the medium. ---",
+        "solvedExample": {
+          "year": 2025,
+          "question": "Speed of light in diamond? Given n = 2.42, c = 3×10⁸ m/s.",
+          "steps": [
+            "v = c/n = 3×10⁸ / 2.42 ≈ 1.24×10⁸ m/s"
           ],
-          finalAnswer: "562.5 kgf",
+          "finalAnswer": "1.24×10⁸ m/s"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2022,
-            question: "A body of mass 200 g falls freely from a height of 15 m. Find the total mechanical energy just before hitting the ground. (g = 10 m/s²)",
-            steps: [
-              "At height 15 m: Total energy = PE = mgh",
-              "= 0.2 × 10 × 15 = 30 J",
-              "By conservation of energy, total energy is constant",
-              "Total mechanical energy just before hitting ground = 30 J",
+            "year": 2024,
+            "question": "Refractive indices: glass = 1.5, water = 1.33, CS₂ = 1.62. If light falls at the same angle, write the increasing order of the angle of refraction.",
+            "steps": [
+              "Higher n → smaller r",
+              "Order of r (smallest to largest): CS₂ (1.62) < glass (1.5) < water (1.33)"
             ],
-            finalAnswer: "30 J",
+            "finalAnswer": "CS₂ < Glass < Water"
           },
+          {
+            "year": 2023,
+            "question": "Absolute refractive indices of diamond and water are 2.42 and 1.33 respectively. Find the value of refractive index of water w.r.t. diamond.",
+            "steps": [
+              "n(water w.r.t diamond) = n(water)/n(diamond) = 1.33/2.42 ≈ 0.55"
+            ],
+            "finalAnswer": "0.55"
+          },
+          {
+            "year": 2024,
+            "question": "A ray of light enters from medium A to medium B. If the speed of light in medium A is vA and in medium B is vB, what is the refractive index of B with respect to A?",
+            "steps": [
+              "n_B/A = vA/vB"
+            ],
+            "finalAnswer": "n_B/A = vA/vB"
+          },
+          {
+            "year": 2023,
+            "question": "Absolute refractive indices of glass and water are 3/2 and 4/3 respectively. If speed of light in glass is 2×10⁸ m/s, find the speed of light in water.",
+            "steps": [
+              "n(water)/n(glass) = (4/3)/(3/2) = 8/9",
+              "v(water) = v(glass) × n(glass)/n(water) = 2×10⁸ × (3/2)/(4/3)",
+              "= 2×10⁸ × (9/8) = 2.25×10⁸ m/s"
+            ],
+            "finalAnswer": "2.25×10⁸ m/s"
+          }
         ],
-        aiTip: "Efficiency is always less than 100% in real machines due to friction. If you get η > 100%, recheck your calculation!",
-      },
-    ],
+        "aiTip": "Remember to check units and sign conventions carefully!"
+      }
+    ]
   },
-
-  // ═══════════════════════════════════════════
-  // Chapter 2: Light
-  // ═══════════════════════════════════════════
   {
-    id: "light",
-    name: "Light",
-    icon: "💡",
-    color: "#00D4FF",
-    topics: [
+    "id": "electricity",
+    "name": "ELECTRICITY",
+    "icon": "⚡",
+    "color": "#3B82F6",
+    "topics": [
       {
-        id: "refractive-index",
-        name: "Refractive Index",
-        formula: "μ = c/v  |  μ = Real depth / Apparent depth",
-        formulaDescription: "Refractive index relates speed of light in vacuum to speed in a medium, or real depth to apparent depth",
-        solvedExample: {
-          question: "A pond appears to be 2.7 m deep. If the refractive index of water is 4/3, find the actual depth.",
-          steps: [
-            "Given: Apparent depth = 2.7 m, μ = 4/3",
-            "μ = Real depth / Apparent depth",
-            "4/3 = Real depth / 2.7",
-            "Real depth = (4/3) × 2.7 = 3.6 m",
+        "id": "ohm-s-law",
+        "name": "OHM'S LAW",
+        "formula": "V = I R ---",
+        "formulaDescription": "Formula application",
+        "solvedExample": {
+          "year": 2025,
+          "question": "An electric motor rated 1100 W is connected to 220 V. Find the current drawn.",
+          "steps": [
+            "P = VI ⇒ I = P/V = 1100/220 = 5 A"
           ],
-          finalAnswer: "3.6 m",
+          "finalAnswer": "5 A"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2015,
-            question: "The speed of light in glass is 2 × 10⁵ km/s. What is the refractive index of glass? (Speed of light in air = 3 × 10⁸ m/s)",
-            steps: [
-              "v = 2 × 10⁵ km/s = 2 × 10⁸ m/s",
-              "μ = c/v",
-              "μ = (3 × 10⁸)/(2 × 10⁸)",
-              "μ = 1.5",
+            "year": 2024,
+            "question": "Three resistors 10Ω, 20Ω, 30Ω are in parallel across 10 V. Find the total resistance and the current drawn.",
+            "steps": [
+              "1/Rp = 1/10 + 1/20 + 1/30 = 6/60 + 3/60 + 2/60 = 11/60",
+              "Rp = 60/11 Ω",
+              "I = V/Rp = 10/(60/11) = 11/6 A"
             ],
-            finalAnswer: "1.5",
+            "finalAnswer": "Rp = 60/11 Ω, I = 11/6 A"
           },
           {
-            year: 2022,
-            question: "The refractive index of a diamond is 2.4. What does this mean?",
-            steps: [
-              "μ = c/v → 2.4 = c/v",
-              "c = 2.4v",
-              "Speed of light in vacuum = 2.4 × speed of light in diamond",
+            "year": 2023,
+            "question": "A student has four cells of 1.5 V each, a resistor, a key, an ammeter, a voltmeter and few connecting wires. Draw a labelled circuit diagram to study Ohm's law. State the relationship between V and I.",
+            "steps": [
+              "V = IR (Ohm's law)",
+              "The V-I graph is a straight line passing through the origin."
             ],
-            finalAnswer: "Speed of light in vacuum is 2.4 times the speed in diamond",
+            "finalAnswer": "V ∝ I (at constant temperature)"
           },
+          {
+            "year": 2024,
+            "question": "An electric bulb connected to 220 V supply draws 500 mA current. Find its power.",
+            "steps": [
+              "P = VI = 220 × 0.5 = 110 W"
+            ],
+            "finalAnswer": "110 W"
+          }
         ],
-        aiTip: "Always convert km/s to m/s before calculating. The refractive index is ALWAYS greater than 1 for any medium denser than air.",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
       {
-        id: "critical-angle",
-        name: "Critical Angle & Total Internal Reflection",
-        formula: "μ = 1/sin C",
-        formulaDescription: "Refractive index equals the reciprocal of the sine of the critical angle",
-        solvedExample: {
-          question: "The critical angle of the material of a prism for blue colour is 43°. What is the measure of the angle of this prism?",
-          steps: [
-            "For total internal reflection to occur inside the prism",
-            "The angle of incidence must exceed the critical angle",
-            "From the diagram, angle of prism = critical angle",
-            "A = 43°",
+        "id": "resistance-in-series",
+        "name": "RESISTANCE IN SERIES",
+        "formula": "R_s = R_1 + R_2 + R_3 + \\dots ---",
+        "formulaDescription": "Formula application",
+        "solvedExample": {
+          "year": 2023,
+          "question": "Four identical resistors of 8 Ω each are connected in series. Find the equivalent resistance.",
+          "steps": [
+            "Rₛ = 4 × 8 = 32 Ω"
           ],
-          finalAnswer: "43°",
+          "finalAnswer": "32 Ω"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2007,
-            question: "A right-angled prism with critical angle for glass = 42°. What is the value of the angle of deviation shown by the ray?",
-            steps: [
-              "In a right-angled prism with total internal reflection",
-              "The ray undergoes total internal reflection at the hypotenuse",
-              "The angle of deviation = 90°",
+            "year": 2024,
+            "question": "Six cells of 2 V each, a 6Ω, 12Ω and 18Ω resistor are connected in series with a key. Calculate (i) the current, (ii) potential difference across 18Ω resistor, (iii) power consumed in 18Ω resistor.",
+            "steps": [
+              "Total voltage = 6 × 2 = 12 V",
+              "Rₛ = 6 + 12 + 18 = 36 Ω",
+              "(i) I = 12/36 = 1/3 A",
+              "(ii) V = IR = (1/3) × 18 = 6 V",
+              "(iii) P = I²R = (1/3)² × 18 = 2 W"
             ],
-            finalAnswer: "90°",
+            "finalAnswer": "(i) 1/3 A, (ii) 6 V, (iii) 2 W"
           },
+          {
+            "year": 2025,
+            "question": "What should be the current rating of the electric circuit (220 V) so that an electric iron of 1 kW power rating can be operated?",
+            "steps": [
+              "I = P/V = 1000/220 ≈ 4.55 A",
+              "Minimum rating should be 5 A"
+            ],
+            "finalAnswer": "5 A"
+          }
         ],
-        aiTip: "Total internal reflection ONLY occurs when light goes from denser to rarer medium AND angle of incidence > critical angle.",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
       {
-        id: "lens-formula",
-        name: "Lens Formula",
-        formula: "1/f = 1/v - 1/u",
-        formulaDescription: "Relates focal length (f), image distance (v), and object distance (u) with sign convention",
-        solvedExample: {
-          question: "A convex lens of focal length 10 cm is placed 60 cm from a screen. How far from the lens should an object be placed for a real image on the screen?",
-          steps: [
-            "Given: v = +60 cm, f = +10 cm",
-            "1/f = 1/v - 1/u → 1/10 = 1/60 - 1/u",
-            "1/u = 1/60 - 1/10 = (1 - 6)/60 = -5/60",
-            "u = -12 cm (object 12 cm in front of lens)",
+        "id": "resistance-in-parallel",
+        "name": "RESISTANCE IN PARALLEL",
+        "formula": "\\frac{1}{R_p} = \\frac{1}{R_1} + \\frac{1}{R_2} + \\frac{1}{R_3} + \\dots ---",
+        "formulaDescription": "Formula application",
+        "solvedExample": {
+          "year": 2023,
+          "question": "Four identical resistors of 8 Ω each are connected in parallel. Find the equivalent resistance.",
+          "steps": [
+            "Rₚ = 8/4 = 2 Ω"
           ],
-          finalAnswer: "12 cm from the lens",
+          "finalAnswer": "2 Ω"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2024,
-            question: "The image of a candle flame placed 36 cm from a spherical lens is formed on a screen 72 cm from the lens. Calculate focal length and power.",
-            steps: [
-              "u = -36 cm, v = +72 cm",
-              "1/f = 1/v - 1/u = 1/72 - 1/(-36) = 1/72 + 1/36",
-              "1/f = (1 + 2)/72 = 3/72 = 1/24 → f = 24 cm = 0.24 m",
-              "P = 1/f = 1/0.24 ≈ 4.17 D",
+            "year": 2024,
+            "question": "Three resistors of 6Ω, 4Ω and 4Ω are connected together so that the total resistance is 8Ω. Draw a diagram and give reason.",
+            "steps": [
+              "Connect the two 4Ω resistors in parallel first:",
+              "1/Rp = 1/4 + 1/4 = 1/2 ⇒ Rp = 2Ω",
+              "Then connect this combination in series with the 6Ω resistor:",
+              "R_total = 6 + 2 = 8Ω"
             ],
-            finalAnswer: "f = 24 cm, P ≈ 4.17 D",
+            "finalAnswer": "6Ω in series with parallel combination of two 4Ω resistors"
           },
           {
-            year: 2018,
-            question: "An object is placed 12 cm from a convex lens of focal length 8 cm. Find the position and nature of the image.",
-            steps: [
-              "u = -12 cm, f = +8 cm",
-              "1/v = 1/f + 1/u = 1/8 + 1/(-12) = 1/8 - 1/12",
-              "1/v = (3 - 2)/24 = 1/24",
-              "v = +24 cm → Real, inverted, magnified, 24 cm behind lens",
+            "year": 2023,
+            "question": "Three resistors of 2Ω, 3Ω and 6Ω are connected in parallel. Find the equivalent resistance.",
+            "steps": [
+              "1/Rp = 1/2 + 1/3 + 1/6 = 3/6 + 2/6 + 1/6 = 6/6 = 1",
+              "Rp = 1 Ω"
             ],
-            finalAnswer: "v = 24 cm (real, inverted, magnified)",
-          },
+            "finalAnswer": "1 Ω"
+          }
         ],
-        aiTip: "Follow SIGN CONVENTION strictly: u is always negative for real objects. Most marks are lost due to wrong signs!",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
       {
-        id: "lens-power",
-        name: "Power of a Lens",
-        formula: "P = 1/f  (f in metres, P in Dioptres)",
-        formulaDescription: "Power of a lens in Dioptres equals the reciprocal of focal length in metres",
-        solvedExample: {
-          question: "The power of a lens is -5D. Find its focal length. Name the type of lens.",
-          steps: [
-            "P = 1/f → -5 = 1/f",
-            "f = 1/(-5) = -0.2 m = -20 cm",
-            "Negative focal length → diverging lens",
-            "This is a concave lens",
+        "id": "resistivity",
+        "name": "RESISTIVITY",
+        "formula": "\\rho = \\frac{R A}{L} **SI unit:** Ω·m ---",
+        "formulaDescription": "Formula application",
+        "solvedExample": {
+          "year": 2025,
+          "question": "A wire of radius 0.01 cm and length 1.0 cm has resistance 7 Ω. Calculate its resistivity.",
+          "steps": [
+            "r = 10⁻⁴ m, A = π × 10⁻⁸ m², L = 10⁻² m",
+            "ρ = RA/L = 7 × π × 10⁻⁸ / 10⁻² = 7π × 10⁻⁶ ≈ 22 × 10⁻⁶ Ω·m"
           ],
-          finalAnswer: "f = -20 cm (concave lens)",
+          "finalAnswer": "22 × 10⁻⁶ Ω·m"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2024,
-            question: "Calculate the focal length and power of a lens when u = -36 cm and v = +72 cm.",
-            steps: [
-              "1/f = 1/v - 1/u = 1/72 + 1/36 = 3/72 = 1/24",
-              "f = 24 cm = 0.24 m",
-              "P = 1/f = 1/0.24",
-              "P = 4.17 D",
+            "year": 2024,
+            "question": "A wire of radius 0.01 cm has resistance 10 Ω. Resistivity is 50 × 10⁻⁸ Ω·m. Find the length of the wire. (Given π = 22/7)",
+            "steps": [
+              "r = 0.01 cm = 10⁻⁴ m",
+              "A = πr² = π × 10⁻⁸ m²",
+              "ρ = 50 × 10⁻⁸ Ω·m = 5 × 10⁻⁷ Ω·m",
+              "L = RA/ρ = 10 × π × 10⁻⁸ / (5 × 10⁻⁷)",
+              "= 10 × (22/7) × 10⁻⁸ / (5 × 10⁻⁷)",
+              "= (220/7) × 10⁻¹ = (220/7) × 0.1 = 22/7 ≈ 3.14 m"
             ],
-            finalAnswer: "f = 24 cm, P = 4.17 D",
+            "finalAnswer": "3.14 m"
           },
+          {
+            "year": 2023,
+            "question": "The resistance of a wire of 0.01 cm radius is 14 Ω. If the resistivity of the wire is 44 × 10⁻⁸ Ω·m, find the length of the wire. (Given π = 22/7)",
+            "steps": [
+              "r = 10⁻⁴ m, A = π × 10⁻⁸ m²",
+              "L = RA/ρ = 14 × π × 10⁻⁸ / (44 × 10⁻⁸)",
+              "= 14π/44 = (14 × 22/7)/44 = 44/44 = 1 m"
+            ],
+            "finalAnswer": "1 m"
+          },
+          {
+            "year": 2024,
+            "question": "A copper wire has diameter 0.2 mm and resistivity 1.6×10⁻⁸ Ω·m. What length of wire is needed to make its resistance 14 Ω? If the diameter is doubled, how does the resistance change?",
+            "steps": [
+              "r = 0.1 mm = 10⁻⁴ m, A = π × 10⁻⁸ m²",
+              "L = RA/ρ = 14 × π × 10⁻⁸ / (1.6 × 10⁻⁸)",
+              "= 14π/1.6 = 14 × 3.14/1.6 = 27.5 m",
+              "If diameter is doubled, area becomes 4 times",
+              "New R = ρL/(4A) = R/4 = 14/4 = 3.5 Ω"
+            ],
+            "finalAnswer": "Length = 27.5 m, Resistance reduces to 3.5 Ω"
+          }
         ],
-        aiTip: "Always convert focal length to METRES before calculating power. 25 cm = 0.25 m, NOT 25. This is the most common mistake!",
+        "aiTip": "Remember to check units and sign conventions carefully!"
       },
-    ],
+      {
+        "id": "joule-s-law-of-heating",
+        "name": "JOULE'S LAW OF HEATING",
+        "formula": "Refer to description",
+        "formulaDescription": "Formula application",
+        "solvedExample": {
+          "year": 2025,
+          "question": "An electric iron of resistance 20 Ω draws 5 A. Heat developed in 30 s?",
+          "steps": [
+            "H = I²Rt = 5² × 20 × 30 = 15000 J"
+          ],
+          "finalAnswer": "15000 J"
+        },
+        "pyqs": [
+          {
+            "year": 2024,
+            "question": "A 5 Ω resistor is connected across a 6 V battery. Calculate the energy dissipated as heat in 10 s.",
+            "steps": [
+              "H = V²t/R = 6² × 10 / 5 = 72 J"
+            ],
+            "finalAnswer": "72 J"
+          },
+          {
+            "year": 2023,
+            "question": "An electric iron of resistance 20 Ω draws a current of 5 A. Find the heat developed in 30 seconds.",
+            "steps": [
+              "H = I²Rt = 5² × 20 × 30 = 15000 J"
+            ],
+            "finalAnswer": "15000 J"
+          },
+          {
+            "year": 2024,
+            "question": "A voltage source sends a current of 2 A to a resistor of 40 Ω connected across it for 5 minutes. Calculate the electrical energy supplied by the source.",
+            "steps": [
+              "t = 5 × 60 = 300 s",
+              "H = I²Rt = 2² × 40 × 300 = 48000 J"
+            ],
+            "finalAnswer": "48000 J"
+          }
+        ],
+        "aiTip": "Remember to check units and sign conventions carefully!"
+      },
+      {
+        "id": "electric-power",
+        "name": "ELECTRIC POWER",
+        "formula": "Refer to description",
+        "formulaDescription": "Formula application",
+        "solvedExample": {
+          "year": 2025,
+          "question": "An electric iron consumes energy at a rate of 880 W (max) and 330 W (min) at 220 V. Find current and resistance in each case.",
+          "steps": [
+            "Maximum: I = 880/220 = 4 A, R = 220/4 = 55 Ω",
+            "Minimum: I = 330/220 = 1.5 A, R = 220/1.5 ≈ 146.67 Ω"
+          ],
+          "finalAnswer": "Max: 4 A, 55 Ω; Min: 1.5 A, 146.67 Ω"
+        },
+        "pyqs": [
+          {
+            "year": 2024,
+            "question": "A bulb connected to 220 V draws 500 mA. Find its power.",
+            "steps": [
+              "P = 220 × 0.5 = 110 W"
+            ],
+            "finalAnswer": "110 W"
+          },
+          {
+            "year": 2023,
+            "question": "Define electric power. Express it in terms of potential difference (V) and resistance (R).",
+            "steps": [
+              "P = VI = V²/R = I²R"
+            ],
+            "finalAnswer": "P = VI = V²/R = I²R"
+          },
+          {
+            "year": 2024,
+            "question": "An electric oven is designed to work on 220 V. It consumes 11 units of electrical energy in 5 hours. Calculate (a) power rating, (b) current drawn, (c) resistance when red hot.",
+            "steps": [
+              "Energy = 11 kWh",
+              "(a) P = E/t = 11/5 = 2.2 kW = 2200 W",
+              "(b) I = P/V = 2200/220 = 10 A",
+              "(c) R = V²/P = 220²/2200 = 22 Ω"
+            ],
+            "finalAnswer": "(a) 2200 W, (b) 10 A, (c) 22 Ω"
+          }
+        ],
+        "aiTip": "Remember to check units and sign conventions carefully!"
+      },
+      {
+        "id": "electric-energy",
+        "name": "ELECTRIC ENERGY",
+        "formula": "Refer to description",
+        "formulaDescription": "Formula application",
+        "solvedExample": {
+          "year": 2025,
+          "question": "In a house, 3 bulbs of 100 W each are used for 5 hours daily, and a 1 kW heater is used for 0.5 hours daily. Calculate the total energy consumed in 30 days and its cost at ₹3.60 per kWh.",
+          "steps": [
+            "Bulbs: 3 × 100 × 5 = 1500 Wh = 1.5 kWh/day",
+            "Heater: 1 × 0.5 = 0.5 kWh/day",
+            "Total per day = 2 kWh → 30 days = 60 kWh",
+            "Cost = 60 × 3.60 = ₹216"
+          ],
+          "finalAnswer": "60 kWh, ₹216"
+        },
+        "pyqs": [
+          {
+            "year": 2024,
+            "question": "A 1100 W motor is used for 5 hours daily for 6 days. Calculate the energy consumed.",
+            "steps": [
+              "E = 1.1 kW × 5 h × 6 = 33 kWh"
+            ],
+            "finalAnswer": "33 kWh"
+          },
+          {
+            "year": 2023,
+            "question": "In a house, 2 bulbs of 50 W each are used for 6 hours daily and an electric geyser of 1 kW is used for 1 hour daily. Calculate the total energy consumed in a month of 30 days and its cost at ₹8.00 per kWh.",
+            "steps": [
+              "Bulbs: 2 × 50 × 6 = 600 Wh = 0.6 kWh/day",
+              "Geyser: 1 × 1 = 1 kWh/day",
+              "Total per day = 1.6 kWh → 30 days = 48 kWh",
+              "Cost = 48 × 8 = ₹384"
+            ],
+            "finalAnswer": "48 kWh, ₹384"
+          },
+          {
+            "year": 2024,
+            "question": "In a house, 3 bulbs of 100 W each are lit for 5 hours daily and a 1.0 kW heater is used for half an hour daily. Calculate the total energy consumed in 30 days and its cost at ₹3.60 per kWh.",
+            "steps": [
+              "Bulbs: 3 × 100 × 5 = 1500 Wh = 1.5 kWh/day",
+              "Heater: 1 × 0.5 = 0.5 kWh/day",
+              "Total per day = 2 kWh → 30 days = 60 kWh",
+              "Cost = 60 × 3.60 = ₹216"
+            ],
+            "finalAnswer": "60 kWh, ₹216"
+          },
+          {
+            "year": 2023,
+            "question": "In a house, 2 bulbs of 50 W each are used for 6 hours daily and an electric geyser of 1 kW is used for 1 hour daily. Calculate the total energy consumed in a month of 30 days and its cost at ₹8.00 per kWh.",
+            "steps": [
+              "Bulbs: 2 × 50 × 6 = 600 Wh = 0.6 kWh/day",
+              "Geyser: 1 × 1 = 1 kWh/day",
+              "Total per day = 1.6 kWh → 30 days = 48 kWh",
+              "Cost = 48 × 8 = ₹384"
+            ],
+            "finalAnswer": "48 kWh, ₹384"
+          }
+        ],
+        "aiTip": "Remember to check units and sign conventions carefully!"
+      }
+    ]
   },
-
-  // ═══════════════════════════════════════════
-  // Chapter 3: Sound
-  // ═══════════════════════════════════════════
   {
-    id: "sound",
-    name: "Sound",
-    icon: "🔊",
-    color: "#06B6D4",
-    topics: [
+    "id": "magnetic-effects-of-electric-current",
+    "name": "MAGNETIC EFFECTS OF ELECTRIC CURRENT",
+    "icon": "⚡",
+    "color": "#3B82F6",
+    "topics": [
       {
-        id: "echo",
-        name: "Echo",
-        formula: "Distance = (Speed × Time) / 2",
-        formulaDescription: "For an echo, sound travels to the reflector and back, so divide total distance by 2",
-        solvedExample: {
-          question: "Lata stands between two cliffs and claps her hands. Determine the time taken to hear the first echo. Speed of sound = 320 m/s, distance to cliff A = 120 m.",
-          steps: [
-            "Distance to cliff A = 120 m",
-            "Sound travels to cliff and back = 2 × 120 = 240 m",
-            "Time = Distance/Speed = 240/320",
-            "Time = 0.75 s",
+        "id": "force-on-a-current-carrying-conductor",
+        "name": "FORCE ON A CURRENT-CARRYING CONDUCTOR",
+        "formula": "Refer to description",
+        "formulaDescription": "- Force is maximum when conductor ⟂ magnetic field (θ = 90°) - Force is zero when conductor ∥ magnetic field (θ = 0°) - Direction given by Fleming's Left-Hand Rule ---",
+        "solvedExample": {
+          "year": 2024,
+          "question": "A conductor of length 0.5 m carries 2 A in a magnetic field of 0.4 T perpendicular to it. Find the force experienced.",
+          "steps": [
+            "F = BIL = 0.4 × 2 × 0.5 = 0.4 N"
           ],
-          finalAnswer: "0.75 seconds",
+          "finalAnswer": "0.4 N"
         },
-        pyqs: [
+        "pyqs": [
           {
-            year: 2022,
-            question: "A boy standing in front of a wall produces two whistles per second. The echo coincides with his whistling. Calculate the distance between the boy and the wall. (Speed = 320 m/s)",
-            steps: [
-              "Time between two whistles = 1/2 = 0.5 s",
-              "This is the time for echo to return",
-              "v = 2d/t → 320 = 2d/0.5",
-              "d = (320 × 0.5)/2 = 80 m",
+            "year": 2024,
+            "question": "When is the force on a current-carrying conductor in a magnetic field (i) maximum, (ii) minimum?",
+            "steps": [
+              "(i) Maximum when θ = 90° (conductor perpendicular to field)",
+              "(ii) Minimum (zero) when θ = 0° (conductor parallel to field)"
             ],
-            finalAnswer: "80 m",
+            "finalAnswer": "Max at 90°, Min at 0°"
           },
           {
-            year: 2008,
-            question: "A radar sends a signal to an aeroplane at a distance 45 km away with speed 3 × 10⁸ m/s. After how long is the signal received back?",
-            steps: [
-              "Distance = 45 km = 45000 m",
-              "Total distance = 2 × 45000 = 90000 m",
-              "Time = Distance/Speed = 90000/(3 × 10⁸)",
-              "Time = 3 × 10⁻⁴ s",
+            "year": 2023,
+            "question": "State the rule to determine the direction of force experienced by a current-carrying straight conductor placed in a magnetic field which is perpendicular to it.",
+            "steps": [
+              "Fleming's Left-Hand Rule: If the thumb, forefinger and middle finger of the left hand are stretched mutually perpendicular to each other such that the forefinger points in the direction of the magnetic field and the middle finger in the direction of current, then the thumb points in the direction of force."
             ],
-            finalAnswer: "3 × 10⁻⁴ s",
+            "finalAnswer": "Fleming's Left-Hand Rule"
           },
+          {
+            "year": 2024,
+            "question": "An alpha particle enters a uniform magnetic field as shown. What is the direction of force?",
+            "steps": [
+              "Using Fleming's Left-Hand Rule or Right-Hand Rule for positive charges"
+            ],
+            "finalAnswer": "Force is perpendicular to both velocity and magnetic field direction"
+          }
         ],
-        aiTip: "Remember: the minimum distance for an echo is 17 m (since the minimum time gap for the human ear is 0.1 s and v ≈ 340 m/s).",
-      },
-      {
-        id: "frequency-wavelength",
-        name: "Frequency, Wavelength & Velocity",
-        formula: "v = f × λ",
-        formulaDescription: "Wave velocity equals frequency times wavelength",
-        solvedExample: {
-          question: "A sound wave travelling in water has wavelength 0.4 m. Is this wave audible in air? (Speed of sound in water = 1400 m/s)",
-          steps: [
-            "f = v/λ = 1400/0.4 = 3500 Hz",
-            "Audible range: 20 Hz to 20000 Hz",
-            "3500 Hz lies within audible range",
-            "Yes, this wave is audible",
-          ],
-          finalAnswer: "Yes, audible (3500 Hz)",
-        },
-        pyqs: [
-          {
-            year: 2017,
-            question: "A certain sound has a frequency of 256 Hz and a wavelength of 1.3 m. Calculate the speed of this sound.",
-            steps: [
-              "Given: f = 256 Hz, λ = 1.3 m",
-              "v = f × λ",
-              "v = 256 × 1.3",
-              "v = 332.8 m/s",
-            ],
-            finalAnswer: "332.8 m/s",
-          },
-        ],
-        aiTip: "Frequency stays the same when sound moves between media. Only wavelength and speed change!",
-      },
-    ],
-  },
-
-  // ═══════════════════════════════════════════
-  // Chapter 4: Electricity & Magnetism
-  // ═══════════════════════════════════════════
-  {
-    id: "electricity-magnetism",
-    name: "Electricity & Magnetism",
-    icon: "🔌",
-    color: "#3B82F6",
-    topics: [
-      {
-        id: "ohms-law",
-        name: "Ohm's Law",
-        formula: "V = IR",
-        formulaDescription: "Voltage equals current times resistance at constant temperature",
-        solvedExample: {
-          question: "A music system draws 400 mA current from a 12 V battery. (i) Find the resistance. (ii) It stops playing at 320 mA. At what voltage does it stop?",
-          steps: [
-            "(i) R = V/I = 12/(400 × 10⁻³) = 12/0.4 = 30 Ω",
-            "(ii) V = IR = 320 × 10⁻³ × 30",
-            "V = 0.32 × 30 = 9.6 V",
-          ],
-          finalAnswer: "(i) 30 Ω  (ii) 9.6 V",
-        },
-        pyqs: [
-          {
-            year: 2013,
-            question: "A metal wire of resistance 6 Ω is stretched so that its length doubles. Calculate its new resistance.",
-            steps: [
-              "R = ρl/A",
-              "When length becomes 2l, area becomes A/2 (volume constant)",
-              "New R = ρ(2l)/(A/2) = 4ρl/A = 4R",
-              "New resistance = 4 × 6 = 24 Ω",
-            ],
-            finalAnswer: "24 Ω",
-          },
-        ],
-        aiTip: "When a wire is stretched to n times its length, resistance becomes n² times. This is a very common PYQ pattern!",
-      },
-      {
-        id: "resistance-series",
-        name: "Resistance in Series",
-        formula: "R = R₁ + R₂ + R₃ + ...",
-        formulaDescription: "In series combination, total resistance is the sum of all resistances",
-        solvedExample: {
-          question: "A battery of EMF 12V and internal resistance 2Ω is connected with resistors 4Ω and 6Ω in series. Find the current.",
-          steps: [
-            "R = R₁ + R₂ = 4 + 6 = 10 Ω",
-            "Total resistance = R + r = 10 + 2 = 12 Ω",
-            "I = E/(R + r) = 12/12",
-            "I = 1 A",
-          ],
-          finalAnswer: "1 A",
-        },
-        pyqs: [
-          {
-            year: 2016,
-            question: "A battery of EMF 12V and internal resistance 2Ω is connected with 4Ω and 6Ω resistors in series. Find the current in the circuit.",
-            steps: [
-              "External resistance R = 4 + 6 = 10 Ω",
-              "Total resistance = R + r = 10 + 2 = 12 Ω",
-              "I = E/(R + r) = 12/12",
-              "I = 1 A",
-            ],
-            finalAnswer: "1 A",
-          },
-        ],
-        aiTip: "Don't forget the internal resistance of the battery! Total R = external resistance + internal resistance.",
-      },
-      {
-        id: "resistance-parallel",
-        name: "Resistance in Parallel",
-        formula: "1/R = 1/R₁ + 1/R₂ + 1/R₃ + ...",
-        formulaDescription: "In parallel, reciprocals of resistances add up",
-        solvedExample: {
-          question: "Two combinations (10Ω+6Ω in series and 12Ω+4Ω in series) are connected in parallel. Find total resistance.",
-          steps: [
-            "R₁ = 10 + 6 = 16 Ω",
-            "R₂ = 12 + 4 = 16 Ω",
-            "1/R = 1/16 + 1/16 = 2/16 = 1/8",
-            "R = 8 Ω",
-          ],
-          finalAnswer: "8 Ω",
-        },
-        pyqs: [
-          {
-            year: 2012,
-            question: "Three resistors are connected to a 6V battery. Calculate the equivalent resistance. (R₁ = 9Ω, R₂ = 4.5Ω in parallel)",
-            steps: [
-              "1/R = 1/9 + 1/4.5",
-              "1/R = 1/9 + 2/9 = 3/9 = 1/3",
-              "R = 3 Ω",
-            ],
-            finalAnswer: "3 Ω",
-          },
-        ],
-        aiTip: "Parallel resistance is ALWAYS less than the smallest individual resistor. Use this as a quick sanity check!",
-      },
-      {
-        id: "electric-power",
-        name: "Electric Power",
-        formula: "P = VI = I²R = V²/R",
-        formulaDescription: "Electrical power has three equivalent forms derived from Ohm's Law",
-        solvedExample: {
-          question: "A geyser is rated 240 W – 220 V. Explain the meaning of this statement.",
-          steps: [
-            "When connected to 220 V supply",
-            "The geyser consumes 240 Joules of energy per second",
-            "This is its power rating at the rated voltage",
-          ],
-          finalAnswer: "Consumes 240 J/s at 220 V supply",
-        },
-        pyqs: [
-          {
-            year: 2022,
-            question: "An appliance rated 440 W, 220 V is connected to 220 V supply. (a) Calculate the maximum current. (b) Calculate the resistance.",
-            steps: [
-              "(a) I = P/V = 440/220 = 2 A",
-              "(b) R = V²/P = (220)²/440",
-              "R = 48400/440",
-              "R = 110 Ω",
-            ],
-            finalAnswer: "(a) 2 A  (b) 110 Ω",
-          },
-          {
-            year: 2009,
-            question: "An electric heater is rated 1000 W – 200 V. Calculate: (i) resistance of the heating element, (ii) current flowing through it.",
-            steps: [
-              "(i) R = V²/P = (200)²/1000 = 40000/1000 = 40 Ω",
-              "(ii) I = P/V = 1000/200 = 5 A",
-            ],
-            finalAnswer: "(i) 40 Ω  (ii) 5 A",
-          },
-        ],
-        aiTip: "Pick the right formula based on what's given: use P = V²/R when current is not given, P = I²R when voltage is not given.",
-      },
-      {
-        id: "electrical-energy",
-        name: "Electrical Energy",
-        formula: "E = P × t  (in kWh when P in kW, t in hours)",
-        formulaDescription: "Electrical energy consumed equals power times time. 1 kWh = 3.6 × 10⁶ J",
-        solvedExample: {
-          question: "An electrical heater rated 4 kW, 220 V. Find the cost of using it for 12 hours at Rs. 3.25 per kWh.",
-          steps: [
-            "E = P × t = 4 × 12 = 48 kWh",
-            "Cost = Energy × Rate",
-            "Cost = 48 × 3.25",
-            "Cost = Rs. 156",
-          ],
-          finalAnswer: "Rs. 156",
-        },
-        pyqs: [
-          {
-            year: 2012,
-            question: "An electrical appliance is rated 1000 kVA, 220V. It operates for 2 hours. Calculate energy consumed in (i) kWh (ii) Joules.",
-            steps: [
-              "(i) Energy = 1000 × 2 = 2000 kWh",
-              "(ii) 1 kWh = 3.6 × 10⁶ J",
-              "Energy = 2000 × 3.6 × 10⁶",
-              "= 7.2 × 10⁹ J",
-            ],
-            finalAnswer: "(i) 2000 kWh  (ii) 7.2 × 10⁹ J",
-          },
-        ],
-        aiTip: "1 kWh = 3.6 × 10⁶ J - memorize this conversion. Also remember to use kW (not W) with hours for kWh!",
-      },
-      {
-        id: "charge-current",
-        name: "Charge & Current",
-        formula: "I = Q/t",
-        formulaDescription: "Current equals charge divided by time",
-        solvedExample: {
-          question: "In a circuit, calculate the charge passing through a 3Ω resistor in 120 s if the current is 0.5 A.",
-          steps: [
-            "Given: I = 0.5 A, t = 120 s",
-            "Q = I × t",
-            "Q = 0.5 × 120",
-            "Q = 60 C",
-          ],
-          finalAnswer: "60 Coulombs",
-        },
-        pyqs: [
-          {
-            year: 2013,
-            question: "In the circuit, calculate the charge passing through the 3Ω resistor in 120 s.",
-            steps: [
-              "Current through 3Ω resistor = 0.5 A",
-              "Q = I × t",
-              "Q = 0.5 × 120",
-              "Q = 60 C",
-            ],
-            finalAnswer: "60 C",
-          },
-        ],
-        aiTip: "1 Ampere = 1 Coulomb per second. Current is the rate of flow of charge.",
-      },
-    ],
-  },
-
-  // ═══════════════════════════════════════════
-  // Chapter 5: Heat
-  // ═══════════════════════════════════════════
-  {
-    id: "heat",
-    name: "Heat",
-    icon: "🔥",
-    color: "#EF4444",
-    topics: [
-      {
-        id: "specific-heat",
-        name: "Specific Heat Capacity",
-        formula: "Q = m × c × ΔT",
-        formulaDescription: "Heat energy equals mass × specific heat capacity × change in temperature",
-        solvedExample: {
-          question: "A metal piece of 420 g at 80°C is dropped in 80 g of water at 20°C in a calorimeter of 84 g. If final temp = 30°C, find specific heat of metal. (c_water = 4.2 J/g°C, c_cal = 0.2 J/g°C)",
-          steps: [
-            "Heat lost by metal = 420 × S × (80 - 30) = 21000S J",
-            "Heat gained by water = 80 × 4.2 × (30 - 20) = 3360 J",
-            "Heat gained by calorimeter = 84 × 0.2 × (30 - 20) = 168 J",
-            "21000S = 3360 + 168 = 3528 → S = 0.168 J/g°C",
-          ],
-          finalAnswer: "0.168 J/g°C",
-        },
-        pyqs: [
-          {
-            year: 2017,
-            question: "A solid of 50 g at 150°C is placed in 100 g of water at 11°C. Final temp = 20°C. Find specific heat of solid. (c_water = 4.2 J/g°C)",
-            steps: [
-              "Heat lost by solid = 50 × c × (150 - 20) = 6500c J",
-              "Heat gained by water = 100 × 4.2 × (20 - 11) = 3780 J",
-              "By principle of calorimetry: 6500c = 3780",
-              "c = 3780/6500 = 0.58 J/g°C",
-            ],
-            finalAnswer: "0.58 J/g°C",
-          },
-          {
-            year: 2016,
-            question: "Calculate mass of ice required to lower 300 g of water at 40°C to 0°C. (L_ice = 336 J/g, c_water = 4.2 J/g°C)",
-            steps: [
-              "Heat lost by water = 300 × 4.2 × 40 = 50400 J",
-              "Heat gained by ice = m × 336",
-              "m × 336 = 50400",
-              "m = 50400/336 = 150 g",
-            ],
-            finalAnswer: "150 g",
-          },
-        ],
-        aiTip: "Heat lost = Heat gained (principle of calorimetry). Don't forget to include the calorimeter's heat absorption if its mass is given!",
-      },
-      {
-        id: "latent-heat",
-        name: "Latent Heat",
-        formula: "Q = m × L",
-        formulaDescription: "Heat required for phase change equals mass times the specific latent heat",
-        solvedExample: {
-          question: "30 g of ice at 0°C is used to bring down water at 70°C to 20°C. Find mass of water. (c_water = 4.2 J/g°C, L_ice = 336 J/g)",
-          steps: [
-            "Heat absorbed by ice to melt = 30 × 336 = 10080 J",
-            "Heat absorbed by melted ice (0°C → 20°C) = 30 × 4.2 × 20 = 2520 J",
-            "Total heat absorbed = 10080 + 2520 = 12600 J",
-            "Heat lost by water = m × 4.2 × 50 = 210m → m = 12600/210 = 60 g",
-          ],
-          finalAnswer: "60 g",
-        },
-        pyqs: [
-          {
-            year: 2018,
-            question: "A solid metal of 150 g melts at 800°C by providing heat at 100 W. Time taken to completely melt = 4 min. Find specific latent heat of fusion.",
-            steps: [
-              "Heat supplied = Power × time = 100 × (4 × 60) = 24000 J",
-              "Q = m × L → 24000 = 150 × L",
-              "L = 24000/150 = 160 J/g",
-              "= 1.6 × 10⁵ J/kg",
-            ],
-            finalAnswer: "160 J/g (1.6 × 10⁵ J/kg)",
-          },
-          {
-            year: 2024,
-            question: "How much heat is required to convert 500 g of ice at 0°C to water at 0°C? (L = 330 J/g)",
-            steps: [
-              "Q = m × L",
-              "Q = 500 × 330",
-              "Q = 165000 J",
-              "= 165 kJ",
-            ],
-            finalAnswer: "165000 J (165 kJ)",
-          },
-        ],
-        aiTip: "When ice melts and then warms up, calculate BOTH: Q₁ = mL (melting) + Q₂ = mcΔT (warming). Students often forget Q₂!",
-      },
-    ],
-  },
-
-  // ═══════════════════════════════════════════
-  // Chapter 6: Modern Physics
-  // ═══════════════════════════════════════════
-  {
-    id: "modern-physics",
-    name: "Modern Physics",
-    icon: "⚛️",
-    color: "#10B981",
-    topics: [
-      {
-        id: "radioactivity-half-life",
-        name: "Radioactivity & Half-life",
-        formula: "N = N₀ × (1/2)ⁿ",
-        formulaDescription: "Amount remaining after n half-lives equals initial amount times (1/2)^n",
-        solvedExample: {
-          question: "A radioactive nucleus containing 128 nucleons emits a β⁻ particle. After β emission, the number of nucleons present will be?",
-          steps: [
-            "β⁻ emission: a neutron converts to a proton + electron",
-            "Mass number (nucleons) does NOT change",
-            "Only atomic number increases by 1",
-            "Nucleons remain 128",
-          ],
-          finalAnswer: "128 nucleons",
-        },
-        pyqs: [
-          {
-            year: 2007,
-            question: "What happens to the atomic number of an element when it emits: (1) an alpha particle; (2) a beta particle.",
-            steps: [
-              "(1) α emission: 2 protons + 2 neutrons are emitted",
-              "Atomic number decreases by 2",
-              "(2) β emission: a neutron → proton + electron",
-              "Atomic number increases by 1",
-            ],
-            finalAnswer: "(1) Decreases by 2  (2) Increases by 1",
-          },
-        ],
-        aiTip: "α particle = ₂He⁴ (mass ↓4, atomic no. ↓2). β particle = ₋₁e⁰ (mass same, atomic no. ↑1). Memorize these changes!",
-      },
-      {
-        id: "nuclear-reactions",
-        name: "Nuclear Reactions",
-        formula: "Conservation of mass number & atomic number",
-        formulaDescription: "In nuclear reactions, total mass number and total atomic number are conserved on both sides",
-        solvedExample: {
-          question: "Complete the nuclear reaction: ₉₂U²³⁵ + ₀n¹ → ₅₆Ba¹⁴¹ + __Kr⁹² + 3₀n¹",
-          steps: [
-            "LHS mass = 235 + 1 = 236",
-            "RHS mass = 141 + 92 + 3(1) = 236 ✓",
-            "LHS atomic no. = 92 + 0 = 92",
-            "RHS atomic no. = 56 + Z + 0 → Z = 36 (Krypton)",
-          ],
-          finalAnswer: "₃₆Kr⁹² (Z = 36)",
-        },
-        pyqs: [
-          {
-            year: 2016,
-            question: "An element ₂S^A decays to ₈₅R²²² after emitting 2 α particles and 1 β particle. Find atomic number and mass of S.",
-            steps: [
-              "After 2 α emissions: mass decreases by 8, atomic no. decreases by 4",
-              "After 1 β emission: mass unchanged, atomic no. increases by 1",
-              "Final mass = 222, so initial mass = 222 + 8 = 230",
-              "Final atomic no. = 85, so initial = 85 + 4 - 1 = 88",
-            ],
-            finalAnswer: "₈₈S²³⁰ (Z = 88, A = 230)",
-          },
-        ],
-        aiTip: "Balance BOTH mass number AND atomic number on both sides of the equation. Write them clearly above/below the element symbol.",
-      },
-    ],
-  },
+        "aiTip": "Remember to check units and sign conventions carefully!"
+      }
+    ]
+  }
 ];

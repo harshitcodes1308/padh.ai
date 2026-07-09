@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Confetti from "react-dom-confetti";
+import { FormatMathText } from "@/components/ui/FormatMathText";
 import {
   numericalMasteryData,
   type NumericalChapter,
@@ -403,7 +405,7 @@ export default function NumericalMasteryPage() {
             letterSpacing: "0.02em", lineHeight: 1.4, marginBottom: 12,
             textShadow: "0 0 20px var(--accent-gold-glow)",
           }}>
-            {selectedTopic.formula}
+            <FormatMathText text={selectedTopic.formula} useLatex={true} />
           </div>
           <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-muted)", lineHeight: 1.65 }}>
             {selectedTopic.formulaDescription}
@@ -433,7 +435,7 @@ export default function NumericalMasteryPage() {
             borderLeft: "2px solid var(--status-green)",
           }}>
             <div style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 500, color: "var(--text-primary)", lineHeight: 1.7 }}>
-              {selectedTopic.solvedExample.question}
+              <FormatMathText text={selectedTopic.solvedExample.question} />
             </div>
           </div>
 
@@ -452,7 +454,7 @@ export default function NumericalMasteryPage() {
                   display: "flex", alignItems: "center", justifyContent: "center",
                   fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "var(--status-green)",
                 }}>{i + 1}</span>
-                <span style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.65 }}>{step}</span>
+                <span style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.65 }}><FormatMathText text={step} useLatex={true} /></span>
               </div>
             ))}
           </div>
@@ -468,7 +470,7 @@ export default function NumericalMasteryPage() {
                 Final Answer
               </div>
               <div style={{ fontFamily: "var(--font-display)", fontSize: 18, color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
-                {selectedTopic.solvedExample.finalAnswer}
+                <FormatMathText text={selectedTopic.solvedExample.finalAnswer} useLatex={true} />
               </div>
             </div>
           </div>
@@ -506,7 +508,7 @@ export default function NumericalMasteryPage() {
               borderRadius: 12, padding: "14px 18px", marginBottom: 16,
             }}>
               <div style={{ fontFamily: "var(--font-body)", fontSize: 13.5, fontWeight: 500, color: "var(--text-primary)", lineHeight: 1.7 }}>
-                {pyq.question}
+                <FormatMathText text={pyq.question} />
               </div>
             </div>
 
@@ -543,7 +545,7 @@ export default function NumericalMasteryPage() {
                         display: "flex", alignItems: "center", justifyContent: "center",
                         fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: "var(--status-orange)",
                       }}>{i + 1}</span>
-                      <span style={{ fontFamily: "var(--font-body)", fontSize: 12.5, color: "var(--text-secondary)", lineHeight: 1.6 }}>{step}</span>
+                      <span style={{ fontFamily: "var(--font-body)", fontSize: 12.5, color: "var(--text-secondary)", lineHeight: 1.6 }}><FormatMathText text={step} useLatex={true} /></span>
                     </div>
                   ))}
                 </div>
@@ -556,7 +558,7 @@ export default function NumericalMasteryPage() {
                     Answer
                   </div>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 16, color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
-                    {pyq.finalAnswer}
+                    <FormatMathText text={pyq.finalAnswer} useLatex={true} />
                   </div>
                 </div>
               </div>

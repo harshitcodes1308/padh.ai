@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { FormatMathText } from '@/components/ui/FormatMathText';
 import { trpc } from '@/lib/trpc/client';
 import { typography } from '@/lib/typography';
 import { CBSE_SUBJECTS, CBSE_CHAPTERS } from '@/lib/cbse-data';
@@ -361,7 +362,7 @@ export default function CustomiseTestPage() {
                     {/* Question  */}
                     <div className="dashboard-card" style={{ padding: '32px' }}>
                         <h3 style={{ ...typography.display, fontSize: '20px', marginBottom: '24px' }}>
-                            Q{currentQuestion + 1}. {currentQ.question}
+                            Q{currentQuestion + 1}. <FormatMathText text={currentQ.question} />
                         </h3>
                         <div style={{ marginTop: '24px' }}>
                             {currentQ.options.map((option, idx) => (
@@ -389,7 +390,7 @@ export default function CustomiseTestPage() {
                                         onChange={() => handleAnswerSelect(currentQ.id, idx)}
                                         style={{ marginRight: '12px', width: '20px', height: '20px' }}
                                     />
-                                    <span style={{ ...typography.text, fontSize: '16px' }}>{option}</span>
+                                    <span style={{ ...typography.text, fontSize: '16px' }}><FormatMathText text={option} /></span>
                                 </label>
                             ))}
                         </div>
@@ -646,7 +647,7 @@ export default function CustomiseTestPage() {
                                     }}>
                                         Q{idx + 1}
                                     </div>
-                                    <h3 style={{ ...typography.text, fontSize: '18px', flex: 1 }}>{q.question}</h3>
+                                    <h3 style={{ ...typography.text, fontSize: '18px', flex: 1 }}><FormatMathText text={q.question} /></h3>
                                 </div>
 
                                 <div style={{ marginTop: '16px' }}>
@@ -667,7 +668,7 @@ export default function CustomiseTestPage() {
                                             }}
                                         >
                                             <span style={{ ...typography.text, fontSize: '16px' }}>
-                                                {String.fromCharCode(65 + optIdx)}. {option}
+                                                {String.fromCharCode(65 + optIdx)}. <FormatMathText text={option} />
                                                 {optIdx === q.correctAnswer && ' ✓'}
                                                 {optIdx === userAnswer && userAnswer !== q.correctAnswer && ' ✗'}
                                             </span>
@@ -686,7 +687,7 @@ export default function CustomiseTestPage() {
                                         💡 Explanation:
                                     </div>
                                     <p style={{ ...typography.text, fontSize: '14px', lineHeight: '1.6', color: 'var(--text-secondary)' }}>
-                                        {q.explanation}
+                                        <FormatMathText text={q.explanation} />
                                     </p>
                                 </div>
                             </div>

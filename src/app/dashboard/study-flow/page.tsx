@@ -162,43 +162,7 @@ export default function StudyFlowSubjectsPage() {
             );
           })}
 
-          {/* Coming Soon subjects */}
-          {COMING_SOON_SUBJECTS.map((key, i) => {
-            const meta = SUBJECT_META[key];
-            return (
-              <div
-                key={key}
-                style={{
-                  background: "var(--bg-surface)",
-                  border: "1.5px solid var(--bg-border)",
-                  borderRadius: 18, padding: isMobile ? "20px 16px" : "28px 24px",
-                  cursor: "not-allowed", position: "relative", overflow: "hidden",
-                  opacity: 0.5, filter: "grayscale(0.6)",
-                  animation: `sfFadeIn 0.5s ease-out ${150 + (SUBJECT_KEYS.length + i) * 80}ms both`,
-                }}
-              >
-                <div style={{ position: "relative", zIndex: 1 }}>
-                  <div style={{ fontSize: isMobile ? 28 : 36, marginBottom: isMobile ? 10 : 16, lineHeight: 1 }}>{meta.icon}</div>
-                  <div style={{
-                    fontFamily: "var(--font-display)", fontSize: isMobile ? 16 : 19,
-                    color: "var(--text-primary)", letterSpacing: "-0.01em", marginBottom: 6,
-                  }}>{meta.label}</div>
-                  <div style={{
-                    fontFamily: "var(--font-body)", fontSize: isMobile ? 11 : 12,
-                    color: "var(--text-muted)", marginBottom: 14,
-                  }}>- chapters</div>
-                </div>
-                <div style={{
-                  position: "absolute", top: isMobile ? 12 : 16, right: isMobile ? 12 : 16,
-                  fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
-                  letterSpacing: "0.1em", textTransform: "uppercase",
-                  color: "var(--status-orange)", background: "rgba(251,146,60,0.1)",
-                  border: "1px solid rgba(251,146,60,0.25)",
-                  borderRadius: 100, padding: "3px 10px",
-                }}>Coming Soon</div>
-              </div>
-            );
-          })}
+          {/* Removed Coming Soon subjects */}
         </div>
       </div>
     </div>

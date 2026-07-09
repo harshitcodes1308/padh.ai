@@ -170,7 +170,7 @@ export default function ChapterFlowPage() {
   useEffect(() => {
     if (!FEATURE_FLAGS.youtubeDiscovery || !chapter || !mounted) return;
     if (step !== 0 || ytFetchedRef.current) return;
-    const q = `${chapter.title} Class 10 CBSE`;
+    const q = `${chapter.title} Class 10 CBSE Gaurav Suthar`;
     setYtQuery(q);
     setYtLoading(true);
     fetch(`/api/youtube-search?q=${encodeURIComponent(q)}`)

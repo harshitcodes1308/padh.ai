@@ -7,7 +7,7 @@ const youtube = google.youtube({
 
 // Hardcoded channel IDs - guaranteed accurate
 const CHANNEL_IDS = {
-    clarifyKnowledge: "UCTTQ9EBEG9LwQdgRKq_vBMw",
+    clarifyKnowledge: "UCYvW5DZt6UJP7LOSZouSUzw",
     cbseSaviours: "UCJdP8bdR35e0K0rJYnkNvFg",
 };
 
@@ -62,22 +62,23 @@ export async function searchRelevantVideos(
 
         // Extract core topic (remove request words but KEEP important keywords)
         let cleanTopic = topic
-            .replace(/suggest|give|show|me|please|video|on|for|about|the|a|an|can\s*you/gi, "")
+            .replace(/\b(suggest|give|show|me|please|video|on|for|about|the|a|an|can\s*you)\b/gi, "")
+            .replace(/\s+/g, " ")
             .trim();
 
         // Build SMART search query with priority keywords
         let searchQuery = "";
 
         if (keywords.fullSyllabus) {
-            searchQuery = `full syllabus CBSE class 10 ${subject || ""}`.trim();
+            searchQuery = `full syllabus ${subject || ""} CBSE Class 10 Gaurav Suthar`.trim();
         } else if (keywords.oneshot && keywords.hours24) {
-            searchQuery = `oneshot 24 hours ${cleanTopic} ${subject || ""} CBSE class 10`.trim();
+            searchQuery = `oneshot 24 hours ${cleanTopic} ${subject || ""} CBSE Class 10 Gaurav Suthar`.trim();
         } else if (keywords.oneshot) {
-            searchQuery = `oneshot ${cleanTopic} ${subject || ""} CBSE class 10`.trim();
+            searchQuery = `oneshot ${cleanTopic} ${subject || ""} CBSE Class 10 Gaurav Suthar`.trim();
         } else if (keywords.revision) {
-            searchQuery = `revision ${cleanTopic} ${subject || ""} CBSE class 10`.trim();
+            searchQuery = `revision ${cleanTopic} ${subject || ""} CBSE Class 10 Gaurav Suthar`.trim();
         } else {
-            searchQuery = `${cleanTopic} ${subject || ""} CBSE class 10`.trim();
+            searchQuery = `${cleanTopic} ${subject || ""} CBSE Class 10 Gaurav Suthar`.trim();
         }
 
         console.log("📝 Smart search query:", searchQuery);
@@ -118,6 +119,7 @@ export async function searchRelevantVideos(
 
         if (selectedVideos.length === 0) {
             console.log("⚠️ No videos found - try adjusting search terms");
+            return []; // Do not cache empty results
         }
 
         // OPTIMIZATION: Store in cache for future requests

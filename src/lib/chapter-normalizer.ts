@@ -145,7 +145,7 @@ export function normalizeChapterName(name: string): string {
     return "Map Pointing - Geography";
   }
 
-  // Political Science
+  // Civics
   if (clean.includes("powersharing")) {
     return "Power-sharing";
   }
@@ -260,7 +260,7 @@ export function getChapterSubSubject(name: string): string | undefined {
     return "Geography";
   }
   if (clean.includes("powersharing") || clean.includes("federalism") || clean.includes("genderreligion") || clean.includes("genderreligioncaste") || clean.includes("politicalpart") || clean.includes("outcomesofdemoc") || clean.includes("polsci") || clean.includes("politicalscience")) {
-    return "Political Science";
+    return "Civics";
   }
   if ((clean.includes("development") && !clean.includes("resource")) || clean.includes("sectorsof") || (clean.includes("money") && clean.includes("credit")) || clean.includes("globalisation") || clean.includes("globalization") || clean.includes("consumerrights") || clean.includes("economics")) {
     return "Economics";

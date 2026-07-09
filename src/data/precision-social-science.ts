@@ -4642,7 +4642,7 @@ export const socialScienceQuestions = [
   },
   {
     "year": 2026,
-    "chapter": "Power-sharing (Political Science)",
+    "chapter": "Power-sharing (Civics)",
     "marks": 1,
     "question": "Two statements are given below. They are Assertion (A) and Reason (R).\nRead both the statements carefully and choose the correct option: Assertion (A):\nBelgium's power sharing arrangements were designed to accommodate its linguistic\nand cultural divisions. Reason (R): Belgian leaders recognized the existence of regional\ndifferences and cultural diversities.",
     "options": [
@@ -4681,7 +4681,7 @@ export const socialScienceQuestions = [
   },
   {
     "year": 2026,
-    "chapter": "Federalism (Political Science)",
+    "chapter": "Federalism (Civics)",
     "marks": 1,
     "question": "Match Column I with Column II and choose the correct option: (Union list,\nState list, Concurrent list, Residuary subjects)",
     "options": [
@@ -4720,7 +4720,7 @@ export const socialScienceQuestions = [
   },
   {
     "year": 2026,
-    "chapter": "Political Parties (Political Science)",
+    "chapter": "Political Parties (Civics)",
     "marks": 1,
     "question": "Read the following statements about the functions of political parties and\nchoose the correct option: I. Political parties build public opinion. II. Political parties play\nthe role of the opposition. III. Political parties present their programmes to the public. IV.\nPolitical parties make foreign policy.",
     "options": [
@@ -4759,7 +4759,7 @@ export const socialScienceQuestions = [
   },
   {
     "year": 2026,
-    "chapter": "Outcomes of Democracy (Political Science)",
+    "chapter": "Outcomes of Democracy (Civics)",
     "marks": 2,
     "question": "Complaints are the testimony to the success of Democracy. Explain the\nstatement with examples.",
     "options": [

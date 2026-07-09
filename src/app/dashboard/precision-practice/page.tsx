@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { FormatMathText } from '@/components/ui/FormatMathText';
 import { useResponsive } from "@/hooks/useResponsive";
 import { physicsQuestions } from "@/data/precision-physics";
 import { mathsBasicQuestions } from "@/data/precision-maths-basic";
@@ -152,12 +153,12 @@ const SUBJECTS: PrecisionSubject[] = [
       { id: "Manufacturing Industries", name: "Manufacturing Industries", subSubject: "Geography" },
       { id: "Lifelines of National Economy", name: "Lifelines of National Economy", subSubject: "Geography" },
       { id: "Map Pointing - Geography", name: "Map Pointing - Geography", subSubject: "Geography" },
-      // Political Science
-      { id: "Power-sharing", name: "Power-sharing", subSubject: "Political Science" },
-      { id: "Federalism", name: "Federalism", subSubject: "Political Science" },
-      { id: "Gender, Religion and Caste", name: "Gender, Religion and Caste", subSubject: "Political Science" },
-      { id: "Political Parties", name: "Political Parties", subSubject: "Political Science" },
-      { id: "Outcomes of Democracy", name: "Outcomes of Democracy", subSubject: "Political Science" },
+      // Civics
+      { id: "Power-sharing", name: "Power-sharing", subSubject: "Civics" },
+      { id: "Federalism", name: "Federalism", subSubject: "Civics" },
+      { id: "Gender, Religion and Caste", name: "Gender, Religion and Caste", subSubject: "Civics" },
+      { id: "Political Parties", name: "Political Parties", subSubject: "Civics" },
+      { id: "Outcomes of Democracy", name: "Outcomes of Democracy", subSubject: "Civics" },
       // Economics
       { id: "Development", name: "Development", subSubject: "Economics" },
       { id: "Sectors of the Indian Economy", name: "Sectors of the Indian Economy", subSubject: "Economics" },
@@ -268,7 +269,7 @@ export default function CompetencyTestPage() {
   const [phase, setPhase] = useState<Phase>("subject");
   const [selectedSubject, setSelectedSubject] = useState<PrecisionSubject | null>(null);
   const [scienceSubSubject, setScienceSubSubject] = useState<"Physics" | "Chemistry" | "Biology" | null>(null);
-  const [socialScienceSubSubject, setSocialScienceSubSubject] = useState<"History" | "Geography" | "Political Science" | "Economics" | null>(null);
+  const [socialScienceSubSubject, setSocialScienceSubSubject] = useState<"History" | "Geography" | "Civics" | "Economics" | null>(null);
   const [selectedChapter, setSelectedChapter] = useState("");
   const [questions, setQuestions] = useState<PrecisionQuestion[]>([]);
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -693,7 +694,7 @@ export default function CompetencyTestPage() {
             {[
               { id: "History", name: "History", icon: "📜", color: "#EF4444" },
               { id: "Geography", name: "Geography", icon: "🗺️", color: "#3B82F6" },
-              { id: "Political Science", name: "Political Science", icon: "🏛️", color: "#F59E0B" },
+              { id: "Civics", name: "Civics", icon: "🏛️", color: "#F59E0B" },
               { id: "Economics", name: "Economics", icon: "📈", color: "#10B981" },
             ].map((sub) => {
               const questions = ALL_QUESTIONS["Social Science"] || [];
@@ -968,7 +969,7 @@ export default function CompetencyTestPage() {
               fontSize: 18, fontWeight: 700, color: "var(--text-primary)",
               lineHeight: 1.7, margin: 0,
             }}>
-              {q.question}
+              <FormatMathText text={q.question} />
             </h2>
           </div>
 
@@ -1009,7 +1010,7 @@ export default function CompetencyTestPage() {
                   }}>
                     {String.fromCharCode(65 + idx)}
                   </span>
-                  {opt}
+                  <FormatMathText text={opt} />
                 </button>
               );
             })}
