@@ -1,21 +1,9 @@
-"use client";
+const fs = require('fs');
 
-import { useEffect, useRef } from "react";
+let file = 'src/components/landing/FeaturesGrid.tsx';
+let content = fs.readFileSync(file, 'utf8');
 
-import {
-  Bot,
-  Route,
-  Clock3,
-  Target,
-  FileQuestion,
-  CalendarCheck,
-  NotebookTabs,
-  SlidersHorizontal,
-  Focus
-} from "lucide-react";
-import { gsap, prefersReducedMotion } from "./useScrollReveal";
-
-const FEATURES = [
+const newFeaturesArray = `const FEATURES = [
   {
     eyebrow: "AI companion",
     title: "AI Doubt Solver",
@@ -88,54 +76,20 @@ const FEATURES = [
     tone: "green",
     size: "normal",
   }
-];
+];`;
 
-export default function FeaturesTrio() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
+content = content.replace(/const FEATURES = \[[\s\S]*?\];/m, newFeaturesArray);
 
-  return (
-    <section ref={sectionRef} className="sa-toolkit-section">
-      <div className="sa-toolkit-inner">
-        <div className="sa-toolkit-header">
-          <div>
-            <span className="sa-toolkit-kicker">Toolkit</span>
-            <h2>The Board-Prep system inside PADH.AI</h2>
-          </div>
-          <p>
-            Everything from planning and lectures to doubt solving, tests, focus sessions, and
-            final-night revision sits in one clean study workspace.
-          </p>
-        </div>
-        
-        <div 
-          ref={gridRef}
-          className="sa-toolkit-bento"
-        >
-          {FEATURES.map((feat) => {
-            const Icon = feat.icon;
-            return (
-            <article
-              key={feat.title}
-              className={`sa-toolkit-card sa-toolkit-card-${feat.size} tone-${feat.tone}`}
-            >
-              <div className="sa-toolkit-icon">
-                <Icon size={25} strokeWidth={1.9} aria-hidden="true" />
-              </div>
-              <div className="sa-toolkit-copy">
-                <span>{feat.eyebrow}</span>
-                <h3>{feat.title}</h3>
-                <p>{feat.desc}</p>
-              </div>
-            </article>
-          )})}
-        </div>
+const newFooterText = `        </div>
         
         <div style={{ textAlign: 'center', marginTop: '2rem', fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 600, color: 'var(--text-secondary)' }}>
           + many more!
         </div>
 
       </div>
-    </section>
-  );
-}
+    </section>`;
+
+content = content.replace(/        <\/div>\s*<\/div>\s*<\/section>/m, newFooterText);
+
+fs.writeFileSync(file, content);
+console.log('Success');
