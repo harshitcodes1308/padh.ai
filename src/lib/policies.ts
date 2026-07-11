@@ -2,10 +2,10 @@ export const POLICIES = [
     {
         slug: "privacy-policy",
         title: "Privacy Policy",
-        content: `📄 Privacy Policy – Saviours AI
-Last Updated: 29th January 2026
+        content: `📄 Privacy Policy – PADH.AI
+Last Updated: 11th July 2026
 
-Saviours AI ("we", "our", "us") operates a digital education and AI-powered learning platform built specially for CBSE students ("Service").
+PADH.AI ("we", "our", "us") operates a digital education and AI-powered learning platform built specially for CBSE students ("Service").
 
 Your privacy matters to us. This Privacy Policy explains what information we collect, how we use it, and how we keep it safe when you use our website, app, or services.
 
@@ -46,7 +46,7 @@ You can disable cookies anytime through your browser settings.
 2. How We Use Your Information
 
 We use your information to:
-- Provide and manage Saviours AI services
+- Provide and manage PADH.AI services
 - Create and maintain user accounts
 - Process subscriptions and payments
 - Deliver educational content
@@ -95,7 +95,7 @@ You may request account deletion at any time by contacting us.
 
 7. Children’s Privacy
 
-Saviours AI is made for school students.
+PADH.AI is made for school students.
 If you are under 18, you should use our services with permission and guidance from a parent or guardian.
 
 8. Your Rights
@@ -121,22 +121,22 @@ We may update this Privacy Policy from time to time. Any changes will be posted 
 
 If you have any questions or concerns about this Privacy Policy, feel free to reach out:
 
-Saviours AI
+PADH.AI
 Email: care.savioursai@gmail.com`
     },
     {
         slug: "terms-and-conditions",
         title: "Terms & Conditions",
-        content: `📄 Terms & Conditions – Saviours AI
-Last Updated: 29th January 2026
+        content: `📄 Terms & Conditions – PADH.AI
+Last Updated: 11th July 2026
 
-Welcome to Saviours AI ("we", "our", "us"). These Terms & Conditions explain the rules for using our website, applications, and AI-powered education services ("Service").
+Welcome to PADH.AI ("we", "our", "us"). These Terms & Conditions explain the rules for using our website, applications, and AI-powered education services ("Service").
 
-By accessing or using Saviours AI, you agree to follow these Terms. If you do not agree, please do not use the Service.
+By accessing or using PADH.AI, you agree to follow these Terms. If you do not agree, please do not use the Service.
 
 1. About the Service
 
-Saviours AI is a digital learning platform created for CBSE students. Our services include:
+PADH.AI is a digital learning platform created for CBSE students. Our services include:
 - AI-powered doubt solving
 - Notes and revision tools
 - Custom tests
@@ -187,7 +187,7 @@ Violation of these rules may result in suspension or termination of your account
 
 7. Intellectual Property
 
-All content, software, logos, designs, and AI tools available on Saviours AI are owned by us or our licensors.
+All content, software, logos, designs, and AI tools available on PADH.AI are owned by us or our licensors.
 
 You may not:
 - Copy, reproduce, or redistribute content
@@ -207,7 +207,7 @@ The Service may be temporarily unavailable due to maintenance, updates, or techn
 9. Limitation of Liability
 
 To the maximum extent permitted by law:
-- Saviours AI is not responsible for academic results or performance outcomes
+- PADH.AI is not responsible for academic results or performance outcomes
 - We are not liable for data loss, indirect damages, or service interruptions
 - Use of the Service is at your own discretion and risk
 
@@ -233,20 +233,20 @@ We may update these Terms occasionally. Continued use of the Service after chang
 
 If you have any questions or concerns regarding these Terms, you can contact us at:
 
-Saviours AI
+PADH.AI
 Email: care.savioursai@gmail.com`
     },
     {
         slug: "refund-policy",
         title: "Refund & Cancellation Policy",
-        content: `📄 Refund & Cancellation Policy – Saviours AI
-Last Updated: 29th January 2026
+        content: `📄 Refund & Cancellation Policy – PADH.AI
+Last Updated: 11th July 2026
 
-At Saviours AI, we aim to deliver high-quality digital learning experiences. This Refund & Cancellation Policy explains when cancellations or refunds may be allowed.
+At PADH.AI, we aim to deliver high-quality digital learning experiences. This Refund & Cancellation Policy explains when cancellations or refunds may be allowed.
 
 1. Nature of Service
 
-Saviours AI provides digital and subscription-based educational services such as:
+PADH.AI provides digital and subscription-based educational services such as:
 - AI-powered learning tools
 - Notes and revision material
 - Tests and assessments
@@ -298,7 +298,7 @@ If your refund request is approved:
 - The refund will be processed to the original payment method via Razorpay.
 - The amount may take 7 to 10 business days to reflect, depending on your bank or wallet provider.
 
-7. Cancellation by Saviours AI
+7. Cancellation by PADH.AI
 
 We reserve the right to suspend or cancel accounts in cases involving:
 - Fraudulent activity
@@ -316,20 +316,20 @@ We may update this Refund & Cancellation Policy from time to time. Any changes w
 
 For any refund or cancellation related questions, you can contact us at:
 
-Saviours AI
+PADH.AI
 Email: care.savioursai@gmail.com`
     },
     {
         slug: "delivery-policy",
         title: "Delivery Policy",
-        content: `📄 Delivery Policy – Saviours AI
-Last Updated: 29th January 2026
+        content: `📄 Delivery Policy – PADH.AI
+Last Updated: 11th July 2026
 
-This Delivery Policy explains how access to digital services and products on Saviours AI is provided after a successful payment.
+This Delivery Policy explains how access to digital services and products on PADH.AI is provided after a successful payment.
 
 1. Nature of Delivery
 
-Saviours AI offers digital-only educational services, including:
+PADH.AI offers digital-only educational services, including:
 - AI-powered learning tools
 - Notes and revision material
 - Customized tests
@@ -340,7 +340,7 @@ No physical products are shipped or delivered.
 2. Delivery Method
 
 Once your payment is successfully confirmed through Razorpay, access to the Service is provided in one of the following ways:
-- Direct access through your Saviours AI account dashboard, or
+- Direct access through your PADH.AI account dashboard, or
 - Login credentials or access confirmation sent to your registered email address
 
 3. Delivery Timeline
@@ -372,20 +372,20 @@ We may update this Delivery Policy from time to time. Any changes will be posted
 
 For any delivery-related questions or concerns, you can contact us at:
 
-Saviours AI
+PADH.AI
 Email: care.savioursai@gmail.com`
     },
     {
         slug: "contact-us",
         title: "Contact Us",
-        content: `📄 Contact Us – Saviours AI
+        content: `📄 Contact Us – PADH.AI
 
-We’re here to support you throughout your learning journey with Saviours AI.
+We’re here to support you throughout your learning journey with PADH.AI.
 If you have questions about our services, subscriptions, payments, refunds, or face any technical issues, feel free to reach out to us.
 
 📌 Business Information
 
-Business Name: Saviours AI
+Business Name: PADH.AI
 Email: care.savioursai@gmail.com
 
 🕘 Support Hours
@@ -403,9 +403,9 @@ Sunday: Closed
 - All payments are processed securely through Razorpay
 - We do not store any card, bank, or UPI details on our servers
 
-🌐 About Saviours AI
+🌐 About PADH.AI
 
-Saviours AI is an AI-powered educational platform built especially for CBSE students. We help learners with:
+PADH.AI is an AI-powered educational platform built especially for CBSE students. We help learners with:
 - Instant doubt solving using AI
 - Clear and concise revision notes
 - Custom tests and assessments
