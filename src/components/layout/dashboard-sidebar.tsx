@@ -55,15 +55,14 @@ function isVisible(href: string): boolean {
   return FEATURE_FLAGS[flag] === true;
 }
 
-// PADH.AI logo mark - blue product mark with green reserved for progress states.
+// PADH.AI logo mark - transparent bg, no border radius needed.
 const PadhLogo = ({ size = 28 }: { size?: number }) => (
   <img 
-    src="/logo.png" 
+    src="/logo_nobg.png" 
     alt="PADH.AI" 
     style={{
       width: size,
       height: size,
-      borderRadius: Math.round(size * 0.25),
       objectFit: "contain",
       flexShrink: 0,
     }}

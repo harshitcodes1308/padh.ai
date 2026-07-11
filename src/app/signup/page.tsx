@@ -145,12 +145,15 @@ export default function SignupPage() {
           borderRight: "1px solid #DFE8F4",
         }}>
           <div style={{ position: "relative", zIndex: 1, textAlign: "center", maxWidth: 400, padding: "0 48px" }}>
-            <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
+            <div style={{ marginBottom: 20, display: "flex", justifyContent: "center", alignItems: "center", gap: 14 }}>
               <img
-                src="/logo.png"
+                src="/logo_nobg.png"
                 alt="Padh.ai Logo"
-                style={{ width: 80, height: 80, objectFit: "contain" }}
+                style={{ width: 48, height: 48, objectFit: "contain" }}
               />
+              <span style={{ fontFamily: "var(--font-display)", fontSize: 32, fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+                PADH<span style={{ color: "var(--brand-blue)" }}>.AI</span>
+              </span>
             </div>
             <div style={{
               fontFamily: "var(--font-body)",
@@ -209,12 +212,15 @@ export default function SignupPage() {
 
         {/* Mobile logo */}
         {isMobile && (
-          <div style={{ textAlign: "center", marginBottom: 32 }}>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 10, marginBottom: 36 }}>
             <img
-              src="/logo.png"
+              src="/logo_nobg.png"
               alt="Padh.ai Logo"
-              style={{ width: 44, height: 44, objectFit: "contain", margin: "0 auto" }}
+              style={{ width: 36, height: 36, objectFit: "contain" }}
             />
+            <span style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+              PADH<span style={{ color: "var(--brand-blue)" }}>.AI</span>
+            </span>
           </div>
         )}
 

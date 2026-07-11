@@ -355,7 +355,7 @@ export default function OnboardingFlow() {
       }}>
         {/* PADH.AI logo mark */}
         <img 
-          src="/logo.png" 
+          src="/logo_nobg.png" 
           alt="PADH.AI"
           style={{
             width: 64, height: 64,
@@ -1063,7 +1063,7 @@ export default function OnboardingFlow() {
     >
       {/* PADH.AI logo mark */}
       <img 
-        src="/logo.png" 
+        src="/logo_nobg.png" 
         alt="PADH.AI"
         style={{
           width: 52, height: 52,

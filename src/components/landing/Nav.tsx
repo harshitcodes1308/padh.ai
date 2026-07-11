@@ -48,9 +48,12 @@ export default function Nav() {
         <a
           href="#top"
           aria-label="PADH.AI home"
-          style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none" }}
         >
-          <img src="/logo.png" alt="PADH.AI Logo" style={{ height: 70, width: 'auto' }} />
+          <img src="/logo_nobg.png" alt="PADH.AI Logo" style={{ height: 38, width: 'auto', objectFit: "contain" }} />
+          <span style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+            PADH<span style={{ color: "var(--brand-blue)" }}>.AI</span>
+          </span>
         </a>
 
         {/* Right side */}
