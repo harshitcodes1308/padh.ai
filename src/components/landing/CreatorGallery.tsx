@@ -65,6 +65,26 @@ const creatorPhotos: CreatorPhoto[] = [
     alt: "Gaurav Sir with a creator in an office studio",
     ratio: "4 / 5",
   },
+  {
+    src: "/landing/creators/popular-1.jpg",
+    alt: "Gaurav Sir with a popular creator",
+    ratio: "4 / 5",
+  },
+  {
+    src: "/landing/creators/popular-2.jpg",
+    alt: "Gaurav Sir with a popular creator",
+    ratio: "4 / 5",
+  },
+  {
+    src: "/landing/creators/popular-3.jpg",
+    alt: "Gaurav Sir with a popular creator",
+    ratio: "4 / 5",
+  },
+  {
+    src: "/landing/creators/popular-4.png",
+    alt: "Gaurav Sir with a popular creator",
+    ratio: "4 / 5",
+  },
 ];
 
 const getPhoto = (index: number) => creatorPhotos[index] as CreatorPhoto;
@@ -76,7 +96,7 @@ const columns = [
     reverse: false,
   },
   {
-    photos: [getPhoto(6), getPhoto(1), getPhoto(9), getPhoto(4)],
+    photos: [getPhoto(11), getPhoto(12), getPhoto(13), getPhoto(14)],
     duration: 44,
     reverse: true,
   },

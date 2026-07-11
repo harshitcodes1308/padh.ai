@@ -35,8 +35,8 @@ const voiceVideos: VoiceVideo[] = [
 
 function CommentCard({ comment, hidden }: { comment: StudentComment; hidden?: boolean }) {
   return (
-    <article className="sa-student-comment-card" aria-hidden={hidden} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-      <img src={comment.src} alt="Student Voice" style={{ width: '100%', height: 'auto', borderRadius: '4px' }} />
+    <article className="sa-student-comment-card" aria-hidden={hidden} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: 0, flex: '0 0 clamp(350px, 45vw, 500px)' }}>
+      <img src={comment.src} alt="Student Voice" style={{ width: '100%', height: 'auto' }} />
     </article>
   );
 }
