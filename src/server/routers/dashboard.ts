@@ -27,7 +27,7 @@ export const dashboardRouter = createTRPCRouter({
             user.subscriptionExpiry !== null &&
             user.subscriptionExpiry < now;
 
-        let paymentWarning: "CANCELLED" | "EXPIRED" | null = null;
+        let paymentWarning: "CANCELLED" | "EXPIRED" | "EXPIRING_SOON" | null = null;
 
         if (expired) {
             user = await ctx.prisma.user.update({
@@ -50,6 +50,17 @@ export const dashboardRouter = createTRPCRouter({
             // Still in grace period - autopay was halted/cancelled but
             // the current cycle hasn't ended yet
             paymentWarning = "CANCELLED";
+        } else if (
+            user.planType === "MONTHLY" &&
+            user.subscriptionStatus === "ACTIVE" &&
+            user.subscriptionExpiry !== null
+        ) {
+            // Warn if subscription expires within 2 days (renewal hasn't triggered yet)
+            const twoDaysFromNow = new Date();
+            twoDaysFromNow.setDate(twoDaysFromNow.getDate() + 2);
+            if (user.subscriptionExpiry <= twoDaysFromNow) {
+                paymentWarning = "EXPIRING_SOON";
+            }
         }
 
         return {

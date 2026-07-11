@@ -225,7 +225,7 @@ export default function DashboardPage() {
     );
     // If isPaid is true but planType is FREE (manual DB change), show "Pro"
     const planType = (profileIsPaid && rawPlanType === "FREE") ? "PRO" : rawPlanType;
-    const paymentWarning = (profile as any)?.paymentWarning as "CANCELLED" | "EXPIRED" | null | undefined;
+    const paymentWarning = (profile as any)?.paymentWarning as "CANCELLED" | "EXPIRED" | "EXPIRING_SOON" | null | undefined;
 
     const mmStats = calcMMStats(mmChecked);
 
@@ -258,8 +258,10 @@ export default function DashboardPage() {
                     <div style={{
                         background: paymentWarning === "EXPIRED"
                             ? "linear-gradient(135deg, rgba(239,68,68,0.12), rgba(239,68,68,0.04))"
+                            : paymentWarning === "EXPIRING_SOON"
+                            ? "linear-gradient(135deg, rgba(45,129,247,0.12), rgba(45,129,247,0.04))"
                             : "linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.04))",
-                        border: `1px solid ${paymentWarning === "EXPIRED" ? "rgba(239,68,68,0.35)" : "rgba(245,158,11,0.35)"}`,
+                        border: `1px solid ${paymentWarning === "EXPIRED" ? "rgba(239,68,68,0.35)" : paymentWarning === "EXPIRING_SOON" ? "rgba(45,129,247,0.35)" : "rgba(245,158,11,0.35)"}`,
                         borderRadius: 14,
                         padding: isMobile ? "14px 16px" : "16px 22px",
                         marginBottom: 20,
@@ -273,10 +275,10 @@ export default function DashboardPage() {
                         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                             <div style={{
                                 fontSize: 22,
-                                color: paymentWarning === "EXPIRED" ? "#ef4444" : "#f59e0b",
+                                color: paymentWarning === "EXPIRED" ? "#ef4444" : paymentWarning === "EXPIRING_SOON" ? "#2D81F7" : "#f59e0b",
                                 lineHeight: 1,
                             }}>
-                                ⚠
+                                {paymentWarning === "EXPIRING_SOON" ? "🔔" : "⚠"}
                             </div>
                             <div>
                                 <div style={{
@@ -288,6 +290,8 @@ export default function DashboardPage() {
                                 }}>
                                     {paymentWarning === "EXPIRED"
                                         ? "Your last payment didn't go through"
+                                        : paymentWarning === "EXPIRING_SOON"
+                                        ? "Your subscription renews in 2 days"
                                         : "Autopay was cancelled"}
                                 </div>
                                 <div style={{
@@ -298,6 +302,8 @@ export default function DashboardPage() {
                                 }}>
                                     {paymentWarning === "EXPIRED"
                                         ? "You've been moved to the Free plan. Re-enroll to restore full access to all features."
+                                        : paymentWarning === "EXPIRING_SOON"
+                                        ? "Razorpay will auto-charge your saved payment method. If you wish to cancel, do it before renewal."
                                         : "You'll keep access until your current cycle ends, after which you'll be moved to Free. Re-enroll to keep your benefits."}
                                 </div>
                             </div>
@@ -309,7 +315,7 @@ export default function DashboardPage() {
                                 fontSize: 12,
                                 fontWeight: 700,
                                 color: "var(--text-primary)",
-                                background: "var(--brand-green)",
+                                background: paymentWarning === "EXPIRING_SOON" ? "var(--brand-blue)" : "var(--brand-green)",
                                 border: "none",
                                 borderRadius: 8,
                                 padding: "10px 18px",
@@ -323,7 +329,7 @@ export default function DashboardPage() {
                             onMouseEnter={e => { e.currentTarget.style.filter = "brightness(1.1)"; }}
                             onMouseLeave={e => { e.currentTarget.style.filter = "none"; }}
                         >
-                            Re-enroll Now
+                            {paymentWarning === "EXPIRING_SOON" ? "Manage Plan" : "Re-enroll Now"}
                         </button>
                     </div>
                 )}

@@ -10,8 +10,10 @@ type PlanAction = "FREE" | "MONTHLY" | "YEARLY";
  * Admin-only action: Update a user's subscription plan.
  * Sets all relevant fields (isPaid, planType, subscriptionStatus, subscriptionExpiry)
  * in a single atomic operation.
+ *
+ * @param customExpiryDays - Optional: override the default expiry days (30 for monthly, 365 for yearly)
  */
-export async function adminUpdateUserPlan(userId: string, plan: PlanAction) {
+export async function adminUpdateUserPlan(userId: string, plan: PlanAction, customExpiryDays?: number) {
     // Auth: Only admins can do this
     const admin = await getCurrentUser();
     if (!admin || admin.role !== "ADMIN") {
@@ -30,8 +32,9 @@ export async function adminUpdateUserPlan(userId: string, plan: PlanAction) {
                 },
             });
         } else if (plan === "MONTHLY") {
+            const days = customExpiryDays ?? 30;
             const expiry = new Date();
-            expiry.setDate(expiry.getDate() + 30);
+            expiry.setDate(expiry.getDate() + days);
 
             await prisma.user.update({
                 where: { id: userId },
@@ -43,8 +46,9 @@ export async function adminUpdateUserPlan(userId: string, plan: PlanAction) {
                 },
             });
         } else if (plan === "YEARLY") {
+            const days = customExpiryDays ?? 365;
             const expiry = new Date();
-            expiry.setDate(expiry.getDate() + 365);
+            expiry.setDate(expiry.getDate() + days);
 
             await prisma.user.update({
                 where: { id: userId },
