@@ -2,22 +2,33 @@ import type { Metadata } from "next";
 import LandingPage from "./LandingPage";
 
 export const metadata: Metadata = {
-  title: "PADH.AI - Your AI-powered board prep workspace",
+  title: "padhai | padh.ai by ToppersClan - Best AI Tool for CBSE",
   description:
-    "AI-powered tools built end to end for CBSE Class 10 board prep. Doubt solver, smart planner, PYQ tests, focus mode and more. Start free.",
+    "padh.ai is the best AI tool for CBSE board prep by Gaurav Suthar from ToppersClan. padhai made easy with AI doubt solver, smart planner, and PYQ tests. Start free.",
+  keywords: [
+    "padhai",
+    "padh.ai",
+    "padhai by toppersclan",
+    "topperclan",
+    "gaurav suthar",
+    "padh.ai by toppers clan",
+    "best tool for cbse",
+    "best ai for cbse",
+    "ai tool for cbse"
+  ],
   openGraph: {
-    title: "PADH.AI - Your AI-powered board prep workspace",
+    title: "padhai | padh.ai by ToppersClan - Best AI Tool for CBSE",
     description:
-      "AI-powered tools built end to end for CBSE Class 10 board prep. Start free.",
-    url: "https://padh.ai",
-    siteName: "PADH.AI",
+      "padh.ai is the best AI tool for CBSE board prep by Gaurav Suthar from ToppersClan. Start free.",
+    url: "https://padhai.toppersclan.com",
+    siteName: "padh.ai by ToppersClan",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PADH.AI - Your AI-powered board prep workspace",
+    title: "padhai | padh.ai by ToppersClan - Best AI Tool for CBSE",
     description:
-      "AI-powered tools built end to end for CBSE Class 10 board prep. Start free.",
+      "padh.ai is the best AI tool for CBSE board prep by Gaurav Suthar from ToppersClan. Start free.",
   },
 };
 
