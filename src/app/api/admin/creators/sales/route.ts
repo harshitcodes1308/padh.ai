@@ -76,7 +76,7 @@ export async function GET(req: NextRequest) {
           saleAmount = 199;
         } else if (user.planType === "YEARLY") {
           purchaseDate = new Date(expiry.getTime() - 365 * 24 * 60 * 60 * 1000);
-          saleAmount = 1;
+          saleAmount = 599;
         }
 
         // Cap to creation date if calculated date is before creation

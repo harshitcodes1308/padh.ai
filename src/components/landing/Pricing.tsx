@@ -12,6 +12,7 @@ interface Plan {
   features: string[];
   popular?: boolean;
   href: string;
+  originalPrice?: string;
 }
 
 const PLANS: Plan[] = [
@@ -23,19 +24,21 @@ const PLANS: Plan[] = [
     features: ["Dashboard", "Smart Planner", "Monthly Mission", "Video Lectures", "Study Flow", "Subjects", "Webinar"],
   },
   {
-    name: "Monthly",
-    price: "₹199",
-    period: "/month",
-    href: "/signup",
-    features: ["Everything in Free", "AI Doubt Solver", "Competency Test", "Customise Test", "Flip the Question", "Focus Mode", "Numerical Mastery", "ChronoScroll", "Date Battle Arena"],
-  },
-  {
     name: "Yearly",
-    price: "₹1",
+    price: "₹599",
+    originalPrice: "₹999",
     period: "/year",
     popular: true,
     href: "/signup",
-    features: ["Everything in Monthly", "Priority support", "Best value for boards"],
+    features: ["Everything in Free", "AI Doubt Solver", "Competency Test", "Customise Test", "Flip the Question", "Focus Mode", "Numerical Mastery", "ChronoScroll", "Date Battle Arena", "Priority support", "Best value for boards"],
+  },
+  {
+    name: "Monthly",
+    price: "₹199",
+    originalPrice: "₹399",
+    period: "/month",
+    href: "/signup",
+    features: ["Everything in Free", "AI Doubt Solver", "Competency Test", "Customise Test", "Flip the Question", "Focus Mode", "Numerical Mastery", "ChronoScroll", "Date Battle Arena"],
   },
 ];
 
@@ -102,10 +105,15 @@ function PriceCard({
       <div style={{ fontFamily: "var(--font-body)", fontSize: 12, letterSpacing: "0.10em", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: 12, fontWeight: 600 }}>
         {plan.name}
       </div>
-      <div style={{ display: "flex", alignItems: "baseline", gap: 5, marginBottom: 22 }}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 5, marginBottom: 22, flexWrap: "wrap" }}>
         <span style={{ fontFamily: "var(--font-display)", fontSize: 44, color: "var(--text-primary)", fontWeight: 800, lineHeight: 1, letterSpacing: "-0.03em" }}>
           {plan.price}
         </span>
+        {plan.originalPrice && (
+          <span style={{ fontFamily: "var(--font-body)", fontSize: 24, color: "var(--brand-green)", fontWeight: 700, textDecoration: "line-through", marginLeft: 4 }}>
+            {plan.originalPrice}
+          </span>
+        )}
         <span style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-muted)", fontWeight: 500 }}>{plan.period}</span>
       </div>
 

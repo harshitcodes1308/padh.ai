@@ -6,7 +6,7 @@ import { checkRateLimit, PAYMENT_RATE_LIMIT } from "@/lib/api-rate-limit";
 
 // HARDCODED: Server-side base pricing - NEVER trust frontend amount
 const BASE_PRICING = {
-    PRO_YEARLY: 100,    // ₹1 in paise
+    PRO_YEARLY: 59900,    // ₹599 in paise
     LNB_CHEMISTRY: 1900,  // ₹19 in paise
 } as const;
 

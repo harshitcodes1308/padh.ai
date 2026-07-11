@@ -23,6 +23,7 @@ export interface PricingCardProps {
   discountedPrice?: string;
   discountPct?: number;
   creatorName?: string;
+  originalPrice?: string;
   onClick?: () => void;
 }
 
@@ -40,6 +41,7 @@ function PricingCard({
   discountedPrice,
   discountPct,
   creatorName,
+  originalPrice,
   onClick,
 }: PricingCardProps) {
   const [hovered, setHovered] = useState(false);
@@ -134,7 +136,7 @@ function PricingCard({
           </div>
         </div>
       ) : (
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px', marginBottom: '4px' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px', marginBottom: '4px', flexWrap: 'wrap' }}>
           <span style={{
             fontFamily: 'var(--font-display)', fontSize: '20px',
             color: 'var(--text-primary)', fontWeight: 700,
@@ -147,6 +149,14 @@ function PricingCard({
           }}>
             {price}
           </span>
+          {originalPrice && (
+            <span style={{
+              fontFamily: 'var(--font-body)', fontSize: '24px',
+              color: 'var(--brand-green)', fontWeight: 700, textDecoration: 'line-through', marginLeft: '4px'
+            }}>
+              {originalPrice}
+            </span>
+          )}
         </div>
       )}
 
@@ -301,9 +311,34 @@ const savioursPlans: PricingCardProps[] = [
     isPopular: false,
   },
   {
+    planName: 'Yearly',
+    description: 'Commit to your boards. Best value.',
+    price: '599',
+    originalPrice: '₹999',
+    priceSymbol: '₹',
+    billingLabel: '/year',
+    savingsLabel: 'Save ₹1,789 vs monthly',
+    features: [
+      'Everything in Free',
+      'AI Doubt Solver (unlimited)',
+      'Smart Planner',
+      'Competency Test',
+      'Customise Test',
+      'Flip the Question',
+      'Focus Mode',
+      'Priority AI responses',
+      'Early access to new features',
+      'Yearly progress report',
+    ],
+    buttonText: 'Get Yearly Access',
+    buttonVariant: 'primary',
+    isPopular: true,
+  },
+  {
     planName: 'Monthly',
     description: 'Full access, one month at a time.',
     price: '199',
+    originalPrice: '₹399',
     priceSymbol: '₹',
     billingLabel: '/month',
     features: [
@@ -318,23 +353,6 @@ const savioursPlans: PricingCardProps[] = [
     buttonText: 'Choose Monthly',
     buttonVariant: 'primary',
     isPopular: false,
-  },
-  {
-    planName: 'Yearly',
-    description: 'Commit to your boards. Best value.',
-    price: '1',
-    priceSymbol: '₹',
-    billingLabel: '/year',
-    savingsLabel: 'Save ₹1,789 vs monthly',
-    features: [
-      'Everything in Monthly',
-      'Priority AI responses',
-      'Early access to new features',
-      'Yearly progress report',
-    ],
-    buttonText: 'Get Yearly Access',
-    buttonVariant: 'primary',
-    isPopular: true,
   },
 ];
 
@@ -363,7 +381,7 @@ export default function AnimatedGlassyPricing({
   const discountPct = activeDiscount?.discountPercentage ?? 0;
   const creatorName = activeDiscount?.creatorName ?? undefined;
   // Discount applies to yearly only
-  const yearlyDiscounted = discountPct > 0 ? String(Math.round(1 * (1 - discountPct / 100))) : undefined;
+  const yearlyDiscounted = discountPct > 0 ? String(Math.round(599 * (1 - discountPct / 100))) : undefined;
   const [domin8Error, setDomin8Error] = useState('');
   const [domin8Loading, setDomin8Loading] = useState(false);
 
