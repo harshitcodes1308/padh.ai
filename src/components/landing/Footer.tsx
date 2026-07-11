@@ -24,8 +24,7 @@ export default function Footer() {
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <h4 style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>Company</h4>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>About Us</a>
-              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Careers</a>
+              <Link href="/pricing" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Pricing</Link>
               <Link href="/policies/privacy-policy" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Privacy Policy</Link>
               <Link href="/policies/terms-and-conditions" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Terms & Conditions</Link>
             </div>
@@ -36,7 +35,6 @@ export default function Footer() {
             <h4 style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>Help & Support</h4>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <Link href="/policies/contact-us" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Contact Us</Link>
-              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>FAQs</a>
               <Link href="/policies/refund-policy" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Refund Policy</Link>
               <Link href="/policies/delivery-policy" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Delivery Policy</Link>
             </div>

@@ -107,7 +107,7 @@ You have the right to:
 - Withdraw consent
 
 You can contact us at:
-care.savioursai@gmail.com
+joshirudra440@gmail.com
 
 9. Third-Party Links
 
@@ -122,7 +122,7 @@ We may update this Privacy Policy from time to time. Any changes will be posted 
 If you have any questions or concerns about this Privacy Policy, feel free to reach out:
 
 PADH.AI
-Email: care.savioursai@gmail.com`
+Email: joshirudra440@gmail.com`
     },
     {
         slug: "terms-and-conditions",
@@ -234,7 +234,7 @@ We may update these Terms occasionally. Continued use of the Service after chang
 If you have any questions or concerns regarding these Terms, you can contact us at:
 
 PADH.AI
-Email: care.savioursai@gmail.com`
+Email: joshirudra440@gmail.com`
     },
     {
         slug: "refund-policy",
@@ -282,7 +282,7 @@ Refunds will not be provided in the following cases:
 5. How to Request a Refund
 
 To request a refund, please email us at:
-care.savioursai@gmail.com
+joshirudra440@gmail.com
 
 Include the following details:
 - Registered email address or phone number
@@ -317,7 +317,7 @@ We may update this Refund & Cancellation Policy from time to time. Any changes w
 For any refund or cancellation related questions, you can contact us at:
 
 PADH.AI
-Email: care.savioursai@gmail.com`
+Email: joshirudra440@gmail.com`
     },
     {
         slug: "delivery-policy",
@@ -356,7 +356,7 @@ If you do not receive access after payment, please try the following:
 - Wait a short while in case of delayed activation
 
 If the issue still persists, contact us at:
-care.savioursai@gmail.com
+joshirudra440@gmail.com
 
 We aim to resolve delivery-related issues as quickly as possible.
 
@@ -373,7 +373,7 @@ We may update this Delivery Policy from time to time. Any changes will be posted
 For any delivery-related questions or concerns, you can contact us at:
 
 PADH.AI
-Email: care.savioursai@gmail.com`
+Email: joshirudra440@gmail.com`
     },
     {
         slug: "contact-us",
@@ -386,7 +386,7 @@ If you have questions about our services, subscriptions, payments, refunds, or f
 📌 Business Information
 
 Business Name: PADH.AI
-Email: care.savioursai@gmail.com
+Email: joshirudra440@gmail.com
 
 🕘 Support Hours
 
