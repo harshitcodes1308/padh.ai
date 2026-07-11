@@ -44,7 +44,7 @@ export async function verifyPaymentAction(response: RazorpayResponse) {
 
         const razorpay = new Razorpay({ key_id, key_secret });
 
-        // ── Branch 1: Subscription (₹199 monthly recurring) ──
+        // ── Branch 1: Subscription (₹1 monthly recurring) ──
         if (razorpay_subscription_id) {
             // Subscription signature: payment_id|subscription_id
             const expected = crypto

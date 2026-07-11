@@ -244,7 +244,7 @@ export default function OnboardingFlow() {
         const options = {
           key,
           name: 'PADH.AI',
-          description: 'Monthly Access - ₹199/month',
+          description: 'Monthly Access - ₹1/month',
           subscription_id: subData.subscription.id,
           handler: commonHandler,
           prefill,
