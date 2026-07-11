@@ -69,7 +69,6 @@ function PricingCard({
         transition: 'all 350ms cubic-bezier(0.16,1,0.3,1)',
         display: 'flex',
         flexDirection: 'column',
-        height: '100%',
       }}
     >
       {isPopular && (
@@ -466,7 +465,6 @@ export default function AnimatedGlassyPricing({
               key={plan.planName}
               style={{
                 animation: `slideInUp 0.5s ease-out ${i * 100}ms both`,
-                height: '100%',
               }}
             >
               <PricingCard

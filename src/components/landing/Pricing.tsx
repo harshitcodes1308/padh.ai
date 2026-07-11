@@ -71,7 +71,6 @@ function PriceCard({
     <motion.div
       style={{
         ...motionStyle,
-        height: '100%',
         padding: "32px 28px",
         display: "flex",
         flexDirection: "column",
