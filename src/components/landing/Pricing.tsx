@@ -220,7 +220,7 @@ export default function Pricing() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
             gap: 18,
-            alignItems: "stretch",
+            alignItems: "start",
             perspective: 1200,
           }}
         >

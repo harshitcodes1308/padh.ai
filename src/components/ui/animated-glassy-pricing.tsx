@@ -458,6 +458,7 @@ export default function AnimatedGlassyPricing({
             gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
             gap: isMobile ? '16px' : '20px',
             marginBottom: '32px',
+            alignItems: 'start',
           }}
         >
           {savioursPlans.map((plan, i) => (
