@@ -69,6 +69,7 @@ function PricingCard({
         transition: 'all 350ms cubic-bezier(0.16,1,0.3,1)',
         display: 'flex',
         flexDirection: 'column',
+        height: '100%',
       }}
     >
       {isPopular && (
@@ -404,8 +405,7 @@ export default function AnimatedGlassyPricing({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'auto',
+        overflowY: 'auto',
         zIndex: 1000,
         background: '#FFFFFF',
       }}
@@ -417,6 +417,7 @@ export default function AnimatedGlassyPricing({
           zIndex: 1,
           maxWidth: '1060px',
           width: '100%',
+          margin: 'auto 0',
           padding: isMobile ? '24px 16px' : '48px 32px',
           animation: 'fadeIn 600ms ease-out both',
         }}
@@ -464,6 +465,7 @@ export default function AnimatedGlassyPricing({
               key={plan.planName}
               style={{
                 animation: `slideInUp 0.5s ease-out ${i * 100}ms both`,
+                height: '100%',
               }}
             >
               <PricingCard
