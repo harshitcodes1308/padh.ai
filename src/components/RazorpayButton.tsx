@@ -83,7 +83,7 @@ export function RazorpayButton({ amount = 99, type = "PRO", email, name, onSucce
                 const subOptions = {
                     key,
                     name: "PADH.AI",
-                    description: "Monthly Plan - ₹1/month",
+                    description: "Monthly Plan - ₹199/month",
                     subscription_id: subData.subscription.id,
                     handler: async (response: any) => {
                         setLoading(true);
