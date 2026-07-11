@@ -244,7 +244,7 @@ export default function OnboardingFlow() {
         const options = {
           key,
           name: 'PADH.AI',
-          description: 'Monthly Access - ₹1/month',
+          description: 'Monthly Access - ₹199/month',
           subscription_id: subData.subscription.id,
           handler: commonHandler,
           prefill,
@@ -254,7 +254,7 @@ export default function OnboardingFlow() {
         const paymentObject = new (window as any).Razorpay(options);
         paymentObject.open();
       } else {
-        // ── One-time order flow (₹599 yearly) ──
+        // ── One-time order flow (₹1 yearly) ──
         const orderRes = await fetch('/api/create-order', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -272,7 +272,7 @@ export default function OnboardingFlow() {
           amount: orderData.order.amount,
           currency: orderData.order.currency,
           name: 'PADH.AI',
-          description: 'Yearly Access - ₹599 one-time',
+          description: 'Yearly Access - ₹1 one-time',
           order_id: orderData.order.id,
           handler: commonHandler,
           prefill,

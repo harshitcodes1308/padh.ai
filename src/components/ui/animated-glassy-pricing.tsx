@@ -303,7 +303,7 @@ const savioursPlans: PricingCardProps[] = [
   {
     planName: 'Monthly',
     description: 'Full access, one month at a time.',
-    price: '1',
+    price: '199',
     priceSymbol: '₹',
     billingLabel: '/month',
     features: [
@@ -322,7 +322,7 @@ const savioursPlans: PricingCardProps[] = [
   {
     planName: 'Yearly',
     description: 'Commit to your boards. Best value.',
-    price: '599',
+    price: '1',
     priceSymbol: '₹',
     billingLabel: '/year',
     savingsLabel: 'Save ₹1,789 vs monthly',
@@ -363,7 +363,7 @@ export default function AnimatedGlassyPricing({
   const discountPct = activeDiscount?.discountPercentage ?? 0;
   const creatorName = activeDiscount?.creatorName ?? undefined;
   // Discount applies to yearly only
-  const yearlyDiscounted = discountPct > 0 ? String(Math.round(599 * (1 - discountPct / 100))) : undefined;
+  const yearlyDiscounted = discountPct > 0 ? String(Math.round(1 * (1 - discountPct / 100))) : undefined;
   const [domin8Error, setDomin8Error] = useState('');
   const [domin8Loading, setDomin8Loading] = useState(false);
 

@@ -73,10 +73,10 @@ export async function GET(req: NextRequest) {
         const expiry = new Date(user.subscriptionExpiry);
         if (user.planType === "MONTHLY") {
           purchaseDate = new Date(expiry.getTime() - 30 * 24 * 60 * 60 * 1000);
-          saleAmount = 1;
+          saleAmount = 199;
         } else if (user.planType === "YEARLY") {
           purchaseDate = new Date(expiry.getTime() - 365 * 24 * 60 * 60 * 1000);
-          saleAmount = 599;
+          saleAmount = 1;
         }
 
         // Cap to creation date if calculated date is before creation
