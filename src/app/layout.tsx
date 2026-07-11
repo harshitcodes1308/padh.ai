@@ -8,8 +8,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 export const metadata: Metadata = {
   metadataBase: new URL("https://padhai.toppersclan.com"),
   title: {
-    template: "%s | padh.ai by ToppersClan",
-    default: "padhai | padh.ai by ToppersClan - Best AI Tool for CBSE",
+    template: "%s | PADH.AI-CBSE AI learning platform by Toppers Clan",
+    default: "PADH.AI-CBSE AI learning platform by Toppers Clan",
   },
   description: "padh.ai is the best AI tool for CBSE board prep by Gaurav Suthar from ToppersClan.",
   keywords: ["padhai", "padh.ai", "padhai by toppersclan", "topperclan", "gaurav suthar"],

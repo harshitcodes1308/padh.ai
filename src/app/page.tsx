@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LandingPage from "./LandingPage";
 
 export const metadata: Metadata = {
-  title: "padhai | padh.ai by ToppersClan - Best AI Tool for CBSE",
+  title: "PADH.AI-CBSE AI learning platform by Toppers Clan",
   description:
     "padh.ai is the best AI tool for CBSE board prep by Gaurav Suthar from ToppersClan. padhai made easy with AI doubt solver, smart planner, and PYQ tests. Start free.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "ai tool for cbse"
   ],
   openGraph: {
-    title: "padhai | padh.ai by ToppersClan - Best AI Tool for CBSE",
+    title: "PADH.AI-CBSE AI learning platform by Toppers Clan",
     description:
       "padh.ai is the best AI tool for CBSE board prep by Gaurav Suthar from ToppersClan. Start free.",
     url: "https://padhai.toppersclan.com",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "padhai | padh.ai by ToppersClan - Best AI Tool for CBSE",
+    title: "PADH.AI-CBSE AI learning platform by Toppers Clan",
     description:
       "padh.ai is the best AI tool for CBSE board prep by Gaurav Suthar from ToppersClan. Start free.",
   },

@@ -10,7 +10,26 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const policy = POLICIES.find((p) => p.slug === slug);
-  return { title: policy ? `${policy.title} - PADH.AI` : "Policy - PADH.AI" };
+  const title = policy ? `${policy.title}` : "Policy";
+  const desc = policy ? `Read the ${policy.title} for padh.ai by ToppersClan. Learn about our terms, privacy, and guidelines for CBSE board prep students.` : "Legal policies for padh.ai by ToppersClan.";
+  
+  return { 
+    title,
+    description: desc,
+    keywords: ["padhai policies", "padh.ai terms", "toppersclan privacy policy", policy?.title.toLowerCase() || "policy"],
+    openGraph: {
+      title: `${title} | PADH.AI-CBSE AI learning platform by Toppers Clan`,
+      description: desc,
+      url: `https://padhai.toppersclan.com/policies/${slug}`,
+      siteName: "padh.ai by ToppersClan",
+      type: "website",
+    },
+    twitter: {
+      card: "summary",
+      title: `${title} | PADH.AI-CBSE AI learning platform by Toppers Clan`,
+      description: desc,
+    }
+  };
 }
 
 export default async function PublicPolicyPage({ params }: { params: Promise<{ slug: string }> }) {
