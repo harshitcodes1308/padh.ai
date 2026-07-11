@@ -116,6 +116,7 @@ function PhotoCard({ photo }: { photo: CreatorPhoto }) {
         fill
         sizes="(max-width: 720px) 46vw, (max-width: 1100px) 28vw, 240px"
         style={{ objectFit: "cover" }}
+        unoptimized={true}
       />
     </figure>
   );
