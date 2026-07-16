@@ -1,7 +1,8 @@
 "use client";
 
 import { trpc } from "@/lib/trpc/client";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ThemedDashboardContent } from "@/components/providers/themed-dashboard";
 import { UpgradePrompt } from "@/components/UpgradePrompt";
@@ -18,6 +19,13 @@ export default function DashboardLayout({
     const pathname = usePathname();
 
     const user = session?.user as SessionUser | undefined;
+    const router = useRouter();
+
+    useEffect(() => {
+        if (profile && profile.onboardingComplete === false) {
+            router.push("/onboarding");
+        }
+    }, [profile, router]);
 
     // Paid if legacy isPaid flag OR active subscription
     // Use profile (DB-fresh) for paid check, fall back to JWT session

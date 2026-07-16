@@ -79,6 +79,7 @@ export const dashboardRouter = createTRPCRouter({
             subscriptionStatus: user.subscriptionStatus,
             subscriptionExpiry: user.subscriptionExpiry,
             paymentWarning,
+            onboardingComplete: user.onboardingComplete,
         };
     }),
 
