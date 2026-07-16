@@ -20,9 +20,9 @@ export default function LandingPage() {
           <Nav />
           <Hero />
           <FeaturesGrid />
+          <TractionStats />
           <CreatorGallery />
           <StudentVoices />
-          <TractionStats />
           <WhyPadhAI />
           <Footer />
         </main>
