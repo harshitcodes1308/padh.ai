@@ -66,7 +66,7 @@ export const authRouter = createTRPCRouter({
             const newToken = await createToken(updatedUser);
             await setSessionCookie(newToken, false, ctx.resHeaders);
 
-            return { user: updatedUser, expires: ctx.session.expires };
+            return { user: updatedUser };
         }
 
         return ctx.session;
