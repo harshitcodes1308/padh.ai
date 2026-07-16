@@ -1,20 +1,28 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { gsap, ScrollTrigger, prefersReducedMotion } from "./useScrollReveal";
+import { gsap, prefersReducedMotion } from "./useScrollReveal";
 
 interface Stat {
   value: number;
   display: (n: number) => string;
   label: string;
+  accent: string;
 }
 
-// Updated for Gaurav Sir / PADH.AI context
 const STATS: Stat[] = [
-  { value: 1000000, display: (n) => (n >= 1000000 ? "1M+" : Math.round(n / 1000) + "K+"), label: "YouTube subscribers" },
-  { value: 500, display: (n) => Math.round(n) + "+", label: "Videos published" },
-  { value: 100, display: (n) => Math.round(n) + "%", label: "Scored in 10th CBSE boards" },
-  { value: 10, display: (n) => Math.round(n) + "+", label: "Years teaching CBSE" },
+  { 
+    value: 100, 
+    display: (n) => Math.round(n) + "%", 
+    label: "Gaurav Sir's Class 10 Percentage",
+    accent: "var(--brand-blue)"
+  },
+  { 
+    value: 96.6, 
+    display: (n) => (n === 96.6 ? "96.6%" : n.toFixed(1) + "%"), 
+    label: "Gaurav Sir's Class 12 Percentage",
+    accent: "var(--brand-green)"
+  },
 ];
 
 export default function TractionStats() {
@@ -38,19 +46,19 @@ export default function TractionStats() {
         const counter = { v: 0 };
         gsap.to(counter, {
           v: s.value,
-          duration: 1.8,
+          duration: 2.8,
           ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 88%" },
+          scrollTrigger: { trigger: el, start: "top 85%" },
           onUpdate: () => { el.textContent = s.display(counter.v); },
         });
       });
       gsap.fromTo(
         ".sa-stat-grid",
-        { opacity: 0, y: 20 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.8,
           ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 82%", once: true },
         }
@@ -63,37 +71,37 @@ export default function TractionStats() {
   return (
     <section
       ref={sectionRef}
-      style={{ position: "relative", zIndex: 1, padding: "clamp(80px, 12vw, 140px) 24px", background: "var(--bg-base)" }}
+      style={{ position: "relative", zIndex: 1, padding: "clamp(100px, 14vw, 160px) 24px", background: "var(--bg-base)" }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
-        <div style={{ marginBottom: 56, maxWidth: 720 }}>
-          <div className="sa-eyebrow" style={{ marginBottom: 18 }}>The proof</div>
+        <div style={{ marginBottom: 64, maxWidth: 800, textAlign: "center", margin: "0 auto 64px" }}>
+          <div className="sa-eyebrow" style={{ marginBottom: 20, justifyContent: "center" }}>The proof is in the results</div>
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(28px, 5.5vw, 58px)",
+              fontSize: "clamp(32px, 6vw, 64px)",
               letterSpacing: "-0.03em",
-              margin: "0 0 14px",
+              margin: "0 0 20px",
               lineHeight: 1.05,
               fontWeight: 800,
               color: "var(--text-primary)",
             }}
           >
-            Built by a real{" "}
-            <span style={{ color: "var(--brand-blue)" }}>CBSE topper.</span>
+            Learn from someone who has{" "}
+            <span style={{ color: "var(--brand-blue)" }}>actually done it.</span>
           </h2>
           <p
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "clamp(15px, 2.2vw, 19px)",
+              fontSize: "clamp(16px, 2.5vw, 20px)",
               color: "var(--text-secondary)",
-              maxWidth: 580,
-              margin: 0,
+              maxWidth: 640,
+              margin: "0 auto",
               lineHeight: 1.6,
               fontWeight: 400,
             }}
           >
-            Gaurav Sir scored 100% in his 10th CBSE boards and has spent years teaching what actually works - not theory, real board strategy.
+            No fluff. No generic advice. Just the exact strategies and patterns that Gaurav Sir used to completely crack the CBSE Board Exams.
           </p>
         </div>
 
@@ -102,42 +110,51 @@ export default function TractionStats() {
           className="sa-stat-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 14,
-            marginBottom: 28,
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: 24,
+            marginBottom: 40,
             alignItems: "stretch",
           }}
         >
           {STATS.map((s, i) => {
-            const featured = i === 2; // 100% score - headline stat
             return (
               <div
                 key={i}
-                className={`sa-bento sa-stat-card${featured ? " sa-stat-featured" : ""}`}
-                style={{ padding: "28px 24px", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}
+                className="sa-bento sa-stat-card"
+                style={{ 
+                  padding: "48px 32px", 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  alignItems: "center", 
+                  justifyContent: "center",
+                  textAlign: "center",
+                  background: "var(--bg-surface)",
+                  border: "1.5px solid var(--bg-border)",
+                  borderRadius: 24,
+                }}
               >
                 <div
                   ref={(el) => { numRefs.current[i] = el; }}
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "clamp(34px, 4.5vw, 50px)",
-                    color: "var(--brand-blue)",
+                    fontSize: "clamp(72px, 10vw, 140px)",
+                    color: s.accent,
                     fontWeight: 800,
-                    letterSpacing: "-0.03em",
+                    letterSpacing: "-0.04em",
                     lineHeight: 1,
-                    marginBottom: 12,
+                    marginBottom: 20,
                   }}
                 >
-                  0
+                  0%
                 </div>
                 <div
                   className="sa-stat-label"
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: 13,
-                    color: "var(--text-secondary)",
-                    letterSpacing: "0.01em",
-                    fontWeight: 500,
+                    fontSize: "clamp(20px, 3vw, 26px)",
+                    color: "var(--text-primary)",
+                    letterSpacing: "-0.02em",
+                    fontWeight: 700,
                   }}
                 >
                   {s.label}
@@ -151,29 +168,28 @@ export default function TractionStats() {
         <div
           className="sa-bento"
           style={{
-            padding: "20px 28px",
+            padding: "24px 32px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: 12,
+            gap: 16,
             flexWrap: "wrap",
             textAlign: "center",
+            maxWidth: 800,
+            margin: "0 auto",
+            borderRadius: 100,
           }}
         >
-          <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6 }}>
-            Gaurav Sir runs{" "}
-            <span style={{ color: "var(--text-primary)", fontWeight: 600 }}>youtube.com/@GauravSuthar</span>
-            {" "}- one of India's most trusted CBSE channels.{" "}
-            <span className="chip-green" style={{ fontSize: 12, fontWeight: 600 }}>100% in boards</span>
+          <span style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "var(--text-secondary)", lineHeight: 1.6 }}>
+            Join 1M+ students who trust{" "}
+            <span style={{ color: "var(--text-primary)", fontWeight: 700 }}>youtube.com/@GauravSuthar</span>
+            {" "}for their Board Prep.
           </span>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 860px) {
-          .sa-stat-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 440px) {
+        @media (max-width: 768px) {
           .sa-stat-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
