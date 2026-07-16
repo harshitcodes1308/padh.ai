@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import { useClerk } from "@clerk/nextjs";
 import { trpc } from "@/lib/trpc/client";
 import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { isLockedRoute, getFeatureInfo } from "@/lib/tier-config";
@@ -178,11 +179,14 @@ export default function DashboardSidebar({
   const router = useRouter();
   const { theme, toggleTheme } = useTheme();
   const [animKey, setAnimKey] = useState(0);
-  const logoutMutation = trpc.auth.logout.useMutation({
-    onSuccess: () => {
-      window.location.href = "/";
-    }
-  });
+  const logoutRouter = useRouter();
+  const { signOut } = useClerk();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const handleLogout = async () => {
+    setIsLoggingOut(true);
+    await signOut();
+    window.location.href = "/";
+  };
   const [isOpen, setIsOpen] = useState(false);
   const [upgradeFeature, setUpgradeFeature] = useState<{ name: string; description: string } | null>(null);
 
@@ -435,8 +439,8 @@ export default function DashboardSidebar({
         <div style={{ marginTop: 20 }}>
           <button
             className="sb-nav-item"
-            onClick={() => logoutMutation.mutate()}
-            disabled={logoutMutation.isPending}
+            onClick={handleLogout}
+            disabled={isLoggingOut}
             style={{
               display: "flex", alignItems: "center", gap: 9,
               width: "100%",
@@ -445,8 +449,8 @@ export default function DashboardSidebar({
               background: "transparent",
               color: "var(--text-secondary)",
               border: "1px solid transparent",
-              cursor: logoutMutation.isPending ? "not-allowed" : "pointer",
-              opacity: logoutMutation.isPending ? 0.5 : 1,
+              cursor: isLoggingOut ? "not-allowed" : "pointer",
+              opacity: isLoggingOut ? 0.5 : 1,
               textAlign: "left",
               fontFamily: "var(--font-body)",
               fontSize: 13,
@@ -467,7 +471,7 @@ export default function DashboardSidebar({
               <LogOut size={16} strokeWidth={1.8} />
             </span>
             <span style={{ flex: 1, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-              {logoutMutation.isPending ? "Logging out..." : "Log out"}
+              {isLoggingOut ? "Logging out..." : "Log out"}
             </span>
           </button>
         </div>

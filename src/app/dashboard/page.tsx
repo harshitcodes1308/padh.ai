@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useClerk } from "@clerk/nextjs";
 import { trpc } from "@/lib/trpc/client";
 import { useEffect, useMemo, useState } from "react";
 import { useResponsive } from "@/hooks/useResponsive";
@@ -134,6 +135,7 @@ function RingStatCard({
 export default function DashboardPage() {
     const router = useRouter();
     const { isMobile, isTablet } = useResponsive();
+    const { signOut } = useClerk();
     const [hoveredCard, setHoveredCard] = useState<string | null>(null);
     const [statsMode, setStatsModeState] = useState<"planner" | "mission">("planner");
     const [mmChecked, setMmChecked] = useState<Record<string, boolean>>({});
@@ -162,9 +164,12 @@ export default function DashboardPage() {
     const { data: stats } = trpc.dashboard.getStudyStats.useQuery(undefined, {
         refetchInterval: 30000, refetchOnWindowFocus: true, refetchOnMount: true,
     });
-    const logoutMutation = trpc.auth.logout.useMutation({
-        onSuccess: () => router.push("/login"),
-    });
+    const [isLoggingOut, setIsLoggingOut] = useState(false);
+    const handleLogout = async () => {
+        setIsLoggingOut(true);
+        await signOut();
+        router.push("/login");
+    };
 
     const todayDate = useMemo(() =>
         new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }), []
@@ -410,19 +415,19 @@ export default function DashboardPage() {
                     </div>
 
                     <button
-                        onClick={() => logoutMutation.mutate()}
-                        disabled={logoutMutation.isPending}
+                        onClick={handleLogout}
+                        disabled={isLoggingOut}
                         style={{
                             fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 500,
                             color: "var(--text-muted)", background: "transparent",
                             border: "1px solid var(--bg-border)", borderRadius: 8,
-                            padding: "8px 18px", cursor: logoutMutation.isPending ? "not-allowed" : "pointer",
-                            opacity: logoutMutation.isPending ? 0.5 : 1, transition: "all 0.2s ease",
+                            padding: "8px 18px", cursor: isLoggingOut ? "not-allowed" : "pointer",
+                            opacity: isLoggingOut ? 0.5 : 1, transition: "all 0.2s ease",
                         }}
                         onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--text-muted)"; e.currentTarget.style.color = "var(--text-primary)"; }}
                         onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--bg-border)"; e.currentTarget.style.color = "var(--text-muted)"; }}
                     >
-                        {logoutMutation.isPending ? "Logging out..." : "Log out"}
+                        {isLoggingOut ? "Logging out..." : "Log out"}
                     </button>
                 </div>
 
