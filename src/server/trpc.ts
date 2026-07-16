@@ -3,7 +3,7 @@ import { type FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
 import superjson from "superjson";
 import { ZodError } from "zod";
 import { prisma } from "@/lib/prisma";
-import { auth } from '@clerk/nextjs/server';
+import { auth, clerkClient } from '@clerk/nextjs/server';
 import { type UserRole } from "@prisma/client";
 import { findDangerousInput } from "@/lib/sanitize";
 
@@ -18,6 +18,46 @@ export async function createTRPCContext(opts?: FetchCreateContextFnOptions) {
         user = await prisma.user.findUnique({
             where: { id: userId }
         });
+
+        // Synchronous fallback if webhook is delayed or failed
+        if (!user) {
+            try {
+                const client = await clerkClient();
+                const clerkUser = await client.users.getUser(userId);
+                const primaryEmail = clerkUser.emailAddresses[0]?.emailAddress || '';
+                const name = [clerkUser.firstName, clerkUser.lastName].filter(Boolean).join(' ') || 'User';
+
+                // Check for existing user by email to prevent unique constraint crash
+                const existing = primaryEmail ? await prisma.user.findUnique({ where: { email: primaryEmail } }) : null;
+
+                if (existing) {
+                    user = await prisma.user.update({
+                        where: { email: primaryEmail },
+                        data: {
+                            id: userId,
+                            authProvider: 'clerk',
+                            image: clerkUser.imageUrl,
+                        }
+                    });
+                } else {
+                    user = await prisma.user.create({
+                        data: {
+                            id: userId,
+                            email: primaryEmail,
+                            name: name,
+                            image: clerkUser.imageUrl,
+                            role: 'STUDENT',
+                            onboardingComplete: false,
+                            authProvider: 'clerk',
+                            planType: 'FREE',
+                            subscriptionStatus: 'ACTIVE'
+                        }
+                    });
+                }
+            } catch (err) {
+                console.error("Failed to sync user from Clerk synchronously:", err);
+            }
+        }
     }
 
     return {
