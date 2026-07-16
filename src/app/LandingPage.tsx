@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import SmoothScrollProvider from "@/components/landing/SmoothScrollProvider";
 import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
-import StatStrip from "@/components/landing/StatStrip";
 import CreatorGallery from "@/components/landing/CreatorGallery";
 import StudentVoices from "@/components/landing/StudentVoices";
 import FeaturesGrid from "@/components/landing/FeaturesGrid";
@@ -21,7 +20,6 @@ export default function LandingPage() {
           <Nav />
           <Hero />
           <FeaturesGrid />
-          <StatStrip />
           <CreatorGallery />
           <StudentVoices />
           <TractionStats />

@@ -247,7 +247,8 @@ export default function Hero() {
             onChange={(e) => setEmail(e.target.value)}
             style={{
               flex: "1 1 240px",
-              padding: "16px 20px",
+              height: 52,
+              padding: "0 20px",
               borderRadius: "8px",
               border: "1px solid var(--border)",
               background: "var(--bg-base)",
@@ -272,10 +273,13 @@ export default function Hero() {
             className="btn-primary"
             style={{ 
               fontSize: 16, 
-              padding: "16px 32px", 
+              padding: "0 32px", 
               textDecoration: "none", 
               whiteSpace: "nowrap",
               height: 52,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
             ariaLabel="Start for free"
           >
