@@ -1,4 +1,4 @@
-import { compare, hash } from "bcryptjs";
+
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
@@ -34,22 +34,7 @@ export interface Session {
 // Cutoff for grandfathered users (legacy paid access)
 const CUTOFF_DATE = new Date("2026-01-29T00:00:00+05:30");
 
-/**
- * Hash password with bcrypt
- */
-export async function hashPassword(password: string): Promise<string> {
-    return await hash(password, 12);
-}
 
-/**
- * Verify password against hash
- */
-export async function verifyPassword(
-    password: string,
-    hashedPassword: string
-): Promise<boolean> {
-    return await compare(password, hashedPassword);
-}
 
 /**
  * Create JWT token
@@ -147,77 +132,4 @@ export function hasActivePlan(user: SessionUser): boolean {
     return isGrandfathered || hasActiveSub;
 }
 
-/**
- * Authenticate user with email and password
- */
-export async function authenticate(
-    email: string,
-    password: string
-): Promise<SessionUser | null> {
-    const user = await prisma.user.findUnique({
-        where: { email: email.toLowerCase() },
-    });
 
-    if (!user) return null;
-    if (!user.password) return null; // Google users cannot login with email/password
-
-    const isValid = await verifyPassword(password, user.password);
-    if (!isValid) return null;
-
-    // GRANDFATHERING LOGIC - users before cutoff date treated as paid
-    const isLegacyUser = user.createdAt < CUTOFF_DATE;
-    const effectivePlanType: PlanType = (isLegacyUser && user.planType === "FREE")
-        ? "YEARLY"
-        : user.planType;
-
-    return {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        role: user.role,
-        isPaid: user.isPaid || isLegacyUser,
-        planType: effectivePlanType,
-        subscriptionStatus: user.subscriptionStatus,
-        subscriptionExpiry: user.subscriptionExpiry?.toISOString() ?? null,
-        onboardingComplete: user.onboardingComplete,
-        lnbChemistryUnlocked: user.lnbChemistryUnlocked,
-    };
-}
-
-/**
- * Create new user
- */
-export async function createUser(
-    email: string,
-    password: string,
-    name: string,
-    role: UserRole = "STUDENT",
-    phone?: string
-): Promise<SessionUser> {
-    const hashedPassword = await hashPassword(password);
-
-    const user = await prisma.user.create({
-        data: {
-            email: email.toLowerCase(),
-            password: hashedPassword,
-            name,
-            phone: phone || null,
-            role,
-            isPaid: false,
-            planType: "FREE",
-            subscriptionStatus: "ACTIVE",
-            onboardingComplete: false,
-        },
-    });
-
-    return {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        role: user.role,
-        isPaid: false,
-        planType: "FREE",
-        subscriptionStatus: "ACTIVE",
-        onboardingComplete: false,
-    };
-}

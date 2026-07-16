@@ -1,3 +1,4 @@
+import {ClerkProvider} from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -31,18 +32,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased" style={{ background: 'var(--bg-base)', color: 'var(--text-primary)' }}>
-        <ThemeProvider
+        <ClerkProvider>
+          <ThemeProvider
           attribute="data-theme"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
-        >
+          >
           <ConsoleWelcome />
           <TRPCProvider>
-            {children}
+          {children}
           </TRPCProvider>
           <Analytics />
-        </ThemeProvider>
+          </ThemeProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

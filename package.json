@@ -10,6 +10,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^7.5.19",
     "@codemirror/lang-java": "^6.0.2",
     "@codemirror/theme-one-dark": "^6.1.3",
     "@hookform/resolvers": "^5.2.2",
@@ -26,7 +27,6 @@
     "@upstash/ratelimit": "^2.0.8",
     "@upstash/redis": "^1.37.0",
     "@vercel/analytics": "^2.0.1",
-    "bcryptjs": "^3.0.3",
     "bullmq": "^5.66.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -41,7 +41,6 @@
     "lucide-react": "^0.562.0",
     "motion": "^12.38.0",
     "next": "16.1.3",
-    "next-auth": "^5.0.0-beta.30",
     "next-themes": "^0.4.6",
     "openai": "^6.16.0",
     "pdf-parse": "^2.4.5",
@@ -61,6 +60,7 @@
     "remark-math": "^6.0.0",
     "resend": "^6.11.0",
     "superjson": "^2.2.6",
+    "svix": "^1.97.0",
     "tailwind-merge": "^3.4.0",
     "three": "^0.184.0",
     "zod": "^4.3.5"

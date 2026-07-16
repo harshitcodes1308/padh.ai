@@ -3,7 +3,7 @@ import { type FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
 import superjson from "superjson";
 import { ZodError } from "zod";
 import { prisma } from "@/lib/prisma";
-import { getSession } from "@/lib/auth";
+import { auth } from '@clerk/nextjs/server';
 import { type UserRole } from "@prisma/client";
 import { findDangerousInput } from "@/lib/sanitize";
 
@@ -11,13 +11,21 @@ import { findDangerousInput } from "@/lib/sanitize";
  * Create tRPC context
  */
 export async function createTRPCContext(opts?: FetchCreateContextFnOptions) {
-    const session = await getSession();
+    const { userId } = await auth();
+    
+    let user = null;
+    if (userId) {
+        user = await prisma.user.findUnique({
+            where: { id: userId }
+        });
+    }
 
     return {
         prisma,
-        session,
-        user: session?.user,
+        session: user ? { user } : null,
+        user: user as any, // Mapped to the old SessionUser type
         resHeaders: opts?.resHeaders,
+        clerkUserId: userId,
     };
 }
 

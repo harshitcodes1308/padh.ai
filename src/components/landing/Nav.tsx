@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import MagneticButton from "./MagneticButton";
 import { useTheme } from "@/components/providers/theme-provider";
 import { Sun, Moon } from "lucide-react";
+import { SignInButton, SignUpButton, UserButton, Show } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -95,38 +97,46 @@ export default function Nav() {
             )}
           </button>
 
-          <a
-            href="/login"
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: 14,
-              color: "var(--text-secondary)",
-              textDecoration: "none",
-              letterSpacing: "0.01em",
-              fontWeight: 500,
-              transition: "color 0.2s ease",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand-blue)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
-          >
-            Log in
-          </a>
-          <MagneticButton
-            href="/signup"
-            className="btn-primary"
-            style={{
-              fontSize: 14,
-              padding: "10px 24px",
-              borderRadius: "100px",
-              textDecoration: "none",
-              display: "inline-flex",
-              alignItems: "center",
-            }}
-            strength={0.25}
-            ariaLabel="Join for free"
-          >
-            Join for free
-          </MagneticButton>
+          <Show when="signed-out">
+            <Link
+              href="/login"
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 14,
+                color: "var(--text-secondary)",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                letterSpacing: "0.01em",
+                fontWeight: 500,
+                transition: "color 0.2s ease",
+                textDecoration: "none"
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand-blue)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
+            >
+              Log in
+            </Link>
+            <MagneticButton
+              href="/signup"
+              className="btn-primary"
+              style={{
+                fontSize: 14,
+                padding: "10px 24px",
+                borderRadius: "100px",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+              strength={0.25}
+              ariaLabel="Join for free"
+            >
+              Join for free
+            </MagneticButton>
+          </Show>
+          <Show when="signed-in">
+            <UserButton afterSignOutUrl="/" />
+          </Show>
         </div>
       </div>
     </nav>
