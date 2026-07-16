@@ -9,7 +9,7 @@ export const FEATURE_FLAGS = {
   customiseTest:     true,
   flipTheQuestion:   false,
   focusMode:         true,
-  todoList:          true,
+  todoList:          false,
   youtubeDiscovery:  true,   // YouTube-powered Watch step in study flow
 
   // Hidden - activate later by flipping to true

@@ -43,16 +43,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 4: Popular Categories */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <h4 style={{ fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>Popular Categories</h4>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>CBSE Class 10</a>
-              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Math Notes</a>
-              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Science Notes</a>
-              <a href="#" style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", textDecoration: "none" }}>Previous Year Papers</a>
-            </div>
-          </div>
         </div>
 
         {/* Bottom: Socials and Copyright */}

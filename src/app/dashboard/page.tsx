@@ -433,7 +433,7 @@ export default function DashboardPage() {
 
                 {/* ── Stats Mode Selector ── */}
                 <div style={{
-                    display: "flex", alignItems: "center", gap: 8,
+                    display: "none", alignItems: "center", gap: 8,
                     marginBottom: 10,
                     animation: "slideInUp 0.4s ease-out 80ms both",
                 }}>
