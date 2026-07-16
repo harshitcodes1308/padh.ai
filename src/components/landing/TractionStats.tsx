@@ -18,8 +18,8 @@ const STATS: Stat[] = [
     accent: "var(--brand-blue)"
   },
   { 
-    value: 96.6, 
-    display: (n) => (n === 96.6 ? "96.6%" : n.toFixed(1) + "%"), 
+    value: 98.6, 
+    display: (n) => (n === 98.6 ? "98.6%" : n.toFixed(1) + "%"), 
     label: "Gaurav Sir's Class 12 Percentage",
     accent: "var(--brand-green)"
   },
