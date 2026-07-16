@@ -1088,7 +1088,7 @@ export default function OnboardingFlow() {
         animation: 'fadeIn 0.8s ease-out 0.7s forwards',
         padding: '0 24px',
       }}>
-        Welcome to PADH.AI.
+        Welcome to PADH.AI
       </div>
 
       <p style={{
