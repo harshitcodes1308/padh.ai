@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap, prefersReducedMotion } from "./useScrollReveal";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import Image from "next/image";
 
 export default function WhyPadhAI() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -54,77 +55,57 @@ export default function WhyPadhAI() {
           style={{
             minHeight: 430,
             borderRadius: "var(--radius-xl)",
-            background: "linear-gradient(145deg, rgba(45, 129, 247, 0.12), rgba(8, 189, 128, 0.10))",
-            border: "1px solid rgba(45, 129, 247, 0.14)",
-            padding: 28,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
+            border: "1px solid var(--border)",
             position: "relative",
             overflow: "hidden",
+            background: "var(--bg-base)"
           }}
           aria-hidden="true"
         >
-          <div
-            style={{
-              position: "absolute",
-              inset: "auto -70px -90px auto",
-              width: 230,
-              height: 230,
-              borderRadius: "50%",
-              background: "rgba(8, 189, 128, 0.16)",
-            }}
+          <Image 
+            src="/gaurav-sir-students.jpg"
+            alt="Gaurav Sir with students"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="(max-width: 768px) 100vw, 400px"
           />
-          <div style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 700, color: "var(--brand-blue)" }}>
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.6) 100%)",
+            pointerEvents: "none"
+          }} />
+          <div style={{ 
+            position: "absolute", 
+            top: 24, 
+            left: 24,
+            fontFamily: "var(--font-body)", 
+            fontSize: 13, 
+            fontWeight: 700, 
+            color: "#fff",
+            background: "rgba(0,0,0,0.3)",
+            padding: "6px 14px",
+            borderRadius: 100,
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)"
+          }}>
             Founder note
           </div>
-          <div
-            style={{
-              width: 164,
-              height: 164,
-              borderRadius: "50%",
-              background: "var(--bg-base)",
-              border: "1px solid var(--border)",
-              boxShadow: "0 10px 28px rgba(45, 129, 247, 0.10)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "var(--brand-green)",
-              fontFamily: "var(--font-display)",
-              fontSize: 56,
-              fontWeight: 800,
-              letterSpacing: "-0.06em",
-              margin: "0 auto",
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            GS
-          </div>
-          <div style={{ position: "relative", zIndex: 1 }}>
-            <div
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: 34,
-                fontWeight: 800,
-                color: "var(--text-primary)",
-                letterSpacing: "-0.04em",
-                lineHeight: 1,
-              }}
-            >
-              100%
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 14,
-                fontWeight: 600,
-                color: "var(--text-secondary)",
-                marginTop: 6,
-              }}
-            >
-              in 10th CBSE Boards
-            </div>
+          <div style={{
+             position: "absolute",
+             bottom: 24,
+             left: 24,
+             right: 24,
+          }}>
+             <div style={{ 
+               color: "#fff", 
+               fontWeight: 600, 
+               fontSize: 16, 
+               fontFamily: "var(--font-body)", 
+               textShadow: "0 2px 12px rgba(0,0,0,0.6)" 
+             }}>
+               Celebrating results with students
+             </div>
           </div>
         </div>
 
