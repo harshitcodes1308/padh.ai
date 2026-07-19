@@ -9,21 +9,18 @@
 export const LOCKED_ROUTES = [
     "/dashboard/ai-assistant",
     "/dashboard/tests",
-    "/dashboard/precision-practice",
     "/dashboard/strategy",
     "/dashboard/notes",
     "/dashboard/chronoscroll",
     "/dashboard/date-battle",
-    "/dashboard/numerical-mastery",
     "/dashboard/flip-the-question",
-    "/dashboard/focus",
+    "/dashboard/todo",
 ] as const;
 
 /** Routes accessible to free users */
 export const FREE_ROUTES = [
     "/dashboard",
     "/dashboard/planner",
-    "/dashboard/todo",
     "/dashboard/webinar",
     "/dashboard/video-lectures",
     "/dashboard/study-flow",
@@ -33,6 +30,9 @@ export const FREE_ROUTES = [
     "/dashboard/policies",
     "/dashboard/activity",
     "/dashboard/last-night-before",
+    "/dashboard/precision-practice",
+    "/dashboard/numerical-mastery",
+    "/dashboard/focus",
 ] as const;
 
 /** Feature info for UpgradePrompt - maps route to display name + description */
