@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
-import { getCurrentUser } from "@/lib/auth";
+import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { checkRateLimit, PAYMENT_RATE_LIMIT } from "@/lib/api-rate-limit";
 
@@ -19,19 +19,19 @@ export async function POST(req: Request) {
         const purchaseType: PurchaseType =
             requested === "LNB_CHEMISTRY" ? "LNB_CHEMISTRY" : "PRO_YEARLY";
 
-        const user = await getCurrentUser();
-        if (!user) {
+        const { userId } = await auth();
+        if (!userId) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
-        const rateCheck = checkRateLimit(`payment:${user.id}`, PAYMENT_RATE_LIMIT);
+        const rateCheck = checkRateLimit(`payment:${userId}`, PAYMENT_RATE_LIMIT);
         if (!rateCheck.allowed) {
             return NextResponse.json({ error: "Too many payment attempts. Please try again later." }, { status: 429 });
         }
 
         const dbUser = await prisma.user.findUnique({
-            where: { id: user.id },
-            select: { isPaid: true, planType: true, lnbChemistryUnlocked: true, createdAt: true, creatorCode: true },
+            where: { id: userId },
+            select: { email: true, isPaid: true, planType: true, lnbChemistryUnlocked: true, createdAt: true, creatorCode: true },
         });
 
         if (!dbUser) {
@@ -81,11 +81,11 @@ export async function POST(req: Request) {
         const order = await razorpay.orders.create({
             amount: amountPaise,
             currency: "INR",
-            receipt: `rcpt_${Date.now().toString().slice(-10)}_${user.id.slice(-5)}`,
+            receipt: `rcpt_${Date.now().toString().slice(-10)}_${userId.slice(-5)}`,
             payment_capture: true,
             notes: {
-                userId: user.id,
-                userEmail: user.email,
+                userId: userId,
+                userEmail: dbUser.email,
                 expectedAmount: amountPaise.toString(),
                 purchaseType,
                 ...(discountPct > 0 ? { discountPct: discountPct.toString(), creatorCode: dbUser.creatorCode! } : {}),

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
-import { getCurrentUser } from "@/lib/auth";
+import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { checkRateLimit, PAYMENT_RATE_LIMIT } from "@/lib/api-rate-limit";
 
@@ -15,19 +15,20 @@ import { checkRateLimit, PAYMENT_RATE_LIMIT } from "@/lib/api-rate-limit";
  */
 export async function POST() {
     try {
-        const user = await getCurrentUser();
-        if (!user) {
+        const { userId } = await auth();
+        if (!userId) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
-        const rateCheck = checkRateLimit(`subscription:${user.id}`, PAYMENT_RATE_LIMIT);
+        const rateCheck = checkRateLimit(`subscription:${userId}`, PAYMENT_RATE_LIMIT);
         if (!rateCheck.allowed) {
             return NextResponse.json({ error: "Too many attempts. Please try again later." }, { status: 429 });
         }
 
         const dbUser = await prisma.user.findUnique({
-            where: { id: user.id },
+            where: { id: userId },
             select: {
+                email: true,
                 isPaid: true,
                 createdAt: true,
                 planType: true,
@@ -82,8 +83,8 @@ export async function POST() {
             total_count: totalCount,
             customer_notify: 1,
             notes: {
-                userId: user.id,
-                userEmail: user.email,
+                userId: userId,
+                userEmail: dbUser.email,
                 planType: "MONTHLY",
             },
         });
