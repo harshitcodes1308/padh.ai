@@ -487,32 +487,8 @@ export default function DashboardPage() {
 
                 {/* ── Feature Cards ── */}
                 <div>
-                    <div style={{
-                        display: "flex", alignItems: "baseline", justifyContent: "space-between",
-                        marginBottom: 18,
-                    }}>
-                        <div style={{
-                            fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
-                            color: "var(--text-muted)", letterSpacing: "0.12em",
-                            textTransform: "uppercase",
-                        }}>
-                            Your Tools
-                        </div>
-                        <div style={{
-                            fontFamily: "var(--font-body)",
-                            fontSize: 12, fontWeight: 500,
-                            color: "var(--text-muted)",
-                        }}>
-                            Everything you need, nothing you don't.
-                        </div>
-                    </div>
-
-                    <div style={{
-                        display: "grid",
-                        gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(3, 1fr)",
-                        gap: isMobile ? 10 : 14,
-                    }}>
-                        {featureCards.map((card, i) => (
+                    {(() => {
+                        const renderCard = (card: typeof featureCards[0], i: number) => (
                             <div
                                 key={card.path}
                                 onClick={() => {
@@ -631,8 +607,100 @@ export default function DashboardPage() {
                                     transition: "height 0.3s ease",
                                 }} />
                             </div>
-                        ))}
-                    </div>
+                        );
+
+                        if (profileIsPaid) {
+                            return (
+                                <>
+                                    <div style={{
+                                        display: "flex", alignItems: "baseline", justifyContent: "space-between",
+                                        marginBottom: 18,
+                                    }}>
+                                        <div style={{
+                                            fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
+                                            color: "var(--text-muted)", letterSpacing: "0.12em",
+                                            textTransform: "uppercase",
+                                        }}>
+                                            Your Tools
+                                        </div>
+                                        <div style={{
+                                            fontFamily: "var(--font-body)",
+                                            fontSize: 12, fontWeight: 500,
+                                            color: "var(--text-muted)",
+                                        }}>
+                                            Everything you need, nothing you don't.
+                                        </div>
+                                    </div>
+                                    <div style={{
+                                        display: "grid",
+                                        gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(3, 1fr)",
+                                        gap: isMobile ? 10 : 14,
+                                    }}>
+                                        {featureCards.map((card, i) => renderCard(card, i))}
+                                    </div>
+                                </>
+                            );
+                        } else {
+                            return (
+                                <>
+                                    <div style={{
+                                        display: "flex", alignItems: "baseline", justifyContent: "space-between",
+                                        marginBottom: 18,
+                                    }}>
+                                        <div style={{
+                                            fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
+                                            color: "var(--text-muted)", letterSpacing: "0.12em",
+                                            textTransform: "uppercase",
+                                        }}>
+                                            Free Features
+                                        </div>
+                                        <div style={{
+                                            fontFamily: "var(--font-body)",
+                                            fontSize: 12, fontWeight: 500,
+                                            color: "var(--text-muted)",
+                                        }}>
+                                            Explore what's available to you.
+                                        </div>
+                                    </div>
+                                    <div style={{
+                                        display: "grid",
+                                        gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(3, 1fr)",
+                                        gap: isMobile ? 10 : 14,
+                                        marginBottom: 40,
+                                    }}>
+                                        {featureCards.filter(c => !(c as any).isPremium).map((card, i) => renderCard(card, i))}
+                                    </div>
+
+                                    <div style={{
+                                        display: "flex", alignItems: "baseline", justifyContent: "space-between",
+                                        marginBottom: 18,
+                                    }}>
+                                        <div style={{
+                                            fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
+                                            color: "var(--brand-blue)", letterSpacing: "0.12em",
+                                            textTransform: "uppercase",
+                                        }}>
+                                            Pro Features
+                                        </div>
+                                        <div style={{
+                                            fontFamily: "var(--font-body)",
+                                            fontSize: 12, fontWeight: 500,
+                                            color: "var(--text-muted)",
+                                        }}>
+                                            Upgrade to unlock these power tools.
+                                        </div>
+                                    </div>
+                                    <div style={{
+                                        display: "grid",
+                                        gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(3, 1fr)",
+                                        gap: isMobile ? 10 : 14,
+                                    }}>
+                                        {featureCards.filter(c => (c as any).isPremium).map((card, i) => renderCard(card, i))}
+                                    </div>
+                                </>
+                            );
+                        }
+                    })()}
                 </div>
 
                 <div style={{
