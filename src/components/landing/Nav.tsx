@@ -35,31 +35,42 @@ export default function Nav() {
         zIndex: 1000,
       }}
     >
-      <div
-        style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: scrolled ? "12px 24px" : "20px 24px",
-          transition: "padding 0.3s ease",
-        }}
-      >
+      <style>{`
+        .sa-nav-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: ${scrolled ? "12px 24px" : "20px 24px"};
+          transition: padding 0.3s ease;
+        }
+        .sa-nav-logo-text { font-size: 20px; }
+        .sa-nav-right { gap: 12px; }
+        
+        @media (max-width: 480px) {
+          .sa-nav-inner {
+            padding: ${scrolled ? "10px 12px" : "14px 12px"} !important;
+          }
+          .sa-nav-logo-text { font-size: 17px !important; }
+          .sa-nav-right { gap: 8px !important; }
+        }
+      `}</style>
+      <div className="sa-nav-inner">
         {/* Wordmark */}
         <a
           href="#top"
           aria-label="PADH.AI home"
-          style={{ display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none", minWidth: 0, flexShrink: 1 }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none", minWidth: 0, flexShrink: 0 }}
         >
           <img src="/logo_nobg.png" alt="PADH.AI Logo" style={{ height: 36, width: 'auto', objectFit: "contain", flexShrink: 0 }} />
-          <span style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
+          <span className="sa-nav-logo-text" style={{ fontFamily: "var(--font-display)", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
             PADH<span style={{ color: "var(--brand-blue)" }}>.AI</span>
           </span>
         </a>
 
         {/* Right side */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12, flexShrink: 0 }}>
+        <div className="sa-nav-right" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
           {/* Theme Toggle */}
           <button
             onClick={handleToggle}
