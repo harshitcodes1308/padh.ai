@@ -9,8 +9,8 @@ const CALENDLY_URL = "https://calendly.com/saviours-ai";
 const WEBINAR = {
   title: "CBSE Board Exam Masterclass",
   subtitle: "Strategy, shortcuts & last-minute secrets - straight from Gaurav Sir",
-  date: "Every Saturday",
-  time: "7:00 PM – 8:30 PM IST",
+  date: "TBD",
+  time: "TBD",
   duration: "90 minutes",
   seats: "Limited to 30 students",
   topics: [
