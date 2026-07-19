@@ -50,16 +50,16 @@ export default function Nav() {
         <a
           href="#top"
           aria-label="PADH.AI home"
-          style={{ display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none" }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none", minWidth: 0, flexShrink: 1 }}
         >
-          <img src="/logo_nobg.png" alt="PADH.AI Logo" style={{ height: 38, width: 'auto', objectFit: "contain" }} />
-          <span style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+          <img src="/logo_nobg.png" alt="PADH.AI Logo" style={{ height: 36, width: 'auto', objectFit: "contain", flexShrink: 0 }} />
+          <span style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
             PADH<span style={{ color: "var(--brand-blue)" }}>.AI</span>
           </span>
         </a>
 
         {/* Right side */}
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, flexShrink: 0 }}>
           {/* Theme Toggle */}
           <button
             onClick={handleToggle}
@@ -110,7 +110,9 @@ export default function Nav() {
                 letterSpacing: "0.01em",
                 fontWeight: 500,
                 transition: "color 0.2s ease",
-                textDecoration: "none"
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand-blue)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
@@ -122,11 +124,13 @@ export default function Nav() {
               className="btn-primary"
               style={{
                 fontSize: 14,
-                padding: "10px 24px",
+                padding: "9px 18px",
                 borderRadius: "100px",
                 textDecoration: "none",
                 display: "inline-flex",
                 alignItems: "center",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
               }}
               strength={0.25}
               ariaLabel="Join for free"

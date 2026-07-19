@@ -91,7 +91,6 @@ const FREE_NAV_GROUPS: NavGroup[] = [
     label: "FREE",
     items: [
       { icon: Calendar, label: "Smart Planner",    href: "/dashboard/planner" },
-      { icon: Target, label: "Monthly Mission",  href: "/dashboard/todo" },
       { icon: BookOpen, label: "Study Flow",       href: "/dashboard/study-flow" },
       { icon: Video, label: "Video Lectures",   href: "/dashboard/video-lectures" },
       { icon: Presentation, label: "Live Webinar",     href: "/dashboard/webinar" },
@@ -128,7 +127,6 @@ const PAID_NAV_GROUPS: NavGroup[] = [
     label: "PLAN",
     items: [
       { icon: Calendar, label: "Smart Planner",   href: "/dashboard/planner" },
-      { icon: Target, label: "Monthly Mission", href: "/dashboard/todo" },
       { icon: Presentation, label: "Live Webinar",    href: "/dashboard/webinar" },
     ],
   },
