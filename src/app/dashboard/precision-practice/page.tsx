@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { trpc } from "@/lib/trpc/client";
 import { FormatMathText } from '@/components/ui/FormatMathText';
 import { useResponsive } from "@/hooks/useResponsive";
 import { physicsQuestions } from "@/data/precision-physics";
@@ -51,6 +53,17 @@ function formatSec(seconds: number): string {
 type Phase = "subject" | "chapter" | "countdown" | "test" | "analytics";
 
 export default function CompetencyTestPage() {
+  const router = useRouter();
+  const { data: profile } = trpc.dashboard.getProfile.useQuery(undefined, {
+    refetchOnWindowFocus: true, refetchOnMount: true,
+  });
+  const rawPlanType = (profile as any)?.planType ?? "FREE";
+  const profileIsPaid = !!(
+    (profile as any)?.isPaid ||
+    ((rawPlanType === "MONTHLY" || rawPlanType === "YEARLY") &&
+        (profile as any)?.subscriptionStatus === "ACTIVE")
+  );
+
   const { isMobile } = useResponsive();
   const [phase, setPhase] = useState<Phase>("subject");
   const [selectedSubject, setSelectedSubject] = useState<PrecisionSubject | null>(null);
@@ -575,40 +588,68 @@ export default function CompetencyTestPage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          {visibleChapters.map((ch) => {
+          {visibleChapters.map((ch, idx) => {
             const stats = getChapterStats(selectedSubject.id, ch.id);
             const hasQ = stats.count > 0;
             const isHovered = hoveredChapter === ch.id;
+            
+            // Freemium logic:
+            // Science: 1st chapter free (idx === 0)
+            // Other Subjects: 1st 3 chapters free (idx < 3)
+            const isFreeChapter = selectedSubject.id === "Science" ? idx === 0 : idx < 3;
+            const isLocked = !profileIsPaid && !isFreeChapter;
+
             return (
               <button
                 key={ch.id}
-                onClick={() => hasQ && startTest(selectedSubject, ch.id)}
+                onClick={() => {
+                  if (isLocked) {
+                    router.push("/pricing");
+                    return;
+                  }
+                  if (hasQ) startTest(selectedSubject, ch.id);
+                }}
                 onMouseEnter={() => setHoveredChapter(ch.id)}
                 onMouseLeave={() => setHoveredChapter(null)}
-                disabled={!hasQ}
+                disabled={!hasQ && !isLocked}
                 style={{
-                  background: isHovered && hasQ
+                  background: isHovered && (hasQ || isLocked)
                     ? `linear-gradient(135deg, ${selectedSubject.color}08, ${selectedSubject.color}03)`
                     : "var(--bg-surface)",
-                  border: `1px solid ${isHovered && hasQ ? selectedSubject.color + "25" : "var(--border)"}`,
+                  border: `1px solid ${isHovered && (hasQ || isLocked) ? selectedSubject.color + "25" : "var(--border)"}`,
                   borderRadius: 16, padding: "22px 24px",
-                  cursor: hasQ ? "pointer" : "not-allowed",
+                  cursor: (hasQ || isLocked) ? "pointer" : "not-allowed",
                   textAlign: "left", transition: "all 0.3s ease",
                   display: "flex", justifyContent: "space-between", alignItems: "center",
-                  opacity: hasQ ? 1 : 0.35,
-                  transform: isHovered && hasQ ? "translateX(4px)" : "none",
-                  boxShadow: isHovered && hasQ ? "var(--shadow-card-hover)" : "var(--shadow-card)",
+                  opacity: (hasQ || isLocked) ? 1 : 0.35,
+                  transform: isHovered && (hasQ || isLocked) ? "translateX(4px)" : "none",
+                  boxShadow: isHovered && (hasQ || isLocked) ? "var(--shadow-card-hover)" : "var(--shadow-card)",
                 }}
               >
                 <div>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: "var(--text-primary)", marginBottom: 8 }}>{ch.name}</div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                    <div style={{ fontSize: 16, fontWeight: 700, color: "var(--text-primary)" }}>{ch.name}</div>
+                    {isLocked && (
+                      <div style={{
+                        fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
+                        color: "var(--brand-blue)",
+                        background: "rgba(45, 129, 247, 0.1)",
+                        border: "1px solid rgba(45, 129, 247, 0.2)",
+                        borderRadius: 100, padding: "2px 8px",
+                        letterSpacing: "0.1em", textTransform: "uppercase",
+                        display: "flex", alignItems: "center", gap: 3,
+                      }}>
+                        <span style={{ fontSize: 10 }}>🔒</span> PRO
+                      </div>
+                    )}
+                  </div>
                   <div style={{ display: "flex", gap: 20, fontSize: 13 }}>
                     <span style={{ color: selectedSubject.color, fontWeight: 600 }}>📝 {stats.count} Qs</span>
                     <span style={{ color: "var(--text-muted)" }}>⭐ {stats.totalMarks} Marks</span>
                     <span style={{ color: "var(--text-muted)" }}>⏱ {formatSec(stats.totalTime)}</span>
                   </div>
                 </div>
-                {hasQ && (
+                {hasQ && !isLocked && (
                   <div style={{
                     width: 40, height: 40, borderRadius: 12,
                     background: `linear-gradient(135deg, ${selectedSubject.color}20, ${selectedSubject.color}10)`,
@@ -616,6 +657,15 @@ export default function CompetencyTestPage() {
                     fontSize: 18, color: selectedSubject.color, fontWeight: 700,
                     border: `1px solid ${selectedSubject.color}20`,
                   }}>→</div>
+                )}
+                {isLocked && (
+                  <div style={{
+                    width: 40, height: 40, borderRadius: 12,
+                    background: "rgba(45, 129, 247, 0.1)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: 16, color: "var(--brand-blue)", fontWeight: 700,
+                    border: "1px solid rgba(45, 129, 247, 0.2)",
+                  }}>🔒</div>
                 )}
               </button>
             );

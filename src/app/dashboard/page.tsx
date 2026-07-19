@@ -191,17 +191,17 @@ export default function DashboardPage() {
 
     const featureCards = [
         { flag: "studyFlow" as const, label: "Study Flow", desc: "Watch → Revise → Practice", path: "/dashboard/study-flow", icon: BookOpen, tagline: "Your guided learning path" },
-        { flag: "aiDoubtSolver" as const, label: "AI Doubt Solver", desc: "Ask anything, get instant answers", path: "/dashboard/ai-assistant", icon: Brain, tagline: "Your 24/7 academic companion" },
+        { flag: "aiDoubtSolver" as const, label: "AI Doubt Solver", desc: "Ask anything, get instant answers", path: "/dashboard/ai-assistant", icon: Brain, tagline: "Your 24/7 academic companion", isPremium: true },
         { flag: "smartPlanner" as const, label: "Smart Planner", desc: "Your day, mapped intelligently", path: "/dashboard/planner", icon: Calendar, tagline: "Because time waits for no one" },
         { flag: "competencyTest" as const, label: "Competency Test", desc: "PYQ-based timed practice", path: "/dashboard/precision-practice", icon: Trophy, tagline: "Practice like it's the real thing" },
-        { flag: "customiseTest" as const, label: "Customise Test", desc: "Build your own MCQ set", path: "/dashboard/tests", icon: FileQuestion, tagline: "Your test, your rules" },
-        { flag: "flipTheQuestion" as const, label: "Flip the Question", desc: "Reverse-engineer from answers", path: "/dashboard/flip-the-question", icon: RefreshCw, tagline: "See questions from the other side" },
+        { flag: "customiseTest" as const, label: "Customise Test", desc: "Build your own MCQ set", path: "/dashboard/tests", icon: FileQuestion, tagline: "Your test, your rules", isPremium: true },
+        { flag: "flipTheQuestion" as const, label: "Flip the Question", desc: "Reverse-engineer from answers", path: "/dashboard/flip-the-question", icon: RefreshCw, tagline: "See questions from the other side", isPremium: true },
         { flag: "focusMode" as const, label: "Focus Mode", desc: "Distraction-free deep work", path: "/dashboard/focus", icon: Compass, tagline: "Where deep work happens" },
-        { flag: "todoList" as const, label: "Monthly Mission", desc: "12-month CBSE board prep checklist", path: "/dashboard/todo", icon: Target, tagline: "One month at a time" },
+        { flag: "todoList" as const, label: "Monthly Mission", desc: "12-month CBSE board prep checklist", path: "/dashboard/todo", icon: Target, tagline: "One month at a time", isPremium: true },
         { flag: "webinar" as const, label: "Live Webinar", desc: "Free sessions with Gaurav Sir", path: "/dashboard/webinar", icon: Presentation, tagline: "Your questions, answered live." },
-        { flag: "chronoScroll" as const, label: "ChronoScroll", desc: "Scroll through history, snap dates", path: "/dashboard/chronoscroll", icon: Timer, tagline: "Scroll. Snap. Remember." },
+        { flag: "chronoScroll" as const, label: "ChronoScroll", desc: "Scroll through history, snap dates", path: "/dashboard/chronoscroll", icon: Timer, tagline: "Scroll. Snap. Remember.", isPremium: true },
         { flag: "numericalMastery" as const, label: "Numerical Mastery", desc: "Physics formulas, solved examples & PYQs", path: "/dashboard/numerical-mastery", icon: Calculator, tagline: "Every formula, every numerical, mastered." },
-        { flag: "dateBattleArena" as const, label: "Date Battle Arena", desc: "Gamified history dates, 60-second battles", path: "/dashboard/date-battle", icon: Swords, tagline: "Speed meets memory in the arena." },
+        { flag: "dateBattleArena" as const, label: "Date Battle Arena", desc: "Gamified history dates, 60-second battles", path: "/dashboard/date-battle", icon: Swords, tagline: "Speed meets memory in the arena.", isPremium: true },
     ].filter(card => FEATURE_FLAGS[card.flag]);
 
     if (profileLoading || !stats) {
@@ -515,7 +515,13 @@ export default function DashboardPage() {
                         {featureCards.map((card, i) => (
                             <div
                                 key={card.path}
-                                onClick={() => router.push(card.path)}
+                                onClick={() => {
+                                    if ((card as any).isPremium && !profileIsPaid) {
+                                        router.push("/pricing");
+                                    } else {
+                                        router.push(card.path);
+                                    }
+                                }}
                                 onMouseEnter={() => setHoveredCard(card.path)}
                                 onMouseLeave={() => setHoveredCard(null)}
                                 style={{
@@ -545,16 +551,33 @@ export default function DashboardPage() {
                                 }} />
 
                                 <div style={{ position: "relative", zIndex: 1 }}>
-                                    {/* Icon */}
+                                    {/* Icon & Pro Badge */}
                                     <div style={{
-                                        color: hoveredCard === card.path ? "var(--brand-blue)" : "var(--text-muted)",
-                                        marginBottom: 14, display: "flex", alignItems: "center",
-                                        transition: "color 0.3s ease",
+                                        marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "space-between",
                                     }}>
-                                        {(() => {
-                                            const Icon = card.icon;
-                                            return <Icon size={isMobile ? 22 : 26} strokeWidth={1.8} />;
-                                        })()}
+                                        <div style={{
+                                            color: hoveredCard === card.path ? "var(--brand-blue)" : "var(--text-muted)",
+                                            transition: "color 0.3s ease",
+                                        }}>
+                                            {(() => {
+                                                const Icon = card.icon;
+                                                return <Icon size={isMobile ? 22 : 26} strokeWidth={1.8} />;
+                                            })()}
+                                        </div>
+                                        {/* PRO Badge */}
+                                        {(card as any).isPremium && !profileIsPaid && (
+                                            <div style={{
+                                                fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
+                                                color: "var(--brand-blue)",
+                                                background: "rgba(45, 129, 247, 0.1)",
+                                                border: "1px solid rgba(45, 129, 247, 0.2)",
+                                                borderRadius: 100, padding: "2px 8px",
+                                                letterSpacing: "0.1em", textTransform: "uppercase",
+                                                display: "flex", alignItems: "center", gap: 3,
+                                            }}>
+                                                <span style={{ fontSize: 10 }}>🔒</span> PRO
+                                            </div>
+                                        )}
                                     </div>
 
                                     {/* Title */}

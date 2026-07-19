@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { trpc } from "@/lib/trpc/client";
 import Confetti from "react-dom-confetti";
 import { FormatMathText } from "@/components/ui/FormatMathText";
 import {
@@ -12,6 +14,17 @@ import {
 type Phase = "chapters" | "topics" | "numerical";
 
 export default function NumericalMasteryPage() {
+  const router = useRouter();
+  const { data: profile } = trpc.dashboard.getProfile.useQuery(undefined, {
+    refetchOnWindowFocus: true, refetchOnMount: true,
+  });
+  const rawPlanType = (profile as any)?.planType ?? "FREE";
+  const profileIsPaid = !!(
+    (profile as any)?.isPaid ||
+    ((rawPlanType === "MONTHLY" || rawPlanType === "YEARLY") &&
+        (profile as any)?.subscriptionStatus === "ACTIVE")
+  );
+
   const [phase, setPhase] = useState<Phase>("chapters");
   const [selectedChapter, setSelectedChapter] = useState<NumericalChapter | null>(null);
   const [selectedTopic, setSelectedTopic] = useState<NumericalTopic | null>(null);
@@ -138,38 +151,63 @@ export default function NumericalMasteryPage() {
           {numericalMasteryData.map((ch, idx) => {
             const isHovered = hoveredChapter === ch.id;
             const completion = getChapterCompletion(ch);
+            
+            const isFreeChapter = idx === 0;
+            const isLocked = !profileIsPaid && !isFreeChapter;
+
             return (
               <button
                 key={ch.id}
-                onClick={() => selectChapter(ch)}
+                onClick={() => {
+                  if (isLocked) {
+                    router.push("/pricing");
+                    return;
+                  }
+                  selectChapter(ch);
+                }}
                 onMouseEnter={() => setHoveredChapter(ch.id)}
                 onMouseLeave={() => setHoveredChapter(null)}
                 style={{
                   position: "relative",
-                  background: isHovered ? "var(--bg-elevated)" : "var(--bg-surface)",
-                  border: `1px solid ${isHovered ? "var(--accent-gold-border)" : "var(--bg-border)"}`,
+                  background: isHovered && !isLocked ? "var(--bg-elevated)" : "var(--bg-surface)",
+                  border: `1px solid ${isHovered && !isLocked ? "var(--accent-gold-border)" : "var(--bg-border)"}`,
                   borderRadius: 16,
                   padding: "24px 22px",
                   cursor: "pointer",
                   textAlign: "left",
                   transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-                  transform: isHovered ? "translateY(-3px)" : "none",
-                  boxShadow: isHovered ? "0 0 0 1px var(--accent-gold-glow), 0 20px 48px -8px rgba(0,0,0,0.45)" : "none",
+                  transform: isHovered && !isLocked ? "translateY(-3px)" : "none",
+                  boxShadow: isHovered && !isLocked ? "0 0 0 1px var(--accent-gold-glow), 0 20px 48px -8px rgba(0,0,0,0.45)" : "none",
                   overflow: "hidden",
                   animation: `nmSlideUp 0.45s ease-out ${idx * 0.06}s both`,
+                  opacity: isLocked ? 0.6 : 1,
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
                   <div style={{
                     width: 48, height: 48, borderRadius: 12,
-                    background: "var(--accent-gold-glow)",
-                    border: "1px solid var(--accent-gold-border)",
+                    background: isLocked ? "rgba(45, 129, 247, 0.1)" : "var(--accent-gold-glow)",
+                    border: `1px solid ${isLocked ? "rgba(45, 129, 247, 0.2)" : "var(--accent-gold-border)"}`,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontSize: 22,
-                  }}>{ch.icon}</div>
+                  }}>{isLocked ? "🔒" : ch.icon}</div>
                   <div>
-                    <div style={{ fontFamily: "var(--font-display)", fontSize: 16, color: "var(--text-primary)", letterSpacing: "-0.01em", lineHeight: 1.25 }}>
-                      {ch.name}
+                    <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                      <div style={{ fontFamily: "var(--font-display)", fontSize: 16, color: "var(--text-primary)", letterSpacing: "-0.01em", lineHeight: 1.25 }}>
+                        {ch.name}
+                      </div>
+                      {isLocked && (
+                        <div style={{
+                          fontFamily: "var(--font-body)", fontSize: 8, fontWeight: 700,
+                          color: "var(--brand-blue)",
+                          background: "rgba(45, 129, 247, 0.1)",
+                          border: "1px solid rgba(45, 129, 247, 0.2)",
+                          borderRadius: 100, padding: "2px 6px",
+                          letterSpacing: "0.1em", textTransform: "uppercase",
+                        }}>
+                          PRO
+                        </div>
+                      )}
                     </div>
                     <div style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "var(--text-muted)", marginTop: 3 }}>
                       {ch.topics.length} topics · {ch.topics.reduce((s, t) => s + t.pyqs.length, 0)} PYQs
@@ -194,12 +232,12 @@ export default function NumericalMasteryPage() {
 
                 <div style={{
                   fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 500,
-                  color: isHovered ? "var(--accent-gold)" : "var(--text-muted)",
+                  color: isLocked ? "var(--brand-blue)" : isHovered ? "var(--accent-gold)" : "var(--text-muted)",
                   letterSpacing: "0.02em",
-                  transform: isHovered ? "translateX(4px)" : "translateX(0)",
+                  transform: isHovered && !isLocked ? "translateX(4px)" : "translateX(0)",
                   transition: "all 0.3s ease",
                 }}>
-                  Explore chapter →
+                  {isLocked ? "Unlock with Pro 🔒" : "Explore chapter →"}
                 </div>
               </button>
             );
