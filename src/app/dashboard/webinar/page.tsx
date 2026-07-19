@@ -297,43 +297,56 @@ export default function WebinarPage() {
               <div style={{ height: 1, background: "var(--bg-border)", margin: "20px 0" }} />
 
               {/* CTA */}
-              <button
-                onClick={handleCTA}
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
-                style={{
-                  width: "100%",
-                  padding: "16px 20px",
-                  background: hovered
-                    ? "var(--accent-gold)"
-                    : "linear-gradient(135deg, rgba(45,129,247,0.18), rgba(45,129,247,0.10))",
-                  border: "1.5px solid var(--accent-gold)",
+              <div style={{ position: "relative" }}>
+                <button
+                  disabled
+                  style={{
+                    width: "100%",
+                    padding: "16px 20px",
+                    background: "rgba(255,255,255,0.02)",
+                    border: "1.5px solid var(--bg-border)",
+                    borderRadius: 14,
+                    cursor: "not-allowed",
+                  }}
+                >
+                  <div style={{
+                    fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 800,
+                    letterSpacing: "0.08em", textTransform: "uppercase",
+                    color: "var(--text-muted)",
+                    marginBottom: 4,
+                  }}>
+                    Get Your Seat Now
+                  </div>
+                  <div style={{
+                    fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 500,
+                    color: "var(--text-muted)",
+                    opacity: 0.5,
+                  }}>
+                    It&apos;s completely free - no catch →
+                  </div>
+                </button>
+
+                {/* TBD Overlay */}
+                <div style={{
+                  position: "absolute", inset: 0,
+                  background: "rgba(10,10,15,0.6)",
+                  backdropFilter: "blur(2px)",
                   borderRadius: 14,
-                  cursor: "pointer",
-                  transition: "all 0.25s cubic-bezier(0.16,1,0.3,1)",
-                  boxShadow: hovered
-                    ? "0 0 32px rgba(45,129,247,0.4), 0 8px 24px rgba(0,0,0,0.3)"
-                    : "0 0 16px rgba(45,129,247,0.2)",
-                  transform: hovered ? "translateY(-2px)" : "translateY(0)",
-                }}
-              >
-                <div style={{
-                  fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 800,
-                  letterSpacing: "0.08em", textTransform: "uppercase",
-                  color: hovered ? "#0A0A0F" : "var(--accent-gold)",
-                  marginBottom: 4,
-                  transition: "color 0.25s ease",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  zIndex: 2,
                 }}>
-                  Get Your Seat Now
+                  <div style={{
+                    display: "inline-flex", alignItems: "center", gap: 6,
+                    background: "rgba(255,255,255,0.1)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    padding: "6px 12px", borderRadius: 100,
+                    fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700,
+                    color: "#FFF", letterSpacing: "0.05em",
+                  }}>
+                    🔒 TBD
+                  </div>
                 </div>
-                <div style={{
-                  fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 500,
-                  color: hovered ? "rgba(10,10,15,0.7)" : "var(--text-muted)",
-                  transition: "color 0.25s ease",
-                }}>
-                  It&apos;s completely free - no catch →
-                </div>
-              </button>
+              </div>
 
               <div style={{
                 fontFamily: "var(--font-body)", fontSize: 11,
@@ -399,21 +412,43 @@ export default function WebinarPage() {
             position: "fixed", bottom: 70, left: 16, right: 16,
             zIndex: 50,
           }}>
-            <button
-              onClick={handleCTA}
-              style={{
-                width: "100%", padding: "16px",
-                background: "var(--accent-gold)",
-                border: "none", borderRadius: 14,
-                cursor: "pointer",
-                fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 800,
-                letterSpacing: "0.08em", textTransform: "uppercase",
-                color: "#0A0A0F",
-                boxShadow: "0 0 32px rgba(45,129,247,0.5), 0 8px 24px rgba(0,0,0,0.4)",
-              }}
-            >
-              Get Your Seat - It&apos;s Free →
-            </button>
+            <div style={{ position: "relative", width: "100%" }}>
+              <button
+                disabled
+                style={{
+                  width: "100%", padding: "16px",
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid var(--bg-border)", borderRadius: 14,
+                  cursor: "not-allowed",
+                  fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 800,
+                  letterSpacing: "0.08em", textTransform: "uppercase",
+                  color: "var(--text-muted)",
+                  boxShadow: "none",
+                }}
+              >
+                Get Your Seat - It&apos;s Free →
+              </button>
+              {/* TBD Overlay */}
+              <div style={{
+                position: "absolute", inset: 0,
+                background: "rgba(10,10,15,0.6)",
+                backdropFilter: "blur(2px)",
+                borderRadius: 14,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                zIndex: 2,
+              }}>
+                <div style={{
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                  background: "rgba(255,255,255,0.1)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  padding: "4px 10px", borderRadius: 100,
+                  fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 700,
+                  color: "#FFF",
+                }}>
+                  🔒 TBD
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
