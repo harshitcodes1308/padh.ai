@@ -174,14 +174,27 @@ export default function ChapterFlowPage() {
     setYtQuery(q);
     setYtLoading(true);
     fetch(`/api/youtube-search?q=${encodeURIComponent(q)}`)
-      .then(r => r.json())
+      .then(async r => {
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || "Search failed");
+        return d;
+      })
       .then(d => {
-        setYtResults(d.videos ?? []);
+        const vids = d.videos ?? [];
+        setYtResults(vids);
         setYtCreatorChannelId(d.creatorChannelId ?? null);
         setYtCreatorName(d.creatorName ?? null);
+        if (vids.length > 0) {
+          const creatorId = d.creatorChannelId;
+          const boosted = vids.find((v: any) => v.channelId === creatorId);
+          setActiveVideoId(boosted ? boosted.videoId : vids[0].videoId);
+        }
         ytFetchedRef.current = true;
       })
-      .catch(() => setYtError("Search failed. Try again."))
+      .catch(e => {
+        console.error(e);
+        setYtError(e.message || "Search failed. Try again.");
+      })
       .finally(() => setYtLoading(false));
   }, [chapter, mounted, step]);
 
