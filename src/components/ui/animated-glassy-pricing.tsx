@@ -338,7 +338,7 @@ const savioursPlans: PricingCardProps[] = [
     planName: 'Monthly',
     description: 'Full access, one month at a time.',
     price: '199',
-    originalPrice: '₹399',
+    originalPrice: '₹349',
     priceSymbol: '₹',
     billingLabel: '/month',
     features: [
@@ -372,6 +372,14 @@ export default function AnimatedGlassyPricing({
 }: AnimatedGlassyPricingProps) {
   const [showDomin8Modal, setShowDomin8Modal] = useState(false);
   const [domin8Code, setDomin8Code] = useState('');
+  const [appliedCoupon, setAppliedCoupon] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setAppliedCoupon(localStorage.getItem('appliedCoupon'));
+    }
+  }, []);
+
   // Fall back to DB query if no prop passed (used on /pricing standalone page)
   const { data: dbDiscount } = trpc.creator.getMyDiscount.useQuery(undefined, {
     enabled: creatorDiscount === undefined,
@@ -460,28 +468,40 @@ export default function AnimatedGlassyPricing({
             alignItems: 'start',
           }}
         >
-          {savioursPlans.map((plan, i) => (
-            <div
-              key={plan.planName}
-              style={{
-                animation: `slideInUp 0.5s ease-out ${i * 100}ms both`,
-              }}
-            >
-              <PricingCard
-                {...plan}
-                discountedPrice={
-                  plan.planName === 'Yearly' ? yearlyDiscounted : undefined
-                }
-                discountPct={plan.planName === 'Yearly' ? discountPct || undefined : undefined}
-                creatorName={plan.planName === 'Yearly' ? creatorName : undefined}
-                onClick={() =>
-                  onSelectPlan(
-                    plan.planName.toUpperCase() as 'FREE' | 'MONTHLY' | 'YEARLY'
-                  )
-                }
-              />
-            </div>
-          ))}
+          {savioursPlans.map((plan, i) => {
+            const isMonthlyCoupon = plan.planName === 'Monthly' && appliedCoupon === 'TOPPERS40';
+            const displayPrice = isMonthlyCoupon ? '349' : plan.price;
+            const originalPriceDisplay = isMonthlyCoupon ? undefined : plan.originalPrice;
+
+            return (
+              <div
+                key={plan.planName}
+                style={{
+                  animation: `slideInUp 0.5s ease-out ${i * 100}ms both`,
+                }}
+              >
+                <PricingCard
+                  {...plan}
+                  price={displayPrice}
+                  originalPrice={originalPriceDisplay}
+                  discountedPrice={
+                    plan.planName === 'Yearly' ? yearlyDiscounted : isMonthlyCoupon ? '199' : undefined
+                  }
+                  discountPct={
+                    plan.planName === 'Yearly' ? discountPct || undefined : isMonthlyCoupon ? 40 : undefined
+                  }
+                  creatorName={
+                    plan.planName === 'Yearly' ? creatorName : isMonthlyCoupon ? 'TOPPERS40' : undefined
+                  }
+                  onClick={() =>
+                    onSelectPlan(
+                      plan.planName.toUpperCase() as 'FREE' | 'MONTHLY' | 'YEARLY'
+                    )
+                  }
+                />
+              </div>
+            );
+          })}
         </div>
 
         {/* Footer */}

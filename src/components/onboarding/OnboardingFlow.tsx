@@ -51,6 +51,8 @@ export default function OnboardingFlow() {
   const [showTagline, setShowTagline] = useState(false);
   const [nameInput, setNameInput] = useState('');
   const [phoneInput, setPhoneInput] = useState('');
+  const [couponInput, setCouponInput] = useState('');
+  const [couponSuccess, setCouponSuccess] = useState(false);
   const [profileError, setProfileError] = useState('');
   const [savingProfile, setSavingProfile] = useState(false);
   const [creatorSearch, setCreatorSearch] = useState('');
@@ -159,6 +161,9 @@ export default function OnboardingFlow() {
         return;
       }
       setSavingProfile(false);
+      if (couponInput.toUpperCase() === 'TOPPERS40') {
+        localStorage.setItem('appliedCoupon', 'TOPPERS40');
+      }
       // Skip creator code (step 5) and go straight to pricing (step 6)
       setStep(6);
     } catch {
@@ -681,15 +686,54 @@ export default function OnboardingFlow() {
             color: 'var(--text-primary)',
             textAlign: 'center',
             outline: 'none',
-            marginBottom: profileError ? 10 : 24,
-            transition: 'border-color 0.2s ease',
-          }}
-          onFocus={(e) => e.currentTarget.style.borderColor = 'var(--accent-gold-border)'}
-          onBlur={(e) => e.currentTarget.style.borderColor = 'var(--bg-border)'}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') handleSaveProfile();
-          }}
-        />
+        <div style={{ position: 'relative', width: '100%', marginBottom: profileError ? 10 : 24 }}>
+          <input
+            type="text"
+            value={couponInput}
+            onChange={(e) => {
+              const val = e.target.value;
+              setCouponInput(val);
+              if (val.toUpperCase() === 'TOPPERS40') {
+                setCouponSuccess(true);
+              } else {
+                setCouponSuccess(false);
+              }
+            }}
+            placeholder="Coupon code (Optional)"
+            className="sa-input"
+            style={{
+              width: '100%',
+              padding: '16px 20px',
+              fontSize: '18px',
+              fontFamily: 'var(--font-body)',
+              background: 'var(--bg-surface)',
+              border: `1.5px solid ${couponSuccess ? 'var(--status-green)' : 'var(--bg-border)'}`,
+              borderRadius: '14px',
+              color: 'var(--text-primary)',
+              textAlign: 'center',
+              outline: 'none',
+              transition: 'border-color 0.2s ease',
+            }}
+            onFocus={(e) => {
+              if (!couponSuccess) e.currentTarget.style.borderColor = 'var(--accent-gold-border)';
+            }}
+            onBlur={(e) => {
+              if (!couponSuccess) e.currentTarget.style.borderColor = 'var(--bg-border)';
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleSaveProfile();
+            }}
+          />
+          {couponSuccess && (
+            <div style={{
+              position: 'absolute', right: 16, top: '50%', transform: 'translateY(-50%)',
+              fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600, color: 'var(--status-green)',
+              background: 'rgba(62,207,142,0.1)', padding: '4px 8px', borderRadius: 6,
+            }}>
+              40% discount unlocked!
+            </div>
+          )}
+        </div>
 
         {profileError && (
           <div style={{
