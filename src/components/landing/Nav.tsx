@@ -139,6 +139,26 @@ export default function Nav() {
             </MagneticButton>
           </Show>
           <Show when="signed-in">
+            <Link
+              href="/dashboard"
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 14,
+                fontWeight: 600,
+                color: "#FFFFFF",
+                background: "var(--brand-blue)",
+                padding: "8px 16px",
+                borderRadius: "100px",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+                transition: "filter 0.2s ease",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.filter = "brightness(1.1)")}
+              onMouseLeave={(e) => (e.currentTarget.style.filter = "none")}
+            >
+              Go to Dashboard
+            </Link>
             <UserButton />
           </Show>
         </div>
