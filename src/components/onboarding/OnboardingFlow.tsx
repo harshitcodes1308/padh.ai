@@ -686,6 +686,16 @@ export default function OnboardingFlow() {
             color: 'var(--text-primary)',
             textAlign: 'center',
             outline: 'none',
+            marginBottom: 14,
+            transition: 'border-color 0.2s ease',
+          }}
+          onFocus={(e) => e.currentTarget.style.borderColor = 'var(--accent-gold-border)'}
+          onBlur={(e) => e.currentTarget.style.borderColor = 'var(--bg-border)'}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleSaveProfile();
+          }}
+        />
+
         <div style={{ position: 'relative', width: '100%', marginBottom: profileError ? 10 : 24 }}>
           <input
             type="text"
