@@ -81,7 +81,6 @@ const ACCOUNT_GROUP: NavGroup = {
   ],
 };
 
-// ── Free users ──────────────────────────────────────────────────────────────
 const FREE_NAV_GROUPS: NavGroup[] = [
   {
     label: "HOME",
@@ -94,23 +93,18 @@ const FREE_NAV_GROUPS: NavGroup[] = [
       { icon: BookOpen, label: "Study Flow",       href: "/dashboard/study-flow" },
       { icon: Video, label: "Video Lectures",   href: "/dashboard/video-lectures" },
       { icon: Presentation, label: "Live Webinar",     href: "/dashboard/webinar" },
-    ],
-  },
-  {
-    label: "STUDY",
-    items: [
-      { icon: Brain, label: "AI Doubt Solver",   href: "/dashboard/ai-assistant" },
-      { icon: Timer, label: "ChronoScroll",      href: "/dashboard/chronoscroll" },
+      { icon: Trophy, label: "Competency Test",   href: "/dashboard/precision-practice" },
       { icon: Calculator, label: "Numerical Mastery", href: "/dashboard/numerical-mastery" },
       { icon: Compass, label: "Focus Mode",        href: "/dashboard/focus" },
     ],
   },
   {
-    label: "PRACTICE",
+    label: "PRO",
     items: [
-      { icon: Trophy, label: "Competency Test",   href: "/dashboard/precision-practice" },
+      { icon: Brain, label: "AI Doubt Solver",   href: "/dashboard/ai-assistant" },
       { icon: FileQuestion, label: "Customise Test",    href: "/dashboard/tests" },
       { icon: RefreshCw, label: "Flip the Question", href: "/dashboard/flip-the-question" },
+      { icon: Timer, label: "ChronoScroll",      href: "/dashboard/chronoscroll" },
       { icon: Swords, label: "Date Battle Arena", href: "/dashboard/date-battle" },
     ],
   },
