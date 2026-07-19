@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
+import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 
 interface YouTubeSearchItem {
@@ -12,8 +12,8 @@ interface YouTubeSearchItem {
 }
 
 export async function GET(request: NextRequest) {
-    const session = await getSession();
-    if (!session?.user) {
+    const { userId } = await auth();
+    if (!userId) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
         let creatorChannelId: string | null = null;
         let creatorName: string | null = null;
         const dbUser = await prisma.user.findUnique({
-            where: { id: session.user.id },
+            where: { id: userId },
             select: { creatorCode: true },
         });
         if (dbUser?.creatorCode) {
